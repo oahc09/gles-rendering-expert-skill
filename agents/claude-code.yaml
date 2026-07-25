@@ -1,0 +1,66 @@
+# Claude Code Agent Configuration
+# Tells Claude Code how to load and use this GLES Rendering Expert Skill.
+
+name: gles-rendering-expert
+description: >
+  OpenGL ES 3.x rendering expert for mobile TBDR GPUs (Mali, Adreno, PowerVR).
+  Enforces API constraints, bandwidth optimization, EGL lifecycle, and GLSL ES
+  precision rules. Use when generating or reviewing GLES C++17 code, GLSL ES
+  shaders, FBO pipelines, or diagnosing GPU performance issues.
+
+trigger_patterns:
+  - "OpenGL ES"
+  - "GLES"
+  - "EGL"
+  - "GLSL ES"
+  - "TBDR"
+  - "glInvalidateFramebuffer"
+  - "Mali"
+  - "Adreno"
+  - "PowerVR"
+  - "mobile GPU"
+  - "tile memory"
+  - "GMEM"
+  - "pixel local storage"
+
+context_files:
+  # Primary skill definition
+  - path: SKILL.md
+    priority: high
+    always_load: true
+
+  # Core rules (load on relevant queries)
+  - path: references/rules/gles-api-standards.md
+    priority: high
+  - path: references/rules/tbdr-bandwidth-rules.md
+    priority: high
+  - path: references/rules/egl-and-context.md
+    priority: medium
+  - path: references/rules/glsl-es-optimization.md
+    priority: medium
+  - path: references/rules/mali-arm-best-practices.md
+    priority: medium
+  - path: references/rules/windows-platform.md
+    priority: low
+  - path: references/rules/adreno/
+    priority: medium
+  - path: references/rules/powervr/
+    priority: medium
+
+  # Knowledge cards (load by topic)
+  - path: references/cards/
+    priority: medium
+
+  # Code examples (load when generating code)
+  - path: references/examples/
+    priority: low
+
+instructions:
+  - Always enforce OpenGL ES API boundaries (never use desktop GL APIs).
+  - Always place #version directive on the first line of GLSL ES shaders.
+  - Use RAII C++17 for all GPU resource management (move-only, no raw new/delete).
+  - On TBDR GPUs, always clear or invalidate FBO attachments at pass boundaries.
+  - Check extension availability at runtime before using vendor extensions.
+  - Use EGL_CONTEXT_CLIENT_VERSION (not EGL_CONTEXT_MAJOR_VERSION) for EGL 1.4 compatibility.
+  - Fragment shaders MUST declare precision. Use mediump by default, highp only where needed.
+  - Never use glReadPixels synchronously in the render loop; prefer PBO async readback.

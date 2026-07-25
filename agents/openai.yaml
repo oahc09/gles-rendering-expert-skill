@@ -1,0 +1,71 @@
+# OpenAI Agent Configuration (Codex / GPT-based coding assistants)
+# Tells OpenAI-based agents how to load and use this GLES Rendering Expert Skill.
+
+name: gles-rendering-expert
+description: >
+  OpenGL ES 3.x rendering expert for mobile TBDR GPUs (Mali, Adreno, PowerVR).
+  Enforces API constraints, bandwidth optimization, EGL lifecycle, and GLSL ES
+  precision rules. Use when generating or reviewing GLES C++17 code, GLSL ES
+  shaders, FBO pipelines, or diagnosing GPU performance issues.
+
+activation_keywords:
+  - "OpenGL ES"
+  - "GLES"
+  - "EGL"
+  - "GLSL ES"
+  - "TBDR"
+  - "glInvalidateFramebuffer"
+  - "Mali"
+  - "Adreno"
+  - "PowerVR"
+  - "mobile GPU"
+  - "tile memory"
+  - "GMEM"
+  - "pixel local storage"
+
+file_context:
+  # Primary skill definition — always include
+  primary:
+    - SKILL.md
+
+  # Core rules
+  rules:
+    - references/rules/gles-api-standards.md
+    - references/rules/tbdr-bandwidth-rules.md
+    - references/rules/egl-and-context.md
+    - references/rules/glsl-es-optimization.md
+    - references/rules/mali-arm-best-practices.md
+    - references/rules/windows-platform.md
+    - references/rules/adreno/gmem-load-store.md
+    - references/rules/adreno/efficient-msaa.md
+    - references/rules/adreno/variable-rate-shading.md
+    - references/rules/adreno/lrz-and-flexrender.md
+    - references/rules/adreno/frame-extrapolation-and-upscaling.md
+    - references/rules/powervr/hsr-and-rendering-order.md
+    - references/rules/powervr/pixel-local-storage-and-deferred.md
+    - references/rules/powervr/img-extensions.md
+    - references/rules/powervr/bandwidth-and-tile-management.md
+
+  # Knowledge cards
+  references:
+    - references/cards/
+
+  # Code examples
+  examples:
+    - references/examples/
+
+system_prompt_addendum: |
+  You are an OpenGL ES rendering expert. When generating or reviewing GLES code:
+
+  1. NEVER use desktop OpenGL APIs (glBegin, glEnd, GL_QUADS, glPolygonMode, etc.).
+  2. ALWAYS place #version directive on the first line of GLSL ES shaders.
+  3. ALWAYS use RAII C++17 patterns for GPU resources (move-only, destructor calls glDelete*).
+  4. On TBDR GPUs (Mali, Adreno, PowerVR): clear or invalidate all FBO attachments
+     at render-pass boundaries to avoid unnecessary DRAM bandwidth.
+  5. Check extension availability at runtime before calling vendor-specific APIs.
+  6. Use EGL_CONTEXT_CLIENT_VERSION (EGL 1.4) not EGL_CONTEXT_MAJOR_VERSION (EGL 1.5).
+  7. Fragment shaders MUST declare float precision. Default to mediump.
+  8. Never call glReadPixels synchronously in the render loop; use PBO async readback.
+  9. Compute shader barriers: use memoryBarrierBuffer()/memoryBarrierImage() after
+     writes; host barriers (glMemoryBarrier) before dependent dispatches/draws.
+  10. Prefer EXT_multisampled_render_to_texture for MSAA on mobile (on-tile resolve).

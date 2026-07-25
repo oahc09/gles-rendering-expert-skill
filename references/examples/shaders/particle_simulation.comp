@@ -1,0 +1,294 @@
+#version 310 es
+/**
+ * @file particle_simulation.comp
+ * @brief GPU particle system using OpenGL ES 3.1 Compute Shader + SSBO.
+ *
+ * Features:
+ * - Position/velocity integration on GPU (zero CPU-GPU transfer per frame)
+ * - Particle lifecycle (spawn, update, kill) entirely on GPU
+ * - Double-buffered SSBO ping-pong for state persistence
+ * - Attractor forces (gravity wells) for visual interest
+ *
+ * Target: OpenGL ES 3.1+ (GLSL ES 3.10)
+ * TBDR Note: Compute dispatches do NOT interact with tile memory.
+ * The particle rendering pass (separate vertex/fragment shader) should
+ * still follow FBO clear/invalidate rules.
+ */
+
+// ============================================================================
+// Workgroup Configuration
+// ============================================================================
+// 256 threads per workgroup — good occupancy on Mali (warp=16) and Adreno (warp=32)
+// Total threads = ceil(particleCount / 256) workgroups
+layout(local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
+
+// ============================================================================
+// Particle Data Structure (SSBO)
+// ============================================================================
+struct Particle {
+    highp vec4 position;    // xyz = world position, w = life (0=dead, >0=alive)
+    highp vec4 velocity;    // xyz = velocity, w = size
+    mediump vec4 color;     // rgba = particle color
+    mediump vec4 params;    // x = mass, y = drag, z = spawnTime, w = maxLife
+};
+
+// Double-buffered particle storage (ping-pong between frames)
+layout(std430, binding = 0) buffer ParticleBufferA {
+    Particle particlesA[];
+};
+
+layout(std430, binding = 1) buffer ParticleBufferB {
+    Particle particlesB[];
+};
+
+// Indirect draw command buffer (updated by compute for alive particle count)
+struct DrawCommand {
+    uint count;         // vertex count (or instance count)
+    uint instanceCount;
+    uint first;
+    uint baseInstance;
+};
+
+layout(std430, binding = 2) buffer IndirectDrawBuffer {
+    DrawCommand drawCmd;
+    uint aliveCounter;  // Atomic counter for alive particles
+};
+
+// ============================================================================
+// Uniforms
+// ============================================================================
+uniform highp float u_DeltaTime;       // Frame delta time (seconds)
+uniform highp float u_TotalTime;       // Total elapsed time
+uniform uint        u_ParticleCount;   // Total particle capacity
+uniform uint        u_ReadBuffer;      // 0 = read A write B, 1 = read B write A
+uniform uint        u_SpawnRate;       // Particles to spawn per frame
+uniform highp vec4  u_EmitterPos;      // Emitter world position (xyz) + radius (w)
+uniform highp vec4  u_Gravity;         // Global gravity vector (xyz) + strength (w)
+
+// Attractors (gravity wells)
+#define MAX_ATTRACTORS 4
+uniform highp vec4  u_Attractors[MAX_ATTRACTORS]; // xyz = position, w = strength
+uniform int         u_AttractorCount;
+
+// ============================================================================
+// Shared Memory (workgroup-local)
+// ============================================================================
+shared uint s_LocalAliveCount;
+
+// ============================================================================
+// Pseudo-Random Number Generator (PCG-based, deterministic per particle)
+// ============================================================================
+highp uint pcgHash(highp uint inputVal) {
+    highp uint state = inputVal * 747796405u + 2891336453u;
+    highp uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;
+    return (word >> 22u) ^ word;
+}
+
+highp float randomFloat(highp uint seed) {
+    return float(pcgHash(seed)) / 4294967295.0;
+}
+
+highp vec3 randomUnitVector(highp uint seed) {
+    highp float theta = randomFloat(seed) * 6.28318530718;
+    highp float phi = acos(2.0 * randomFloat(seed + 1u) - 1.0);
+    return vec3(
+        sin(phi) * cos(theta),
+        sin(phi) * sin(theta),
+        cos(phi)
+    );
+}
+
+// ============================================================================
+// Particle Spawn Logic
+// ============================================================================
+Particle SpawnParticle(uint idx) {
+    Particle p;
+    highp uint seed = pcgHash(idx + uint(u_TotalTime * 1000.0));
+
+    // Position: random point on emitter sphere
+    highp vec3 dir = randomUnitVector(seed);
+    p.position = vec4(u_EmitterPos.xyz + dir * u_EmitterPos.w * randomFloat(seed + 2u), 1.0);
+
+    // Velocity: outward burst + upward bias
+    highp float speed = 2.0 + randomFloat(seed + 3u) * 5.0;
+    p.velocity = vec4(dir * speed + vec3(0.0, 3.0, 0.0), 0.1 + randomFloat(seed + 4u) * 0.3);
+
+    // Color: warm palette (fire-like)
+    highp float t = randomFloat(seed + 5u);
+    p.color = vec4(
+        1.0,
+        0.3 + t * 0.5,
+        t * 0.2,
+        1.0
+    );
+
+    // Params
+    p.params = vec4(
+        0.5 + randomFloat(seed + 6u) * 1.5,  // mass
+        0.98,                                   // drag coefficient
+        u_TotalTime,                            // spawn time
+        2.0 + randomFloat(seed + 7u) * 3.0    // max lifetime (seconds)
+    );
+
+    return p;
+}
+
+// ============================================================================
+// Particle Update Logic
+// ============================================================================
+Particle UpdateParticle(Particle p, highp float dt) {
+    // Age check
+    highp float age = u_TotalTime - p.params.z;
+    if (age > p.params.w) {
+        // Particle expired — mark as dead
+        p.position.w = 0.0;
+        return p;
+    }
+
+    // Life ratio for color/size animation
+    highp float lifeRatio = age / p.params.w;
+
+    // --- Forces ---
+    highp vec3 force = vec3(0.0);
+
+    // Gravity
+    force += u_Gravity.xyz * u_Gravity.w * p.params.x;
+
+    // Attractors
+    for (int i = 0; i < MAX_ATTRACTORS; i++) {
+        if (i >= u_AttractorCount) break;
+        highp vec3 toAttractor = u_Attractors[i].xyz - p.position.xyz;
+        highp float dist = max(length(toAttractor), 0.5); // Avoid singularity
+        highp vec3 dir = toAttractor / dist;
+        // Inverse-square attraction
+        force += dir * (u_Attractors[i].w * p.params.x) / (dist * dist);
+    }
+
+    // --- Integration (Semi-implicit Euler) ---
+    highp vec3 acceleration = force / p.params.x;  // F = ma → a = F/m
+    p.velocity.xyz += acceleration * dt;
+
+    // Drag (velocity damping)
+    p.velocity.xyz *= p.params.y;
+
+    // Position update
+    p.position.xyz += p.velocity.xyz * dt;
+
+    // --- Visual updates ---
+    // Fade out alpha over lifetime
+    p.color.a = 1.0 - lifeRatio;
+
+    // Shrink size over lifetime
+    p.velocity.w = mix(0.3, 0.05, lifeRatio);  // w = size
+
+    return p;
+}
+
+// ============================================================================
+// Main Compute Entry Point
+// ============================================================================
+void main() {
+    uint idx = gl_GlobalInvocationID.x;
+    bool inBounds = (idx < u_ParticleCount);
+
+    // Initialize shared counter (first thread in workgroup)
+    if (gl_LocalInvocationID.x == 0u) {
+        s_LocalAliveCount = 0u;
+    }
+    // memoryBarrierShared() BEFORE barrier() ensures the shared-memory
+    // write above is visible to all invocations after the barrier.
+    memoryBarrierShared();
+    barrier();
+
+    // ALL invocations in the workgroup must reach every barrier(),
+    // so out-of-bounds threads participate in synchronization but skip work.
+    Particle p;
+    if (inBounds) {
+        // Determine read/write buffers (ping-pong)
+        if (u_ReadBuffer == 0u) {
+            p = particlesA[idx];
+        } else {
+            p = particlesB[idx];
+        }
+
+        // Update or spawn
+        if (p.position.w <= 0.0) {
+            // Dead particle — potentially respawn
+            uint spawnSlot = idx % max(u_SpawnRate, 1u);
+            if (spawnSlot == (uint(u_TotalTime * 60.0) % max(u_SpawnRate, 1u))) {
+                p = SpawnParticle(idx);
+            }
+        } else {
+            // Alive — update physics
+            p = UpdateParticle(p, u_DeltaTime);
+        }
+
+        // Count alive particles (for indirect draw)
+        if (p.position.w > 0.0) {
+            atomicAdd(s_LocalAliveCount, 1u);
+        }
+
+        // Write to output buffer
+        if (u_ReadBuffer == 0u) {
+            particlesB[idx] = p;
+        } else {
+            particlesA[idx] = p;
+        }
+    }
+
+    // Ensure shared counter writes are visible, then synchronize.
+    memoryBarrierShared();
+    barrier();
+
+    // Accumulate workgroup count to global counter
+    if (gl_LocalInvocationID.x == 0u) {
+        atomicAdd(aliveCounter, s_LocalAliveCount);
+    }
+
+    // After all workgroups finish, one thread updates the indirect draw command.
+    // Use a global barrier: the last workgroup (atomicAdd result == totalAlive)
+    // can't be determined here, so the HOST updates drawCmd after dispatch.
+    // Alternatively, a second 1-workgroup dispatch reads aliveCounter into drawCmd.
+}
+
+// ============================================================================
+// CPU-Side Dispatch Code (reference, not part of shader)
+// ============================================================================
+/*
+    // Reset alive counter before dispatch
+    GLuint counterBuf = ...; // The SSBO bound at binding=2
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, counterBuf);
+    GLuint zero = 0;
+    glBufferSubData(GL_SHADER_STORAGE_BUFFER, offsetof(IndirectDrawBuffer, aliveCounter),
+                    sizeof(GLuint), &zero);
+
+    // Dispatch compute shader
+    glUseProgram(computeProgram);
+    glUniform1f(locDeltaTime, dt);
+    glUniform1f(locTotalTime, totalTime);
+    glUniform1ui(locParticleCount, PARTICLE_COUNT);
+    glUniform1ui(locReadBuffer, currentFrame % 2);
+    // ... set other uniforms ...
+
+    GLuint workgroupCount = (PARTICLE_COUNT + 255) / 256;
+    glDispatchCompute(workgroupCount, 1, 1);
+
+    // Memory barrier: SSBO writes visible to vertex reads AND indirect draw command
+    glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT
+                  | GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT
+                  | GL_COMMAND_BARRIER_BIT);
+
+    // Copy aliveCounter into drawCmd.instanceCount on CPU (or a second dispatch):
+    // Read back aliveCounter and patch the draw command, OR use a small
+    // "finalize" compute shader that writes drawCmd from aliveCounter.
+
+    // Render particles
+    glBindVertexArray(particleVAO);
+    glDrawArraysInstanced(GL_TRIANGLES, 0, 6, PARTICLE_COUNT);
+    // Or with indirect (if drawCmd is properly filled):
+    // glDrawArraysIndirect(GL_TRIANGLES, 0);
+
+    // TBDR: After particle rendering pass, invalidate depth if not needed:
+    // GLenum discards[] = { GL_DEPTH_ATTACHMENT };
+    // glInvalidateFramebuffer(GL_FRAMEBUFFER, 1, discards);
+*/
