@@ -25,7 +25,7 @@
 //   // Draw calls for geometry, lighting, resolve sub-passes (no FBO switch!)
 //   glDisable(GL_SHADER_PIXEL_LOCAL_STORAGE_EXT);
 //
-// See rules/egl-and-context.md and rules/powervr/pixel-local-storage-and-deferred.md
+// See references/rules/egl-and-context.md and references/rules/powervr/pixel-local-storage-and-deferred.md
 // for full host-side integration.
 // -----------------------------------------------------------------------------
 #extension GL_EXT_shader_pixel_local_storage : require

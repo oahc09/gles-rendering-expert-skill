@@ -78,7 +78,7 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
 Mobile GPUs (Mali, Adreno, PowerVR) use **Tile-Based Deferred Rendering**. Each tile (typically 16×16 to 64×64 pixels) is rendered entirely in on-chip Tile Memory before writing back to System Memory (DRAM). This architecture demands specific coding patterns:
 
 ### FBO Clear & Store Operations
-1. **RenderPass Start**: MUST call `glClear()` or `glClearBuffer*()` at the beginning of rendering to a framebuffer. This signals the driver that prior Tile content is invalid — avoiding an expensive DRAM → Tile Memory load.
+1. **RenderPass Start**: SHOULD call `glClear()` or `glClearBuffer*()` at the beginning of rendering to a framebuffer. This signals the driver that prior Tile content is invalid — avoiding an expensive DRAM → Tile Memory load. (Exception: full-screen post-process that overwrites every pixel, or passes that intentionally read prior contents.)
 2. **RenderPass End (Depth/Stencil)**: MUST call `glInvalidateFramebuffer()` for `GL_DEPTH_ATTACHMENT` and/or `GL_STENCIL_ATTACHMENT` when they are not needed by subsequent passes. This sets Store Op to DONT_CARE, eliminating Tile → DRAM write-back bandwidth.
 3. **Offscreen FBOs**: If only the color result is consumed later, invalidate depth/stencil immediately after the offscreen pass completes.
 
