@@ -197,6 +197,8 @@ Distilled from the Imagination *PowerVR Native SDK* OpenGL ES framework. Per-top
 ### Windows Platform (ANGLE / Windows-on-ARM)
 - Windows has **no native GLES driver**; a plain WGL context is **desktop GL**, not GLES. Obtain true GLES through **ANGLE** (`libEGL.dll` / `libGLESv2.dll`), never `opengl32`.
 - Initialize via the `EGL_ANGLE_platform_angle` extension (`eglGetPlatformDisplayEXT`) and **pin the backend explicitly**: D3D11 on desktop, Vulkan on Windows-on-ARM. Verify the GLES version at runtime after context creation.
+- **ANGLE EGL tokens** (`EGL_PLATFORM_ANGLE_ANGLE` 0x3202, `EGL_PLATFORM_ANGLE_TYPE_ANGLE` 0x3203, etc.) are NOT in the standard Khronos `eglext.h`. Always wrap with `#ifndef` guards providing numeric fallbacks when building against Khronos-only headers.
+- **Acquiring ANGLE**: prefer extracting pre-built DLLs from Chrome/Edge (generate import libraries via `dumpbin /exports` → `.def` → `lib /def:`) for fast setup; use `vcpkg install angle` only for CI/reproducible builds.
 - **Windows-on-ARM (Snapdragon) is real Adreno silicon** — all `references/rules/adreno/*` techniques apply; build ARM64-native and prefer the Vulkan backend.
 - The Android Emulator GPU is host-backed — use it for **functional** testing only; measure TBDR bandwidth / fill-rate on a **real device**. Keep TBDR optimizations (`glInvalidateFramebuffer`, clear-at-pass-start) in the code even on the immediate-mode host build.
 - See `references/rules/windows-platform.md` for full detail.

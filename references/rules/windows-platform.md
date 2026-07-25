@@ -37,9 +37,26 @@ it to get conformant GLES on Windows.
 
 ### EGL initialization with ANGLE
 
+> **Important**: The `EGL_ANGLE_*` tokens are defined by ANGLE's own headers, NOT by
+> the standard Khronos `eglext.h` (e.g. from the `opengl-registry` vcpkg package).
+> When building with Khronos-only headers you **must** supply the values yourself.
+
 ```cpp
 #include <EGL/egl.h>
 #include <EGL/eglext.h>
+
+// --------------------------------------------------------------------------
+// ANGLE extension tokens — not in standard Khronos eglext.h.
+// Values from ANGLE source: include/EGL/eglext_angle.h
+// --------------------------------------------------------------------------
+#ifndef EGL_ANGLE_platform_angle
+#define EGL_ANGLE_platform_angle 1
+#define EGL_PLATFORM_ANGLE_ANGLE                   0x3202
+#define EGL_PLATFORM_ANGLE_TYPE_ANGLE              0x3203
+#define EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE        0x3208
+#define EGL_PLATFORM_ANGLE_TYPE_VULKAN_ANGLE       0x3450
+#define EGL_PLATFORM_ANGLE_TYPE_OPENGL_ANGLE       0x320D
+#endif
 
 // eglGetPlatformDisplayEXT is an extension entry point — load it dynamically.
 auto eglGetPlatformDisplayEXT =
@@ -57,9 +74,8 @@ EGLDisplay dpy = eglGetPlatformDisplayEXT(
 EGLint major = 0, minor = 0;
 eglInitialize(dpy, &major, &minor);
 
-// Request a GLES 3.x context.
-const EGLint ctxAttribs[] = { EGL_CONTEXT_MAJOR_VERSION, 3,
-                              EGL_CONTEXT_MINOR_VERSION, 1, EGL_NONE };
+// Request a GLES 3.x context (EGL_CONTEXT_CLIENT_VERSION for EGL 1.4 compat).
+const EGLint ctxAttribs[] = { EGL_CONTEXT_CLIENT_VERSION, 3, EGL_NONE };
 EGLContext ctx = eglCreateContext(dpy, config, EGL_NO_CONTEXT, ctxAttribs);
 
 // Verify what you actually got.
@@ -121,9 +137,6 @@ matters even though the target is Android.
 
 ### Rules
 
-- **Acquire ANGLE via a package manager**, e.g. `vcpkg install angle`, rather
-  than hand-copying DLLs; this keeps `libEGL` / `libGLESv2` versioned and
-  discoverable by CMake `find_package`.
 - **Copy `libEGL.dll` and `libGLESv2.dll` next to the executable** as a post-build
   step; ANGLE is loaded at runtime and must sit on the DLL search path.
 - **Use a multi-config generator (Visual Studio)** deliberately: pick Debug vs.
@@ -131,17 +144,74 @@ matters even though the target is Android.
   Debug builds.
 - **Do not link `opengl32.lib`** for a GLES target — that pulls in desktop GL.
 
+### Acquiring ANGLE binaries
+
+Two supported approaches (choose one):
+
+#### Option A: Extract pre-built DLLs from Chrome/Edge (fastest)
+
+Chrome and Edge ship conformant ANGLE builds. Copy the DLLs from the browser
+installation directory:
+
+```powershell
+# Locate Edge's ANGLE DLLs (example; version folder varies):
+$edgePath = "$env:ProgramFiles(x86)\Microsoft\Edge\Application\<version>"
+copy "$edgePath\libEGL.dll"    .\third_party\angle\
+copy "$edgePath\libGLESv2.dll" .\third_party\angle\
+```
+
+Then generate import libraries so MSVC's linker can resolve symbols at link time:
+
+```bat
+REM --- Generate .lib from .dll (Developer Command Prompt / x64 Native Tools) ---
+dumpbin /exports libEGL.dll    > libEGL.exports.txt
+dumpbin /exports libGLESv2.dll > libGLESv2.exports.txt
+
+REM Create .def files (LIBRARY name + EXPORTS section):
+REM   LIBRARY libEGL
+REM   EXPORTS
+REM       eglGetDisplay
+REM       eglInitialize
+REM       ...
+
+lib /def:libEGL.def    /out:libEGL.lib    /machine:x64
+lib /def:libGLESv2.def /out:libGLESv2.lib /machine:x64
+```
+
+> **Tip**: The `gendef` tool (from MinGW-w64, available via MSYS2) can auto-generate
+> `.def` from a DLL in one step: `gendef libEGL.dll` → `libEGL.def`.
+
+#### Option B: vcpkg (reproducible, but slow)
+
+```powershell
+vcpkg install angle:x64-windows
+```
+
+> **Warning**: ANGLE's vcpkg port pulls Chromium build infrastructure. Initial build
+> may take 30+ minutes and requires ~20 GB of disk. Network or toolchain version
+> mismatches can cause failures. Use Option A for rapid prototyping; use vcpkg for
+> CI/reproducible builds.
+
+### CMake integration
+
 ```cmake
-# CMake sketch: link ANGLE, stage its DLLs beside the binary.
+# If using vcpkg:
 find_package(unofficial-angle CONFIG REQUIRED)
 target_link_libraries(app PRIVATE
     unofficial::angle::libEGL
     unofficial::angle::libGLESv2)
 
+# If using pre-built DLLs with hand-crafted .lib:
+target_include_directories(app PRIVATE ${CMAKE_SOURCE_DIR}/third_party/angle/include)
+target_link_libraries(app PRIVATE
+    ${CMAKE_SOURCE_DIR}/third_party/angle/libEGL.lib
+    ${CMAKE_SOURCE_DIR}/third_party/angle/libGLESv2.lib)
+
+# Either way — stage DLLs beside the binary:
 add_custom_command(TARGET app POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        $<TARGET_FILE:unofficial::angle::libEGL>
-        $<TARGET_FILE:unofficial::angle::libGLESv2>
+        ${ANGLE_DLL_DIR}/libEGL.dll
+        ${ANGLE_DLL_DIR}/libGLESv2.dll
         $<TARGET_FILE_DIR:app>)
 ```
 

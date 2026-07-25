@@ -434,7 +434,7 @@ int main() {
         if (!egl.SwapBuffers()) {
             if (egl.IsContextLost()) {
                 LOGE("Context lost — initiating recovery");
-                // HandleContextLost() — see rules/egl-and-context.md
+                // HandleContextLost() — see references/rules/egl-and-context.md
                 break;
             }
         }

@@ -16,6 +16,15 @@
 ## 代码模式
 
 ```cpp
+// ANGLE EGL tokens — not in standard Khronos eglext.h, must guard:
+#ifndef EGL_ANGLE_platform_angle
+#define EGL_ANGLE_platform_angle 1
+#define EGL_PLATFORM_ANGLE_ANGLE              0x3202
+#define EGL_PLATFORM_ANGLE_TYPE_ANGLE         0x3203
+#define EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE   0x3208
+#define EGL_PLATFORM_ANGLE_TYPE_VULKAN_ANGLE  0x3450
+#endif
+
 // ANGLE：固定 D3D11 后端初始化 EGL
 auto eglGetPlatformDisplayEXT =
     (PFNEGLGETPLATFORMDISPLAYEXTPROC)eglGetProcAddress("eglGetPlatformDisplayEXT");
@@ -24,27 +33,41 @@ const EGLint da[] = { EGL_PLATFORM_ANGLE_TYPE_ANGLE,
 EGLDisplay dpy = eglGetPlatformDisplayEXT(
     EGL_PLATFORM_ANGLE_ANGLE, EGL_DEFAULT_DISPLAY, da);
 eglInitialize(dpy, &major, &minor);
-const EGLint ca[] = { EGL_CONTEXT_MAJOR_VERSION, 3,
-                      EGL_CONTEXT_MINOR_VERSION, 1, EGL_NONE };
+const EGLint ca[] = { EGL_CONTEXT_CLIENT_VERSION, 3, EGL_NONE };
 EGLContext ctx = eglCreateContext(dpy, cfg, EGL_NO_CONTEXT, ca);
 // 校验：glGetString(GL_VERSION) → "OpenGL ES 3.1 (ANGLE ...)"
 ```
 
+```bat
+REM --- Import library from pre-built ANGLE DLL (Developer Command Prompt) ---
+dumpbin /exports libEGL.dll > libEGL.exports.txt
+REM → 编辑为 libEGL.def (LIBRARY libEGL / EXPORTS / eglGetDisplay / ...)
+lib /def:libEGL.def /out:libEGL.lib /machine:x64
+```
+
 ```cmake
+# vcpkg path:
 find_package(unofficial-angle CONFIG REQUIRED)
 target_link_libraries(app PRIVATE
     unofficial::angle::libEGL unofficial::angle::libGLESv2)
+# OR pre-built .lib path:
+target_link_libraries(app PRIVATE
+    ${CMAKE_SOURCE_DIR}/third_party/angle/libEGL.lib
+    ${CMAKE_SOURCE_DIR}/third_party/angle/libGLESv2.lib)
 add_custom_command(TARGET app POST_BUILD COMMAND ${CMAKE_COMMAND} -E
-    copy_if_different $<TARGET_FILE:unofficial::angle::libEGL>
-    $<TARGET_FILE:unofficial::angle::libGLESv2> $<TARGET_FILE_DIR:app>)
+    copy_if_different ${ANGLE_DLL_DIR}/libEGL.dll
+    ${ANGLE_DLL_DIR}/libGLESv2.dll $<TARGET_FILE_DIR:app>)
 ```
 
 ## 常见陷阱
 
 | 陷阱 | 后果 | 修正 |
 |:-----|:-----|:-----|
-| 用 WGL/`opengl32` 当 GLES | 桌面 GL 语义，"PC 能跑真机崩" | 走 ANGLE `libEGL`/`libGLESv2` |
+| 用 WGL/`opengl32` 当 GLES | 桌面 GL 语义，“PC 能跑真机崩” | 走 ANGLE `libEGL`/`libGLESv2` |
 | 不固定 ANGLE 后端 | 各机器行为不一致 | 显式 D3D11 / Vulkan |
+| Khronos eglext.h 缺 ANGLE token | 编译报 undefined symbol | `#ifndef` 守卫宏 + 数值 fallback |
+| 预构建 DLL 无 .lib | 链接报 unresolved external | `dumpbin→.def→lib /def:` 生成 import lib |
+| vcpkg 构建 ANGLE 超时/失败 | 30+ min、磁盘爆 | Chrome/Edge 提取预构建 DLL 作备选 |
 | 信任模拟器性能数据 | 带宽/填充率结论错误 | 真机测性能 |
 | 为 Windows 去掉 invalidate/clear | 目标机 GMEM 流量暴涨 | 保留 TBDR 优化 |
 | 忘记拷 ANGLE DLL | 运行时加载失败 | post-build copy |
