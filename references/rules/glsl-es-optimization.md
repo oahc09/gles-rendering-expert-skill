@@ -105,6 +105,19 @@ uniform mediump vec3 u_CameraPos;
 - **Always** use `layout(location = N)` for attributes and fragment outputs.
 - **Never** rely on `glGetAttribLocation` for attribute binding in production code.
 - Use `in`/`out` keywords (GLES 3.0+); never `attribute`/`varying` (GLES 2.0 legacy).
+- **Varying precision MUST match between vertex and fragment shader.** The precision
+  qualifier on a vertex shader `out` variable must be identical to the fragment
+  shader's corresponding `in` variable. ANGLE silently zeros mismatched varyings
+  (no compile/link error) — this manifests as black surfaces or missing lighting
+  that is extremely hard to diagnose.
+
+  ```glsl
+  // ✅ Vertex: out mediump vec3 v_Normal;
+  // ✅ Fragment: in mediump vec3 v_Normal;  ← same precision
+
+  // ❌ Vertex: out highp vec3 v_Normal;
+  // ❌ Fragment: in mediump vec3 v_Normal;  ← ANGLE zeros this!
+  ```
 
 ---
 
@@ -362,6 +375,48 @@ glBindProgramPipeline(pipeline);
 | Color banding in gradients | `lowp` color interpolation | Use `mediump` for gradient colors |
 | Normal map artifacts | `mediump` normal after multiple transforms | Use `highp` for normal matrix multiplication |
 | Time-based animation stutter | `mediump` time uniform overflows | Use `highp` for time; wrap with `mod()` |
+| Black surfaces / missing lighting | Varying precision mismatch (VS `out highp` ≠ FS `in mediump`) | Ensure identical precision on all `out`/`in` pairs |
+
+---
+
+## 7.5 Numerical Stability (Critical for Mobile mediump)
+
+Mobile GPUs typically implement `mediump` as FP16 (range ±65504, ~3.3 decimal digits).
+Built-in functions that divide or normalize can produce NaN/Inf on degenerate input.
+
+### 7.5.1 Rules
+
+- **Guard `normalize()` / `inversesqrt()` against zero-length input.**
+  `normalize(vec3(0))` is undefined (division by zero). Always clamp:
+  ```glsl
+  mediump vec3 safeNormalize(mediump vec3 v) {
+      mediump float len2 = dot(v, v);
+      return (len2 > 1e-8) ? v * inversesqrt(len2) : vec3(0.0, 0.0, 1.0);
+  }
+  ```
+
+- **Guard `pow(x, y)` where x may be zero or negative.**
+  `pow(0.0, 0.0)` is undefined in GLSL ES. Use `max(x, epsilon)` as base:
+  ```glsl
+  mediump float specular = pow(max(NdotH, 1e-4), shininess);
+  ```
+
+- **Screen-space derivatives `dFdx()`/`dFdy()` can be zero on triangle edges.**
+  When used for bump mapping, LOD selection, or anti-aliasing, always provide a
+  fallback when the derivative magnitude is near zero:
+  ```glsl
+  mediump vec2 dx = dFdx(v_TexCoord);
+  mediump vec2 dy = dFdy(v_TexCoord);
+  mediump float derivLen = max(dot(dx, dx) + dot(dy, dy), 1e-8);
+  // Use derivLen for LOD bias or mip selection
+  ```
+
+- **Avoid subtracting nearly-equal values in mediump.**
+  `a - b` where `a ≈ b` loses all precision in FP16. Restructure the math
+  (e.g., use `fma()` or factor the expression) or promote to `highp` locally.
+
+- **`atan(y, x)` is undefined when both arguments are zero.**
+  Wrap: `atan(y, x + 1e-8)` or guard with a zero check.
 
 ---
 
