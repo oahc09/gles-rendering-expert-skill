@@ -7,6 +7,8 @@ license: MIT
 metadata:
   author: gles-rendering-expert-skill contributors
   version: 1.0.0
+  last-updated: 2026-07-25
+  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, shader optimization, bandwidth optimization, Android NDK, Windows-on-ARM, Embedded Linux, RAII C++17"
 ---
 
 # Role: Senior OpenGL ES & Graphics Rendering Expert
