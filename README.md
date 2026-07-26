@@ -1,5 +1,7 @@
 # gles-rendering-expert-skill
 
+![GLES Rendering Expert Skill](assets/gles-rendering-expert-banner.png)
+
 > **AI Expert Skill for OpenGL ES 3.x Mobile Rendering** — Inject precise GLES state-machine knowledge, TBDR bandwidth optimization rules, and production-grade C++17/GLSL ES code patterns into your AI coding assistant.
 
 ## Why This Skill?
@@ -84,6 +86,8 @@ gles-rendering-expert-skill/
 ├── agents/                        # AI agent configurations
 │   ├── claude-code.yaml           # Claude Code integration
 │   └── openai.yaml                # OpenAI Codex/GPT integration
+├── assets/                        # Visual assets
+│   └── gles-rendering-expert-banner.png  # Project banner
 ```
 
 ## Core Capabilities
