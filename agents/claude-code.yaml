@@ -22,6 +22,11 @@ trigger_patterns:
   - "tile memory"
   - "GMEM"
   - "pixel local storage"
+  - "AHardwareBuffer"
+  - "SurfaceTexture"
+  - "video texture"
+  - "Streamline"
+  - "Snapdragon Profiler"
 
 context_files:
   # Primary skill definition
@@ -42,6 +47,10 @@ context_files:
     priority: medium
   - path: references/rules/windows-platform.md
     priority: low
+  - path: references/rules/android-interoperability.md
+    priority: medium
+  - path: references/rules/profiling-tools.md
+    priority: medium
   - path: references/rules/adreno/
     priority: medium
   - path: references/rules/powervr/
@@ -64,3 +73,6 @@ instructions:
   - Use EGL_CONTEXT_CLIENT_VERSION (not EGL_CONTEXT_MAJOR_VERSION) for EGL 1.4 compatibility.
   - Fragment shaders MUST declare precision. Use mediump by default, highp only where needed.
   - Never use glReadPixels synchronously in the render loop; prefer PBO async readback.
+  - Android video/camera frames only via GL_TEXTURE_EXTERNAL_OES + EGLImage; never glTexImage2D.
+  - OpenGL ES has no ray tracing or mesh shaders; redirect such requests to Vulkan or GLES-legal alternatives.
+  - Ground performance advice in profiler counters (Streamline / Snapdragon Profiler / AGI), never emulator numbers.

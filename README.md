@@ -43,6 +43,8 @@ gles-rendering-expert-skill/
 │   │   ├── glsl-es-optimization.md    # GLSL ES precision & shader optimization
 │   │   ├── mali-arm-best-practices.md # ARM Mali techniques (OpenGL ES SDK for Android)
 │   │   ├── windows-platform.md        # Windows: ANGLE, Windows-on-ARM, NDK host
+│   │   ├── android-interoperability.md # Video texture, EGLImage, AHardwareBuffer
+│   │   ├── profiling-tools.md         # GPU profilers & structured diagnosis workflow
 │   │   ├── adreno/                    # Qualcomm Adreno techniques, one topic per file
 │   │   │   ├── README.md              # Adreno module index & GMEM/LRZ vocabulary
 │   │   │   ├── gmem-load-store.md     # Avoid GMEM loads / reduce GMEM stores
@@ -73,11 +75,16 @@ gles-rendering-expert-skill/
 │   │   ├── 13-mali-pls-multiview.md   # Mali PLS & multiview
 │   │   ├── 14-adreno-gmem-vrs-lrz.md  # Adreno GMEM/VRS/LRZ
 │   │   ├── 15-windows-egl-angle.md    # Windows EGL/ANGLE/Windows-on-ARM
-│   │   └── 16-powervr-hsr-img-extensions.md # PowerVR HSR/PLS/IMG extensions
+│   │   ├── 16-powervr-hsr-img-extensions.md # PowerVR HSR/PLS/IMG extensions
+│   │   ├── 17-android-video-interoperability.md # Video texture & buffer interop
+│   │   └── 18-gpu-profiling-toolchain.md # GPU profilers & diagnosis workflow
 │   └── examples/                  # Reference code (few-shot samples)
 │       ├── egl_context_manager.cpp    # EGL init, shared context, context loss
 │       ├── vertex_array_object.hpp    # RAII VBO/VAO with state cache
 │       ├── offscreen_pipeline.cpp     # FBO with glInvalidateFramebuffer (TBDR)
+│       ├── video_texture_pipeline.cpp # External OES video/camera texture (Android)
+│       ├── msaa_ontile_resolve.cpp    # On-tile MSAA via EXT_multisampled_render_to_texture
+│       ├── pbo_streaming_upload.cpp   # Triple-buffered PBO texture streaming
 │       └── shaders/
 │           ├── pbr_brdf.frag             # Cook-Torrance PBR (GLSL ES 3.00)
 │           ├── particle_simulation.comp  # Compute particle system (GLSL ES 3.10)
@@ -99,13 +106,15 @@ gles-rendering-expert-skill/
 | **RAII C++17** | All GPU resources managed via move-only RAII classes with state caching |
 | **GLSL ES Precision** | Correct `precision` declarations, `highp`/`mediump` guidance per data type |
 | **EGL Lifecycle** | Full init/teardown, shared contexts, Android context-lost recovery |
+| **Android Interop** | Video/camera textures (`GL_OES_EGL_image_external`), EGLImage, `AHardwareBuffer` |
+| **Profiling Guidance** | Structured diagnosis with Streamline / Snapdragon Profiler / AGI / Perfetto |
 | **Performance Diagnosis** | Structured analysis: Symptom → Root Cause → Fix → Expected Improvement |
 
 ## Target GPUs
 
-- **ARM Mali** (T6xx, T7xx, T8xx, G31, G51, G71, G76, G77, G78, G710, G715)
-- **Qualcomm Adreno** (3xx, 4xx, 5xx, 6xx, 7xx)
-- **Imagination PowerVR** (Series 6, 7, 8, 9, Series 10)
+- **ARM Mali / Immortalis** (T6xx, T7xx, T8xx, G31–G78, G710, G715, Immortalis-G720/G925)
+- **Qualcomm Adreno** (3xx, 4xx, 5xx, 6xx, 7xx, 8xx)
+- **Imagination PowerVR** (Series 6, 7, 8, 9, Series 10, Series 12XE)
 
 ## Use Cases
 

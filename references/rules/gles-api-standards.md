@@ -100,6 +100,30 @@ OpenGL ES requires **exact format-type pairing** in `glTexImage2D` / `glTexStora
 - For `glTexImage2D`, the `internalformat` parameter in GLES must match the `format` parameter (e.g., `GL_RGBA`, not `GL_RGBA8` for GLES 2.0 compat; for 3.0+, sized formats are allowed in `glTexStorage2D`).
 - ETC2 (`GL_COMPRESSED_RGB8_ETC2`, `GL_COMPRESSED_RGBA8_ETC2_EAC`) is mandatory in GLES 3.0. ASTC is mandatory in GLES 3.2.
 
+### 3.3 Offline Compression Asset Pipeline
+
+Never decode PNG/JPEG at runtime for static textures — the CPU cost, memory
+spike, and first-frame hitch are all avoidable. Compress offline and upload
+GPU-ready blocks:
+
+1. **Encode with `astcenc`** (ARM's official encoder). Pick the block size per
+   texture role (see `mali-arm-best-practices.md` §4 / card 02 table); use
+   `-thorough` quality for release builds, `-medium` for iteration. Encode
+   normal maps with the `-normal` / uncorrelated flag to avoid channel crosstalk.
+2. **Pack into KTX/KTX2 with `toktx`** (Khronos KTX-Software) using
+   `--genmipmap` so the full mip chain ships with the asset; the runtime then
+   needs no `glGenerateMipmap` at load time.
+3. **Upload per-level** via `glCompressedTexImage2D` (or per-level
+   `glCompressedTexSubImage2D` into a `glTexStorage2D` immutable texture whose
+   `levels` count matches the packed chain). Stream large uploads through a
+   PBO (`GL_PIXEL_UNPACK_BUFFER`) to avoid CPU→GPU stalls.
+4. **KTX2 supercompression caveat**: zstd supercompression is safe to use
+   (decode on CPU at load, then upload ASTC blocks). The basis_universal
+   path requires a runtime transcoder library — in a pure-GLES codebase,
+   prefer shipping native ASTC blocks + zstd over adding a transcoder.
+5. Keep an ETC2 fallback in the asset pipeline for the rare pre-ASTC GLES 3.0
+   devices; select at runtime via the ASTC extension check.
+
 ---
 
 ## 4. Buffer Object Rules
@@ -165,3 +189,22 @@ Key mobile extensions:
 - `GL_EXT_multisampled_render_to_texture` — MSAA with implicit resolve
 - `GL_OES_EGL_image_external` — Camera/video texture (Android)
 - `GL_KHR_debug` — Debug output callback
+
+---
+
+## 8. Feature Boundary — What OpenGL ES Does NOT Have
+
+Never generate or suggest these features in GLES code; they do not exist in
+the OpenGL ES specification on any version or vendor extension surface:
+
+| Feature | Status in GLES | Correct answer |
+|:---|:---|:---|
+| **Ray tracing** (RT cores, acceleration structures) | **Not available** — mobile RT hardware (Adreno 7xx/8xx, Immortalis) is exposed via **Vulkan ray tracing extensions only**; there is no GLES RT extension | Redirect to Vulkan; in a GLES codebase use baked GI / probes / screen-space techniques |
+| Mesh / task shaders | Not available (Vulkan `VK_EXT_mesh_shader` only) | Compute-shader culling + indirect draw (GLES 3.1+) |
+| Bindless textures / descriptors | Not available | Bind texture units / sampler arrays; texture arrays for batching |
+| Explicit subpasses (Vulkan-style) | No explicit API | Framebuffer fetch / PLS extensions (see `tbdr-bandwidth-rules.md`) |
+| Geometry shader on GLES 3.0/3.1 | 3.2 only | Gate behind runtime version check |
+| Desktop-style `glReadBuffer` on default FBO | Implementation-defined | Use named FBOs for readback control |
+
+If a user's request implies one of these features, state the boundary explicitly
+and propose the GLES-legal alternative instead of emitting fictional extensions.

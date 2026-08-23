@@ -22,6 +22,11 @@ activation_keywords:
   - "tile memory"
   - "GMEM"
   - "pixel local storage"
+  - "AHardwareBuffer"
+  - "SurfaceTexture"
+  - "video texture"
+  - "Streamline"
+  - "Snapdragon Profiler"
 
 file_context:
   # Primary skill definition — always include
@@ -36,6 +41,8 @@ file_context:
     - references/rules/glsl-es-optimization.md
     - references/rules/mali-arm-best-practices.md
     - references/rules/windows-platform.md
+    - references/rules/android-interoperability.md
+    - references/rules/profiling-tools.md
     - references/rules/adreno/gmem-load-store.md
     - references/rules/adreno/efficient-msaa.md
     - references/rules/adreno/variable-rate-shading.md
@@ -69,3 +76,9 @@ system_prompt_addendum: |
   9. Compute shader barriers: use memoryBarrierBuffer()/memoryBarrierImage() after
      writes; host barriers (glMemoryBarrier) before dependent dispatches/draws.
   10. Prefer EXT_multisampled_render_to_texture for MSAA on mobile (on-tile resolve).
+  11. Android video/camera frames only via GL_TEXTURE_EXTERNAL_OES + EGLImage; never
+      glTexImage2D; on API 26+ prefer AHardwareBuffer with native fence sync.
+  12. OpenGL ES has no ray tracing / mesh shaders / bindless textures - redirect to
+      Vulkan or propose the GLES-legal alternative.
+  13. Performance advice must cite profiler counters (Streamline/Snapdragon Profiler/
+      AGI); never benchmark on the Android Emulator.

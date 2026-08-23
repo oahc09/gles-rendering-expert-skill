@@ -20,7 +20,7 @@
 ## Compute & Synchronization
 - After SSBO/image writes: `memoryBarrierBuffer()` / `memoryBarrierImage()` in shader.
 - Between dispatches: `glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT)` on host.
-- Use `GL_ARB_sync` / `glFenceSync` for CPU-GPU synchronization, never `glFinish`.
+- Use `glFenceSync` / `glClientWaitSync` (core in GLES 3.0+) for CPU-GPU synchronization, never `glFinish`.
 
 ## Vendor Extensions
 - Always check `glGetString(GL_EXTENSIONS)` at runtime before using vendor-specific APIs.
@@ -31,6 +31,14 @@
 ## Windows / ANGLE
 - ANGLE EGL tokens (`EGL_PLATFORM_ANGLE_ANGLE` etc.) are NOT in Khronos eglext.h — use `#ifndef` guards.
 - Acquire ANGLE from Chrome/Edge pre-built DLLs; generate import libs via `dumpbin→.def→lib /def:`.
+
+## Android Video / Buffer Interop
+- Camera/decoder frames only via `GL_TEXTURE_EXTERNAL_OES` + EGLImage — never `glTexImage2D`; shader uses `samplerExternalOES` + extension directive; wrap = `CLAMP_TO_EDGE`; no mipmaps.
+- API 26+: prefer `AHardwareBuffer` + `EGL_ANDROID_get_native_client_buffer` with native fence sync.
+
+## Profiling & Feature Boundary
+- Diagnose via Symptom → Triage → Counter → Classify → Fix → Verify; tools: Streamline (Mali), Snapdragon Profiler (Adreno), AGI/Perfetto (generic), RenderDoc (ANGLE). Never benchmark bandwidth on the emulator.
+- OpenGL ES has NO ray tracing / mesh shaders / bindless textures — redirect to Vulkan or GLES-legal alternatives.
 
 ## File References
 - Rules: `references/rules/` (detailed enforcement documents)

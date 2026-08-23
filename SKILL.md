@@ -6,9 +6,9 @@ description_zh: "OpenGL ES 3.x 渲染专家技能，覆盖移动端、Windows（
 license: MIT
 metadata:
   author: gles-rendering-expert-skill contributors
-  version: 1.0.0
-  last-updated: 2026-07-25
-  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, shader optimization, bandwidth optimization, Android NDK, Windows-on-ARM, Embedded Linux, RAII C++17"
+  version: 1.0.1
+  last-updated: 2026-08-23
+  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, Immortalis, shader optimization, bandwidth optimization, Android NDK, AHardwareBuffer, video texture, GPU profiling, Windows-on-ARM, Embedded Linux, RAII C++17"
 ---
 
 # Role: Senior OpenGL ES & Graphics Rendering Expert
@@ -210,6 +210,17 @@ Distilled from the Imagination *PowerVR Native SDK* OpenGL ES framework. Per-top
 - No window system (X11/Wayland) is required; drive scanout through DRM/KMS or render offscreen to FBOs and export via `EGL_KHR_image` / dma-buf.
 - The **same TBDR bandwidth rules apply** when the SoC uses a Mali/Adreno/PowerVR GPU (common in automotive, set-top, and industrial devices).
 
+### Android Video & Buffer Interoperability
+- Camera/decoder frames enter GLES **only** via `GL_TEXTURE_EXTERNAL_OES` + EGLImage — never `glTexImage2D`. Shaders need `samplerExternalOES` + the `GL_OES_EGL_image_external(_essl3)` extension directive; wrap must be `GL_CLAMP_TO_EDGE`; external images have **no mipmaps**; YUV→RGB is hardware-done.
+- On API 26+ prefer **`AHardwareBuffer` + `EGL_ANDROID_get_native_client_buffer`** over raw gralloc; producer/consumer ordering via native fence sync is mandatory. Teardown order: texture → EGLImage → AHardwareBuffer. Full rules in `references/rules/android-interoperability.md`.
+
+### Performance Profiling Workflow
+- Diagnose with a fixed pipeline: **Symptom → Triage (CPU/GPU) → Counter → Classify → Map-to-Rule → Fix → Verify**. Tools per GPU: Streamline (Mali), Snapdragon Profiler (Adreno), PVRTrace/PVRPerf (PowerVR), AGI/Perfetto (generic Android), RenderDoc (Windows/ANGLE).
+- Never profile bandwidth/fill-rate on the Android Emulator (host-backed immediate-mode). Every optimization ships with before/after counters on a named device + driver. See `references/rules/profiling-tools.md`.
+
+### Feature Boundary (what GLES does NOT have)
+- **No ray tracing in OpenGL ES** — mobile RT hardware (Adreno 7xx/8xx, Immortalis) is Vulkan-only; redirect RT requests to Vulkan or baked/screen-space techniques. Also absent: mesh shaders, bindless textures, explicit subpasses. See `references/rules/gles-api-standards.md` §8.
+
 ---
 
 ## Output Expectations
@@ -224,7 +235,7 @@ Distilled from the Imagination *PowerVR Native SDK* OpenGL ES framework. Per-top
 
 ## Knowledge Cards (Per-Feature Quick Reference)
 
-For focused, per-feature guidance, consult `references/cards/` — 16 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
+For focused, per-feature guidance, consult `references/cards/` — 18 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG, Android video/buffer interop, GPU profiling toolchain). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
 
 ---
 
@@ -254,6 +265,8 @@ This SKILL.md is the entry point. Load additional files **only when relevant**:
 | Adreno GMEM / VRS / LRZ | `references/rules/adreno/README.md` → specific file |
 | PowerVR HSR / PLS / IMG ext | `references/rules/powervr/README.md` → specific file |
 | Windows (ANGLE / WoA) | `references/rules/windows-platform.md` |
+| Android video/camera texture, AHardwareBuffer | `references/rules/android-interoperability.md` |
+| Performance diagnosis / profiler selection | `references/rules/profiling-tools.md` |
 | Quick look-up by feature | `references/cards/README.md` → individual card |
 | Example code (few-shot) | `references/examples/` → specific file |
 

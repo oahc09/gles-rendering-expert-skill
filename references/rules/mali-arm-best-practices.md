@@ -309,3 +309,27 @@ on immediate-mode desktop GPUs.
 | EGLPreserve | Keep `EGL_BUFFER_DESTROYED`; redraw full frame each swap |
 | Terrain (geometry clipmaps) | Async PBO upload + texture arrays + instancing for infinite terrain |
 | RotoZoom | Move fragment work to vertex/CPU when possible |
+
+---
+
+## 10. Newer-Generation Notes (Immortalis-G720 / G925 and later)
+
+ARM's 5th-generation GPU architecture (Immortalis-G720/G620, Immortalis-G925/G725,
+and the subsequent C1-series) keeps the same TBDR programming model — **all rules
+in this document still apply**. Generation-specific notes:
+
+- **Deferred Vertex Shading (DVS)** on Immortalis-G720 and later: the GPU can
+  defer full vertex shading until after visibility determination, so occluded
+  vertices are shaded less. Implication: vertex-heavy / overdraw-heavy scenes
+  benefit more than on G715 and earlier; still, do not rely on DVS to rescue
+  back-to-front opaque draw order — keep front-to-back sorting and culling.
+- **Ray tracing** hardware exists on Immortalis parts, but it is exposed via
+  **Vulkan only** — OpenGL ES has no ray tracing extension surface. For GLES
+  code, treat RT as out of scope (see the API-boundary notes in
+  `gles-api-standards.md`).
+- Tile-memory budgets grew generation over generation, but PLS/framebuffer-fetch
+  packing guidance (≈128 bits/pixel as a planning figure) remains the safe
+  baseline — verify against the specific device with Streamline.
+- Precision: FP16 (`mediump`) performance improved relative to FP32 on newer
+  generations; the existing "mediump by default, highp where needed" rule is
+  unchanged and still the right default.

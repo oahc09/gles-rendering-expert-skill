@@ -37,3 +37,20 @@
 3. **Resolve MSAA on-tile** via `EXT_multisampled_render_to_texture`, never a manual blit.
 4. **Never break LRZ**: draw opaque front-to-back, avoid `discard` / fragment depth writes where possible.
 5. **Spend fewer fragment invocations**: use `QCOM_shading_rate` on low-detail draws and temporal upscaling (SGSR2) instead of shading every pixel every frame.
+
+## Newer-Generation Notes (Adreno 8xx, Snapdragon 8 Elite era)
+
+Adreno 8xx keeps the tiled/binning architecture — **all rules in this module
+still apply**. Generation-specific notes:
+
+- **GMEM capacity grew** versus 6xx/7xx generations, so more attachments / MSAA
+  samples can stay on-tile before a pass must split. Do not hard-code GMEM size
+  assumptions; measure with Snapdragon Profiler and keep attachment footprints
+  minimal regardless.
+- **LRZ behavior remains the same contract**: opaque front-to-back, depth
+  test+write on, avoid `discard` / `gl_FragDepth` in opaque materials.
+- **Ray tracing** hardware is exposed via **Vulkan only** — OpenGL ES has no
+  RT extension surface on Adreno. For GLES code, treat RT as out of scope.
+- The `QCOM_*` extension family (shading rate, frame extrapolation, motion
+  estimation) must still be **runtime-checked** per device — presence varies by
+  SoC and driver even within the same generation.

@@ -40,3 +40,17 @@
 4. **Invalidate transient attachments (depth/stencil) at pass end** — prevents unnecessary tile memory store to DRAM.
 5. **Use `GL_EXT_shader_pixel_local_storage` for deferred rendering** — keeps G-Buffer on-chip in tile memory, zero DRAM round-trips.
 6. **Keep geometry complexity bounded** — excessive vertices overflow the Parameter Buffer, triggering partial renders (SPM) that kill performance.
+
+## Newer-Generation Notes (Series 12XE / C-series)
+
+Recent PowerVR designs (Series 12XE/DXE, and the C-series for automotive and
+embedded markets) keep the TBDR + HSR programming model — **all rules in this
+module still apply**. Generation-specific notes:
+
+- HSR remains full hidden-surface removal: still **no depth pre-pass**, still
+  avoid `discard`/alpha test on opaque paths.
+- Newer cores target efficiency tiers (automotive displays, set-top, MCU-attached
+  GPUs); the bandwidth rules (clear/invalidate, minimal FBO switches) matter
+  **more** on these power-constrained parts, not less.
+- PLS / framebuffer-fetch availability is driver-dependent per SoC — always
+  runtime-check and keep the MRT fallback path.

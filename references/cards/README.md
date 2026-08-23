@@ -25,6 +25,8 @@
 | 14 | [adreno-gmem-vrs-lrz](14-adreno-gmem-vrs-lrz.md) | Adreno GMEM/VRS/LRZ/FlexRender | 3.0+ ext | `adreno/*.md` |
 | 15 | [windows-egl-angle](15-windows-egl-angle.md) | Windows 平台 EGL/ANGLE/Windows-on-ARM | 3.0/3.1 via ANGLE | `windows-platform.md` |
 | 16 | [powervr-hsr-img-extensions](16-powervr-hsr-img-extensions.md) | PowerVR HSR/PLS/IMG 扩展/Tile 带宽 | 3.0+ ext | `powervr/*.md` |
+| 17 | [android-video-interoperability](17-android-video-interoperability.md) | Android 视频纹理 & EGLImage/AHardwareBuffer 互操作 | 3.0+ ext | `android-interoperability.md` |
+| 18 | [gpu-profiling-toolchain](18-gpu-profiling-toolchain.md) | GPU 性能分析工具链 & 诊断流程 | All | `profiling-tools.md` |
 
 ## 卡片格式说明
 

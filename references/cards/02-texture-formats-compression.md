@@ -38,6 +38,16 @@ glCompressedTexImage2D(GL_TEXTURE_2D, 0, GL_COMPRESSED_RGBA_ASTC_6x6_KHR,
 | 8×8 | 2.00 | 大面积 diffuse / 低频细节 |
 | 12×12 | 0.89 | 天空盒 / 背景（最低成本） |
 
+**离线压缩工具链（离线完成，运行时零解码成本）：**
+
+| 工具 | 用途 |
+|:-----|:-----|
+| `astcenc`（ARM 官方） | ASTC 编码器；`-tl`（thorough）档质量最高、最慢，CI 用 thorough、迭代用 medium |
+| `toktx`（Khronos KTX-Software） | 生成 KTX/KTX2 容器，自动打包完整 mip chain（`--genmipmap`） |
+| KTX2 + supercompression | 容器格式支持 zstd 超压缩与 basis_universal；**注意**：GLES 原生只认 ASTC/ETC2 块数据，basis_universal 转码路径需要运行时转码器，纯 GLES 项目优先直接用 ASTC 块 + zstd |
+
+构建期流程：源图 → astcenc 按上表选 block 压缩 → toktx 打包 mip chain → 运行时 `glCompressedTexImage2D` 逐层上传（配合 PBO 异步上传见卡 03）。
+
 ## 常见陷阱
 
 | 陷阱 | 后果 | 修正 |
@@ -48,6 +58,7 @@ glCompressedTexImage2D(GL_TEXTURE_2D, 0, GL_COMPRESSED_RGBA_ASTC_6x6_KHR,
 | 法线贴图用 ETC2 | 通道耦合导致质量差 | ASTC uncorrelated 模式或 RG 双通道 |
 | 无 mipmap 的 minify 采样 | 闪烁走样 + 带宽浪费 | 生成 mipmap + `GL_LINEAR_MIPMAP_LINEAR` |
 | 用 `glTexImage2D` 创建 shader image 纹理 | 未定义行为 | 必须 `glTexStorage*` 不可变 |
+| 运行时 CPU 解码 PNG/JPG 上传 | 首帧卡顿 + 内存峰值 | 离线 ASTC/KTX2，运行时零解码 |
 
 ## 关联卡片
 
