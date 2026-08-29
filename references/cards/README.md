@@ -27,6 +27,8 @@
 | 16 | [powervr-hsr-img-extensions](16-powervr-hsr-img-extensions.md) | PowerVR HSR/PLS/IMG 扩展/Tile 带宽 | 3.0+ ext | `powervr/*.md` |
 | 17 | [android-video-interoperability](17-android-video-interoperability.md) | Android 视频纹理 & EGLImage/AHardwareBuffer 互操作 | 3.0+ ext | `android-interoperability.md` |
 | 18 | [gpu-profiling-toolchain](18-gpu-profiling-toolchain.md) | GPU 性能分析工具链 & 诊断流程 | All | `profiling-tools.md` |
+| 19 | [frame-pacing](19-frame-pacing.md) | 帧节奏：Swap Interval/Choreographer/Swappy | All | `frame-pacing.md` |
+| 20 | [hdr-and-display](20-hdr-and-display.md) | HDR & 广色域显示管线 | 3.0+ ext | `hdr-and-display.md` |
 
 ## 卡片格式说明
 

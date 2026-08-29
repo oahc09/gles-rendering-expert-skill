@@ -27,6 +27,13 @@ trigger_patterns:
   - "video texture"
   - "Streamline"
   - "Snapdragon Profiler"
+  - "frame pacing"
+  - "Swappy"
+  - "eglSwapInterval"
+  - "HDR display"
+  - "wide color gamut"
+  - "Vulkan interop"
+  - "16KB page"
 
 context_files:
   # Primary skill definition
@@ -50,6 +57,10 @@ context_files:
   - path: references/rules/android-interoperability.md
     priority: medium
   - path: references/rules/profiling-tools.md
+    priority: medium
+  - path: references/rules/frame-pacing.md
+    priority: medium
+  - path: references/rules/hdr-and-display.md
     priority: medium
   - path: references/rules/adreno/
     priority: medium

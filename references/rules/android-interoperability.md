@@ -149,7 +149,80 @@ AHardwareBuffer_release(hardwareBuffer);
 
 ---
 
-## 4. Common Pitfalls
+## 4. Vulkan ↔ GLES Interop (Migration & Mixed Engines)
+
+Hybrid codebases (Vulkan for the render graph, GLES for a legacy subsystem)
+can share images and sync objects across APIs on Android via external memory
+extensions. This is the practical migration bridge — but GLES itself has **no
+ray tracing or mesh shader** path (see `gles-api-standards.md` §8); interop is
+only for resource sharing.
+
+### Rules
+
+1. **Image sharing**: export a `VkImage`/`AHardwareBuffer` from Vulkan
+   (`VK_KHR_external_memory_fd` + `VK_ANDROID_external_memory_android_hardware_buffer`),
+   import in GLES with `GL_EXT_memory_object_fd` /
+   `GL_EXT_memory_object` (`glImportMemoryFdEXT`, `glTexStorageMem2DEXT`,
+   `glBufferStorageMemEXT`). Runtime-check both sides' extensions.
+2. **Synchronization**: share timelines via `GL_EXT_semaphore_fd`
+   (`glImportSemaphoreFdEXT`, `glWaitSemaphoreEXT`, `glSignalSemaphoreEXT`)
+   matched against Vulkan `VkSemaphore` fd export. A GLES wait before sampling
+   an image written by Vulkan is mandatory — cross-API hazards are silent.
+3. **Layout/format contract**: match VkFormat ↔ GLenum exactly per the
+   extension compatibility table (e.g. `VK_FORMAT_R8G8B8A8_UNORM` ↔ `GL_RGBA8`).
+   Mismatched formats are undefined, not an error.
+4. **Prefer AHardwareBuffer as the interchange** over raw dma-buf fds when both
+   sides are in-process on Android — it carries usage/stride metadata and is
+   the format both APIs understand natively.
+5. Dedicate a thin interop layer; mixing APIs inside hot paths multiplies
+   validation and debugging cost. Plan the migration boundary as a queue of
+   shared resources, not entangled call graphs.
+
+### Code pattern
+
+```cpp
+// ✅ GLES side: import a Vulkan-exported dma-buf backed image (requires
+//    GL_EXT_memory_object_fd + GL_EXT_memory_object)
+GLuint mem = 0;
+glCreateMemoryObjectsEXT(1, &mem);
+glImportMemoryFdEXT(mem, size, GL_HANDLE_TYPE_OPAQUE_FD_EXT, dmaBufFd);
+
+GLuint tex = 0;
+glCreateTextures(GL_TEXTURE_2D, 1, &tex);
+glTexStorageMem2DEXT(GL_TEXTURE_2D, 1, GL_RGBA8, w, h, mem, 0);
+
+// ✅ Wait on the Vulkan-side signal before sampling
+glWaitSemaphoreEXT(sem, 0, nullptr, 1, &tex);
+```
+
+---
+
+## 5. 16 KB Memory Page Alignment (Android 15+)
+
+Android 15 added support for **16 KB memory page sizes**, and Play requires
+apps with native code to support 16 KB devices. A GLES engine ships native
+libraries (`.so`) — it is directly affected even though no GL call changes.
+
+### Rules
+
+1. **Link all native libraries with 16 KB ELF alignment**:
+   `-Wl,-z,max-page-size=16384` (NDK r27+ also supports the
+   `APP_SUPPORT_FLEXIBLE_PAGE_SIZES := true` build flag). Unaligned `.so` files
+   fail to load on 16 KB devices with a linker error, not a GL error.
+2. Check existing artifacts: `llvm-readelf -l libgame.so` → `LOAD` segment
+   alignment must read `0x4000` (16 KB), not `0x1000`.
+3. Third-party prebuilt `.so` files are the usual failure source — rebuild or
+   obtain 16 KB-aligned variants; repacking alignment cannot be patched
+   reliably at runtime.
+4. Runtime `getpagesize()`-dependent allocations must not hard-code 4096; use
+   `sysconf(_SC_PAGESIZE)` for page-mapped memory (e.g. custom buffer pools
+   feeding PBOs).
+5. Test on a 16 KB device/emulator image (Android 15+) — 4 KB devices hide the
+   problem entirely.
+
+---
+
+## 6. Common Pitfalls
 
 | Pitfall | Consequence | Fix |
 |:---|:---|:---|

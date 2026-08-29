@@ -363,6 +363,33 @@ glUseProgramStages(pipeline, GL_FRAGMENT_SHADER_BIT, fragProgram);
 glBindProgramPipeline(pipeline);
 ```
 
+### 6.3 Startup & Runtime Compilation Strategy
+
+Shader compilation/linking happens on the render thread and causes visible
+hitches the first time a program is used (some drivers also do lazy
+backend code generation at first draw). Mitigate at three levels:
+
+1. **Program binary cache (primary)**: after a successful link, export with
+   `glGetProgramBinary` and persist to disk keyed by a hash of
+   (source + `GL_RENDERER` + driver version string). On startup try
+   `glProgramBinary` first; on `GL_INVALID_VALUE`/mismatch fall back to
+   compile+link and refresh the cache. Binaries are **driver- and
+   device-specific** — never ship them across devices, always rebuild the
+   key when the driver updates.
+2. **Parallel compilation** where available: `GL_KHR_parallel_shader_compile`
+   lets the driver compile on worker threads (`glMaxShaderCompilerThreadsKHR`).
+   Runtime-check the extension; it cuts bulk warmup time but does not remove
+   per-program first-use cost.
+3. **Warmup pass**: during a loading screen, link every program and issue one
+   trivial draw each (with a 1×1 FBO) to force backend code generation before
+   gameplay. Budget it; do not warm programs the current level never uses.
+
+- Compile/link errors must surface in dev builds (info log); never swallow
+  them silently in release — a failed program renders black, which users
+  report as "graphics broken".
+- Stagger runtime compilation of level-specific programs across frames
+  (time-sliced, e.g. ≤ 4 ms/frame) rather than one big hitch.
+
 ---
 
 ## 7. Precision-Related Pitfalls
@@ -432,6 +459,6 @@ Built-in functions that divide or normalize can produce NaN/Inf on degenerate in
 | Geometry shader | GLES 3.2 only | 150+ |
 | Tessellation | GLES 3.2 only | 400+ |
 | Compute shader | GLES 3.1+ (`#version 310 es`) | 430+ |
-| `layout(binding=N)` for UBO | GLES 3.0+ | 420+ |
+| `layout(binding=N)` for UBO | GLES 3.1+ (`#version 310 es`); in 3.00 use `glUniformBlockBinding` | 420+ |
 | SSBO | GLES 3.1+ | 430+ |
 | `#extension` directive | Required for vendor extensions | Same pattern |

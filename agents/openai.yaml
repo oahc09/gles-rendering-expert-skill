@@ -27,6 +27,13 @@ activation_keywords:
   - "video texture"
   - "Streamline"
   - "Snapdragon Profiler"
+  - "frame pacing"
+  - "Swappy"
+  - "eglSwapInterval"
+  - "HDR display"
+  - "wide color gamut"
+  - "Vulkan interop"
+  - "16KB page"
 
 file_context:
   # Primary skill definition — always include
@@ -43,6 +50,8 @@ file_context:
     - references/rules/windows-platform.md
     - references/rules/android-interoperability.md
     - references/rules/profiling-tools.md
+    - references/rules/frame-pacing.md
+    - references/rules/hdr-and-display.md
     - references/rules/adreno/gmem-load-store.md
     - references/rules/adreno/efficient-msaa.md
     - references/rules/adreno/variable-rate-shading.md

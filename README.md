@@ -43,8 +43,10 @@ gles-rendering-expert-skill/
 │   │   ├── glsl-es-optimization.md    # GLSL ES precision & shader optimization
 │   │   ├── mali-arm-best-practices.md # ARM Mali techniques (OpenGL ES SDK for Android)
 │   │   ├── windows-platform.md        # Windows: ANGLE, Windows-on-ARM, NDK host
-│   │   ├── android-interoperability.md # Video texture, EGLImage, AHardwareBuffer
+│   │   ├── android-interoperability.md # Video texture, EGLImage, AHardwareBuffer, Vulkan interop, 16KB pages
 │   │   ├── profiling-tools.md         # GPU profilers & structured diagnosis workflow
+│   │   ├── frame-pacing.md            # Swap interval, Choreographer, Swappy
+│   │   ├── hdr-and-display.md         # HDR / wide color gamut display pipeline
 │   │   ├── adreno/                    # Qualcomm Adreno techniques, one topic per file
 │   │   │   ├── README.md              # Adreno module index & GMEM/LRZ vocabulary
 │   │   │   ├── gmem-load-store.md     # Avoid GMEM loads / reduce GMEM stores
@@ -77,7 +79,9 @@ gles-rendering-expert-skill/
 │   │   ├── 15-windows-egl-angle.md    # Windows EGL/ANGLE/Windows-on-ARM
 │   │   ├── 16-powervr-hsr-img-extensions.md # PowerVR HSR/PLS/IMG extensions
 │   │   ├── 17-android-video-interoperability.md # Video texture & buffer interop
-│   │   └── 18-gpu-profiling-toolchain.md # GPU profilers & diagnosis workflow
+│   │   ├── 18-gpu-profiling-toolchain.md # GPU profilers & diagnosis workflow
+│   │   ├── 19-frame-pacing.md       # Swap interval/Choreographer/Swappy
+│   │   └── 20-hdr-and-display.md    # HDR & wide color gamut output
 │   └── examples/                  # Reference code (few-shot samples)
 │       ├── egl_context_manager.cpp    # EGL init, shared context, context loss
 │       ├── vertex_array_object.hpp    # RAII VBO/VAO with state cache
@@ -106,7 +110,8 @@ gles-rendering-expert-skill/
 | **RAII C++17** | All GPU resources managed via move-only RAII classes with state caching |
 | **GLSL ES Precision** | Correct `precision` declarations, `highp`/`mediump` guidance per data type |
 | **EGL Lifecycle** | Full init/teardown, shared contexts, Android context-lost recovery |
-| **Android Interop** | Video/camera textures (`GL_OES_EGL_image_external`), EGLImage, `AHardwareBuffer` |
+| **Android Interop** | Video/camera textures (`GL_OES_EGL_image_external`), EGLImage, `AHardwareBuffer`, Vulkan interop, 16 KB pages |
+| **Frame Pacing & HDR** | Choreographer/Swappy cadence, high-refresh panels, HDR/wide-gamut display output |
 | **Profiling Guidance** | Structured diagnosis with Streamline / Snapdragon Profiler / AGI / Perfetto |
 | **Performance Diagnosis** | Structured analysis: Symptom → Root Cause → Fix → Expected Improvement |
 

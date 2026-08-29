@@ -6,9 +6,9 @@ description_zh: "OpenGL ES 3.x 渲染专家技能，覆盖移动端、Windows（
 license: MIT
 metadata:
   author: gles-rendering-expert-skill contributors
-  version: 1.0.1
-  last-updated: 2026-08-23
-  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, Immortalis, shader optimization, bandwidth optimization, Android NDK, AHardwareBuffer, video texture, GPU profiling, Windows-on-ARM, Embedded Linux, RAII C++17"
+  version: 1.0.2
+  last-updated: 2026-08-29
+  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, Immortalis, shader optimization, bandwidth optimization, Android NDK, AHardwareBuffer, video texture, GPU profiling, frame pacing, Swappy, HDR display, Vulkan interop, 16KB pages, Windows-on-ARM, Embedded Linux, RAII C++17"
 ---
 
 # Role: Senior OpenGL ES & Graphics Rendering Expert
@@ -105,75 +105,15 @@ Mobile GPUs (Mali, Adreno, PowerVR) use **Tile-Based Deferred Rendering**. Each 
 
 ---
 
-## ARM Mali Advanced Techniques (SDK-Distilled)
+## Vendor Deep-Dives (Load On-Demand)
 
-Distilled from ARM's *OpenGL ES SDK for Android*. Full details in `references/rules/mali-arm-best-practices.md`.
+All three mobile vendors are tile-based — the TBDR rules above apply to all of them. Vendor-specific techniques are distilled in `references/rules/`; **load only when the target GPU is identified**.
 
-### Pixel Local Storage (PLS)
-- For deferred shading, translucency, and multi-pass effects, prefer **Pixel Local Storage** (`GL_EXT_shader_pixel_local_storage`, `__pixel_localEXT`) to keep the entire G-Buffer in tile memory with **zero DRAM round-trip**.
-- Pack storage tightly (`rgb10_a2`, `rg16f`; store `normal.xy`, reconstruct `z`) to fit the ~128-bit per-pixel tile budget. Fall back to framebuffer fetch, then MRT + invalidate.
-
-### Multiview / Foveated Rendering
-- For VR/stereo, use **`GL_OVR_multiview`** to render both eyes in one pass to array-texture layers, indexed by `gl_ViewID_OVR`; use `GL_OVR_multiview2` when lighting depends on the view. Multiview is incompatible with geometry/tessellation shaders.
-- Foveated: render a high-res central inset over a low-res full frame and blend by distance from screen center.
-
-### Compute Shader Synchronization (correctness)
-- Use `std430` (not `std140`) for SSBOs; textures written as shader images must be immutable (`glTexStorage*`).
-- Within a work group, always call `memoryBarrierShared()` **before** `barrier()`; only call `barrier()` in dynamically-uniform control flow.
-- Across GL commands, compute writes need an explicit `glMemoryBarrier(<BITS>)` matching the next read. On tiled GPUs prefer `glMemoryBarrierByRegion()` and `layout(early_fragment_tests) in;` to avoid tile flushes.
-
-### Texture Compression
-- **Ship compressed textures whenever possible.** Prefer **ASTC** (runtime-check `GL_KHR_texture_compression_astc_ldr`); pick the largest block size (lowest bpp) that still looks acceptable per texture. Use ETC2 (core in GLES 3.0) as the guaranteed baseline. Ship mipmaps for textures that will be minified, and use immutable storage (`glTexStorage2D`) for driver optimization opportunities.
-
-### MSAA
-- Use **4x MSAA by default** (on Mali, the on-tile resolve is highly efficient — typically low single-digit percent overhead on G7x+, though cost varies by generation, resolution, and shader complexity). Avoid 8x/16x (16x can cost >50%). Never add a manual full-screen resolve when a tile-resolve path exists.
-
----
-
-## Qualcomm Adreno Advanced Techniques (SDK-Distilled)
-
-Distilled from the Snapdragon Game Studios *Adreno GPU OpenGL ES Code Sample Framework*. Per-topic details live in `references/rules/adreno/` (one file per topic — see `references/rules/adreno/README.md`).
-
-### GMEM Loads & Stores (Adreno tile memory)
-- **GMEM** is Adreno's on-chip tile memory. A **GMEM Load** copies a tile in from DRAM at pass start; a **GMEM Store** writes it back at pass end. Eliminate both wherever possible.
-- **Avoid GMEM loads:** fully clear (`glClear`) or `glInvalidateFramebuffer` *all* attachments at pass start when prior content is not needed. Beware scissor-limited/partial clears and blending over uncleared targets — they force a load. Exception: incremental rendering, load-then-blend, or multi-frame accumulation intentionally retains prior content.
-- **Reduce GMEM stores:** `glInvalidateFramebuffer` transient attachments (depth/stencil, MSAA) at pass end; drop unused MRT outputs; batch `glReadPixels`/blits to end-of-frame or use a PBO.
-
-### Efficient MSAA
-- Use **`EXT_multisampled_render_to_texture`** so MSAA resolves **on-tile in GMEM** (`glFramebufferTexture2DMultisampleEXT`). Never render to a multisample FBO and `glBlitFramebuffer` to resolve on mobile.
-
-### Variable Rate Shading (`QCOM_shading_rate`)
-- Reduce fragment invocations per-drawcall via `glShadingRateQCOM(GL_SHADING_RATE_2X2_PIXELS_QCOM)` on low-detail draws (skybox, distant, blurred, VR periphery); restore `1X1` for hero assets/UI. Runtime-gate the extension.
-
-### LRZ (Low Resolution Z) — do not break it
-- Draw opaque **front-to-back**, keep depth test+write on, and **avoid `discard` and `gl_FragDepth`** in opaque materials (they disable LRZ early rejection). Prefer combined `GL_DEPTH24_STENCIL8` and invalidate it at pass end.
-
-### Frame Extrapolation & Upscaling
-- `QCOM_frame_extrapolation` (AFME) predicts every-other-frame to cut CPU/GPU power; `QCOM_motion_estimation` produces motion-vector textures; **SGSR2** upscales a low-res render to native. Composite UI/text at native rate and gate all behind extension checks.
-
----
-
-## Imagination PowerVR Advanced Techniques (SDK-Distilled)
-
-Distilled from the Imagination *PowerVR Native SDK* OpenGL ES framework. Per-topic details live in `references/rules/powervr/` (one file per topic — see `references/rules/powervr/README.md`).
-
-### HSR (Hidden Surface Removal) — no depth pre-pass
-- PowerVR ISP performs **full per-pixel hidden surface removal** before any shading — under ideal conditions (no `discard`, no alpha test, depth writes enabled), every opaque fragment is shaded only once regardless of submission order. **Do NOT use a depth pre-pass** (it doubles geometry cost for zero shading benefit).
-- **Avoid `discard` / alpha test** — forces ISP to defer visibility, re-introducing overdraw. Prefer alpha blend with depth write off.
-
-### Tile Bandwidth (clear + invalidate)
-- Same fundamentals as Mali/Adreno: **clear/invalidate at pass start** (no tile load), **invalidate transient at pass end** (no tile store). Minimize mid-frame FBO switches (each triggers full tile flush).
-
-### Pixel Local Storage for Deferred Rendering
-- PowerVR’s HSR + PLS synergy: only visible fragments write to PLS, eliminating wasted G-Buffer fill. Use `GL_EXT_shader_pixel_local_storage` for on-chip deferred — the canonical PowerVR approach.
-
-### IMG Extensions
-- **`GL_IMG_framebuffer_downsample`**: automatic on-tile half-res output (bloom, DoF, AO) with minimal additional bandwidth (the output shares the tile pass, though the downsampled attachment itself still requires storage).
-- **`GL_IMG_texture_filter_cubic`**: hardware bicubic filtering.
-- **Binary shader caching** (`glGetProgramBinary` / `glProgramBinary`): persist compiled programs to disk; invalidate on driver update.
-
-### Parameter Buffer
-- All scene geometry is stored in the Parameter Buffer (PB) before tile rendering. Excessive complexity triggers **SPM (Smart Parameter Management)** partial renders — extremely expensive. Use aggressive LOD, frustum culling, and occlusion queries.
+| Vendor | Key invariants | Deep-dive |
+|:---|:---|:---|
+| **ARM Mali** (incl. Immortalis-G720/G925) | PLS for on-chip G-Buffer (~128-bit budget, packed formats; fallback: framebuffer fetch → MRT+invalidate); `GL_OVR_multiview2` stereo; compute: `memoryBarrierShared()` before `barrier()`; ASTC over ETC2; 4x MSAA on-tile is cheap (cost varies by gen) | `references/rules/mali-arm-best-practices.md` |
+| **Qualcomm Adreno** (incl. 8xx) | Eliminate GMEM loads/stores (clear at start, invalidate transient at end; exceptions for retained content); `EXT_multisampled_render_to_texture`, never blit resolve; `QCOM_shading_rate` VRS; never break LRZ (front-to-back, no `discard`/`gl_FragDepth`) | `references/rules/adreno/` |
+| **Imagination PowerVR** (incl. Series 12XE) | HSR removes hidden opaque fragments — **no depth pre-pass ever**; avoid `discard`/alpha test (defeats HSR); HSR+PLS deferred; `IMG_framebuffer_downsample`; bound geometry to avoid SPM partial renders | `references/rules/powervr/` |
 
 ## EGL & Platform Context Management
 
@@ -197,22 +137,21 @@ Distilled from the Imagination *PowerVR Native SDK* OpenGL ES framework. Per-top
 - Architecture: maintain a `ResourceRegistry` that tracks all GPU allocations for deterministic rebuild.
 
 ### Windows Platform (ANGLE / Windows-on-ARM)
-- Windows has **no native GLES driver**; a plain WGL context is **desktop GL**, not GLES. Obtain true GLES through **ANGLE** (`libEGL.dll` / `libGLESv2.dll`), never `opengl32`.
-- Initialize via the `EGL_ANGLE_platform_angle` extension (`eglGetPlatformDisplayEXT`) and **pin the backend explicitly**: D3D11 on desktop, Vulkan on Windows-on-ARM. Verify the GLES version at runtime after context creation.
-- **ANGLE EGL tokens** (`EGL_PLATFORM_ANGLE_ANGLE` 0x3202, `EGL_PLATFORM_ANGLE_TYPE_ANGLE` 0x3203, etc.) are NOT in the standard Khronos `eglext.h`. Always wrap with `#ifndef` guards providing numeric fallbacks when building against Khronos-only headers.
-- **Acquiring ANGLE**: prefer extracting pre-built DLLs from Chrome/Edge (generate import libraries via `dumpbin /exports` → `.def` → `lib /def:`) for fast setup; use `vcpkg install angle` only for CI/reproducible builds.
-- **Windows-on-ARM (Snapdragon) is real Adreno silicon** — all `references/rules/adreno/*` techniques apply; build ARM64-native and prefer the Vulkan backend.
-- The Android Emulator GPU is host-backed — use it for **functional** testing only; measure TBDR bandwidth / fill-rate on a **real device**. Keep TBDR optimizations (`glInvalidateFramebuffer`, clear-at-pass-start) in the code even on the immediate-mode host build.
-- See `references/rules/windows-platform.md` for full detail.
+- Windows has **no native GLES driver** — a WGL context is desktop GL. Use **ANGLE** (`libEGL.dll` / `libGLESv2.dll`), never `opengl32`; pin the backend via `EGL_ANGLE_platform_angle` (D3D11 desktop, Vulkan on WoA) and verify the GLES version after context creation.
+- ANGLE EGL tokens are **not in Khronos `eglext.h`** — wrap with `#ifndef` guards + numeric fallbacks; prefer Chrome/Edge pre-built DLLs + generated import libs (`dumpbin → .def → lib /def:`) over vcpkg builds.
+- **Windows-on-ARM (Snapdragon) is real Adreno silicon** — all `references/rules/adreno/*` techniques apply; build ARM64-native.
+- Android Emulator GPU is host-backed — functional testing only; measure bandwidth/fill-rate on a real device. Full detail: `references/rules/windows-platform.md`.
 
 ### Embedded Linux (GBM / EGL)
 - On headless or windowing-less embedded systems, create the display via the **GBM** backend: `eglGetPlatformDisplayEXT(EGL_PLATFORM_GBM_KHR, gbmDevice, ...)` over a DRM/KMS device, or use `EGL_KHR_surfaceless_context` for pure offscreen rendering.
 - No window system (X11/Wayland) is required; drive scanout through DRM/KMS or render offscreen to FBOs and export via `EGL_KHR_image` / dma-buf.
 - The **same TBDR bandwidth rules apply** when the SoC uses a Mali/Adreno/PowerVR GPU (common in automotive, set-top, and industrial devices).
 
-### Android Video & Buffer Interoperability
-- Camera/decoder frames enter GLES **only** via `GL_TEXTURE_EXTERNAL_OES` + EGLImage — never `glTexImage2D`. Shaders need `samplerExternalOES` + the `GL_OES_EGL_image_external(_essl3)` extension directive; wrap must be `GL_CLAMP_TO_EDGE`; external images have **no mipmaps**; YUV→RGB is hardware-done.
-- On API 26+ prefer **`AHardwareBuffer` + `EGL_ANDROID_get_native_client_buffer`** over raw gralloc; producer/consumer ordering via native fence sync is mandatory. Teardown order: texture → EGLImage → AHardwareBuffer. Full rules in `references/rules/android-interoperability.md`.
+### Android Video, Interop & Presentation
+- Camera/decoder frames enter GLES **only** via `GL_TEXTURE_EXTERNAL_OES` + EGLImage — never `glTexImage2D`; `samplerExternalOES` + extension directive; `GL_CLAMP_TO_EDGE`; no mipmaps; hardware YUV→RGB. API 26+: prefer `AHardwareBuffer` + `EGL_ANDROID_get_native_client_buffer` with fence sync; teardown order texture → EGLImage → AHardwareBuffer. Vulkan↔GLES sharing via `GL_EXT_memory_object_fd` / `GL_EXT_semaphore_fd`. All rules: `references/rules/android-interoperability.md` (incl. **16 KB page alignment** for Android 15+).
+- **Frame pacing**: do not rely on `eglSwapInterval`; drive frames from `AChoreographer`, prefer Swappy (`games-frame-pacing`) for steady cadence on 60–144 Hz panels. See `references/rules/frame-pacing.md`.
+- **HDR/wide-gamut output**: query WCG/HDR capability first; declare surface colorspace at creation (scRGB-linear for HDR); HDR10 needs CTA-861-3 metadata; keep the pipeline linear to the final tone map. See `references/rules/hdr-and-display.md`.
+- **Shader startup cost**: cache `glGetProgramBinary` per device+driver; `GL_KHR_parallel_shader_compile` where available; warm programs during loading screens. See `references/rules/glsl-es-optimization.md` §6.3.
 
 ### Performance Profiling Workflow
 - Diagnose with a fixed pipeline: **Symptom → Triage (CPU/GPU) → Counter → Classify → Map-to-Rule → Fix → Verify**. Tools per GPU: Streamline (Mali), Snapdragon Profiler (Adreno), PVRTrace/PVRPerf (PowerVR), AGI/Perfetto (generic Android), RenderDoc (Windows/ANGLE).
@@ -235,7 +174,7 @@ Distilled from the Imagination *PowerVR Native SDK* OpenGL ES framework. Per-top
 
 ## Knowledge Cards (Per-Feature Quick Reference)
 
-For focused, per-feature guidance, consult `references/cards/` — 18 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG, Android video/buffer interop, GPU profiling toolchain). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
+For focused, per-feature guidance, consult `references/cards/` — 20 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG, Android video/buffer interop, GPU profiling toolchain, frame pacing, HDR display). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
 
 ---
 
@@ -265,7 +204,9 @@ This SKILL.md is the entry point. Load additional files **only when relevant**:
 | Adreno GMEM / VRS / LRZ | `references/rules/adreno/README.md` → specific file |
 | PowerVR HSR / PLS / IMG ext | `references/rules/powervr/README.md` → specific file |
 | Windows (ANGLE / WoA) | `references/rules/windows-platform.md` |
-| Android video/camera texture, AHardwareBuffer | `references/rules/android-interoperability.md` |
+| Android video/camera texture, AHardwareBuffer, Vulkan interop, 16KB pages | `references/rules/android-interoperability.md` |
+| Frame pacing / stutter / high-refresh | `references/rules/frame-pacing.md` |
+| HDR / wide color gamut output | `references/rules/hdr-and-display.md` |
 | Performance diagnosis / profiler selection | `references/rules/profiling-tools.md` |
 | Quick look-up by feature | `references/cards/README.md` → individual card |
 | Example code (few-shot) | `references/examples/` → specific file |
