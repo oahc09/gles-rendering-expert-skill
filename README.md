@@ -58,6 +58,7 @@ gles-rendering-expert-skill/
 │   │   ├── gpu-culling.md             # GPU-driven culling: compute+indirect (3.1), queries, hi-Z
 │   │   ├── text-rendering-sdf.md      # SDF/MSDF text: atlases, fwidth AA, batching
 │   │   ├── clustered-lighting.md      # Forward+ clustered lighting (GLES 3.1+)
+│   │   ├── screen-space-effects.md    # SSAO / soft particles / motion blur depth reuse on TBDR
 │   │   ├── adreno/                    # Qualcomm Adreno techniques, one topic per file
 │   │   │   ├── README.md              # Adreno module index & GMEM/LRZ vocabulary
 │   │   │   ├── gmem-load-store.md     # Avoid GMEM loads / reduce GMEM stores
@@ -102,7 +103,8 @@ gles-rendering-expert-skill/
 │   │   ├── 27-texture-streaming-lod.md # Mip streaming & LOD control
 │   │   ├── 28-gpu-culling.md         # GPU-driven culling / indirect draw
 │   │   ├── 29-text-rendering-sdf.md  # SDF/MSDF text rendering
-│   │   └── 30-clustered-lighting.md  # Forward+ clustered lighting
+│   │   ├── 30-clustered-lighting.md  # Forward+ clustered lighting
+│   │   └── 31-screen-space-effects.md # SSAO / soft particles / motion blur
 │   └── examples/                  # Reference code (few-shot samples)
 │       ├── egl_context_manager.cpp    # EGL init, shared context, context loss
 │       ├── vertex_array_object.hpp    # RAII VBO/VAO with state cache

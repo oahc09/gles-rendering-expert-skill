@@ -39,6 +39,7 @@
 | 28 | [gpu-culling](28-gpu-culling.md) | GPU 驱动剔除 | 3.0/3.1 | `gpu-culling.md` |
 | 29 | [text-rendering-sdf](29-text-rendering-sdf.md) | SDF/MSDF 文本渲染 | 3.0+ | `text-rendering-sdf.md` |
 | 30 | [clustered-lighting](30-clustered-lighting.md) | 聚类前向光照 (Forward+) | 3.1+ | `clustered-lighting.md` |
+| 31 | [screen-space-effects](31-screen-space-effects.md) | 屏幕空间深度特效：SSAO/软粒子/运动模糊 | 3.0+ | `screen-space-effects.md` |
 
 ## 卡片格式说明
 

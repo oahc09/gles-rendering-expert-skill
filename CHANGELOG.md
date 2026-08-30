@@ -87,15 +87,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   per-cluster atomic compaction and fixed CAP, `GL_SHADER_STORAGE_BARRIER_BIT`
   ordering, uint16 list bandwidth math, shadow/hero-light interaction rules,
   Mali/Adreno/PowerVR vendor notes.
+- **Screen-space depth effects** (`references/rules/screen-space-effects.md`
+  + card 31): SSAO / soft particles / motion blur on TBDR — depth-attachment
+  feedback-loop prohibition, `R16F` linear-depth side-write bandwidth model,
+  window-Z linearization in highp, half-res + bilateral upsample, hash
+  hemisphere sampling, view-space soft-particle fade, velocity-buffer motion
+  blur with zero-velocity early reject, MSAA depth resolve interaction.
 
 ### Changed
 - **SKILL.md slimmed** (~7200 → ~5300 body tokens): the three vendor sections
   (Mali / Adreno / PowerVR) compressed into a single "Vendor Deep-Dives
   (Load On-Demand)" pointer table; Windows/ANGLE section condensed; new
   Android interop/presentation bullets; on-demand loading guide extended with
-  frame pacing / HDR / Vulkan interop rows; card count 18 → 20 → 24 → 26 → 30
+  frame pacing / HDR / Vulkan interop rows; card count 18 → 20 → 24 → 26 → 30 → 31
   (+ transform feedback, geometry shader, texture streaming, GPU culling,
-  SDF text, clustered lighting).
+  SDF text, clustered lighting, screen-space effects).
 - **SKILL.md scope made explicitly cross-platform**: frontmatter description
   and role statement now cover mobile (Android), Windows (ANGLE /
   Windows-on-ARM), and Embedded Linux (GBM/EGL) — not mobile-only.

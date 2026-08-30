@@ -8,7 +8,7 @@ metadata:
   author: gles-rendering-expert-skill contributors
   version: 1.0.2
   last-updated: 2026-08-30
-  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, Immortalis, shader optimization, bandwidth optimization, Android NDK, AHardwareBuffer, video texture, GPU profiling, frame pacing, Swappy, HDR display, Vulkan interop, 16KB pages, Windows-on-ARM, Embedded Linux, shadow mapping, GPU skinning, post-processing, translation layer, variable rate shading, transform feedback, geometry shader, multiple render targets, texture streaming, GPU culling, MSDF text, clustered lighting, RAII C++17"
+  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, Immortalis, shader optimization, bandwidth optimization, Android NDK, AHardwareBuffer, video texture, GPU profiling, frame pacing, Swappy, HDR display, Vulkan interop, 16KB pages, Windows-on-ARM, Embedded Linux, shadow mapping, GPU skinning, post-processing, translation layer, variable rate shading, transform feedback, geometry shader, multiple render targets, texture streaming, GPU culling, MSDF text, clustered lighting, SSAO, soft particles, motion blur, RAII C++17"
 ---
 
 # Role: Senior OpenGL ES & Graphics Rendering Expert
@@ -173,6 +173,7 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 - **GPU-driven culling**: compute predication + indirect draw (3.1); occlusion queries defer 1 frame and flush tiles on TBDR — `references/rules/gpu-culling.md`.
 - **Text (SDF/MSDF)**: R8 distance atlas (never sRGB), `fwidth`-based AA, one batched draw per atlas — `references/rules/text-rendering-sdf.md`.
 - **Clustered Forward+ (3.1)**: frustum clusters, light lists in SSBOs, no G-Buffer DRAM — `references/rules/clustered-lighting.md`.
+- **Screen-space depth effects** (SSAO / soft particles / motion blur): never sample the bound depth attachment; side-write linear depth to an `R16F` color attachment; half-res + bilateral upsample — `references/rules/screen-space-effects.md`.
 
 ---
 
@@ -188,7 +189,7 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 
 ## Knowledge Cards (Per-Feature Quick Reference)
 
-For focused, per-feature guidance, consult `references/cards/` — 30 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG, Android video/buffer interop, GPU profiling toolchain, frame pacing, HDR display, shadow mapping, GPU skinning, post-processing, translation layers, transform feedback, geometry shader, texture streaming, GPU culling, SDF text, clustered lighting). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
+For focused, per-feature guidance, consult `references/cards/` — 31 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG, Android video/buffer interop, GPU profiling toolchain, frame pacing, HDR display, shadow mapping, GPU skinning, post-processing, translation layers, transform feedback, geometry shader, texture streaming, GPU culling, SDF text, clustered lighting, screen-space depth effects). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
 
 ---
 
@@ -232,6 +233,7 @@ This SKILL.md is the entry point. Load additional files **only when relevant**:
 | GPU-driven culling / indirect draw / occlusion query | `references/rules/gpu-culling.md` |
 | Text rendering / MSDF / font atlas | `references/rules/text-rendering-sdf.md` |
 | Many-light forward / Forward+ / clustered | `references/rules/clustered-lighting.md` |
+| SSAO / soft particles / motion blur / depth reuse | `references/rules/screen-space-effects.md` |
 | Performance diagnosis / profiler selection | `references/rules/profiling-tools.md` |
 | Quick look-up by feature | `references/cards/README.md` → individual card |
 | Example code (few-shot) | `references/examples/` → specific file |

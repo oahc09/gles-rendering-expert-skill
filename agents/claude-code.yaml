@@ -46,6 +46,9 @@ trigger_patterns:
   - "GPU culling"
   - "MSDF text"
   - "clustered lighting"
+  - "SSAO"
+  - "soft particles"
+  - "motion blur"
 
 context_files:
   # Primary skill definition
@@ -95,6 +98,8 @@ context_files:
   - path: references/rules/text-rendering-sdf.md
     priority: medium
   - path: references/rules/clustered-lighting.md
+    priority: medium
+  - path: references/rules/screen-space-effects.md
     priority: medium
   - path: references/rules/adreno/
     priority: medium

@@ -46,6 +46,9 @@ activation_keywords:
   - "GPU culling"
   - "MSDF text"
   - "clustered lighting"
+  - "SSAO"
+  - "soft particles"
+  - "motion blur"
 
 file_context:
   # Primary skill definition — always include
@@ -75,6 +78,7 @@ file_context:
     - references/rules/gpu-culling.md
     - references/rules/text-rendering-sdf.md
     - references/rules/clustered-lighting.md
+    - references/rules/screen-space-effects.md
     - references/rules/adreno/gmem-load-store.md
     - references/rules/adreno/efficient-msaa.md
     - references/rules/adreno/variable-rate-shading.md
