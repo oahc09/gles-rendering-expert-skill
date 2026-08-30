@@ -42,6 +42,10 @@ trigger_patterns:
   - "multiple render targets"
   - "shadow mapping"
   - "GPU skinning"
+  - "texture streaming"
+  - "GPU culling"
+  - "MSDF text"
+  - "clustered lighting"
 
 context_files:
   # Primary skill definition
@@ -83,6 +87,14 @@ context_files:
   - path: references/rules/transform-feedback.md
     priority: medium
   - path: references/rules/geometry-shaders.md
+    priority: medium
+  - path: references/rules/texture-streaming-lod.md
+    priority: medium
+  - path: references/rules/gpu-culling.md
+    priority: medium
+  - path: references/rules/text-rendering-sdf.md
+    priority: medium
+  - path: references/rules/clustered-lighting.md
     priority: medium
   - path: references/rules/adreno/
     priority: medium

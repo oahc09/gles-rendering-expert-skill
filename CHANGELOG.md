@@ -67,14 +67,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   lights, skybox depth trick, metaballs, SDF text rendering, Boids, thread
   sync, multisampled FBO — plus a complete SDK-sample → skill-coverage map
   and provenance note (SDK v2.1.2, archived/MIT).
+- **Texture streaming & LOD control** (`references/rules/texture-streaming-lod.md`
+  + card 27): full-chain `glTexStorage2D` + per-mip `glTexSubImage2D`,
+  base/max-level residency gating, PBO + shared-context worker uploads with
+  fences, mid-frame `glGenerateMipmap` prohibition, anisotropic-extension
+  guard, tile-array virtual-texturing emulation (no sparse textures in GLES).
+- **GPU-driven culling** (`references/rules/gpu-culling.md` + card 28):
+  compute predication → per-slot `DrawArraysIndirectCommand` →
+  `glMultiDrawArraysIndirect` (GLES 3.1) with correct `glMemoryBarrier` bits;
+  occlusion-query caveats on TBDR (tile flush, 1-frame latency,
+  `GL_QUERY_RESULT_AVAILABLE`); hi-Z alternative; per-GLES-version capability
+  matrix.
+- **SDF/MSDF text rendering** (`references/rules/text-rendering-sdf.md`
+  + card 29): R8 distance atlases (never sRGB formats), `fwidth`-based
+  analytic AA with `median()` for MSDF, highp-UV thresholds, one-batched-draw
+  discipline, premultiplied-alpha compositing, CJK page/LRU atlas management.
+- **Clustered Forward+ lighting** (`references/rules/clustered-lighting.md`
+  + card 30): 16×9×24–32 log-Z cluster grid, compute light-list culling with
+  per-cluster atomic compaction and fixed CAP, `GL_SHADER_STORAGE_BARRIER_BIT`
+  ordering, uint16 list bandwidth math, shadow/hero-light interaction rules,
+  Mali/Adreno/PowerVR vendor notes.
 
 ### Changed
 - **SKILL.md slimmed** (~7200 → ~5300 body tokens): the three vendor sections
   (Mali / Adreno / PowerVR) compressed into a single "Vendor Deep-Dives
   (Load On-Demand)" pointer table; Windows/ANGLE section condensed; new
   Android interop/presentation bullets; on-demand loading guide extended with
-  frame pacing / HDR / Vulkan interop rows; card count 18 → 20 → 24 → 26
-  (+ transform feedback, geometry shader).
+  frame pacing / HDR / Vulkan interop rows; card count 18 → 20 → 24 → 26 → 30
+  (+ transform feedback, geometry shader, texture streaming, GPU culling,
+  SDF text, clustered lighting).
 - **SKILL.md scope made explicitly cross-platform**: frontmatter description
   and role statement now cover mobile (Android), Windows (ANGLE /
   Windows-on-ARM), and Embedded Linux (GBM/EGL) — not mobile-only.

@@ -54,6 +54,10 @@ gles-rendering-expert-skill/
 │   │   ├── variable-rate-shading.md   # VRS: QCOM_shading_rate & GL_EXT_fragment_shading_rate family
 │   │   ├── transform-feedback.md      # Transform feedback (GLES 3.0 core)
 │   │   ├── geometry-shaders.md        # Geometry shaders (GLES 3.2 only)
+│   │   ├── texture-streaming-lod.md   # Mip streaming, PBO uploads, LOD gating, virtual tiles
+│   │   ├── gpu-culling.md             # GPU-driven culling: compute+indirect (3.1), queries, hi-Z
+│   │   ├── text-rendering-sdf.md      # SDF/MSDF text: atlases, fwidth AA, batching
+│   │   ├── clustered-lighting.md      # Forward+ clustered lighting (GLES 3.1+)
 │   │   ├── adreno/                    # Qualcomm Adreno techniques, one topic per file
 │   │   │   ├── README.md              # Adreno module index & GMEM/LRZ vocabulary
 │   │   │   ├── gmem-load-store.md     # Avoid GMEM loads / reduce GMEM stores
@@ -94,7 +98,11 @@ gles-rendering-expert-skill/
 │   │   ├── 23-post-processing-chain.md # Bloom/blur/color grading
 │   │   ├── 24-translation-layers.md # ANGLE/MobileGL/SwiftShader
 │   │   ├── 25-transform-feedback.md  # Transform feedback GPU buffer update
-│   │   └── 26-geometry-shader.md     # Geometry shader primitive generation (3.2)
+│   │   ├── 26-geometry-shader.md     # Geometry shader primitive generation (3.2)
+│   │   ├── 27-texture-streaming-lod.md # Mip streaming & LOD control
+│   │   ├── 28-gpu-culling.md         # GPU-driven culling / indirect draw
+│   │   ├── 29-text-rendering-sdf.md  # SDF/MSDF text rendering
+│   │   └── 30-clustered-lighting.md  # Forward+ clustered lighting
 │   └── examples/                  # Reference code (few-shot samples)
 │       ├── egl_context_manager.cpp    # EGL init, shared context, context loss
 │       ├── vertex_array_object.hpp    # RAII VBO/VAO with state cache

@@ -8,7 +8,7 @@ metadata:
   author: gles-rendering-expert-skill contributors
   version: 1.0.2
   last-updated: 2026-08-30
-  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, Immortalis, shader optimization, bandwidth optimization, Android NDK, AHardwareBuffer, video texture, GPU profiling, frame pacing, Swappy, HDR display, Vulkan interop, 16KB pages, Windows-on-ARM, Embedded Linux, shadow mapping, GPU skinning, post-processing, translation layer, variable rate shading, transform feedback, geometry shader, multiple render targets, RAII C++17"
+  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, Immortalis, shader optimization, bandwidth optimization, Android NDK, AHardwareBuffer, video texture, GPU profiling, frame pacing, Swappy, HDR display, Vulkan interop, 16KB pages, Windows-on-ARM, Embedded Linux, shadow mapping, GPU skinning, post-processing, translation layer, variable rate shading, transform feedback, geometry shader, multiple render targets, texture streaming, GPU culling, MSDF text, clustered lighting, RAII C++17"
 ---
 
 # Role: Senior OpenGL ES & Graphics Rendering Expert
@@ -169,6 +169,10 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 - **Transform Feedback** (3.0): varyings-before-link, `GL_TRANSFORM_FEEDBACK_BUFFER`, ping-pong particles; prefer compute on 3.1+ — `references/rules/transform-feedback.md`.
 - **Geometry Shaders**: GLES 3.2 only, `max_vertices` budget, instancing preferred for repeated geometry — `references/rules/geometry-shaders.md`.
 - **MRT / G-buffers**: attachment consistency, packing discipline, TBDR store cost — `references/rules/gles-api-standards.md` §5.2.
+- **Texture streaming / LOD**: full-chain `glTexStorage2D` + per-mip PBO upload, base/max-level gating, no mid-frame `glGenerateMipmap` — `references/rules/texture-streaming-lod.md`.
+- **GPU-driven culling**: compute predication + indirect draw (3.1); occlusion queries defer 1 frame and flush tiles on TBDR — `references/rules/gpu-culling.md`.
+- **Text (SDF/MSDF)**: R8 distance atlas (never sRGB), `fwidth`-based AA, one batched draw per atlas — `references/rules/text-rendering-sdf.md`.
+- **Clustered Forward+ (3.1)**: frustum clusters, light lists in SSBOs, no G-Buffer DRAM — `references/rules/clustered-lighting.md`.
 
 ---
 
@@ -184,7 +188,7 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 
 ## Knowledge Cards (Per-Feature Quick Reference)
 
-For focused, per-feature guidance, consult `references/cards/` — 26 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG, Android video/buffer interop, GPU profiling toolchain, frame pacing, HDR display, shadow mapping, GPU skinning, post-processing, translation layers, transform feedback, geometry shader). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
+For focused, per-feature guidance, consult `references/cards/` — 30 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG, Android video/buffer interop, GPU profiling toolchain, frame pacing, HDR display, shadow mapping, GPU skinning, post-processing, translation layers, transform feedback, geometry shader, texture streaming, GPU culling, SDF text, clustered lighting). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
 
 ---
 
@@ -224,6 +228,10 @@ This SKILL.md is the entry point. Load additional files **only when relevant**:
 | Variable Rate Shading | `references/rules/variable-rate-shading.md` |
 | Transform feedback / GPU particle update on 3.0 | `references/rules/transform-feedback.md` |
 | Geometry shader / procedural geometry | `references/rules/geometry-shaders.md` |
+| Texture streaming / LOD / virtual texturing | `references/rules/texture-streaming-lod.md` |
+| GPU-driven culling / indirect draw / occlusion query | `references/rules/gpu-culling.md` |
+| Text rendering / MSDF / font atlas | `references/rules/text-rendering-sdf.md` |
+| Many-light forward / Forward+ / clustered | `references/rules/clustered-lighting.md` |
 | Performance diagnosis / profiler selection | `references/rules/profiling-tools.md` |
 | Quick look-up by feature | `references/cards/README.md` → individual card |
 | Example code (few-shot) | `references/examples/` → specific file |

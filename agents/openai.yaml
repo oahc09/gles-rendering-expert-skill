@@ -42,6 +42,10 @@ activation_keywords:
   - "multiple render targets"
   - "shadow mapping"
   - "GPU skinning"
+  - "texture streaming"
+  - "GPU culling"
+  - "MSDF text"
+  - "clustered lighting"
 
 file_context:
   # Primary skill definition — always include
@@ -67,6 +71,10 @@ file_context:
     - references/rules/variable-rate-shading.md
     - references/rules/transform-feedback.md
     - references/rules/geometry-shaders.md
+    - references/rules/texture-streaming-lod.md
+    - references/rules/gpu-culling.md
+    - references/rules/text-rendering-sdf.md
+    - references/rules/clustered-lighting.md
     - references/rules/adreno/gmem-load-store.md
     - references/rules/adreno/efficient-msaa.md
     - references/rules/adreno/variable-rate-shading.md

@@ -35,6 +35,10 @@
 | 24 | [translation-layers](24-translation-layers.md) | GLES 翻译层：ANGLE/MobileGL/SwiftShader | via layer | `translation-layer-gles.md` |
 | 25 | [transform-feedback](25-transform-feedback.md) | Transform Feedback GPU 侧缓冲更新 | 3.0 core | `transform-feedback.md` |
 | 26 | [geometry-shader](26-geometry-shader.md) | Geometry Shader 图元生成 | 3.2 only | `geometry-shaders.md` |
+| 27 | [texture-streaming-lod](27-texture-streaming-lod.md) | 纹理流送与 LOD 控制 | 3.0+ | `texture-streaming-lod.md` |
+| 28 | [gpu-culling](28-gpu-culling.md) | GPU 驱动剔除 | 3.0/3.1 | `gpu-culling.md` |
+| 29 | [text-rendering-sdf](29-text-rendering-sdf.md) | SDF/MSDF 文本渲染 | 3.0+ | `text-rendering-sdf.md` |
+| 30 | [clustered-lighting](30-clustered-lighting.md) | 聚类前向光照 (Forward+) | 3.1+ | `clustered-lighting.md` |
 
 ## 卡片格式说明
 
