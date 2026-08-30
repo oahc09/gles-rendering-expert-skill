@@ -10,7 +10,7 @@
 
 | Strategy | How | When |
 |:---|:---|:---|
-| **UBO matrix palette** (GLES 3.0) | Bones as `mat4` array in a UBO (`std140`); index via per-vertex bone indices | Default choice; simple, fast, ~60–120 bones |
+| **UBO matrix palette** (GLES 3.0) | Bones as `mat4` array in a UBO (`std140`); index via per-vertex bone indices | Default choice; simple, fast, ~64–120 bones |
 | **SSBO matrix palette** (GLES 3.1) | Bones in an SSBO (`std430`); more bones, tighter packing | >~120 bones or bone count varies per frame |
 | **Vertex-texture palette** (GLES 3.0, legacy) | Bones encoded into a float texture, fetched in VS | Legacy path for GLES 2.0-era hardware; avoid on 3.0+ |
 
@@ -36,12 +36,16 @@
 7. On GPU-bound devices, skinning is vertex-stage work — it competes with
    vertex-heavy scenes; if VS-bound, reduce bone count/influences before
    cutting fragment quality.
+8. **`layout(binding=N)` on the UBO requires GLES 3.1 (`#version 310 es`)**;
+   on 3.00 declare the block without a binding and set it via
+   `glUniformBlockBinding` + `glBindBufferBase` (see `glsl-es-optimization.md` §8).
 
 ## Code pattern (UBO palette, 4 influences)
 
 ```glsl
-// Vertex shader (GLSL ES 3.00)
-#version 300 es
+// Vertex shader (GLSL ES 3.10 — the binding= qualifier requires 3.1;
+// on 3.00 drop "binding = 2" and use glUniformBlockBinding on the host)
+#version 310 es
 precision highp float;
 
 #define MAX_BONES 96

@@ -16,7 +16,7 @@
 ## 代码模式
 
 ```glsl
-// VS：UBO 调色板 + 4 影响
+// VS：UBO 调色板 + 4 影响（binding= 需 3.10；3.00 用 glUniformBlockBinding）
 #define MAX_BONES 96
 layout(std140, binding = 2) uniform SkinningBlock { mat4 u_Bones[MAX_BONES]; };
 

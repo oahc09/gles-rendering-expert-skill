@@ -50,7 +50,10 @@ interpreted by the compositor.
 | `EGL_GL_COLORSPACE_DISPLAY_P3_PASSTHROUGH_EXT` | Display-P3 gamut passthrough |
 
 - **Check the extension strings** before using non-sRGB values:
-  `EGL_EXT_gl_colorspace_scrgb_linear`, `EGL_EXT_gl_colorspace_display_p3`.
+  `EGL_EXT_gl_colorspace_scrgb_linear`; for Display-P3 either
+  `EGL_EXT_gl_colorspace_display_p3` (provides `EGL_GL_COLORSPACE_DISPLAY_P3_EXT`
+  / `_LINEAR_EXT`) or `EGL_EXT_gl_colorspace_display_p3_passthrough` (provides
+  the `_PASSTHROUGH_EXT` token above).
 - Set the attribute at **surface creation** (`eglCreateWindowSurface`
   attrib list); it cannot be changed later.
 - scRGB-linear is the practical HDR path for GLES on Android: keep linear

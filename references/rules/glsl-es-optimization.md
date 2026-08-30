@@ -146,7 +146,7 @@ layout(std140) uniform LightBlock {
 ### 3.2 UBO Best Practices
 - Group frequently-changing uniforms (per-frame: matrices, time) in one UBO.
 - Group rarely-changing uniforms (per-material: colors, roughness) in another.
-- Bind UBOs to explicit binding points: `layout(binding = 0) uniform Matrices { ... };`
+- Bind UBOs to explicit binding points: `layout(binding = 0) uniform Matrices { ... };` (GLES 3.1+; on 3.00 use `glUniformBlockBinding`, see §8)
 - Update with `glBufferSubData` or `glMapBufferRange` — avoid `glBufferData` every frame (reallocates).
 
 ---

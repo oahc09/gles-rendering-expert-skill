@@ -10,7 +10,7 @@
    - 默认 `EGL_GL_COLORSPACE_SRGB_KHR`
    - `EGL_GL_COLORSPACE_SCRGB_LINEAR_EXT`（scRGB 线性：1.0 = 80 nits，>1.0 扩展范围，GLES HDR 首选路径）
    - `EGL_GL_COLORSPACE_DISPLAY_P3_PASSTHROUGH_EXT`
-   使用前检查 `EGL_EXT_gl_colorspace_scrgb_linear` / `EGL_EXT_gl_colorspace_display_p3`。
+   使用前检查 `EGL_EXT_gl_colorspace_scrgb_linear`；Display-P3 检查 `EGL_EXT_gl_colorspace_display_p3`（`_EXT`/`_LINEAR_EXT` token）或 `EGL_EXT_gl_colorspace_display_p3_passthrough`（`_PASSTHROUGH_EXT` token）。
 4. HDR10 直通必须通过 `EGL_EXT_surface_CTA861_3` 提供 **mastering metadata**（SMPTE ST 2086 原色/白点/亮度）——填内容母带意图，不是面板参数；缺 metadata 通常被当 SDR 处理。
 5. **渲染侧全程线性扩展范围**（RGBA16F）到最终 tone/gamut map，禁止中途存 sRGB8 再线性化。
 6. 最终输出必须匹配表面色彩空间：scRGB 表面输出 1.0 = SDR 白的线性值；P3 表面做场景空间 → Display-P3 转换。
