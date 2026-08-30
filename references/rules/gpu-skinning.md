@@ -27,9 +27,9 @@
    de-normalizes the normal; renormalize in the VS before passing out.
 4. **Dual-quaternion skinning** (instead of LBS) avoids candy-wrapper twist for
    large rotations but costs more ALU; use only where joint quality matters.
-5. **Update the palette once per frame** via a single UBO/SSBO sub-update
-   (`glBufferSubData` or mapped orphan), not per draw call. Skinned instances
-   sharing a pose share the palette.
+5. **Update the palette once per frame** via a single UBO/SSBO upload
+   (`glBufferSubData`, or `glBufferData` re-specification to orphan), not per
+   draw call. Skinned instances sharing a pose share the palette.
 6. **Frustum-cull skinned meshes with an inflated bounding volume** — skinned
    vertices move beyond the bind-pose AABB; pad the bounds or compute
    CPU-side skinned bounds, or false-culling pops meshes.
