@@ -1,6 +1,6 @@
 # Adreno GMEM / VRS / LRZ / FlexRender
 
-> **Category**: Adreno Vendor | **GLES Version**: 3.0+ extensions | **Source**: `references/rules/adreno/*.md`
+> **Category**: Adreno Vendor | **GLES Version**: 3.0+ extensions | **Source**: `references/rules/adreno/*.md`, `references/rules/variable-rate-shading.md`
 
 ## 核心规则
 
@@ -14,7 +14,7 @@
 
 ### Variable Rate Shading (`QCOM_shading_rate`)
 5. `glShadingRateQCOM(GL_SHADING_RATE_2X2_PIXELS_QCOM)` per-drawcall 降低 fragment 调用频率（无需 glEnable，扩展确认后直接调用）。
-6. 低细节 draw（天空盒、远景、模糊、VR 外围）用粗 rate；hero/UI 恢复 `1X1`。**运行时检查扩展**。
+6. 低细节 draw（天空盒、远景、模糊、VR 外围）用粗 rate；hero/UI 恢复 `1X1`。**运行时检查扩展**。跨厂商完整模型（管线/图元/附件三种 rate + combiner，`GL_EXT_fragment_shading_rate` 家族）见 `references/rules/variable-rate-shading.md`。
 
 ### LRZ (Low Resolution Z)
 7. Adreno 的 early coarse depth rejection——**不要破坏它**：
@@ -58,6 +58,7 @@ drawHero();
 | Opaque 用 `discard` | LRZ 失效，overdraw 全执行 | alpha blend 或隔离 pass |
 | VRS 全局 4x4 | 画面模糊 | per-drawcall，hero 恢复 1x1 |
 | 不检查 QCOM 扩展 | 崩溃 | 运行时查询 + fallback |
+| VRS 与 PLS / framebuffer fetch 同 pass | 扩展互斥（MediaTek 文档明确） | 每个 pass 二选一 |
 
 ## 关联卡片
 

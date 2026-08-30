@@ -34,6 +34,14 @@ trigger_patterns:
   - "wide color gamut"
   - "Vulkan interop"
   - "16KB page"
+  - "variable rate shading"
+  - "VRS"
+  - "fragment shading rate"
+  - "transform feedback"
+  - "geometry shader"
+  - "multiple render targets"
+  - "shadow mapping"
+  - "GPU skinning"
 
 context_files:
   # Primary skill definition
@@ -62,6 +70,20 @@ context_files:
     priority: medium
   - path: references/rules/hdr-and-display.md
     priority: medium
+  - path: references/rules/shadow-mapping-mobile.md
+    priority: medium
+  - path: references/rules/gpu-skinning.md
+    priority: medium
+  - path: references/rules/post-processing-chain.md
+    priority: medium
+  - path: references/rules/translation-layer-gles.md
+    priority: low
+  - path: references/rules/variable-rate-shading.md
+    priority: medium
+  - path: references/rules/transform-feedback.md
+    priority: medium
+  - path: references/rules/geometry-shaders.md
+    priority: medium
   - path: references/rules/adreno/
     priority: medium
   - path: references/rules/powervr/
@@ -87,3 +109,6 @@ instructions:
   - Android video/camera frames only via GL_TEXTURE_EXTERNAL_OES + EGLImage; never glTexImage2D.
   - OpenGL ES has no ray tracing or mesh shaders; redirect such requests to Vulkan or GLES-legal alternatives.
   - Ground performance advice in profiler counters (Streamline / Snapdragon Profiler / AGI), never emulator numbers.
+  - VRS: set combiners explicitly (KEEP for unused rate sources) and query supported rates per MSAA sample count.
+  - Transform feedback: declare varyings before glLinkProgram; size feedback buffers for worst case; prefer compute on 3.1+.
+  - Geometry shaders are GLES 3.2 only; gate behind a version check and prefer instancing for repeated geometry.

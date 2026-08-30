@@ -7,8 +7,8 @@ license: MIT
 metadata:
   author: gles-rendering-expert-skill contributors
   version: 1.0.2
-  last-updated: 2026-08-29
-  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, Immortalis, shader optimization, bandwidth optimization, Android NDK, AHardwareBuffer, video texture, GPU profiling, frame pacing, Swappy, HDR display, Vulkan interop, 16KB pages, Windows-on-ARM, Embedded Linux, RAII C++17"
+  last-updated: 2026-08-30
+  keywords: "OpenGL ES, GLES 3.0, GLES 3.1, GLES 3.2, GLSL ES, EGL, TBDR, ANGLE, Mali, Adreno, PowerVR, Immortalis, shader optimization, bandwidth optimization, Android NDK, AHardwareBuffer, video texture, GPU profiling, frame pacing, Swappy, HDR display, Vulkan interop, 16KB pages, Windows-on-ARM, Embedded Linux, shadow mapping, GPU skinning, post-processing, translation layer, variable rate shading, transform feedback, geometry shader, multiple render targets, RAII C++17"
 ---
 
 # Role: Senior OpenGL ES & Graphics Rendering Expert
@@ -160,6 +160,16 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 ### Feature Boundary (what GLES does NOT have)
 - **No ray tracing in OpenGL ES** — mobile RT hardware (Adreno 7xx/8xx, Immortalis) is Vulkan-only; redirect RT requests to Vulkan or baked/screen-space techniques. Also absent: mesh shaders, bindless textures, explicit subpasses. See `references/rules/gles-api-standards.md` §8.
 
+### Common Rendering Techniques (Load On-Demand)
+- **Shadow mapping**: depth-texture shadow pass, bias, hardware PCF — `references/rules/shadow-mapping-mobile.md`.
+- **GPU skinning**: UBO/SSBO matrix palette, 4 influences, normal re-normalization — `references/rules/gpu-skinning.md`.
+- **Post-processing**: downsample before blur, pass minimization, 3D LUT grading — `references/rules/post-processing-chain.md`.
+- **Translation layers** (ANGLE / MobileGL / SwiftShader): functional testing only, never performance — `references/rules/translation-layer-gles.md`.
+- **Variable Rate Shading**: `GL_QCOM_shading_rate` (Adreno) vs `GL_EXT_fragment_shading_rate` family (pipeline/primitive/attachment rates + combiners); shading-cost only, not bandwidth — `references/rules/variable-rate-shading.md`.
+- **Transform Feedback** (3.0): varyings-before-link, `GL_TRANSFORM_FEEDBACK_BUFFER`, ping-pong particles; prefer compute on 3.1+ — `references/rules/transform-feedback.md`.
+- **Geometry Shaders**: GLES 3.2 only, `max_vertices` budget, instancing preferred for repeated geometry — `references/rules/geometry-shaders.md`.
+- **MRT / G-buffers**: attachment consistency, packing discipline, TBDR store cost — `references/rules/gles-api-standards.md` §5.2.
+
 ---
 
 ## Output Expectations
@@ -174,7 +184,7 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 
 ## Knowledge Cards (Per-Feature Quick Reference)
 
-For focused, per-feature guidance, consult `references/cards/` — 20 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG, Android video/buffer interop, GPU profiling toolchain, frame pacing, HDR display). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
+For focused, per-feature guidance, consult `references/cards/` — 26 knowledge cards organized by GLES functional area (API constraints, textures, buffers, FBO, shaders, compute, EGL, TBDR bandwidth, overdraw, MSAA, synchronization, draw calls, Mali PLS/Multiview, Adreno GMEM/VRS/LRZ, Windows/ANGLE, PowerVR HSR/IMG, Android video/buffer interop, GPU profiling toolchain, frame pacing, HDR display, shadow mapping, GPU skinning, post-processing, translation layers, transform feedback, geometry shader). Each card contains: core rules, code patterns, common pitfalls, and cross-references. See `references/cards/README.md` for the full index.
 
 ---
 
@@ -207,6 +217,13 @@ This SKILL.md is the entry point. Load additional files **only when relevant**:
 | Android video/camera texture, AHardwareBuffer, Vulkan interop, 16KB pages | `references/rules/android-interoperability.md` |
 | Frame pacing / stutter / high-refresh | `references/rules/frame-pacing.md` |
 | HDR / wide color gamut output | `references/rules/hdr-and-display.md` |
+| Shadow mapping | `references/rules/shadow-mapping-mobile.md` |
+| GPU skinning / animation | `references/rules/gpu-skinning.md` |
+| Post-processing / bloom / blur | `references/rules/post-processing-chain.md` |
+| Running GLES on host (ANGLE/SwiftShader) | `references/rules/translation-layer-gles.md` |
+| Variable Rate Shading | `references/rules/variable-rate-shading.md` |
+| Transform feedback / GPU particle update on 3.0 | `references/rules/transform-feedback.md` |
+| Geometry shader / procedural geometry | `references/rules/geometry-shaders.md` |
 | Performance diagnosis / profiler selection | `references/rules/profiling-tools.md` |
 | Quick look-up by feature | `references/cards/README.md` → individual card |
 | Example code (few-shot) | `references/examples/` → specific file |

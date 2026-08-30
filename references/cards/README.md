@@ -29,6 +29,12 @@
 | 18 | [gpu-profiling-toolchain](18-gpu-profiling-toolchain.md) | GPU 性能分析工具链 & 诊断流程 | All | `profiling-tools.md` |
 | 19 | [frame-pacing](19-frame-pacing.md) | 帧节奏：Swap Interval/Choreographer/Swappy | All | `frame-pacing.md` |
 | 20 | [hdr-and-display](20-hdr-and-display.md) | HDR & 广色域显示管线 | 3.0+ ext | `hdr-and-display.md` |
+| 21 | [shadow-mapping](21-shadow-mapping.md) | 移动端阴影贴图 | 3.0+ | `shadow-mapping-mobile.md` |
+| 22 | [gpu-skinning](22-gpu-skinning.md) | GPU 骨骼蒙皮 | 3.0/3.1 | `gpu-skinning.md` |
+| 23 | [post-processing-chain](23-post-processing-chain.md) | 后处理链：Bloom/模糊/调色 | 3.0+ | `post-processing-chain.md` |
+| 24 | [translation-layers](24-translation-layers.md) | GLES 翻译层：ANGLE/MobileGL/SwiftShader | via layer | `translation-layer-gles.md` |
+| 25 | [transform-feedback](25-transform-feedback.md) | Transform Feedback GPU 侧缓冲更新 | 3.0 core | `transform-feedback.md` |
+| 26 | [geometry-shader](26-geometry-shader.md) | Geometry Shader 图元生成 | 3.2 only | `geometry-shaders.md` |
 
 ## 卡片格式说明
 

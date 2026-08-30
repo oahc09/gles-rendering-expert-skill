@@ -1,11 +1,13 @@
 # ARM Mali GPU Best Practices (Distilled from the OpenGL ES SDK for Android)
 
-> Source of truth: **ARM "OpenGL ES SDK for Android"** tutorials & advanced samples
-> (https://arm-software.github.io/opengl-es-sdk-for-android/). This document
-> distills the vendor-recommended techniques into actionable rules for code
-> generation and review. Everything here targets **ARM Mali GPUs** running a
-> TBDR (Tile-Based Deferred Rendering) pipeline, but most rules generalize to
-> other tile-based mobile GPUs (Qualcomm Adreno, Imagination PowerVR).
+> Source of truth: **ARM "OpenGL ES SDK for Android"** (v2.1.2, MIT, archived /
+> no longer maintained — treat it as a frozen reference corpus) tutorials &
+> advanced samples (https://arm-software.github.io/opengl-es-sdk-for-android/).
+> This document distills the vendor-recommended techniques into actionable rules
+> for code generation and review. Everything here targets **ARM Mali GPUs**
+> running a TBDR (Tile-Based Deferred Rendering) pipeline, but most rules
+> generalize to other tile-based mobile GPUs (Qualcomm Adreno, Imagination
+> PowerVR). The SDK sample → rule map in §9 / §11 covers the full catalog.
 
 ---
 
@@ -333,3 +335,118 @@ in this document still apply**. Generation-specific notes:
 - Precision: FP16 (`mediump`) performance improved relative to FP32 on newer
   generations; the existing "mediump by default, highp where needed" rule is
   unchanged and still the right default.
+
+---
+
+## 11. Additional SDK Techniques (Sample Catalog Absorption)
+
+Techniques from the SDK sample catalog not covered above, distilled to rules.
+
+### 11.1 Tessellation — Displacement Mapping (GLES 3.2)
+- SDK sample: *Displacement mapping with tessellation* (+ *Instanced
+  tessellation*). Tessellation requires **GLES 3.2** (`GL_OES_tessellation_shader`
+  backports to 3.1 on some devices — runtime-check).
+- Use displacement/adaptive tessellation only where the extra vertex work buys
+  visible quality (close-up terrain, water); LOD the tessellation levels by
+  distance — constant high tessellation is vertex-bound on mobile.
+- **Incompatible with `GL_OVR_multiview`** (same as geometry shaders, §2).
+
+### 11.2 Occlusion Queries
+- SDK sample: *Occlusion Query*. Use `glGenQueries` +
+  `glBeginQuery(GL_ANY_SAMPLES_PASSED[_CONSERVATIVE], id)` around a cheap
+  bounding-volume draw; result one or more frames later via
+  `glGetQueryObjectuiv` (`GL_QUERY_RESULT_AVAILABLE` first — never block the
+  render thread on `GL_QUERY_RESULT` without checking availability).
+- `_CONSERVATIVE` is cheaper (may return false positives) — the right choice
+  for culling decisions. On TBDR GPUs queries force a sync point at query end;
+  batch occluder queries and reuse results across several frames.
+
+### 11.3 Instancing
+- SDK samples: *Instancing*, *Instanced tessellation*. Prefer
+  `glDrawArraysInstanced` / `glDrawElementsInstanced` +
+  `glVertexAttribDivisor(loc, 1)` per-instance attributes over per-object draw
+  calls or geometry-shader amplification (§11.6). Supported from GLES 3.0.
+- Pair with **2D texture arrays** for per-instance texture selection (index in a
+  per-instance attribute) — the SDK terrain/foliage pattern.
+
+### 11.4 Min/Max Blending & Integer Logic
+- SDK samples: *Min Max Blending*, *Integer Logic*.
+  `glBlendEquation(GL_MIN)` / `GL_MAX` are core in GLES 3.0 — useful for
+  luminance probes, bounding-box reduction, and order-independent min/max
+  accumulation without extra passes. Note: MIN/MAX ignore blend factors.
+- Integer framebuffers (`GL_RGBA8UI` etc.) + `usampler2D` let you do logic ops
+  in-shader; blending is **not supported** on integer formats — read-modify-
+  write via framebuffer fetch/PLS instead.
+
+### 11.5 Projected Lights & Skyboxes
+- SDK samples: *Projected Lights*, *Skybox*.
+  - Projected light: render a spotlight's cookie/gobo by projecting a texture
+    with the light's view-projection matrix in the fragment shader — one extra
+    dependent texture read per lit pixel; keep the projection texture small and
+    mipmapped.
+  - Skybox: draw a cube (or fullscreen triangle) sampling a cubemap with the
+    view direction, **depth test `GL_LEQUAL` with `gl_Position.zw = w`** so the
+    sky lands exactly at the far plane and every opaque fragment passes early-Z
+    over it. Draw the skybox **last** among opaque geometry.
+
+### 11.6 Procedural Geometry & Metaballs
+- SDK samples: *Procedural modelling with geometry shaders*, *Metaballs*.
+  Geometry-shader procedural generation follows the rules in
+  `geometry-shaders.md` (3.2-only, instancing preferred for repeated shapes).
+  Metaball field evaluation is ALU-heavy per pixel — evaluate on a coarse grid
+  (compute or vertex displacement) and shade the surface, never full-resolution
+  per-pixel field summation.
+
+### 11.7 High-Quality Text Rendering
+- SDK sample: *HighQualityText*. Render glyphs from a **signed distance field
+  (SDF) atlas**: single channel, scales without aliasing, cheap per-pixel
+  `smoothstep` threshold in the fragment shader. Avoid per-size bitmap atlases
+  (bandwidth) and CPU rasterization at runtime.
+
+### 11.8 Boids — Transform Feedback
+- SDK sample: *Boids*: flocking simulation where vertex positions/velocities
+  are updated on-GPU via transform feedback and drawn directly from the output
+  buffer. Full rules in `transform-feedback.md` (ping-pong buffers,
+  compute-shader alternative on 3.1+).
+
+### 11.9 Threading — Shared Contexts & Fences
+- SDK sample: *ThreadSync*. GL contexts are **not shareable across threads
+  without explicit sync**: use a shared context (`eglCreateContext(...,
+  share_context)`) per worker thread and transfer object ownership with
+  `glFenceSync` / `eglCreateSync(EGL_SYNC_FENCE)` — see
+  `references/rules/egl-and-context.md`. Never call the same context from two
+  threads concurrently.
+
+### 11.10 Multisampled FBO Patterns
+- SDK sample: *MultisampledFBO*. Standard ES 3.x pattern: renderbuffer MSAA
+  target + `glBlitFramebuffer` resolve is correct but costs a store+load on
+  TBDR; always prefer `GL_EXT_multisampled_render_to_texture` (card 10) when
+  available.
+
+---
+
+## 12. Full SDK Sample → Skill Coverage Map
+
+| SDK sample | Where covered in this skill |
+|:---|:---|
+| Advanced Shading w/ Pixel Local Storage | This doc §1 |
+| Multiview / Foveated rendering | This doc §2 |
+| Introduction to Compute Shaders / Particle Flow / Occlusion Culling (Hi-Z) / Ocean FFT | This doc §3 |
+| ASTC / ETC2 / Compressed Textures / Mipmapping | This doc §4, card 02 |
+| AntiAlias / MultisampledFBO | This doc §5, §11.10, card 10 |
+| EGLPreserve | This doc §6 |
+| Terrain (clipmaps + PBO) | This doc §7, `pbo_streaming_upload.cpp` |
+| RotoZoom | This doc §8 |
+| Boids | §11.8, `transform-feedback.md` |
+| Instancing / Instanced Tessellation | §11.3, §11.1 |
+| Occlusion Query | §11.2 |
+| Min Max Blending / Integer Logic | §11.4 |
+| Projected Lights / Skybox | §11.5 |
+| Procedural modelling with geometry shaders | §11.6, `geometry-shaders.md` |
+| Metaballs | §11.6 |
+| HighQualityText | §11.7 |
+| ThreadSync | §11.9, `egl-and-context.md` |
+| Bloom | `post-processing-chain.md`, card 23 |
+| Shadow Mapping | `shadow-mapping-mobile.md`, card 21 |
+| Displacement mapping with tessellation | §11.1 |
+| SimpleCube / TextureCube / Hello Triangle / VBO / Lighting / Normal Mapping / Asset Loading / Intro to Shaders | Baseline RAII/VAO/texture rules (`gles-api-standards.md`, examples/) |

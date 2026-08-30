@@ -40,6 +40,12 @@
 - Diagnose via Symptom → Triage → Counter → Classify → Fix → Verify; tools: Streamline (Mali), Snapdragon Profiler (Adreno), AGI/Perfetto (generic), RenderDoc (ANGLE). Never benchmark bandwidth on the emulator.
 - OpenGL ES has NO ray tracing / mesh shaders / bindless textures — redirect to Vulkan or GLES-legal alternatives.
 
+## VRS / Transform Feedback / Geometry Shaders / MRT
+- VRS: runtime extension check (`GL_QCOM_shading_rate` or `GL_EXT_fragment_shading_rate` family); set combiners explicitly; query rates per MSAA sample count; VRS 与 PLS/framebuffer fetch 同 pass 互斥。VRS 降 shading 成本，不降带宽。
+- Transform Feedback (3.0 core)：`glTransformFeedbackVaryings` 必须在 `glLinkProgram` 前；feedback 缓冲按最坏情况分配；3.1+ 优先 compute。ES 无 `glGetBufferSubData`，回读用 `glMapBufferRange`。
+- Geometry Shader 仅 GLES 3.2（`#version 320 es`）：版本门控 + instancing 回退；`max_vertices` 写紧；与 `GL_OVR_multiview` 互斥。
+- MRT：所有 attachment 同宽高/采样数；每个附件 = 一次 tile store，不写的不挂；法线 `n*0.5+0.5` 编码，深度入颜色附件须 RGBA 打包；Mali 同 pass 消费优先 PLS。
+
 ## File References
 - Rules: `references/rules/` (detailed enforcement documents)
 - Cards: `references/cards/` (quick-reference knowledge cards)

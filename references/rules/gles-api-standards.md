@@ -153,9 +153,14 @@ GPU-ready blocks:
 - Common incompleteness causes: mismatched attachment dimensions, missing color attachment, unsupported format combinations.
 
 ### 5.2 Multiple Render Targets (GLES 3.0+)
-- Query `GL_MAX_COLOR_ATTACHMENTS` (minimum 4 in GLES 3.0).
-- Use `glDrawBuffers(n, attachments)` to enable MRT.
-- Fragment shader outputs: `layout(location = 0) out vec4 outColor0;`
+- Query `GL_MAX_COLOR_ATTACHMENTS` (minimum 4 in GLES 3.0) and `GL_MAX_DRAW_BUFFERS` at runtime; treat 4 as a practical ceiling, not a floor.
+- Enable with `glDrawBuffers(n, attachments)`; the array maps draw buffer *i* to `GL_COLOR_ATTACHMENTi` (or `GL_NONE` to leave a slot unwritten). Fragment shader outputs bind by index: `layout(location = 0) out vec4 outColor0;` — every declared `out` must have a matching enabled buffer or the draw errors.
+- **All attachments in one MRT bind must share width, height, and sample count.** Mixed sizes or sample counts make the FBO incomplete. Formats may differ, but keep the set tight: each extra color attachment adds one tile store on TBDR GPUs (bandwidth = N × attachment writes), and per-attachment blending state adds driver cost. Drop any slot you do not actually write.
+- Typical uses: deferred G-buffers (albedo/normal/depth+emission), SSAO inputs, velocity vectors for motion blur / TAA, OIT accumulation.
+- **Encoding discipline** (from deferred-pipeline practice): normals are signed — remap `n * 0.5 + 0.5` on write, decode `* 2.0 - 1.0` on read; if depth must live in a color attachment, pack it across RGBA channels — one 8-bit channel (256 levels) is far too coarse to reconstruct world position. Prefer `RG16F`/octahedral normal packing or a real depth attachment when precision matters.
+- G-buffer pack strategy: piggyback scalars into spare alpha channels (roughness into albedo alpha, metalness into normal alpha) before adding another attachment.
+- **On Mali, prefer Pixel Local Storage over a DRAM G-buffer** when the intermediate data is consumed in the same render pass (`mali-arm-best-practices.md` §1); MRT G-buffers are the portable fallback — then `glInvalidateFramebuffer` every transient attachment at pass end.
+- Transparencies are not handled by deferred pipelines: render transparent geometry in a separate forward pass after lighting.
 
 ### 5.3 Blit Framebuffer
 - Use `glBlitFramebuffer` for resolve (MSAA → single-sample) or copy operations.
@@ -188,6 +193,8 @@ Key mobile extensions:
 - `GL_QCOM_tiled_rendering` — Qualcomm explicit tiling control
 - `GL_EXT_multisampled_render_to_texture` — MSAA with implicit resolve
 - `GL_OES_EGL_image_external` — Camera/video texture (Android)
+- `GL_EXT_fragment_shading_rate` (family) — Variable Rate Shading (see `variable-rate-shading.md`)
+- `GL_QCOM_shading_rate` — Adreno per-draw VRS
 - `GL_KHR_debug` — Debug output callback
 
 ---

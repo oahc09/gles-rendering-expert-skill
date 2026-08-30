@@ -47,6 +47,13 @@ gles-rendering-expert-skill/
 │   │   ├── profiling-tools.md         # GPU profilers & structured diagnosis workflow
 │   │   ├── frame-pacing.md            # Swap interval, Choreographer, Swappy
 │   │   ├── hdr-and-display.md         # HDR / wide color gamut display pipeline
+│   │   ├── shadow-mapping-mobile.md   # Shadow mapping adapted for TBDR mobile
+│   │   ├── gpu-skinning.md            # GPU skinning (UBO/SSBO matrix palette)
+│   │   ├── post-processing-chain.md   # Bloom, blur variants, 3D LUT color grading
+│   │   ├── translation-layer-gles.md  # ANGLE / MobileGL / SwiftShader host testing
+│   │   ├── variable-rate-shading.md   # VRS: QCOM_shading_rate & GL_EXT_fragment_shading_rate family
+│   │   ├── transform-feedback.md      # Transform feedback (GLES 3.0 core)
+│   │   ├── geometry-shaders.md        # Geometry shaders (GLES 3.2 only)
 │   │   ├── adreno/                    # Qualcomm Adreno techniques, one topic per file
 │   │   │   ├── README.md              # Adreno module index & GMEM/LRZ vocabulary
 │   │   │   ├── gmem-load-store.md     # Avoid GMEM loads / reduce GMEM stores
@@ -81,7 +88,13 @@ gles-rendering-expert-skill/
 │   │   ├── 17-android-video-interoperability.md # Video texture & buffer interop
 │   │   ├── 18-gpu-profiling-toolchain.md # GPU profilers & diagnosis workflow
 │   │   ├── 19-frame-pacing.md       # Swap interval/Choreographer/Swappy
-│   │   └── 20-hdr-and-display.md    # HDR & wide color gamut output
+│   │   ├── 20-hdr-and-display.md    # HDR & wide color gamut output
+│   │   ├── 21-shadow-mapping.md     # Mobile shadow mapping
+│   │   ├── 22-gpu-skinning.md       # GPU skinning
+│   │   ├── 23-post-processing-chain.md # Bloom/blur/color grading
+│   │   ├── 24-translation-layers.md # ANGLE/MobileGL/SwiftShader
+│   │   ├── 25-transform-feedback.md  # Transform feedback GPU buffer update
+│   │   └── 26-geometry-shader.md     # Geometry shader primitive generation (3.2)
 │   └── examples/                  # Reference code (few-shot samples)
 │       ├── egl_context_manager.cpp    # EGL init, shared context, context loss
 │       ├── vertex_array_object.hpp    # RAII VBO/VAO with state cache
@@ -112,6 +125,7 @@ gles-rendering-expert-skill/
 | **EGL Lifecycle** | Full init/teardown, shared contexts, Android context-lost recovery |
 | **Android Interop** | Video/camera textures (`GL_OES_EGL_image_external`), EGLImage, `AHardwareBuffer`, Vulkan interop, 16 KB pages |
 | **Frame Pacing & HDR** | Choreographer/Swappy cadence, high-refresh panels, HDR/wide-gamut display output |
+| **VRS & Advanced Pipeline** | Variable Rate Shading (QCOM & EXT surfaces), transform feedback, geometry shaders, MRT/G-buffer discipline |
 | **Profiling Guidance** | Structured diagnosis with Streamline / Snapdragon Profiler / AGI / Perfetto |
 | **Performance Diagnosis** | Structured analysis: Symptom → Root Cause → Fix → Expected Improvement |
 

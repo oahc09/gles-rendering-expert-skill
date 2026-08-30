@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.2] - 2026-08-29
+## [1.0.2] - 2026-08-30
 
 ### Added
 - **Frame pacing rules** (`references/rules/frame-pacing.md` + card 19):
@@ -24,13 +24,60 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Shader compilation strategy** (`glsl-es-optimization.md` §6.3): program
   binary cache keyed by source+renderer+driver, `GL_KHR_parallel_shader_compile`,
   warmup passes, time-sliced runtime compilation.
+- **Shadow mapping on mobile** (`references/rules/shadow-mapping-mobile.md`
+  + card 21): TBDR-adapted depth-only shadow pass (depth texture, not
+  renderbuffer; `glDrawBuffer(GL_NONE)`), bias tuning, `sampler2DShadow`
+  hardware PCF, cascade/atlas sizing.
+- **GPU skinning** (`references/rules/gpu-skinning.md` + card 22): UBO matrix
+  palette (GLES 3.0, ~64–120 bones) vs SSBO (GLES 3.1+), 4 bone influences,
+  skinned-normal re-normalization, once-per-frame palette update.
+- **Post-processing chains** (`references/rules/post-processing-chain.md`
+  + card 23): downsample-before-blur, pass minimization, ping-pong with
+  invalidate, Gaussian / Kawase / Dual / Tent filtering, 3D LUT color grading.
+- **GLES translation layers** (`references/rules/translation-layer-gles.md`
+  + card 24): ANGLE / MobileGL / SwiftShader host-testing rules — functional
+  testing valid, performance testing not; pinned ANGLE backends; missing
+  vendor extensions; real-device measurement requirement.
+- **Variable Rate Shading** (`references/rules/variable-rate-shading.md`):
+  cross-vendor coverage — `GL_QCOM_shading_rate` (Adreno, per Qualcomm's
+  mobile-VRS announcement) and the full `GL_EXT_fragment_shading_rate` family
+  per MediaTek's Dimensity developer docs: pipeline / per-primitive /
+  attachment rates, combiners, per-sample-count rate queries, MSAA
+  interaction, PLS/framebuffer-fetch incompatibility, `gl_ShadingRateEXT`
+  debug hook. Card 14 cross-references the new doc.
+- **Transform Feedback** (`references/rules/transform-feedback.md` + card 25):
+  GLES 3.0 core capture of vertex/geometry outputs — varyings-before-link,
+  INTERLEAVED/SEPARATE, `GL_RASTERIZER_DISCARD`, primitive-mode matching,
+  `GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN` queries, ping-pong particle
+  pattern, ES-correct readback (`glMapBufferRange`, no `glGetBufferSubData`),
+  compute-shader preference on 3.1+. Adapted from open.gl/feedback.
+- **Geometry Shaders** (`references/rules/geometry-shaders.md` + card 26):
+  GLES 3.2-only stage rules — input/output layout qualifiers, `max_vertices`
+  budgeting (`GL_MAX_GEOMETRY_OUTPUT_VERTICES`), amplification cost model,
+  instancing preference, multiview incompatibility, VRS/TF interactions.
+  Adapted from open.gl/geometry for ES.
+- **MRT depth** (`gles-api-standards.md` §5.2 + card 04): attachment
+  consistency (size/sample-count), per-attachment tile-store bandwidth model,
+  G-buffer encoding discipline (normal remap, RGBA depth packing), alpha
+  channel piggybacking, PLS-over-MRT guidance, deferred-pipeline structure.
+  Synthesized from the libcna MRT tutorial.
+- **ARM SDK full absorption** (`mali-arm-best-practices.md` §11–§12):
+  remaining sample-catalog techniques distilled — tessellation displacement,
+  occlusion queries, instancing, min/max blending, integer logic, projected
+  lights, skybox depth trick, metaballs, SDF text rendering, Boids, thread
+  sync, multisampled FBO — plus a complete SDK-sample → skill-coverage map
+  and provenance note (SDK v2.1.2, archived/MIT).
 
 ### Changed
 - **SKILL.md slimmed** (~7200 → ~5300 body tokens): the three vendor sections
   (Mali / Adreno / PowerVR) compressed into a single "Vendor Deep-Dives
   (Load On-Demand)" pointer table; Windows/ANGLE section condensed; new
   Android interop/presentation bullets; on-demand loading guide extended with
-  frame pacing / HDR / Vulkan interop rows; card count 18 → 20.
+  frame pacing / HDR / Vulkan interop rows; card count 18 → 20 → 24 → 26
+  (+ transform feedback, geometry shader).
+- **SKILL.md scope made explicitly cross-platform**: frontmatter description
+  and role statement now cover mobile (Android), Windows (ANGLE /
+  Windows-on-ARM), and Embedded Linux (GBM/EGL) — not mobile-only.
 - `glsl-es-optimization.md` §8: corrected `layout(binding=N)` UBO availability
   to GLES 3.1+ (`glUniformBlockBinding` on 3.00).
 - README: repository structure + capability table extended; agent configs
@@ -38,8 +85,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `HDR display`, `Vulkan interop`, `16KB page`, ...).
 
 ### Fixed
-- No correctness regressions; 53+ validation tests pass, skill-checker audit
-  clean (0 severe / 0 warnings).
+- **External security/technical audit remediation** (7 high-risk findings):
+  - `particle_simulation.comp`: `memoryBarrierShared()` now precedes
+    `barrier()`; early `return` replaced with an `inBounds` guard so every
+    invocation reaches every barrier (eliminated GPU-hang UB).
+  - `deferred_pls.frag`: split into `PASS_GEOMETRY` / `PASS_LIGHTING` /
+    `PASS_RESOLVE` `#ifdef` blocks — no compilation unit writes both PLS
+    outputs and fragment color output (EXT_shader_pixel_local_storage rule).
+  - `vertex_array_object.hpp` state cache: bounds-checked texture units,
+    per-(unit,target) slots, EBO tracking tied to VAO, separate DRAW/READ
+    FBO tracking, `kUnknown` sentinel invalidation (eliminated OOB access).
+  - `offscreen_pipeline.cpp`: `glInvalidateFramebuffer` moved before the FBO
+    switch; move-assignment zeroes the source handle.
+  - `egl_context_manager.cpp`: check EGL return values before consuming
+    `eglGetError()`, context-lost detection without re-querying error state,
+    fence sync + `glFlush` after cross-thread uploads.
+  - SKILL.md / shaders: corrected GLES 3.1 → `#version 310 es` mapping;
+    removed `layout(binding=N)` from a GLSL ES 3.00 shader (requires 3.10).
+  - `adreno/variable-rate-shading.md`: removed invalid
+    `glEnable(GL_SHADING_RATE_QCOM)` and nonexistent 2X4 rate.
+- 67 validation tests pass; skill-checker audit passes (0 severe; 2 soft
+  quality warnings: SKILL.md body near the ~5000-token budget, nested
+  `references/` layout depth — both structural, no security findings).
 
 ## [1.0.1] - 2026-08-23
 

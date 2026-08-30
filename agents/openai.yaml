@@ -34,6 +34,14 @@ activation_keywords:
   - "wide color gamut"
   - "Vulkan interop"
   - "16KB page"
+  - "variable rate shading"
+  - "VRS"
+  - "fragment shading rate"
+  - "transform feedback"
+  - "geometry shader"
+  - "multiple render targets"
+  - "shadow mapping"
+  - "GPU skinning"
 
 file_context:
   # Primary skill definition — always include
@@ -52,6 +60,13 @@ file_context:
     - references/rules/profiling-tools.md
     - references/rules/frame-pacing.md
     - references/rules/hdr-and-display.md
+    - references/rules/shadow-mapping-mobile.md
+    - references/rules/gpu-skinning.md
+    - references/rules/post-processing-chain.md
+    - references/rules/translation-layer-gles.md
+    - references/rules/variable-rate-shading.md
+    - references/rules/transform-feedback.md
+    - references/rules/geometry-shaders.md
     - references/rules/adreno/gmem-load-store.md
     - references/rules/adreno/efficient-msaa.md
     - references/rules/adreno/variable-rate-shading.md
@@ -91,3 +106,11 @@ system_prompt_addendum: |
       Vulkan or propose the GLES-legal alternative.
   13. Performance advice must cite profiler counters (Streamline/Snapdragon Profiler/
       AGI); never benchmark on the Android Emulator.
+  14. VRS: choose the path by runtime extension query (GL_QCOM_shading_rate vs
+      GL_EXT_fragment_shading_rate family); set combiners explicitly; VRS and
+      PLS/framebuffer-fetch are mutually exclusive per pass.
+  15. Transform feedback: glTransformFeedbackVaryings BEFORE glLinkProgram;
+      feedback primitive mode must match the last pre-rasterization stage output;
+      prefer compute shaders on GLES 3.1+.
+  16. Geometry shaders require GLES 3.2 (GLSL ES 3.20); gate behind a version
+      check, keep max_vertices tight, and prefer instancing for repeated geometry.
