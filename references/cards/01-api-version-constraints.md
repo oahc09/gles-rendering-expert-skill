@@ -21,8 +21,13 @@ glBindVertexArray(vao);
 glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_SHORT, nullptr);
 
 // ✅ 扩展检查
-const char* exts = (const char*)glGetString(GL_EXTENSIONS);
-bool hasASTC = strstr(exts, "GL_KHR_texture_compression_astc_ldr") != nullptr;
+GLint count = 0;
+glGetIntegerv(GL_NUM_EXTENSIONS, &count);
+bool hasASTC = false;
+for (GLint i = 0; i < count; ++i) {
+    const char* ext = reinterpret_cast<const char*>(glGetStringi(GL_EXTENSIONS, i));
+    if (ext && std::strcmp(ext, "GL_KHR_texture_compression_astc_ldr") == 0) hasASTC = true;
+} // Include <cstring>; exact match avoids prefix false positives.
 ```
 
 ## 常见陷阱
@@ -32,7 +37,7 @@ bool hasASTC = strstr(exts, "GL_KHR_texture_compression_astc_ldr") != nullptr;
 | 使用 `glBegin/glEnd` 立即模式 | 编译失败（GLES 无此 API） | VBO + VAO + `glDrawArrays` |
 | `GL_QUADS` 图元 | 无效枚举 | 拆分为三角形 |
 | `glPolygonMode(GL_LINE)` 线框 | 不支持 | 重心坐标 shader 或 Geometry Shader (3.2) |
-| `glLineWidth(>1.0)` | 仅保证 1.0 | 用几何体模拟宽线 |
+| 假定宽线可移植 | >1 合法，但仅保证 1.0 | 查询 GL_ALIASED_LINE_WIDTH_RANGE；几何体回退 |
 | 未检查扩展直接使用 | 运行时崩溃 | 查询 + fallback |
 
 ## 关联卡片

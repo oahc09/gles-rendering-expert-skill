@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/oahc09/gles-rendering-expert-skill/benchmarks/agent/case.schema.json",
+  "title": "GLES annotated agent benchmark corpus",
+  "type": "object",
+  "required": ["schema_version", "annotation_status", "cases"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "annotation_status": {"enum": ["REVIEW_REQUIRED_BEFORE_RELEASE", "REVIEWED"]},
+    "cases": {
+      "type": "array", "minItems": 60,
+      "items": {
+        "type": "object",
+        "required": ["case_id", "mode", "prompt", "device_capabilities", "core_case", "severity", "expected_findings", "legal_controls", "forbidden_advice", "fallback", "evidence_sources", "compile_evidence", "rubric"],
+        "properties": {
+          "case_id": {"type": "string", "pattern": "^A[0-9]{3}$"},
+          "mode": {"enum": ["Generate", "Review", "Diagnose", "Optimize"]},
+          "prompt": {"type": "string", "minLength": 1},
+          "device_capabilities": {"type": "object", "required": ["gles_version", "glsl_version", "platform", "extensions", "renderer", "hardware_evidence_available"]},
+          "core_case": {"type": "string", "pattern": "^C(0[1-9]|1[0-2])$"},
+          "severity": {"enum": ["high", "medium", "low"]},
+          "expected_findings": {"$ref": "#/$defs/labels"},
+          "legal_controls": {"$ref": "#/$defs/labels"},
+          "forbidden_advice": {"$ref": "#/$defs/labels"},
+          "fallback": {"type": "string", "minLength": 1},
+          "evidence_sources": {"$ref": "#/$defs/labels"},
+          "compile_evidence": {"type": "object", "required": ["required", "artifact", "status"]},
+          "rubric": {"type": "object", "required": ["accuracy", "false_positive", "debug_steps", "performance"]}
+        }
+      }
+    }
+  },
+  "$defs": {"labels": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}
+}

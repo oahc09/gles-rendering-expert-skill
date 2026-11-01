@@ -88,4 +88,4 @@ void main() {
 - `references/rules/transform-feedback.md` — capturing GS output
 - `references/rules/variable-rate-shading.md` §4 — GS writes primitive rate
 - `mali-arm-best-practices.md` §2 — multiview incompatibility
-- Card [12-draw-call-optimization](12-draw-call-optimization.md) — instancing alternative
+- Card [12-draw-call-optimization](../cards/12-draw-call-optimization.md) — instancing alternative

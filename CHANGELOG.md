@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - v1.0.3 candidate
+
+### Added
+- Exact full development plan, baseline audit, acceptance traceability and explicit release gates; metadata remains 1.0.2 pending all W0–W7 acceptance.
+- Machine-readable scoped rules and 112 distinct structured positive/negative contracts; actual C++17/EGL software smoke and ESSL compiler/linker fixtures.
+- 64 annotated Agent scenarios, paired no-skill/with-skill adapter, independent adjudication metrics and synthetic infrastructure tests. No live model-quality score claimed.
+- Capability/backend matrices, modern-rendering and diagnosis playbooks, GPU evidence capture workflow and dated official-source research radar.
+- Manual-dispatch-only validation workflow; no automatic CI or background schedule enabled.
+
+### Fixed
+- GLES3 ReadBuffer default/named FBO rules, texture format guidance, invented native_app_glue context-lost event and cross-context fence/flush/wait guidance.
+- Overstated branchless/precision/vendor performance guarantees; distinguish normative correctness from conditional measured recommendations.
+
+### Unverified / release blockers
+- Android NDK target compilation and physical-device lifecycle/HDR/AHardwareBuffer/frame-pacing/performance acceptance.
+- Real paired model evaluation and independent annotation review. Host Mesa software and synthetic runner tests do not satisfy these gates.
+
 ## [1.0.2] - 2026-08-30
 
 ### Added

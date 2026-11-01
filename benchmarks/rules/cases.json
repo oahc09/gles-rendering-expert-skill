@@ -537,7 +537,8 @@
     "case_id": "R016-P1",
     "rule_id": "R016",
     "input": {
-      "attachment": "DEPTH_ATTACHMENT"
+      "attachment": "DEPTH_ATTACHMENT",
+      "max_attachments": 4
     },
     "expected_valid": true,
     "scenario": "Invalidate named framebuffer enums \u2014 legal/boundary 1"
@@ -546,7 +547,8 @@
     "case_id": "R016-P2",
     "rule_id": "R016",
     "input": {
-      "attachment": "COLOR_ATTACHMENT0"
+      "attachment": "COLOR_ATTACHMENT0",
+      "max_attachments": 4
     },
     "expected_valid": true,
     "scenario": "Invalidate named framebuffer enums \u2014 legal/boundary 2"
@@ -555,7 +557,8 @@
     "case_id": "R016-N1",
     "rule_id": "R016",
     "input": {
-      "attachment": "DEPTH"
+      "attachment": "DEPTH",
+      "max_attachments": 4
     },
     "expected_valid": false,
     "scenario": "Invalidate named framebuffer enums \u2014 violation/counterexample 1"
@@ -564,7 +567,8 @@
     "case_id": "R016-N2",
     "rule_id": "R016",
     "input": {
-      "attachment": "COLOR"
+      "attachment": "COLOR",
+      "max_attachments": 4
     },
     "expected_valid": false,
     "scenario": "Invalidate named framebuffer enums \u2014 violation/counterexample 2"
@@ -639,41 +643,41 @@
     "case_id": "R019-P1",
     "rule_id": "R019",
     "input": {
-      "multisample": true,
+      "buffer_kind": "integer_color",
       "filter": "NEAREST"
     },
     "expected_valid": true,
-    "scenario": "MSAA resolve filter \u2014 legal/boundary 1"
+    "scenario": "Blit filter legality depends on buffer component type, not generic MSAA ban"
   },
   {
     "case_id": "R019-P2",
     "rule_id": "R019",
     "input": {
-      "multisample": false,
+      "buffer_kind": "normalized_color",
       "filter": "LINEAR"
     },
     "expected_valid": true,
-    "scenario": "MSAA resolve filter \u2014 legal/boundary 2"
+    "scenario": "Blit filter legality depends on buffer component type, not generic MSAA ban"
   },
   {
     "case_id": "R019-N1",
     "rule_id": "R019",
     "input": {
-      "multisample": true,
+      "buffer_kind": "integer_color",
       "filter": "LINEAR"
     },
     "expected_valid": false,
-    "scenario": "MSAA resolve filter \u2014 violation/counterexample 1"
+    "scenario": "Blit filter legality depends on buffer component type, not generic MSAA ban"
   },
   {
     "case_id": "R019-N2",
     "rule_id": "R019",
     "input": {
-      "multisample": true,
-      "filter": "CUBIC"
+      "buffer_kind": "depth",
+      "filter": "LINEAR"
     },
     "expected_valid": false,
-    "scenario": "MSAA resolve filter \u2014 violation/counterexample 2"
+    "scenario": "Blit filter legality depends on buffer component type, not generic MSAA ban"
   },
   {
     "case_id": "R020-P1",
@@ -1075,5 +1079,44 @@
     },
     "expected_valid": false,
     "scenario": "Texture feedback loop \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R016-P3",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "COLOR_ATTACHMENT1",
+      "max_attachments": 4
+    },
+    "expected_valid": true,
+    "scenario": "Nonzero named color attachment is legal"
+  },
+  {
+    "case_id": "R016-N3",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "COLOR_ATTACHMENT4",
+      "max_attachments": 4
+    },
+    "expected_valid": false,
+    "scenario": "Index equal to maximum is outside valid enum range"
+  },
+  {
+    "case_id": "R023-P3",
+    "rule_id": "R023",
+    "input": {
+      "event": "APP_CMD_RESUME"
+    },
+    "expected_valid": true,
+    "scenario": "Actual lifecycle command is not context loss"
+  },
+  {
+    "case_id": "R016-P4",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "DEPTH_STENCIL_ATTACHMENT",
+      "max_attachments": 4
+    },
+    "expected_valid": true,
+    "scenario": "Combined depth-stencil named attachment is legal"
   }
 ]

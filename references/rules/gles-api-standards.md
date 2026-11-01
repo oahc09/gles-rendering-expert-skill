@@ -53,19 +53,18 @@ glPixelMap / glPixelTransferf
 glPolygonMode(GL_FRONT_AND_BACK, GL_LINE/GL_POINT)
 GL_QUADS / GL_QUAD_STRIP / GL_POLYGON primitive types
 ```
-**GLES Equivalent**: `GL_TRIANGLES`, `GL_TRIANGLE_STRIP`, `GL_TRIANGLE_FAN` only. For wireframe, use barycentric coordinate technique in shader or geometry shader (GLES 3.2).
+**GLES Equivalent**: triangles, points and line primitives are legal; use triangle lists/strips/fans to replace polygon modes. For wireframe, use barycentric coordinate technique in shader or geometry shader (GLES 3.2).
 
 ### 2.6 Draw Buffer / Read Buffer
 ```
 glDrawBuffer(GL_BACK) / glReadBuffer(GL_FRONT)  // Desktop single-buffer selection
 ```
-**GLES Equivalent**: `glDrawBuffers(n, bufs)` for MRT (GLES 3.0+). Default read buffer is implementation-defined for default FBO; use `glReadBuffer` only on GLES 3.0+ named FBOs.
+**GLES Equivalent**: `glDrawBuffers(n, bufs)` for MRT (GLES 3.0+). `glReadBuffer` is core GLES 3.0: default framebuffer accepts `GL_BACK` or `GL_NONE`; a named framebuffer accepts `GL_COLOR_ATTACHMENTi` or `GL_NONE` (within implementation limits). `GL_FRONT` is not a GLES read-buffer selector. Select a present attachment before readback.
 
 ### 2.7 Miscellaneous Desktop-Only
 ```
 glPushAttrib / glPopAttrib
 glPushClientAttrib / glPopClientAttrib
-glLineWidth(width > 1.0)  // GLES guarantees only 1.0
 glLineStipple
 glPolygonStipple
 glEdgeFlag
@@ -96,8 +95,8 @@ OpenGL ES requires **exact format-type pairing** in `glTexImage2D` / `glTexStora
 | `GL_DEPTH24_STENCIL8` | `GL_DEPTH_STENCIL` | `GL_UNSIGNED_INT_24_8` |
 
 ### 3.2 Rules
-- **Always** use `glTexStorage2D` (immutable) over `glTexImage2D` (mutable) when mipmap levels are known upfront — better driver optimization.
-- For `glTexImage2D`, the `internalformat` parameter in GLES must match the `format` parameter (e.g., `GL_RGBA`, not `GL_RGBA8` for GLES 2.0 compat; for 3.0+, sized formats are allowed in `glTexStorage2D`).
+- **SHOULD** use `glTexStorage2D` for fixed storage; it has a sized internal format and no external format/type arguments. Mutable allocation remains legal and useful for changing dimensions.
+- **MUST** choose a combination from GLES 3.0 Tables 3.2–3.3 (pixel format/type combinations). `glTexImage2D(..., GL_RGBA8, ..., GL_RGBA, GL_UNSIGNED_BYTE, ...)` is legal in GLES 3.0. Only the unsized internal-format path requires matching internalformat/format. Integer storage requires integer external formats (for example `GL_RGBA8UI` / `GL_RGBA_INTEGER` / `GL_UNSIGNED_BYTE`). Allocation support does not imply filtering or framebuffer-renderability support.
 - ETC2 (`GL_COMPRESSED_RGB8_ETC2`, `GL_COMPRESSED_RGBA8_ETC2_EAC`) is mandatory in GLES 3.0. ASTC is mandatory in GLES 3.2.
 
 ### 3.3 Offline Compression Asset Pipeline
@@ -211,7 +210,7 @@ the OpenGL ES specification on any version or vendor extension surface:
 | Bindless textures / descriptors | Not available | Bind texture units / sampler arrays; texture arrays for batching |
 | Explicit subpasses (Vulkan-style) | No explicit API | Framebuffer fetch / PLS extensions (see `tbdr-bandwidth-rules.md`) |
 | Geometry shader on GLES 3.0/3.1 | 3.2 only | Gate behind runtime version check |
-| Desktop-style `glReadBuffer` on default FBO | Implementation-defined | Use named FBOs for readback control |
+| `glReadBuffer(GL_FRONT)` | Invalid GLES selector | Default FBO: `GL_BACK`/`GL_NONE`; named FBO: `GL_COLOR_ATTACHMENTi`/`GL_NONE` |
 
 If a user's request implies one of these features, state the boundary explicitly
 and propose the GLES-legal alternative instead of emitting fictional extensions.

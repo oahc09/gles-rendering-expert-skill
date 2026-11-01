@@ -112,6 +112,8 @@ public:
     Texture2D& operator=(const Texture2D&) = delete;
 
     bool Create(GLsizei w, GLsizei h, GLenum internalFormat, GLenum format, GLenum type) {
+        // Immutable allocation has no external format/type; retained for caller compatibility.
+        (void)format; (void)type;
         glGenTextures(1, &id_);
         glBindTexture(GL_TEXTURE_2D, id_);
         // Use glTexStorage2D for immutable allocation (better driver optimization)

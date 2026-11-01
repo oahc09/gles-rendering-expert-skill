@@ -1,0 +1,3417 @@
+{
+  "schema_version": 1,
+  "start": "2026-10-02",
+  "end": "2026-11-01",
+  "fetched_at": "2026-11-01T05:57:19.136470+00:00",
+  "sources": [
+    {
+      "source": "agi",
+      "status": "FETCHED",
+      "complete": true
+    },
+    {
+      "source": "angle",
+      "status": "FETCHED",
+      "complete": true
+    },
+    {
+      "source": "cts",
+      "status": "FETCHED",
+      "complete": true
+    },
+    {
+      "source": "filament",
+      "status": "FETCHED",
+      "complete": true
+    },
+    {
+      "source": "glslang",
+      "status": "FETCHED",
+      "complete": true
+    },
+    {
+      "source": "perfetto",
+      "status": "FETCHED",
+      "complete": true
+    },
+    {
+      "source": "renderdoc",
+      "status": "FETCHED",
+      "complete": true
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "note": "Metadata candidates only; no verified material updates is a human review conclusion, not a fetch result.",
+  "items": [
+    {
+      "source": "angle",
+      "id": "009fdf4fc20f53bf34360dbc0c11bfbb68155ff6",
+      "url": "https://github.com/google/angle/commit/009fdf4fc20f53bf34360dbc0c11bfbb68155ff6",
+      "event_at": "2026-10-03T00:02:56Z",
+      "revision": "009fdf4fc20f53bf34360dbc0c11bfbb68155ff6",
+      "title": "[dawn] Unsuppress ANGLE tests and roll Dawn.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "00eafe1384939ab1846555b137e86154dfc9ae95",
+      "url": "https://github.com/google/angle/commit/00eafe1384939ab1846555b137e86154dfc9ae95",
+      "event_at": "2026-10-27T08:55:15Z",
+      "revision": "00eafe1384939ab1846555b137e86154dfc9ae95",
+      "title": "Span: Fix IsSpan for fixed-extent spans",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "0520f68e25035960c9ce694c1560128dbc6e8c35",
+      "url": "https://github.com/google/angle/commit/0520f68e25035960c9ce694c1560128dbc6e8c35",
+      "event_at": "2026-10-26T19:17:31Z",
+      "revision": "0520f68e25035960c9ce694c1560128dbc6e8c35",
+      "title": "Vulkan: Dynamic state for depth clip control",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "05702bdab951af7f7aa2ca09a5dbf6fcc2dccb7c",
+      "url": "https://github.com/google/angle/commit/05702bdab951af7f7aa2ca09a5dbf6fcc2dccb7c",
+      "event_at": "2026-10-15T14:48:13Z",
+      "revision": "05702bdab951af7f7aa2ca09a5dbf6fcc2dccb7c",
+      "title": "Tests: Add AST condition",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "07b55263ce275c7c61a9b004662190f9d9c7b03c",
+      "url": "https://github.com/google/angle/commit/07b55263ce275c7c61a9b004662190f9d9c7b03c",
+      "event_at": "2026-10-31T05:02:18Z",
+      "revision": "07b55263ce275c7c61a9b004662190f9d9c7b03c",
+      "title": "D3D11: Fix source coordinate clamping in StretchedBlitNearest",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "0842ac39f5cfe8baceb3babe0a3e1a8341d5696c",
+      "url": "https://github.com/google/angle/commit/0842ac39f5cfe8baceb3babe0a3e1a8341d5696c",
+      "event_at": "2026-10-22T20:32:04Z",
+      "revision": "0842ac39f5cfe8baceb3babe0a3e1a8341d5696c",
+      "title": "Add ImageTest.CreateImageWithNonCurrentContextTwoThreads",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "0ad2c7d0791305231beca93a192a21f551097d2e",
+      "url": "https://github.com/google/angle/commit/0ad2c7d0791305231beca93a192a21f551097d2e",
+      "event_at": "2026-10-23T18:04:29Z",
+      "revision": "0ad2c7d0791305231beca93a192a21f551097d2e",
+      "title": "Remove UnlockedTailCall from SyncEGL::onDestroy",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "0be5635b1215f23ca5933e302e097fcc756f826a",
+      "url": "https://github.com/google/angle/commit/0be5635b1215f23ca5933e302e097fcc756f826a",
+      "event_at": "2026-10-27T14:30:28Z",
+      "revision": "0be5635b1215f23ca5933e302e097fcc756f826a",
+      "title": "Vulkan: Use MUTABLE_FORMAT for int color images on Adreno 702",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "0c80cc1995a56616c53d36fc02535d8bd9ad17e1",
+      "url": "https://github.com/google/angle/commit/0c80cc1995a56616c53d36fc02535d8bd9ad17e1",
+      "event_at": "2026-10-27T13:19:35Z",
+      "revision": "0c80cc1995a56616c53d36fc02535d8bd9ad17e1",
+      "title": "Enable clang-tidy range-based loop modernization checks",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "0d3e058735251d3c165b4983bfe60fcdcd87c9b9",
+      "url": "https://github.com/google/angle/commit/0d3e058735251d3c165b4983bfe60fcdcd87c9b9",
+      "event_at": "2026-10-20T18:53:29Z",
+      "revision": "0d3e058735251d3c165b4983bfe60fcdcd87c9b9",
+      "title": "Vulkan: Don't add srgb formats for R8/RG8 if unsupported",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "0ed62f49b5e02cc5e6db4a175a98f545cc994715",
+      "url": "https://github.com/google/angle/commit/0ed62f49b5e02cc5e6db4a175a98f545cc994715",
+      "event_at": "2026-10-02T21:57:47Z",
+      "revision": "0ed62f49b5e02cc5e6db4a175a98f545cc994715",
+      "title": "Tests: Add Guns of Glory Lost Island restricted trace",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "10065656340ec6783859653bdc6736e2e6a181b4",
+      "url": "https://github.com/google/angle/commit/10065656340ec6783859653bdc6736e2e6a181b4",
+      "event_at": "2026-10-27T20:34:56Z",
+      "revision": "10065656340ec6783859653bdc6736e2e6a181b4",
+      "title": "Tests: Add parchisi_star and my_supermarket_journey traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "10d96c573b34202f4f98a8875ee1eb20c3e39e22",
+      "url": "https://github.com/google/angle/commit/10d96c573b34202f4f98a8875ee1eb20c3e39e22",
+      "event_at": "2026-10-20T19:42:26Z",
+      "revision": "10d96c573b34202f4f98a8875ee1eb20c3e39e22",
+      "title": "Tests: Add epic_seven, sea_of_conquest & sonic_dash_run traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "124c04568f479644214f780456d68b2e5c84715f",
+      "url": "https://github.com/google/angle/commit/124c04568f479644214f780456d68b2e5c84715f",
+      "event_at": "2026-10-19T20:07:42Z",
+      "revision": "124c04568f479644214f780456d68b2e5c84715f",
+      "title": "Vulkan: Handle a couple of VVL errors",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "12a3a02c6eab529eec2046198fb62d33fc29ee1e",
+      "url": "https://github.com/google/angle/commit/12a3a02c6eab529eec2046198fb62d33fc29ee1e",
+      "event_at": "2026-10-08T07:49:22Z",
+      "revision": "12a3a02c6eab529eec2046198fb62d33fc29ee1e",
+      "title": "Roll Chromium from 4f79677d5a76 to 3f7d7c8b5fc4 (713 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "13357153ce1fb8710c2e3c0f0de22844ddac19af",
+      "url": "https://github.com/google/angle/commit/13357153ce1fb8710c2e3c0f0de22844ddac19af",
+      "event_at": "2026-10-12T11:34:46Z",
+      "revision": "13357153ce1fb8710c2e3c0f0de22844ddac19af",
+      "title": "Roll vulkan-deps from 5262a083659f to 8440c88cfc42 (15 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "13587a898c79df197523f1b83c6d2ae37cc0e571",
+      "url": "https://github.com/google/angle/commit/13587a898c79df197523f1b83c6d2ae37cc0e571",
+      "event_at": "2026-10-27T17:50:56Z",
+      "revision": "13587a898c79df197523f1b83c6d2ae37cc0e571",
+      "title": "Remove unused buildtools/reclient from DEPS and roll scripts",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "159c38aee8f1b85fea3427d51bf4302236f3437f",
+      "url": "https://github.com/google/angle/commit/159c38aee8f1b85fea3427d51bf4302236f3437f",
+      "event_at": "2026-10-21T06:06:26Z",
+      "revision": "159c38aee8f1b85fea3427d51bf4302236f3437f",
+      "title": "Failing test suppressions and build fixes",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "15d160ac4f9414d5b4792440bc5574adc7cb47ee",
+      "url": "https://github.com/google/angle/commit/15d160ac4f9414d5b4792440bc5574adc7cb47ee",
+      "event_at": "2026-10-27T17:56:52Z",
+      "revision": "15d160ac4f9414d5b4792440bc5574adc7cb47ee",
+      "title": "Fix build failure when ANGLE_ENABLE_ASSERTS not defined",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "160353c63517f9cacc1d1ca2ec7d04f2bb7ef3f5",
+      "url": "https://github.com/google/angle/commit/160353c63517f9cacc1d1ca2ec7d04f2bb7ef3f5",
+      "event_at": "2026-10-30T03:38:52Z",
+      "revision": "160353c63517f9cacc1d1ca2ec7d04f2bb7ef3f5",
+      "title": "spanify: Drop allow_unsafe_buffers from DrawBuffersTest",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "169d6748a8ac63db4ac83fd8ee7d1e8f4417e4b4",
+      "url": "https://github.com/google/angle/commit/169d6748a8ac63db4ac83fd8ee7d1e8f4417e4b4",
+      "event_at": "2026-10-27T07:01:51Z",
+      "revision": "169d6748a8ac63db4ac83fd8ee7d1e8f4417e4b4",
+      "title": "[3p freshness] ffx_spd: Roll to v2.0",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "16a0aa002f4995861cafaa7ad3c684e934e15bd1",
+      "url": "https://github.com/google/angle/commit/16a0aa002f4995861cafaa7ad3c684e934e15bd1",
+      "event_at": "2026-10-08T20:56:37Z",
+      "revision": "16a0aa002f4995861cafaa7ad3c684e934e15bd1",
+      "title": "Capture/Replay: Track state changes during resource reset",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "16cbe9bd3a217204bb91f0f18f2b2be59943cc27",
+      "url": "https://github.com/google/angle/commit/16cbe9bd3a217204bb91f0f18f2b2be59943cc27",
+      "event_at": "2026-10-16T18:34:49Z",
+      "revision": "16cbe9bd3a217204bb91f0f18f2b2be59943cc27",
+      "title": "D3D11: Clamp constant buffer range size and offset",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "173baa6b780daddd3816ee5bd75196d377b2fce2",
+      "url": "https://github.com/google/angle/commit/173baa6b780daddd3816ee5bd75196d377b2fce2",
+      "event_at": "2026-10-07T14:52:35Z",
+      "revision": "173baa6b780daddd3816ee5bd75196d377b2fce2",
+      "title": "Trace/Replay: Add get_min_reqs error messages",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "17a9a504d6568027840a8aabd3dbe3cf726a919f",
+      "url": "https://github.com/google/angle/commit/17a9a504d6568027840a8aabd3dbe3cf726a919f",
+      "event_at": "2026-10-27T10:58:37Z",
+      "revision": "17a9a504d6568027840a8aabd3dbe3cf726a919f",
+      "title": "Roll vulkan-deps from 7724413aefba to 5f9a05f60c9a (12 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "17e51eb6437efd6e9d3de2a070a705ab405f4d92",
+      "url": "https://github.com/google/angle/commit/17e51eb6437efd6e9d3de2a070a705ab405f4d92",
+      "event_at": "2026-10-08T19:31:12Z",
+      "revision": "17e51eb6437efd6e9d3de2a070a705ab405f4d92",
+      "title": "IR: Complete vertex_instance_id in IR",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "192af4dd12ae616689093b985e8dc65b885c09fa",
+      "url": "https://github.com/google/angle/commit/192af4dd12ae616689093b985e8dc65b885c09fa",
+      "event_at": "2026-10-23T22:46:47Z",
+      "revision": "192af4dd12ae616689093b985e8dc65b885c09fa",
+      "title": "Update glslang_validator binary for Linux.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "1cd9c87f064a9ae6ee8280cbb9f29b95d273414b",
+      "url": "https://github.com/google/angle/commit/1cd9c87f064a9ae6ee8280cbb9f29b95d273414b",
+      "event_at": "2026-10-16T18:27:44Z",
+      "revision": "1cd9c87f064a9ae6ee8280cbb9f29b95d273414b",
+      "title": "Manual roll Chromium 758f937f32 to 1994e54c92",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "1d3b408117b562d6488a78c071a171fbc6d9f08d",
+      "url": "https://github.com/google/angle/commit/1d3b408117b562d6488a78c071a171fbc6d9f08d",
+      "event_at": "2026-10-15T02:02:32Z",
+      "revision": "1d3b408117b562d6488a78c071a171fbc6d9f08d",
+      "title": "Skip failing OpenGL tests on Linux/NVIDIA",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "1dcda2e38120f08450b32e230d9d7104eda30695",
+      "url": "https://github.com/google/angle/commit/1dcda2e38120f08450b32e230d9d7104eda30695",
+      "event_at": "2026-10-29T23:00:07Z",
+      "revision": "1dcda2e38120f08450b32e230d9d7104eda30695",
+      "title": "spanify: Drop allow_unsafe_buffers from FramebufferTest",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "1e8a237ecdaf6bed43f91f01d719d0619f43436c",
+      "url": "https://github.com/google/angle/commit/1e8a237ecdaf6bed43f91f01d719d0619f43436c",
+      "event_at": "2026-10-27T21:27:50Z",
+      "revision": "1e8a237ecdaf6bed43f91f01d719d0619f43436c",
+      "title": "Trace/Replay: Add --start option to retrace upgrade",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "1eccca5fe0c317ab49f10d59c41308ff192cc80a",
+      "url": "https://github.com/google/angle/commit/1eccca5fe0c317ab49f10d59c41308ff192cc80a",
+      "event_at": "2026-10-13T14:24:44Z",
+      "revision": "1eccca5fe0c317ab49f10d59c41308ff192cc80a",
+      "title": "Trace/Replay: Don't rebind EGLImages when created in-capture",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "1ef82576e0e0834b932dfe810064c68a63f615f1",
+      "url": "https://github.com/google/angle/commit/1ef82576e0e0834b932dfe810064c68a63f615f1",
+      "event_at": "2026-10-26T22:06:08Z",
+      "revision": "1ef82576e0e0834b932dfe810064c68a63f615f1",
+      "title": "Fix potential deadlock during eglTerminate",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "1fb99fcd9f1e9461b3a9a015ea3d9b9b62ce1904",
+      "url": "https://github.com/google/angle/commit/1fb99fcd9f1e9461b3a9a015ea3d9b9b62ce1904",
+      "event_at": "2026-10-07T23:45:34Z",
+      "revision": "1fb99fcd9f1e9461b3a9a015ea3d9b9b62ce1904",
+      "title": "WebGPU: Honor the depth write mask",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "1ff891807e391d842c33d552ea26ab26b5341ef4",
+      "url": "https://github.com/google/angle/commit/1ff891807e391d842c33d552ea26ab26b5341ef4",
+      "event_at": "2026-10-21T02:19:28Z",
+      "revision": "1ff891807e391d842c33d552ea26ab26b5341ef4",
+      "title": "Translator: Even more finite loop detection bugfixes",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "203ac4b9b78240c7423f94afa3cc65a51598f01c",
+      "url": "https://github.com/google/angle/commit/203ac4b9b78240c7423f94afa3cc65a51598f01c",
+      "event_at": "2026-10-06T13:19:53Z",
+      "revision": "203ac4b9b78240c7423f94afa3cc65a51598f01c",
+      "title": "Roll vulkan-deps from b36b0c80377e to 1c36c0df0048 (13 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "221d899b4f02f4f93472723f5ee0850edcaba1ed",
+      "url": "https://github.com/google/angle/commit/221d899b4f02f4f93472723f5ee0850edcaba1ed",
+      "event_at": "2026-10-29T17:30:07Z",
+      "revision": "221d899b4f02f4f93472723f5ee0850edcaba1ed",
+      "title": "Vulkan: Disable alpha-to-coverage dynamic state on Intel/mesa",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "22a771e5d0c51602ec24a1c34428be6e62346ba6",
+      "url": "https://github.com/google/angle/commit/22a771e5d0c51602ec24a1c34428be6e62346ba6",
+      "event_at": "2026-10-09T04:10:44Z",
+      "revision": "22a771e5d0c51602ec24a1c34428be6e62346ba6",
+      "title": "IR: Skip trace with minor differences",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "22e0ca0439d3e2add7ccb31afad224bee3ba5e52",
+      "url": "https://github.com/google/angle/commit/22e0ca0439d3e2add7ccb31afad224bee3ba5e52",
+      "event_at": "2026-10-02T19:29:19Z",
+      "revision": "22e0ca0439d3e2add7ccb31afad224bee3ba5e52",
+      "title": "Revert \"Enable dangling pointer detector in ANGLE test runner\"",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2466f797e0d75c9dd891036e26affed79aa6873e",
+      "url": "https://github.com/google/angle/commit/2466f797e0d75c9dd891036e26affed79aa6873e",
+      "event_at": "2026-10-29T22:24:43Z",
+      "revision": "2466f797e0d75c9dd891036e26affed79aa6873e",
+      "title": "spanify: Use Span in BlendIntegerTest::compareValue",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "25078a7740fdebf86b5396ec971aaebf418ce01d",
+      "url": "https://github.com/google/angle/commit/25078a7740fdebf86b5396ec971aaebf418ce01d",
+      "event_at": "2026-10-12T21:42:49Z",
+      "revision": "25078a7740fdebf86b5396ec971aaebf418ce01d",
+      "title": "Revert the vkDestroySurfaceKHR back to tail call.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "25b559464cb10c557e10aad1e75d1b85ddfef271",
+      "url": "https://github.com/google/angle/commit/25b559464cb10c557e10aad1e75d1b85ddfef271",
+      "event_at": "2026-10-13T15:23:51Z",
+      "revision": "25b559464cb10c557e10aad1e75d1b85ddfef271",
+      "title": "D3D11: Accept Y410/Y210 packed YUV client buffers",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "26827811fa44ec837ae19b0f10c20df4b8ed11c1",
+      "url": "https://github.com/google/angle/commit/26827811fa44ec837ae19b0f10c20df4b8ed11c1",
+      "event_at": "2026-10-28T22:57:53Z",
+      "revision": "26827811fa44ec837ae19b0f10c20df4b8ed11c1",
+      "title": "IR validate sampler/image type of OpCode other than Texture",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2890aa2b0a51498a489e5f418b3b68edb8ab94f8",
+      "url": "https://github.com/google/angle/commit/2890aa2b0a51498a489e5f418b3b68edb8ab94f8",
+      "event_at": "2026-10-26T15:01:27Z",
+      "revision": "2890aa2b0a51498a489e5f418b3b68edb8ab94f8",
+      "title": "Vulkan: Plumb VK_KHR_pipeline_binary extension framework",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "29388bec6528e50fba89bbbeb4dd9cff072367c4",
+      "url": "https://github.com/google/angle/commit/29388bec6528e50fba89bbbeb4dd9cff072367c4",
+      "event_at": "2026-10-20T22:37:36Z",
+      "revision": "29388bec6528e50fba89bbbeb4dd9cff072367c4",
+      "title": "Add zstd support to compression helpers",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2af043b23a22c277533836cf571e862810a7b36d",
+      "url": "https://github.com/google/angle/commit/2af043b23a22c277533836cf571e862810a7b36d",
+      "event_at": "2026-10-08T14:42:52Z",
+      "revision": "2af043b23a22c277533836cf571e862810a7b36d",
+      "title": "Capture/Replay: Restore immutable dynamic buffers",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2b2c09d4911019bdf0a7c73cb74e76efb84c3a7c",
+      "url": "https://github.com/google/angle/commit/2b2c09d4911019bdf0a7c73cb74e76efb84c3a7c",
+      "event_at": "2026-10-26T23:29:53Z",
+      "revision": "2b2c09d4911019bdf0a7c73cb74e76efb84c3a7c",
+      "title": "GL: Fix GLX crash after eglTerminate from another thread",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2ba8755cc4c65f7e90eb1ae47798756ed15f6c97",
+      "url": "https://github.com/google/angle/commit/2ba8755cc4c65f7e90eb1ae47798756ed15f6c97",
+      "event_at": "2026-10-23T19:13:10Z",
+      "revision": "2ba8755cc4c65f7e90eb1ae47798756ed15f6c97",
+      "title": "Vulkan: Re-bind tile memory after force-submit outside RP",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2bdbe5624f9bc14b9a37f4afd9b355dcd22e6605",
+      "url": "https://github.com/google/angle/commit/2bdbe5624f9bc14b9a37f4afd9b355dcd22e6605",
+      "event_at": "2026-10-22T08:58:18Z",
+      "revision": "2bdbe5624f9bc14b9a37f4afd9b355dcd22e6605",
+      "title": "Roll Chromium from 0a8b0d14dd3f to 4ab5f84445a4 (1820 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2c2e3d0602c984c44678b3d94c60bea734e28ee1",
+      "url": "https://github.com/google/angle/commit/2c2e3d0602c984c44678b3d94c60bea734e28ee1",
+      "event_at": "2026-10-26T17:18:55Z",
+      "revision": "2c2e3d0602c984c44678b3d94c60bea734e28ee1",
+      "title": "Vulkan: Dynamic state for depth clamp",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2cfdd6153dcf195b37af12e639c5f197462b6fdb",
+      "url": "https://github.com/google/angle/commit/2cfdd6153dcf195b37af12e639c5f197462b6fdb",
+      "event_at": "2026-10-09T03:27:23Z",
+      "revision": "2cfdd6153dcf195b37af12e639c5f197462b6fdb",
+      "title": "Translator: Validate constructor size after array inference",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2e38ee6dc7678cf5f0614c1e5603cc4c755883e4",
+      "url": "https://github.com/google/angle/commit/2e38ee6dc7678cf5f0614c1e5603cc4c755883e4",
+      "event_at": "2026-10-16T19:41:05Z",
+      "revision": "2e38ee6dc7678cf5f0614c1e5603cc4c755883e4",
+      "title": "IR: Update trace expectations",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2e5da5cc4d17d5484cd32d0013e18bb66b973802",
+      "url": "https://github.com/google/angle/commit/2e5da5cc4d17d5484cd32d0013e18bb66b973802",
+      "event_at": "2026-10-08T19:38:27Z",
+      "revision": "2e5da5cc4d17d5484cd32d0013e18bb66b973802",
+      "title": "Tests: Add garena_rov and toptop traces, update CI",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2f45aa5074d54d1fc3e17a9fb25cfaa2e4d607c5",
+      "url": "https://github.com/google/angle/commit/2f45aa5074d54d1fc3e17a9fb25cfaa2e4d607c5",
+      "event_at": "2026-10-05T12:01:28Z",
+      "revision": "2f45aa5074d54d1fc3e17a9fb25cfaa2e4d607c5",
+      "title": "Roll vulkan-deps from 1b7ced3670c3 to b36b0c80377e (26 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "2f5d7a4dbcad89f1b228ff264f365aa9a56523b5",
+      "url": "https://github.com/google/angle/commit/2f5d7a4dbcad89f1b228ff264f365aa9a56523b5",
+      "event_at": "2026-10-28T16:40:36Z",
+      "revision": "2f5d7a4dbcad89f1b228ff264f365aa9a56523b5",
+      "title": "Vulkan: Preserve storage barriers across SSBO and image rebinds",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3005bd9f8c86059b308f19225d8b44158a466877",
+      "url": "https://github.com/google/angle/commit/3005bd9f8c86059b308f19225d8b44158a466877",
+      "event_at": "2026-10-16T20:50:39Z",
+      "revision": "3005bd9f8c86059b308f19225d8b44158a466877",
+      "title": "Tests: Preserve test args for bot-mode execution",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "30402f8953ed4cb6abc6a7877c18bb5d41467cc9",
+      "url": "https://github.com/google/angle/commit/30402f8953ed4cb6abc6a7877c18bb5d41467cc9",
+      "event_at": "2026-10-07T16:46:39Z",
+      "revision": "30402f8953ed4cb6abc6a7877c18bb5d41467cc9",
+      "title": "Tests: Pair the EGL display with the window on Wayland",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "30ada25a0059bcd4a79244e9927057f736ca9501",
+      "url": "https://github.com/google/angle/commit/30ada25a0059bcd4a79244e9927057f736ca9501",
+      "event_at": "2026-10-20T14:17:50Z",
+      "revision": "30ada25a0059bcd4a79244e9927057f736ca9501",
+      "title": "spanify: Use a fixed-extent span in MSRTT helpers",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3126733e09d828a1967afa06916831fd33a4873a",
+      "url": "https://github.com/google/angle/commit/3126733e09d828a1967afa06916831fd33a4873a",
+      "event_at": "2026-10-15T02:09:01Z",
+      "revision": "3126733e09d828a1967afa06916831fd33a4873a",
+      "title": "Skip robust cubemap test on Win/Intel",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "339301cd93649ebb38393cc8f5c51686894af0a7",
+      "url": "https://github.com/google/angle/commit/339301cd93649ebb38393cc8f5c51686894af0a7",
+      "event_at": "2026-10-21T16:00:52Z",
+      "revision": "339301cd93649ebb38393cc8f5c51686894af0a7",
+      "title": "Update element limit on format-only VertexAttribPointer change",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "33f8caff4b77667bc50d8484401af01291de119d",
+      "url": "https://github.com/google/angle/commit/33f8caff4b77667bc50d8484401af01291de119d",
+      "event_at": "2026-10-16T02:34:06Z",
+      "revision": "33f8caff4b77667bc50d8484401af01291de119d",
+      "title": "Tests: Add kingdom_guard, run_goddess & truck_star traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "34394cfed4d0cb4f554dc1ea7f38648f94f0738e",
+      "url": "https://github.com/google/angle/commit/34394cfed4d0cb4f554dc1ea7f38648f94f0738e",
+      "event_at": "2026-10-29T18:59:43Z",
+      "revision": "34394cfed4d0cb4f554dc1ea7f38648f94f0738e",
+      "title": "Vulkan: Fix crash in self-copy from EGL image target",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "348688cd339ef7e30e3fe6b10126ab5f9e7dee5b",
+      "url": "https://github.com/google/angle/commit/348688cd339ef7e30e3fe6b10126ab5f9e7dee5b",
+      "event_at": "2026-10-06T09:55:23Z",
+      "revision": "348688cd339ef7e30e3fe6b10126ab5f9e7dee5b",
+      "title": "Build: Enable PartitionAlloc system free fallback on Android",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "34ffa963ca9cb3d40617ebf144c4cfb671701d68",
+      "url": "https://github.com/google/angle/commit/34ffa963ca9cb3d40617ebf144c4cfb671701d68",
+      "event_at": "2026-10-10T05:29:58Z",
+      "revision": "34ffa963ca9cb3d40617ebf144c4cfb671701d68",
+      "title": "Renderer: Modernize loops to range-based for loops",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3515bb9a258b9088c7d9f183fc1e455f2b77a626",
+      "url": "https://github.com/google/angle/commit/3515bb9a258b9088c7d9f183fc1e455f2b77a626",
+      "event_at": "2026-10-13T18:49:53Z",
+      "revision": "3515bb9a258b9088c7d9f183fc1e455f2b77a626",
+      "title": "SPIR-V: Write the flipped gl_FragCoord with a single store",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "36b74e4dd47d2704de451621e57573ec8dd3c9be",
+      "url": "https://github.com/google/angle/commit/36b74e4dd47d2704de451621e57573ec8dd3c9be",
+      "event_at": "2026-10-07T09:44:04Z",
+      "revision": "36b74e4dd47d2704de451621e57573ec8dd3c9be",
+      "title": "WGSL: Prune inactive uniforms before gathering them",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "36e0c9ebb4c458ec6ac40ada633a064be77a1a54",
+      "url": "https://github.com/google/angle/commit/36e0c9ebb4c458ec6ac40ada633a064be77a1a54",
+      "event_at": "2026-10-02T16:42:50Z",
+      "revision": "36e0c9ebb4c458ec6ac40ada633a064be77a1a54",
+      "title": "Tests: Add DoubleU Casino Vegas Slots restricted trace",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "378b820f1c00d511565ab9990ae03de77908b373",
+      "url": "https://github.com/google/angle/commit/378b820f1c00d511565ab9990ae03de77908b373",
+      "event_at": "2026-10-20T19:55:19Z",
+      "revision": "378b820f1c00d511565ab9990ae03de77908b373",
+      "title": "Vulkan: Size the pipeline cache to the platform blob cache",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "39087422740112ef2f3be57a6af1ed8399459f69",
+      "url": "https://github.com/google/angle/commit/39087422740112ef2f3be57a6af1ed8399459f69",
+      "event_at": "2026-10-26T16:31:25Z",
+      "revision": "39087422740112ef2f3be57a6af1ed8399459f69",
+      "title": "Vulkan: Dynamic state for alpha to one",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3b0373fe223981c064ee51ef06275fff236a9c20",
+      "url": "https://github.com/google/angle/commit/3b0373fe223981c064ee51ef06275fff236a9c20",
+      "event_at": "2026-10-12T16:42:04Z",
+      "revision": "3b0373fe223981c064ee51ef06275fff236a9c20",
+      "title": "Translator: Modernize loops to range-based for loops",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3b0a3a04f8c1a7ce0a446e9fefe7a3685d2fe870",
+      "url": "https://github.com/google/angle/commit/3b0a3a04f8c1a7ce0a446e9fefe7a3685d2fe870",
+      "event_at": "2026-10-15T18:53:25Z",
+      "revision": "3b0a3a04f8c1a7ce0a446e9fefe7a3685d2fe870",
+      "title": "Tests: Add wizard_of_oz_slots_games and mementomori_afkrpg traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3b82c16d1379590e1488ffe5dbb692f8003bd34d",
+      "url": "https://github.com/google/angle/commit/3b82c16d1379590e1488ffe5dbb692f8003bd34d",
+      "event_at": "2026-10-27T17:20:11Z",
+      "revision": "3b82c16d1379590e1488ffe5dbb692f8003bd34d",
+      "title": "Vulkan: Rename syncMonolithicPipelinesToBlobCache feature",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3bb867011b0dc5fc2efacfd7706710a539c968f9",
+      "url": "https://github.com/google/angle/commit/3bb867011b0dc5fc2efacfd7706710a539c968f9",
+      "event_at": "2026-10-29T13:53:48Z",
+      "revision": "3bb867011b0dc5fc2efacfd7706710a539c968f9",
+      "title": "Vulkan: Use MUTABLE_FORMAT for int color images on Adreno 622",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3bc316aa36839e5f4b9e3d1ee6e4bbb900c781d3",
+      "url": "https://github.com/google/angle/commit/3bc316aa36839e5f4b9e3d1ee6e4bbb900c781d3",
+      "event_at": "2026-10-27T13:17:51Z",
+      "revision": "3bc316aa36839e5f4b9e3d1ee6e4bbb900c781d3",
+      "title": "IR: WGSL: Precedence and associativity formatting",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3d5feae4378fee3404431223d908446041348761",
+      "url": "https://github.com/google/angle/commit/3d5feae4378fee3404431223d908446041348761",
+      "event_at": "2026-10-21T11:38:18Z",
+      "revision": "3d5feae4378fee3404431223d908446041348761",
+      "title": "Roll vulkan-deps from 3bf4faecf9a5 to 10d2498d3094 (13 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3e8d04799eaee75e192e00578ff66b28c4fb95ce",
+      "url": "https://github.com/google/angle/commit/3e8d04799eaee75e192e00578ff66b28c4fb95ce",
+      "event_at": "2026-10-12T10:04:05Z",
+      "revision": "3e8d04799eaee75e192e00578ff66b28c4fb95ce",
+      "title": "Roll VK-GL-CTS from 9335a4e4e455 to 5c715f61311a (4 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "3fd3b2fde3fea433059101d9b94bf0c782a49962",
+      "url": "https://github.com/google/angle/commit/3fd3b2fde3fea433059101d9b94bf0c782a49962",
+      "event_at": "2026-10-13T14:13:15Z",
+      "revision": "3fd3b2fde3fea433059101d9b94bf0c782a49962",
+      "title": "Restrict EGLSurface entry points to ThreadSafeDisplay",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "43140711d13063716fd32a15de829885d0bce469",
+      "url": "https://github.com/google/angle/commit/43140711d13063716fd32a15de829885d0bce469",
+      "event_at": "2026-10-14T15:02:15Z",
+      "revision": "43140711d13063716fd32a15de829885d0bce469",
+      "title": "Move perf counter helpers to test_utils and ANGLETestBase",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "445b1b4e7e8b06d7271196b76148ab4739cec722",
+      "url": "https://github.com/google/angle/commit/445b1b4e7e8b06d7271196b76148ab4739cec722",
+      "event_at": "2026-10-05T16:27:02Z",
+      "revision": "445b1b4e7e8b06d7271196b76148ab4739cec722",
+      "title": "CL/Vulkan: Stage only the region for map/unmap",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "451ec737878aa127a30c5317686feccf8aaa1d96",
+      "url": "https://github.com/google/angle/commit/451ec737878aa127a30c5317686feccf8aaa1d96",
+      "event_at": "2026-10-02T14:38:26Z",
+      "revision": "451ec737878aa127a30c5317686feccf8aaa1d96",
+      "title": "Vulkan: Remove Xclipse VK_GOOGLE_surfaceless_query workaround",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "45ae20dd5680cebce6e8de83a64e04e4b9f6e01f",
+      "url": "https://github.com/google/angle/commit/45ae20dd5680cebce6e8de83a64e04e4b9f6e01f",
+      "event_at": "2026-10-23T02:05:09Z",
+      "revision": "45ae20dd5680cebce6e8de83a64e04e4b9f6e01f",
+      "title": "Add 3D, 2D array and cube map oversized-mip-level tests.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "469702944ff36f92a1e568d784521f4c9dcd2106",
+      "url": "https://github.com/google/angle/commit/469702944ff36f92a1e568d784521f4c9dcd2106",
+      "event_at": "2026-10-22T20:10:30Z",
+      "revision": "469702944ff36f92a1e568d784521f4c9dcd2106",
+      "title": "Vulkan: Add command buffer functions for EDS3",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "46f54833e055916f596902bbdce99e26421a06db",
+      "url": "https://github.com/google/angle/commit/46f54833e055916f596902bbdce99e26421a06db",
+      "event_at": "2026-10-27T14:18:18Z",
+      "revision": "46f54833e055916f596902bbdce99e26421a06db",
+      "title": "Vulkan: Emulate advanced blend on Adreno 702",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4770750a7d7008ec3e7aad5e87f0297e7d76cf11",
+      "url": "https://github.com/google/angle/commit/4770750a7d7008ec3e7aad5e87f0297e7d76cf11",
+      "event_at": "2026-10-12T04:15:21Z",
+      "revision": "4770750a7d7008ec3e7aad5e87f0297e7d76cf11",
+      "title": "Tests: Use highp int in ForContinueInSwitch, DenormFloats",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "48e22c0ca56fa259894b4af3572d7f9d94027e64",
+      "url": "https://github.com/google/angle/commit/48e22c0ca56fa259894b4af3572d7f9d94027e64",
+      "event_at": "2026-10-24T00:11:24Z",
+      "revision": "48e22c0ca56fa259894b4af3572d7f9d94027e64",
+      "title": "Translator: Fix constant switch folding vs length()",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "49382bbcfdb30c5dcaa8ca82f2563b70bcfa282f",
+      "url": "https://github.com/google/angle/commit/49382bbcfdb30c5dcaa8ca82f2563b70bcfa282f",
+      "event_at": "2026-10-06T14:04:58Z",
+      "revision": "49382bbcfdb30c5dcaa8ca82f2563b70bcfa282f",
+      "title": "Tests : Add Call of dragons restricted trace",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4a271cc25064cbb190c15a7e21f612c1c024c6c6",
+      "url": "https://github.com/google/angle/commit/4a271cc25064cbb190c15a7e21f612c1c024c6c6",
+      "event_at": "2026-10-29T22:16:50Z",
+      "revision": "4a271cc25064cbb190c15a7e21f612c1c024c6c6",
+      "title": "Hold at most one display reference per thread",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4a5ccd7b61e6ea3bf8bb1c486ac5f92ee7bf4f67",
+      "url": "https://github.com/google/angle/commit/4a5ccd7b61e6ea3bf8bb1c486ac5f92ee7bf4f67",
+      "event_at": "2026-10-31T05:28:53Z",
+      "revision": "4a5ccd7b61e6ea3bf8bb1c486ac5f92ee7bf4f67",
+      "title": "Vulkan: Protect Volk loads in Renderer initialization",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4b687ddd31fb8ea6437b370a16e14b56bfec13d5",
+      "url": "https://github.com/google/angle/commit/4b687ddd31fb8ea6437b370a16e14b56bfec13d5",
+      "event_at": "2026-10-22T22:24:50Z",
+      "revision": "4b687ddd31fb8ea6437b370a16e14b56bfec13d5",
+      "title": "Tests: Add mini_fidget_games and fps_strike_ops traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4bbd98390e404956c34010632f6d3e260c4f8057",
+      "url": "https://github.com/google/angle/commit/4bbd98390e404956c34010632f6d3e260c4f8057",
+      "event_at": "2026-10-09T16:57:36Z",
+      "revision": "4bbd98390e404956c34010632f6d3e260c4f8057",
+      "title": "Vulkan: Guard pTessellationState against uninitialized state",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4c11252c88c05926aaa3153b0576eff22fd62dc9",
+      "url": "https://github.com/google/angle/commit/4c11252c88c05926aaa3153b0576eff22fd62dc9",
+      "event_at": "2026-10-14T13:35:15Z",
+      "revision": "4c11252c88c05926aaa3153b0576eff22fd62dc9",
+      "title": "Tests: Add dragon_city trace",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4c1e4682a422d644090daae322958a8479f5f9ae",
+      "url": "https://github.com/google/angle/commit/4c1e4682a422d644090daae322958a8479f5f9ae",
+      "event_at": "2026-10-31T17:49:27Z",
+      "revision": "4c1e4682a422d644090daae322958a8479f5f9ae",
+      "title": "Roll chromium_revision adc66edb14..d2c3365775",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4c5e4c32fc3ff8b5990a400864048ad1ae8f64c5",
+      "url": "https://github.com/google/angle/commit/4c5e4c32fc3ff8b5990a400864048ad1ae8f64c5",
+      "event_at": "2026-10-14T11:34:03Z",
+      "revision": "4c5e4c32fc3ff8b5990a400864048ad1ae8f64c5",
+      "title": "Roll SwiftShader from 0f87bb2d3742 to 104f72dbb79f (1 revision)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4ca72bdf5bc0f9334d1a62b3c10529631d8fc67b",
+      "url": "https://github.com/google/angle/commit/4ca72bdf5bc0f9334d1a62b3c10529631d8fc67b",
+      "event_at": "2026-10-02T03:01:29Z",
+      "revision": "4ca72bdf5bc0f9334d1a62b3c10529631d8fc67b",
+      "title": "Tests: Add Zombie Waves restricted trace",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4e042ebedf820a1129c5e0b221379372603706c0",
+      "url": "https://github.com/google/angle/commit/4e042ebedf820a1129c5e0b221379372603706c0",
+      "event_at": "2026-10-13T13:36:17Z",
+      "revision": "4e042ebedf820a1129c5e0b221379372603706c0",
+      "title": "Allow transform feedback overflow in ES 3.2",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4e8c94ecb1486955454b85945fb89e8470807714",
+      "url": "https://github.com/google/angle/commit/4e8c94ecb1486955454b85945fb89e8470807714",
+      "event_at": "2026-10-16T15:50:02Z",
+      "revision": "4e8c94ecb1486955454b85945fb89e8470807714",
+      "title": "Vulkan: Give each thread its own blob cache scratch buffer",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4f3379ab45dfb53807ea340ae7708bf18113b618",
+      "url": "https://github.com/google/angle/commit/4f3379ab45dfb53807ea340ae7708bf18113b618",
+      "event_at": "2026-10-27T17:32:34Z",
+      "revision": "4f3379ab45dfb53807ea340ae7708bf18113b618",
+      "title": "Roll Chromium from d9b632d973ec to 45d5953f870e (1284 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4f696266375bd56964d3a112d6f057c7fb68d54d",
+      "url": "https://github.com/google/angle/commit/4f696266375bd56964d3a112d6f057c7fb68d54d",
+      "event_at": "2026-10-05T17:22:52Z",
+      "revision": "4f696266375bd56964d3a112d6f057c7fb68d54d",
+      "title": "Use shared Starlark helper for presubmit builders",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "4ff40951a011cd92a2242966b588bcfe6eccc4cc",
+      "url": "https://github.com/google/angle/commit/4ff40951a011cd92a2242966b588bcfe6eccc4cc",
+      "event_at": "2026-10-07T16:40:32Z",
+      "revision": "4ff40951a011cd92a2242966b588bcfe6eccc4cc",
+      "title": "MSL: Remove ES 3.1 transformations",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "508e20e9515ee33d2dc8b63c76147d57248c76f1",
+      "url": "https://github.com/google/angle/commit/508e20e9515ee33d2dc8b63c76147d57248c76f1",
+      "event_at": "2026-10-23T04:27:33Z",
+      "revision": "508e20e9515ee33d2dc8b63c76147d57248c76f1",
+      "title": "Suppress failing tests",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "51f2f9c572520667285233b2f0add6457617173e",
+      "url": "https://github.com/google/angle/commit/51f2f9c572520667285233b2f0add6457617173e",
+      "event_at": "2026-10-31T03:15:00Z",
+      "revision": "51f2f9c572520667285233b2f0add6457617173e",
+      "title": "CreatePlatformWindowSurfaceEXT: Check EGL_EXT_platform_base",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5210c83ee6a99f0504af6535b23a7c6f63895ae5",
+      "url": "https://github.com/google/angle/commit/5210c83ee6a99f0504af6535b23a7c6f63895ae5",
+      "event_at": "2026-10-05T09:49:08Z",
+      "revision": "5210c83ee6a99f0504af6535b23a7c6f63895ae5",
+      "title": "Roll VK-GL-CTS from 31807adf6dc7 to 9335a4e4e455 (15 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "53257efa1ca633667f0ffc845d788dc95ee7b287",
+      "url": "https://github.com/google/angle/commit/53257efa1ca633667f0ffc845d788dc95ee7b287",
+      "event_at": "2026-10-16T14:19:59Z",
+      "revision": "53257efa1ca633667f0ffc845d788dc95ee7b287",
+      "title": "IR: Update trace expectations",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "54b571c6322fb869d91cf0c7b75f1060f52a6b34",
+      "url": "https://github.com/google/angle/commit/54b571c6322fb869d91cf0c7b75f1060f52a6b34",
+      "event_at": "2026-10-05T22:55:34Z",
+      "revision": "54b571c6322fb869d91cf0c7b75f1060f52a6b34",
+      "title": "Trace/Replay: Add retrace marker debug messages",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "56e0454d0d34942c7936230830aeccccbb994a2f",
+      "url": "https://github.com/google/angle/commit/56e0454d0d34942c7936230830aeccccbb994a2f",
+      "event_at": "2026-10-30T04:06:18Z",
+      "revision": "56e0454d0d34942c7936230830aeccccbb994a2f",
+      "title": "IR: Fix release build",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "57869b0a9d3af1d1ad5781fe3e2ad5e357ca6ee3",
+      "url": "https://github.com/google/angle/commit/57869b0a9d3af1d1ad5781fe3e2ad5e357ca6ee3",
+      "event_at": "2026-10-15T23:10:05Z",
+      "revision": "57869b0a9d3af1d1ad5781fe3e2ad5e357ca6ee3",
+      "title": "Skip flaky vertex attr redefine test on Win/Intel",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5790b6c7e95c6502621c082b04e5ea1e6e923551",
+      "url": "https://github.com/google/angle/commit/5790b6c7e95c6502621c082b04e5ea1e6e923551",
+      "event_at": "2026-10-02T08:02:39Z",
+      "revision": "5790b6c7e95c6502621c082b04e5ea1e6e923551",
+      "title": "Roll Chromium from a98036c2795d to 738956cca47a (1079 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "57953a0148a5d0ea1a88f087dfd38533c6b3db46",
+      "url": "https://github.com/google/angle/commit/57953a0148a5d0ea1a88f087dfd38533c6b3db46",
+      "event_at": "2026-10-30T18:35:01Z",
+      "revision": "57953a0148a5d0ea1a88f087dfd38533c6b3db46",
+      "title": "Skip StateChangeTestES3.DepthClamp on Win Intel and Qualcomm",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5824ca09389f98ed068cb4cbac3aec83fc43e77d",
+      "url": "https://github.com/google/angle/commit/5824ca09389f98ed068cb4cbac3aec83fc43e77d",
+      "event_at": "2026-10-28T08:21:48Z",
+      "revision": "5824ca09389f98ed068cb4cbac3aec83fc43e77d",
+      "title": "Validate extensions in ValidES3ExtensionFormatCombination",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "582e39a643ac40103fd93aacbb68f98c46e2a2d4",
+      "url": "https://github.com/google/angle/commit/582e39a643ac40103fd93aacbb68f98c46e2a2d4",
+      "event_at": "2026-10-16T11:38:29Z",
+      "revision": "582e39a643ac40103fd93aacbb68f98c46e2a2d4",
+      "title": "Roll vulkan-deps from b297df3dd79a to 00a7dde0a6b4 (21 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "584e3da98fe8f59c14b7876c3771255571caef88",
+      "url": "https://github.com/google/angle/commit/584e3da98fe8f59c14b7876c3771255571caef88",
+      "event_at": "2026-10-21T00:14:42Z",
+      "revision": "584e3da98fe8f59c14b7876c3771255571caef88",
+      "title": "GL: virtualize base level and mipmap chain on PowerVR.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5a59e305b19f4efd1a866f689b2655263ac6d1c2",
+      "url": "https://github.com/google/angle/commit/5a59e305b19f4efd1a866f689b2655263ac6d1c2",
+      "event_at": "2026-10-30T14:36:55Z",
+      "revision": "5a59e305b19f4efd1a866f689b2655263ac6d1c2",
+      "title": "Extract max path length to a constant",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5ab43e006476c68516225912b217cdbdbef3980c",
+      "url": "https://github.com/google/angle/commit/5ab43e006476c68516225912b217cdbdbef3980c",
+      "event_at": "2026-10-21T21:07:42Z",
+      "revision": "5ab43e006476c68516225912b217cdbdbef3980c",
+      "title": "Vulkan: Dynamic state for patch control points",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5b3599163692799c95a3b6951e94aaaba64d495e",
+      "url": "https://github.com/google/angle/commit/5b3599163692799c95a3b6951e94aaaba64d495e",
+      "event_at": "2026-10-16T19:32:20Z",
+      "revision": "5b3599163692799c95a3b6951e94aaaba64d495e",
+      "title": "Skip failing OpenGL test on Linux/NVIDIA",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5c5b6f5b1d01bd09beb5446bc5239163bb1da10f",
+      "url": "https://github.com/google/angle/commit/5c5b6f5b1d01bd09beb5446bc5239163bb1da10f",
+      "event_at": "2026-10-20T23:44:51Z",
+      "revision": "5c5b6f5b1d01bd09beb5446bc5239163bb1da10f",
+      "title": "Android: Add system ANGLE feature override config",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5ca5ae31962481c7c7a08d5c28b2a61d623e5fdd",
+      "url": "https://github.com/google/angle/commit/5ca5ae31962481c7c7a08d5c28b2a61d623e5fdd",
+      "event_at": "2026-10-31T04:44:13Z",
+      "revision": "5ca5ae31962481c7c7a08d5c28b2a61d623e5fdd",
+      "title": "Tests: Add the TestBlobCache utility",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5ca9ec16f568de2bce12974171687ec9323f760f",
+      "url": "https://github.com/google/angle/commit/5ca9ec16f568de2bce12974171687ec9323f760f",
+      "event_at": "2026-10-21T11:03:53Z",
+      "revision": "5ca9ec16f568de2bce12974171687ec9323f760f",
+      "title": "[3p freshness] ffx_spd: Restore upstream ffx_spd.h bytes",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5ce747e1749411f12e03305a60bdca63d69113d0",
+      "url": "https://github.com/google/angle/commit/5ce747e1749411f12e03305a60bdca63d69113d0",
+      "event_at": "2026-10-31T02:58:30Z",
+      "revision": "5ce747e1749411f12e03305a60bdca63d69113d0",
+      "title": "Reduce parallelism in end2end tests on Win NVIDIA GTX 1660 on stable",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5d40c3ebacd88b3cc592fe8a21a73261d535d5bd",
+      "url": "https://github.com/google/angle/commit/5d40c3ebacd88b3cc592fe8a21a73261d535d5bd",
+      "event_at": "2026-10-30T14:07:50Z",
+      "revision": "5d40c3ebacd88b3cc592fe8a21a73261d535d5bd",
+      "title": "Add EGL_ANGLE_query_renderer_strings",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "5ee23021470e2a36cec7abd9d6e44ebf7caf3d3f",
+      "url": "https://github.com/google/angle/commit/5ee23021470e2a36cec7abd9d6e44ebf7caf3d3f",
+      "event_at": "2026-10-08T16:34:59Z",
+      "revision": "5ee23021470e2a36cec7abd9d6e44ebf7caf3d3f",
+      "title": "OpenCL: Create cl::Caps and use for device creation.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "600ecdbcbc2fbbef6aed8329f5a68b88d6dd8680",
+      "url": "https://github.com/google/angle/commit/600ecdbcbc2fbbef6aed8329f5a68b88d6dd8680",
+      "event_at": "2026-10-14T17:51:47Z",
+      "revision": "600ecdbcbc2fbbef6aed8329f5a68b88d6dd8680",
+      "title": "SPIR-V: Fix instance in xfb emulation",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "61188387793ec88423e9cf7cd2b39852533b7855",
+      "url": "https://github.com/google/angle/commit/61188387793ec88423e9cf7cd2b39852533b7855",
+      "event_at": "2026-10-28T08:52:52Z",
+      "revision": "61188387793ec88423e9cf7cd2b39852533b7855",
+      "title": "Roll Chromium from 45d5953f870e to adc66edb14b7 (2038 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "61585a3d25531adc4d9db2db992aebd0edf1284d",
+      "url": "https://github.com/google/angle/commit/61585a3d25531adc4d9db2db992aebd0edf1284d",
+      "event_at": "2026-10-11T05:29:38Z",
+      "revision": "61585a3d25531adc4d9db2db992aebd0edf1284d",
+      "title": "IR: Use new concise helper for transforms",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "616dc54104c4171bf7227eefa6d6307cb54e5472",
+      "url": "https://github.com/google/angle/commit/616dc54104c4171bf7227eefa6d6307cb54e5472",
+      "event_at": "2026-10-29T15:01:54Z",
+      "revision": "616dc54104c4171bf7227eefa6d6307cb54e5472",
+      "title": "[3p freshness] Granite: Roll to 53090429",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "61b26d92af0e1b6322f8160beb52b3e3c735e0cd",
+      "url": "https://github.com/google/angle/commit/61b26d92af0e1b6322f8160beb52b3e3c735e0cd",
+      "event_at": "2026-10-08T15:19:44Z",
+      "revision": "61b26d92af0e1b6322f8160beb52b3e3c735e0cd",
+      "title": "Tests: Modernize loops to range-based for loops",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "628f3fa5003d5b80a9ba64a850882d9d244bd020",
+      "url": "https://github.com/google/angle/commit/628f3fa5003d5b80a9ba64a850882d9d244bd020",
+      "event_at": "2026-10-06T04:31:53Z",
+      "revision": "628f3fa5003d5b80a9ba64a850882d9d244bd020",
+      "title": "IR: Declare driver uniforms",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "6355a613587a32431fae31da33b6528fb8556d37",
+      "url": "https://github.com/google/angle/commit/6355a613587a32431fae31da33b6528fb8556d37",
+      "event_at": "2026-10-03T02:15:55Z",
+      "revision": "6355a613587a32431fae31da33b6528fb8556d37",
+      "title": "GL: Fix flush tracking for indexed draws and EGL fences",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "6425f1954758d708d61ddc7c0a6eeebbf889616c",
+      "url": "https://github.com/google/angle/commit/6425f1954758d708d61ddc7c0a6eeebbf889616c",
+      "event_at": "2026-10-29T18:29:44Z",
+      "revision": "6425f1954758d708d61ddc7c0a6eeebbf889616c",
+      "title": "Vulkan: Fix pruning of staged updates to 3D textures",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "64b22df8fc3b8aa194e738ad292ea8da14358f67",
+      "url": "https://github.com/google/angle/commit/64b22df8fc3b8aa194e738ad292ea8da14358f67",
+      "event_at": "2026-10-13T07:11:33Z",
+      "revision": "64b22df8fc3b8aa194e738ad292ea8da14358f67",
+      "title": "Metal: Handle non-OOM command buffer errors",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "651bae5ec7485d8273e22354d7dd2eb06e9fd56c",
+      "url": "https://github.com/google/angle/commit/651bae5ec7485d8273e22354d7dd2eb06e9fd56c",
+      "event_at": "2026-10-05T16:36:21Z",
+      "revision": "651bae5ec7485d8273e22354d7dd2eb06e9fd56c",
+      "title": "Skip InvalidateAfterDrawAndClearZeroDepth on Win Qualcomm D3D11",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "66b09c8fb4f4672f2d5ac508068b44b507b55c4f",
+      "url": "https://github.com/google/angle/commit/66b09c8fb4f4672f2d5ac508068b44b507b55c4f",
+      "event_at": "2026-10-20T21:28:37Z",
+      "revision": "66b09c8fb4f4672f2d5ac508068b44b507b55c4f",
+      "title": "GL: Use local variables for SyncGL operation results",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "6718824695d4ada0a96168ca14ed0a239d89d3d6",
+      "url": "https://github.com/google/angle/commit/6718824695d4ada0a96168ca14ed0a239d89d3d6",
+      "event_at": "2026-10-03T02:42:25Z",
+      "revision": "6718824695d4ada0a96168ca14ed0a239d89d3d6",
+      "title": "Translator: Fix SelectedFields build failure with libstdc++",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "678edbda0a31a1655b82f6838eb353832c2f893b",
+      "url": "https://github.com/google/angle/commit/678edbda0a31a1655b82f6838eb353832c2f893b",
+      "event_at": "2026-10-09T07:50:47Z",
+      "revision": "678edbda0a31a1655b82f6838eb353832c2f893b",
+      "title": "Roll Chromium from 3f7d7c8b5fc4 to 758f937f32cf (1095 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "695f7babd28b498996a382eae9418726f6b2b759",
+      "url": "https://github.com/google/angle/commit/695f7babd28b498996a382eae9418726f6b2b759",
+      "event_at": "2026-10-20T17:26:52Z",
+      "revision": "695f7babd28b498996a382eae9418726f6b2b759",
+      "title": "Add a test for atomicOr on mediump uint with bit 15 set",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "69cbeb779d22c48d85a1660bd949fa045cb200b3",
+      "url": "https://github.com/google/angle/commit/69cbeb779d22c48d85a1660bd949fa045cb200b3",
+      "event_at": "2026-10-30T03:26:02Z",
+      "revision": "69cbeb779d22c48d85a1660bd949fa045cb200b3",
+      "title": "GL: Create native syncs and server-wait directly in SyncEGL",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "6a4ab88bc4c2abcb304d8afe28f768448b4dd5fa",
+      "url": "https://github.com/google/angle/commit/6a4ab88bc4c2abcb304d8afe28f768448b4dd5fa",
+      "event_at": "2026-10-09T04:14:57Z",
+      "revision": "6a4ab88bc4c2abcb304d8afe28f768448b4dd5fa",
+      "title": "IR: Helper for building transforms",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "6ae91cbde56e7fa8683a3ce6248d15a6d82df219",
+      "url": "https://github.com/google/angle/commit/6ae91cbde56e7fa8683a3ce6248d15a6d82df219",
+      "event_at": "2026-10-15T19:09:53Z",
+      "revision": "6ae91cbde56e7fa8683a3ce6248d15a6d82df219",
+      "title": "Skip failing tests",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "6cb40250085e6cf6504c2881298fd0e129fc3b55",
+      "url": "https://github.com/google/angle/commit/6cb40250085e6cf6504c2881298fd0e129fc3b55",
+      "event_at": "2026-10-28T22:01:06Z",
+      "revision": "6cb40250085e6cf6504c2881298fd0e129fc3b55",
+      "title": "GL: work around glCopyTexImage / glCopyTexSubImage bugs.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "6e3af03798fc89a5a258dacf19c3478728258dd0",
+      "url": "https://github.com/google/angle/commit/6e3af03798fc89a5a258dacf19c3478728258dd0",
+      "event_at": "2026-10-21T14:50:30Z",
+      "revision": "6e3af03798fc89a5a258dacf19c3478728258dd0",
+      "title": "Vulkan: Reject non-8-bit cross-format transfers in CopyTexture",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "6e521ed91b3d850f96089ec91ebdc40fa0acfea4",
+      "url": "https://github.com/google/angle/commit/6e521ed91b3d850f96089ec91ebdc40fa0acfea4",
+      "event_at": "2026-10-16T19:16:21Z",
+      "revision": "6e521ed91b3d850f96089ec91ebdc40fa0acfea4",
+      "title": "Manual roll Chromium from 1994e54c9282 to fc6bec1defd3 (768 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "6f27a1fe48357d20accaa54c9f12f799fe06e9e8",
+      "url": "https://github.com/google/angle/commit/6f27a1fe48357d20accaa54c9f12f799fe06e9e8",
+      "event_at": "2026-10-21T18:14:10Z",
+      "revision": "6f27a1fe48357d20accaa54c9f12f799fe06e9e8",
+      "title": "GN: Make zstd optional for embedders",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "707a87d65c678a2a74e2bada920ae910bc7f988d",
+      "url": "https://github.com/google/angle/commit/707a87d65c678a2a74e2bada920ae910bc7f988d",
+      "event_at": "2026-10-03T00:02:49Z",
+      "revision": "707a87d65c678a2a74e2bada920ae910bc7f988d",
+      "title": "Fixes X11 errors on Linux Intel.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "70e01f2dac96a6cd23a5e0954eed1a8352a11ac0",
+      "url": "https://github.com/google/angle/commit/70e01f2dac96a6cd23a5e0954eed1a8352a11ac0",
+      "event_at": "2026-10-14T18:46:32Z",
+      "revision": "70e01f2dac96a6cd23a5e0954eed1a8352a11ac0",
+      "title": "Manual roll vulkan-deps from 8440c88cfc42 to 55df208d0639 (19 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "72759a94989fd0d6fc8daf39166da354f48814ff",
+      "url": "https://github.com/google/angle/commit/72759a94989fd0d6fc8daf39166da354f48814ff",
+      "event_at": "2026-10-26T13:49:18Z",
+      "revision": "72759a94989fd0d6fc8daf39166da354f48814ff",
+      "title": "Update glslang_validator binary for Windows.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "744f247dcabe07bc41638740c3cf008613af4491",
+      "url": "https://github.com/google/angle/commit/744f247dcabe07bc41638740c3cf008613af4491",
+      "event_at": "2026-10-30T22:44:33Z",
+      "revision": "744f247dcabe07bc41638740c3cf008613af4491",
+      "title": "Vulkan: Forbid renderable-fallback during copy to cubemap",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "74d60540c63f8c6a06ac8f2ffbd1a43a2dc3d402",
+      "url": "https://github.com/google/angle/commit/74d60540c63f8c6a06ac8f2ffbd1a43a2dc3d402",
+      "event_at": "2026-10-31T03:57:20Z",
+      "revision": "74d60540c63f8c6a06ac8f2ffbd1a43a2dc3d402",
+      "title": "IR: WGSL: Soft-fail on unsupported built-ins",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "756d31051f12e93630ae51fd5e0d03deb6958739",
+      "url": "https://github.com/google/angle/commit/756d31051f12e93630ae51fd5e0d03deb6958739",
+      "event_at": "2026-10-03T05:45:26Z",
+      "revision": "756d31051f12e93630ae51fd5e0d03deb6958739",
+      "title": "Add Plants vs Zombies restricted trace",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "7687428dd00361a7c7b7dddd6d395f6c790b8436",
+      "url": "https://github.com/google/angle/commit/7687428dd00361a7c7b7dddd6d395f6c790b8436",
+      "event_at": "2026-10-30T02:53:16Z",
+      "revision": "7687428dd00361a7c7b7dddd6d395f6c790b8436",
+      "title": "IR: validate internal interface block and struct variable names",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "76fb6f485785021e6e4c09e449bde7e413627f99",
+      "url": "https://github.com/google/angle/commit/76fb6f485785021e6e4c09e449bde7e413627f99",
+      "event_at": "2026-10-26T18:33:35Z",
+      "revision": "76fb6f485785021e6e4c09e449bde7e413627f99",
+      "title": "third_party/ffx-spd: mark dependency as a fork",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "77be48be4739a98908b917c980754c7b5feadb57",
+      "url": "https://github.com/google/angle/commit/77be48be4739a98908b917c980754c7b5feadb57",
+      "event_at": "2026-10-13T14:27:21Z",
+      "revision": "77be48be4739a98908b917c980754c7b5feadb57",
+      "title": "Update rx::SurfaceImpl to use egl::ThreadSafeDisplay",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "77d1470647fbd59e0d1bc962fb846fe207cf8007",
+      "url": "https://github.com/google/angle/commit/77d1470647fbd59e0d1bc962fb846fe207cf8007",
+      "event_at": "2026-10-22T15:30:22Z",
+      "revision": "77d1470647fbd59e0d1bc962fb846fe207cf8007",
+      "title": "Add a test for advanced blend on a multisampled shared edge",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "7865acacbf6380ce2acc54f5afd86a242cd239eb",
+      "url": "https://github.com/google/angle/commit/7865acacbf6380ce2acc54f5afd86a242cd239eb",
+      "event_at": "2026-10-16T22:04:22Z",
+      "revision": "7865acacbf6380ce2acc54f5afd86a242cd239eb",
+      "title": "IR: return bvec for isnan and isinf if operand is vec",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "79913f3b73b3884e13de018bffde7a55bc32140f",
+      "url": "https://github.com/google/angle/commit/79913f3b73b3884e13de018bffde7a55bc32140f",
+      "event_at": "2026-10-22T20:43:54Z",
+      "revision": "79913f3b73b3884e13de018bffde7a55bc32140f",
+      "title": "Android: Remove ANGLE in use toast message from settings",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "7abdbaea4606df5a38081a511d5a0763609ba889",
+      "url": "https://github.com/google/angle/commit/7abdbaea4606df5a38081a511d5a0763609ba889",
+      "event_at": "2026-10-20T06:50:31Z",
+      "revision": "7abdbaea4606df5a38081a511d5a0763609ba889",
+      "title": "[3p freshness] xxhash: Move upstream code into src/",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "7b78f1ad5011eeca2340fe2b837c88a7b4135b42",
+      "url": "https://github.com/google/angle/commit/7b78f1ad5011eeca2340fe2b837c88a7b4135b42",
+      "event_at": "2026-10-05T20:04:51Z",
+      "revision": "7b78f1ad5011eeca2340fe2b837c88a7b4135b42",
+      "title": "Remove third_party/r8/d8 from SYNCED_CIPD_DEPS",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "7d30278fd7eed92dcce2d87d3cdff28c892563c0",
+      "url": "https://github.com/google/angle/commit/7d30278fd7eed92dcce2d87d3cdff28c892563c0",
+      "event_at": "2026-10-26T18:08:27Z",
+      "revision": "7d30278fd7eed92dcce2d87d3cdff28c892563c0",
+      "title": "infra: Drop redundant use_reclient=false",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "7f60c15c11069cc95d0d88254d7bc389b709ee57",
+      "url": "https://github.com/google/angle/commit/7f60c15c11069cc95d0d88254d7bc389b709ee57",
+      "event_at": "2026-10-19T19:57:17Z",
+      "revision": "7f60c15c11069cc95d0d88254d7bc389b709ee57",
+      "title": "Vulkan: Include noncoherent atom size alignment",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "801ce14ebb170d42b0475358328b5776ef49082f",
+      "url": "https://github.com/google/angle/commit/801ce14ebb170d42b0475358328b5776ef49082f",
+      "event_at": "2026-10-23T18:03:49Z",
+      "revision": "801ce14ebb170d42b0475358328b5776ef49082f",
+      "title": "Vulkan: Disable alphaToCoverage dynamic state on Intel/windows",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "80cb6c28ff11def4d4b1b17900a234a762714d38",
+      "url": "https://github.com/google/angle/commit/80cb6c28ff11def4d4b1b17900a234a762714d38",
+      "event_at": "2026-10-22T20:18:07Z",
+      "revision": "80cb6c28ff11def4d4b1b17900a234a762714d38",
+      "title": "Vulkan: Dynamic state for alpha to coverage",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "847c145d13e12cbb3c8dfee464f90ab3949808aa",
+      "url": "https://github.com/google/angle/commit/847c145d13e12cbb3c8dfee464f90ab3949808aa",
+      "event_at": "2026-10-07T16:56:45Z",
+      "revision": "847c145d13e12cbb3c8dfee464f90ab3949808aa",
+      "title": "Manual roll Chromium from 738956cca47a to 4f79677d5a76 (3714 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "84db93d92ff14ebfb80cb674aa2bc3bfbb7919a3",
+      "url": "https://github.com/google/angle/commit/84db93d92ff14ebfb80cb674aa2bc3bfbb7919a3",
+      "event_at": "2026-10-16T19:51:17Z",
+      "revision": "84db93d92ff14ebfb80cb674aa2bc3bfbb7919a3",
+      "title": "Tests: android_helper.py support for headless system user",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "85e50e76a6db290418aaaa03a07d8885302219a4",
+      "url": "https://github.com/google/angle/commit/85e50e76a6db290418aaaa03a07d8885302219a4",
+      "event_at": "2026-10-02T17:07:53Z",
+      "revision": "85e50e76a6db290418aaaa03a07d8885302219a4",
+      "title": "GL: Double clear for robust resource init on Mali and Adreno",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "8666c9610b5c6783dc9898f30befee8f5e9357c3",
+      "url": "https://github.com/google/angle/commit/8666c9610b5c6783dc9898f30befee8f5e9357c3",
+      "event_at": "2026-10-22T22:20:24Z",
+      "revision": "8666c9610b5c6783dc9898f30befee8f5e9357c3",
+      "title": "Remove glmark2",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "8988bdf12f3bad432b523897cc940ccfa2f67275",
+      "url": "https://github.com/google/angle/commit/8988bdf12f3bad432b523897cc940ccfa2f67275",
+      "event_at": "2026-10-07T20:17:09Z",
+      "revision": "8988bdf12f3bad432b523897cc940ccfa2f67275",
+      "title": "D3D11: Fix stale vertex and index buffer pointers",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "8a98d500ceeb110f3b2dba0ee97b24842f5e6f2f",
+      "url": "https://github.com/google/angle/commit/8a98d500ceeb110f3b2dba0ee97b24842f5e6f2f",
+      "event_at": "2026-10-19T20:32:24Z",
+      "revision": "8a98d500ceeb110f3b2dba0ee97b24842f5e6f2f",
+      "title": "Tests: Add zombie_tsunami, the_battle_cats & zynga_poker trace",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "8cf3715814aac499cdaf26b87f05a1c5a146b4c5",
+      "url": "https://github.com/google/angle/commit/8cf3715814aac499cdaf26b87f05a1c5a146b4c5",
+      "event_at": "2026-10-29T18:36:23Z",
+      "revision": "8cf3715814aac499cdaf26b87f05a1c5a146b4c5",
+      "title": "Vulkan: Disable depth clip dynamic state on Windows Intel",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "8dbe0d1d74a31b2e8b7ca91dcec7f956eba12149",
+      "url": "https://github.com/google/angle/commit/8dbe0d1d74a31b2e8b7ca91dcec7f956eba12149",
+      "event_at": "2026-10-31T05:20:18Z",
+      "revision": "8dbe0d1d74a31b2e8b7ca91dcec7f956eba12149",
+      "title": "Remove Display::terminate() tail call run and destroySync()",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "8df9288d72433d483e09a23cd6f5929212e858f5",
+      "url": "https://github.com/google/angle/commit/8df9288d72433d483e09a23cd6f5929212e858f5",
+      "event_at": "2026-10-27T13:15:47Z",
+      "revision": "8df9288d72433d483e09a23cd6f5929212e858f5",
+      "title": "IR: WGSL: Basics and compiler wiring",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "8e1f66fd6676c25016f2a177ca90dadeb261a861",
+      "url": "https://github.com/google/angle/commit/8e1f66fd6676c25016f2a177ca90dadeb261a861",
+      "event_at": "2026-10-27T20:40:36Z",
+      "revision": "8e1f66fd6676c25016f2a177ca90dadeb261a861",
+      "title": "Vulkan: Fix defined-subresource tracking for 3D textures",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "8f862142cd9bca777302274c56af02bf18e552fe",
+      "url": "https://github.com/google/angle/commit/8f862142cd9bca777302274c56af02bf18e552fe",
+      "event_at": "2026-10-28T15:54:40Z",
+      "revision": "8f862142cd9bca777302274c56af02bf18e552fe",
+      "title": "third_party/etc_decoder: mark dependency as a fork",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "900fcbd3e283c24d1d17a1cc23a4032e5af43d4f",
+      "url": "https://github.com/google/angle/commit/900fcbd3e283c24d1d17a1cc23a4032e5af43d4f",
+      "event_at": "2026-10-20T09:09:14Z",
+      "revision": "900fcbd3e283c24d1d17a1cc23a4032e5af43d4f",
+      "title": "Roll Chromium from c300679f2883 to 0a8b0d14dd3f (1028 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "906ad3fd30715befeb5a6fb01a4fabf1c9cdb15a",
+      "url": "https://github.com/google/angle/commit/906ad3fd30715befeb5a6fb01a4fabf1c9cdb15a",
+      "event_at": "2026-10-05T15:11:04Z",
+      "revision": "906ad3fd30715befeb5a6fb01a4fabf1c9cdb15a",
+      "title": "D3D11: Fix UNPACK_ROW_LENGTH handling in fast PBO unpack",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "915fed40b0b896bd7696e5093632398090ae803f",
+      "url": "https://github.com/google/angle/commit/915fed40b0b896bd7696e5093632398090ae803f",
+      "event_at": "2026-10-31T04:52:31Z",
+      "revision": "915fed40b0b896bd7696e5093632398090ae803f",
+      "title": "Suppress TransformFeedback failures on Linux/NVIDIA GTX 1660",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "91a8c3cd084f8be21ce45fd587792bb261fb11d5",
+      "url": "https://github.com/google/angle/commit/91a8c3cd084f8be21ce45fd587792bb261fb11d5",
+      "event_at": "2026-10-23T20:42:04Z",
+      "revision": "91a8c3cd084f8be21ce45fd587792bb261fb11d5",
+      "title": "WGPU: Add doc/WebGLOnWebGPU.md",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9375443de7e02809574e2122882558331b7bda9c",
+      "url": "https://github.com/google/angle/commit/9375443de7e02809574e2122882558331b7bda9c",
+      "event_at": "2026-10-13T19:47:16Z",
+      "revision": "9375443de7e02809574e2122882558331b7bda9c",
+      "title": "Add viking_rise and doomsday_last_survivors traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9649fea17b77e672ae19687bf0222109b6270e0d",
+      "url": "https://github.com/google/angle/commit/9649fea17b77e672ae19687bf0222109b6270e0d",
+      "event_at": "2026-10-12T04:42:18Z",
+      "revision": "9649fea17b77e672ae19687bf0222109b6270e0d",
+      "title": "xxhash: Keep hash calls in optimized fuzzer builds",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "974b79ad146a3dca3d9a54e13f38519a8269964e",
+      "url": "https://github.com/google/angle/commit/974b79ad146a3dca3d9a54e13f38519a8269964e",
+      "event_at": "2026-10-09T19:23:00Z",
+      "revision": "974b79ad146a3dca3d9a54e13f38519a8269964e",
+      "title": "Metal: Fix 2D array layer count check in TextureMtl::redefineImage",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9820753a28bb66adf80488f15358e6c8a432d503",
+      "url": "https://github.com/google/angle/commit/9820753a28bb66adf80488f15358e6c8a432d503",
+      "event_at": "2026-10-05T15:44:53Z",
+      "revision": "9820753a28bb66adf80488f15358e6c8a432d503",
+      "title": "Metal: Eagerly drop cached attachment textures upon detachment",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "98dd6074bdf30f86f95dcc5fb0053f2e177655b4",
+      "url": "https://github.com/google/angle/commit/98dd6074bdf30f86f95dcc5fb0053f2e177655b4",
+      "event_at": "2026-10-21T15:59:37Z",
+      "revision": "98dd6074bdf30f86f95dcc5fb0053f2e177655b4",
+      "title": "Translator: Fix nested interpolateAtOffset offsets",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9a280edfdf45795e66891dfb78d72e4861987a46",
+      "url": "https://github.com/google/angle/commit/9a280edfdf45795e66891dfb78d72e4861987a46",
+      "event_at": "2026-10-27T15:32:42Z",
+      "revision": "9a280edfdf45795e66891dfb78d72e4861987a46",
+      "title": "spanify: Use angle::Span and std::array in AttributeLayoutTest",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9aa6e68af661850b97cc8b6970f4dcfb050884a3",
+      "url": "https://github.com/google/angle/commit/9aa6e68af661850b97cc8b6970f4dcfb050884a3",
+      "event_at": "2026-10-22T17:50:38Z",
+      "revision": "9aa6e68af661850b97cc8b6970f4dcfb050884a3",
+      "title": "Metal: Avoid pointing to Query in Metal backend",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9addc2983b90152f628cfdaea194983b46b254bd",
+      "url": "https://github.com/google/angle/commit/9addc2983b90152f628cfdaea194983b46b254bd",
+      "event_at": "2026-10-24T17:22:55Z",
+      "revision": "9addc2983b90152f628cfdaea194983b46b254bd",
+      "title": "Android: Update GetSystemProperty and use it",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9b8cd3d0d0112d57948488c0cdfba3de2568bf6b",
+      "url": "https://github.com/google/angle/commit/9b8cd3d0d0112d57948488c0cdfba3de2568bf6b",
+      "event_at": "2026-10-21T22:04:39Z",
+      "revision": "9b8cd3d0d0112d57948488c0cdfba3de2568bf6b",
+      "title": "IR: Skip failing end2end test",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9bc2b41381f0db52ac1de37140c70ea78a762ea4",
+      "url": "https://github.com/google/angle/commit/9bc2b41381f0db52ac1de37140c70ea78a762ea4",
+      "event_at": "2026-10-13T20:07:30Z",
+      "revision": "9bc2b41381f0db52ac1de37140c70ea78a762ea4",
+      "title": "Move mScratchBuffers and mZeroFilledBuffers to ThreadSafeDisplay",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9bc46bf51f61e13b8d748b8c36b93be5fb9b2264",
+      "url": "https://github.com/google/angle/commit/9bc46bf51f61e13b8d748b8c36b93be5fb9b2264",
+      "event_at": "2026-10-15T22:44:18Z",
+      "revision": "9bc46bf51f61e13b8d748b8c36b93be5fb9b2264",
+      "title": "Tests: Add knife_hit, raid_rush & truckers_of_europe_3 traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9bdd12be0d69e7c942183d37b1befb71c58337b7",
+      "url": "https://github.com/google/angle/commit/9bdd12be0d69e7c942183d37b1befb71c58337b7",
+      "event_at": "2026-10-29T17:24:43Z",
+      "revision": "9bdd12be0d69e7c942183d37b1befb71c58337b7",
+      "title": "Tests: Add trailing newline to CompilerTest failure log",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9be74f54ffc1c906fec67276221918ae6683cca3",
+      "url": "https://github.com/google/angle/commit/9be74f54ffc1c906fec67276221918ae6683cca3",
+      "event_at": "2026-10-06T15:19:29Z",
+      "revision": "9be74f54ffc1c906fec67276221918ae6683cca3",
+      "title": "DEPS: Update aapt2 CIPD package to per-platform",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9c51c1f383f283969ae1bed091c0704c7d549224",
+      "url": "https://github.com/google/angle/commit/9c51c1f383f283969ae1bed091c0704c7d549224",
+      "event_at": "2026-10-12T11:09:03Z",
+      "revision": "9c51c1f383f283969ae1bed091c0704c7d549224",
+      "title": "Roll VK-GL-CTS from 5c715f61311a to c28b36293093 (3 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "9d8f8320ed3698e6ecfe5f8ef5d4810548917eb1",
+      "url": "https://github.com/google/angle/commit/9d8f8320ed3698e6ecfe5f8ef5d4810548917eb1",
+      "event_at": "2026-10-19T23:47:36Z",
+      "revision": "9d8f8320ed3698e6ecfe5f8ef5d4810548917eb1",
+      "title": "IR: Validate Instruction operand and result data types",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a09285b308db40afa02adf0a2a1dd0db7cbec053",
+      "url": "https://github.com/google/angle/commit/a09285b308db40afa02adf0a2a1dd0db7cbec053",
+      "event_at": "2026-10-26T22:48:06Z",
+      "revision": "a09285b308db40afa02adf0a2a1dd0db7cbec053",
+      "title": "Vulkan: Dynamic state for logic op enable",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a10fcd06554fe0ce53a9c584a45c2fc75d83e1be",
+      "url": "https://github.com/google/angle/commit/a10fcd06554fe0ce53a9c584a45c2fc75d83e1be",
+      "event_at": "2026-10-15T09:59:04Z",
+      "revision": "a10fcd06554fe0ce53a9c584a45c2fc75d83e1be",
+      "title": "Roll VK-GL-CTS from c28b36293093 to bee837225470 (1 revision)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a2c4c4715000156a20b420308a33a98c44a87317",
+      "url": "https://github.com/google/angle/commit/a2c4c4715000156a20b420308a33a98c44a87317",
+      "event_at": "2026-10-14T21:41:42Z",
+      "revision": "a2c4c4715000156a20b420308a33a98c44a87317",
+      "title": "IR: Update trace expectations",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a30dae43626a76c7fc72aa5fb92a95613875e0cc",
+      "url": "https://github.com/google/angle/commit/a30dae43626a76c7fc72aa5fb92a95613875e0cc",
+      "event_at": "2026-10-16T00:32:47Z",
+      "revision": "a30dae43626a76c7fc72aa5fb92a95613875e0cc",
+      "title": "Translator: Rename variables that are extracted from switch",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a33b086f57848be2a5b8b55f6cf95df36e1d50b1",
+      "url": "https://github.com/google/angle/commit/a33b086f57848be2a5b8b55f6cf95df36e1d50b1",
+      "event_at": "2026-10-14T21:19:32Z",
+      "revision": "a33b086f57848be2a5b8b55f6cf95df36e1d50b1",
+      "title": "WebGPU: Update test expectations for passing tests",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a3652ae344eb540f118eb5632eb5d3aebbc11691",
+      "url": "https://github.com/google/angle/commit/a3652ae344eb540f118eb5632eb5d3aebbc11691",
+      "event_at": "2026-10-02T11:11:47Z",
+      "revision": "a3652ae344eb540f118eb5632eb5d3aebbc11691",
+      "title": "D3D11: Use effective base level in getBaseLevel",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a408a647ed0f31a1c53815c4bc101af3193d1efb",
+      "url": "https://github.com/google/angle/commit/a408a647ed0f31a1c53815c4bc101af3193d1efb",
+      "event_at": "2026-10-09T12:11:53Z",
+      "revision": "a408a647ed0f31a1c53815c4bc101af3193d1efb",
+      "title": "Modernize reverse loops using angle::Reversed",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a4cb2a6203a833ac6e86652ea206d6f1e2787ac2",
+      "url": "https://github.com/google/angle/commit/a4cb2a6203a833ac6e86652ea206d6f1e2787ac2",
+      "event_at": "2026-10-31T00:42:03Z",
+      "revision": "a4cb2a6203a833ac6e86652ea206d6f1e2787ac2",
+      "title": "Vulkan: Disable VK_EXT_extended_dynamic_state3 on Samsung",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a7ae33a195cfb926ae5a854e60ad14cbf4c205b9",
+      "url": "https://github.com/google/angle/commit/a7ae33a195cfb926ae5a854e60ad14cbf4c205b9",
+      "event_at": "2026-10-28T17:19:36Z",
+      "revision": "a7ae33a195cfb926ae5a854e60ad14cbf4c205b9",
+      "title": "[3p freshness] volk: Roll to 1.4.350 and enable auto-update",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "a95a8eed1dad2bf07944638415e58e55f326b904",
+      "url": "https://github.com/google/angle/commit/a95a8eed1dad2bf07944638415e58e55f326b904",
+      "event_at": "2026-10-12T19:52:53Z",
+      "revision": "a95a8eed1dad2bf07944638415e58e55f326b904",
+      "title": "Traces: Upgrade modern_combat_5",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "aa409c4d34babdfb15c4a10dfbe1ead8cc53d270",
+      "url": "https://github.com/google/angle/commit/aa409c4d34babdfb15c4a10dfbe1ead8cc53d270",
+      "event_at": "2026-10-21T11:17:19Z",
+      "revision": "aa409c4d34babdfb15c4a10dfbe1ead8cc53d270",
+      "title": "[3p freshness] xxhash: Add Crowbar workflow",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ab90d2a96dea191f14a96d4b2c16b5a50ee73317",
+      "url": "https://github.com/google/angle/commit/ab90d2a96dea191f14a96d4b2c16b5a50ee73317",
+      "event_at": "2026-10-26T10:46:17Z",
+      "revision": "ab90d2a96dea191f14a96d4b2c16b5a50ee73317",
+      "title": "Roll vulkan-deps from 10d2498d3094 to 7724413aefba (40 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "aca4cd94d84891946cb69754ade7750edc16c1a2",
+      "url": "https://github.com/google/angle/commit/aca4cd94d84891946cb69754ade7750edc16c1a2",
+      "event_at": "2026-10-27T19:12:36Z",
+      "revision": "aca4cd94d84891946cb69754ade7750edc16c1a2",
+      "title": "Vulkan: Fix deferred clear vs D/S-clear-then-D-clear",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "acc2f85e7a6a381b6ae222fb393f401b6cb2baea",
+      "url": "https://github.com/google/angle/commit/acc2f85e7a6a381b6ae222fb393f401b6cb2baea",
+      "event_at": "2026-10-20T18:35:36Z",
+      "revision": "acc2f85e7a6a381b6ae222fb393f401b6cb2baea",
+      "title": "Manual roll VK-GL-CTS from bee837225470 to d18e4c685431 (40 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "adaa3da39715972f740be97c7fbd70d0e35e4b5d",
+      "url": "https://github.com/google/angle/commit/adaa3da39715972f740be97c7fbd70d0e35e4b5d",
+      "event_at": "2026-10-07T23:55:14Z",
+      "revision": "adaa3da39715972f740be97c7fbd70d0e35e4b5d",
+      "title": "Metal: Cache index conversions for flat shading",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "aea55f222d5e1ea7464d022615abb85824227f64",
+      "url": "https://github.com/google/angle/commit/aea55f222d5e1ea7464d022615abb85824227f64",
+      "event_at": "2026-10-22T12:49:34Z",
+      "revision": "aea55f222d5e1ea7464d022615abb85824227f64",
+      "title": "spanify: Add angle::Span::copy_prefix_from()",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "af8a791f61e42600c6910280393c5183f701bfd1",
+      "url": "https://github.com/google/angle/commit/af8a791f61e42600c6910280393c5183f701bfd1",
+      "event_at": "2026-10-30T00:11:57Z",
+      "revision": "af8a791f61e42600c6910280393c5183f701bfd1",
+      "title": "Tests: Add best_fiends,game_world & mini_relaxing traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "afa978f8ca670cd4185c84709ca6546dcf7edd49",
+      "url": "https://github.com/google/angle/commit/afa978f8ca670cd4185c84709ca6546dcf7edd49",
+      "event_at": "2026-10-15T04:13:33Z",
+      "revision": "afa978f8ca670cd4185c84709ca6546dcf7edd49",
+      "title": "Translator: Work around monomorphizer crash vs comma corner case",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b00fff3d51f7c793747cf161b18aa168ef026b7c",
+      "url": "https://github.com/google/angle/commit/b00fff3d51f7c793747cf161b18aa168ef026b7c",
+      "event_at": "2026-10-15T19:43:56Z",
+      "revision": "b00fff3d51f7c793747cf161b18aa168ef026b7c",
+      "title": "Skip more failing OpenGL tests on Linux/NVIDIA",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b07d4a63246a825d1f87a25501773bc8e346ff87",
+      "url": "https://github.com/google/angle/commit/b07d4a63246a825d1f87a25501773bc8e346ff87",
+      "event_at": "2026-10-14T00:10:54Z",
+      "revision": "b07d4a63246a825d1f87a25501773bc8e346ff87",
+      "title": "Add isekai_slow_life and jewels_blast traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b0a29c6ab3bd427fe08608acb83d05b3e3c82a00",
+      "url": "https://github.com/google/angle/commit/b0a29c6ab3bd427fe08608acb83d05b3e3c82a00",
+      "event_at": "2026-10-08T16:08:36Z",
+      "revision": "b0a29c6ab3bd427fe08608acb83d05b3e3c82a00",
+      "title": "Grant configs.validator role to project-angle-committers",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b0d01b2554092b37d7cbd6fa2dc26043c8b8575d",
+      "url": "https://github.com/google/angle/commit/b0d01b2554092b37d7cbd6fa2dc26043c8b8575d",
+      "event_at": "2026-10-28T06:38:28Z",
+      "revision": "b0d01b2554092b37d7cbd6fa2dc26043c8b8575d",
+      "title": "Tests: Add matchington_mansion and meme_bots_chase_rooms traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b0ff0b86e4b0d59216a765b0a360c25da3007d02",
+      "url": "https://github.com/google/angle/commit/b0ff0b86e4b0d59216a765b0a360c25da3007d02",
+      "event_at": "2026-10-30T14:20:33Z",
+      "revision": "b0ff0b86e4b0d59216a765b0a360c25da3007d02",
+      "title": "Fix the string alloc and dealloc across DSO boundaries",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b21b38309696ca2a838c6aaabd3829e9fa653a6f",
+      "url": "https://github.com/google/angle/commit/b21b38309696ca2a838c6aaabd3829e9fa653a6f",
+      "event_at": "2026-10-16T14:04:25Z",
+      "revision": "b21b38309696ca2a838c6aaabd3829e9fa653a6f",
+      "title": "Vulkan: Parse DisplayVkAndroid's system properties as int64_t",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b28022f83174a14aa846c2694d513d55ad17e8bb",
+      "url": "https://github.com/google/angle/commit/b28022f83174a14aa846c2694d513d55ad17e8bb",
+      "event_at": "2026-11-01T03:43:55Z",
+      "revision": "b28022f83174a14aa846c2694d513d55ad17e8bb",
+      "title": "Translator: Fix crash when tracking samplers passed to functions",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b3beab69538a1c7a48780e38db8cd6ef30969987",
+      "url": "https://github.com/google/angle/commit/b3beab69538a1c7a48780e38db8cd6ef30969987",
+      "event_at": "2026-10-27T14:54:34Z",
+      "revision": "b3beab69538a1c7a48780e38db8cd6ef30969987",
+      "title": "[3p freshness] PRESUBMIT: Skip the tab check for Crowbar-managed code",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b407a2487a5b9dffa53e76701304e9549ccffd19",
+      "url": "https://github.com/google/angle/commit/b407a2487a5b9dffa53e76701304e9549ccffd19",
+      "event_at": "2026-10-16T18:06:37Z",
+      "revision": "b407a2487a5b9dffa53e76701304e9549ccffd19",
+      "title": "PRESUBMIT: Fix tab check crash under Python 3",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b40b5946cd4ca423c65f9efe4bb0f8b4dc6ae52c",
+      "url": "https://github.com/google/angle/commit/b40b5946cd4ca423c65f9efe4bb0f8b4dc6ae52c",
+      "event_at": "2026-10-14T21:45:39Z",
+      "revision": "b40b5946cd4ca423c65f9efe4bb0f8b4dc6ae52c",
+      "title": "GL: Avoid FBO driver hash collisions",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b4a1ba9ec8896ce2b93d100f1d4224c56c14ebec",
+      "url": "https://github.com/google/angle/commit/b4a1ba9ec8896ce2b93d100f1d4224c56c14ebec",
+      "event_at": "2026-10-30T11:44:01Z",
+      "revision": "b4a1ba9ec8896ce2b93d100f1d4224c56c14ebec",
+      "title": "Roll vulkan-deps from 1852d46e4154 to 771ad08d3047 (8 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b64f67868464507ee62605c5a9108f68083e35ad",
+      "url": "https://github.com/google/angle/commit/b64f67868464507ee62605c5a9108f68083e35ad",
+      "event_at": "2026-10-23T15:06:41Z",
+      "revision": "b64f67868464507ee62605c5a9108f68083e35ad",
+      "title": "D3D11: Reject mixed 3D/non-3D and overlapping layer attachments",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b6b6a2fb3365dbe709d8e12ae606de8d479d58c7",
+      "url": "https://github.com/google/angle/commit/b6b6a2fb3365dbe709d8e12ae606de8d479d58c7",
+      "event_at": "2026-10-07T16:03:54Z",
+      "revision": "b6b6a2fb3365dbe709d8e12ae606de8d479d58c7",
+      "title": "DEPS: Update Android SDK cmdline-tools package to per-OS",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b82a564646a26535ccedfa7a69134c0fd6654ac2",
+      "url": "https://github.com/google/angle/commit/b82a564646a26535ccedfa7a69134c0fd6654ac2",
+      "event_at": "2026-10-18T00:28:18Z",
+      "revision": "b82a564646a26535ccedfa7a69134c0fd6654ac2",
+      "title": "Translator: Apply loop-forward-progress transform to PowerVR",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b8bcf8a2c9b3b733bddfe7c595ac1e902c7fa330",
+      "url": "https://github.com/google/angle/commit/b8bcf8a2c9b3b733bddfe7c595ac1e902c7fa330",
+      "event_at": "2026-10-16T00:36:56Z",
+      "revision": "b8bcf8a2c9b3b733bddfe7c595ac1e902c7fa330",
+      "title": "SPIR-V: Work around driver bug with bool_v ? bvec4...",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "b938f6073bfd165e222dc397c2470e4e6223c367",
+      "url": "https://github.com/google/angle/commit/b938f6073bfd165e222dc397c2470e4e6223c367",
+      "event_at": "2026-10-23T03:47:12Z",
+      "revision": "b938f6073bfd165e222dc397c2470e4e6223c367",
+      "title": "Revert \"Standalone: Enable PartitionAlloc on Android\"",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "babb8e10db8455973b326ff73285179eb3de1c54",
+      "url": "https://github.com/google/angle/commit/babb8e10db8455973b326ff73285179eb3de1c54",
+      "event_at": "2026-10-09T11:29:30Z",
+      "revision": "babb8e10db8455973b326ff73285179eb3de1c54",
+      "title": "Roll SwiftShader from 1e80438d2b93 to 0f87bb2d3742 (2 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "bb98c84d57ea92108d72feb99fcafd0ad59534ed",
+      "url": "https://github.com/google/angle/commit/bb98c84d57ea92108d72feb99fcafd0ad59534ed",
+      "event_at": "2026-10-14T18:17:32Z",
+      "revision": "bb98c84d57ea92108d72feb99fcafd0ad59534ed",
+      "title": "[WebGPU] Prune unwritten targets from render pipeline color mask",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "bbeb63c968e2a9673f50b8423c2ed46daeee252c",
+      "url": "https://github.com/google/angle/commit/bbeb63c968e2a9673f50b8423c2ed46daeee252c",
+      "event_at": "2026-10-22T05:14:49Z",
+      "revision": "bbeb63c968e2a9673f50b8423c2ed46daeee252c",
+      "title": "[3p freshness] xxhash: Roll to v0.8.4 and enable auto-update",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "bc256f64f9bc0791655a0ef987e8c4b2ecd92266",
+      "url": "https://github.com/google/angle/commit/bc256f64f9bc0791655a0ef987e8c4b2ecd92266",
+      "event_at": "2026-10-15T17:01:59Z",
+      "revision": "bc256f64f9bc0791655a0ef987e8c4b2ecd92266",
+      "title": "Add new test for DisplayShareGroupContextCreation",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "bd9ef47fd4c17c519cc8c2d1d9e8c5658f33a092",
+      "url": "https://github.com/google/angle/commit/bd9ef47fd4c17c519cc8c2d1d9e8c5658f33a092",
+      "event_at": "2026-10-27T13:58:56Z",
+      "revision": "bd9ef47fd4c17c519cc8c2d1d9e8c5658f33a092",
+      "title": "IR: Validate foldable control flow",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "bdd330893ae2cb5c6cc54ee3e42cf95da89db8f5",
+      "url": "https://github.com/google/angle/commit/bdd330893ae2cb5c6cc54ee3e42cf95da89db8f5",
+      "event_at": "2026-10-09T20:21:49Z",
+      "revision": "bdd330893ae2cb5c6cc54ee3e42cf95da89db8f5",
+      "title": "Skip garena_rov_abyssal_rift native test on bot that timeout",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "be6c8ed3bfa3fcd9fdc83e777388a2e0fce0e84c",
+      "url": "https://github.com/google/angle/commit/be6c8ed3bfa3fcd9fdc83e777388a2e0fce0e84c",
+      "event_at": "2026-10-26T09:01:39Z",
+      "revision": "be6c8ed3bfa3fcd9fdc83e777388a2e0fce0e84c",
+      "title": "Roll VK-GL-CTS from d18e4c685431 to 83573e36d58c (27 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c17b32cf2e8cc172304a48814fcb4b9b6f2cf1a0",
+      "url": "https://github.com/google/angle/commit/c17b32cf2e8cc172304a48814fcb4b9b6f2cf1a0",
+      "event_at": "2026-10-27T15:51:30Z",
+      "revision": "c17b32cf2e8cc172304a48814fcb4b9b6f2cf1a0",
+      "title": "[3p freshness] volk: Add Crowbar workflow",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c1d961037f413e0faf3e1ecf085735d5d771bd91",
+      "url": "https://github.com/google/angle/commit/c1d961037f413e0faf3e1ecf085735d5d771bd91",
+      "event_at": "2026-10-14T00:00:13Z",
+      "revision": "c1d961037f413e0faf3e1ecf085735d5d771bd91",
+      "title": "Vulkan: Optimize vertex conversion buffer redef",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c326829357cad4c21d943a48a55c5d13f439db7f",
+      "url": "https://github.com/google/angle/commit/c326829357cad4c21d943a48a55c5d13f439db7f",
+      "event_at": "2026-10-21T18:26:54Z",
+      "revision": "c326829357cad4c21d943a48a55c5d13f439db7f",
+      "title": "Android: Use Android's zstd when rolling into AOSP",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c3c7c5f22eb27a4cb8a71bcff4d6066d13662858",
+      "url": "https://github.com/google/angle/commit/c3c7c5f22eb27a4cb8a71bcff4d6066d13662858",
+      "event_at": "2026-10-20T13:24:58Z",
+      "revision": "c3c7c5f22eb27a4cb8a71bcff4d6066d13662858",
+      "title": "Metal: Remove generateShareableShaders",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c4d96193113c92eef76bd51c818ec52a79ad503a",
+      "url": "https://github.com/google/angle/commit/c4d96193113c92eef76bd51c818ec52a79ad503a",
+      "event_at": "2026-10-29T11:53:05Z",
+      "revision": "c4d96193113c92eef76bd51c818ec52a79ad503a",
+      "title": "Roll vulkan-deps from ebf9f6cf7c07 to 1852d46e4154 (21 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c553b337ecaf6049de2cc06606046fc752aca357",
+      "url": "https://github.com/google/angle/commit/c553b337ecaf6049de2cc06606046fc752aca357",
+      "event_at": "2026-10-03T02:19:10Z",
+      "revision": "c553b337ecaf6049de2cc06606046fc752aca357",
+      "title": "GL: add defer_gl_delete_buffers workaround.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c58bcf5a5851d299d0ae9e57288cfe39624e39db",
+      "url": "https://github.com/google/angle/commit/c58bcf5a5851d299d0ae9e57288cfe39624e39db",
+      "event_at": "2026-10-19T10:27:43Z",
+      "revision": "c58bcf5a5851d299d0ae9e57288cfe39624e39db",
+      "title": "Reland \"Enable dangling pointer detector in ANGLE test runner\"",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c5f6c4a8faa41dbd9c8cbbeba57718355a03edde",
+      "url": "https://github.com/google/angle/commit/c5f6c4a8faa41dbd9c8cbbeba57718355a03edde",
+      "event_at": "2026-10-02T14:35:37Z",
+      "revision": "c5f6c4a8faa41dbd9c8cbbeba57718355a03edde",
+      "title": "HLSL: Fix interface vs private variable name collision",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c6162c9ddc5ef2cbe66fd9cf32cea967a62235ac",
+      "url": "https://github.com/google/angle/commit/c6162c9ddc5ef2cbe66fd9cf32cea967a62235ac",
+      "event_at": "2026-10-26T15:22:44Z",
+      "revision": "c6162c9ddc5ef2cbe66fd9cf32cea967a62235ac",
+      "title": "Vulkan: disable dynamic rendering on Mali.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c7ace143bf80f8b26cd0bcc88e929274cfa65d75",
+      "url": "https://github.com/google/angle/commit/c7ace143bf80f8b26cd0bcc88e929274cfa65d75",
+      "event_at": "2026-10-19T14:42:14Z",
+      "revision": "c7ace143bf80f8b26cd0bcc88e929274cfa65d75",
+      "title": "Vulkan: Enable dynamic rendering on newer Nvidia drivers",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c89749284728d778ded3790033ad77edc7a11265",
+      "url": "https://github.com/google/angle/commit/c89749284728d778ded3790033ad77edc7a11265",
+      "event_at": "2026-10-31T18:35:41Z",
+      "revision": "c89749284728d778ded3790033ad77edc7a11265",
+      "title": "[3p freshness] libxnvctrl: Rename and move code into src/",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c8d7ac79cc632cdf8ee8afb9ff33ce5a05fc966d",
+      "url": "https://github.com/google/angle/commit/c8d7ac79cc632cdf8ee8afb9ff33ce5a05fc966d",
+      "event_at": "2026-10-31T23:34:12Z",
+      "revision": "c8d7ac79cc632cdf8ee8afb9ff33ce5a05fc966d",
+      "title": "Translator: Preserve callees referenced by monomorphized copies",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c8df07f35b69cc5826270247e507a0649342f077",
+      "url": "https://github.com/google/angle/commit/c8df07f35b69cc5826270247e507a0649342f077",
+      "event_at": "2026-10-19T22:56:22Z",
+      "revision": "c8df07f35b69cc5826270247e507a0649342f077",
+      "title": "Vulkan: Split cross-format layered image copies on Adreno 702",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c9799609c462c6fb9d52ac882fb809347ccf2c12",
+      "url": "https://github.com/google/angle/commit/c9799609c462c6fb9d52ac882fb809347ccf2c12",
+      "event_at": "2026-10-21T10:39:02Z",
+      "revision": "c9799609c462c6fb9d52ac882fb809347ccf2c12",
+      "title": "[3p freshness] ffx_spd: Move upstream files into src/",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "c9b8927ab725dd7ce8bbe5e1a1346a072dc45a04",
+      "url": "https://github.com/google/angle/commit/c9b8927ab725dd7ce8bbe5e1a1346a072dc45a04",
+      "event_at": "2026-10-28T12:01:21Z",
+      "revision": "c9b8927ab725dd7ce8bbe5e1a1346a072dc45a04",
+      "title": "Roll vulkan-deps from 5f9a05f60c9a to ebf9f6cf7c07 (14 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ca550863f5a7359bea9c8e6a9ce049757b3bca58",
+      "url": "https://github.com/google/angle/commit/ca550863f5a7359bea9c8e6a9ce049757b3bca58",
+      "event_at": "2026-10-21T23:27:48Z",
+      "revision": "ca550863f5a7359bea9c8e6a9ce049757b3bca58",
+      "title": "Revert \"Android: Use Android's zstd when rolling into AOSP\"",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "cc2f1469ac5fcbe750bbc838404a453af9e6a18b",
+      "url": "https://github.com/google/angle/commit/cc2f1469ac5fcbe750bbc838404a453af9e6a18b",
+      "event_at": "2026-10-20T17:47:21Z",
+      "revision": "cc2f1469ac5fcbe750bbc838404a453af9e6a18b",
+      "title": "Skip failing tests + suppress buggy VVL error",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "cc3d000bba06717bcce75762dd3c5c3fdb191375",
+      "url": "https://github.com/google/angle/commit/cc3d000bba06717bcce75762dd3c5c3fdb191375",
+      "event_at": "2026-10-28T18:32:16Z",
+      "revision": "cc3d000bba06717bcce75762dd3c5c3fdb191375",
+      "title": "[3p freshness] Granite: Add Crowbar workflow",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "cc779fd2661641dfdd1198f579eaed86865a5b90",
+      "url": "https://github.com/google/angle/commit/cc779fd2661641dfdd1198f579eaed86865a5b90",
+      "event_at": "2026-10-06T17:30:42Z",
+      "revision": "cc779fd2661641dfdd1198f579eaed86865a5b90",
+      "title": "Translator: Wrap struct constructors after init",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ce7c2eed718868191a93a0ede3dcc7b7b04e0016",
+      "url": "https://github.com/google/angle/commit/ce7c2eed718868191a93a0ede3dcc7b7b04e0016",
+      "event_at": "2026-10-29T22:30:55Z",
+      "revision": "ce7c2eed718868191a93a0ede3dcc7b7b04e0016",
+      "title": "Trace/Replay: Preserve MSRTT samples on MEC texture attachments",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d2e5e488da0c6215f8276e5b8d992a4a6ec20c32",
+      "url": "https://github.com/google/angle/commit/d2e5e488da0c6215f8276e5b8d992a4a6ec20c32",
+      "event_at": "2026-10-08T22:13:06Z",
+      "revision": "d2e5e488da0c6215f8276e5b8d992a4a6ec20c32",
+      "title": "Vulkan: Fix tile memory vkCmdCopyImage path missing flush",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d362ad4611306ed8cf5fb5f2896e89c8049bbf9c",
+      "url": "https://github.com/google/angle/commit/d362ad4611306ed8cf5fb5f2896e89c8049bbf9c",
+      "event_at": "2026-10-05T16:58:07Z",
+      "revision": "d362ad4611306ed8cf5fb5f2896e89c8049bbf9c",
+      "title": "Replaces mIsCurrentOnAnyContext (bool) with mCurrentRefCount (uint)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d38380b969a0023f3bc16a2b803c4f8da291b1bc",
+      "url": "https://github.com/google/angle/commit/d38380b969a0023f3bc16a2b803c4f8da291b1bc",
+      "event_at": "2026-10-23T23:21:47Z",
+      "revision": "d38380b969a0023f3bc16a2b803c4f8da291b1bc",
+      "title": "Vulkan: Fix missing StencilRefReplacingEXT execution mode",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d39da9a2abc47fc5fee3711b18b461feab80d34c",
+      "url": "https://github.com/google/angle/commit/d39da9a2abc47fc5fee3711b18b461feab80d34c",
+      "event_at": "2026-10-22T09:05:36Z",
+      "revision": "d39da9a2abc47fc5fee3711b18b461feab80d34c",
+      "title": "Standalone: Enable PartitionAlloc on Android",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d3c65697b7718b469d47318cfd80f4f34b570404",
+      "url": "https://github.com/google/angle/commit/d3c65697b7718b469d47318cfd80f4f34b570404",
+      "event_at": "2026-10-19T08:05:43Z",
+      "revision": "d3c65697b7718b469d47318cfd80f4f34b570404",
+      "title": "Roll Chromium from fc6bec1defd3 to c300679f2883 (742 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d401bec4502a248ae216414d258487e108d50a3d",
+      "url": "https://github.com/google/angle/commit/d401bec4502a248ae216414d258487e108d50a3d",
+      "event_at": "2026-10-09T10:39:15Z",
+      "revision": "d401bec4502a248ae216414d258487e108d50a3d",
+      "title": "Roll vulkan-deps from d6a64ffa6d28 to 5262a083659f (6 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d52601235d40944a2d0dcf7323baeecc89d1b4f1",
+      "url": "https://github.com/google/angle/commit/d52601235d40944a2d0dcf7323baeecc89d1b4f1",
+      "event_at": "2026-10-13T15:01:01Z",
+      "revision": "d52601235d40944a2d0dcf7323baeecc89d1b4f1",
+      "title": "EGL: Unwrap X11 native window.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d77f9a4d5930bddef5258abd1b1d853e706335b7",
+      "url": "https://github.com/google/angle/commit/d77f9a4d5930bddef5258abd1b1d853e706335b7",
+      "event_at": "2026-10-24T01:44:47Z",
+      "revision": "d77f9a4d5930bddef5258abd1b1d853e706335b7",
+      "title": "Fix some EGLDisplayTest tests to call eglTerminate",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d7fcad5bec4fdd46a583ad5438082dd6b9e8841e",
+      "url": "https://github.com/google/angle/commit/d7fcad5bec4fdd46a583ad5438082dd6b9e8841e",
+      "event_at": "2026-10-21T14:52:46Z",
+      "revision": "d7fcad5bec4fdd46a583ad5438082dd6b9e8841e",
+      "title": "Metal: Fix unindexed references to interpolant arrays",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d9294ad1c0514a0cb889fa32eb5c39db3c1c38f0",
+      "url": "https://github.com/google/angle/commit/d9294ad1c0514a0cb889fa32eb5c39db3c1c38f0",
+      "event_at": "2026-10-22T00:02:17Z",
+      "revision": "d9294ad1c0514a0cb889fa32eb5c39db3c1c38f0",
+      "title": "GL: Force finish on IMG when copying within a texture",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "d93773830ab216919d58ea24bca701e85fff1c7d",
+      "url": "https://github.com/google/angle/commit/d93773830ab216919d58ea24bca701e85fff1c7d",
+      "event_at": "2026-10-20T21:29:55Z",
+      "revision": "d93773830ab216919d58ea24bca701e85fff1c7d",
+      "title": "DEPS: Add zstd to third_party",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "da00bb96a32086dc252bb1e4396670ccabdee727",
+      "url": "https://github.com/google/angle/commit/da00bb96a32086dc252bb1e4396670ccabdee727",
+      "event_at": "2026-10-08T08:37:59Z",
+      "revision": "da00bb96a32086dc252bb1e4396670ccabdee727",
+      "title": "Modernize loops in libANGLE, common, samples, and util",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "da2b8dcb0b547bcb9a03b7613ff5b982ec74a333",
+      "url": "https://github.com/google/angle/commit/da2b8dcb0b547bcb9a03b7613ff5b982ec74a333",
+      "event_at": "2026-10-26T17:05:40Z",
+      "revision": "da2b8dcb0b547bcb9a03b7613ff5b982ec74a333",
+      "title": "Vulkan: Maintain wl_egl_window attached size on Wayland",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "da34e3a11378cae9ede9150995043fd88a8d8d38",
+      "url": "https://github.com/google/angle/commit/da34e3a11378cae9ede9150995043fd88a8d8d38",
+      "event_at": "2026-10-29T13:53:41Z",
+      "revision": "da34e3a11378cae9ede9150995043fd88a8d8d38",
+      "title": "Vulkan: Split cross-format layered copies on Adreno 622",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "dad2ec20c652461cdcd2988fa3c22ae1b3cf1239",
+      "url": "https://github.com/google/angle/commit/dad2ec20c652461cdcd2988fa3c22ae1b3cf1239",
+      "event_at": "2026-10-10T01:52:52Z",
+      "revision": "dad2ec20c652461cdcd2988fa3c22ae1b3cf1239",
+      "title": "Add per-surface lock and ScopedSurfaceLockAndRef for EGLSurface APIs",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "dad9a74b6675b939329e2a38293e07b35094c4d1",
+      "url": "https://github.com/google/angle/commit/dad9a74b6675b939329e2a38293e07b35094c4d1",
+      "event_at": "2026-10-30T23:51:52Z",
+      "revision": "dad9a74b6675b939329e2a38293e07b35094c4d1",
+      "title": "spanify: Use Span for EGLPreRotationTest vertex buffers",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "db5eb421c4350138e291220646de7764987a07e3",
+      "url": "https://github.com/google/angle/commit/db5eb421c4350138e291220646de7764987a07e3",
+      "event_at": "2026-10-29T00:30:03Z",
+      "revision": "db5eb421c4350138e291220646de7764987a07e3",
+      "title": "Remove android_app \"ANGLE\"",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "dbd678c224bb034ac569a23f83ceba359b4a66ca",
+      "url": "https://github.com/google/angle/commit/dbd678c224bb034ac569a23f83ceba359b4a66ca",
+      "event_at": "2026-10-26T19:55:20Z",
+      "revision": "dbd678c224bb034ac569a23f83ceba359b4a66ca",
+      "title": "Vulkan: Reset offset of default vertex attributes",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ddbe80afc44cb41caba34e7f1671a01f4ab409bd",
+      "url": "https://github.com/google/angle/commit/ddbe80afc44cb41caba34e7f1671a01f4ab409bd",
+      "event_at": "2026-10-28T02:45:55Z",
+      "revision": "ddbe80afc44cb41caba34e7f1671a01f4ab409bd",
+      "title": "Vulkan: Dynamic state for sample mask",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ddcc7fba77fe129da6a3e9effc43dd82c5fe3ae4",
+      "url": "https://github.com/google/angle/commit/ddcc7fba77fe129da6a3e9effc43dd82c5fe3ae4",
+      "event_at": "2026-10-19T21:47:35Z",
+      "revision": "ddcc7fba77fe129da6a3e9effc43dd82c5fe3ae4",
+      "title": "Vulkan: Hook up VK_EXT_extended_dynamic_state3",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "de6c60a3f64b0e300df6c75b6b554b9e41f4c0dc",
+      "url": "https://github.com/google/angle/commit/de6c60a3f64b0e300df6c75b6b554b9e41f4c0dc",
+      "event_at": "2026-10-08T10:40:47Z",
+      "revision": "de6c60a3f64b0e300df6c75b6b554b9e41f4c0dc",
+      "title": "Roll vulkan-deps from 1c36c0df0048 to d6a64ffa6d28 (36 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "dea3e5235589ee6e5e15f3058545c403cf015d06",
+      "url": "https://github.com/google/angle/commit/dea3e5235589ee6e5e15f3058545c403cf015d06",
+      "event_at": "2026-10-29T15:54:43Z",
+      "revision": "dea3e5235589ee6e5e15f3058545c403cf015d06",
+      "title": "D3D11: Fix stale static index buffer reuse across index types",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "deeaa4b8bf7db4e01d209c57925ef5587fb33540",
+      "url": "https://github.com/google/angle/commit/deeaa4b8bf7db4e01d209c57925ef5587fb33540",
+      "event_at": "2026-10-14T23:32:04Z",
+      "revision": "deeaa4b8bf7db4e01d209c57925ef5587fb33540",
+      "title": "Avoid taking the Display lock in eglMakeCurrent",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "df00ff99a7134bcda4e9e803d001fff92c7e51ae",
+      "url": "https://github.com/google/angle/commit/df00ff99a7134bcda4e9e803d001fff92c7e51ae",
+      "event_at": "2026-10-22T23:45:45Z",
+      "revision": "df00ff99a7134bcda4e9e803d001fff92c7e51ae",
+      "title": "Traces: Upgrade trace pack 8 for merged attribs",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "df410eae0b6e3491ba5034ea0ba5ce6d40342bf6",
+      "url": "https://github.com/google/angle/commit/df410eae0b6e3491ba5034ea0ba5ce6d40342bf6",
+      "event_at": "2026-10-02T23:00:08Z",
+      "revision": "df410eae0b6e3491ba5034ea0ba5ce6d40342bf6",
+      "title": "Suppress flaky TransformFeedbackTest on Windows Intel Vulkan",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "dfc158add2979045db2bb092d549c169c70fe284",
+      "url": "https://github.com/google/angle/commit/dfc158add2979045db2bb092d549c169c70fe284",
+      "event_at": "2026-10-16T08:02:00Z",
+      "revision": "dfc158add2979045db2bb092d549c169c70fe284",
+      "title": "Tests: Skip raid_rush on Pixel 6",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e09ad0646df798200f2f2d35b4157cd8b24fc943",
+      "url": "https://github.com/google/angle/commit/e09ad0646df798200f2f2d35b4157cd8b24fc943",
+      "event_at": "2026-10-03T03:19:17Z",
+      "revision": "e09ad0646df798200f2f2d35b4157cd8b24fc943",
+      "title": "OpenCL: Add object for memory region tracking",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e0e5a9bc99a7027268515fd6463768d7c6236293",
+      "url": "https://github.com/google/angle/commit/e0e5a9bc99a7027268515fd6463768d7c6236293",
+      "event_at": "2026-10-03T00:00:33Z",
+      "revision": "e0e5a9bc99a7027268515fd6463768d7c6236293",
+      "title": "Change semantic of limitOutputVaryingsTo256 workaround.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e0f80317fc362ddc46ee1b78e250d4b6bfc1f05b",
+      "url": "https://github.com/google/angle/commit/e0f80317fc362ddc46ee1b78e250d4b6bfc1f05b",
+      "event_at": "2026-10-15T12:31:23Z",
+      "revision": "e0f80317fc362ddc46ee1b78e250d4b6bfc1f05b",
+      "title": "Roll SwiftShader from 104f72dbb79f to cddb5c91b23f (1 revision)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e18f3241dc38144fc422feff69c3475a3238272e",
+      "url": "https://github.com/google/angle/commit/e18f3241dc38144fc422feff69c3475a3238272e",
+      "event_at": "2026-10-16T19:53:13Z",
+      "revision": "e18f3241dc38144fc422feff69c3475a3238272e",
+      "title": "Add test for read stage mask check across RPs",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e3284f862638557b8cfe08164eaaf3becbff7355",
+      "url": "https://github.com/google/angle/commit/e3284f862638557b8cfe08164eaaf3becbff7355",
+      "event_at": "2026-10-02T10:57:14Z",
+      "revision": "e3284f862638557b8cfe08164eaaf3becbff7355",
+      "title": "Roll vulkan-deps from f81f794229ec to 1b7ced3670c3 (19 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e473507a8a86fa7c0aa6e419e2a8fd81283e1bfa",
+      "url": "https://github.com/google/angle/commit/e473507a8a86fa7c0aa6e419e2a8fd81283e1bfa",
+      "event_at": "2026-10-29T18:19:50Z",
+      "revision": "e473507a8a86fa7c0aa6e419e2a8fd81283e1bfa",
+      "title": "Vulkan: Sync dirty disabled active attributes",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e4a1c99109a4b0adf2e816842fbdba25e71bd792",
+      "url": "https://github.com/google/angle/commit/e4a1c99109a4b0adf2e816842fbdba25e71bd792",
+      "event_at": "2026-10-23T17:58:04Z",
+      "revision": "e4a1c99109a4b0adf2e816842fbdba25e71bd792",
+      "title": "Vulkan: Fix enabling ensureLoopForwardProgress",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e5640f4ec9ce5fec357186fd7fa40ad3030f2698",
+      "url": "https://github.com/google/angle/commit/e5640f4ec9ce5fec357186fd7fa40ad3030f2698",
+      "event_at": "2026-10-11T07:56:09Z",
+      "revision": "e5640f4ec9ce5fec357186fd7fa40ad3030f2698",
+      "title": "IR: Add control flow helpers to instruction::Builder",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e5727f7d0a0b670883448470986d11acb8e028fd",
+      "url": "https://github.com/google/angle/commit/e5727f7d0a0b670883448470986d11acb8e028fd",
+      "event_at": "2026-10-19T14:52:25Z",
+      "revision": "e5727f7d0a0b670883448470986d11acb8e028fd",
+      "title": "Fix glGetShaderPrecisionFormat error for GL_COMPUTE_SHADER",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e5913a587ddb3e4798a697bfbec4a2883adf4181",
+      "url": "https://github.com/google/angle/commit/e5913a587ddb3e4798a697bfbec4a2883adf4181",
+      "event_at": "2026-10-14T19:10:03Z",
+      "revision": "e5913a587ddb3e4798a697bfbec4a2883adf4181",
+      "title": "Remove display argument from DisplayImpl::makeCurrent",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e61886bc02434c57047039b02f7df829719a3b60",
+      "url": "https://github.com/google/angle/commit/e61886bc02434c57047039b02f7df829719a3b60",
+      "event_at": "2026-10-22T00:27:18Z",
+      "revision": "e61886bc02434c57047039b02f7df829719a3b60",
+      "title": "GN: Turn zstd off until Android can link it",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e63337a7cfc683cd4695bae6ae92af38336c8b30",
+      "url": "https://github.com/google/angle/commit/e63337a7cfc683cd4695bae6ae92af38336c8b30",
+      "event_at": "2026-10-19T10:46:12Z",
+      "revision": "e63337a7cfc683cd4695bae6ae92af38336c8b30",
+      "title": "Roll vulkan-deps from 00a7dde0a6b4 to 601d5e9c59eb (17 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e6fd4a2e167ae7c94a4107ce5dd5437b4abbf0c0",
+      "url": "https://github.com/google/angle/commit/e6fd4a2e167ae7c94a4107ce5dd5437b4abbf0c0",
+      "event_at": "2026-10-22T00:34:40Z",
+      "revision": "e6fd4a2e167ae7c94a4107ce5dd5437b4abbf0c0",
+      "title": "Capture/Replay: Optimize texture parameter reset",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e7ba66718d9dd904be47b70f5b7da73bec528598",
+      "url": "https://github.com/google/angle/commit/e7ba66718d9dd904be47b70f5b7da73bec528598",
+      "event_at": "2026-10-29T16:26:23Z",
+      "revision": "e7ba66718d9dd904be47b70f5b7da73bec528598",
+      "title": "Fix deadlock in deferred display cleanup after eglTerminate",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e844f408463aae4982b1d9e418d944b09f73d987",
+      "url": "https://github.com/google/angle/commit/e844f408463aae4982b1d9e418d944b09f73d987",
+      "event_at": "2026-10-29T13:41:55Z",
+      "revision": "e844f408463aae4982b1d9e418d944b09f73d987",
+      "title": "Translator: Disallow gl_Clip/CullDistance whole-array use w/o...",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e8f75f841a76b55dbb1f2e9a10c1175de180b454",
+      "url": "https://github.com/google/angle/commit/e8f75f841a76b55dbb1f2e9a10c1175de180b454",
+      "event_at": "2026-10-15T01:15:26Z",
+      "revision": "e8f75f841a76b55dbb1f2e9a10c1175de180b454",
+      "title": "Skip isekai_slow_life on Win/ARM64",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "e9f64dda0c5b45ee1c22a7034036eeba845f6ff0",
+      "url": "https://github.com/google/angle/commit/e9f64dda0c5b45ee1c22a7034036eeba845f6ff0",
+      "event_at": "2026-10-13T03:22:52Z",
+      "revision": "e9f64dda0c5b45ee1c22a7034036eeba845f6ff0",
+      "title": "IR: Simplify Builder<traverser::Transforms> further",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ea2608deb110fd5ec6277a558a0b8b909e143d0b",
+      "url": "https://github.com/google/angle/commit/ea2608deb110fd5ec6277a558a0b8b909e143d0b",
+      "event_at": "2026-10-16T08:08:41Z",
+      "revision": "ea2608deb110fd5ec6277a558a0b8b909e143d0b",
+      "title": "Skip packed encoder uniform test on Linux/NVIDIA",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "eb288ea72b0b89ad9afa2520d137e8a96942d857",
+      "url": "https://github.com/google/angle/commit/eb288ea72b0b89ad9afa2520d137e8a96942d857",
+      "event_at": "2026-10-31T17:47:42Z",
+      "revision": "eb288ea72b0b89ad9afa2520d137e8a96942d857",
+      "title": "Skip AdvancedBlendMultisampleTest.SharedEdgeKHR on Win NVIDIA",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ec632f21b60b4421d9ef3dc283c2f45ce81d7b88",
+      "url": "https://github.com/google/angle/commit/ec632f21b60b4421d9ef3dc283c2f45ce81d7b88",
+      "event_at": "2026-10-27T00:13:08Z",
+      "revision": "ec632f21b60b4421d9ef3dc283c2f45ce81d7b88",
+      "title": "Vulkan: Dynamic state for polygon mode",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ecfc79fd3586f0bc5777008516d6784c6f1e0aa3",
+      "url": "https://github.com/google/angle/commit/ecfc79fd3586f0bc5777008516d6784c6f1e0aa3",
+      "event_at": "2026-10-15T16:49:10Z",
+      "revision": "ecfc79fd3586f0bc5777008516d6784c6f1e0aa3",
+      "title": "Fix FrameCaptureBinaryData cross-DSO teardown in trace tests",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ed4af189c9d11ebb4c4ad3aab313d79a73ce6340",
+      "url": "https://github.com/google/angle/commit/ed4af189c9d11ebb4c4ad3aab313d79a73ce6340",
+      "event_at": "2026-10-05T17:07:23Z",
+      "revision": "ed4af189c9d11ebb4c4ad3aab313d79a73ce6340",
+      "title": "D3D11: Set mImmutable before updateStorage in setStorage",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "eda7b547d9a9c923170f4c6df91aa220cee04341",
+      "url": "https://github.com/google/angle/commit/eda7b547d9a9c923170f4c6df91aa220cee04341",
+      "event_at": "2026-10-26T06:30:32Z",
+      "revision": "eda7b547d9a9c923170f4c6df91aa220cee04341",
+      "title": "[3p freshness] ffx_spd: Add Crowbar workflow",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ee1c871168532eedcb96be50007b898d7e129539",
+      "url": "https://github.com/google/angle/commit/ee1c871168532eedcb96be50007b898d7e129539",
+      "event_at": "2026-10-20T11:52:17Z",
+      "revision": "ee1c871168532eedcb96be50007b898d7e129539",
+      "title": "Roll vulkan-deps from 601d5e9c59eb to 3bf4faecf9a5 (7 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f00b5a572604e8d3d6e41d6bf89859005c72c583",
+      "url": "https://github.com/google/angle/commit/f00b5a572604e8d3d6e41d6bf89859005c72c583",
+      "event_at": "2026-10-05T16:40:27Z",
+      "revision": "f00b5a572604e8d3d6e41d6bf89859005c72c583",
+      "title": "third_party/clspv: Check current_os for llvm_enable_zlib",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f06ad71674a17d9afd0d80965c7b0bf957991ea4",
+      "url": "https://github.com/google/angle/commit/f06ad71674a17d9afd0d80965c7b0bf957991ea4",
+      "event_at": "2026-10-09T17:45:51Z",
+      "revision": "f06ad71674a17d9afd0d80965c7b0bf957991ea4",
+      "title": "Tests: Add idle_zombie_miner trace",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f0c154c6490652a344349f48bfee29e7abc0ffdd",
+      "url": "https://github.com/google/angle/commit/f0c154c6490652a344349f48bfee29e7abc0ffdd",
+      "event_at": "2026-10-12T23:33:31Z",
+      "revision": "f0c154c6490652a344349f48bfee29e7abc0ffdd",
+      "title": "Tests: Add ant_legion and puzzles_and_chaos traces, update CI",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f101c7deb3c0f2c99b604e5d39f749c088f23253",
+      "url": "https://github.com/google/angle/commit/f101c7deb3c0f2c99b604e5d39f749c088f23253",
+      "event_at": "2026-10-15T21:23:31Z",
+      "revision": "f101c7deb3c0f2c99b604e5d39f749c088f23253",
+      "title": "Make eglDestroySurface thread-safe without holding the display lock",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f1fe5f62e988d0b2ca752c122d3ff7a833380952",
+      "url": "https://github.com/google/angle/commit/f1fe5f62e988d0b2ca752c122d3ff7a833380952",
+      "event_at": "2026-10-22T23:06:25Z",
+      "revision": "f1fe5f62e988d0b2ca752c122d3ff7a833380952",
+      "title": "Vulkan: Don't expose EXT_multisample_compatibility if unsupported",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f21f91f952de62aa776fee6aa90229071bfee0fb",
+      "url": "https://github.com/google/angle/commit/f21f91f952de62aa776fee6aa90229071bfee0fb",
+      "event_at": "2026-10-29T12:52:39Z",
+      "revision": "f21f91f952de62aa776fee6aa90229071bfee0fb",
+      "title": "spanify: Use spans for mapped buffers in ReadPixelsTest",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f4ab51ce3c858ed8368da862ae1212b59657ef14",
+      "url": "https://github.com/google/angle/commit/f4ab51ce3c858ed8368da862ae1212b59657ef14",
+      "event_at": "2026-10-28T18:13:43Z",
+      "revision": "f4ab51ce3c858ed8368da862ae1212b59657ef14",
+      "title": "[3p freshness] Granite: Move etc_decoder.h into src/",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f563ee491c2e42fa8958bf4db5a8d1ca3ad27b74",
+      "url": "https://github.com/google/angle/commit/f563ee491c2e42fa8958bf4db5a8d1ca3ad27b74",
+      "event_at": "2026-10-26T15:51:52Z",
+      "revision": "f563ee491c2e42fa8958bf4db5a8d1ca3ad27b74",
+      "title": "D3D11: Clip readPixels area to render target subresource bounds",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f60a6aee37f118d9d330fcd14420ffe077b15b1b",
+      "url": "https://github.com/google/angle/commit/f60a6aee37f118d9d330fcd14420ffe077b15b1b",
+      "event_at": "2026-10-23T16:28:36Z",
+      "revision": "f60a6aee37f118d9d330fcd14420ffe077b15b1b",
+      "title": "[3p freshness] volk: Move upstream code into src/",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f611cea5c14bb710ff3614cc78b983e6755c08db",
+      "url": "https://github.com/google/angle/commit/f611cea5c14bb710ff3614cc78b983e6755c08db",
+      "event_at": "2026-10-27T15:20:52Z",
+      "revision": "f611cea5c14bb710ff3614cc78b983e6755c08db",
+      "title": "[3p freshness] volk: Restore stale LICENSE.md and README.md",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f62ed49b10f68ad29092e3dd19dafcfd80cf3620",
+      "url": "https://github.com/google/angle/commit/f62ed49b10f68ad29092e3dd19dafcfd80cf3620",
+      "event_at": "2026-10-12T03:35:42Z",
+      "revision": "f62ed49b10f68ad29092e3dd19dafcfd80cf3620",
+      "title": "IR: Use traverser::Transforms instead of Vec<Transform>",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f65a434b6b3d14f0855e9467f1848401f1612668",
+      "url": "https://github.com/google/angle/commit/f65a434b6b3d14f0855e9467f1848401f1612668",
+      "event_at": "2026-10-09T16:54:53Z",
+      "revision": "f65a434b6b3d14f0855e9467f1848401f1612668",
+      "title": "Add simulateTileMemoryTransferSrcForTesting feature flag",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f6e1a205f927d9d220983eb81a81ba5320490afe",
+      "url": "https://github.com/google/angle/commit/f6e1a205f927d9d220983eb81a81ba5320490afe",
+      "event_at": "2026-10-27T20:04:30Z",
+      "revision": "f6e1a205f927d9d220983eb81a81ba5320490afe",
+      "title": "Android: Set TMPDIR for ANGLE's test APKs",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f71369c160108d01780dcfa2d54e3244849d4b57",
+      "url": "https://github.com/google/angle/commit/f71369c160108d01780dcfa2d54e3244849d4b57",
+      "event_at": "2026-10-23T16:32:36Z",
+      "revision": "f71369c160108d01780dcfa2d54e3244849d4b57",
+      "title": "Revert \"Android: Add system ANGLE feature override config\"",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f71b297c59c88843332cb13a64d20f51a125e08b",
+      "url": "https://github.com/google/angle/commit/f71b297c59c88843332cb13a64d20f51a125e08b",
+      "event_at": "2026-10-20T02:47:36Z",
+      "revision": "f71b297c59c88843332cb13a64d20f51a125e08b",
+      "title": "Metal: Remove injectAsmStatementIntoLoopBodies",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f79a131ecf6a755aab99f7a750b76e6ba5874169",
+      "url": "https://github.com/google/angle/commit/f79a131ecf6a755aab99f7a750b76e6ba5874169",
+      "event_at": "2026-10-23T08:21:40Z",
+      "revision": "f79a131ecf6a755aab99f7a750b76e6ba5874169",
+      "title": "Roll Chromium from 4ab5f84445a4 to d9b632d973ec (1059 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f7ac3103110d706b391c423d0b02dcd05a4cefab",
+      "url": "https://github.com/google/angle/commit/f7ac3103110d706b391c423d0b02dcd05a4cefab",
+      "event_at": "2026-10-27T15:55:56Z",
+      "revision": "f7ac3103110d706b391c423d0b02dcd05a4cefab",
+      "title": "Vulkan: Update externallySynchronizePipelineCacheAccess",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f8f9e9dcd2d0b26527a9bc9eb889defb4c1a524d",
+      "url": "https://github.com/google/angle/commit/f8f9e9dcd2d0b26527a9bc9eb889defb4c1a524d",
+      "event_at": "2026-10-14T21:13:01Z",
+      "revision": "f8f9e9dcd2d0b26527a9bc9eb889defb4c1a524d",
+      "title": "Manual roll vulkan-deps from 55df208d0639 to b297df3dd79a (15 revisions)",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f9de5a349381ab8d2ace23f52794565100f76a0b",
+      "url": "https://github.com/google/angle/commit/f9de5a349381ab8d2ace23f52794565100f76a0b",
+      "event_at": "2026-10-23T04:22:16Z",
+      "revision": "f9de5a349381ab8d2ace23f52794565100f76a0b",
+      "title": "Skip pbo.upload split_upload on SwiftShader in the rotate suites",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "f9eede793b920cdc76606db76edd5ef2043a1445",
+      "url": "https://github.com/google/angle/commit/f9eede793b920cdc76606db76edd5ef2043a1445",
+      "event_at": "2026-10-09T10:29:17Z",
+      "revision": "f9eede793b920cdc76606db76edd5ef2043a1445",
+      "title": "Add angle::Reversed C++17 range adapter for reverse iteration",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "fb01175b33c571bebf9bd7709f809da10b88ea27",
+      "url": "https://github.com/google/angle/commit/fb01175b33c571bebf9bd7709f809da10b88ea27",
+      "event_at": "2026-10-23T18:38:08Z",
+      "revision": "fb01175b33c571bebf9bd7709f809da10b88ea27",
+      "title": "Avoid user memory when querying sync status in the backends",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "fb5dacfe0f4ceb895f5fd37ca5fe87844c229e2b",
+      "url": "https://github.com/google/angle/commit/fb5dacfe0f4ceb895f5fd37ca5fe87844c229e2b",
+      "event_at": "2026-10-23T23:33:46Z",
+      "revision": "fb5dacfe0f4ceb895f5fd37ca5fe87844c229e2b",
+      "title": "Translator: Move AST rebuild code out of ASSERT",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "fc38be67dfdf762ffe66a35e11328b60efea9846",
+      "url": "https://github.com/google/angle/commit/fc38be67dfdf762ffe66a35e11328b60efea9846",
+      "event_at": "2026-10-26T18:31:55Z",
+      "revision": "fc38be67dfdf762ffe66a35e11328b60efea9846",
+      "title": "spanify: Use spans in TextureUploadFormatTest",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "fd19437f535d986d969850e761a59b41b9bdffef",
+      "url": "https://github.com/google/angle/commit/fd19437f535d986d969850e761a59b41b9bdffef",
+      "event_at": "2026-10-24T02:19:30Z",
+      "revision": "fd19437f535d986d969850e761a59b41b9bdffef",
+      "title": "GL: disable Pixel Local Storage on old Mali GPUs.",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "fd2ef2aaaa1debce00d548b0be41839dbff88b9e",
+      "url": "https://github.com/google/angle/commit/fd2ef2aaaa1debce00d548b0be41839dbff88b9e",
+      "event_at": "2026-10-08T01:32:45Z",
+      "revision": "fd2ef2aaaa1debce00d548b0be41839dbff88b9e",
+      "title": "Tests: Add Chess offline restricted trace",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "fdc3e7cc5f430e49dfa3fa72f6e217e15b99f846",
+      "url": "https://github.com/google/angle/commit/fdc3e7cc5f430e49dfa3fa72f6e217e15b99f846",
+      "event_at": "2026-10-12T15:38:06Z",
+      "revision": "fdc3e7cc5f430e49dfa3fa72f6e217e15b99f846",
+      "title": "Tests: Add Pokemon Go and Monster Hunter Now AR traces",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "fe46d949a80bb19991e5e1b259e6c881d4a61290",
+      "url": "https://github.com/google/angle/commit/fe46d949a80bb19991e5e1b259e6c881d4a61290",
+      "event_at": "2026-10-06T12:36:23Z",
+      "revision": "fe46d949a80bb19991e5e1b259e6c881d4a61290",
+      "title": "D3D11: Use read-write map for sub-area staging writes",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "feebf60fe088ccec3a26a7419d6ac68edf542c7a",
+      "url": "https://github.com/google/angle/commit/feebf60fe088ccec3a26a7419d6ac68edf542c7a",
+      "event_at": "2026-11-01T04:11:42Z",
+      "revision": "feebf60fe088ccec3a26a7419d6ac68edf542c7a",
+      "title": "D3D11: Allow rendering to Y410 external texture",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "angle",
+      "id": "ff146ecd5235628b9ee04eb3979e4904e688f87a",
+      "url": "https://github.com/google/angle/commit/ff146ecd5235628b9ee04eb3979e4904e688f87a",
+      "event_at": "2026-10-22T20:12:58Z",
+      "revision": "ff146ecd5235628b9ee04eb3979e4904e688f87a",
+      "title": "Vulkan: Don't process executable on alpha to coverage change",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "cts",
+      "id": "407078081",
+      "url": "https://github.com/KhronosGroup/VK-GL-CTS/releases/tag/vulkan-cts-1.4.7.0",
+      "event_at": "2026-10-08T17:09:47Z",
+      "revision": "vulkan-cts-1.4.7.0",
+      "title": "vulkan-cts-1.4.7.0",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "cts",
+      "id": "428128860",
+      "url": "https://github.com/KhronosGroup/VK-GL-CTS/releases/tag/vulkan-cts-1.4.7.1",
+      "event_at": "2026-10-29T16:36:51Z",
+      "revision": "vulkan-cts-1.4.7.1",
+      "title": "vulkan-cts-1.4.7.1",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "filament",
+      "id": "407147110",
+      "url": "https://github.com/google/filament/releases/tag/v1.77.3",
+      "event_at": "2026-10-08T18:35:00Z",
+      "revision": "v1.77.3",
+      "title": "v1.77.3",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "filament",
+      "id": "411940028",
+      "url": "https://github.com/google/filament/releases/tag/v1.78.0",
+      "event_at": "2026-10-13T17:33:42Z",
+      "revision": "v1.78.0",
+      "title": "v1.78.0",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "filament",
+      "id": "419739834",
+      "url": "https://github.com/google/filament/releases/tag/v1.78.1",
+      "event_at": "2026-10-21T15:37:36Z",
+      "revision": "v1.78.1",
+      "title": "v1.78.1",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "filament",
+      "id": "424886371",
+      "url": "https://github.com/google/filament/releases/tag/v1.79.0",
+      "event_at": "2026-10-26T23:44:28Z",
+      "revision": "v1.79.0",
+      "title": "v1.79.0",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "perfetto",
+      "id": "422078801",
+      "url": "https://github.com/google/perfetto/releases/tag/v59.1",
+      "event_at": "2026-10-27T02:09:05Z",
+      "revision": "v59.1",
+      "title": "Perfetto v59.1",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "source": "renderdoc",
+      "id": "424272912",
+      "url": "https://github.com/baldurk/renderdoc/releases/tag/v1.47",
+      "event_at": "2026-10-31T15:49:28Z",
+      "revision": "v1.47",
+      "title": "Version v1.47",
+      "draft": false,
+      "prerelease": false
+    }
+  ]
+}

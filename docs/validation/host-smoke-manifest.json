@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-01T05:56:39.788736+00:00",
+  "scope": "host correctness only",
+  "source_sha256": {
+    "examples/validation/README.md": "18a26dedb2e888235d5476739aa23425145d2ef3a200d2d7e2724e39d849df0f",
+    "examples/validation/compile-legacy.py": "f78ea138b21219a2f3fb8c1d2b7ebcb4b933ab63d3a1ac4b9a61b4f4e292f59b",
+    "examples/validation/egl_smoke.cpp": "71d34c7650dfd3de7c40501f7f0fbf87724136a621b02ffb8d5eec58a54442f0",
+    "examples/validation/run-host.sh": "b561ea7870c745243f55fa4f0fc783e3dc7b7ac75b64fb0d7c4e813857d4496a",
+    "examples/validation/shaders/300-binding-invalid.frag": "2df587c388888ce684fdd9ddf56a63a9076802511c6776b5a767fb7b7a2df211",
+    "examples/validation/shaders/300-compute-invalid.comp": "25a7cc589de670dd242f3536f93a6401ca4692a51bde038d85877358952a3246",
+    "examples/validation/shaders/300-interface-type-mismatch.frag": "1333794a96d5a6e32b5ef3a5a9566cce48304c821bd97a2d7cc1bcf460716065",
+    "examples/validation/shaders/300-invalid.frag": "6038fb38d2459085f1edec2d4c1332a1c0fd0b48cb7e5110fd5a1abdd651176e",
+    "examples/validation/shaders/300-precision.frag": "842233c987cc4f64f0508a7ba3d169084f62625c17795fcaa1aff979070662cd",
+    "examples/validation/shaders/300-precision.vert": "320c56de1ee49df6ebe838ee8d797c960c270f4fba22c3049700f6f56b19a408",
+    "examples/validation/shaders/300-ssbo-invalid.frag": "75bebc15d3a7cee8cf1dcf7bbce483b64cb7215da5b291f5c3c809aabc4f8580",
+    "examples/validation/shaders/300.frag": "f8d8bc54821dab8b19e716d2b6b3b32e660f732c2610f4c31ee6c486a5601834",
+    "examples/validation/shaders/300.vert": "e69bda791c2a48c6dcaf47e690928f825abd6f89fc654ee0f481561700a25ece",
+    "examples/validation/shaders/310-binding.frag": "f3f1b8de3ec034263d7113933ac6d8052e69175ef80aadf164aada6308845708",
+    "examples/validation/shaders/310-compute.comp": "d6eada6604c46477b83d651e7867309c8c74706ff1421fce48a0964284e04f01",
+    "examples/validation/shaders/310-geometry-invalid.geom": "ad02b00bef492610f923c3ebd391c1695b91c00702ea7158af36a54c76f201eb",
+    "examples/validation/shaders/310-invalid.frag": "bf5aeb59f7e5e17c5f089aad5da2af7f882e58abe08ed467adc9abdbdbddf234",
+    "examples/validation/shaders/310-ssbo.frag": "735b816b5050484013ea3a2d3355430ba08a0a045607b30899f5a437cc794529",
+    "examples/validation/shaders/310.frag": "c058d2d140126002e150aac4535db1424b85bef6705cea347dff0070c031229e",
+    "examples/validation/shaders/310.vert": "06b95097ba97aa87b261e023ae253e0bfae5dc4c465b880f18e31158e403e512",
+    "examples/validation/shaders/320-geometry.geom": "32db5fdba7f042e3fb634776a02b14f4e4898afadbc220a8419de47325471860",
+    "examples/validation/shaders/320-invalid.frag": "f7e87ee9e6eba7fc5f3ceffbf70699a78dd854c4d0162a8e264fb9ce22a76cbb",
+    "examples/validation/shaders/320.frag": "0c08bb4a107fecb0f4dd43ba193263babd1a5ea4e829adfb244622dd95a1f436",
+    "examples/validation/shaders/320.vert": "4c2cea60d6501f16058a3852e9ac185edffbf2bae643303db0a04f384af998f2",
+    "references/examples/egl_context_manager.cpp": "b495258f10ec404b5599b021942e7c1570c6c0499eafe7a00f5e7b62acaf13dc",
+    "references/examples/msaa_ontile_resolve.cpp": "5a8dc9ead4f15864469be25e5cff739fd5cb9698addcd99b9f4baf6115051459",
+    "references/examples/offscreen_pipeline.cpp": "05c034704b63ea8a1b8c98921ceb0ed60d0e1970117845a24fa9f24f38d19b49",
+    "references/examples/pbo_streaming_upload.cpp": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed",
+    "references/examples/video_texture_pipeline.cpp": "4b27983dc0456586e1c0ded411dcb382c8e5ba078ded744207eb4bb0dee39319",
+    "references/examples/vertex_array_object.hpp": "67b9b8ec44939091357e3e53c0b9f3df2f8e997d51791ff25317cf3407f276df"
+  },
+  "command": "MESA_SHADER_CACHE_DIR=/tmp/gles-mesa-cache GLES_SDK_ROOT=/tmp/gles-local-deps/root/usr EGL_PLATFORM=surfaceless LIBGL_ALWAYS_SOFTWARE=1 examples/validation/run-host.sh",
+  "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "compiler": "c++ (Debian 14.2.0-19) 14.2.0",
+  "binary_sha256": "917d099e06f12ab87e923e0b67a9eb95b6a805359b16d3d9d7f8923e6c0d1e15",
+  "stdout_sha256": "cff93b4690a4e2b896fb1f207a0d20f2166b41f1230240007a14bb62dbc062fd",
+  "stderr_sha256": "07de49e70c67fee6759ba0c8553aee2876c23070e8050498b27a3da35299c590",
+  "dependencies": [
+    {
+      "package": "glslang-tools",
+      "version": "15.1.0+1.4.309.0-1",
+      "sha256": "c3025c4af63244296bc9d466746763c809d3f3f126408fc2c7b07070886a7759",
+      "source_url": "https://deb.debian.org/debian/pool/main/g/glslang/glslang-tools_15.1.0+1.4.309.0-1_amd64.deb",
+      "installation": "dpkg-deb extraction into /tmp/gles-local-deps/root; no system installation"
+    },
+    {
+      "package": "libegl-dev",
+      "version": "1.7.0-1+b2",
+      "sha256": "97fcfff08a5de0a510066d55260a30fbd3ccbd87da6c2f317e6efe17566b9f5a",
+      "source_url": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libegl-dev_1.7.0-1+b2_amd64.deb",
+      "installation": "dpkg-deb extraction into /tmp/gles-local-deps/root; no system installation"
+    },
+    {
+      "package": "libegl1",
+      "version": "1.7.0-1+b2",
+      "sha256": "62e7bc8ccd47a60e55aad17f83d8d474310d782eb8589bbce2ab714c31712406",
+      "source_url": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libegl1_1.7.0-1+b2_amd64.deb",
+      "installation": "dpkg-deb extraction into /tmp/gles-local-deps/root; no system installation"
+    },
+    {
+      "package": "libgl-dev",
+      "version": "1.7.0-1+b2",
+      "sha256": "2c5044a44bc7cd7a196d554ca6ff78ae0358fbb98b7d2cce49176bdc6a816fe4",
+      "source_url": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libgl-dev_1.7.0-1+b2_amd64.deb",
+      "installation": "dpkg-deb extraction into /tmp/gles-local-deps/root; no system installation"
+    },
+    {
+      "package": "libgles-dev",
+      "version": "1.7.0-1+b2",
+      "sha256": "87af52464cb40d54e78ecf2046db019bf1ab19a8bed7511ab282be623d1216de",
+      "source_url": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libgles-dev_1.7.0-1+b2_amd64.deb",
+      "installation": "dpkg-deb extraction into /tmp/gles-local-deps/root; no system installation"
+    },
+    {
+      "package": "libgles2",
+      "version": "1.7.0-1+b2",
+      "sha256": "e12c18aa77939d122ee1dea520ba0440b97dc19200b7396e03dff03a3ece74c1",
+      "source_url": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libgles2_1.7.0-1+b2_amd64.deb",
+      "installation": "dpkg-deb extraction into /tmp/gles-local-deps/root; no system installation"
+    },
+    {
+      "package": "libglvnd-dev",
+      "version": "1.7.0-1+b2",
+      "sha256": "3076d220a658adc9f4a505bac97d1ca7a896957c2ea641e058a85a2b384a4367",
+      "source_url": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libglvnd-dev_1.7.0-1+b2_amd64.deb",
+      "installation": "dpkg-deb extraction into /tmp/gles-local-deps/root; no system installation"
+    },
+    {
+      "package": "libglx-dev",
+      "version": "1.7.0-1+b2",
+      "sha256": "93d456321c07009491b942783db8c57065b616db713ef5f6a0c629ca078c4ea0",
+      "source_url": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libglx-dev_1.7.0-1+b2_amd64.deb",
+      "installation": "dpkg-deb extraction into /tmp/gles-local-deps/root; no system installation"
+    }
+  ],
+  "limitations": [
+    "software llvmpipe, not mobile GPU performance",
+    "no Android target compiler/device run",
+    "controlled context replacement, not injected EGL_CONTEXT_LOST",
+    "no backend switch or real lifecycle test"
+  ],
+  "legacy_compile_command": "GLES_SDK_ROOT=/tmp/gles-local-deps/root/usr python examples/validation/compile-legacy.py",
+  "legacy_report_sha256": "f777cf511c203024bf139ee5164b811f9313ef5e61d3c7e531c7a9992eeb4819",
+  "host_smoke_scope": "Only egl_smoke.cpp and imported pbo_streaming_upload.cpp executed; shaders compiled/linked by driver. Other legacy examples compile/link only."
+}

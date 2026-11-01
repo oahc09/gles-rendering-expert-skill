@@ -27,7 +27,7 @@ mobile GPU's TBDR bandwidth/tiling behavior.
 2. **Pin the ANGLE backend explicitly** (`EGL_ANGLE_platform_angle`) — default
    backend selection differs across machines and reproduces bugs differently.
 3. **ANGLE-specific behaviors to test around**:
-   - Varying precision mismatches are silently zeroed (not errored) — keep
+   - Do not assume varying precision differences are errors or universally zeroed; ES 3.00 permits them. As an engineering consistency policy, keep
      VS `out` and FS `in` precision identical.
    - Some desktop-GL habits pass on ANGLE that fail on device (e.g. relaxed
      format-type pairing); do not treat "runs on ANGLE" as spec-correct.

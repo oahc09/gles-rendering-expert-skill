@@ -1,0 +1,35 @@
+name: GLES candidate validation (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  host-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install host-only validation toolchain
+        run: sudo apt-get update && sudo apt-get install -y g++ libegl-dev libgles-dev libegl-mesa0 glslang-tools
+      - name: Structured rule contracts (not source compilation)
+        run: python3 tools/validate_rules.py --output reports/rules.json
+      - name: Actual GLSL compiler positive and negative controls
+        run: python3 tools/validate_shaders.py --output reports/shaders.json
+      - name: Actual C++17 and software EGL smoke
+        env:
+          EGL_PLATFORM: surfaceless
+          LIBGL_ALWAYS_SOFTWARE: '1'
+          MESA_SHADER_CACHE_DISABLE: 'true'
+        run: sh examples/validation/run-host.sh
+      - name: Legacy C++ example compile and link
+        run: python3 examples/validation/compile-legacy.py
+      - name: Research and GPU capture infrastructure (not hardware measurements)
+        run: |
+          python3 -m unittest discover -s references/research -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/gpu -p 'test_*.py' -v
+      - name: Agent benchmark infrastructure (not model-quality results)
+        run: python3 -m unittest discover -s benchmarks/agent -p 'test_*.py' -v
+      - name: Release gate infrastructure
+        run: python3 -m unittest discover -s tools -p 'test_*.py' -v
+      - name: Release gate remains separate
+        run: python3 tools/check_release_gates.py

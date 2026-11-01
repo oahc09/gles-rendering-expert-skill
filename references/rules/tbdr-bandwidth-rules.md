@@ -46,7 +46,7 @@ glDrawArrays(GL_TRIANGLES, 0, vertexCount);
 
 In ambiguous cases, calling `glInvalidateFramebuffer` before drawing provides the same Load Op = DONT_CARE hint without clearing to a fixed color.
 
-### 2.2 RenderPass End — MUST Invalidate Unused Attachments
+### 2.2 RenderPass End — SHOULD Invalidate Unused Attachments
 
 ```cpp
 // ✅ CORRECT: After rendering, depth/stencil no longer needed
@@ -103,7 +103,7 @@ void RenderMainPass(GLuint mainFbo) {
 
 ## 3. Bandwidth Reduction Techniques
 
-### 3.1 NEVER: Synchronous glReadPixels
+### 3.1 SHOULD Avoid Latency-Critical Synchronous glReadPixels
 
 ```cpp
 // ❌ CATASTROPHIC: Stalls entire GPU pipeline, forces full tile resolve
@@ -147,7 +147,7 @@ public:
 };
 ```
 
-### 3.2 NEVER: glFinish in Render Loop
+### 3.2 SHOULD Avoid glFinish in Normal Rendering
 
 ```cpp
 // ❌ Blocks CPU until ALL GPU work completes — destroys pipelining
@@ -268,7 +268,7 @@ __pixel_localEXT FragDataLocal {
   + on-tile resolve) for implicit resolve — no explicit blit needed.
 - Avoid loading multisample textures from DRAM; render and resolve in-place, then
   `glInvalidateFramebuffer` the multisampled attachment so it is never stored.
-- **Never** add a manual full-screen resolve pass when a tile-resolve path exists
+- **CONDITIONAL**: prefer a supported tile-resolve path after checking visual correctness and target-device measurements; a manual resolve may be necessary for custom filtering. Do not assume it is universally slower
   — it reintroduces the DRAM traffic on-tile MSAA was designed to avoid.
 
 ### 5.4 EGL Swap Behavior
@@ -316,3 +316,24 @@ With depth (4 bytes) + stencil (1 byte) invalidated: saves ~20.7 MB/frame = ~1.2
 ```
 
 **Always calculate and communicate bandwidth impact when generating FBO-related code.**
+
+
+## v1.0.3 candidate: conditional optimization contract
+
+- **MSAA**: on-tile resolve is a candidate, not a universal winner; unsupported formats,
+  sample counts or custom resolve filters require core resolve or another fallback.
+- **Depth pre-pass**: extra geometry and depth traffic can outweigh savings; expensive
+  fragment shading and heavy overdraw can reverse that result even on tile GPUs.
+- **Discard**: alpha-test semantics may require discard; rewriting as blending can be
+  visually wrong and can increase overdraw. Compare coverage, early-depth behavior and time.
+- **Framebuffer fetch / PLS**: require the precise extension, format/storage limits and
+  synchronization semantics. No extension means an explicit texture/FBO fallback.
+  More tile storage or incompatible passes can remove any bandwidth benefit.
+- **Texture fetch / branchless**: always sampling both branches can double fetch work;
+  coherent branching may skip it. Fewer instructions alone do not prove lower GPU time.
+
+Preserve required attachment contents; never invalidate a color output consumed later.
+For each A/B test record device, driver, resolution, thermal state, repeated CPU/GPU
+frame times and relevant counters. Counter unavailability stays unknown, not zero.
+Official normative foundation: [GLES 3.0.6, chapters 4–5](https://registry.khronos.org/OpenGL/specs/es/3.0/es_spec_3.0.pdf).
+These tradeoffs are measurement hypotheses, not new API requirements or claimed results.

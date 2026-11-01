@@ -19,10 +19,23 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
 
 ---
 
+## Candidate validation and evidence routing
+
+This candidate keeps metadata **1.0.2** until the v1.0.3 full acceptance gates pass.
+For executable correctness checks use [host validation](examples/validation/README.md).
+Engineering routes: [rule contracts](benchmarks/rules/README.md),
+[Agent benchmark](benchmarks/agent/README.md), [capability matrices](references/matrices/),
+and [release gates](docs/release-gates.json). Static contract tests, live model behavior,
+host GL correctness and real-device GPU measurements are separate evidence classes.
+`MUST` denotes a version/extension-specific normative requirement; `SHOULD` denotes
+an engineering default; `CONDITIONAL` requires capability checks and device evidence.
+Optimization prose below is not a portable speed guarantee. Software rendering tests
+prove only their asserted correctness properties, not real mobile GPU performance.
+
 ## Mandatory API Rules
 
 ### Target API Version
-- **Primary**: OpenGL ES 3.0 / 3.1 / 3.2 with GLSL ES 3.00 / 3.20.
+- **Primary**: OpenGL ES 3.0 / 3.1 / 3.2 with GLSL ES 3.00 / 3.10 / 3.20.
 - **Legacy awareness**: Understand OpenGL ES 2.0 concepts for migration guidance, but always default to modern 3.0+ idioms.
 
 ### Strict Prohibitions — Desktop OpenGL Functions NEVER to Generate
@@ -30,19 +43,19 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
 |:---|:---|
 | `glBegin` / `glEnd` / `glVertex*` (immediate mode) | Not available in any GLES version |
 | `glPolygonMode(GL_FRONT_AND_BACK, GL_LINE)` | Desktop-only; GLES has no polygon mode |
-| `glDrawBuffer` / `glReadBuffer` (arbitrary) | Use `glDrawBuffers` (GLES 3.0+) with MRT |
-| `glLineWidth` with value > 1.0 | GLES only guarantees width = 1.0 |
+| `glDrawBuffer` / `glReadBuffer(GL_FRONT)` | `glReadBuffer` itself is GLES 3.0 core: default FBO `GL_BACK`/`GL_NONE`, named FBO `GL_COLOR_ATTACHMENTi`/`GL_NONE`; use `glDrawBuffers` for MRT |
+| Assuming portable wide lines | `glLineWidth` > 1 is legal, but query `GL_ALIASED_LINE_WIDTH_RANGE`; only width 1 is guaranteed |
 | `glPushAttrib` / `glPopAttrib` | Not available in GLES |
 | `glEnableClientState` / `glDisableClientState` | Use VAO/VBO (GLES 3.0+) |
 | `glGenLists` / `glCallList` (display lists) | Not available in GLES |
 | `glBitmap`, `glPixelZoom`, `glRasterPos*` | Desktop raster ops absent in GLES |
 | `GL_QUADS` primitive type | Not supported; use `GL_TRIANGLES` or indexed draws |
-| Desktop-only texture formats (`GL_RGBA8` internal without sized format) | Use GLES sized internal formats: `GL_RGBA8`, `GL_RGB10_A2`, etc. |
+| Unsupported internalformat/format/type combinations | `GL_RGBA8` / `GL_RGBA` / `GL_UNSIGNED_BYTE` is legal with GLES 3.0 `glTexImage2D`; consult format tables |
 | `glTexImage2D` with mismatched format/type | GLES requires strict format-type pairing |
 
 ### C++17 RAII Resource Management
 - **Always** manage GLES resource handles (Textures, Buffers, Framebuffers, Shaders, Programs, Samplers, Sync objects) using RAII wrappers.
-- Every `glGen*` must have a corresponding `glDelete*` in the destructor.
+- Every owned GL object needs context-aware cleanup: destruct on its live owning/share-group context or enqueue deletion; discard stale names after context loss, never delete them in a replacement context.
 - Implement move semantics (`std::move`); delete copy constructors for GPU resource classes.
 - Use `std::unique_ptr` or custom RAII classes — never raw `GLuint` handles floating in application code.
 
@@ -60,7 +73,7 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
   - GLES 3.0 → `#version 300 es`
   - GLES 3.1 → `#version 310 es`
   - GLES 3.2 → `#version 320 es`
-- Fragment shaders **MUST** declare default float precision: `precision mediump float;` (minimum).
+- Fragment floating-point declarations **MUST** have precision, either explicitly per declaration or via a default such as `precision highp float;`. Choose precision from error bounds, not a universal mediump requirement.
 - Vertex shaders: position calculations **MUST** use `highp`.
 - Texture coordinates & colors: recommend `mediump` unless precision artifacts are observed.
 - Normal vectors: use `mediump` for mobile; upgrade to `highp` only if banding is visible.
@@ -69,7 +82,7 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
 - Use `layout(location = N)` qualifiers for all vertex attributes and fragment outputs.
 - Prefer UBOs (`uniform block`) over large uniform arrays for structured data.
 - Use SSBOs (`shader storage buffer`) only in GLES 3.1+ compute or advanced pipelines.
-- Avoid dynamic branching (`if/else` on non-uniform conditions) in fragment shaders; prefer `mix()`, `step()`, `smoothstep()`.
+- **CONDITIONAL**: compare branches against `mix`/`step` on the target GPU; branchless code may evaluate both expensive paths, whereas a coherent branch can skip work. Preserve derivative and numerical correctness.
 - Minimize texture fetches in loops; unroll where possible with `#pragma unroll` or constant loop bounds.
 - Declare `const` for compile-time constants to enable compiler folding.
 
@@ -81,17 +94,17 @@ Mobile GPUs (Mali, Adreno, PowerVR) use **Tile-Based Deferred Rendering**. Each 
 
 ### FBO Clear & Store Operations
 1. **RenderPass Start**: SHOULD call `glClear()` or `glClearBuffer*()` at the beginning of rendering to a framebuffer. This signals the driver that prior Tile content is invalid — avoiding an expensive DRAM → Tile Memory load. (Exception: full-screen post-process that overwrites every pixel, or passes that intentionally read prior contents.)
-2. **RenderPass End (Depth/Stencil)**: MUST call `glInvalidateFramebuffer()` for `GL_DEPTH_ATTACHMENT` and/or `GL_STENCIL_ATTACHMENT` when they are not needed by subsequent passes. This sets Store Op to DONT_CARE, eliminating Tile → DRAM write-back bandwidth.
+2. **RenderPass End (Depth/Stencil)**: SHOULD call `glInvalidateFramebuffer()` for `GL_DEPTH_ATTACHMENT` and/or `GL_STENCIL_ATTACHMENT` when they are not needed by subsequent passes. This permits discarding contents; actual bandwidth savings depend on the implementation and must be measured.
 3. **Offscreen FBOs**: If only the color result is consumed later, invalidate depth/stencil immediately after the offscreen pass completes.
 
 ### Bandwidth Control
-- **NEVER** use synchronous `glReadPixels()` on the render thread. If pixel readback is required, use **PBO (Pixel Buffer Object)** double-buffered transfer with fence synchronization (note: `glReadPixels` into a PBO is asynchronous with respect to the CPU *only if* you do not map the PBO until the GPU has finished writing — use a fence or defer mapping to the next frame):
+- **SHOULD** avoid synchronous `glReadPixels()` in latency-sensitive rendering; it is legal for correctness tests or intentional synchronous capture. If pixel readback is required, use **PBO (Pixel Buffer Object)** double-buffered transfer with fence synchronization (note: `glReadPixels` into a PBO is asynchronous with respect to the CPU *only if* you do not map the PBO until the GPU has finished writing — check a fence; merely waiting one frame is not proof of completion):
   ```cpp
   glBindBuffer(GL_PIXEL_PACK_BUFFER, pbo[currentFrame]);
   glReadPixels(0, 0, w, h, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
   // Insert fence, next frame: wait on fence, then glMapBufferRange on previous PBO
   ```
-- **NEVER** call `glFinish()` in the render loop. Use `glFenceSync()` + `glClientWaitSync()` / `glWaitSync()` for CPU-GPU synchronization.
+- **SHOULD** avoid `glFinish()` in normal rendering; it is legal for deliberate synchronization and diagnostic baselines. Use `glFenceSync()` + `glClientWaitSync()` / `glWaitSync()` for CPU-GPU synchronization.
 - Avoid frequent FBO switches mid-frame; batch draws by render target to minimize Tile flushes.
 
 ### Subpass & Framebuffer Fetch Optimization

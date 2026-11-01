@@ -4,6 +4,21 @@
 
 > **AI Expert Skill for OpenGL ES 3.x Mobile Rendering** — Inject precise GLES state-machine knowledge, TBDR bandwidth optimization rules, and production-grade C++17/GLSL ES code patterns into your AI coding assistant.
 
+## v1.0.3 engineering candidate (not released)
+
+The full [development plan](docs/v1.0.3-development-plan.md) is implemented as a
+reviewable candidate; **metadata stays 1.0.2 until every acceptance gate passes**.
+See [requirements and limits](docs/acceptance-traceability.md),
+[machine-readable release gates](docs/release-gates.json) and [baseline audit](docs/baseline-audit.md).
+
+- [Rule contracts](benchmarks/rules/README.md): 30 scoped rules / 112 distinct positive and negative scenarios, not a source-code compiler.
+- [Host validation](examples/validation/README.md): actual C++17, EGL pbuffer/shared contexts and ESSL 300/310/320 compilation. Software Mesa results are **not mobile GPU performance evidence**.
+- [Agent benchmark](benchmarks/agent/README.md): 64 annotated cases and paired adapter runner. Infrastructure tests use synthetic responses; live model comparison is **BLOCKED_BY_PROVIDER**.
+- [Capability/backend matrix](references/matrices/backend-device-matrix.md), [technology playbooks](references/playbooks/modern-rendering.md), [research radar](references/evolution/technology-radar.md).
+- [Manual-only validation workflow](.github/workflows/validation.yml): no push/PR/scheduled trigger. Local evidence does not mean remote CI ran.
+
+Physical-device acceptance is **BLOCKED_BY_HARDWARE**. Run `python3 tools/check_release_gates.py --require-release` to enforce the full gate (currently exits nonzero by design).
+
 ## Why This Skill?
 
 Large Language Models frequently:
@@ -11,7 +26,7 @@ Large Language Models frequently:
 - **Ignore TBDR architecture** — producing code that causes massive DRAM bandwidth waste on mobile GPUs (Mali, Adreno, PowerVR).
 - **Miss EGL/context management** — overlooking context loss recovery, shared context synchronization, and proper lifecycle.
 
-This skill eliminates these failure modes by constraining AI output to **mobile-first, TBDR-aware, GLES 3.0+ idioms**.
+This skill aims to reduce these failure modes by guiding AI output toward **mobile-first, TBDR-aware, GLES 3.0+ idioms**.
 
 ## Quick Start
 

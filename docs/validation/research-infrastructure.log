@@ -1,0 +1,14 @@
+test_commit_committer_timestamp (test_update_radar.RadarTest.test_commit_committer_timestamp) ... ok
+test_dedupe_history (test_update_radar.RadarTest.test_dedupe_history) ... ok
+test_dedupe_same_batch (test_update_radar.RadarTest.test_dedupe_same_batch) ... ok
+test_inclusive_boundaries (test_update_radar.RadarTest.test_inclusive_boundaries) ... ok
+test_offline_archive_rerun_and_previous_archive (test_update_radar.RadarTest.test_offline_archive_rerun_and_previous_archive) ... ok
+test_outside_window (test_update_radar.RadarTest.test_outside_window) ... ok
+test_reject_reversed_dates (test_update_radar.RadarTest.test_reject_reversed_dates) ... ok
+test_release_timestamp_not_created (test_update_radar.RadarTest.test_release_timestamp_not_created) ... ok
+test_unknown_date_and_draft (test_update_radar.RadarTest.test_unknown_date_and_draft) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.278s
+
+OK

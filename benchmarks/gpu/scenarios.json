@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "measurement_status": "BLOCKED_BY_HARDWARE",
+  "shared_controls": [
+    "same build/scene/seed/resolution",
+    "stable thermal state",
+    "alternate A/B run order",
+    ">=3 independent runs",
+    "retain disjoint-query exclusions",
+    "visual correctness before performance"
+  ],
+  "scenarios": [
+    {
+      "id": "GPU01",
+      "name": "clear/load/store",
+      "baseline": "Preserve prior attachments then overwrite",
+      "variant": "Full clear at pass start when previous contents are dead",
+      "correctness": "Same final color; no partial redraw dependence",
+      "counter_candidates": [
+        "external_read_bytes",
+        "external_write_bytes",
+        "tile_loads"
+      ],
+      "fallback": "Retain contents for partial redraw",
+      "negative_result_required": true
+    },
+    {
+      "id": "GPU02",
+      "name": "depth/stencil invalidate",
+      "baseline": "Store dead depth and stencil",
+      "variant": "Invalidate after last use only",
+      "correctness": "Color identical; no later depth/stencil dependency",
+      "counter_candidates": [
+        "external_write_bytes",
+        "tile_stores"
+      ],
+      "fallback": "Keep attachment when sampled or reused",
+      "negative_result_required": true
+    },
+    {
+      "id": "GPU03",
+      "name": "MSAA resolve",
+      "baseline": "Core multisample renderbuffer then blit",
+      "variant": "Probed multisampled render-to-texture extension",
+      "correctness": "Matching size/format/coverage; no invalid resolve",
+      "counter_candidates": [
+        "resolve_bytes",
+        "tile_spills"
+      ],
+      "fallback": "Core blit or lower sample count",
+      "negative_result_required": true
+    },
+    {
+      "id": "GPU04",
+      "name": "alpha discard",
+      "baseline": "Alpha-tested foliage",
+      "variant": "Alternative depth/coverage strategy with same visual target",
+      "correctness": "Alpha edges/depth order inside tolerance",
+      "counter_candidates": [
+        "fragment_invocations",
+        "early_z_kills",
+        "texture_reads"
+      ],
+      "fallback": "Keep discard if additional pass regresses",
+      "negative_result_required": true
+    },
+    {
+      "id": "GPU05",
+      "name": "front-to-back",
+      "baseline": "Opaque state-sorted draws",
+      "variant": "Coarse front-to-back draws",
+      "correctness": "Identical opaque image; transparent order unchanged",
+      "counter_candidates": [
+        "hsr_rejection",
+        "early_z_kills",
+        "cpu_sort_time"
+      ],
+      "fallback": "Keep state sorting when CPU/state churn dominates",
+      "negative_result_required": true
+    },
+    {
+      "id": "GPU06",
+      "name": "FBO switches",
+      "baseline": "Interleaved render-target passes",
+      "variant": "Dependency-correct grouped passes",
+      "correctness": "Identical graph outputs",
+      "counter_candidates": [
+        "tile_loads",
+        "tile_stores",
+        "external_bytes"
+      ],
+      "fallback": "Keep interleaving when dependencies require",
+      "negative_result_required": true
+    },
+    {
+      "id": "GPU07",
+      "name": "texture compression",
+      "baseline": "RGBA8 texture content",
+      "variant": "Supported ETC2/EAC or probed ASTC",
+      "correctness": "Document perceptual/max error across mips",
+      "counter_candidates": [
+        "texture_bytes",
+        "cache_misses"
+      ],
+      "fallback": "RGBA8 when unsupported or quality unacceptable",
+      "negative_result_required": true
+    },
+    {
+      "id": "GPU08",
+      "name": "half precision",
+      "baseline": "Highp reference shader",
+      "variant": "Bounded mediump subset",
+      "correctness": "Stress range and error against highp",
+      "counter_candidates": [
+        "register_pressure",
+        "alu_cycles"
+      ],
+      "fallback": "Keep highp for required range/accuracy",
+      "negative_result_required": true
+    },
+    {
+      "id": "GPU09",
+      "name": "branchless texture sampling",
+      "baseline": "Uniform/coherent branch selecting one sample",
+      "variant": "Two unconditional samples and mix",
+      "correctness": "Match derivatives/LOD and final color",
+      "counter_candidates": [
+        "texture_requests",
+        "cache_misses"
+      ],
+      "fallback": "Restore branch when extra fetches regress",
+      "negative_result_required": true
+    }
+  ]
+}
