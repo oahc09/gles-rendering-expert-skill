@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "confirmed_issues": [],
+  "note": "No new device driver bug was reproduced in this environment. Empty is intentional, not fabricated vendor issues.",
+  "coverage": [
+    {
+      "family": "Mali",
+      "status": "BLOCKED_BY_HARDWARE"
+    },
+    {
+      "family": "Adreno",
+      "status": "BLOCKED_BY_HARDWARE"
+    },
+    {
+      "family": "PowerVR",
+      "status": "BLOCKED_BY_HARDWARE"
+    },
+    {
+      "family": "Vivante",
+      "status": "BLOCKED_BY_HARDWARE"
+    },
+    {
+      "family": "ANGLE",
+      "status": "NOT_RUN_TARGET_BACKEND"
+    },
+    {
+      "family": "software",
+      "status": "CAPTURED_SOFTWARE_ONLY",
+      "source": "software-probe.json",
+      "sha256": "8ea786415e55c06fcbeefc0b727b261596b89b29fe5a7ad6ae5b6c023dfe9dbe"
+    }
+  ]
+}

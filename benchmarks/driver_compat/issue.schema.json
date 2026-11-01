@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Conditional GPU driver issue (not a vendor blacklist)",
+  "type":"object",
+  "required":["id","vendor","renderer","driver","os","backend","extensions_all","extensions_absent","symptom","minimal_reproducer","source","confidence","regression_tests","expiry","withdraw_when","action","evidence"],
+  "properties":{
+    "id":{"type":"string","minLength":1},
+    "vendor":{"$ref":"#/$defs/exactList"},"renderer":{"$ref":"#/$defs/exactList"},"driver":{"$ref":"#/$defs/exactList"},"os":{"$ref":"#/$defs/exactList"},"backend":{"$ref":"#/$defs/exactList"},
+    "extensions_all":{"type":"array","items":{"type":"string"}},"extensions_absent":{"type":"array","items":{"type":"string"}},
+    "symptom":{"type":"string","minLength":1},"minimal_reproducer":{"type":"string","minLength":1},"source":{"type":"string","pattern":"^https://"},
+    "confidence":{"enum":["synthetic","candidate","confirmed"]},"regression_tests":{"type":"array","minItems":1,"items":{"type":"string"}},
+    "expiry":{"type":"string","format":"date"},"withdraw_when":{"type":"string","minLength":1},"action":{"type":"string","minLength":1},"evidence":{"type":"object"}
+  },
+  "$defs":{"exactList":{"type":"array","minItems":1,"items":{"type":"string","minLength":1,"not":{"const":"*"}}}}
+}
