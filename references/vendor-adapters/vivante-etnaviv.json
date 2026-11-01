@@ -1,0 +1,155 @@
+{
+  "adapter_id": "vivante-etnaviv",
+  "vendor_family": "Vivante / etnaviv",
+  "selection": "Explicit operator-selected architecture/driver identity; no GL_RENDERER substring feature gating.",
+  "evidence_level": "HYPOTHESIS_UNMEASURED",
+  "official_reference": "https://docs.mesa3d.org/drivers/etnaviv.html",
+  "raw_counter_mapping": {},
+  "mapping_note": "Aliases below are normalized requirements, NOT claimed vendor counter spellings. Fill raw name/unit/source from the installed target profiler; unavailable counters stay null.",
+  "claims": [
+    {
+      "id": "vivante-etnaviv-tile-load-store",
+      "topic": "tile-load-store",
+      "precondition": "Previous attachment contents are dead and pass boundaries are identified.",
+      "metric_aliases": [
+        "memory_read_bytes",
+        "memory_write_bytes"
+      ],
+      "counterexample": "Preserved attachment sampled later makes invalidation incorrect.",
+      "fallback": "Preserve data or clear only after final consumer.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-gmem",
+      "topic": "gmem",
+      "precondition": "On-chip render storage exists for the actual driver/configuration.",
+      "metric_aliases": [
+        "tile_load_bytes",
+        "tile_store_bytes"
+      ],
+      "counterexample": "Large MRT/MSAA working set spills and removes the proposed advantage.",
+      "fallback": "Reduce formats/attachments or retain measured baseline.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-lrz",
+      "topic": "lrz",
+      "precondition": "Device exposes useful early-depth/hierarchical-Z behavior for this state.",
+      "metric_aliases": [
+        "early_depth_rejects",
+        "fragment_invocations"
+      ],
+      "counterexample": "Alpha discard, depth writes or ordering can invalidate assumptions.",
+      "fallback": "Use correctness-preserving draw ordering and measured alternative.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-hsr",
+      "topic": "hsr",
+      "precondition": "Opaque visibility elimination applies to the selected hardware/pass.",
+      "metric_aliases": [
+        "hidden_surface_rejects",
+        "fragment_invocations"
+      ],
+      "counterexample": "Blended transparent geometry still shades and blends.",
+      "fallback": "Separate opaque and transparent costs; do not promise zero overdraw.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-tile-budget",
+      "topic": "tile-budget",
+      "precondition": "Actual attachment formats/sample counts and dimensions are known.",
+      "metric_aliases": [
+        "tile_spills",
+        "memory_write_bytes"
+      ],
+      "counterexample": "More attachments or MSAA increases footprint past implementation threshold.",
+      "fallback": "Split/compact only after visual and timing checks.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-depth-prepass",
+      "topic": "depth-prepass",
+      "precondition": "Expensive occluded fragment shading exceeds extra vertex/depth work.",
+      "metric_aliases": [
+        "vertex_cycles",
+        "fragment_cycles",
+        "depth_bytes"
+      ],
+      "counterexample": "Cheap shading or geometry-heavy scenes regress with an extra pass.",
+      "fallback": "One-pass baseline retained.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-msaa",
+      "topic": "msaa",
+      "precondition": "Supported sample counts/formats and resolve path are probed.",
+      "metric_aliases": [
+        "resolve_cycles",
+        "memory_write_bytes"
+      ],
+      "counterexample": "Unsupported formats/custom filtering/extra passes remove on-tile benefit.",
+      "fallback": "Core supported resolve or lower samples.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-fetch-pls",
+      "topic": "fetch-pls",
+      "precondition": "Exact framebuffer-fetch/PLS extension, limits and synchronization are supported.",
+      "metric_aliases": [
+        "tile_spills",
+        "external_memory_bytes"
+      ],
+      "counterexample": "Tile storage pressure or unsupported blend/order semantics reverses gain.",
+      "fallback": "Portable ping-pong/MRT path with explicit synchronization.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-texture-bandwidth",
+      "topic": "texture-bandwidth",
+      "precondition": "Texture traffic is measured as implicated cost.",
+      "metric_aliases": [
+        "texture_read_bytes",
+        "texture_cache_misses"
+      ],
+      "counterexample": "ALU-bound or cache-resident workload gains nothing from compression.",
+      "fallback": "Keep quality-preserving uncompressed or supported compressed format.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-blend-overdraw",
+      "topic": "blend-overdraw",
+      "precondition": "Visible coverage and blending semantics are fixed for A/B.",
+      "metric_aliases": [
+        "blend_cycles",
+        "fragment_invocations"
+      ],
+      "counterexample": "Order changes or background merging can alter alpha composition.",
+      "fallback": "Correct ordered blending baseline.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    },
+    {
+      "id": "vivante-etnaviv-render-target-switch",
+      "topic": "render-target-switch",
+      "precondition": "Compatible passes can share targets without extending resource hazards.",
+      "metric_aliases": [
+        "tile_store_bytes",
+        "target_switches"
+      ],
+      "counterexample": "Fusion expands tile working set or forces extra synchronization.",
+      "fallback": "Keep separate passes if measured/visual result regresses.",
+      "measured_device_evidence": null,
+      "applicability": "Probe actual extension/state and target microarchitecture; not all family members implement the named mechanism."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "A065",
+    "name": "default-read-buffer",
+    "good": "glReadBuffer(GL_BACK); gl_ok(\"C01 default BACK legal\")",
+    "bad": "glReadBuffer(GL_FRONT); gl_ok(\"C01 default BACK legal\")",
+    "rule": "R001",
+    "core": "C01",
+    "diagnosis": "GLES default framebuffer rejects GL_FRONT."
+  },
+  {
+    "id": "A066",
+    "name": "named-read-buffer",
+    "good": "glReadBuffer(GL_COLOR_ATTACHMENT0); gl_ok(\"C01 FBO read attachment legal\")",
+    "bad": "glReadBuffer(GL_BACK); gl_ok(\"C01 FBO read attachment legal\")",
+    "rule": "R002",
+    "core": "C01",
+    "diagnosis": "Named framebuffer cannot select BACK."
+  },
+  {
+    "id": "A067",
+    "name": "texture-integer-format",
+    "good": "glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA8,4,4,0,GL_RGBA,GL_UNSIGNED_BYTE,nullptr);",
+    "bad": "glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA8,4,4,0,GL_RGBA_INTEGER,GL_UNSIGNED_BYTE,nullptr);",
+    "rule": "R003",
+    "core": "C02",
+    "diagnosis": "Normalized internal storage cannot use this integer external format."
+  },
+  {
+    "id": "A068",
+    "name": "texture-border",
+    "good": "glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA8,4,4,0,GL_RGBA,GL_UNSIGNED_BYTE,nullptr);",
+    "bad": "glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA8,4,4,1,GL_RGBA,GL_UNSIGNED_BYTE,nullptr);",
+    "rule": "R004",
+    "core": "C02",
+    "diagnosis": "GLES texture border must be zero."
+  },
+  {
+    "id": "A069",
+    "name": "wrong-clear-output",
+    "good": "glClearColor(1,0,0,1);",
+    "bad": "glClearColor(0,0,1,1);",
+    "rule": "R020",
+    "core": "C06",
+    "diagnosis": "Known red readback golden fails because clear color changed, not a driver defect."
+  },
+  {
+    "id": "A070",
+    "name": "server-wait-flags",
+    "good": "glWaitSync(u.fence,0,GL_TIMEOUT_IGNORED);",
+    "bad": "glWaitSync(u.fence,1,GL_TIMEOUT_IGNORED);",
+    "rule": "R006",
+    "core": "C03",
+    "diagnosis": "Server wait flags must be zero."
+  },
+  {
+    "id": "A071",
+    "name": "server-wait-timeout",
+    "good": "glWaitSync(u.fence,0,GL_TIMEOUT_IGNORED);",
+    "bad": "glWaitSync(u.fence,0,0);",
+    "rule": "R007",
+    "core": "C03",
+    "diagnosis": "Server wait takes TIMEOUT_IGNORED, not a client timeout."
+  },
+  {
+    "id": "A072",
+    "name": "map-read-invalidate",
+    "good": "glMapBufferRange(GL_PIXEL_UNPACK_BUFFER,0,4,GL_MAP_WRITE_BIT|GL_MAP_INVALIDATE_BUFFER_BIT);",
+    "bad": "glMapBufferRange(GL_PIXEL_UNPACK_BUFFER,0,4,GL_MAP_READ_BIT|GL_MAP_INVALIDATE_BUFFER_BIT);",
+    "rule": "R015",
+    "core": "C03",
+    "diagnosis": "Read mapping cannot be combined with invalidate flags."
+  }
+]

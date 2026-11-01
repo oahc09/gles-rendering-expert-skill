@@ -1,0 +1,56 @@
+[
+  {
+    "timestamp_ms": 0,
+    "metric": "cpu_submit_ms",
+    "value": 2,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 0,
+    "metric": "gpu_ms",
+    "value": 3,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 0,
+    "metric": "frame_ms",
+    "value": 8,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "cpu_submit_ms",
+    "value": 2,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "gpu_ms",
+    "value": 3,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "frame_ms",
+    "value": 8,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "cpu_submit_ms",
+    "value": 2,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "gpu_ms",
+    "value": 3,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "frame_ms",
+    "value": 8,
+    "unit": "ms"
+  }
+]

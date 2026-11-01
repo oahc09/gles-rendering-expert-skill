@@ -33,12 +33,41 @@ def normalize(source, kind, record):
             "event_at": record["commit"]["committer"]["date"], "revision": record["sha"],
             "title": record["commit"]["message"].splitlines()[0], "draft": False, "prerelease": False}
 
+def event_utc_day(value):
+    if not isinstance(value,str):
+        return None
+    try:
+        stamp=dt.datetime.fromisoformat(value.replace('Z','+00:00'))
+        if stamp.tzinfo is None:
+            return None
+        return stamp.astimezone(dt.timezone.utc).date()
+    except ValueError:
+        return None
+
+def validate_decision(row):
+    stages={'candidate','source_verified','reproduced','accepted','rejected','deferred'}
+    if row.get('stage') not in stages:
+        raise ValueError('Unknown research stage')
+    if row['stage'] in ('source_verified','reproduced','accepted'):
+        if not row.get('original_url') or event_utc_day(row.get('event_at')) is None or not row.get('source_evidence'):
+            raise ValueError('Verified signal needs original source, UTC date and evidence')
+        if row.get('retrieval_complete') is not True:
+            raise ValueError('Incomplete retrieval cannot yield verified signal')
+    if row['stage'] in ('reproduced','accepted') and not row.get('reproduction_evidence'):
+        raise ValueError('Reproduced/accepted requires actual reproduction evidence')
+    if row['stage']=='accepted':
+        for field in ('rule_ids','device_conditions','minimal_sample','test_ids','affected_sections','reviewer'):
+            if not row.get(field):
+                raise ValueError('Accepted signal missing '+field)
+    return row
+
 def select(records, start, end, known):
     result = {}
     for row in records:
         if not row.get("event_at") or row.get("draft"):
             continue
-        if not start <= day(row["event_at"][:10]) <= end:
+        event_day=event_utc_day(row["event_at"])
+        if event_day is None or not start <= event_day <= end:
             continue
         key = row["source"] + ":" + row["id"]
         if key not in known:
@@ -73,7 +102,9 @@ def main():
     parser.add_argument("--source", choices=sorted(SOURCES), action="append")
     parser.add_argument("--archive", type=Path, default=Path(__file__).parent)
     parser.add_argument("--input", type=Path, help="offline normalized metadata fixture; no network")
+    parser.add_argument("--decisions", type=Path, help="Human-reviewed lifecycle rows; validated, never applied to Skill automatically")
     args = parser.parse_args()
+    decisions = [validate_decision(row) for row in json.loads(args.decisions.read_text())] if args.decisions else []
     if args.start > args.end:
         parser.error("start must not exceed end")
     archive = args.archive / args.end.isoformat()
@@ -101,9 +132,12 @@ def main():
     complete = all(s["complete"] for s in statuses)
     report = {"schema_version": 1, "start": str(args.start), "end": str(args.end),
               "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "sources": statuses,
-              "status": "REVIEW_REQUIRED" if selected else ("NO_NEW_CANDIDATES" if complete else "INCOMPLETE"),
+              "status": "INCOMPLETE" if not complete else ("REVIEW_REQUIRED" if selected else "NO_NEW_CANDIDATES"),
+              "retrieval_complete": complete,
+              "date_unknown_candidates": [r for r in records if event_utc_day(r.get("event_at")) is None],
+              "manual_sources": [{"source": s, "status": "MANUAL_REVIEW_REQUIRED"} for s in ("X", "Khronos", "Android", "Arm", "Qualcomm", "Imagination", "Mesa")],
               "note": "Metadata candidates only; no verified material updates is a human review conclusion, not a fetch result.",
-              "items": selected}
+              "review_decisions": decisions, "items": selected}
     output = archive / "radar.json"
     output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
     print(json.dumps({"output": str(output), "items": len(selected), "complete": complete,

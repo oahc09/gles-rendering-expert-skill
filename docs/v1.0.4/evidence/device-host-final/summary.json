@@ -1,0 +1,15 @@
+{
+  "status": "REPEATABLE_CAPTURE",
+  "request": {
+    "platform": "host",
+    "backend": "software",
+    "schema_version": 1
+  },
+  "capture_count": 2,
+  "fingerprints": [
+    "121ab5debb4ae49115ce9d35b54f995dd4b950bf8d327d94a30b2f40cf0df996",
+    "121ab5debb4ae49115ce9d35b54f995dd4b950bf8d327d94a30b2f40cf0df996"
+  ],
+  "target_backend_pair_acceptance": false,
+  "note": "Compare independently captured native and ANGLE reports on the same physical device; one backend never satisfies dual-backend acceptance."
+}

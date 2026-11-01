@@ -1,0 +1,15 @@
+test_external_essl3_and_transform (test_source_contract.SourceContracts.test_external_essl3_and_transform) ... ok
+test_gles_requirement_explicit (test_source_contract.SourceContracts.test_gles_requirement_explicit) ... ok
+test_manifests_parse_and_entrypoint_exists (test_source_contract.SourceContracts.test_manifests_parse_and_entrypoint_exists) ... ok
+test_no_invented_glue_event (test_source_contract.SourceContracts.test_no_invented_glue_event) ... ok
+test_owner_and_vsync (test_source_contract.SourceContracts.test_owner_and_vsync) ... ok
+test_pause_stops_producer_before_consumer (test_source_contract.SourceContracts.test_pause_stops_producer_before_consumer) ... ok
+test_sdr_not_hdr_claim (test_source_contract.SourceContracts.test_sdr_not_hdr_claim) ... ok
+test_surface_and_context_errors_distinct (test_source_contract.SourceContracts.test_surface_and_context_errors_distinct) ... ok
+test_surface_destroy_waits_for_owner_ack_or_exit (test_source_contract.SourceContracts.test_surface_destroy_waits_for_owner_ack_or_exit) ... ok
+test_target_unrun_documented (test_source_contract.SourceContracts.test_target_unrun_documented) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.004s
+
+OK

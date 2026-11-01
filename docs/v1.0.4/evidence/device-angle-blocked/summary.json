@@ -1,0 +1,10 @@
+{
+  "status": "BLOCKED_BY_HARDWARE",
+  "request": {
+    "platform": "Android",
+    "backend": "angle_vulkan",
+    "schema_version": 1
+  },
+  "captures": [],
+  "target_backend_pair_acceptance": false
+}

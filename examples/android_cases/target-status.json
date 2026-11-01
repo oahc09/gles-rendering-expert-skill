@@ -1,0 +1,13 @@
+{
+  "status": "BLOCKED_BY_ANDROID_TOOLCHAIN_AND_HARDWARE",
+  "modules": ["wallpaper", "surfacevideo"],
+  "apk_compile": "NOT_RUN",
+  "android_device_runtime": "NOT_RUN",
+  "android_visual_goldens": "NOT_RUN",
+  "native_angle_comparison": "NOT_RUN",
+  "explicit_AHardwareBuffer_import": "NOT_IMPLEMENTED_IN_THESE_JAVA_CASES",
+  "HDR_WCG_surface_output": "NOT_IMPLEMENTED; SDR fallback and display-capability observations only",
+  "frame_pacing_performance": "NOT_MEASURED; Choreographer submission only",
+  "source_contract_tests": "Separate structural checks, not compilation or lifecycle proof",
+  "shader_extraction_validation": "Actual GLSL-only compiler evidence is separate"
+}

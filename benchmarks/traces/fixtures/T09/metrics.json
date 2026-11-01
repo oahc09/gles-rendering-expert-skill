@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp_ms": 0,
+    "metric": "fragment_busy_pct",
+    "value": 95,
+    "unit": "percent"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "fragment_busy_pct",
+    "value": 95,
+    "unit": "percent"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "fragment_busy_pct",
+    "value": 95,
+    "unit": "percent"
+  }
+]

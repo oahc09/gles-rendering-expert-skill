@@ -1,0 +1,34 @@
+{
+  "scope": "Actual glslang compile/link of extracted GLSL strings only; NOT Java/Android validation",
+  "compiler_version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n",
+  "results": [
+    {
+      "module": "wallpaper",
+      "java_source_sha256": "8d114c257e93a4925bd8823b2447c8ebca63b4f27dbfa0ceebe857d4a54c0b32",
+      "shader_sha256": {
+        ".vert": "9e85c649c74457a20d08db8668ec68c48486e139c33fcb4f1a63d791a9ca8285",
+        ".frag": "e4987f8160d94d4be3dcd42eb6f6d3138f0023dbd08c890cda2803ad6441683f"
+      },
+      "glsl_compile_link": "PASS",
+      "exit_code": 0,
+      "stdout": "/tmp/gles-android-shaders-m3dasd5x/wallpaper.vert\n/tmp/gles-android-shaders-m3dasd5x/wallpaper.frag\n",
+      "stderr": "",
+      "android_target_compile": "NOT_RUN",
+      "device_runtime": "NOT_RUN"
+    },
+    {
+      "module": "surfacevideo",
+      "java_source_sha256": "e1313750fbfcfa027ac2ea638bd2d3c0d3738e0d7f50fb5361f8d05e167600d8",
+      "shader_sha256": {
+        ".vert": "8352a03fcd1268fe6e08863c69c42bff1248f6384ad5ff6c2416f342aa4fa9ef",
+        ".frag": "aa77359bb1d21d78bbd8cc562284d1fa6b02833dcda058a48b816d29ea8f11c7"
+      },
+      "glsl_compile_link": "PASS",
+      "exit_code": 0,
+      "stdout": "/tmp/gles-android-shaders-m3dasd5x/surfacevideo.vert\n/tmp/gles-android-shaders-m3dasd5x/surfacevideo.frag\n",
+      "stderr": "",
+      "android_target_compile": "NOT_RUN",
+      "device_runtime": "NOT_RUN"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "A073",
+    "bad": "examples/validation/shaders/300-binding-invalid.frag",
+    "good": "examples/validation/shaders/310-binding.frag",
+    "link_vertex": null,
+    "rule": "R010",
+    "diagnosis": "Binding layout requires its supported language version."
+  },
+  {
+    "id": "A074",
+    "bad": "examples/validation/shaders/300-compute-invalid.comp",
+    "good": "examples/validation/shaders/310-compute.comp",
+    "link_vertex": null,
+    "rule": "R011",
+    "diagnosis": "Compute core needs GLES3.1/ESSL310."
+  },
+  {
+    "id": "A075",
+    "bad": "examples/validation/shaders/300-ssbo-invalid.frag",
+    "good": "examples/validation/shaders/310-ssbo.frag",
+    "link_vertex": null,
+    "rule": "R011",
+    "diagnosis": "SSBO core needs GLES3.1/ESSL310."
+  },
+  {
+    "id": "A076",
+    "bad": "examples/validation/shaders/310-geometry-invalid.geom",
+    "good": "examples/validation/shaders/320-geometry.geom",
+    "link_vertex": null,
+    "rule": "R012",
+    "diagnosis": "Geometry core needs GLES3.2/ESSL320."
+  },
+  {
+    "id": "A077",
+    "bad": "examples/validation/shaders/300-interface-type-mismatch.frag",
+    "good": "examples/validation/shaders/300-precision.frag",
+    "link_vertex": "examples/validation/shaders/300-precision.vert",
+    "rule": "R010",
+    "diagnosis": "Varying interface type, not precision difference, breaks linking."
+  },
+  {
+    "id": "A078",
+    "bad": "benchmarks/agent/repair-fixtures/shaders/missing-precision-bad.frag",
+    "good": "benchmarks/agent/repair-fixtures/shaders/missing-precision-good.frag",
+    "link_vertex": null,
+    "rule": "R029",
+    "diagnosis": "Fragment float precision declaration missing."
+  },
+  {
+    "id": "A079",
+    "bad": "benchmarks/agent/repair-fixtures/shaders/legacy-fragcolor-bad.frag",
+    "good": "benchmarks/agent/repair-fixtures/shaders/legacy-fragcolor-good.frag",
+    "link_vertex": null,
+    "rule": "R010",
+    "diagnosis": "ESSL300 uses explicit user fragment output."
+  },
+  {
+    "id": "A080",
+    "bad": "benchmarks/agent/repair-fixtures/shaders/vector-type-bad.frag",
+    "good": "benchmarks/agent/repair-fixtures/shaders/vector-type-good.frag",
+    "link_vertex": null,
+    "rule": "R010",
+    "diagnosis": "A vec3 cannot initialize a float."
+  }
+]

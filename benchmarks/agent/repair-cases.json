@@ -1,0 +1,1326 @@
+{
+  "schema_version": 1,
+  "annotation_status": "REVIEW_REQUIRED_BEFORE_RELEASE",
+  "cases": [
+    {
+      "case_id": "A065",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\nglReadBuffer(GL_FRONT); gl_ok(\"C01 default BACK legal\")\n```\nObserved validation: repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\nFAIL: C01 default BACK legal\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C01",
+      "severity": "high",
+      "expected_findings": [
+        "R001",
+        "GLES default framebuffer rejects GL_FRONT."
+      ],
+      "legal_controls": [
+        "The corresponding unmodified baseline code is legal."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "GLES default framebuffer rejects GL_FRONT.",
+        "rule_ids": [
+          "R001"
+        ],
+        "reproduction_evidence": "repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A066",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\nglReadBuffer(GL_BACK); gl_ok(\"C01 FBO read attachment legal\")\n```\nObserved validation: repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\nFAIL: C01 FBO read attachment legal\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C01",
+      "severity": "high",
+      "expected_findings": [
+        "R002",
+        "Named framebuffer cannot select BACK."
+      ],
+      "legal_controls": [
+        "The corresponding unmodified baseline code is legal."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Named framebuffer cannot select BACK.",
+        "rule_ids": [
+          "R002"
+        ],
+        "reproduction_evidence": "repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A067",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\nglTexImage2D(GL_TEXTURE_2D,0,GL_RGBA8,4,4,0,GL_RGBA_INTEGER,GL_UNSIGNED_BYTE,nullptr);\n```\nObserved validation: repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\nFAIL: C02 sized RGBA8 legal\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C02",
+      "severity": "high",
+      "expected_findings": [
+        "R003",
+        "Normalized internal storage cannot use this integer external format."
+      ],
+      "legal_controls": [
+        "The corresponding unmodified baseline code is legal."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Normalized internal storage cannot use this integer external format.",
+        "rule_ids": [
+          "R003"
+        ],
+        "reproduction_evidence": "repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A068",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\nglTexImage2D(GL_TEXTURE_2D,0,GL_RGBA8,4,4,1,GL_RGBA,GL_UNSIGNED_BYTE,nullptr);\n```\nObserved validation: repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\nFAIL: C02 sized RGBA8 legal\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C02",
+      "severity": "high",
+      "expected_findings": [
+        "R004",
+        "GLES texture border must be zero."
+      ],
+      "legal_controls": [
+        "The corresponding unmodified baseline code is legal."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "GLES texture border must be zero.",
+        "rule_ids": [
+          "R004"
+        ],
+        "reproduction_evidence": "repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A069",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\nglClearColor(0,0,1,1);\n```\nObserved validation: repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\nFAIL: pixel mismatch\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C06",
+      "severity": "high",
+      "expected_findings": [
+        "R020",
+        "Known red readback golden fails because clear color changed, not a driver defect."
+      ],
+      "legal_controls": [
+        "The corresponding unmodified baseline code is legal."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Known red readback golden fails because clear color changed, not a driver defect.",
+        "rule_ids": [
+          "R020"
+        ],
+        "reproduction_evidence": "repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A070",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\nglWaitSync(u.fence,1,GL_TIMEOUT_IGNORED);\n```\nObserved validation: repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\nFAIL: read pixel\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C03",
+      "severity": "high",
+      "expected_findings": [
+        "R006",
+        "Server wait flags must be zero."
+      ],
+      "legal_controls": [
+        "The corresponding unmodified baseline code is legal."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Server wait flags must be zero.",
+        "rule_ids": [
+          "R006"
+        ],
+        "reproduction_evidence": "repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A071",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\nglWaitSync(u.fence,0,0);\n```\nObserved validation: repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\nFAIL: read pixel\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C03",
+      "severity": "high",
+      "expected_findings": [
+        "R007",
+        "Server wait takes TIMEOUT_IGNORED, not a client timeout."
+      ],
+      "legal_controls": [
+        "The corresponding unmodified baseline code is legal."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Server wait takes TIMEOUT_IGNORED, not a client timeout.",
+        "rule_ids": [
+          "R007"
+        ],
+        "reproduction_evidence": "repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A072",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\nglMapBufferRange(GL_PIXEL_UNPACK_BUFFER,0,4,GL_MAP_READ_BIT|GL_MAP_INVALIDATE_BUFFER_BIT);\n```\nObserved validation: repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\nFAIL: PBO map\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C03",
+      "severity": "high",
+      "expected_findings": [
+        "R015",
+        "Read mapping cannot be combined with invalidate flags."
+      ],
+      "legal_controls": [
+        "The corresponding unmodified baseline code is legal."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Read mapping cannot be combined with invalidate flags.",
+        "rule_ids": [
+          "R015"
+        ],
+        "reproduction_evidence": "repair-reproduction.json runtime mutated exit1, fixed baseline exit0 (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A073",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\n#version 300 es\nprecision highp float;\nlayout(std140, binding=0) uniform Params { vec4 tint; };\nlayout(location=0) out vec4 color;\nvoid main() { color = tint; }\n\n```\nObserved validation: repair-reproduction.json compiler rejection/acceptance pair (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-binding-invalid.frag\nERROR: 0:3: 'binding' : not supported for this version or the enabled extensions \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "R010",
+        "Binding layout requires its supported language version."
+      ],
+      "legal_controls": [
+        "The corrected shader and legal varying precision differences must not be rejected."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Binding layout requires its supported language version.",
+        "rule_ids": [
+          "R010"
+        ],
+        "reproduction_evidence": "repair-reproduction.json compiler rejection/acceptance pair (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A074",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\n#version 300 es\nlayout(local_size_x=1) in;\nvoid main() {}\n\n```\nObserved validation: repair-reproduction.json compiler rejection/acceptance pair (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-compute-invalid.comp\nERROR: #version: compute shaders require es profile with version 310 or above, or non-es profile with version 420 or above\nERROR: 1 compilation errors.  No code generated.\n\n\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "R011",
+        "Compute core needs GLES3.1/ESSL310."
+      ],
+      "legal_controls": [
+        "The corrected shader and legal varying precision differences must not be rejected."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Compute core needs GLES3.1/ESSL310.",
+        "rule_ids": [
+          "R011"
+        ],
+        "reproduction_evidence": "repair-reproduction.json compiler rejection/acceptance pair (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A075",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\n#version 300 es\nprecision highp float;\nlayout(std430, binding=0) buffer Data { vec4 value; };\nlayout(location=0) out vec4 color;\nvoid main() { color = value; }\n\n```\nObserved validation: repair-reproduction.json compiler rejection/acceptance pair (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-ssbo-invalid.frag\nERROR: 0:3: 'std430' : not supported for this version or the enabled extensions \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "R011",
+        "SSBO core needs GLES3.1/ESSL310."
+      ],
+      "legal_controls": [
+        "The corrected shader and legal varying precision differences must not be rejected."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "SSBO core needs GLES3.1/ESSL310.",
+        "rule_ids": [
+          "R011"
+        ],
+        "reproduction_evidence": "repair-reproduction.json compiler rejection/acceptance pair (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A076",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\n#version 310 es\nlayout(points) in;\nlayout(points, max_vertices=1) out;\nvoid main() { gl_Position = gl_in[0].gl_Position; EmitVertex(); EndPrimitive(); }\n\n```\nObserved validation: repair-reproduction.json compiler rejection/acceptance pair (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/310-geometry-invalid.geom\nERROR: 0:5: 'geometry shaders' : required extension not requested: Possible extensions include:\nGL_EXT_geometry_shader\nGL_OES_geometry_shader\nERROR: 1 compilation errors.  No code generated.\n\n\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "R012",
+        "Geometry core needs GLES3.2/ESSL320."
+      ],
+      "legal_controls": [
+        "The corrected shader and legal varying precision differences must not be rejected."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Geometry core needs GLES3.2/ESSL320.",
+        "rule_ids": [
+          "R012"
+        ],
+        "reproduction_evidence": "repair-reproduction.json compiler rejection/acceptance pair (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A077",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\n#version 300 es\nprecision highp float;\nin highp vec2 value;\nout vec4 color;\nvoid main() { color = vec4(value,0.0,1.0); }\n\n```\nObserved validation: repair-reproduction.json compiler rejection/acceptance pair (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-precision.vert\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-interface-type-mismatch.frag\nERROR: Linking vertex and fragment stages: Types must match:\n    vertex stage: \" vec3 value\"\n    fragment stage: \" vec2 value\"\n\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "R010",
+        "Varying interface type, not precision difference, breaks linking."
+      ],
+      "legal_controls": [
+        "The corrected shader and legal varying precision differences must not be rejected."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Varying interface type, not precision difference, breaks linking.",
+        "rule_ids": [
+          "R010"
+        ],
+        "reproduction_evidence": "repair-reproduction.json compiler rejection/acceptance pair (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A078",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\n#version 300 es\nout vec4 color;void main(){color=vec4(1.);}\n\n```\nObserved validation: repair-reproduction.json compiler rejection/acceptance pair (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/missing-precision-bad.frag\nERROR: 0:2: 'float' : type requires declaration of default precision qualifier \nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "R029",
+        "Fragment float precision declaration missing."
+      ],
+      "legal_controls": [
+        "The corrected shader and legal varying precision differences must not be rejected."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Fragment float precision declaration missing.",
+        "rule_ids": [
+          "R029"
+        ],
+        "reproduction_evidence": "repair-reproduction.json compiler rejection/acceptance pair (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A079",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\n#version 300 es\nprecision highp float;void main(){gl_FragColor=vec4(1.);}\n\n```\nObserved validation: repair-reproduction.json compiler rejection/acceptance pair (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/legacy-fragcolor-bad.frag\nERROR: 0:2: 'gl_FragColor' : undeclared identifier \nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "R010",
+        "ESSL300 uses explicit user fragment output."
+      ],
+      "legal_controls": [
+        "The corrected shader and legal varying precision differences must not be rejected."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "ESSL300 uses explicit user fragment output.",
+        "rule_ids": [
+          "R010"
+        ],
+        "reproduction_evidence": "repair-reproduction.json compiler rejection/acceptance pair (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A080",
+      "mode": "Diagnose",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input:\n```\n#version 300 es\nprecision highp float;out vec4 color;void main(){float a=vec3(1.);color=vec4(a);}\n\n```\nObserved validation: repair-reproduction.json compiler rejection/acceptance pair (run required). Capability snapshot: GLES3.2 software Mesa host; actual mobile hardware/counters unavailable. Return evidence chain, root-cause confidence, minimal diff, compile/regression commands, expected vs actually measured performance. Do not invent an optimization gain.\nActual failure log:\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/vector-type-bad.frag\nERROR: 0:2: '=' :  cannot convert from ' const 3-component vector of float' to ' temp highp float'\nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "R010",
+        "A vec3 cannot initialize a float."
+      ],
+      "legal_controls": [
+        "The corrected shader and legal varying precision differences must not be rejected."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "A vec3 cannot initialize a float.",
+        "rule_ids": [
+          "R010"
+        ],
+        "reproduction_evidence": "repair-reproduction.json compiler rejection/acceptance pair (run required)",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A081",
+      "mode": "Optimize",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input (focused excerpt of scene source):\n```cpp\nglEnable(GL_BLEND); glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); glDisable(GL_BLEND); // transparent card draw follows\n```\nReturn the minimal semantics-preserving correction and validation commands; no mobile performance result is available.\nActual failure log:\n{\"visual_difference\": {\"mae_8bit\": 38.06984230324074, \"max_error_8bit\": 146, \"fraction_channels_over_8\": 0.7783926504629629, \"pass\": false}, \"driver\": \"llvmpipe (LLVM 19.1.7, 256 bits)\", \"gpu_time_ms\": null}",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C07",
+      "severity": "high",
+      "expected_findings": [
+        "SCENE-S01",
+        "Dropped transparency blending changes the composited card image."
+      ],
+      "legal_controls": [
+        "A CPU wall-time sample on llvmpipe cannot prove a mobile GPU speedup."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Dropped transparency blending changes the composited card image.",
+        "rule_ids": [
+          "SCENE-S01"
+        ],
+        "reproduction_evidence": "benchmarks/scenes/software-validation.json degraded-vs-golden and fixed baseline records",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A082",
+      "mode": "Optimize",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input (focused excerpt of scene source):\n```cpp\nvec2 normal=vec2(sin(uv.y*30.+.7),cos(uv.x*24.-.4))*.012; vec3 bed=texture(image,uv+normal*12.).rgb;\n```\nReturn the minimal semantics-preserving correction and validation commands; no mobile performance result is available.\nActual failure log:\n{\"visual_difference\": {\"mae_8bit\": 7.7529296875, \"max_error_8bit\": 55, \"fraction_channels_over_8\": 0.2837818287037037, \"pass\": false}, \"driver\": \"llvmpipe (LLVM 19.1.7, 256 bits)\", \"gpu_time_ms\": null}",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C08",
+      "severity": "high",
+      "expected_findings": [
+        "SCENE-S02",
+        "Excessive refraction normal amplitude violates water golden."
+      ],
+      "legal_controls": [
+        "A CPU wall-time sample on llvmpipe cannot prove a mobile GPU speedup."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Excessive refraction normal amplitude violates water golden.",
+        "rule_ids": [
+          "SCENE-S02"
+        ],
+        "reproduction_evidence": "benchmarks/scenes/software-validation.json degraded-vs-golden and fixed baseline records",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A083",
+      "mode": "Optimize",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input (focused excerpt of scene source):\n```cpp\nfloat soft=clamp((depth-.65)*12.,0.,1.); alpha=(1.-smoothstep(.2,1.,radius))*1.*.45;\n```\nReturn the minimal semantics-preserving correction and validation commands; no mobile performance result is available.\nActual failure log:\n{\"visual_difference\": {\"mae_8bit\": 2.883427372685185, \"max_error_8bit\": 120, \"fraction_channels_over_8\": 0.080078125, \"pass\": false}, \"driver\": \"llvmpipe (LLVM 19.1.7, 256 bits)\", \"gpu_time_ms\": null}",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C07",
+      "severity": "high",
+      "expected_findings": [
+        "SCENE-S03",
+        "Removing soft-depth attenuation creates hard particle intersections."
+      ],
+      "legal_controls": [
+        "A CPU wall-time sample on llvmpipe cannot prove a mobile GPU speedup."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Removing soft-depth attenuation creates hard particle intersections.",
+        "rule_ids": [
+          "SCENE-S03"
+        ],
+        "reproduction_evidence": "benchmarks/scenes/software-validation.json degraded-vs-golden and fixed baseline records",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A084",
+      "mode": "Optimize",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input (focused excerpt of scene source):\n```cpp\nvec3 mapped=x/(1.+x); color=vec4(mapped,1.); // output contract expects gamma-encoded display RGB\n```\nReturn the minimal semantics-preserving correction and validation commands; no mobile performance result is available.\nActual failure log:\n{\"visual_difference\": {\"mae_8bit\": 51.513454861111114, \"max_error_8bit\": 73, \"fraction_channels_over_8\": 0.9958767361111112, \"pass\": false}, \"driver\": \"llvmpipe (LLVM 19.1.7, 256 bits)\", \"gpu_time_ms\": null}",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C08",
+      "severity": "high",
+      "expected_findings": [
+        "SCENE-S04",
+        "Missing output transfer function causes tone-mapped color error."
+      ],
+      "legal_controls": [
+        "A CPU wall-time sample on llvmpipe cannot prove a mobile GPU speedup."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Missing output transfer function causes tone-mapped color error.",
+        "rule_ids": [
+          "SCENE-S04"
+        ],
+        "reproduction_evidence": "benchmarks/scenes/software-validation.json degraded-vs-golden and fixed baseline records",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A085",
+      "mode": "Optimize",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input (focused excerpt of scene source):\n```cpp\nglEnable(GL_DEPTH_TEST); glDisable(GL_DEPTH_TEST); draw_instances(...);\n```\nReturn the minimal semantics-preserving correction and validation commands; no mobile performance result is available.\nActual failure log:\n{\"visual_difference\": {\"mae_8bit\": 14.244068287037036, \"max_error_8bit\": 215, \"fraction_channels_over_8\": 0.2082248263888889, \"pass\": false}, \"driver\": \"llvmpipe (LLVM 19.1.7, 256 bits)\", \"gpu_time_ms\": null}",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C08",
+      "severity": "high",
+      "expected_findings": [
+        "SCENE-S05",
+        "Changing depth/stencil semantics breaks visible occlusion."
+      ],
+      "legal_controls": [
+        "A CPU wall-time sample on llvmpipe cannot prove a mobile GPU speedup."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Changing depth/stencil semantics breaks visible occlusion.",
+        "rule_ids": [
+          "SCENE-S05"
+        ],
+        "reproduction_evidence": "benchmarks/scenes/software-validation.json degraded-vs-golden and fixed baseline records",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A086",
+      "mode": "Optimize",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input (focused excerpt of scene source):\n```cpp\nbones={cos(.3),sin(.3),0,0,cos(-.6),sin(-.6),0,0}; bones[5]=1.8; glBufferData(GL_UNIFORM_BUFFER,sizeof(bones),bones.data(),GL_DYNAMIC_DRAW);\n```\nReturn the minimal semantics-preserving correction and validation commands; no mobile performance result is available.\nActual failure log:\n{\"visual_difference\": {\"mae_8bit\": 68.8963035300926, \"max_error_8bit\": 249, \"fraction_channels_over_8\": 0.6428674768518519, \"pass\": false}, \"driver\": \"llvmpipe (LLVM 19.1.7, 256 bits)\", \"gpu_time_ms\": null}",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C08",
+      "severity": "high",
+      "expected_findings": [
+        "SCENE-S06",
+        "Wrong bone transforms break animation pose."
+      ],
+      "legal_controls": [
+        "A CPU wall-time sample on llvmpipe cannot prove a mobile GPU speedup."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Wrong bone transforms break animation pose.",
+        "rule_ids": [
+          "SCENE-S06"
+        ],
+        "reproduction_evidence": "benchmarks/scenes/software-validation.json degraded-vs-golden and fixed baseline records",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A087",
+      "mode": "Optimize",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input (focused excerpt of scene source):\n```cpp\nglDispatchCompute(...); glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT|GL_COMMAND_BARRIER_BIT); glMemoryBarrier(GL_BUFFER_UPDATE_BARRIER_BIT); glBindBuffer(GL_DRAW_INDIRECT_BUFFER,indirect); GLuint zero=0; glBufferSubData(GL_DRAW_INDIRECT_BUFFER,sizeof(GLuint),sizeof(GLuint),&zero);\n```\nReturn the minimal semantics-preserving correction and validation commands; no mobile performance result is available.\nActual failure log:\n{\"visual_difference\": {\"mae_8bit\": 12.53761574074074, \"max_error_8bit\": 217, \"fraction_channels_over_8\": 0.10706018518518519, \"pass\": false}, \"driver\": \"llvmpipe (LLVM 19.1.7, 256 bits)\", \"gpu_time_ms\": null}",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C08",
+      "severity": "high",
+      "expected_findings": [
+        "SCENE-S07",
+        "Wrong compute-generated geometry data breaks draw output; inspect barrier and payload separately."
+      ],
+      "legal_controls": [
+        "A CPU wall-time sample on llvmpipe cannot prove a mobile GPU speedup."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Wrong compute-generated geometry data breaks draw output; inspect barrier and payload separately.",
+        "rule_ids": [
+          "SCENE-S07"
+        ],
+        "reproduction_evidence": "benchmarks/scenes/software-validation.json degraded-vs-golden and fixed baseline records",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    },
+    {
+      "case_id": "A088",
+      "mode": "Optimize",
+      "prompt": "Diagnose -> minimal patch -> validate. Controlled failure input (focused excerpt of scene source):\n```cpp\nfloat a=exp(-dot(q,q)*5.); color=vec4(tint,a*.85); // reference opacity is fixed by the visual contract\n```\nReturn the minimal semantics-preserving correction and validation commands; no mobile performance result is available.\nActual failure log:\n{\"visual_difference\": {\"mae_8bit\": 54.7255859375, \"max_error_8bit\": 160, \"fraction_channels_over_8\": 0.8564814814814815, \"pass\": false}, \"driver\": \"llvmpipe (LLVM 19.1.7, 256 bits)\", \"gpu_time_ms\": null}",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "host software EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "actual capture in device-host-corrected",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C07",
+      "severity": "high",
+      "expected_findings": [
+        "SCENE-S08",
+        "Excessive Gaussian alpha causes coverage/color error."
+      ],
+      "legal_controls": [
+        "A CPU wall-time sample on llvmpipe cannot prove a mobile GPU speedup."
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the known-correct baseline path; do not relax correctness assertions or golden tolerances.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "CONTROLLED_FIXTURE_EXECUTED_NOT_MODEL_PATCH"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      },
+      "repair": {
+        "origin": "controlled source/scene mutation executed locally, not a production-device incident",
+        "root_cause": "Excessive Gaussian alpha causes coverage/color error.",
+        "rule_ids": [
+          "SCENE-S08"
+        ],
+        "reproduction_evidence": "benchmarks/scenes/software-validation.json degraded-vs-golden and fixed baseline records",
+        "review_status": "INDEPENDENT_REVIEW_REQUIRED",
+        "reproduction_report": "docs/v1.0.4/evidence/repair-reproduction-fresh.json",
+        "reproduction_sha256": "324b5bca7c31519ecd60c8d8dd4a4fbfb3462dfc31ab248b1f0a944decf739f2"
+      }
+    }
+  ]
+}

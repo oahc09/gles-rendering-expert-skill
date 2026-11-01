@@ -1,0 +1,7 @@
+In file included from /workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/device_lab/probe.cpp:4:
+/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/device_lab/../../examples/validation/egl_smoke.cpp: In function ‘int established_harness_main(int, char**)’:
+/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/device_lab/../../examples/validation/egl_smoke.cpp:290:1: error: control reaches end of non-void function [-Werror=return-type]
+  290 | }
+      | ^
+cc1plus: all warnings being treated as errors
+

@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - v1.0.4 implementation candidate
+
+- Added actual eight-scene GLES lab, reviewed frozen software visual goldens, parameter sweep and retained optimization/degradation failures.
+- Added shared capability/driver/backend capture contract, actual extended software EGL probe and conservative trace CSV/JSON diagnosis with twelve synthetic labeled fixtures.
+- Preserved original 64 Agent cases; added 24 executed controlled failure/fix cases and evidence-bound repair scoring. No live-model score claimed.
+- Added two Android source projects and explicit lifecycle ownership; APK/device, AHardwareBuffer import and HDR acceptance remain incomplete.
+- Extended existing research updater with UTC-aware date boundaries, incomplete-source status and verified/accepted decision guards; no background scheduler enabled.
+- Kept old closure/gates and metadata1.0.2; new release guard cannot hide prior blocked acceptance. Manual-only workflow remains manual.
+
 ## [Unreleased] - v1.0.3 candidate
 
 ### Added

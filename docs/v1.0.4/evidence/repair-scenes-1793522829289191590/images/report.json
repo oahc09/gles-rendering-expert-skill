@@ -1,0 +1,724 @@
+{
+  "status": "PASS",
+  "scope": "actual software-driver correctness, not physical GPU performance",
+  "seed": 1337,
+  "color_contract": "RGB8 top-to-bottom; explicit shader color/gamma, not display HDR/WCG certification",
+  "tolerance": {
+    "mae_max": 1.5,
+    "fraction_channels_over_8_max": 0.02,
+    "max_error_max": 48
+  },
+  "source_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+  "runner_sha256": "4656834ab01be7a32045c58d82077a243a9a45994f14d59ba37186c29d0c7917",
+  "binary_sha256": "24591d7870be59cc07bdd795e572f5d95a71124652175ed6c12448ae4d973573",
+  "failures": [],
+  "runs": [
+    {
+      "scene": "S01",
+      "variant": "baseline",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 58.7729,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S01",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S01-baseline.ppm",
+        "96",
+        "64",
+        "baseline"
+      ],
+      "image_sha256": "969c9f7a0016e33307cdcec92cfbe4ce5a13d3b95be13f73f05a9015fd8dff1b",
+      "stderr": "",
+      "golden": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      }
+    },
+    {
+      "scene": "S01",
+      "variant": "control",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 68.0115,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S01",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S01-control.ppm",
+        "96",
+        "64",
+        "control"
+      ],
+      "image_sha256": "969c9f7a0016e33307cdcec92cfbe4ce5a13d3b95be13f73f05a9015fd8dff1b",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      },
+      "expected_visual_match": true,
+      "expectation_met": true
+    },
+    {
+      "scene": "S01",
+      "variant": "degraded",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 64.9587,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S01",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S01-degraded.ppm",
+        "96",
+        "64",
+        "degraded"
+      ],
+      "image_sha256": "8ff5883328c66bc88254fb96b4d2c951105e6a1448fbe977ba90570b26ee70c2",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 38.06984230324074,
+        "max_error_8bit": 146,
+        "fraction_channels_over_8": 0.7783926504629629,
+        "pass": false
+      },
+      "expected_visual_match": false,
+      "expectation_met": true
+    },
+    {
+      "scene": "S02",
+      "variant": "baseline",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 143.81,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S02",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S02-baseline.ppm",
+        "96",
+        "64",
+        "baseline"
+      ],
+      "image_sha256": "5bf3ca0af48734dfb1e08fd960adc109e8c55d928bb91468b6d1b8d914c7b17b",
+      "stderr": "",
+      "golden": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      }
+    },
+    {
+      "scene": "S02",
+      "variant": "control",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 147.863,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S02",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S02-control.ppm",
+        "96",
+        "64",
+        "control"
+      ],
+      "image_sha256": "5bf3ca0af48734dfb1e08fd960adc109e8c55d928bb91468b6d1b8d914c7b17b",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      },
+      "expected_visual_match": true,
+      "expectation_met": true
+    },
+    {
+      "scene": "S02",
+      "variant": "degraded",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 147.049,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S02",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S02-degraded.ppm",
+        "96",
+        "64",
+        "degraded"
+      ],
+      "image_sha256": "285ae6ab26e8f9e022b1f16ec844284624c7a19c5acab24e9f4235fcab06cdd4",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 7.7529296875,
+        "max_error_8bit": 55,
+        "fraction_channels_over_8": 0.2837818287037037,
+        "pass": false
+      },
+      "expected_visual_match": false,
+      "expectation_met": true
+    },
+    {
+      "scene": "S03",
+      "variant": "baseline",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 134.841,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S03",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S03-baseline.ppm",
+        "96",
+        "64",
+        "baseline"
+      ],
+      "image_sha256": "7e1f41e6250999f272d971af4db58822837d0221699fb80a0073bb403f9ed47f",
+      "stderr": "",
+      "golden": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      }
+    },
+    {
+      "scene": "S03",
+      "variant": "control",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 166.116,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S03",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S03-control.ppm",
+        "96",
+        "64",
+        "control"
+      ],
+      "image_sha256": "7e1f41e6250999f272d971af4db58822837d0221699fb80a0073bb403f9ed47f",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      },
+      "expected_visual_match": true,
+      "expectation_met": true
+    },
+    {
+      "scene": "S03",
+      "variant": "degraded",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 122.038,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S03",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S03-degraded.ppm",
+        "96",
+        "64",
+        "degraded"
+      ],
+      "image_sha256": "e21b8c2ddf15f62819437e29287737d07af6fdb9e714b556b862210b15b107d0",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 2.883427372685185,
+        "max_error_8bit": 120,
+        "fraction_channels_over_8": 0.080078125,
+        "pass": false
+      },
+      "expected_visual_match": false,
+      "expectation_met": true
+    },
+    {
+      "scene": "S04",
+      "variant": "baseline",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 255.954,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S04",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S04-baseline.ppm",
+        "96",
+        "64",
+        "baseline"
+      ],
+      "image_sha256": "94eb20c61fbb1b42fd98f4e9a944a6336d70b543d6fb8bca04da3c816f21d64d",
+      "stderr": "",
+      "golden": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      }
+    },
+    {
+      "scene": "S04",
+      "variant": "control",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 231.712,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S04",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S04-control.ppm",
+        "96",
+        "64",
+        "control"
+      ],
+      "image_sha256": "fa4ecf8e543f628f23b8301389069315f45592e2afc80407c5d4b186083911f2",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 2.760127314814815,
+        "max_error_8bit": 75,
+        "fraction_channels_over_8": 0.1068431712962963,
+        "pass": false
+      },
+      "expected_visual_match": false,
+      "expectation_met": true
+    },
+    {
+      "scene": "S04",
+      "variant": "degraded",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 197.141,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S04",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S04-degraded.ppm",
+        "96",
+        "64",
+        "degraded"
+      ],
+      "image_sha256": "d53d3273fa65cbff0452e212c63d18689110acba9d8e0588316e7ca9a4950da5",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 51.513454861111114,
+        "max_error_8bit": 73,
+        "fraction_channels_over_8": 0.9958767361111112,
+        "pass": false
+      },
+      "expected_visual_match": false,
+      "expectation_met": true
+    },
+    {
+      "scene": "S05",
+      "variant": "baseline",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 179.28,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S05",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S05-baseline.ppm",
+        "96",
+        "64",
+        "baseline"
+      ],
+      "image_sha256": "ba0e5e2fc3fd2d8edca2234f1973b25b24120eec72c46c767ac2df2dddc06e88",
+      "stderr": "",
+      "golden": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      }
+    },
+    {
+      "scene": "S05",
+      "variant": "control",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 142.348,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S05",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S05-control.ppm",
+        "96",
+        "64",
+        "control"
+      ],
+      "image_sha256": "ba0e5e2fc3fd2d8edca2234f1973b25b24120eec72c46c767ac2df2dddc06e88",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      },
+      "expected_visual_match": true,
+      "expectation_met": true
+    },
+    {
+      "scene": "S05",
+      "variant": "degraded",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 106.818,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S05",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S05-degraded.ppm",
+        "96",
+        "64",
+        "degraded"
+      ],
+      "image_sha256": "6a95705c8afb2690164a40fcb6387f89b2520bfd429c354ba8df76f5dc419f81",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 14.244068287037036,
+        "max_error_8bit": 215,
+        "fraction_channels_over_8": 0.2082248263888889,
+        "pass": false
+      },
+      "expected_visual_match": false,
+      "expectation_met": true
+    },
+    {
+      "scene": "S06",
+      "variant": "baseline",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 59.1459,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S06",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S06-baseline.ppm",
+        "96",
+        "64",
+        "baseline"
+      ],
+      "image_sha256": "5cc3aa74bac388482464a1451cfff06132ca2a775b2f14281aa4ad098138a7df",
+      "stderr": "",
+      "golden": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      }
+    },
+    {
+      "scene": "S06",
+      "variant": "control",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 55.0413,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S06",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S06-control.ppm",
+        "96",
+        "64",
+        "control"
+      ],
+      "image_sha256": "5cc3aa74bac388482464a1451cfff06132ca2a775b2f14281aa4ad098138a7df",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      },
+      "expected_visual_match": true,
+      "expectation_met": true
+    },
+    {
+      "scene": "S06",
+      "variant": "degraded",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 55.957,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S06",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S06-degraded.ppm",
+        "96",
+        "64",
+        "degraded"
+      ],
+      "image_sha256": "0181f9b2267798dc78049071386aebdfb8cc472ab4d95b2660134ae82aad24d9",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 68.8963035300926,
+        "max_error_8bit": 249,
+        "fraction_channels_over_8": 0.6428674768518519,
+        "pass": false
+      },
+      "expected_visual_match": false,
+      "expectation_met": true
+    },
+    {
+      "scene": "S07",
+      "variant": "baseline",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 92.1272,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S07",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S07-baseline.ppm",
+        "96",
+        "64",
+        "baseline"
+      ],
+      "image_sha256": "4a2659867b8756f41cf700e59108aed602d539e0cfe22429e7e18aa962250218",
+      "stderr": "",
+      "golden": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      }
+    },
+    {
+      "scene": "S07",
+      "variant": "control",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 70.9089,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S07",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S07-control.ppm",
+        "96",
+        "64",
+        "control"
+      ],
+      "image_sha256": "4a2659867b8756f41cf700e59108aed602d539e0cfe22429e7e18aa962250218",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      },
+      "expected_visual_match": true,
+      "expectation_met": true
+    },
+    {
+      "scene": "S07",
+      "variant": "degraded",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 49.5412,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S07",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S07-degraded.ppm",
+        "96",
+        "64",
+        "degraded"
+      ],
+      "image_sha256": "a0f2f1a0fbd315f2a551d954ef8feff6a874536b9cdac884abef856cce1532b7",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 12.53761574074074,
+        "max_error_8bit": 217,
+        "fraction_channels_over_8": 0.10706018518518519,
+        "pass": false
+      },
+      "expected_visual_match": false,
+      "expectation_met": true
+    },
+    {
+      "scene": "S08",
+      "variant": "baseline",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 59.6539,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S08",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S08-baseline.ppm",
+        "96",
+        "64",
+        "baseline"
+      ],
+      "image_sha256": "e790fffadd29591f0f900fc4d354dc61e677d0ebd39fea906250caf540107bb0",
+      "stderr": "",
+      "golden": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      }
+    },
+    {
+      "scene": "S08",
+      "variant": "control",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 70.8068,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S08",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S08-control.ppm",
+        "96",
+        "64",
+        "control"
+      ],
+      "image_sha256": "e790fffadd29591f0f900fc4d354dc61e677d0ebd39fea906250caf540107bb0",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 0.0,
+        "max_error_8bit": 0,
+        "fraction_channels_over_8": 0.0,
+        "pass": true
+      },
+      "expected_visual_match": true,
+      "expectation_met": true
+    },
+    {
+      "scene": "S08",
+      "variant": "degraded",
+      "seed": 1337,
+      "size": 96,
+      "instances": 64,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "cpu_wall_including_compile_readback_ms": 58.9931,
+      "gpu_time_ms": null,
+      "hardware_performance": "NOT_MEASURED",
+      "command": [
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+        "S08",
+        "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S08-degraded.ppm",
+        "96",
+        "64",
+        "degraded"
+      ],
+      "image_sha256": "d8acf3b8c77b5f67058081ed86c5825887dc854ca0face4e3e16da64ffcef31e",
+      "stderr": "",
+      "baseline_difference": {
+        "mae_8bit": 54.7255859375,
+        "max_error_8bit": 160,
+        "fraction_channels_over_8": 0.8564814814814815,
+        "pass": false
+      },
+      "expected_visual_match": false,
+      "expectation_met": true
+    }
+  ],
+  "hardware_performance": "BLOCKED_BY_HARDWARE",
+  "gpu_timing": "NOT_COLLECTED",
+  "bandwidth_counters": "NOT_COLLECTED"
+}

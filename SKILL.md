@@ -19,6 +19,16 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
 
 ---
 
+## v1.0.4 implementation routing (not released)
+
+For device identity and native/ANGLE comparisons use [DeviceLab](benchmarks/device_lab/README.md).
+For actual workload correctness and visual error use [SceneLab](benchmarks/scenes/README.md).
+For exported trace triage use [trace manifests](benchmarks/traces/README.md); report hypotheses,
+missing counters and falsifiable A/B tests, never a single-utilization bottleneck conclusion.
+For Diagnose → Patch → Validate use the existing [repair benchmark](benchmarks/agent/REPAIR_WORKFLOW.md).
+Keep original version/platform triggers. New functionality does not waive old release gates;
+[full traceability](docs/v1.0.4-traceability.md) separates local, CI, target and provider evidence.
+
 ## Candidate validation and evidence routing
 
 This candidate keeps metadata **1.0.2** until the v1.0.3 full acceptance gates pass.

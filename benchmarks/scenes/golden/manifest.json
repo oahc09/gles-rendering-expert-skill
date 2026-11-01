@@ -1,0 +1,76 @@
+{
+  "origin": "actual Mesa software EGL rendering; explicitly generated, not an independent artistic oracle",
+  "source_sha256": "d89149439af7b4dea568a4f8fd1f12fb15a4c3170f0404631d4b1e90bcb257dc",
+  "color_contract": "RGB8 top-to-bottom; explicit shader color/gamma, not display HDR/WCG certification",
+  "tolerance": {
+    "mae_max": 1.5,
+    "fraction_channels_over_8_max": 0.02,
+    "max_error_max": 48
+  },
+  "images": {
+    "S01": {
+      "sha256": "969c9f7a0016e33307cdcec92cfbe4ce5a13d3b95be13f73f05a9015fd8dff1b",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "size": 96,
+      "instances": 64,
+      "seed": 1337
+    },
+    "S02": {
+      "sha256": "5bf3ca0af48734dfb1e08fd960adc109e8c55d928bb91468b6d1b8d914c7b17b",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "size": 96,
+      "instances": 64,
+      "seed": 1337
+    },
+    "S03": {
+      "sha256": "7e1f41e6250999f272d971af4db58822837d0221699fb80a0073bb403f9ed47f",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "size": 96,
+      "instances": 64,
+      "seed": 1337
+    },
+    "S04": {
+      "sha256": "94eb20c61fbb1b42fd98f4e9a944a6336d70b543d6fb8bca04da3c816f21d64d",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "size": 96,
+      "instances": 64,
+      "seed": 1337
+    },
+    "S05": {
+      "sha256": "ba0e5e2fc3fd2d8edca2234f1973b25b24120eec72c46c767ac2df2dddc06e88",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "size": 96,
+      "instances": 64,
+      "seed": 1337
+    },
+    "S06": {
+      "sha256": "5cc3aa74bac388482464a1451cfff06132ca2a775b2f14281aa4ad098138a7df",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "size": 96,
+      "instances": 64,
+      "seed": 1337
+    },
+    "S07": {
+      "sha256": "4a2659867b8756f41cf700e59108aed602d539e0cfe22429e7e18aa962250218",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "size": 96,
+      "instances": 64,
+      "seed": 1337
+    },
+    "S08": {
+      "sha256": "e790fffadd29591f0f900fc4d354dc61e677d0ebd39fea906250caf540107bb0",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "size": 96,
+      "instances": 64,
+      "seed": 1337
+    }
+  }
+}

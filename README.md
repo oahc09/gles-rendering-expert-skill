@@ -4,6 +4,18 @@
 
 > **AI Expert Skill for OpenGL ES 3.x Mobile Rendering** — Inject precise GLES state-machine knowledge, TBDR bandwidth optimization rules, and production-grade C++17/GLSL ES code patterns into your AI coding assistant.
 
+## v1.0.4 device/scene/repair candidate
+
+See [exact plan](docs/v1.0.4-development-plan.md), [old closure](docs/v1.0.3-closure.md),
+[traceability](docs/v1.0.4-traceability.md) and [new release gates](docs/v1.0.4-release-gates.json).
+New executable work: [8 real GL scenes + visual goldens](benchmarks/scenes/README.md),
+[device/backend capture lab](benchmarks/device_lab/README.md),
+[trace triage](benchmarks/traces/README.md), [24 repair cases](benchmarks/agent/REPAIR_WORKFLOW.md),
+and [two Android source projects](examples/android_cases/README.md).
+Old 64 Agent cases and 112 rule contracts remain intact. Metadata stays **1.0.2**:
+mobile hardware, Android target builds, explicit AHardwareBuffer/HDR and live-provider
+acceptance are incomplete. Source implementation is not a completed v1.0.4 release.
+
 ## v1.0.3 engineering candidate (not released)
 
 The full [development plan](docs/v1.0.3-development-plan.md) is implemented as a
