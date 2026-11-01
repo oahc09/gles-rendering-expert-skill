@@ -37,7 +37,15 @@ class SourceContracts(unittest.TestCase):
         self.assertIn('ownerExited = true',s)
         self.assertIn('ownerCompletion.notifyAll()',s)
     def test_external_essl3_and_transform(self):
-        s=self.source('surfacevideo');self.assertIn('GL_OES_EGL_image_external_essl3',s);self.assertIn('getTransformMatrix',s);self.assertIn('updateTexImage()',s)
+        s=self.source('surfacevideo')
+        helper=next((ROOT/'surfacevideo/src/main/java').rglob('VideoInputGuard.java')).read_text()
+        self.assertIn('GL_OES_EGL_image_external_essl3',s)
+        self.assertIn('VideoInputGuard.acquireFrame(consumer,transform,0,true)',s)
+        self.assertIn('VideoInputGuard.select',s)
+        self.assertIn('GL_OES_EGL_image_external_essl3',helper)
+        self.assertIn('input.updateTexImage()',helper)
+        self.assertIn('input.getTransformMatrix(producer)',helper)
+        self.assertLess(helper.index('input.updateTexImage()'),helper.index('input.getTransformMatrix(producer)'))
     def test_pause_stops_producer_before_consumer(self):
         s=self.source('surfacevideo');self.assertLess(s.index('renderer.stopProducer(); view.queueEvent'),s.index('view.onPause();'))
     def test_sdr_not_hdr_claim(self):self.assertIn('chosenOutput=SDR_RGBA8',self.source('surfacevideo'))

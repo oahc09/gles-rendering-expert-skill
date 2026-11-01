@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/KhronosGroup/KTX-Software/releases/tag/v4.4.2",
+  "published_at": "2025-10-04T09:03:07Z",
+  "download": "https://github.com/KhronosGroup/KTX-Software/releases/download/v4.4.2/KTX-Software-4.4.2-Linux-x86_64.tar.bz2",
+  "official_digest": "sha256:a8781bad05f9624edbf910b7f258cd0a4ba7d3e63b49ecc0a0ab440bf6a0a245",
+  "download_sha256": "a8781bad05f9624edbf910b7f258cd0a4ba7d3e63b49ecc0a0ab440bf6a0a245",
+  "verification": "MATCH",
+  "external_dependency_license": "Apache-2.0; KTX-Software runtime not vendored"
+}

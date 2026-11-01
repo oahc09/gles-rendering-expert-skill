@@ -1,0 +1,54 @@
+{
+  "android_video_runtime": "NOT_RUN",
+  "protected_pipeline": "BLOCKED_NOT_IMPLEMENTED",
+  "commands": [
+    {
+      "argv": [
+        "/tmp/gles-java-toolchain/jdk-root/usr/lib/jvm/java-21-openjdk-amd64/bin/javac",
+        "-J-Djava.home=/tmp/gles-java-toolchain/jdk-root/usr/lib/jvm/java-21-openjdk-amd64",
+        "--release",
+        "17",
+        "-classpath",
+        "/tmp/gles-java-toolchain/sdk/android-35/android.jar",
+        "-d",
+        "/tmp/tmpe_p66eu7",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/android_cases/surfacevideo/src/main/java/org/example/gleslab/ExternalSurfaceActivity.java",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/android_cases/surfacevideo/src/main/java/org/example/gleslab/NativeHardwareBufferDisplay.java",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/android_cases/surfacevideo/src/main/java/org/example/gleslab/VideoInputGuard.java",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/benchmarks/texture_pipeline/VideoInputGuardTest.java"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Note: /workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/android_cases/surfacevideo/src/main/java/org/example/gleslab/ExternalSurfaceActivity.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n"
+    },
+    {
+      "argv": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/texture_pipeline/yuv_planes.frag"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "java",
+        "-classpath",
+        "/tmp/tmpe_p66eu7:/tmp/gles-java-toolchain/sdk/android-35/android.jar",
+        "org.example.gleslab.VideoInputGuardTest"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS 7 host guard assertions; GL/Android runtime NOT_RUN\n",
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "examples/android_cases/surfacevideo/src/main/java/org/example/gleslab/ExternalSurfaceActivity.java": "205da6d10462fca96c635c98a1329ab091f1d77f792cf83a60c3bfa02cb97684",
+    "examples/android_cases/surfacevideo/src/main/java/org/example/gleslab/NativeHardwareBufferDisplay.java": "2962c1246b5881b89249f7f6d157a7d31e1b423a6c315ed3a44844d4f765c68a",
+    "examples/android_cases/surfacevideo/src/main/java/org/example/gleslab/VideoInputGuard.java": "8e325997a757ba18251b76a4000c0ad3dbf4f8456dd9c9f8b6686099a15f1259",
+    "benchmarks/texture_pipeline/VideoInputGuardTest.java": "c1a610f081e89f791ae8c4a4b86159eadb6e5c2be3fe407a09924435ae53f7c9",
+    "examples/texture_pipeline/yuv_planes.frag": "d1be52a308e367b19724907e259c4f8c70e635da31e222c9a3f7ff313fb9160e"
+  },
+  "android_api_jar_sha256": "4566663c3876e022b4fa4ced8c8697c4ab1688267f090114fd92d027b32e619b",
+  "status": "PASS"
+}
