@@ -1,0 +1,919 @@
+[
+  {
+    "rule_id": "R001",
+    "title": "ReadBuffer default FBO",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadBuffer.xhtml",
+    "fields": [
+      "buffer"
+    ],
+    "positive_tests": [
+      "R001-P1",
+      "R001-P2"
+    ],
+    "negative_tests": [
+      "R001-N1",
+      "R001-N2"
+    ],
+    "fallback": "Select BACK or NONE on default FBO.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "ReadBuffer default FBO"
+  },
+  {
+    "rule_id": "R002",
+    "title": "ReadBuffer named FBO",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadBuffer.xhtml",
+    "fields": [
+      "buffer",
+      "max_attachments"
+    ],
+    "positive_tests": [
+      "R002-P1",
+      "R002-P2"
+    ],
+    "negative_tests": [
+      "R002-N1",
+      "R002-N2"
+    ],
+    "fallback": "Select NONE or an attachment index below queried limit.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "ReadBuffer named FBO"
+  },
+  {
+    "rule_id": "R003",
+    "title": "RGBA8 upload tuple",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexImage2D.xhtml",
+    "fields": [
+      "format",
+      "type"
+    ],
+    "positive_tests": [
+      "R003-P1"
+    ],
+    "negative_tests": [
+      "R003-N1",
+      "R003-N2"
+    ],
+    "fallback": "Use RGBA/UNSIGNED_BYTE; other formats require separate specification table validation.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "RGBA8 upload tuple"
+  },
+  {
+    "rule_id": "R004",
+    "title": "TexImage border",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexImage2D.xhtml",
+    "fields": [
+      "border"
+    ],
+    "positive_tests": [
+      "R004-P1"
+    ],
+    "negative_tests": [
+      "R004-N1",
+      "R004-N2"
+    ],
+    "fallback": "Use border zero.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "TexImage border"
+  },
+  {
+    "rule_id": "R005",
+    "title": "TexImage dimensions",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexImage2D.xhtml",
+    "fields": [
+      "width",
+      "height",
+      "limit"
+    ],
+    "positive_tests": [
+      "R005-P1",
+      "R005-P2"
+    ],
+    "negative_tests": [
+      "R005-N1",
+      "R005-N2"
+    ],
+    "fallback": "Use nonnegative dimensions within the level-specific queried limit.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "TexImage dimensions"
+  },
+  {
+    "rule_id": "R006",
+    "title": "WaitSync flags",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glWaitSync.xhtml",
+    "fields": [
+      "flags"
+    ],
+    "positive_tests": [
+      "R006-P1"
+    ],
+    "negative_tests": [
+      "R006-N1",
+      "R006-N2"
+    ],
+    "fallback": "Use flags=0; flushing is producer-side.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "WaitSync flags"
+  },
+  {
+    "rule_id": "R007",
+    "title": "WaitSync timeout",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glWaitSync.xhtml",
+    "fields": [
+      "timeout"
+    ],
+    "positive_tests": [
+      "R007-P1"
+    ],
+    "negative_tests": [
+      "R007-N1",
+      "R007-N2"
+    ],
+    "fallback": "Use TIMEOUT_IGNORED for server wait, not client timeout.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "WaitSync timeout"
+  },
+  {
+    "rule_id": "R008",
+    "title": "FenceSync condition",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFenceSync.xhtml",
+    "fields": [
+      "condition",
+      "flags"
+    ],
+    "positive_tests": [
+      "R008-P1"
+    ],
+    "negative_tests": [
+      "R008-N1",
+      "R008-N2"
+    ],
+    "fallback": "Use GPU_COMMANDS_COMPLETE, flags=0.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "FenceSync condition"
+  },
+  {
+    "rule_id": "R009",
+    "title": "Producer submission before cross-context wait",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL/specs/es/3.0/es_spec_3.0.pdf",
+    "fields": [
+      "shared",
+      "producer_flush",
+      "consumer_wait"
+    ],
+    "positive_tests": [
+      "R009-P1"
+    ],
+    "negative_tests": [
+      "R009-N1",
+      "R009-N2"
+    ],
+    "fallback": "Share objects, publish fence after producer flush; wait before consumer use.",
+    "source_file": "references/rules/egl-and-context.md",
+    "source_anchor": "Producer submission before cross-context wait"
+  },
+  {
+    "rule_id": "R010",
+    "title": "GLSL version capability",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.pdf",
+    "fields": [
+      "gles",
+      "glsl"
+    ],
+    "positive_tests": [
+      "R010-P1",
+      "R010-P2"
+    ],
+    "negative_tests": [
+      "R010-N1",
+      "R010-N2"
+    ],
+    "fallback": "Compile the shader dialect supported by the current context.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "GLSL version capability"
+  },
+  {
+    "rule_id": "R011",
+    "title": "Compute core capability",
+    "gles_min_version": "3.1",
+    "glsl_version": "310 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.1/html/glDispatchCompute.xhtml",
+    "fields": [
+      "gles",
+      "uses_core_compute"
+    ],
+    "positive_tests": [
+      "R011-P1",
+      "R011-P2"
+    ],
+    "negative_tests": [
+      "R011-N1",
+      "R011-N2"
+    ],
+    "fallback": "Use CPU or fragment processing without GLES3.1.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Compute core capability"
+  },
+  {
+    "rule_id": "R012",
+    "title": "Geometry core capability",
+    "gles_min_version": "3.2",
+    "glsl_version": "320 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+    "fields": [
+      "gles",
+      "uses_core_geometry"
+    ],
+    "positive_tests": [
+      "R012-P1",
+      "R012-P2"
+    ],
+    "negative_tests": [
+      "R012-N1",
+      "R012-N2"
+    ],
+    "fallback": "Use CPU/instancing, or explicitly validated extension path.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Geometry core capability"
+  },
+  {
+    "rule_id": "R013",
+    "title": "Uniform block binding alignment",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBufferRange.xhtml",
+    "fields": [
+      "offset",
+      "alignment"
+    ],
+    "positive_tests": [
+      "R013-P1",
+      "R013-P2"
+    ],
+    "negative_tests": [
+      "R013-N1",
+      "R013-N2"
+    ],
+    "fallback": "Round UBO offset to GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Uniform block binding alignment"
+  },
+  {
+    "rule_id": "R014",
+    "title": "Pixel unpack alignment",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPixelStorei.xhtml",
+    "fields": [
+      "alignment"
+    ],
+    "positive_tests": [
+      "R014-P1",
+      "R014-P2"
+    ],
+    "negative_tests": [
+      "R014-N1",
+      "R014-N2"
+    ],
+    "fallback": "Choose 1,2,4,8 and separately validate row stride.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Pixel unpack alignment"
+  },
+  {
+    "rule_id": "R015",
+    "title": "MapBufferRange access",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMapBufferRange.xhtml",
+    "fields": [
+      "read",
+      "write",
+      "invalidate"
+    ],
+    "positive_tests": [
+      "R015-P1",
+      "R015-P2"
+    ],
+    "negative_tests": [
+      "R015-N1",
+      "R015-N2"
+    ],
+    "fallback": "At least READ or WRITE; READ cannot combine with invalidate flags.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "MapBufferRange access"
+  },
+  {
+    "rule_id": "R016",
+    "title": "Invalidate named framebuffer enums",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glInvalidateFramebuffer.xhtml",
+    "fields": [
+      "attachment"
+    ],
+    "positive_tests": [
+      "R016-P1",
+      "R016-P2"
+    ],
+    "negative_tests": [
+      "R016-N1",
+      "R016-N2"
+    ],
+    "fallback": "Use *_ATTACHMENT enums on named FBOs.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Invalidate named framebuffer enums"
+  },
+  {
+    "rule_id": "R017",
+    "title": "Invalidate default framebuffer enums",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glInvalidateFramebuffer.xhtml",
+    "fields": [
+      "attachment"
+    ],
+    "positive_tests": [
+      "R017-P1",
+      "R017-P2"
+    ],
+    "negative_tests": [
+      "R017-N1",
+      "R017-N2"
+    ],
+    "fallback": "Use COLOR/DEPTH/STENCIL for default FBO.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Invalidate default framebuffer enums"
+  },
+  {
+    "rule_id": "R018",
+    "title": "Preserve live attachments",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glInvalidateFramebuffer.xhtml",
+    "fields": [
+      "future_read",
+      "invalidate"
+    ],
+    "positive_tests": [
+      "R018-P1",
+      "R018-P2"
+    ],
+    "negative_tests": [
+      "R018-N1"
+    ],
+    "fallback": "Invalidate only after the final consumer; invalidated contents are undefined.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Preserve live attachments"
+  },
+  {
+    "rule_id": "R019",
+    "title": "MSAA resolve filter",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlitFramebuffer.xhtml",
+    "fields": [
+      "multisample",
+      "filter"
+    ],
+    "positive_tests": [
+      "R019-P1",
+      "R019-P2"
+    ],
+    "negative_tests": [
+      "R019-N1",
+      "R019-N2"
+    ],
+    "fallback": "Use NEAREST for multisample resolves; separately check rectangle/format restrictions.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "MSAA resolve filter"
+  },
+  {
+    "rule_id": "R020",
+    "title": "Framebuffer completeness",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCheckFramebufferStatus.xhtml",
+    "fields": [
+      "complete",
+      "draw"
+    ],
+    "positive_tests": [
+      "R020-P1",
+      "R020-P2"
+    ],
+    "negative_tests": [
+      "R020-N1"
+    ],
+    "fallback": "Check completeness before render/resolve; rebuild attachments or use fallback.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Framebuffer completeness"
+  },
+  {
+    "rule_id": "R021",
+    "title": "Extension dispatch guard",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/EGL/extensions/KHR/EGL_KHR_image_base.txt",
+    "fields": [
+      "advertised",
+      "entrypoint",
+      "call"
+    ],
+    "positive_tests": [
+      "R021-P1",
+      "R021-P2"
+    ],
+    "negative_tests": [
+      "R021-N1",
+      "R021-N2"
+    ],
+    "fallback": "Require extension advertisement plus correct function pointer before extension call.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Extension dispatch guard"
+  },
+  {
+    "rule_id": "R022",
+    "title": "EGL context loss recovery",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+    "fields": [
+      "error",
+      "action"
+    ],
+    "positive_tests": [
+      "R022-P1",
+      "R022-P2"
+    ],
+    "negative_tests": [
+      "R022-N1",
+      "R022-N2"
+    ],
+    "fallback": "Separate surface recreation from context/share-group resource rebuild.",
+    "source_file": "references/rules/egl-and-context.md",
+    "source_anchor": "EGL context loss recovery"
+  },
+  {
+    "rule_id": "R023",
+    "title": "Native app glue real commands",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://android.googlesource.com/platform/ndk/+/master/sources/android/native_app_glue/android_native_app_glue.h",
+    "fields": [
+      "event"
+    ],
+    "positive_tests": [
+      "R023-P1",
+      "R023-P2"
+    ],
+    "negative_tests": [
+      "R023-N1",
+      "R023-N2"
+    ],
+    "fallback": "Inspect EGL errors; native_app_glue has no context-lost command.",
+    "source_file": "references/rules/egl-and-context.md",
+    "source_anchor": "Native app glue real commands"
+  },
+  {
+    "rule_id": "R024",
+    "title": "PBO upload mapped state",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexSubImage2D.xhtml",
+    "fields": [
+      "pbo_bound",
+      "mapped"
+    ],
+    "positive_tests": [
+      "R024-P1",
+      "R024-P2"
+    ],
+    "negative_tests": [
+      "R024-N1"
+    ],
+    "fallback": "Unmap bound unpack buffer before upload; validate size/offset.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "PBO upload mapped state"
+  },
+  {
+    "rule_id": "R025",
+    "title": "Instanced attribute divisor",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribDivisor.xhtml",
+    "fields": [
+      "index",
+      "max_attributes"
+    ],
+    "positive_tests": [
+      "R025-P1",
+      "R025-P2"
+    ],
+    "negative_tests": [
+      "R025-N1",
+      "R025-N2"
+    ],
+    "fallback": "Use index below MAX_VERTEX_ATTRIBS.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Instanced attribute divisor"
+  },
+  {
+    "rule_id": "R026",
+    "title": "Branchless two-fetch performance claim",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "Measure on exact GPU/driver; not universal",
+    "severity": "warning",
+    "normative_level": "CONDITIONAL",
+    "normative_source": "https://developer.arm.com/documentation/102643/latest/",
+    "fields": [
+      "two_fetches",
+      "claims_faster",
+      "measured"
+    ],
+    "positive_tests": [
+      "R026-P1",
+      "R026-P2"
+    ],
+    "negative_tests": [
+      "R026-N1"
+    ],
+    "fallback": "Benchmark coherent branch vs two texture samples; no unconditional faster claim.",
+    "source_file": "references/rules/glsl-es-optimization.md",
+    "source_anchor": "Branchless two-fetch performance claim"
+  },
+  {
+    "rule_id": "R027",
+    "title": "Device performance evidence",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "Measure on exact GPU/driver; not universal",
+    "severity": "warning",
+    "normative_level": "CONDITIONAL",
+    "normative_source": "https://developer.android.com/agi",
+    "fields": [
+      "claims_bandwidth_win",
+      "hardware",
+      "counters"
+    ],
+    "positive_tests": [
+      "R027-P1",
+      "R027-P2"
+    ],
+    "negative_tests": [
+      "R027-N1",
+      "R027-N2"
+    ],
+    "fallback": "Report unmeasured or BLOCKED_BY_HARDWARE, not inferred GPU win.",
+    "source_file": "references/rules/profiling-tools.md",
+    "source_anchor": "Device performance evidence"
+  },
+  {
+    "rule_id": "R028",
+    "title": "External ESSL3 texture extension",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL/extensions/OES/OES_EGL_image_external_essl3.txt",
+    "fields": [
+      "essl",
+      "external",
+      "essl3_extension"
+    ],
+    "positive_tests": [
+      "R028-P1",
+      "R028-P2"
+    ],
+    "negative_tests": [
+      "R028-N1",
+      "R028-N2"
+    ],
+    "fallback": "Require OES_EGL_image_external_essl3 for ESSL3 external sampler; otherwise copy/convert.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "External ESSL3 texture extension"
+  },
+  {
+    "rule_id": "R029",
+    "title": "Fragment float precision",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf",
+    "fields": [
+      "uses_float",
+      "declared_precision"
+    ],
+    "positive_tests": [
+      "R029-P1",
+      "R029-P2"
+    ],
+    "negative_tests": [
+      "R029-N1"
+    ],
+    "fallback": "Declare default or per-variable float precision in fragment shaders.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Fragment float precision"
+  },
+  {
+    "rule_id": "R030",
+    "title": "Texture feedback loop",
+    "gles_min_version": "3.0",
+    "glsl_version": "300 es",
+    "required_extensions": [],
+    "platform": [
+      "Android",
+      "ANGLE",
+      "Embedded Linux"
+    ],
+    "vendor_conditions": "All conforming implementations",
+    "severity": "error",
+    "normative_level": "MUST",
+    "normative_source": "https://registry.khronos.org/OpenGL/specs/es/3.0/es_spec_3.0.pdf",
+    "fields": [
+      "same_image_sampled_written",
+      "draw"
+    ],
+    "positive_tests": [
+      "R030-P1",
+      "R030-P2"
+    ],
+    "negative_tests": [
+      "R030-N1"
+    ],
+    "fallback": "Ping-pong separate images; do not rely on undefined feedback results.",
+    "source_file": "references/rules/gles-api-standards.md",
+    "source_anchor": "Texture feedback loop"
+  }
+]

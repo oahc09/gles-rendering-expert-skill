@@ -1,0 +1,13 @@
+{
+  "suite": "structured-rule-contracts",
+  "scope": "normalized inputs only; not source analysis, compilation, runtime or model behavior",
+  "rules": 30,
+  "cases": 108,
+  "passed": 108,
+  "failed": [],
+  "sha256": {
+    "benchmarks/rules/catalog.json": "567f697e2716f10ff071dedffb9a38265ce5f9571dd4d45cea9a3231e67a6a91",
+    "benchmarks/rules/cases.json": "aeedec757a6ef55695f645a8d9ce9de20efc799805746a5625e8f873695fdf07",
+    "tools/validate_rules.py": "f9aced1e0506a98cbb58eca17cb0ce3f0b14c2a02101612c06e55486ed01ee22"
+  }
+}
