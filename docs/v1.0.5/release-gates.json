@@ -1,0 +1,91 @@
+{
+  "target_version": "1.0.5",
+  "metadata_version": "1.0.2",
+  "release_ready": false,
+  "release_authorized": false,
+  "prior_release_gate": "docs/v1.0.4-release-gates.json",
+  "accepted_limitations": [],
+  "predecessor_blockers": [
+    "v1.0.3 and v1.0.4 physical-device/provider gates remain unresolved"
+  ],
+  "work_packages": {
+    "W0": {
+      "status": "PASS",
+      "implementation": [
+        "docs/v1.0.5/baseline-and-delta.md"
+      ],
+      "acceptance": "Actual merged main and predecessor evidence audited.",
+      "remaining": "Prior release blockers remain dependencies."
+    },
+    "W1": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "benchmarks/longrun",
+        "references/playbooks/thermal-and-power.md"
+      ],
+      "acceptance": "Capture/analyzer and synthetic 600/1800-second timelines; actual host iterations separately recorded.",
+      "remaining": "Physical cold/steady10/30min thermal/frequency/frame/power captures absent."
+    },
+    "W2": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/quality_policy",
+        "references/playbooks/adaptive-quality.md"
+      ],
+      "acceptance": "Deterministic hysteresis, floor, disabled/background/gap handling and capability/visual approval gates.",
+      "remaining": "Whole-preset per-scene device validation; scale-only visual acceptance is not full-preset approval."
+    },
+    "W3": {
+      "status": "PARTIAL",
+      "implementation": [
+        "examples/precision",
+        "references/playbooks/precision-and-color.md"
+      ],
+      "acceptance": "Actual numeric oracle and precision/color software GL experiments; target compilation separately recorded.",
+      "remaining": "Physical precision/performance validation across driver/backend families absent."
+    },
+    "W4": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "benchmarks/resource_pressure",
+        "examples/resource_pressure"
+      ],
+      "acceptance": "Real host100scene resource/fence/upload/context-generation stress; owned-object estimates not VRAM.",
+      "remaining": "RealAndroidloss/AHB/external/native-fence timing and physical delayed-completion validation absent."
+    },
+    "W5": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/traces/sql",
+        "references/playbooks/trace-sql.md"
+      ],
+      "acceptance": "Schema-probed SQL, fixtures and actual Perfetto processor synthetic trace execution.",
+      "remaining": "Real licensed device traces and ground-truth domain review pending."
+    },
+    "W6": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/visual_quality"
+      ],
+      "acceptance": "24frozen golden images over8scenes, region/multiscale/temporal regressions and scale rejection.",
+      "remaining": "Device color-calibration/art review and measurable physical performance/power Pareto evidence absent."
+    },
+    "W7": {
+      "status": "PARTIAL",
+      "implementation": [
+        "references/research/2026-11-01-v105"
+      ],
+      "acceptance": "Date-grounded official evidence ledger and audited pipeline.",
+      "remaining": "X unresolved evidence remainsUNVERIFIED; no automaticnormative promotion."
+    },
+    "W8": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "implementation": [
+        "benchmarks/agent/cases-v1.0.5.json",
+        "tools/check_release_gates.py"
+      ],
+      "acceptance": "Original88 preserved+24new labeled tasks and explicit layered candidate gate.",
+      "remaining": "Realpaired model evaluation and physical layers absent; no releaseauthorization/CI dispatch."
+    }
+  }
+}

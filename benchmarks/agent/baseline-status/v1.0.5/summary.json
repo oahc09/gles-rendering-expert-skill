@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "BLOCKED_BY_PROVIDER",
+  "case_count": 112,
+  "case_source_sha256": "d6ba47c2f8f4de34da5513ca9ded8a48ac5c9c992cd0ab4993fe3e0684fd015d",
+  "skill_sha256": "9bba684f17bc6c9f9f6b73506e7e643b71a0fd1f7cf065ef934c72f91f1a81a4",
+  "provider_label": null,
+  "synthetic_infrastructure_test": false,
+  "results": [],
+  "model_quality": "NOT_EVALUATED",
+  "started_unix": 1793526211.2533717
+}

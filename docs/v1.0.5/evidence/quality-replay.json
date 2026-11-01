@@ -1,0 +1,1526 @@
+{
+  "source_sha256": "2dfac51b2cc817b0ad3ff52a5caa2b080efc28291b4f1fd4c23d590e1cefaebd",
+  "scope": "deterministic recommendation replay, not GPU or device performance",
+  "decisions": [
+    {
+      "t_s": 0.0,
+      "state": "PRESSURED",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 1.0,
+      "state": "PRESSURED",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 2.0,
+      "state": "PRESSURED",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 3.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": true,
+      "reason": "sustained pressure",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 4.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 5.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 6.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 7.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 8.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 9.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 10.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 11.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 12.0,
+      "state": "DEGRADED",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 13.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": true,
+      "reason": "sustained pressure",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 14.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 15.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 16.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 17.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 18.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 19.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 20.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 21.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 22.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 23.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 24.0,
+      "state": "DEGRADED",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 25.0,
+      "state": "RECOVERING",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 26.0,
+      "state": "RECOVERING",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 27.0,
+      "state": "RECOVERING",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 28.0,
+      "state": "RECOVERING",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 29.0,
+      "state": "RECOVERING",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 30.0,
+      "state": "RECOVERING",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 31.0,
+      "state": "RECOVERING",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 32.0,
+      "state": "RECOVERING",
+      "level": 2,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.7,
+        "msaa": 1,
+        "shadow_size": 512,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 600,
+        "lod_bias": 2,
+        "anisotropy": 1
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 33.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": true,
+      "reason": "stable recovery",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 34.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 35.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 36.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 37.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 38.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 39.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 40.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 41.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 42.0,
+      "state": "RECOVERING",
+      "level": 1,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 0.85,
+        "msaa": 2,
+        "shadow_size": 1024,
+        "postprocess": [
+          "tone_map"
+        ],
+        "particle_budget": 1200,
+        "lod_bias": 1,
+        "anisotropy": 4
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 43.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": true,
+      "reason": "stable recovery",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 44.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 45.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 46.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 47.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 48.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 49.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 50.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 51.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 52.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 53.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 54.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 55.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 56.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 57.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 58.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    },
+    {
+      "t_s": 59.0,
+      "state": "NORMAL",
+      "level": 0,
+      "changed": false,
+      "reason": "hold",
+      "backend": "native_gles",
+      "recommendation": {
+        "render_scale": 1.0,
+        "msaa": 4,
+        "shadow_size": 2048,
+        "postprocess": [
+          "tone_map",
+          "bloom"
+        ],
+        "particle_budget": 2000,
+        "lod_bias": 0,
+        "anisotropy": 8
+      },
+      "enabled": true,
+      "capability_missing": [],
+      "visual_acceptance": "UNVERIFIED",
+      "may_apply": false,
+      "operating_system_changes": false,
+      "performance_claim": "NOT_MEASURED"
+    }
+  ]
+}

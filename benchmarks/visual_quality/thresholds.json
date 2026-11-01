@@ -1,0 +1,17 @@
+{
+  "schema": "NumericErrorSpec-1",
+  "reference": "Frozen highp rendered RGB8 sequences; numeric accumulation also has CPU IEEE binary32/binary16 oracle",
+  "domain": "encoded RGB8 and encoded Rec709-weighted luma, not CIEDE2000 or HDR nits",
+  "factors": [1, 2, 4],
+  "multiscale": {"1": {"mae_max": 1.5, "ssim_min": 0.985}, "2": {"mae_max": 1.25, "ssim_min": 0.99}, "4": {"mae_max": 1.0, "ssim_min": 0.99}},
+  "regions": {
+    "global": {"mae_max": 1.5, "channel_tolerance": 8, "fraction_max": 0.02, "max_error": 48},
+    "edge": {"mae_max": 3.0, "channel_tolerance": 16, "fraction_max": 0.03, "max_error": 48},
+    "shadow": {"mae_max": 1.0, "channel_tolerance": 5, "fraction_max": 0.02, "max_error": 32},
+    "glow": {"mae_max": 2.0, "channel_tolerance": 12, "fraction_max": 0.02, "max_error": 48},
+    "transparent": {"mae_max": 1.0, "channel_tolerance": 6, "fraction_max": 0.02, "max_error": 32}
+  },
+  "temporal_delta_mae_max": 1.5,
+  "numeric_accumulation": {"initial": 16.0, "increment": 0.001, "steps": 1024, "highp_absolute_error_max": 0.002, "binary16_absolute_error_max": 0.0},
+  "policy": "Conservative engineering tolerances, not cross-vendor artistic approval. Any failed region or scale rejects automatic optimization. No flicker waiver."
+}

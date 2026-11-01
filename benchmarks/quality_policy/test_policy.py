@@ -40,4 +40,16 @@ class PolicyTests(unittest.TestCase):
     def test_temperature_rise_blocks_recovery(self):
         rows=[s(i,30) for i in range(20)]+[s(i,8,thermal_trend_c_per_min=1) for i in range(20,60)]
         self.assertEqual(self.run_samples(rows)[-1]['level'],2)
+    def test_invalid_capabilities_atomic(self):
+        p=QualityPolicy();before=dict(p.__dict__)
+        with self.assertRaises(ValueError):p.step(s(0,30),capabilities={'msaa_samples':'invalid'})
+        self.assertEqual(p.__dict__,before)
+        self.assertEqual(p.step(s(0,30),capabilities=CAPS)['state'],'PRESSURED')
+    def test_output_does_not_mutate_other_instances(self):
+        first=QualityPolicy().step(s(0));first['recommendation']['postprocess'].clear()
+        self.assertEqual(QualityPolicy().step(s(0))['recommendation']['postprocess'],['tone_map','bloom'])
+    def test_invalid_foreground_is_atomic(self):
+        p=QualityPolicy()
+        with self.assertRaises(ValueError):p.step(s(0,foreground='false'))
+        self.assertEqual(p.last_t,-1)
 if __name__=='__main__':unittest.main()

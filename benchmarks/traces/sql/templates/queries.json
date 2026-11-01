@@ -1,0 +1,155 @@
+{
+  "render_thread": {
+    "requires": {
+      "slice": [
+        "id",
+        "ts",
+        "dur",
+        "name",
+        "track_id"
+      ],
+      "thread_track": [
+        "id",
+        "utid"
+      ],
+      "thread": [
+        "utid",
+        "name"
+      ]
+    },
+    "meaning": "Instrumented RenderThread wall-duration slices; not CPU running time.",
+    "file": "render_thread.sql"
+  },
+  "cpu_sched": {
+    "requires": {
+      "sched": [
+        "id",
+        "ts",
+        "dur",
+        "utid",
+        "cpu"
+      ],
+      "thread": [
+        "utid",
+        "name"
+      ]
+    },
+    "meaning": "Scheduled running intervals; CPU availability alone does not prove submission bottleneck.",
+    "file": "cpu_sched.sql"
+  },
+  "gpu_work": {
+    "requires": {
+      "gpu_slice": [
+        "id",
+        "ts",
+        "dur",
+        "name"
+      ]
+    },
+    "meaning": "GPU work slices when actually collected; no vendor-private bandwidth inference.",
+    "file": "gpu_work.sql"
+  },
+  "frequency": {
+    "requires": {
+      "counter": [
+        "id",
+        "ts",
+        "value",
+        "track_id"
+      ],
+      "counter_track": [
+        "id",
+        "name",
+        "unit"
+      ]
+    },
+    "meaning": "Opt-in application-exported frequency track; unit must be MHz. No automatic private counter access.",
+    "file": "frequency.sql"
+  },
+  "temperature": {
+    "requires": {
+      "counter": [
+        "id",
+        "ts",
+        "value",
+        "track_id"
+      ],
+      "counter_track": [
+        "id",
+        "name",
+        "unit"
+      ]
+    },
+    "meaning": "Opt-in application-exported temperature track; unit must be C and sensor source documented.",
+    "file": "temperature.sql"
+  },
+  "surfaceflinger": {
+    "requires": {
+      "slice": [
+        "id",
+        "ts",
+        "dur",
+        "name",
+        "track_id"
+      ],
+      "thread_track": [
+        "id",
+        "utid"
+      ],
+      "thread": [
+        "utid",
+        "name"
+      ]
+    },
+    "meaning": "Compositor thread slices; not actual presentation unless instrumentation names establish that.",
+    "file": "surfaceflinger.sql"
+  },
+  "swap_wait": {
+    "requires": {
+      "slice": [
+        "id",
+        "ts",
+        "dur",
+        "name"
+      ]
+    },
+    "meaning": "Explicit app bracket around swap; blocking may reflect pacing, not GPU saturation.",
+    "file": "swap_wait.sql"
+  },
+  "shader_compile": {
+    "requires": {
+      "slice": [
+        "id",
+        "ts",
+        "dur",
+        "name"
+      ]
+    },
+    "meaning": "App-instrumented compile/link wall duration; GPU compilation internals are not inferred.",
+    "file": "shader_compile.sql"
+  },
+  "frame": {
+    "requires": {
+      "slice": [
+        "id",
+        "ts",
+        "dur",
+        "name"
+      ]
+    },
+    "meaning": "App-defined frame wall intervals, not display refresh or presented frames.",
+    "file": "frame.sql"
+  },
+  "cpu_submit": {
+    "requires": {
+      "slice": [
+        "id",
+        "ts",
+        "dur",
+        "name"
+      ]
+    },
+    "meaning": "Explicit submit bracket; includes waiting unless independently excluded.",
+    "file": "cpu_submit.sql"
+  }
+}

@@ -1,0 +1,836 @@
+{
+  "images": {
+    "P01-0.ppm": {
+      "sha256": "d38283330433c5a0d68888c96d58983ce22ea757f76e773c8107781463643792",
+      "capture": {
+        "scene": "P01",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P01",
+          "/tmp/gles-visual-final-create/P01-0.ppm",
+          "96",
+          "1",
+          "10000.0",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "d38283330433c5a0d68888c96d58983ce22ea757f76e773c8107781463643792"
+      }
+    },
+    "P01-1.ppm": {
+      "sha256": "c03e93189816aad3aa28875e4f9020ae55263e77d89f1827b7b48ae342629ae6",
+      "capture": {
+        "scene": "P01",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.125,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P01",
+          "/tmp/gles-visual-final-create/P01-1.ppm",
+          "96",
+          "1",
+          "10000.125",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "c03e93189816aad3aa28875e4f9020ae55263e77d89f1827b7b48ae342629ae6"
+      }
+    },
+    "P01-2.ppm": {
+      "sha256": "8493c864d0f2f58a9d6f357e589fcd5115157f8c61a510f62a8c3421022b4668",
+      "capture": {
+        "scene": "P01",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.25,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P01",
+          "/tmp/gles-visual-final-create/P01-2.ppm",
+          "96",
+          "1",
+          "10000.25",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "8493c864d0f2f58a9d6f357e589fcd5115157f8c61a510f62a8c3421022b4668"
+      }
+    },
+    "P02-0.ppm": {
+      "sha256": "96b8a2e071230d504a00cd6429acac1160841e45a06135405a3efd43616e0693",
+      "capture": {
+        "scene": "P02",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P02",
+          "/tmp/gles-visual-final-create/P02-0.ppm",
+          "96",
+          "1",
+          "10000.0",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "96b8a2e071230d504a00cd6429acac1160841e45a06135405a3efd43616e0693"
+      }
+    },
+    "P02-1.ppm": {
+      "sha256": "96b8a2e071230d504a00cd6429acac1160841e45a06135405a3efd43616e0693",
+      "capture": {
+        "scene": "P02",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.125,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P02",
+          "/tmp/gles-visual-final-create/P02-1.ppm",
+          "96",
+          "1",
+          "10000.125",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "96b8a2e071230d504a00cd6429acac1160841e45a06135405a3efd43616e0693"
+      }
+    },
+    "P02-2.ppm": {
+      "sha256": "96b8a2e071230d504a00cd6429acac1160841e45a06135405a3efd43616e0693",
+      "capture": {
+        "scene": "P02",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.25,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P02",
+          "/tmp/gles-visual-final-create/P02-2.ppm",
+          "96",
+          "1",
+          "10000.25",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "96b8a2e071230d504a00cd6429acac1160841e45a06135405a3efd43616e0693"
+      }
+    },
+    "P03-0.ppm": {
+      "sha256": "4abdb54cddcb9c65949e6da1b9d52a0c5e3ec3acb0ea9019b2f118685165beca",
+      "capture": {
+        "scene": "P03",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P03",
+          "/tmp/gles-visual-final-create/P03-0.ppm",
+          "96",
+          "1",
+          "10000.0",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "4abdb54cddcb9c65949e6da1b9d52a0c5e3ec3acb0ea9019b2f118685165beca"
+      }
+    },
+    "P03-1.ppm": {
+      "sha256": "82f2a26ac03bea9795abe72d2182cfb92775e0f12f4fdab81969d562f4854cdb",
+      "capture": {
+        "scene": "P03",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.125,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P03",
+          "/tmp/gles-visual-final-create/P03-1.ppm",
+          "96",
+          "1",
+          "10000.125",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "82f2a26ac03bea9795abe72d2182cfb92775e0f12f4fdab81969d562f4854cdb"
+      }
+    },
+    "P03-2.ppm": {
+      "sha256": "2fb7c9bdd4ef8294a6a7084a35e22050e03cc820fedbf36117952dcecfaab398",
+      "capture": {
+        "scene": "P03",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.25,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P03",
+          "/tmp/gles-visual-final-create/P03-2.ppm",
+          "96",
+          "1",
+          "10000.25",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "2fb7c9bdd4ef8294a6a7084a35e22050e03cc820fedbf36117952dcecfaab398"
+      }
+    },
+    "P04-0.ppm": {
+      "sha256": "d0096b9aeba0c2582c76e0ab8a407a67c771f1f539e9d3346922a58177f1be8d",
+      "capture": {
+        "scene": "P04",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P04",
+          "/tmp/gles-visual-final-create/P04-0.ppm",
+          "96",
+          "1",
+          "10000.0",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "d0096b9aeba0c2582c76e0ab8a407a67c771f1f539e9d3346922a58177f1be8d"
+      }
+    },
+    "P04-1.ppm": {
+      "sha256": "d0096b9aeba0c2582c76e0ab8a407a67c771f1f539e9d3346922a58177f1be8d",
+      "capture": {
+        "scene": "P04",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.125,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P04",
+          "/tmp/gles-visual-final-create/P04-1.ppm",
+          "96",
+          "1",
+          "10000.125",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "d0096b9aeba0c2582c76e0ab8a407a67c771f1f539e9d3346922a58177f1be8d"
+      }
+    },
+    "P04-2.ppm": {
+      "sha256": "d0096b9aeba0c2582c76e0ab8a407a67c771f1f539e9d3346922a58177f1be8d",
+      "capture": {
+        "scene": "P04",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.25,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P04",
+          "/tmp/gles-visual-final-create/P04-2.ppm",
+          "96",
+          "1",
+          "10000.25",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "d0096b9aeba0c2582c76e0ab8a407a67c771f1f539e9d3346922a58177f1be8d"
+      }
+    },
+    "P05-0.ppm": {
+      "sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea",
+      "capture": {
+        "scene": "P05",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P05",
+          "/tmp/gles-visual-final-create/P05-0.ppm",
+          "96",
+          "1",
+          "10000.0",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea"
+      }
+    },
+    "P05-1.ppm": {
+      "sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea",
+      "capture": {
+        "scene": "P05",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.125,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P05",
+          "/tmp/gles-visual-final-create/P05-1.ppm",
+          "96",
+          "1",
+          "10000.125",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea"
+      }
+    },
+    "P05-2.ppm": {
+      "sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea",
+      "capture": {
+        "scene": "P05",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.25,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P05",
+          "/tmp/gles-visual-final-create/P05-2.ppm",
+          "96",
+          "1",
+          "10000.25",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea"
+      }
+    },
+    "P06-0.ppm": {
+      "sha256": "f0347517dbdfc1b09f8bba5fd8ed44c99067f091827f05be73eda9d4ab7a0bb6",
+      "capture": {
+        "scene": "P06",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P06",
+          "/tmp/gles-visual-final-create/P06-0.ppm",
+          "96",
+          "1",
+          "10000.0",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "f0347517dbdfc1b09f8bba5fd8ed44c99067f091827f05be73eda9d4ab7a0bb6"
+      }
+    },
+    "P06-1.ppm": {
+      "sha256": "f0347517dbdfc1b09f8bba5fd8ed44c99067f091827f05be73eda9d4ab7a0bb6",
+      "capture": {
+        "scene": "P06",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.125,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P06",
+          "/tmp/gles-visual-final-create/P06-1.ppm",
+          "96",
+          "1",
+          "10000.125",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "f0347517dbdfc1b09f8bba5fd8ed44c99067f091827f05be73eda9d4ab7a0bb6"
+      }
+    },
+    "P06-2.ppm": {
+      "sha256": "f0347517dbdfc1b09f8bba5fd8ed44c99067f091827f05be73eda9d4ab7a0bb6",
+      "capture": {
+        "scene": "P06",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.25,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P06",
+          "/tmp/gles-visual-final-create/P06-2.ppm",
+          "96",
+          "1",
+          "10000.25",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "f0347517dbdfc1b09f8bba5fd8ed44c99067f091827f05be73eda9d4ab7a0bb6"
+      }
+    },
+    "P07-0.ppm": {
+      "sha256": "97e8d5236051f3026963ea2aea636d33bb5005aa530bb41699c483181e20ecfd",
+      "capture": {
+        "scene": "P07",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P07",
+          "/tmp/gles-visual-final-create/P07-0.ppm",
+          "96",
+          "1",
+          "10000.0",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "97e8d5236051f3026963ea2aea636d33bb5005aa530bb41699c483181e20ecfd"
+      }
+    },
+    "P07-1.ppm": {
+      "sha256": "97e8d5236051f3026963ea2aea636d33bb5005aa530bb41699c483181e20ecfd",
+      "capture": {
+        "scene": "P07",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.125,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P07",
+          "/tmp/gles-visual-final-create/P07-1.ppm",
+          "96",
+          "1",
+          "10000.125",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "97e8d5236051f3026963ea2aea636d33bb5005aa530bb41699c483181e20ecfd"
+      }
+    },
+    "P07-2.ppm": {
+      "sha256": "97e8d5236051f3026963ea2aea636d33bb5005aa530bb41699c483181e20ecfd",
+      "capture": {
+        "scene": "P07",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.25,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P07",
+          "/tmp/gles-visual-final-create/P07-2.ppm",
+          "96",
+          "1",
+          "10000.25",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "97e8d5236051f3026963ea2aea636d33bb5005aa530bb41699c483181e20ecfd"
+      }
+    },
+    "P08-0.ppm": {
+      "sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea",
+      "capture": {
+        "scene": "P08",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P08",
+          "/tmp/gles-visual-final-create/P08-0.ppm",
+          "96",
+          "1",
+          "10000.0",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea"
+      }
+    },
+    "P08-1.ppm": {
+      "sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea",
+      "capture": {
+        "scene": "P08",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.125,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P08",
+          "/tmp/gles-visual-final-create/P08-1.ppm",
+          "96",
+          "1",
+          "10000.125",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea"
+      }
+    },
+    "P08-2.ppm": {
+      "sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea",
+      "capture": {
+        "scene": "P08",
+        "mode": "baseline",
+        "scale": 1,
+        "time_seconds": 10000.25,
+        "seed": 1337,
+        "internal_size": 96,
+        "output_size": 96,
+        "mediump_range": [
+          15,
+          15
+        ],
+        "mediump_precision_bits": 10,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "numeric_highp": 17.0234375,
+        "numeric_binary16": 16,
+        "numeric_mediump": 16,
+        "device_performance": "NOT_MEASURED",
+        "command": [
+          "/tmp/gles-precision-lab/precision-lab",
+          "P08",
+          "/tmp/gles-visual-final-create/P08-2.ppm",
+          "96",
+          "1",
+          "10000.25",
+          "baseline"
+        ],
+        "stderr": "",
+        "image_sha256": "b3302e6d82f82122c1c9450ad0ab24edcc099438cce138af020325f401d03dea"
+      }
+    }
+  },
+  "created_at": "2026-11-01T09:37:27.157533+00:00",
+  "scope": "Mesa software reference, not universal driver goldens",
+  "scene_source_sha256": "06462939945955c7c8f79c97a2e04c63cca1e0d602cfbb8244bae51fad980199",
+  "shared_renderer_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+  "seed": 1337,
+  "times_seconds": [
+    10000.0,
+    10000.125,
+    10000.25
+  ],
+  "color_space": "encoded RGB8; HDR scene tone mapped to SDR; no WCG/display certification",
+  "compression": "none",
+  "orientation": "top-to-bottom",
+  "resource_hashes": {
+    "thresholds": "80332b5d4347a7a8c0875134b4ee5680736777c2ee2fcb9c3d1c0bf893f8a995"
+  }
+}

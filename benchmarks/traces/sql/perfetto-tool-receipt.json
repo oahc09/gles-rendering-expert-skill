@@ -1,0 +1,13 @@
+{
+  "release": "v59.1",
+  "published_at": "2026-10-27T02:09:05Z",
+  "metadata_url": "https://api.github.com/repos/google/perfetto/releases/tags/v59.1",
+  "asset_url": "https://github.com/google/perfetto/releases/download/v59.1/linux-amd64.zip",
+  "official_asset_digest": "sha256:7deb8c2572c6ae7ec80cd719d388041079827b0c44a1659694d5d88faa4f501e",
+  "download_sha256": "7deb8c2572c6ae7ec80cd719d388041079827b0c44a1659694d5d88faa4f501e",
+  "binary_sha256": "2434129a3af4dc9e2034a476f7b76447b490975213e301769310d3bd0d5d6458",
+  "version": "Perfetto v59.1-1e9c61e98 (1e9c61e9844affd7dccd3d42d9ea9f3a3d10cf6d)\nTrace Processor RPC API version: 14",
+  "native_input": "Original repository-authored synthetic TrackEvent protobuf",
+  "device_capture": "NOT_RUN",
+  "tool_binary_committed": false
+}

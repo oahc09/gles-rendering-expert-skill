@@ -10,9 +10,9 @@ def require(condition, message):
     if not condition:
         raise AssertionError(message)
 
-def check(data, skill, previous=None):
-    require(data['target_version'] in ('1.0.3', '1.0.4'), 'Gate validation failed')
-    require(set(data['work_packages']) == {f'W{i}' for i in range(8)}, 'Gate validation failed')
+def check(data, skill, previous=None, ancestor=None):
+    require(data['target_version'] in ('1.0.3', '1.0.4', '1.0.5'), 'Gate validation failed')
+    require(set(data['work_packages']) == {f'W{i}' for i in range(9 if data['target_version']=='1.0.5' else 8)}, 'Gate validation failed')
     for key, item in data['work_packages'].items():
         require(item['status'] in ALLOWED, key)
         require(item['implementation'] and item['acceptance'] and item['remaining'], key)
@@ -35,6 +35,15 @@ def check(data, skill, previous=None):
             require(previous.get('metadata_version') == '1.0.3', 'Prior accepted release must have v1.0.3 metadata')
             unreleased_metadata = '1.0.3'
         ready = ready and prior_ready
+    if data['target_version'] == '1.0.5':
+        require(previous is not None and previous.get('target_version') == '1.0.4', 'v1.0.5 requires exact v1.0.4 predecessor')
+        require(ancestor is not None and ancestor.get('target_version') == '1.0.3', 'v1.0.5 requires v1.0.3 ancestor')
+        require(data.get('prior_release_gate') == 'docs/v1.0.4-release-gates.json', 'Do not replace predecessor gates')
+        require(not data.get('accepted_limitations'), 'No risk waiver authorized')
+        require(type(data.get('release_authorized')) is bool, 'Explicit release authorization flag required')
+        prior_ready = check(previous, 'version: '+str(previous.get('metadata_version')), ancestor)
+        unreleased_metadata = previous['metadata_version']
+        ready = ready and prior_ready and data['release_authorized']
     match = re.search('^\\s*version:\\s*[\\"\\\']?([0-9]+\\.[0-9]+\\.[0-9]+)', skill, re.M)
     require(match, 'SKILL metadata version missing')
     if not ready:
@@ -49,11 +58,16 @@ def check(data, skill, previous=None):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--require-release', action='store_true')
-    p.add_argument('--gates', choices=['v1.0.3', 'v1.0.4'], default='v1.0.3')
+    p.add_argument('--gates', choices=['v1.0.3', 'v1.0.4', 'v1.0.5'], default='v1.0.3')
     args = p.parse_args()
     previous = json.loads((ROOT / 'docs/release-gates.json').read_text())
-    data = previous if args.gates == 'v1.0.3' else json.loads((ROOT / 'docs/v1.0.4-release-gates.json').read_text())
-    ready = check(data, (ROOT / 'SKILL.md').read_text(), previous if args.gates == 'v1.0.4' else None)
+    if args.gates == 'v1.0.5':
+        data = json.loads((ROOT / 'docs/v1.0.5/release-gates.json').read_text())
+        predecessor = json.loads((ROOT / 'docs/v1.0.4-release-gates.json').read_text())
+        ready = check(data, (ROOT / 'SKILL.md').read_text(), predecessor, previous)
+    else:
+        data = previous if args.gates == 'v1.0.3' else json.loads((ROOT / 'docs/v1.0.4-release-gates.json').read_text())
+        ready = check(data, (ROOT / 'SKILL.md').read_text(), previous if args.gates == 'v1.0.4' else None)
     print(json.dumps({'candidate_bookkeeping': 'PASS', 'release_ready': ready, 'blocked_work_packages': {key: item['status'] for key, item in data['work_packages'].items() if item['status'] != 'PASS'}, 'note': 'Bookkeeping PASS is NOT release acceptance.'}, indent=2))
     return 0 if ready or not args.require_release else 2
 if __name__ == '__main__':

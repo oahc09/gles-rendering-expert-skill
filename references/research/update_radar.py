@@ -17,6 +17,7 @@ SOURCES = {
     "renderdoc": ("baldurk/renderdoc", "releases"),
     "glslang": ("KhronosGroup/glslang", "releases"),
     "angle": ("google/angle", "commits"),
+    "ktx": ("KhronosGroup/KTX-Software", "releases"),
 }
 MAX_PAGES = 10
 
@@ -24,12 +25,18 @@ def day(value):
     return dt.date.fromisoformat(value)
 
 def normalize(source, kind, record):
+    # Hash the canonical full API record, not a crawl timestamp or an invented source.
+    provenance = {"source_hash": hashlib.sha256(json.dumps(record, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest(),
+                  "source_hash_kind": "sha256-canonical-github-api-record",
+                  "published_at": record.get("published_at") if kind == "releases" else None,
+                  "event_time_kind": "release_published_at" if kind == "releases" else "commit_committer_date"}
+
     if kind == "releases":
-        return {"source": source, "id": str(record["id"]), "url": record["html_url"],
+        return {**provenance, "source": source, "id": str(record["id"]), "url": record["html_url"],
                 "event_at": record["published_at"], "revision": record["tag_name"],
                 "title": record.get("name") or record["tag_name"],
                 "draft": record.get("draft", False), "prerelease": record.get("prerelease", False)}
-    return {"source": source, "id": record["sha"], "url": record["html_url"],
+    return {**provenance, "source": source, "id": record["sha"], "url": record["html_url"],
             "event_at": record["commit"]["committer"]["date"], "revision": record["sha"],
             "title": record["commit"]["message"].splitlines()[0], "draft": False, "prerelease": False}
 
@@ -59,6 +66,27 @@ def validate_decision(row):
         for field in ('rule_ids','device_conditions','minimal_sample','test_ids','affected_sections','reviewer'):
             if not row.get(field):
                 raise ValueError('Accepted signal missing '+field)
+    return row
+
+def validate_v105_evidence(row):
+    """Validate explicit v1.0.5 ledger rows; no promotion or rule mutation."""
+    required={'source_url','author_org','published_at','event_at','collected_at','source_hash',
+              'hardware','driver','api_version','extension','actual_change','engineering_impact',
+              'repro_steps','evidence_level','decision','target_rule','test_id'}
+    if not isinstance(row,dict) or required-set(row):raise ValueError('Incomplete v1.0.5 evidence row')
+    if row['evidence_level'] not in ('OFFICIAL_SPEC','OFFICIAL_IMPLEMENTATION','REPRODUCED','SECONDARY','UNVERIFIED'):
+        raise ValueError('Unknown evidence level')
+    digest=row['source_hash']
+    if digest is not None and (not isinstance(digest,str) or len(digest)!=64 or any(c not in '0123456789abcdef' for c in digest)):
+        raise ValueError('Invalid source hash')
+    if row['evidence_level']!='UNVERIFIED' and (digest is None or not row['source_url']):
+        raise ValueError('Verified source requires URL and captured source hash')
+    if row.get('normative_action')=='MUST' and row['evidence_level']!='OFFICIAL_SPEC':
+        raise ValueError('Only reviewed normative specification can support MUST; no automatic promotion')
+    for field in ('published_at','event_at','collected_at'):
+        if row[field] is not None and event_utc_day(row[field]) is None:raise ValueError('Invalid UTC-aware '+field)
+    if row.get('window_class')=='in-window' and (event_utc_day(row['event_at']) is None or not dt.date(2026,10,2)<=event_utc_day(row['event_at'])<=dt.date(2026,11,1)):
+        raise ValueError('Historical/unknown event cannot be called current-window')
     return row
 
 def select(records, start, end, known):

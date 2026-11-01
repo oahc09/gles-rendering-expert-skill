@@ -1,0 +1,17 @@
+{
+  "source": "Perfetto",
+  "license": "MIT original synthetic TrackEvent fixture; no user/device data",
+  "device": "synthetic native protobuf",
+  "gpu": "none",
+  "driver": "none",
+  "backend": "Perfetto TrackEvent",
+  "build": "fixture-v105",
+  "time_range": [
+    1000000000,
+    1030000000
+  ],
+  "provenance": "synthetic",
+  "time_domain": "trace_processor_ns",
+  "capture_complete": true,
+  "raw_sha256": "01059c33d31503260fbc30bb8eb4d26665d7e579c5d4ab42c65544267ad6ed07"
+}

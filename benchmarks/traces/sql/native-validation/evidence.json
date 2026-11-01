@@ -1,0 +1,718 @@
+{
+  "status": "EVIDENCE_AVAILABLE",
+  "provenance": "synthetic",
+  "execution": "REAL_TRACE_PROCESSOR",
+  "raw_trace_sha256": "01059c33d31503260fbc30bb8eb4d26665d7e579c5d4ab42c65544267ad6ed07",
+  "raw_trace_bytes": 162,
+  "time_domain": "trace_processor_ns",
+  "metadata": {
+    "source": "Perfetto",
+    "license": "MIT original synthetic TrackEvent fixture; no user/device data",
+    "device": "synthetic native protobuf",
+    "gpu": "none",
+    "driver": "none",
+    "backend": "Perfetto TrackEvent",
+    "build": "fixture-v105",
+    "time_range": [
+      1000000000,
+      1030000000
+    ],
+    "provenance": "synthetic",
+    "time_domain": "trace_processor_ns",
+    "capture_complete": true,
+    "raw_sha256": "01059c33d31503260fbc30bb8eb4d26665d7e579c5d4ab42c65544267ad6ed07"
+  },
+  "schema": {
+    "counter": [
+      "id",
+      "ts",
+      "track_id",
+      "value",
+      "arg_set_id"
+    ],
+    "counter_track": [
+      "id",
+      "name",
+      "parent_id",
+      "type",
+      "dimension_arg_set_id",
+      "source_arg_set_id",
+      "machine_id",
+      "unit",
+      "description"
+    ],
+    "gpu_slice": [
+      "id",
+      "ts",
+      "dur",
+      "track_id",
+      "category",
+      "name",
+      "depth",
+      "parent_id",
+      "arg_set_id",
+      "context_id",
+      "render_target",
+      "render_target_name",
+      "render_pass",
+      "render_pass_name",
+      "command_buffer",
+      "command_buffer_name",
+      "frame_id",
+      "submission_id",
+      "hw_queue_id",
+      "upid",
+      "render_subpasses",
+      "render_stage_category"
+    ],
+    "sched": [
+      "id",
+      "ts",
+      "dur",
+      "cpu",
+      "utid",
+      "end_state",
+      "priority",
+      "ucpu",
+      "ts_end"
+    ],
+    "slice": [
+      "id",
+      "ts",
+      "dur",
+      "track_id",
+      "category",
+      "name",
+      "depth",
+      "parent_id",
+      "arg_set_id",
+      "thread_ts",
+      "thread_dur",
+      "thread_instruction_count",
+      "thread_instruction_delta",
+      "cat",
+      "slice_id"
+    ],
+    "stats": [
+      "id",
+      "name",
+      "key",
+      "idx",
+      "severity",
+      "source",
+      "value",
+      "description",
+      "machine_id",
+      "trace_id"
+    ],
+    "thread": [
+      "utid",
+      "id",
+      "tid",
+      "name",
+      "start_ts",
+      "end_ts",
+      "upid",
+      "is_main_thread",
+      "is_idle",
+      "machine_id",
+      "arg_set_id"
+    ],
+    "thread_track": [
+      "id",
+      "name",
+      "type",
+      "parent_id",
+      "source_arg_set_id",
+      "machine_id",
+      "utid"
+    ]
+  },
+  "queries": {
+    "render_thread": {
+      "sql": "SELECT s.id,s.ts,s.dur,s.name FROM slice s JOIN thread_track t ON s.track_id=t.id JOIN thread th ON t.utid=th.utid WHERE th.name='RenderThread' ORDER BY s.ts,s.id LIMIT 10001;",
+      "sql_sha256": "59102d08d44edcd259eba72e236e89dc66a451947a214a5d7b325dd05efd001d",
+      "meaning": "Instrumented RenderThread wall-duration slices; not CPU running time.",
+      "missing": [],
+      "status": "OBSERVED",
+      "rows": [
+        {
+          "id": "0",
+          "ts": "1000000000",
+          "dur": "30000000",
+          "name": "gles.frame"
+        },
+        {
+          "id": "1",
+          "ts": "1001000000",
+          "dur": "12000000",
+          "name": "gles.shader_compile"
+        }
+      ]
+    },
+    "cpu_sched": {
+      "sql": "SELECT s.id,s.ts,s.dur,s.cpu FROM sched s JOIN thread th ON s.utid=th.utid WHERE th.name='RenderThread' ORDER BY s.ts,s.id LIMIT 10001;",
+      "sql_sha256": "ca7a4abb0020adf9103a37a2fa5e2777da795b5622638348a5c261d874b3188d",
+      "meaning": "Scheduled running intervals; CPU availability alone does not prove submission bottleneck.",
+      "missing": [],
+      "status": "UNKNOWN",
+      "rows": [],
+      "reason": "No matching samples"
+    },
+    "gpu_work": {
+      "sql": "SELECT id,ts,dur,name FROM gpu_slice ORDER BY ts,id LIMIT 10001;",
+      "sql_sha256": "1d5ca8035468740a0aea5ee33bb35fb19f04c09ae56e8c431be584c3e5e902c8",
+      "meaning": "GPU work slices when actually collected; no vendor-private bandwidth inference.",
+      "missing": [],
+      "status": "UNKNOWN",
+      "rows": [],
+      "reason": "No matching samples"
+    },
+    "frequency": {
+      "sql": "SELECT c.id,c.ts,c.value,t.name,t.unit FROM counter c JOIN counter_track t ON c.track_id=t.id WHERE t.name='gles.gpu_frequency_mhz' ORDER BY c.ts,c.id LIMIT 10001;",
+      "sql_sha256": "0fe9811c130561f2d299c169e0dd576d987ecfc9da8666d63c7e695547ef6ca5",
+      "meaning": "Opt-in application-exported frequency track; unit must be MHz. No automatic private counter access.",
+      "missing": [],
+      "status": "UNKNOWN",
+      "rows": [],
+      "reason": "No matching samples"
+    },
+    "temperature": {
+      "sql": "SELECT c.id,c.ts,c.value,t.name,t.unit FROM counter c JOIN counter_track t ON c.track_id=t.id WHERE t.name='gles.temperature_c' ORDER BY c.ts,c.id LIMIT 10001;",
+      "sql_sha256": "1a1340135d382f7251bb1b6d79dc0a63805fda538e5b5c9e280211bdb9d9403c",
+      "meaning": "Opt-in application-exported temperature track; unit must be C and sensor source documented.",
+      "missing": [],
+      "status": "UNKNOWN",
+      "rows": [],
+      "reason": "No matching samples"
+    },
+    "surfaceflinger": {
+      "sql": "SELECT s.id,s.ts,s.dur,s.name FROM slice s JOIN thread_track t ON s.track_id=t.id JOIN thread th ON t.utid=th.utid WHERE th.name='SurfaceFlinger' ORDER BY s.ts,s.id LIMIT 10001;",
+      "sql_sha256": "563735d82008bfa6abd95285195313196f576ff0f049731c09c3d49697225d96",
+      "meaning": "Compositor thread slices; not actual presentation unless instrumentation names establish that.",
+      "missing": [],
+      "status": "UNKNOWN",
+      "rows": [],
+      "reason": "No matching samples"
+    },
+    "swap_wait": {
+      "sql": "SELECT id,ts,dur,name FROM slice WHERE name='gles.swap_wait' ORDER BY ts,id LIMIT 10001;",
+      "sql_sha256": "8629b14050fbf9e061cd46b7cf8e941be0d6edba65ed532298d573eb7d8a3195",
+      "meaning": "Explicit app bracket around swap; blocking may reflect pacing, not GPU saturation.",
+      "missing": [],
+      "status": "UNKNOWN",
+      "rows": [],
+      "reason": "No matching samples"
+    },
+    "shader_compile": {
+      "sql": "SELECT id,ts,dur,name FROM slice WHERE name='gles.shader_compile' ORDER BY ts,id LIMIT 10001;",
+      "sql_sha256": "19f9b0803ab71b2cdfe742c7a19a3cefb3caec9a22fbce79c18d886a8e8af549",
+      "meaning": "App-instrumented compile/link wall duration; GPU compilation internals are not inferred.",
+      "missing": [],
+      "status": "OBSERVED",
+      "rows": [
+        {
+          "id": "1",
+          "ts": "1001000000",
+          "dur": "12000000",
+          "name": "gles.shader_compile"
+        }
+      ]
+    },
+    "frame": {
+      "sql": "SELECT id,ts,dur,name FROM slice WHERE name='gles.frame' ORDER BY ts,id LIMIT 10001;",
+      "sql_sha256": "ebbb01191420a52c7ee32df57695e17bef785e1d8156871fe608c262055db46c",
+      "meaning": "App-defined frame wall intervals, not display refresh or presented frames.",
+      "missing": [],
+      "status": "OBSERVED",
+      "rows": [
+        {
+          "id": "0",
+          "ts": "1000000000",
+          "dur": "30000000",
+          "name": "gles.frame"
+        }
+      ]
+    },
+    "cpu_submit": {
+      "sql": "SELECT id,ts,dur,name FROM slice WHERE name='gles.cpu_submit' ORDER BY ts,id LIMIT 10001;",
+      "sql_sha256": "da5c0c4266eb84a94e9a3e6b85aab1607794d9190d11ba83480b531bbeeb8e54",
+      "meaning": "Explicit submit bracket; includes waiting unless independently excluded.",
+      "missing": [],
+      "status": "UNKNOWN",
+      "rows": [],
+      "reason": "No matching samples"
+    }
+  },
+  "observed": [
+    {
+      "category": "render_thread",
+      "classification": "observed",
+      "row_ids": [
+        "0",
+        "1"
+      ],
+      "query": "render_thread"
+    },
+    {
+      "category": "shader_compile",
+      "classification": "observed",
+      "row_ids": [
+        "1"
+      ],
+      "query": "shader_compile"
+    },
+    {
+      "category": "frame",
+      "classification": "observed",
+      "row_ids": [
+        "0"
+      ],
+      "query": "frame"
+    }
+  ],
+  "inferred": [
+    {
+      "category": "shader_compile_hitch",
+      "classification": "inferred",
+      "confidence": "HYPOTHESIS_ONLY",
+      "experiment": "Warm identical programs before replay; compare compile-event alignment with frame spikes.",
+      "alignment_window_ms": 16.667,
+      "matched_window": {
+        "start_ms": 1000.0,
+        "end_ms": 1016.667,
+        "means": {
+          "shader_compile_ms": 12.0,
+          "frame_ms": 30.0
+        },
+        "evidence": [
+          {
+            "metric": "shader_compile_ms",
+            "value": 12.0,
+            "timestamp_ms": 1001.0,
+            "artifact": "normalized-metrics.json",
+            "row": 1,
+            "sha256": "80a26fad2c094091dee8c921318d2ae0e02f119d5746e8f77da5dc6f2bf7f56a"
+          },
+          {
+            "metric": "frame_ms",
+            "value": 30.0,
+            "timestamp_ms": 1000.0,
+            "artifact": "normalized-metrics.json",
+            "row": 2,
+            "sha256": "80a26fad2c094091dee8c921318d2ae0e02f119d5746e8f77da5dc6f2bf7f56a"
+          }
+        ]
+      },
+      "caveat": "Thresholds re-evaluated only within this coarse timestamp window; not a causal conclusion."
+    }
+  ],
+  "not_measurable": [
+    "Private GPU bandwidth/GMEM percentages, watts and energy savings are not derived from these traces."
+  ],
+  "missing_fields": [],
+  "invalid": [],
+  "schema_probe_sql": "SELECT name FROM sqlite_master WHERE type IN ('table','view')",
+  "available_tables": [
+    "__intrinsic_aggregate_profile",
+    "__intrinsic_aggregate_sample",
+    "__intrinsic_android_aflags",
+    "__intrinsic_android_cpu_per_uid_track",
+    "__intrinsic_android_dumpstate",
+    "__intrinsic_android_freezer_state",
+    "__intrinsic_android_game_intervention_list",
+    "__intrinsic_android_input_event_dispatch",
+    "__intrinsic_android_job_scheduler_pending_reasons_track_events",
+    "__intrinsic_android_job_scheduler_track_events",
+    "__intrinsic_android_key_events",
+    "__intrinsic_android_motion_events",
+    "__intrinsic_android_network_packets",
+    "__intrinsic_android_process_state",
+    "__intrinsic_android_track_event_process",
+    "__intrinsic_android_user_list",
+    "__intrinsic_args",
+    "__intrinsic_build_flags",
+    "__intrinsic_chrome_raw",
+    "__intrinsic_chrome_stack_sample_extras",
+    "__intrinsic_clock_snapshot",
+    "__intrinsic_counter",
+    "__intrinsic_cpu",
+    "__intrinsic_cpu_freq",
+    "__intrinsic_dfs_weight_bounded",
+    "__intrinsic_elf_file",
+    "__intrinsic_etm_v4_chunk",
+    "__intrinsic_etm_v4_configuration",
+    "__intrinsic_etm_v4_session",
+    "__intrinsic_experimental_missing_chrome_processes",
+    "__intrinsic_file",
+    "__intrinsic_filedescriptor",
+    "__intrinsic_flow",
+    "__intrinsic_ftrace_event",
+    "__intrinsic_gpu",
+    "__intrinsic_gpu_context",
+    "__intrinsic_gpu_counter_group",
+    "__intrinsic_heap_graph",
+    "__intrinsic_heap_graph_class",
+    "__intrinsic_heap_graph_java_oome_details",
+    "__intrinsic_heap_graph_object",
+    "__intrinsic_heap_graph_object_data",
+    "__intrinsic_heap_graph_primitive",
+    "__intrinsic_heap_graph_reference",
+    "__intrinsic_heap_graph_thread_callsite",
+    "__intrinsic_heap_profile",
+    "__intrinsic_heap_profile_allocation",
+    "__intrinsic_inputmethod_clients",
+    "__intrinsic_inputmethod_manager_service",
+    "__intrinsic_inputmethod_service",
+    "__intrinsic_jit_code",
+    "__intrinsic_jit_frame",
+    "__intrinsic_logs",
+    "__intrinsic_machine",
+    "__intrinsic_memory_snapshot",
+    "__intrinsic_memory_snapshot_edge",
+    "__intrinsic_memory_snapshot_node",
+    "__intrinsic_metadata",
+    "__intrinsic_mmap_record",
+    "__intrinsic_modules",
+    "__intrinsic_package_list",
+    "__intrinsic_process",
+    "__intrinsic_process_memory_snapshot",
+    "__intrinsic_profiler_async_context",
+    "__intrinsic_profiler_counter_set",
+    "__intrinsic_profiler_execution_context",
+    "__intrinsic_profiler_sample",
+    "__intrinsic_profiler_session",
+    "__intrinsic_profiler_smaps",
+    "__intrinsic_profiler_task_context",
+    "__intrinsic_protolog",
+    "__intrinsic_sched_slice",
+    "__intrinsic_slice",
+    "__intrinsic_spe_record",
+    "__intrinsic_spurious_sched_wakeup",
+    "__intrinsic_stack_profile_callsite",
+    "__intrinsic_stack_profile_frame",
+    "__intrinsic_stack_profile_mapping",
+    "__intrinsic_stack_profile_symbol",
+    "__intrinsic_state",
+    "__intrinsic_stats",
+    "__intrinsic_stdlib_objects",
+    "__intrinsic_surfaceflinger_display",
+    "__intrinsic_surfaceflinger_layer",
+    "__intrinsic_surfaceflinger_layers_snapshot",
+    "__intrinsic_surfaceflinger_transaction",
+    "__intrinsic_surfaceflinger_transaction_flag",
+    "__intrinsic_surfaceflinger_transactions",
+    "__intrinsic_thread",
+    "__intrinsic_thread_state",
+    "__intrinsic_trace_diagnostics",
+    "__intrinsic_trace_file",
+    "__intrinsic_trace_import_logs",
+    "__intrinsic_track",
+    "__intrinsic_track_event_callstacks",
+    "__intrinsic_v8_internal_code",
+    "__intrinsic_v8_isolate",
+    "__intrinsic_v8_js_code",
+    "__intrinsic_v8_js_function",
+    "__intrinsic_v8_js_script",
+    "__intrinsic_v8_regexp_code",
+    "__intrinsic_v8_wasm_code",
+    "__intrinsic_v8_wasm_script",
+    "__intrinsic_video_frames",
+    "__intrinsic_viewcapture",
+    "__intrinsic_viewcapture_view",
+    "__intrinsic_vulkan_debug_names",
+    "__intrinsic_vulkan_memory_allocations",
+    "__intrinsic_wattson_curves_cpu_1d",
+    "__intrinsic_wattson_curves_cpu_2d",
+    "__intrinsic_wattson_curves_gpu",
+    "__intrinsic_wattson_curves_l3",
+    "__intrinsic_wattson_curves_tpu",
+    "__intrinsic_window_manager_shell_transition_handlers",
+    "__intrinsic_window_manager_shell_transition_participants",
+    "__intrinsic_window_manager_shell_transition_protos",
+    "__intrinsic_window_manager_shell_transitions",
+    "__intrinsic_windowmanager",
+    "__intrinsic_windowmanager_windowcontainer",
+    "__intrinsic_winscope_fill_region",
+    "__intrinsic_winscope_proto_to_args_with_defaults",
+    "__intrinsic_winscope_rect",
+    "__intrinsic_winscope_surfaceflinger_hierarchy_path",
+    "__intrinsic_winscope_trace_rect",
+    "__intrinsic_winscope_transform",
+    "_linux_interrupt_mapping",
+    "_stat_key_to_severity_and_name",
+    "_trace_bounds",
+    "_trace_import_logs",
+    "_trace_metrics",
+    "actual_frame_timeline_slice",
+    "ancestor_slice",
+    "android_dumpstate",
+    "android_game_intervention_list",
+    "android_logs",
+    "args",
+    "clock_snapshot",
+    "counter",
+    "counter_track",
+    "counters",
+    "cpu",
+    "cpu_available_frequencies",
+    "cpu_counter_track",
+    "cpu_profile_stack_sample",
+    "cpu_track",
+    "descendant_slice",
+    "directly_connected_flow",
+    "expected_frame_timeline_slice",
+    "experimental_ancestor_stack_profile_callsite",
+    "experimental_annotated_callstack",
+    "experimental_flamegraph",
+    "experimental_flat_slice",
+    "experimental_missing_chrome_processes",
+    "experimental_proto_content",
+    "experimental_proto_path",
+    "experimental_slice_layout",
+    "filedescriptor",
+    "flow",
+    "following_flow",
+    "frame_slice",
+    "ftrace_event",
+    "gpu",
+    "gpu_counter_group",
+    "gpu_counter_track",
+    "gpu_slice",
+    "gpu_track",
+    "heap_graph",
+    "heap_graph_class",
+    "heap_graph_object",
+    "heap_graph_object_data",
+    "heap_graph_primitive",
+    "heap_graph_reference",
+    "heap_graph_thread_callsite",
+    "heap_profile",
+    "heap_profile_allocation",
+    "instant",
+    "instruments_sample",
+    "logs",
+    "machine",
+    "memory_snapshot",
+    "memory_snapshot_edge",
+    "memory_snapshot_node",
+    "metadata",
+    "package_list",
+    "perf_counter_track",
+    "perf_sample",
+    "perf_session",
+    "perfetto_table_info",
+    "perfetto_tables",
+    "preceding_flow",
+    "process",
+    "process_counter_track",
+    "process_memory_mappings",
+    "process_memory_snapshot",
+    "process_state_track",
+    "process_track",
+    "profiler_smaps",
+    "protolog",
+    "raw",
+    "sched",
+    "sched_slice",
+    "slice",
+    "slices",
+    "spurious_sched_wakeup",
+    "stack_profile_callsite",
+    "stack_profile_frame",
+    "stack_profile_mapping",
+    "stack_profile_symbol",
+    "stack_sample",
+    "stack_sample_async_context",
+    "stack_sample_counter",
+    "stack_sample_counter_track",
+    "stack_sample_execution_context",
+    "stack_sample_session",
+    "stack_sample_task_context",
+    "state",
+    "state_track",
+    "stats",
+    "surfaceflinger_layer",
+    "surfaceflinger_layers_snapshot",
+    "surfaceflinger_transactions",
+    "thread",
+    "thread_counter_track",
+    "thread_state",
+    "thread_state_track",
+    "thread_track",
+    "trace_bounds",
+    "trace_metrics",
+    "track",
+    "vulkan_memory_allocations",
+    "window_manager_shell_transition_handlers",
+    "window_manager_shell_transitions"
+  ],
+  "column_probe_sql": {
+    "counter": "PRAGMA table_info(counter)",
+    "counter_track": "PRAGMA table_info(counter_track)",
+    "gpu_slice": "PRAGMA table_info(gpu_slice)",
+    "sched": "PRAGMA table_info(sched)",
+    "slice": "PRAGMA table_info(slice)",
+    "stats": "PRAGMA table_info(stats)",
+    "thread": "PRAGMA table_info(thread)",
+    "thread_track": "PRAGMA table_info(thread_track)"
+  },
+  "integrity_sql": "SELECT name,severity,value FROM stats WHERE value>0 AND (severity='error' OR name LIKE '%lost%' OR name LIKE '%overrun%' OR name LIKE '%parse_error%')",
+  "parser_stats": [],
+  "legacy_analysis": {
+    "status": "HYPOTHESES",
+    "provenance": "synthetic",
+    "source": "synthetic-fixture",
+    "manifest_device": {
+      "device": "synthetic native protobuf",
+      "gpu": "none",
+      "driver": "none",
+      "backend": "Perfetto TrackEvent",
+      "build": "fixture-v105"
+    },
+    "aggregation": "individual_samples",
+    "hypotheses": [
+      {
+        "category": "shader_compile_hitch",
+        "confidence": "HYPOTHESIS_ONLY",
+        "evidence": [
+          {
+            "metric": "shader_compile_ms",
+            "value": 12.0,
+            "timestamp_ms": 1001.0,
+            "artifact": "normalized-metrics.json",
+            "row": 1,
+            "sha256": "80a26fad2c094091dee8c921318d2ae0e02f119d5746e8f77da5dc6f2bf7f56a"
+          },
+          {
+            "metric": "frame_ms",
+            "value": 30.0,
+            "timestamp_ms": 1000.0,
+            "artifact": "normalized-metrics.json",
+            "row": 2,
+            "sha256": "80a26fad2c094091dee8c921318d2ae0e02f119d5746e8f77da5dc6f2bf7f56a"
+          }
+        ],
+        "ab_test": "Warm identical programs before replay; compare compile-event alignment with frame spikes.",
+        "matched_window": {
+          "start_ms": 1000.0,
+          "end_ms": 1016.667,
+          "means": {
+            "shader_compile_ms": 12.0,
+            "frame_ms": 30.0
+          },
+          "evidence": [
+            {
+              "metric": "shader_compile_ms",
+              "value": 12.0,
+              "timestamp_ms": 1001.0,
+              "artifact": "normalized-metrics.json",
+              "row": 1,
+              "sha256": "80a26fad2c094091dee8c921318d2ae0e02f119d5746e8f77da5dc6f2bf7f56a"
+            },
+            {
+              "metric": "frame_ms",
+              "value": 30.0,
+              "timestamp_ms": 1000.0,
+              "artifact": "normalized-metrics.json",
+              "row": 2,
+              "sha256": "80a26fad2c094091dee8c921318d2ae0e02f119d5746e8f77da5dc6f2bf7f56a"
+            }
+          ]
+        },
+        "required_next": [
+          "time-aligned repeated samples",
+          "target-specific counter definitions",
+          "thermal/power state",
+          "visual correctness comparison"
+        ]
+      }
+    ],
+    "missing_metrics": [
+      "bandwidth_pct_peak",
+      "clock_mhz",
+      "cpu_submit_ms",
+      "fragment_busy_pct",
+      "gpu_ms",
+      "swap_wait_ms",
+      "sync_wait_ms",
+      "temperature_c",
+      "tiler_busy_pct",
+      "vertex_count"
+    ],
+    "declared_missing": [],
+    "performance_improvement": "NOT_MEASURED",
+    "limitations": [
+      "No causal conclusion from one trace.",
+      "Thresholds are configurable triage assumptions, not universal GPU limits.",
+      "Means of aggregates are descriptive only; do not infer p95 from p50 exports."
+    ]
+  },
+  "temporal_checks": {
+    "cpu_submit_bound": {
+      "window_ms": 16.667,
+      "complete_windows_checked": 0,
+      "matched_window": null
+    },
+    "fragment_bound": {
+      "window_ms": 16.667,
+      "complete_windows_checked": 0,
+      "matched_window": null
+    },
+    "geometry_bound": {
+      "window_ms": 16.667,
+      "complete_windows_checked": 0,
+      "matched_window": null
+    },
+    "bandwidth_bound": {
+      "window_ms": 16.667,
+      "complete_windows_checked": 0,
+      "matched_window": null
+    },
+    "sync_stall": {
+      "window_ms": 16.667,
+      "complete_windows_checked": 0,
+      "matched_window": null
+    },
+    "shader_compile_hitch": {
+      "window_ms": 16.667,
+      "complete_windows_checked": 1,
+      "matched_window": {
+        "start_ms": 1000.0,
+        "end_ms": 1016.667,
+        "means": {
+          "shader_compile_ms": 12.0,
+          "frame_ms": 30.0
+        },
+        "evidence": [
+          {
+            "metric": "shader_compile_ms",
+            "value": 12.0,
+            "timestamp_ms": 1001.0,
+            "artifact": "normalized-metrics.json",
+            "row": 1,
+            "sha256": "80a26fad2c094091dee8c921318d2ae0e02f119d5746e8f77da5dc6f2bf7f56a"
+          },
+          {
+            "metric": "frame_ms",
+            "value": 30.0,
+            "timestamp_ms": 1000.0,
+            "artifact": "normalized-metrics.json",
+            "row": 2,
+            "sha256": "80a26fad2c094091dee8c921318d2ae0e02f119d5746e8f77da5dc6f2bf7f56a"
+          }
+        ]
+      }
+    },
+    "thermal_drift": {
+      "window_ms": 16.667,
+      "complete_windows_checked": 0,
+      "matched_window": null
+    },
+    "swap_backpressure": {
+      "window_ms": 16.667,
+      "complete_windows_checked": 0,
+      "matched_window": null
+    }
+  }
+}

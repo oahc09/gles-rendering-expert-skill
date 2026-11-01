@@ -1,5 +1,6 @@
 """Deterministic recommendations only: never changes OS, driver or GLES state."""
 from dataclasses import dataclass
+from copy import deepcopy
 import math
 
 PRESETS = (
@@ -34,6 +35,14 @@ class QualityPolicy:
         if type(self.floor) is not int or self.floor not in (0,1,2) or self.level not in range(self.floor+1):raise ValueError('quality floor/level')
 
     def step(self, sample, *, enabled=True, capabilities=None, approved_levels=()):
+        # Validate and transition a private draft; invalid input cannot consume time/state.
+        draft=deepcopy(self)
+        result=draft._step(sample,enabled=enabled,capabilities=capabilities,approved_levels=approved_levels)
+        self.__dict__.update(draft.__dict__)
+        return result
+
+    def _step(self, sample, *, enabled=True, capabilities=None, approved_levels=()):
+        if type(enabled)is not bool or type(sample.get('foreground',True))is not bool:raise ValueError('enabled/foreground must be boolean')
         t=number(sample['t_s'],'time');budget=number(sample['budget_ms'],'budget',.001)
         p95=number(sample['p95_ms'],'p95');thermal=sample.get('thermal_status')
         if thermal is not None and (type(thermal) is not int or thermal not in range(7)):raise ValueError('thermal_status')
@@ -72,7 +81,7 @@ class QualityPolicy:
             else:self.state='NORMAL';self.recovery_since=None
         else:
             self.pressure_since=None;self.recovery_since=None;self.state='DEGRADED' if self.level else 'NORMAL'
-        caps=capabilities or {};preset=dict(PRESETS[self.level]);missing=[]
+        caps=capabilities or {};preset=deepcopy(PRESETS[self.level]);missing=[]
         supported=caps.get('msaa_samples',[])
         if not isinstance(supported,list) or any(type(x)is not int or x<1 for x in supported):raise ValueError('msaa capabilities')
         options=[v for v in supported if v<=preset['msaa']]

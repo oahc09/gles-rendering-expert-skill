@@ -50,7 +50,7 @@ def score(summary, adjudications, cases):
             if not all(compile_result.get(k) for k in ('command','artifact_sha256','log_sha256','environment')):
                 raise ValueError('Compile result requires command/artifact/log hashes and environment')
             group['compile_tested']+=1; group['compile_pass']+=compile_result['status']=='PASS'
-        if labels[key[0]].get('repair'):
+        if labels[key[0]].get('repair') or labels[key[0]].get('v105'):
             for metric in ('root_cause_hit','unsupported_performance_claim'):
                 value=row.get(metric)
                 if value is not None and not isinstance(value,bool):
@@ -58,6 +58,7 @@ def score(summary, adjudications, cases):
                 group.setdefault(metric+'_reviewed',0);group.setdefault(metric+'_count',0)
                 if value is not None:
                     group[metric+'_reviewed']+=1;group[metric+'_count']+=value
+        if labels[key[0]].get('repair'):
             regression=row.get('repair_regression',{'status':'NOT_RUN'})
             if regression.get('status') not in ('PASS','FAIL','NOT_RUN','NOT_APPLICABLE'):
                 raise ValueError('Invalid repair regression status')
@@ -66,6 +67,15 @@ def score(summary, adjudications, cases):
                 if not all(regression.get(k) for k in ('command','artifact_sha256','log_sha256','environment')):
                     raise ValueError('Repair regression requires actual artifact/log evidence')
                 group['repair_regression_tested']+=1;group['repair_regression_pass']+=regression['status']=='PASS'
+        if labels[key[0]].get('v105'):
+            for metric in ('evidence_sufficient','visual_safe','wrong_advice'):
+                value=row.get(metric)
+                if value is not None and type(value) is not bool:raise ValueError(metric+' must be boolean or null')
+                group.setdefault(metric+'_reviewed',0);group.setdefault(metric+'_count',0)
+                if value is not None:
+                    if not row.get(metric+'_rationale'):raise ValueError(metric+' needs independent review rationale')
+                    if metric=='visual_safe' and not row.get('visual_criteria_reference'):raise ValueError('Visual safety needs independently defined criteria reference')
+                    group[metric+'_reviewed']+=1;group[metric+'_count']+=value
         mode=labels[key[0]]['mode']
         for label,mode_name in (('debug','Diagnose'),('performance','Optimize')):
             if mode==mode_name:
@@ -79,7 +89,10 @@ def score(summary, adjudications, cases):
         if 'root_cause_hit_reviewed' in group:
             group['root_cause_hit_rate']=ratio(group['root_cause_hit_count'],group['root_cause_hit_reviewed'])
             group['unsupported_performance_claim_rate']=ratio(group['unsupported_performance_claim_count'],group['unsupported_performance_claim_reviewed'])
-            group['repair_regression_success_rate']=ratio(group['repair_regression_pass'],group['repair_regression_tested'])
+            group['repair_regression_success_rate']=ratio(group.get('repair_regression_pass',0),group.get('repair_regression_tested',0))
+    for group in results.values():
+        for metric in ('evidence_sufficient','visual_safe','wrong_advice'):
+            if metric+'_reviewed' in group:group[metric+'_rate']=ratio(group[metric+'_count'],group[metric+'_reviewed'])
     paired=sum((case_id,'no_skill') in seen and (case_id,'with_skill') in seen for case_id in labels)
     return {'status':'REVIEWED' if len(seen)==len(actual) and actual else 'PARTIAL_REVIEW','adjudicated_responses':len(seen),'paired_cases':paired,'metrics':results,'limitations':'Human-adjudicated rubric; not automatic semantic truth. Compile, hardware runtime and performance are independent. Null means no evidence, not zero.'}
 

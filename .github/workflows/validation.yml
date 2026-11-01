@@ -51,3 +51,17 @@ jobs:
         run: python3 benchmarks/agent/reproduce_repairs.py --output reports/repair-reproduction.json
       - name: v1.0.4 candidate bookkeeping (release remains separately blocked)
         run: python3 tools/check_release_gates.py --gates v1.0.4
+      - name: v1.0.5 policy, synthetic longrun and SQL infrastructure
+        run: |
+          python3 -m unittest discover -s benchmarks/quality_policy -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/longrun -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/traces/sql -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/visual_quality -p 'test_*.py' -v
+      - name: v1.0.5 real software resource stress (not Android loss)
+        run: python3 benchmarks/resource_pressure/run.py --output reports/resource-pressure.json --scenes 100
+      - name: v1.0.5 actual precision and visual regressions (not mobile performance)
+        run: |
+          sh examples/precision/run-host.sh P01 /tmp/precision-smoke.ppm 96 1 10000 baseline
+          python3 benchmarks/visual_quality/run.py --output reports/visual-quality
+      - name: v1.0.5 dependency-aware candidate bookkeeping
+        run: python3 tools/check_release_gates.py --gates v1.0.5

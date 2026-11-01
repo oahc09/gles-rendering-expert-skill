@@ -1,0 +1,29 @@
+test_commit_committer_timestamp (test_update_radar.RadarTest.test_commit_committer_timestamp) ... ok
+test_dedupe_history (test_update_radar.RadarTest.test_dedupe_history) ... ok
+test_dedupe_same_batch (test_update_radar.RadarTest.test_dedupe_same_batch) ... ok
+test_inclusive_boundaries (test_update_radar.RadarTest.test_inclusive_boundaries) ... ok
+test_offline_archive_rerun_and_previous_archive (test_update_radar.RadarTest.test_offline_archive_rerun_and_previous_archive) ... ok
+test_outside_window (test_update_radar.RadarTest.test_outside_window) ... ok
+test_reject_reversed_dates (test_update_radar.RadarTest.test_reject_reversed_dates) ... ok
+test_release_timestamp_not_created (test_update_radar.RadarTest.test_release_timestamp_not_created) ... ok
+test_unknown_date_and_draft (test_update_radar.RadarTest.test_unknown_date_and_draft) ... ok
+test_accepted_requires_mappings (test_v104_radar.RadarV104Tests.test_accepted_requires_mappings) ... ok
+test_date_only_unknown (test_v104_radar.RadarV104Tests.test_date_only_unknown) ... ok
+test_deferred_can_be_unknown (test_v104_radar.RadarV104Tests.test_deferred_can_be_unknown) ... ok
+test_incomplete_no_verified (test_v104_radar.RadarV104Tests.test_incomplete_no_verified) ... ok
+test_offset_outside_window (test_v104_radar.RadarV104Tests.test_offset_outside_window) ... ok
+test_unknown_date_deferred (test_v104_radar.RadarV104Tests.test_unknown_date_deferred) ... ok
+test_unknown_timezone_not_verified (test_v104_radar.RadarV104Tests.test_unknown_timezone_not_verified) ... ok
+test_utc_offset_boundary (test_v104_radar.RadarV104Tests.test_utc_offset_boundary) ... ok
+test_actual_ledger_and_snapshot_hashes (test_v105_radar.V105RadarTests.test_actual_ledger_and_snapshot_hashes) ... ok
+test_commit_timestamp_not_publication (test_v105_radar.V105RadarTests.test_commit_timestamp_not_publication) ... ok
+test_hash_is_stable_and_source_sensitive (test_v105_radar.V105RadarTests.test_hash_is_stable_and_source_sensitive) ... ok
+test_historical_rejected_as_current (test_v105_radar.V105RadarTests.test_historical_rejected_as_current) ... ok
+test_missing_source_hash_blocks_verified (test_v105_radar.V105RadarTests.test_missing_source_hash_blocks_verified) ... ok
+test_no_automatic_must_from_release (test_v105_radar.V105RadarTests.test_no_automatic_must_from_release) ... ok
+test_unknown_x_remains_unverified (test_v105_radar.V105RadarTests.test_unknown_x_remains_unverified) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.309s
+
+OK

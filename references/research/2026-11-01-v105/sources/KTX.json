@@ -1,0 +1,12 @@
+{
+  "id": 252167869,
+  "html_url": "https://github.com/KhronosGroup/KTX-Software/releases/tag/v4.4.2",
+  "tag_name": "v4.4.2",
+  "published_at": "2025-10-04T09:03:07Z",
+  "created_at": "2025-10-04T08:08:05Z",
+  "target_commitish": "main",
+  "draft": false,
+  "prerelease": false,
+  "retrieval_url": "https://api.github.com/repos/KhronosGroup/KTX-Software/releases/latest",
+  "raw_response_sha256": "d54fff1fce9a1023487e888c36828eeff27701153472e32034b6a0d8c73fa5a3"
+}

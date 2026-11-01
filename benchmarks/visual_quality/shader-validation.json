@@ -1,0 +1,2271 @@
+{
+  "status": "PASS",
+  "scope": "exact runtime GLSL stage compilation; actual GLES host execution separately links programs",
+  "binary_sha256": "c5974495a95fed799d8e6353433ede2d3412a1fcd8c95e4c8178386791cccc5f",
+  "validator_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+  "stage_count": 174,
+  "results": [
+    {
+      "scene": "P01",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P01-baseline/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-baseline/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P01-baseline/1.frag",
+      "source_sha256": "81ec3b9655fcaaeddcb4f2057dd82fdd5181098553ad756a873a043970ab3601",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-baseline/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P01-baseline/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-baseline/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P01-baseline/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-baseline/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P01-baseline/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-baseline/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P01-degraded/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-degraded/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P01-degraded/1.frag",
+      "source_sha256": "3cbb69131cbe763dbcd76cbe8058cf8dc74e8bff4b9a0356ee791bd36f2ee359",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-degraded/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P01-degraded/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-degraded/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P01-degraded/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-degraded/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P01-degraded/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-degraded/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P01-mediump/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-mediump/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P01-mediump/1.frag",
+      "source_sha256": "1b78a28e3fa35774055150e5cf8f42cba51c398e278966fb951d2bcc46c130cd",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-mediump/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P01-mediump/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-mediump/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P01-mediump/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-mediump/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P01",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P01-mediump/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P01-mediump/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P02-baseline/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-baseline/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P02-baseline/1.frag",
+      "source_sha256": "3dc26159894365b179f98b8d1aa6061c08d8a143cf0ab6accc0ec5d267e5e5e8",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-baseline/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P02-baseline/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-baseline/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P02-baseline/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-baseline/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P02-baseline/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-baseline/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P02-degraded/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-degraded/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P02-degraded/1.frag",
+      "source_sha256": "9c62aed3c7ae65459872e78994299e524e729d0abbf650b0d148c26d2230b1b7",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-degraded/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P02-degraded/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-degraded/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P02-degraded/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-degraded/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P02-degraded/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-degraded/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P02-mediump/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-mediump/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P02-mediump/1.frag",
+      "source_sha256": "e15c285b3142883f6497f8bf8845c9188da260c785383f45ee9c580b7b7c5b32",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-mediump/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P02-mediump/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-mediump/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P02-mediump/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-mediump/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P02",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P02-mediump/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P02-mediump/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P03-baseline/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-baseline/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P03-baseline/1.frag",
+      "source_sha256": "a6eca0e104a5a515766cf6a6286b74715bdeccef5e009591c2ac27d7f8328213",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-baseline/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P03-baseline/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-baseline/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P03-baseline/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-baseline/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P03-baseline/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-baseline/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P03-degraded/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-degraded/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P03-degraded/1.frag",
+      "source_sha256": "bd5eb8d675bd80f61a5d0511350e25bf4a3954eec229d42bc7425c0b1940e130",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-degraded/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P03-degraded/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-degraded/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P03-degraded/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-degraded/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P03-degraded/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-degraded/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P03-mediump/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-mediump/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P03-mediump/1.frag",
+      "source_sha256": "aec4968e4e1ead480ba0d0e91f49909b038ca78348a181e186dd9e4ec34f1b1f",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-mediump/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P03-mediump/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-mediump/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P03-mediump/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-mediump/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P03",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P03-mediump/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P03-mediump/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P04-baseline/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-baseline/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P04-baseline/1.frag",
+      "source_sha256": "fc6a21763b111a6e567750d0c5bfc7a1d6a868b329665c3f54308dd2c748a623",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-baseline/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P04-baseline/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-baseline/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P04-baseline/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-baseline/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P04-baseline/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-baseline/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P04-degraded/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-degraded/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P04-degraded/1.frag",
+      "source_sha256": "02db86343b65c77e5114be98db107e27619c104dc0c3558517331046d9c91364",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-degraded/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P04-degraded/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-degraded/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P04-degraded/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-degraded/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P04-degraded/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-degraded/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P04-mediump/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-mediump/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P04-mediump/1.frag",
+      "source_sha256": "6c69e21ba099a11002603bcc9d850db9e9914fa9c8c0a52d9ddf1253fe26c98f",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-mediump/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P04-mediump/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-mediump/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P04-mediump/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-mediump/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P04",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P04-mediump/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P04-mediump/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P05-baseline/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-baseline/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P05-baseline/1.frag",
+      "source_sha256": "ff3b389c0a7a62bdd9d73533d99d3244b099c786a20b7b44d4e3465c397230ff",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-baseline/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P05-baseline/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-baseline/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P05-baseline/3.frag",
+      "source_sha256": "27d018d837fc650c09dbdc5e6e1bd9971a4b1d986d02217d3cde4e151c63802e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-baseline/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P05-baseline/4.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-baseline/4.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P05-baseline/5.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-baseline/5.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P05-baseline/6.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-baseline/6.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P05-degraded/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-degraded/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P05-degraded/1.frag",
+      "source_sha256": "ff3b389c0a7a62bdd9d73533d99d3244b099c786a20b7b44d4e3465c397230ff",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-degraded/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P05-degraded/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-degraded/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P05-degraded/3.frag",
+      "source_sha256": "3a64da6d53a00e68e2ae92d07b2e5aaf2e9bb9e0a70436c536ee7ce7667e09f7",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-degraded/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P05-degraded/4.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-degraded/4.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P05-degraded/5.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-degraded/5.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P05-degraded/6.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-degraded/6.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P05-mediump/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-mediump/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P05-mediump/1.frag",
+      "source_sha256": "ff3b389c0a7a62bdd9d73533d99d3244b099c786a20b7b44d4e3465c397230ff",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-mediump/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P05-mediump/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-mediump/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P05-mediump/3.frag",
+      "source_sha256": "27d018d837fc650c09dbdc5e6e1bd9971a4b1d986d02217d3cde4e151c63802e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-mediump/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P05-mediump/4.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-mediump/4.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P05-mediump/5.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-mediump/5.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P05",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P05-mediump/6.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P05-mediump/6.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/1.frag",
+      "source_sha256": "e93d22a91e9c0dc66b896384493206caa31e5dd97905953f92b70206dec09702",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/10.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/10.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/11.frag",
+      "source_sha256": "6028547b95a5fe902275b1f39769c191173200aa890d4923d68f7a6b0769184b",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/11.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/12.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/12.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/13.frag",
+      "source_sha256": "230cf832490abc1a92dd85d96e9a36edfa3edbb6b3c663e3b1c5e60f8aad1833",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/13.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/14.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/14.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/15.frag",
+      "source_sha256": "6a92346c70c02489103f97bdbb2804f0832a09586a8bc2cc410dd70f4e59b279",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/15.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/16.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/16.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/17.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/17.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/18.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/18.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/3.frag",
+      "source_sha256": "d3e57da60cf51ca20f45eeb1649f0f0f373e0325709dbcf322f3e375e9e68265",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/4.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/4.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/5.frag",
+      "source_sha256": "ec6558944f3778ccb08216d3e67db4c063f4b849f95d463702ea587e86b30dd6",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/5.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/6.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/6.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/7.frag",
+      "source_sha256": "d03a5eff8691bf8b4d26d019a2fbbe3a9638f9dfba161f916cedc0f0a4ae246d",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/7.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/8.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/8.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P06-baseline/9.frag",
+      "source_sha256": "481229bee915cf45e7e62bc91a0a92ca4ec9bdda20b161f6abdb388d5bd81297",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-baseline/9.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/1.frag",
+      "source_sha256": "e93d22a91e9c0dc66b896384493206caa31e5dd97905953f92b70206dec09702",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/10.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/10.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/11.frag",
+      "source_sha256": "6028547b95a5fe902275b1f39769c191173200aa890d4923d68f7a6b0769184b",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/11.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/12.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/12.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/13.frag",
+      "source_sha256": "230cf832490abc1a92dd85d96e9a36edfa3edbb6b3c663e3b1c5e60f8aad1833",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/13.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/14.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/14.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/15.frag",
+      "source_sha256": "6a92346c70c02489103f97bdbb2804f0832a09586a8bc2cc410dd70f4e59b279",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/15.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/16.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/16.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/17.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/17.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/18.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/18.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/3.frag",
+      "source_sha256": "d3e57da60cf51ca20f45eeb1649f0f0f373e0325709dbcf322f3e375e9e68265",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/4.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/4.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/5.frag",
+      "source_sha256": "ec6558944f3778ccb08216d3e67db4c063f4b849f95d463702ea587e86b30dd6",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/5.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/6.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/6.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/7.frag",
+      "source_sha256": "d03a5eff8691bf8b4d26d019a2fbbe3a9638f9dfba161f916cedc0f0a4ae246d",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/7.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/8.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/8.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P06-degraded/9.frag",
+      "source_sha256": "481229bee915cf45e7e62bc91a0a92ca4ec9bdda20b161f6abdb388d5bd81297",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-degraded/9.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/1.frag",
+      "source_sha256": "e93d22a91e9c0dc66b896384493206caa31e5dd97905953f92b70206dec09702",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/10.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/10.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/11.frag",
+      "source_sha256": "6028547b95a5fe902275b1f39769c191173200aa890d4923d68f7a6b0769184b",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/11.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/12.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/12.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/13.frag",
+      "source_sha256": "230cf832490abc1a92dd85d96e9a36edfa3edbb6b3c663e3b1c5e60f8aad1833",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/13.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/14.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/14.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/15.frag",
+      "source_sha256": "6a92346c70c02489103f97bdbb2804f0832a09586a8bc2cc410dd70f4e59b279",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/15.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/16.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/16.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/17.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/17.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/18.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/18.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/3.frag",
+      "source_sha256": "d3e57da60cf51ca20f45eeb1649f0f0f373e0325709dbcf322f3e375e9e68265",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/4.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/4.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/5.frag",
+      "source_sha256": "ec6558944f3778ccb08216d3e67db4c063f4b849f95d463702ea587e86b30dd6",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/5.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/6.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/6.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/7.frag",
+      "source_sha256": "d03a5eff8691bf8b4d26d019a2fbbe3a9638f9dfba161f916cedc0f0a4ae246d",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/7.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/8.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/8.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P06",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P06-mediump/9.frag",
+      "source_sha256": "481229bee915cf45e7e62bc91a0a92ca4ec9bdda20b161f6abdb388d5bd81297",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P06-mediump/9.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P07-baseline/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-baseline/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P07-baseline/1.frag",
+      "source_sha256": "1c1ddaf915b0464643c655d165b691db98fc4a13251b967e660e9df8d499960e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-baseline/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P07-baseline/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-baseline/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P07-baseline/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-baseline/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P07-baseline/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-baseline/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P07-degraded/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-degraded/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P07-degraded/1.frag",
+      "source_sha256": "1c1ddaf915b0464643c655d165b691db98fc4a13251b967e660e9df8d499960e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-degraded/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P07-degraded/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-degraded/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P07-degraded/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-degraded/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P07-degraded/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-degraded/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P07-mediump/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-mediump/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P07-mediump/1.frag",
+      "source_sha256": "1c1ddaf915b0464643c655d165b691db98fc4a13251b967e660e9df8d499960e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-mediump/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P07-mediump/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-mediump/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P07-mediump/3.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-mediump/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P07",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P07-mediump/4.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P07-mediump/4.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P08-baseline/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-baseline/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P08-baseline/1.frag",
+      "source_sha256": "ff3b389c0a7a62bdd9d73533d99d3244b099c786a20b7b44d4e3465c397230ff",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-baseline/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P08-baseline/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-baseline/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P08-baseline/3.frag",
+      "source_sha256": "27d018d837fc650c09dbdc5e6e1bd9971a4b1d986d02217d3cde4e151c63802e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-baseline/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P08-baseline/4.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-baseline/4.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P08-baseline/5.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-baseline/5.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "baseline",
+      "source": "/tmp/gles-precision-shaders/P08-baseline/6.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-baseline/6.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P08-degraded/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-degraded/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P08-degraded/1.frag",
+      "source_sha256": "ff3b389c0a7a62bdd9d73533d99d3244b099c786a20b7b44d4e3465c397230ff",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-degraded/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P08-degraded/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-degraded/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P08-degraded/3.frag",
+      "source_sha256": "27d018d837fc650c09dbdc5e6e1bd9971a4b1d986d02217d3cde4e151c63802e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-degraded/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P08-degraded/4.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-degraded/4.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P08-degraded/5.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-degraded/5.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "degraded",
+      "source": "/tmp/gles-precision-shaders/P08-degraded/6.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-degraded/6.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P08-mediump/0.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-mediump/0.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P08-mediump/1.frag",
+      "source_sha256": "ff3b389c0a7a62bdd9d73533d99d3244b099c786a20b7b44d4e3465c397230ff",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-mediump/1.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P08-mediump/2.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-mediump/2.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P08-mediump/3.frag",
+      "source_sha256": "27d018d837fc650c09dbdc5e6e1bd9971a4b1d986d02217d3cde4e151c63802e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-mediump/3.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P08-mediump/4.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-mediump/4.vert"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P08-mediump/5.frag",
+      "source_sha256": "f6abdb44cb35955f5432511b10a23ea52bcd7e38b1144495e7dca1711a9f1e3e",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-mediump/5.frag"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "scene": "P08",
+      "mode": "mediump",
+      "source": "/tmp/gles-precision-shaders/P08-mediump/6.comp",
+      "source_sha256": "0ea5d108c889590731a6ecf7ae173d963a6ac24f5bdfc0c28c3e30a6a78b75cf",
+      "command": [
+        "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+        "/tmp/gles-precision-shaders/P08-mediump/6.comp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}
