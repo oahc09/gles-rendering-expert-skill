@@ -1,0 +1,273 @@
+{
+  "license": "MIT; original synthetic data authored for this repository, no user/device trace",
+  "cases": [
+    {
+      "id": "S01-empty",
+      "events": [],
+      "expected_status": "UNKNOWN",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S02-cpu-submit",
+      "events": [
+        [
+          "gles.cpu_submit",
+          0,
+          12000000
+        ],
+        [
+          "gles.frame",
+          0,
+          20000000
+        ]
+      ],
+      "gpu": [
+        [
+          0,
+          3000000
+        ]
+      ],
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [
+        "cpu_submit_bound"
+      ]
+    },
+    {
+      "id": "S03-compile-hitch",
+      "events": [
+        [
+          "gles.shader_compile",
+          0,
+          12000000
+        ],
+        [
+          "gles.frame",
+          0,
+          30000000
+        ]
+      ],
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [
+        "shader_compile_hitch"
+      ]
+    },
+    {
+      "id": "S04-swap-pacing-candidate",
+      "events": [
+        [
+          "gles.swap_wait",
+          0,
+          11000000
+        ]
+      ],
+      "gpu": [
+        [
+          0,
+          3000000
+        ]
+      ],
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [
+        "swap_backpressure"
+      ]
+    },
+    {
+      "id": "S05-thermal-candidate",
+      "counters": [
+        [
+          "gles.temperature_c",
+          "C",
+          0,
+          82
+        ],
+        [
+          "gles.gpu_frequency_mhz",
+          "MHz",
+          0,
+          300
+        ]
+      ],
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [
+        "thermal_drift"
+      ]
+    },
+    {
+      "id": "S06-missing-gpu-table",
+      "drop_table": "gpu_slice",
+      "events": [
+        [
+          "gles.cpu_submit",
+          0,
+          12000000
+        ]
+      ],
+      "expected_status": "PARTIAL_EVIDENCE",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S07-missing-duration-column",
+      "missing_duration": true,
+      "events": [],
+      "expected_status": "UNKNOWN",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S08-unfinished-slice",
+      "events": [
+        [
+          "gles.frame",
+          0,
+          -1
+        ]
+      ],
+      "expected_status": "UNKNOWN",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S09-truncated-input",
+      "raw_invalid": true,
+      "expected_status": "UNKNOWN",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S10-unknown-clock",
+      "clock": "wall_clock_unsynchronized",
+      "events": [
+        [
+          "gles.frame",
+          0,
+          20000000
+        ]
+      ],
+      "expected_status": "UNKNOWN",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S11-unit-mismatch",
+      "counters": [
+        [
+          "gles.gpu_frequency_mhz",
+          "kHz",
+          0,
+          300000
+        ]
+      ],
+      "expected_status": "UNKNOWN",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S12-declared-incomplete",
+      "capture_complete": false,
+      "events": [
+        [
+          "gles.frame",
+          0,
+          30000000
+        ]
+      ],
+      "expected_status": "UNKNOWN",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S13-healthy-negative",
+      "events": [
+        [
+          "gles.cpu_submit",
+          0,
+          2000000
+        ],
+        [
+          "gles.frame",
+          0,
+          12000000
+        ],
+        [
+          "gles.swap_wait",
+          0,
+          1000000
+        ]
+      ],
+      "gpu": [
+        [
+          0,
+          4000000
+        ]
+      ],
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S14-parser-loss",
+      "parser_loss": true,
+      "events": [
+        [
+          "gles.frame",
+          0,
+          30000000
+        ]
+      ],
+      "expected_status": "UNKNOWN",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S15-hash-mismatch",
+      "bad_hash": true,
+      "events": [
+        [
+          "gles.frame",
+          0,
+          30000000
+        ]
+      ],
+      "expected_status": "UNKNOWN",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S16-unrelated-time-intervals",
+      "events": [
+        [
+          "gles.cpu_submit",
+          0,
+          12000000
+        ]
+      ],
+      "gpu": [
+        [
+          100000000,
+          3000000
+        ]
+      ],
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": []
+    },
+    {
+      "id": "S17-unrelated-high-cpu-healthy-overlap",
+      "events": [
+        [
+          "gles.cpu_submit",
+          0,
+          12000000
+        ],
+        [
+          "gles.cpu_submit",
+          100000000,
+          12000000
+        ],
+        [
+          "gles.cpu_submit",
+          150000000,
+          2000000
+        ]
+      ],
+      "gpu": [
+        [
+          150000000,
+          3000000
+        ]
+      ],
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": []
+    }
+  ]
+}

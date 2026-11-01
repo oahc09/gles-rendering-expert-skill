@@ -19,6 +19,16 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
 
 ---
 
+## v1.0.5 sustained-quality routing (candidate, not released)
+
+For longrun sampling and thermal/power evidence use [the sustained capture contract](benchmarks/longrun/README.md).
+Use [quality policy](benchmarks/quality_policy/README.md) for deterministic recommendations,
+[precision and visual regressions](benchmarks/visual_quality/README.md) for numeric/region/temporal gates,
+[resource stress](benchmarks/resource_pressure/README.md) for owned-object estimates and recovery,
+and [Trace SQL](benchmarks/traces/sql/README.md) for schema-probed evidence with explicit unknowns.
+Do not convert synthetic time, software correctness, source compilation or fixture scores into
+physical-device or real-model acceptance. Preserve prior triggers, APIs and [release dependencies](docs/v1.0.5/acceptance.md).
+
 ## v1.0.4 implementation routing (not released)
 
 For device identity and native/ANGLE comparisons use [DeviceLab](benchmarks/device_lab/README.md).

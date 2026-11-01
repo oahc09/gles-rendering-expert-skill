@@ -1,0 +1,45 @@
+{
+  "acquisition_status": "CAPTURED_HOST_ONLY",
+  "measured_duration_complete": true,
+  "evidence_level": "host_workload_iterations",
+  "coverage": "sampled workload invocations, NOT display frames",
+  "sample_count": 274,
+  "observed_duration_s": 598.727258824,
+  "actual_wall_duration_s": 600.000379648,
+  "frame_ms_distribution": null,
+  "iteration_ms_distribution": {
+    "p50": 163.060263,
+    "p90": 277.9401401000001,
+    "p95": 350.5376085499991,
+    "p99": 582.9673366999991
+  },
+  "sampled_jank_ratio": null,
+  "frame_slope_ms_per_min": null,
+  "power_mw": null,
+  "energy_saving_percent": null,
+  "hypotheses": [],
+  "status": "INSUFFICIENT_EVIDENCE",
+  "missing": [
+    "actual frame telemetry; iteration latency is not frame time",
+    "thermal_status",
+    "gpu_hz",
+    "cpu_submit_ms",
+    "gpu_ms",
+    "bandwidth_utilization"
+  ],
+  "segments": [
+    {
+      "frame_slope_ms_per_min": null,
+      "foreground": true,
+      "refresh_hz": null,
+      "quality_level": 0,
+      "start_s": 1.927e-06,
+      "end_s": 598.727260751,
+      "sample_count": 274,
+      "frame_ms": null,
+      "hypotheses": []
+    }
+  ],
+  "required_experiment": "Repeat controlled workload at matched resolution/quality/refresh and thermal state; inspect independent counters; retain null unmeasured power.",
+  "source_sha256": "53e525f207235d40cd16df9bcca6995fe1a6a60956fce1d3a09d1c1b63afe196"
+}

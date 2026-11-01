@@ -1,0 +1,33 @@
+{
+  "license": "MIT original synthetic TrackEvent fixture; no user/device data",
+  "device": "synthetic native protobuf",
+  "gpu": "none",
+  "driver": "none",
+  "backend": "Perfetto TrackEvent",
+  "build": "fixture-v105",
+  "provenance": "synthetic",
+  "source": "synthetic-fixture",
+  "time_range": [
+    1000.0,
+    1030.0
+  ],
+  "aggregation": "individual_samples",
+  "metrics": {
+    "shader_compile_ms": {
+      "unit": "ms",
+      "sample_method": "SQL query evidence; inspect source track semantics"
+    },
+    "frame_ms": {
+      "unit": "ms",
+      "sample_method": "SQL query evidence; inspect source track semantics"
+    }
+  },
+  "raw_artifacts": [
+    {
+      "path": "normalized-metrics.json",
+      "sha256": "80a26fad2c094091dee8c921318d2ae0e02f119d5746e8f77da5dc6f2bf7f56a",
+      "format": "json"
+    }
+  ],
+  "missing": []
+}

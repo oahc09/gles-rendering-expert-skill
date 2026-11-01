@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "actual Android API26 arm64 cross-compile/link, NOT device execution",
+  "command": [
+    "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic",
+    "examples/precision/precision_lab.cpp",
+    "-lEGL",
+    "-lGLESv3",
+    "-Wl,-z,max-page-size=16384",
+    "-o",
+    "/tmp/gles-precision-android-arm64"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "source_sha256": "71bd1643ce9b26fc308861c858addeba595d437ab0535d08f85bc1a094adb949",
+  "shared_helper_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+  "device_execution": "NOT_RUN_DEVICE"
+}

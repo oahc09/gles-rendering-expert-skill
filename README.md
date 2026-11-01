@@ -201,3 +201,11 @@ Contributions are welcome! Areas of interest:
 ## Acknowledgments
 
 Inspired by [vulkan-rendering-expert-skill](https://github.com/oahc09/vulkan-rendering-expert-skill) — the Vulkan counterpart to this GLES-focused skill.
+
+## v1.0.5 sustained-quality engineering candidate
+
+Longrun capture, hysteretic quality recommendations, numeric/color regressions,
+resource pressure, Perfetto SQL and 24 additional Agent cases build on the merged
+v1.0.4 implementation. See [acceptance and limitations](docs/v1.0.5/acceptance.md)
+and the [exact plan](docs/v1.0.5/development-plan.md). Metadata remains **1.0.2**;
+physical-device and provider blockers are not waived by source delivery.

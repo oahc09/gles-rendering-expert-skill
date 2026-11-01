@@ -1,0 +1,12 @@
+{
+  "id": 424272912,
+  "html_url": "https://github.com/baldurk/renderdoc/releases/tag/v1.47",
+  "tag_name": "v1.47",
+  "published_at": "2026-10-31T15:49:28Z",
+  "created_at": "2026-10-31T15:45:05Z",
+  "target_commitish": "v1.x",
+  "draft": false,
+  "prerelease": false,
+  "retrieval_url": "https://api.github.com/repos/baldurk/renderdoc/releases/tags/v1.47",
+  "raw_response_sha256": "f96a87283e3baee183a86390569315e1bbaaa7b9873fbac4e07b41ffb3e6c937"
+}

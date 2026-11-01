@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "timestamp": "2026-11-01T09:37:29.294689+00:00",
+  "scope": "actual host software GL resource accounting; synthetic pending policy separate; not Android runtime/performance",
+  "source_sha256": {
+    "examples/resource_pressure/stress.cpp": "d3e40dcda5e47b3a93139b0708e50616ca67429b4212451c01a82b94a1e610f5",
+    "examples/resource_pressure/completion_policy.hpp": "7591de9c7a98e339317fc7bbae742299a744a47e8b1c7841f48fe4ca28b52568",
+    "examples/validation/egl_smoke.cpp": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+    "references/examples/pbo_streaming_upload.cpp": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed",
+    "benchmarks/resource_pressure/run.py": "5d85dee7b9c0d21ba94d6ce82a017a24ffe5d5eb4e53a4e899b7d2d6ac6d5cfc",
+    "benchmarks/resource_pressure/validate.py": "fde4018579c5abb4b6ce43145fa6cf70459b1abaacd0e5f96688320dd80bd691"
+  },
+  "host_compiler_version": {
+    "command": [
+      "c++",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "c++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "stderr": ""
+  },
+  "host_compile": {
+    "command": [
+      "c++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic",
+      "/workspace/scratch/62d43a81bbde/gles-v105-20261101/examples/resource_pressure/stress.cpp",
+      "-lEGL",
+      "-lGLESv2",
+      "-pthread",
+      "-o",
+      "/tmp/gles-resource-pressure-xxleh8su/stress"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "host_binary_sha256": "392529fcfeff05d1f90cdc8cb00bd57660f978eb6065647c8e2c4c26604bcc18",
+  "host_run": {
+    "command": [
+      "/tmp/gles-resource-pressure-xxleh8su/stress",
+      "100"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"synthetic-completion-policy\",\"status\":\"PASS\",\"real_gpu_delayed_completion\":false,\"assertions\":7}\n{\"scene\":0,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":1,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":2,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":3,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":4,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":5,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":6,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":7,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":8,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":9,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":10,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":11,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":12,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":13,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":14,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":15,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":16,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":17,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":18,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":19,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":20,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":21,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":22,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":23,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":24,\"context_generation\":1,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":25,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":26,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":27,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":28,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":29,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":30,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":31,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":32,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":33,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":34,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":35,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":36,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":37,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":38,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":39,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":40,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":41,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":42,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":43,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":44,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":45,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":46,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":47,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":48,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":49,\"context_generation\":2,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":50,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":51,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":52,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":53,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":54,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":55,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":56,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":57,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":58,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":59,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":60,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":61,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":62,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":63,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":64,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":65,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":66,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":67,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":68,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":69,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":70,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":71,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":72,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":73,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":74,\"context_generation\":3,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":75,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":76,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":77,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":78,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":79,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":80,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":81,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":82,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":83,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":84,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":85,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":86,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":87,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":88,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":89,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":90,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":91,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":92,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":93,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":94,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":95,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":96,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":97,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":98,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"scene\":99,\"context_generation\":4,\"live_owned_objects\":0,\"engine_estimated_texture_bytes\":0}\n{\"summary\":{\"status\":\"PASS\",\"scenes\":100,\"surface_recreates\":10,\"controlled_context_recreates\":4,\"context_generation\":5,\"live_owned_objects\":0,\"engine_estimated_texture_peak_bytes\":8192,\"evictions\":1700,\"budget_rejections\":100,\"low_memory_signals_simulated\":100,\"upload_transfers\":800,\"readback_transfers\":400,\"canceled_transfers\":400,\"completed_transfers\":1200,\"actual_zero_timeout_pending\":0,\"actual_zero_timeout_complete\":1200,\"object_counters\":[{\"kind\":0,\"created\":1904,\"deleted\":1904,\"peak_live\":8},{\"kind\":1,\"created\":1200,\"deleted\":1200,\"peak_live\":8},{\"kind\":2,\"created\":1200,\"deleted\":1200,\"peak_live\":8},{\"kind\":3,\"created\":104,\"deleted\":104,\"peak_live\":1}],\"vram_residency_measurement\":\"NOT_AVAILABLE\",\"driver_internal_leak_check\":\"NOT_MEASURED\",\"android_real_loss\":\"NOT_RUN_DEVICE\",\"AHB_external_runtime\":\"NOT_RUN_DEVICE\"}}\n",
+    "stderr": ""
+  },
+  "summary": {
+    "status": "PASS",
+    "scenes": 100,
+    "surface_recreates": 10,
+    "controlled_context_recreates": 4,
+    "context_generation": 5,
+    "live_owned_objects": 0,
+    "engine_estimated_texture_peak_bytes": 8192,
+    "evictions": 1700,
+    "budget_rejections": 100,
+    "low_memory_signals_simulated": 100,
+    "upload_transfers": 800,
+    "readback_transfers": 400,
+    "canceled_transfers": 400,
+    "completed_transfers": 1200,
+    "actual_zero_timeout_pending": 0,
+    "actual_zero_timeout_complete": 1200,
+    "object_counters": [
+      {
+        "kind": 0,
+        "created": 1904,
+        "deleted": 1904,
+        "peak_live": 8
+      },
+      {
+        "kind": 1,
+        "created": 1200,
+        "deleted": 1200,
+        "peak_live": 8
+      },
+      {
+        "kind": 2,
+        "created": 1200,
+        "deleted": 1200,
+        "peak_live": 8
+      },
+      {
+        "kind": 3,
+        "created": 104,
+        "deleted": 104,
+        "peak_live": 1
+      }
+    ],
+    "vram_residency_measurement": "NOT_AVAILABLE",
+    "driver_internal_leak_check": "NOT_MEASURED",
+    "android_real_loss": "NOT_RUN_DEVICE",
+    "AHB_external_runtime": "NOT_RUN_DEVICE"
+  },
+  "ndk_compiler_version": {
+    "command": [
+      "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Android (12027248, +pgo, +bolt, +lto, +mlgo, based on r522817) clang version 18.0.1 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)\nTarget: aarch64-unknown-linux-android26\nThread model: posix\nInstalledDir: /tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin\n",
+    "stderr": ""
+  },
+  "ndk_compile": {
+    "command": [
+      "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic",
+      "/workspace/scratch/62d43a81bbde/gles-v105-20261101/examples/resource_pressure/stress.cpp",
+      "-lEGL",
+      "-lGLESv3",
+      "-pthread",
+      "-o",
+      "/tmp/gles-resource-pressure-xxleh8su/android-stress"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "ndk_binary_sha256": "d862015047d276da870d8c921b7d2f18640d70f64b651e24ab65def74a33c8a1",
+  "ndk_target_execution": "NOT_RUN_DEVICE",
+  "status": "PASS"
+}

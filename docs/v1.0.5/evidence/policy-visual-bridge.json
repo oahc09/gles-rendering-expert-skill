@@ -1,0 +1,654 @@
+{
+  "scope": "actual software scale-only comparisons combined with deterministic policy replay; not new device measurements",
+  "report_sha256": "46984e5b535fb1099b117c37c997ffa718d625a6110a9530fc3c20c4bd359dd0",
+  "decisions": [
+    {
+      "policy_enabled": false,
+      "decision": {
+        "t_s": 24.0,
+        "state": "NORMAL",
+        "level": 0,
+        "changed": false,
+        "reason": "disabled: retain current level",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 1.0,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map",
+            "bloom"
+          ],
+          "particle_budget": 2000,
+          "lod_bias": 0,
+          "anisotropy": 1
+        },
+        "enabled": false,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P01",
+        "recommended_level": 0,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 1.0,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": true,
+      "decision": {
+        "t_s": 24.0,
+        "state": "DEGRADED",
+        "level": 2,
+        "changed": false,
+        "reason": "hold",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 0.7,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map"
+          ],
+          "particle_budget": 600,
+          "lod_bias": 2,
+          "anisotropy": 1
+        },
+        "enabled": true,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P01",
+        "recommended_level": 2,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 0.7,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": false,
+      "decision": {
+        "t_s": 24.0,
+        "state": "NORMAL",
+        "level": 0,
+        "changed": false,
+        "reason": "disabled: retain current level",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 1.0,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map",
+            "bloom"
+          ],
+          "particle_budget": 2000,
+          "lod_bias": 0,
+          "anisotropy": 1
+        },
+        "enabled": false,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P02",
+        "recommended_level": 0,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 1.0,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": true,
+      "decision": {
+        "t_s": 24.0,
+        "state": "DEGRADED",
+        "level": 2,
+        "changed": false,
+        "reason": "hold",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 0.7,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map"
+          ],
+          "particle_budget": 600,
+          "lod_bias": 2,
+          "anisotropy": 1
+        },
+        "enabled": true,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P02",
+        "recommended_level": 2,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 0.7,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": false,
+      "decision": {
+        "t_s": 24.0,
+        "state": "NORMAL",
+        "level": 0,
+        "changed": false,
+        "reason": "disabled: retain current level",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 1.0,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map",
+            "bloom"
+          ],
+          "particle_budget": 2000,
+          "lod_bias": 0,
+          "anisotropy": 1
+        },
+        "enabled": false,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P03",
+        "recommended_level": 0,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 1.0,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": true,
+      "decision": {
+        "t_s": 24.0,
+        "state": "DEGRADED",
+        "level": 2,
+        "changed": false,
+        "reason": "hold",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 0.7,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map"
+          ],
+          "particle_budget": 600,
+          "lod_bias": 2,
+          "anisotropy": 1
+        },
+        "enabled": true,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P03",
+        "recommended_level": 2,
+        "scale_only_visual_pass": false,
+        "safe_scale_recommendation": 1.0,
+        "full_preset_may_apply": false,
+        "reason": "reject measured visual regression; retain baseline",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": false,
+      "decision": {
+        "t_s": 24.0,
+        "state": "NORMAL",
+        "level": 0,
+        "changed": false,
+        "reason": "disabled: retain current level",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 1.0,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map",
+            "bloom"
+          ],
+          "particle_budget": 2000,
+          "lod_bias": 0,
+          "anisotropy": 1
+        },
+        "enabled": false,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P04",
+        "recommended_level": 0,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 1.0,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": true,
+      "decision": {
+        "t_s": 24.0,
+        "state": "DEGRADED",
+        "level": 2,
+        "changed": false,
+        "reason": "hold",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 0.7,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map"
+          ],
+          "particle_budget": 600,
+          "lod_bias": 2,
+          "anisotropy": 1
+        },
+        "enabled": true,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P04",
+        "recommended_level": 2,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 0.7,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": false,
+      "decision": {
+        "t_s": 24.0,
+        "state": "NORMAL",
+        "level": 0,
+        "changed": false,
+        "reason": "disabled: retain current level",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 1.0,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map",
+            "bloom"
+          ],
+          "particle_budget": 2000,
+          "lod_bias": 0,
+          "anisotropy": 1
+        },
+        "enabled": false,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P05",
+        "recommended_level": 0,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 1.0,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": true,
+      "decision": {
+        "t_s": 24.0,
+        "state": "DEGRADED",
+        "level": 2,
+        "changed": false,
+        "reason": "hold",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 0.7,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map"
+          ],
+          "particle_budget": 600,
+          "lod_bias": 2,
+          "anisotropy": 1
+        },
+        "enabled": true,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P05",
+        "recommended_level": 2,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 0.7,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": false,
+      "decision": {
+        "t_s": 24.0,
+        "state": "NORMAL",
+        "level": 0,
+        "changed": false,
+        "reason": "disabled: retain current level",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 1.0,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map",
+            "bloom"
+          ],
+          "particle_budget": 2000,
+          "lod_bias": 0,
+          "anisotropy": 1
+        },
+        "enabled": false,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P06",
+        "recommended_level": 0,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 1.0,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": true,
+      "decision": {
+        "t_s": 24.0,
+        "state": "DEGRADED",
+        "level": 2,
+        "changed": false,
+        "reason": "hold",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 0.7,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map"
+          ],
+          "particle_budget": 600,
+          "lod_bias": 2,
+          "anisotropy": 1
+        },
+        "enabled": true,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P06",
+        "recommended_level": 2,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 0.7,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": false,
+      "decision": {
+        "t_s": 24.0,
+        "state": "NORMAL",
+        "level": 0,
+        "changed": false,
+        "reason": "disabled: retain current level",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 1.0,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map",
+            "bloom"
+          ],
+          "particle_budget": 2000,
+          "lod_bias": 0,
+          "anisotropy": 1
+        },
+        "enabled": false,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P07",
+        "recommended_level": 0,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 1.0,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": true,
+      "decision": {
+        "t_s": 24.0,
+        "state": "DEGRADED",
+        "level": 2,
+        "changed": false,
+        "reason": "hold",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 0.7,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map"
+          ],
+          "particle_budget": 600,
+          "lod_bias": 2,
+          "anisotropy": 1
+        },
+        "enabled": true,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P07",
+        "recommended_level": 2,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 0.7,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": false,
+      "decision": {
+        "t_s": 24.0,
+        "state": "NORMAL",
+        "level": 0,
+        "changed": false,
+        "reason": "disabled: retain current level",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 1.0,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map",
+            "bloom"
+          ],
+          "particle_budget": 2000,
+          "lod_bias": 0,
+          "anisotropy": 1
+        },
+        "enabled": false,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P08",
+        "recommended_level": 0,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 1.0,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "policy_enabled": true,
+      "decision": {
+        "t_s": 24.0,
+        "state": "DEGRADED",
+        "level": 2,
+        "changed": false,
+        "reason": "hold",
+        "backend": "software",
+        "recommendation": {
+          "render_scale": 0.7,
+          "msaa": null,
+          "shadow_size": null,
+          "postprocess": [
+            "tone_map"
+          ],
+          "particle_budget": 600,
+          "lod_bias": 2,
+          "anisotropy": 1
+        },
+        "enabled": true,
+        "capability_missing": [
+          "MSAA sample capability",
+          "texture-size capability"
+        ],
+        "visual_acceptance": "UNVERIFIED",
+        "may_apply": false,
+        "operating_system_changes": false,
+        "performance_claim": "NOT_MEASURED"
+      },
+      "visual_gate": {
+        "scene": "P08",
+        "recommended_level": 2,
+        "scale_only_visual_pass": true,
+        "safe_scale_recommendation": 0.7,
+        "full_preset_may_apply": false,
+        "reason": "scale-only host reference accepted; full preset/device evidence still required",
+        "physical_performance": "NOT_MEASURED"
+      }
+    }
+  ]
+}

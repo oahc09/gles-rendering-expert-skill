@@ -1,0 +1,435 @@
+{
+  "provenance": "synthetic_fixture",
+  "capabilities": {
+    "msaa_samples": [
+      1,
+      2,
+      4
+    ],
+    "max_texture_size": 4096,
+    "max_anisotropy": 8
+  },
+  "approved_levels": [],
+  "samples": [
+    {
+      "t_s": 0,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 1,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 2,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 3,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 4,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 5,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 6,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 7,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 8,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 9,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 10,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 11,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 12,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 13,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 14,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 15,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 16,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 17,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 18,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 19,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 20,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 21,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 22,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 23,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 24,
+      "p95_ms": 30,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 3
+    },
+    {
+      "t_s": 25,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 26,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 27,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 28,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 29,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 30,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 31,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 32,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 33,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 34,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 35,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 36,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 37,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 38,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 39,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 40,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 41,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 42,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 43,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 44,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 45,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 46,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 47,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 48,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 49,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 50,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 51,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 52,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 53,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 54,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 55,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 56,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 57,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 58,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    },
+    {
+      "t_s": 59,
+      "p95_ms": 10,
+      "budget_ms": 16.667,
+      "backend": "native_gles",
+      "thermal_status": 1
+    }
+  ]
+}

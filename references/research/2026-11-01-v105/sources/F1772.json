@@ -1,0 +1,12 @@
+{
+  "id": 398620915,
+  "html_url": "https://github.com/google/filament/releases/tag/v1.77.2",
+  "tag_name": "v1.77.2",
+  "published_at": "2026-09-28T20:59:51Z",
+  "created_at": "2026-09-28T20:56:32Z",
+  "target_commitish": "release",
+  "draft": false,
+  "prerelease": false,
+  "retrieval_url": "https://api.github.com/repos/google/filament/releases/tags/v1.77.2",
+  "raw_response_sha256": "50b7597e8255be53d7a59177684516f2b8f972b8e843abf11b85acdb988b79b1"
+}

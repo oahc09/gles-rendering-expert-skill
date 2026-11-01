@@ -1,0 +1,215 @@
+{
+  "sqlite_version": "3.53.1",
+  "label_source": "Manually authored expected synthetic outcomes; not independent human review of device root causes.",
+  "physical_device": "NOT_RUN",
+  "normalized_sqlite": [
+    {
+      "id": "S01-empty",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "a5240be5030ceab79f14da9a06b3773bba71b0a16947535515435d087a4a20ed"
+    },
+    {
+      "id": "S02-cpu-submit",
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "actual_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [
+        "cpu_submit_bound"
+      ],
+      "actual_hypotheses": [
+        "cpu_submit_bound"
+      ],
+      "pass": true,
+      "raw_sha256": "57e5eaae51fcb823d1dcbab5ef98ed8a29e854f67454d2341edf677b02dc5d9e"
+    },
+    {
+      "id": "S03-compile-hitch",
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "actual_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [
+        "shader_compile_hitch"
+      ],
+      "actual_hypotheses": [
+        "shader_compile_hitch"
+      ],
+      "pass": true,
+      "raw_sha256": "ae0e5a409a3cc86756a24a0685c5a6f9436caf8402a40019620d5f76d4726f28"
+    },
+    {
+      "id": "S04-swap-pacing-candidate",
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "actual_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [
+        "swap_backpressure"
+      ],
+      "actual_hypotheses": [
+        "swap_backpressure"
+      ],
+      "pass": true,
+      "raw_sha256": "e6c417286f3da8e478a67d88aaf0454cc5e9e3cc1ab971e55343e0be3a0eb405"
+    },
+    {
+      "id": "S05-thermal-candidate",
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "actual_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [
+        "thermal_drift"
+      ],
+      "actual_hypotheses": [
+        "thermal_drift"
+      ],
+      "pass": true,
+      "raw_sha256": "f85470e50b0e4c3162e99144bf695c807c8942d3277a5942f89ecc7c167a3837"
+    },
+    {
+      "id": "S06-missing-gpu-table",
+      "expected_status": "PARTIAL_EVIDENCE",
+      "actual_status": "PARTIAL_EVIDENCE",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "be9a9585d3d83d96721af02c310ac7ae23d0a253680f81da8c89322994733da2"
+    },
+    {
+      "id": "S07-missing-duration-column",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "abde88952b8c52a665d0bc91d97493f091763e52f27b010b8b66f219905b43f2"
+    },
+    {
+      "id": "S08-unfinished-slice",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "bc557fa56681998d83d9e8a225e1e43cc863885146f8c695273e66f84bd8e53f"
+    },
+    {
+      "id": "S09-truncated-input",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "d2d92ed9ad93d8d5f8f86c06ef36871a9e3040ba81da836c93d9b6f3090963d9"
+    },
+    {
+      "id": "S10-unknown-clock",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "76d40ae3eb79e65dbe86649007d7eb6af40bb259916a568e1647ba88bec8921d"
+    },
+    {
+      "id": "S11-unit-mismatch",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "fe0770011834f5750dbde79c0a348cba320babcdd1078c06036a1257a93c5d53"
+    },
+    {
+      "id": "S12-declared-incomplete",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "dd3103dc785eb3bbf6d3f8d7b32763a0b26c13552bbb3932203a809704a312f7"
+    },
+    {
+      "id": "S13-healthy-negative",
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "actual_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "eac8270e87fa7f9223c95e1cfd4dbc429430247018e0f48d2f58db1c4ea414a4"
+    },
+    {
+      "id": "S14-parser-loss",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "49a7d09f4877c22206dcea4393710fa36ff00026d5772ffe7f9992e41edf692f"
+    },
+    {
+      "id": "S15-hash-mismatch",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "dd3103dc785eb3bbf6d3f8d7b32763a0b26c13552bbb3932203a809704a312f7"
+    },
+    {
+      "id": "S16-unrelated-time-intervals",
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "actual_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "57a74eaf524efca2c01ef924a1eb897905fa0cdded8ff4638669529eaa8b112e"
+    },
+    {
+      "id": "S17-unrelated-high-cpu-healthy-overlap",
+      "expected_status": "EVIDENCE_AVAILABLE",
+      "actual_status": "EVIDENCE_AVAILABLE",
+      "expected_hypotheses": [],
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "3365de776c0b95d463bf99738bb7d82b4ecec506cf9f56ffd50802c06b8ae128"
+    }
+  ],
+  "native_perfetto": [
+    {
+      "id": "complete",
+      "actual_status": "EVIDENCE_AVAILABLE",
+      "actual_hypotheses": [
+        "shader_compile_hitch"
+      ],
+      "pass": true,
+      "raw_sha256": "01059c33d31503260fbc30bb8eb4d26665d7e579c5d4ab42c65544267ad6ed07",
+      "provenance": "synthetic native TrackEvent protobuf"
+    },
+    {
+      "id": "empty",
+      "actual_status": "UNKNOWN",
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "synthetic native TrackEvent protobuf"
+    },
+    {
+      "id": "truncated",
+      "actual_status": "UNKNOWN",
+      "actual_hypotheses": [],
+      "pass": true,
+      "raw_sha256": "a62633f6dbbf883024380aa8eb60ca440e2b93b6b29060012046c5fb4ef6c116",
+      "provenance": "synthetic native TrackEvent protobuf"
+    }
+  ],
+  "confusion_on_nonunknown_fixture_labels": {
+    "true_positive": 4,
+    "false_positive": 0,
+    "true_negative": 60,
+    "false_negative": 0
+  },
+  "abstentions": 9,
+  "processor_version": "Perfetto v59.1-1e9c61e98 (1e9c61e9844affd7dccd3d42d9ea9f3a3d10cf6d)\nTrace Processor RPC API version: 14",
+  "processor_sha256": "2434129a3af4dc9e2034a476f7b76447b490975213e301769310d3bd0d5d6458",
+  "status": "PASS",
+  "fixtures_sha256": "7dbee51eb5a258085836e06ad4fc1b8ef2dc0bbc76fc4968adae8b53de7bc102"
+}

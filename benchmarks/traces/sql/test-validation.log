@@ -1,0 +1,11 @@
+test_healthy_overlap_cannot_validate_unrelated_global_mean (test_adapter.AdapterTests.test_healthy_overlap_cannot_validate_unrelated_global_mean) ... ok
+test_labeled_fixtures (test_adapter.AdapterTests.test_labeled_fixtures) ... ok
+test_missing_fields_never_execute_query (test_adapter.AdapterTests.test_missing_fields_never_execute_query) ... ok
+test_positive_evidence_uses_only_matched_rows (test_adapter.AdapterTests.test_positive_evidence_uses_only_matched_rows) ... ok
+test_real_provenance_rejected_for_sqlite (test_adapter.AdapterTests.test_real_provenance_rejected_for_sqlite) ... ok
+test_sql_evidence_and_original_hash (test_adapter.AdapterTests.test_sql_evidence_and_original_hash) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.067s
+
+OK

@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.5 implementation candidate (not released)
+
+- Added LongRunCapture and deterministic adaptive-quality recommendations with hysteresis, floors, disabled/background handling and visual/capability gates.
+- Added actual precision/color scenes, frozen temporal goldens, multiscale/region comparisons, visual degradation rejection and unknown-performance Pareto rows.
+- Added real software resource churn, PBO/fence lifecycle accounting and controlled context recreation; estimated owned resources are not physical VRAM measurements.
+- Added schema-probed Perfetto SQL evidence and synthetic/real-tool fixtures, plus date-grounded research.
+- Preserved prior88 Agent cases, appended24 and extended independent-review metric denominators. No model-quality gain claimed.
+- Kept predecessor release gates, metadata1.0.2 and manual-only workflow; no release, physical-device optimization or automatic CI acceptance claimed.
+
+
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).

@@ -1,0 +1,15 @@
+test_duplicate_new_id_rejected (test_v105_cases.V105CorpusTests.test_duplicate_new_id_rejected) ... ok
+test_expected_labels_nonempty_and_unique (test_v105_cases.V105CorpusTests.test_expected_labels_nonempty_and_unique) ... ok
+test_materialization_and_existing_schema_validator (test_v105_cases.V105CorpusTests.test_materialization_and_existing_schema_validator) ... ok
+test_no_annotation_ground_truth_in_requests (test_v105_cases.V105CorpusTests.test_no_annotation_ground_truth_in_requests) ... ok
+test_no_evaluation_or_annotation_promotion (test_v105_cases.V105CorpusTests.test_no_evaluation_or_annotation_promotion) ... ok
+test_predecessor_file_and_exact_prefix (test_v105_cases.V105CorpusTests.test_predecessor_file_and_exact_prefix) ... ok
+test_prompts_differ_from_existing_tasks (test_v105_cases.V105CorpusTests.test_prompts_differ_from_existing_tasks) ... ok
+test_provider_absence_stays_blocked_for_112_cases (test_v105_cases.V105CorpusTests.test_provider_absence_stays_blocked_for_112_cases) ... ok
+test_six_topics_four_distinct_modes_each (test_v105_cases.V105CorpusTests.test_six_topics_four_distinct_modes_each) ... ok
+test_visual_safety_not_fabricated_compile_result (test_v105_cases.V105CorpusTests.test_visual_safety_not_fabricated_compile_result) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.091s
+
+OK

@@ -1,0 +1,14 @@
+[
+  {
+    "metric": "shader_compile_ms",
+    "value": 12.0,
+    "timestamp_ms": 1001.0,
+    "unit": "ms"
+  },
+  {
+    "metric": "frame_ms",
+    "value": 30.0,
+    "timestamp_ms": 1000.0,
+    "unit": "ms"
+  }
+]

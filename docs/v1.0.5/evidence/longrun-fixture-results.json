@@ -1,0 +1,445 @@
+{
+  "scope": "authored synthetic timelines, not actual device runs",
+  "results": [
+    {
+      "fixture": "benchmarks/longrun/fixtures/bandwidth.json",
+      "expected": [
+        "gpu_bandwidth_pressure"
+      ],
+      "actual": [
+        "gpu_bandwidth_pressure"
+      ],
+      "passed": true,
+      "report": {
+        "evidence_level": "synthetic_fixture",
+        "coverage": "authored sampled frame durations every2s, not actual execution",
+        "sample_count": 901,
+        "observed_duration_s": 1800,
+        "actual_wall_duration_s": null,
+        "frame_ms_distribution": {
+          "p50": 28.0,
+          "p90": 28.0,
+          "p95": 28.0,
+          "p99": 28.0
+        },
+        "iteration_ms_distribution": null,
+        "sampled_jank_ratio": 1.0,
+        "frame_slope_ms_per_min": 0.0,
+        "power_mw": null,
+        "energy_saving_percent": null,
+        "hypotheses": [
+          "gpu_bandwidth_pressure"
+        ],
+        "status": "INFERRED_HYPOTHESES_NOT_CAUSAL_PROOF",
+        "missing": [
+          "gpu_hz"
+        ],
+        "segments": [
+          {
+            "frame_slope_ms_per_min": 0.0,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 0,
+            "end_s": 98,
+            "sample_count": 50,
+            "frame_ms": {
+              "p50": 28.0,
+              "p90": 28.0,
+              "p95": 28.0,
+              "p99": 28.0
+            },
+            "hypotheses": [
+              "gpu_bandwidth_pressure"
+            ],
+            "frequency_frame_correlation": null
+          },
+          {
+            "frame_slope_ms_per_min": null,
+            "foreground": false,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 100,
+            "end_s": 118,
+            "sample_count": 10,
+            "frame_ms": null,
+            "hypotheses": []
+          },
+          {
+            "frame_slope_ms_per_min": 0.0,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 120,
+            "end_s": 1800,
+            "sample_count": 841,
+            "frame_ms": {
+              "p50": 28.0,
+              "p90": 28.0,
+              "p95": 28.0,
+              "p99": 28.0
+            },
+            "hypotheses": [
+              "gpu_bandwidth_pressure"
+            ],
+            "frequency_frame_correlation": null
+          }
+        ],
+        "required_experiment": "Repeat controlled workload at matched resolution/quality/refresh and thermal state; inspect independent counters; retain null unmeasured power."
+      }
+    },
+    {
+      "fixture": "benchmarks/longrun/fixtures/configuration_change.json",
+      "expected": [],
+      "actual": [],
+      "passed": true,
+      "report": {
+        "evidence_level": "synthetic_fixture",
+        "coverage": "authored sampled frame durations every2s, not actual execution",
+        "sample_count": 301,
+        "observed_duration_s": 600,
+        "actual_wall_duration_s": null,
+        "frame_ms_distribution": {
+          "p50": 20.0,
+          "p90": 20.0,
+          "p95": 20.0,
+          "p99": 20.0
+        },
+        "iteration_ms_distribution": null,
+        "sampled_jank_ratio": 0.5189003436426117,
+        "frame_slope_ms_per_min": null,
+        "power_mw": null,
+        "energy_saving_percent": null,
+        "hypotheses": [],
+        "status": "INSUFFICIENT_EVIDENCE",
+        "missing": [
+          "thermal_status",
+          "gpu_hz",
+          "cpu_submit_ms",
+          "gpu_ms",
+          "bandwidth_utilization"
+        ],
+        "segments": [
+          {
+            "frame_slope_ms_per_min": 0.0,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 0,
+            "end_s": 98,
+            "sample_count": 50,
+            "frame_ms": {
+              "p50": 12.0,
+              "p90": 12.0,
+              "p95": 12.0,
+              "p99": 12.0
+            },
+            "hypotheses": [],
+            "frequency_frame_correlation": null
+          },
+          {
+            "frame_slope_ms_per_min": null,
+            "foreground": false,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 100,
+            "end_s": 118,
+            "sample_count": 10,
+            "frame_ms": null,
+            "hypotheses": []
+          },
+          {
+            "frame_slope_ms_per_min": 0.0,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 120,
+            "end_s": 298,
+            "sample_count": 90,
+            "frame_ms": {
+              "p50": 12.0,
+              "p90": 12.0,
+              "p95": 12.0,
+              "p99": 12.0
+            },
+            "hypotheses": [],
+            "frequency_frame_correlation": null
+          },
+          {
+            "frame_slope_ms_per_min": 0.0,
+            "foreground": true,
+            "refresh_hz": 90,
+            "quality_level": 1,
+            "start_s": 300,
+            "end_s": 600,
+            "sample_count": 151,
+            "frame_ms": {
+              "p50": 20.0,
+              "p90": 20.0,
+              "p95": 20.0,
+              "p99": 20.0
+            },
+            "hypotheses": [],
+            "frequency_frame_correlation": null
+          }
+        ],
+        "required_experiment": "Repeat controlled workload at matched resolution/quality/refresh and thermal state; inspect independent counters; retain null unmeasured power."
+      }
+    },
+    {
+      "fixture": "benchmarks/longrun/fixtures/cpu.json",
+      "expected": [
+        "cpu_submission_pressure"
+      ],
+      "actual": [
+        "cpu_submission_pressure"
+      ],
+      "passed": true,
+      "report": {
+        "evidence_level": "synthetic_fixture",
+        "coverage": "authored sampled frame durations every2s, not actual execution",
+        "sample_count": 301,
+        "observed_duration_s": 600,
+        "actual_wall_duration_s": null,
+        "frame_ms_distribution": {
+          "p50": 28.0,
+          "p90": 28.0,
+          "p95": 28.0,
+          "p99": 28.0
+        },
+        "iteration_ms_distribution": null,
+        "sampled_jank_ratio": 1.0,
+        "frame_slope_ms_per_min": 0.0,
+        "power_mw": null,
+        "energy_saving_percent": null,
+        "hypotheses": [
+          "cpu_submission_pressure"
+        ],
+        "status": "INFERRED_HYPOTHESES_NOT_CAUSAL_PROOF",
+        "missing": [
+          "gpu_hz",
+          "bandwidth_utilization"
+        ],
+        "segments": [
+          {
+            "frame_slope_ms_per_min": 0.0,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 0,
+            "end_s": 98,
+            "sample_count": 50,
+            "frame_ms": {
+              "p50": 28.0,
+              "p90": 28.0,
+              "p95": 28.0,
+              "p99": 28.0
+            },
+            "hypotheses": [
+              "cpu_submission_pressure"
+            ],
+            "frequency_frame_correlation": null
+          },
+          {
+            "frame_slope_ms_per_min": null,
+            "foreground": false,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 100,
+            "end_s": 118,
+            "sample_count": 10,
+            "frame_ms": null,
+            "hypotheses": []
+          },
+          {
+            "frame_slope_ms_per_min": 0.0,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 120,
+            "end_s": 600,
+            "sample_count": 241,
+            "frame_ms": {
+              "p50": 28.0,
+              "p90": 28.0,
+              "p95": 28.0,
+              "p99": 28.0
+            },
+            "hypotheses": [
+              "cpu_submission_pressure"
+            ],
+            "frequency_frame_correlation": null
+          }
+        ],
+        "required_experiment": "Repeat controlled workload at matched resolution/quality/refresh and thermal state; inspect independent counters; retain null unmeasured power."
+      }
+    },
+    {
+      "fixture": "benchmarks/longrun/fixtures/thermal.json",
+      "expected": [
+        "thermal_frequency_pressure"
+      ],
+      "actual": [
+        "thermal_frequency_pressure"
+      ],
+      "passed": true,
+      "report": {
+        "evidence_level": "synthetic_fixture",
+        "coverage": "authored sampled frame durations every2s, not actual execution",
+        "sample_count": 301,
+        "observed_duration_s": 600,
+        "actual_wall_duration_s": null,
+        "frame_ms_distribution": {
+          "p50": 21.3,
+          "p90": 28.259999999999998,
+          "p95": 29.13,
+          "p99": 29.826
+        },
+        "iteration_ms_distribution": null,
+        "sampled_jank_ratio": 0.7663230240549829,
+        "frame_slope_ms_per_min": 1.8,
+        "power_mw": null,
+        "energy_saving_percent": null,
+        "hypotheses": [
+          "thermal_frequency_pressure"
+        ],
+        "status": "INFERRED_HYPOTHESES_NOT_CAUSAL_PROOF",
+        "missing": [
+          "cpu_submit_ms",
+          "bandwidth_utilization"
+        ],
+        "segments": [
+          {
+            "frame_slope_ms_per_min": 1.7999999999999998,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 0,
+            "end_s": 98,
+            "sample_count": 50,
+            "frame_ms": {
+              "p50": 13.469999999999999,
+              "p90": 14.646,
+              "p95": 14.793,
+              "p99": 14.910599999999999
+            },
+            "hypotheses": [],
+            "frequency_frame_correlation": -1.0
+          },
+          {
+            "frame_slope_ms_per_min": null,
+            "foreground": false,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 100,
+            "end_s": 118,
+            "sample_count": 10,
+            "frame_ms": null,
+            "hypotheses": []
+          },
+          {
+            "frame_slope_ms_per_min": 1.8,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 120,
+            "end_s": 600,
+            "sample_count": 241,
+            "frame_ms": {
+              "p50": 22.799999999999997,
+              "p90": 28.560000000000002,
+              "p95": 29.28,
+              "p99": 29.855999999999998
+            },
+            "hypotheses": [
+              "thermal_frequency_pressure"
+            ],
+            "frequency_frame_correlation": -1.0
+          }
+        ],
+        "required_experiment": "Repeat controlled workload at matched resolution/quality/refresh and thermal state; inspect independent counters; retain null unmeasured power."
+      }
+    },
+    {
+      "fixture": "benchmarks/longrun/fixtures/unknown.json",
+      "expected": [],
+      "actual": [],
+      "passed": true,
+      "report": {
+        "evidence_level": "synthetic_fixture",
+        "coverage": "authored sampled frame durations every2s, not actual execution",
+        "sample_count": 301,
+        "observed_duration_s": 600,
+        "actual_wall_duration_s": null,
+        "frame_ms_distribution": {
+          "p50": 12.0,
+          "p90": 12.0,
+          "p95": 12.0,
+          "p99": 12.0
+        },
+        "iteration_ms_distribution": null,
+        "sampled_jank_ratio": 0.0,
+        "frame_slope_ms_per_min": 0.0,
+        "power_mw": null,
+        "energy_saving_percent": null,
+        "hypotheses": [],
+        "status": "INSUFFICIENT_EVIDENCE",
+        "missing": [
+          "thermal_status",
+          "gpu_hz",
+          "cpu_submit_ms",
+          "gpu_ms",
+          "bandwidth_utilization"
+        ],
+        "segments": [
+          {
+            "frame_slope_ms_per_min": 0.0,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 0,
+            "end_s": 98,
+            "sample_count": 50,
+            "frame_ms": {
+              "p50": 12.0,
+              "p90": 12.0,
+              "p95": 12.0,
+              "p99": 12.0
+            },
+            "hypotheses": [],
+            "frequency_frame_correlation": null
+          },
+          {
+            "frame_slope_ms_per_min": null,
+            "foreground": false,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 100,
+            "end_s": 118,
+            "sample_count": 10,
+            "frame_ms": null,
+            "hypotheses": []
+          },
+          {
+            "frame_slope_ms_per_min": 0.0,
+            "foreground": true,
+            "refresh_hz": 60,
+            "quality_level": 0,
+            "start_s": 120,
+            "end_s": 600,
+            "sample_count": 241,
+            "frame_ms": {
+              "p50": 12.0,
+              "p90": 12.0,
+              "p95": 12.0,
+              "p99": 12.0
+            },
+            "hypotheses": [],
+            "frequency_frame_correlation": null
+          }
+        ],
+        "required_experiment": "Repeat controlled workload at matched resolution/quality/refresh and thermal state; inspect independent counters; retain null unmeasured power."
+      }
+    }
+  ]
+}
