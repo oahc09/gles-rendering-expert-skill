@@ -1,0 +1,11 @@
+{
+  "id": "R01",
+  "category": "vertex_transform",
+  "stage": "vert",
+  "source": "R01.vert",
+  "patch": "R01-fixed.vert",
+  "signature": "'missing_transform' : undeclared identifier",
+  "origin": "authored fault injection, not driver issue",
+  "expected_rule": "declare and bind pipeline resources for target ESSL stage",
+  "device_evidence": null
+}

@@ -1,0 +1,1016 @@
+{
+  "status": "PASS",
+  "runtime_capture_jobs": 40,
+  "unique_shader_stages": 56,
+  "total_runtime_stages": 750,
+  "binary_hashes": {
+    "effects": "482b35b5e311e0bc90753d1e5cbf3b4cd13850e75422b46400cac3dc80d6b5a8",
+    "simulation": "75d46729ba8c59dcd488047f9ee3d345024506f6a009850c8e6ee0f7f32239bb",
+    "precision": "65508704e8e06c1ddb8c62cde1f7aab259c82b04e3a3e3a7b600ac53fbd5079f"
+  },
+  "validator_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+  "captures": [
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "glass",
+        "/tmp/gles-system-shaders/0/capture.ppm",
+        "baseline",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"glass\",\"mode\":\"baseline\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 8
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "glass",
+        "/tmp/gles-system-shaders/1/capture.ppm",
+        "degraded",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"glass\",\"mode\":\"degraded\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 8
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "sand",
+        "/tmp/gles-system-shaders/2/capture.ppm",
+        "baseline",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"sand\",\"mode\":\"baseline\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 8
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "sand",
+        "/tmp/gles-system-shaders/3/capture.ppm",
+        "degraded",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"sand\",\"mode\":\"degraded\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 8
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "sand",
+        "/tmp/gles-system-shaders/4/capture.ppm",
+        "sorted",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"sand\",\"mode\":\"sorted\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 4
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "particle",
+        "/tmp/gles-system-shaders/5/capture.ppm",
+        "baseline",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"particle\",\"mode\":\"baseline\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 8
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "particle",
+        "/tmp/gles-system-shaders/6/capture.ppm",
+        "degraded",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"particle\",\"mode\":\"degraded\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 8
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "particle",
+        "/tmp/gles-system-shaders/7/capture.ppm",
+        "sorted",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"particle\",\"mode\":\"sorted\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 4
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "shadowwater",
+        "/tmp/gles-system-shaders/8/capture.ppm",
+        "baseline",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"shadowwater\",\"mode\":\"baseline\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 8
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "shadowwater",
+        "/tmp/gles-system-shaders/9/capture.ppm",
+        "degraded",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"shadowwater\",\"mode\":\"degraded\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 8
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "forwardplus",
+        "/tmp/gles-system-shaders/10/capture.ppm",
+        "baseline",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"forwardplus\",\"mode\":\"baseline\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 3
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "forwardplus",
+        "/tmp/gles-system-shaders/11/capture.ppm",
+        "degraded",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"forwardplus\",\"mode\":\"degraded\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 3
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "forwardplus",
+        "/tmp/gles-system-shaders/12/capture.ppm",
+        "fallback",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "{\"scene\":\"forwardplus\",\"mode\":\"fallback\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/simulation",
+        "particle",
+        "16",
+        "gpu",
+        "/tmp/gles-system-shaders/13/capture.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "stages": 3
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/simulation",
+        "boids",
+        "16",
+        "gpu",
+        "/tmp/gles-system-shaders/14/capture.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "stages": 3
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/simulation",
+        "wave",
+        "16",
+        "gpu",
+        "/tmp/gles-system-shaders/15/capture.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "stages": 4
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "1",
+        "positive",
+        "/tmp/gles-system-shaders/16/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":1,\"category\":\"input_storage\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "1",
+        "negative",
+        "/tmp/gles-system-shaders/17/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":1,\"category\":\"input_storage\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "2",
+        "positive",
+        "/tmp/gles-system-shaders/18/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":2,\"category\":\"input_storage\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "2",
+        "negative",
+        "/tmp/gles-system-shaders/19/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":2,\"category\":\"input_storage\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "3",
+        "positive",
+        "/tmp/gles-system-shaders/20/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":3,\"category\":\"input_storage\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "3",
+        "negative",
+        "/tmp/gles-system-shaders/21/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":3,\"category\":\"input_storage\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "4",
+        "positive",
+        "/tmp/gles-system-shaders/22/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":4,\"category\":\"ALU\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "4",
+        "negative",
+        "/tmp/gles-system-shaders/23/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":4,\"category\":\"ALU\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "5",
+        "positive",
+        "/tmp/gles-system-shaders/24/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":5,\"category\":\"ALU\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "5",
+        "negative",
+        "/tmp/gles-system-shaders/25/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":5,\"category\":\"ALU\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "6",
+        "positive",
+        "/tmp/gles-system-shaders/26/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":6,\"category\":\"ALU\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "6",
+        "negative",
+        "/tmp/gles-system-shaders/27/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":6,\"category\":\"ALU\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 2
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "7",
+        "positive",
+        "/tmp/gles-system-shaders/28/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":7,\"category\":\"blend\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 18
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "7",
+        "negative",
+        "/tmp/gles-system-shaders/29/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":7,\"category\":\"blend\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 18
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "8",
+        "positive",
+        "/tmp/gles-system-shaders/30/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":8,\"category\":\"blend\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 18
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "8",
+        "negative",
+        "/tmp/gles-system-shaders/31/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":8,\"category\":\"blend\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 18
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "9",
+        "positive",
+        "/tmp/gles-system-shaders/32/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":9,\"category\":\"blend\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 18
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "9",
+        "negative",
+        "/tmp/gles-system-shaders/33/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":9,\"category\":\"blend\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 18
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "10",
+        "positive",
+        "/tmp/gles-system-shaders/34/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":10,\"category\":\"attachment\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 4
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "10",
+        "negative",
+        "/tmp/gles-system-shaders/35/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":10,\"category\":\"attachment\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 4
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "11",
+        "positive",
+        "/tmp/gles-system-shaders/36/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":11,\"category\":\"attachment\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 130
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "11",
+        "negative",
+        "/tmp/gles-system-shaders/37/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":11,\"category\":\"attachment\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 130
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "12",
+        "positive",
+        "/tmp/gles-system-shaders/38/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":12,\"category\":\"attachment\",\"mode\":\"positive\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 130
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/precision",
+        "12",
+        "negative",
+        "/tmp/gles-system-shaders/39/capture.ppm"
+      ],
+      "returncode": 0,
+      "stdout": "{\"group\":12,\"category\":\"attachment\",\"mode\":\"negative\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\"}\n",
+      "stderr": "",
+      "stages": 130
+    }
+  ],
+  "results": [
+    {
+      "source": "/tmp/gles-system-shaders/0/7.frag",
+      "source_sha256": "3f92570f556613dec952f75d3dff950ecef66edb8f789e84667bd22e1b7d0a6b",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/0/6.vert",
+      "source_sha256": "ba43dd464b5ded3d5845338e2e2fefa6d944f4f297aa90768b0591e362aba91c",
+      "stage": ".vert",
+      "occurrences": 357,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/0/5.frag",
+      "source_sha256": "59d584daceb9f2d3092c540ae6933cbf32e10a8c11382e755412e281df3b4429",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/0/3.frag",
+      "source_sha256": "f2ca427c507321556266740537f5b612ae7f220bbc1ef64c1f5b4f0051b4c2fe",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/0/1.frag",
+      "source_sha256": "1fcde2c4319c3746628bd7af94ea6525314d80f2b0c15127634c928342721a50",
+      "stage": ".frag",
+      "occurrences": 8,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/1/7.frag",
+      "source_sha256": "23a54ca0bc8680a165899ccd4f5c0c8edcc2c0fbd688521286ced1cd6c5b83d4",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/2/7.frag",
+      "source_sha256": "46d97832b766f2a7758a6878d28b0e9ccdf1b9f813df1c5d87fc791eef81ebee",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/2/5.frag",
+      "source_sha256": "71302fd93d83ec95b28d32ad742d0c96613a9739614301f342008023d4fb1149",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/2/4.vert",
+      "source_sha256": "35f41658c0cd593f6942003a311e292dd479ba08f85c604023920218b5bea1aa",
+      "stage": ".vert",
+      "occurrences": 8,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/2/3.frag",
+      "source_sha256": "6a6530cebbef3d44cafebaed0266e1e1c68d12dc5dc16352fe78b3b31e10d964",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/3/7.frag",
+      "source_sha256": "b51033bf9f60cf4163929614a261d551abe3cef0556b91b1fc53c6aa47b6693a",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/4/3.frag",
+      "source_sha256": "aad7ae8f9ed5444c3b7ff9f3b12690752383c85c99666ccbd5aba8b3618e3a9d",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/4/2.vert",
+      "source_sha256": "f520dd5aeee4213defebb90a6890dc25e09081f3747e2e440f08fc244c2e9bb2",
+      "stage": ".vert",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/4/1.frag",
+      "source_sha256": "79894c0814859dc18b8eaef643158802d21f62d2f85e014ed964b4bf9e0be3a5",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/4/0.vert",
+      "source_sha256": "cc1e5aeb73f166151a69c7d1eae0b54ebae46049ffa39d06ae792890f0f5230c",
+      "stage": ".vert",
+      "occurrences": 3,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/5/5.frag",
+      "source_sha256": "ce7e9adda8ce574b799982acd7b837a5cb58870de82f140acd061911b4d291a0",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/5/3.frag",
+      "source_sha256": "e639501aaecd19e03b0275d2a5e4d756419bc972567a63002b2c2dc51c31f5ec",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/7/3.frag",
+      "source_sha256": "d2facf3fbf32025d08568aab5ab4239eadbce114971c21ed2f348b694a46ba4f",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/8/7.frag",
+      "source_sha256": "f032192cbdf8128f4b179abb79daa973644f65e74ef372ed9ca729f294915a27",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/8/3.frag",
+      "source_sha256": "9490f13378288f7ab2cde31b39ceb46b8580e18a54b92f398daff00c96a2ec1c",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/8/1.frag",
+      "source_sha256": "c2c800e88424b1ae13f8617d9c093fb43c4a84ef9ad14cd71086d821f9e6648a",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/9/7.frag",
+      "source_sha256": "831efb253a58dd02f154c734fe226e8399138a04ba0af6ebee9f61cd38bde6e5",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/10/2.frag",
+      "source_sha256": "6190d86a2279d6edc15894d3bb2061fb3a009dbbd8b0084859521a32a56302b4",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/10/0.comp",
+      "source_sha256": "eec22f578942036e61e4eb30a8c2ee8d0f598d1fd216c96e5098c6a023767fc3",
+      "stage": ".comp",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/11/2.frag",
+      "source_sha256": "b1d4621d0ecf1a0c4d0aecf9074f22d9ce3418c963e1f3967020b2162e8d62cd",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/12/1.frag",
+      "source_sha256": "01f3afe73508d323a4f3a16feaddfa4ed7149a4ff70b4acb9b548a5602282e45",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/13/2.frag",
+      "source_sha256": "a1ab58b5251203d7cd20ce226e66fed6e72ec13bd3c3e5250476b6a777851ee2",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/13/1.vert",
+      "source_sha256": "8eb26ddf279edceaffdf06d9631b9b45f203b4e9697437a01d307a20b173e10d",
+      "stage": ".vert",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/13/0.comp",
+      "source_sha256": "f9b445d963f9d6a69dead37472944def8b252238c0b3b68f781617ed82c7f30e",
+      "stage": ".comp",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/14/0.comp",
+      "source_sha256": "7611c59258c40eca04e1ce4596563ccd0487ff0f63ca5cc3398ae2248be7a527",
+      "stage": ".comp",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/15/3.frag",
+      "source_sha256": "b107973981958e853602b3e43c9d3a79d3a648c48449f588d9e5775b5068fbb9",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/15/1.comp",
+      "source_sha256": "14859cb1a5eb81474474dac0f5e8d8608b0029ddd66c7cdcd2efac9494da722b",
+      "stage": ".comp",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/15/0.comp",
+      "source_sha256": "57118bd37080aef1d9c4c677b74e99ad04d0a078b045df8b0b9e00ffd00dfd21",
+      "stage": ".comp",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/16/1.frag",
+      "source_sha256": "2410ec0b8e8012601edb9512149fc686d04ef3c37e543b322e10e421428b0aff",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/18/1.frag",
+      "source_sha256": "406bad3aede3fb4dd17f7984fd45b8a34a0078fefd3caab26968a745bea10eba",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/20/1.frag",
+      "source_sha256": "7ede9208cada184c1efae863dc6e52e5955448a36a5dd33d8fb55307109fd3da",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/22/1.frag",
+      "source_sha256": "30142d68c0c13f8346fb9917cca70bcd81f58f55666a2f3777eded2e32dda4d0",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/23/1.frag",
+      "source_sha256": "81eba118e02866ec51c0e115bab9bb1ea3d3795b3ec29167a8a42361f22b46ec",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/24/1.frag",
+      "source_sha256": "ee16ed0d9e9cffe6acb118a6f50bc0f420506353a6b9b7e91ddd9418e9346ccd",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/25/1.frag",
+      "source_sha256": "c96d15f7e69c502e58b642dce084abf41a7f02f2502d7ccb2b68617c5e32cded",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/26/1.frag",
+      "source_sha256": "b2caee91a03714e99a0a5ced14699e0565bbe36460883cb14ded90ac5e54187c",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/27/1.frag",
+      "source_sha256": "99a2a4386cf5627292d5a626f310bc62f62d7c96c5206a34fc71e68e9c04b0ad",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/28/17.frag",
+      "source_sha256": "73a419b6619d6bf2f0a7cb0c7038499479841e5aa78e1f7113a59056ed29712c",
+      "stage": ".frag",
+      "occurrences": 5,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/28/15.frag",
+      "source_sha256": "5e317a705d4b21691cbfa05d1fc3d0410a5eef000667d80fee6749480b57f086",
+      "stage": ".frag",
+      "occurrences": 12,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/28/13.frag",
+      "source_sha256": "2fad59c5bc9adac6f008e70d614c2d08296eda18c654daac232d5202d9a1eca5",
+      "stage": ".frag",
+      "occurrences": 12,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/30/15.frag",
+      "source_sha256": "060cf62f150b50070830058886729edefcdf0c1b073f55699244542531ec52d3",
+      "stage": ".frag",
+      "occurrences": 8,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/30/13.frag",
+      "source_sha256": "864f5e0f92b948ec3d19b3258e6d9f705a4e15bd1fd4e92386872690a01e9785",
+      "stage": ".frag",
+      "occurrences": 8,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/33/17.frag",
+      "source_sha256": "064793c59ae9517f51837876802de58cb8b06bbf25378e58c13cb52e6c4c8de4",
+      "stage": ".frag",
+      "occurrences": 1,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/33/15.frag",
+      "source_sha256": "d7e1b29302683afa336b864d65f5c6652aeceb348a59769dce0ab42f6d8f59e5",
+      "stage": ".frag",
+      "occurrences": 4,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/33/13.frag",
+      "source_sha256": "5952ecd1273377e3fc2c37ec462b654ff2d89412e4619d0351854eabe627a784",
+      "stage": ".frag",
+      "occurrences": 4,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/34/3.frag",
+      "source_sha256": "115ea1964aae0846804c5160ed77b88be8ce3d537fd72d700bddb89e424ad892",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/34/1.frag",
+      "source_sha256": "8fa82ad74aa3e1c017a999415b5ddfd612abb27a1ba8efc09f9bf2bc3d3ba65e",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/36/129.frag",
+      "source_sha256": "9a46cb6bd09ff5b527521ce3f234129e8fcd4a2cc69941ab7a99698fe6111cef",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/36/127.frag",
+      "source_sha256": "685f374a3b079426dad0e9eca10adea8c84c404ca47b9e7af19556c12f1a1891",
+      "stage": ".frag",
+      "occurrences": 128,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/38/129.frag",
+      "source_sha256": "71e3ec8586935310cb61cb46a131e0d050c493e418cea6b8d5437362ff64ce94",
+      "stage": ".frag",
+      "occurrences": 2,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "/tmp/gles-system-shaders/38/127.frag",
+      "source_sha256": "5d6db6a1835667e075ae2abc04374df5cc738572039f77e7ea2f65d7d67be7e7",
+      "stage": ".frag",
+      "occurrences": 128,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

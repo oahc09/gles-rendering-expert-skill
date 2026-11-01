@@ -1,0 +1,18 @@
+{
+  "scope": "Analytical logical payload only, not physical residency, tile traffic, power, or GPU performance",
+  "output_size": [96, 96],
+  "scene_limits": {
+    "glass": {"passes": 4, "attachments": ["96x96 RGBA8 background", "96x96 DEPTH_COMPONENT24 background", "2x96x96 RGBA8 front/back", "96x96 RGBA8 output"], "logical_attachment_bytes": 175104, "fragment_texture_fetches_composite": 4, "limitation": "orthographic analytic convex thickness, single-layer screen refraction; no off-screen or multiple-bounce refraction"},
+    "sand": {"passes": 4, "instances": 48, "attachments": ["96x96 RGBA16F accumulation", "96x96 RGBA8 revealage", "96x96 RGBA8 output"], "logical_attachment_bytes": 147456, "instance_bytes": 768, "limitation": "stylized elongated grains, not fluid rheology or granular collision simulation"},
+    "particle": {"passes": 4, "instances": 24, "attachments": ["96x96 RGBA16F accumulation", "96x96 RGBA8 revealage", "96x96 RGBA8 output"], "logical_attachment_bytes": 147456, "instance_bytes": 384, "limitation": "weighted blended approximation; sorted transparency is a separate non-equivalent fallback"},
+    "shadowwater": {"passes": 4, "attachments": ["2x64x64 RGBA8 plus DEPTH_COMPONENT24 shadow targets", "96x96 RGBA8 plus DEPTH_COMPONENT24 background", "96x96 RGBA8 output"], "logical_attachment_bytes": 158720, "fragment_texture_fetches_composite": 11, "limitation": "two fixed orthographic cascade domains, 3x3 PCF; no camera-fitted stabilized CSM, no wave ray tracing"},
+    "forwardplus": {"passes": 2, "lights": 16, "tiles": [8, 8], "light_buffer_bytes": 256, "tile_buffer_bytes": 4352, "logical_attachment_bytes": 36864, "limitation": "2D conservative tile/light circle overlap; not depth-clustered 3D light culling"}
+  },
+  "simulation_limits": {
+    "particle": {"states": 64, "ping_pong_bytes": 2048, "preview_bytes": 36864, "algorithm": "semi-implicit gravity and bounded wall bounce"},
+    "boids": {"states": 64, "ping_pong_bytes": 2048, "preview_bytes": 36864, "algorithm": "O(N squared) cohesion, alignment, short-range separation; bounded demo size"},
+    "wave": {"grid": [16,16], "image_ping_pong_bytes": 8192, "readback_buffer_bytes": 4096, "preview_bytes": 36864, "algorithm": "second-order finite difference height equation, periodic boundaries, coefficient .15"}
+  },
+  "measurements": {"gpu_frame_time_ms": null, "power_mw": null, "physical_memory_bytes": null, "tile_load_store_bytes": null, "status": "BLOCKED_BY_HARDWARE"},
+  "depth_storage_note": "DEPTH_COMPONENT24 counted as 3 logical bytes; actual alignment/allocation may be larger. These are estimates, never VRAM residency."
+}

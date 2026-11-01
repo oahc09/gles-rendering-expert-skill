@@ -22,12 +22,13 @@ import javax.microedition.khronos.opengles.GL10;
 public final class ExternalSurfaceActivity extends Activity implements Choreographer.FrameCallback {
     private GLSurfaceView view;
     private final ExternalRenderer renderer = new ExternalRenderer();
-    private boolean resumed, ahbRequested;
+    private boolean resumed, ahbRequested, protectedRequested;
     private final Paint paint = new Paint();
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         ahbRequested=getIntent().getBooleanExtra("ahb",false);
+        protectedRequested=getIntent().getBooleanExtra("protected",false);
         view = new GLSurfaceView(this); view.setEGLContextClientVersion(3);
         view.setEGLConfigChooser(8, 8, 8, 8, 0, 0);
         view.setPreserveEGLContextOnPause(false); // Resource recreation is an explicit exercise.
@@ -78,8 +79,14 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
             // A lost context owns no reusable names. Java Surface objects still need release.
             stopProducer();if(consumer!=null){consumer.release();consumer=null;}texture=0;program=0;hasImage=false;
             ahb.onContextRecreated();
+            // No protected producer/context/output chain is implemented. Never create
+            // a producer or offer CPU staging for a protected request, including AHB.
+            if(protectedRequested){supported=false;Log.w("GLESSurface","BLOCKED_PROTECTED_PIPELINE");return;}
             if(ahbRequested&&ahb.create()){supported=false;view.requestRender();return;}
-            supported=extension("GL_OES_EGL_image_external")&&extension("GL_OES_EGL_image_external_essl3");
+            // This deterministic Canvas producer supplies RGB SDR, not YUV planes.
+            // Camera/codec integrations must pass their actual known color metadata.
+            String path=VideoInputGuard.select(false,"RGB","full","SDR");
+            supported="EXTERNAL_ESSL3".equals(path);
             Log.i("GLESSurface","renderer="+GLES30.glGetString(GLES30.GL_RENDERER)+" externalESSL3="+supported);
             if(!supported) return; // Visible SDR clear fallback, not an illegal sampler path.
             int[] names=new int[1];GLES30.glGenTextures(1,names,0);texture=names[0];
@@ -104,7 +111,7 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
             if(ahb.active()){ahb.draw();return;}
             if(!supported||consumer==null)return;
             // SurfaceTexture manages producer acquire synchronization; this must run on the owning GL thread.
-            if(frameAvailable.getAndSet(false)){consumer.updateTexImage();consumer.getTransformMatrix(transform);hasImage=true;}
+            if(frameAvailable.getAndSet(false)){VideoInputGuard.acquireFrame(consumer,transform,0,true);hasImage=true;}
             if(!hasImage)return;
             GLES30.glUseProgram(program);GLES30.glActiveTexture(GLES30.GL_TEXTURE0);
             GLES30.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,texture);
@@ -119,7 +126,6 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
             if(texture!=0){GLES30.glDeleteTextures(1,new int[]{texture},0);texture=0;}
             if(program!=0){GLES30.glDeleteProgram(program);program=0;}frameAvailable.set(false);hasImage=false;
         }
-        private boolean extension(String wanted){int[] n=new int[1];GLES30.glGetIntegerv(GLES30.GL_NUM_EXTENSIONS,n,0);for(int i=0;i<n[0];i++)if(wanted.equals(GLES30.glGetStringi(GLES30.GL_EXTENSIONS,i)))return true;return false;}
         private int compile(int type,String source){int shader=GLES30.glCreateShader(type);GLES30.glShaderSource(shader,source);GLES30.glCompileShader(shader);int[] ok=new int[1];GLES30.glGetShaderiv(shader,GLES30.GL_COMPILE_STATUS,ok,0);if(ok[0]==0){String log=GLES30.glGetShaderInfoLog(shader);GLES30.glDeleteShader(shader);throw new IllegalStateException(log);}return shader;}
     }
 }

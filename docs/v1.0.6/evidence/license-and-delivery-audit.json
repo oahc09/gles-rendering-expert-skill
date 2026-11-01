@@ -1,0 +1,13 @@
+{
+  "scope": "new106 delivery files, pattern scan not a security guarantee",
+  "scanned": 163,
+  "findings": [],
+  "root_license_sha256": "f448691d44b165a34d79953400b2c8dd8ff313a9d88fec1bb00eb046eb2c1a13",
+  "license": "MIT repository; official libktx tools are not vendored; own generated gradient and GL images",
+  "third_party_references": [
+    "https://github.com/KhronosGroup/KTX-Software/blob/main/LICENSE.md",
+    "https://github.com/KhronosGroup/glslang/blob/main/LICENSE.txt"
+  ],
+  "binary_toolchain_vendored": false,
+  "browser_screenshots_in_delivery": false
+}

@@ -1,0 +1,21 @@
+test_flicker_fail (test_compare.VisualComparatorTests.test_flicker_fail) ... ok
+test_global_tint_rejected (test_compare.VisualComparatorTests.test_global_tint_rejected) ... ok
+test_heatmap_real (test_compare.VisualComparatorTests.test_heatmap_real) ... ok
+test_identical (test_compare.VisualComparatorTests.test_identical) ... ok
+test_local_corruption_rejected_despite_small_global_mae (test_compare.VisualComparatorTests.test_local_corruption_rejected_despite_small_global_mae) ... ok
+test_missing_region_explicit (test_compare.VisualComparatorTests.test_missing_region_explicit) ... ok
+test_ssim_identical_is_one (test_compare.VisualComparatorTests.test_ssim_identical_is_one) ... ok
+test_temporal_mismatch_rejected (test_compare.VisualComparatorTests.test_temporal_mismatch_rejected) ... ok
+test_temporal_static_pass (test_compare.VisualComparatorTests.test_temporal_static_pass) ... ok
+test_truncated_capture_rejected (test_compare.VisualComparatorTests.test_truncated_capture_rejected) ... ok
+test_color_space (test_manifest.ManifestTests.test_color_space) ... ok
+test_complete (test_manifest.ManifestTests.test_complete) ... ok
+test_empty (test_manifest.ManifestTests.test_empty) ... ok
+test_extra_or_traversal (test_manifest.ManifestTests.test_extra_or_traversal) ... ok
+test_missing_item (test_manifest.ManifestTests.test_missing_item) ... ok
+test_time_metadata (test_manifest.ManifestTests.test_time_metadata) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.058s
+
+OK

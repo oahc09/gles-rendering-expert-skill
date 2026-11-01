@@ -1,0 +1,11 @@
+#version 310 es
+precision highp float;
+precision highp int;
+layout(local_size_x=1) in;
+// irrelevant setup retained in original fixture
+float unused(float v) { return v * v; }
+void main() {
+  float unusedLocal = 0.25;
+  float particle = missing_particles[0];
+  memoryBarrier();
+}

@@ -1,0 +1,11 @@
+{
+  "id": "R06",
+  "category": "image_binding",
+  "stage": "comp",
+  "source": "R06.comp",
+  "patch": "R06-fixed.comp",
+  "signature": "'missing_image' : undeclared identifier",
+  "origin": "authored fault injection, not driver issue",
+  "expected_rule": "declare and bind pipeline resources for target ESSL stage",
+  "device_evidence": null
+}

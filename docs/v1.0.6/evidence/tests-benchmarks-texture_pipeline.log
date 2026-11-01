@@ -1,0 +1,14 @@
+test_activity_wires_guard_before_producers (test_pipeline.PipelineTests.test_activity_wires_guard_before_producers) ... ok
+test_external_missing_extension_safe (test_pipeline.PipelineTests.test_external_missing_extension_safe) ... ok
+test_hdr_needs_explicit_tonemap (test_pipeline.PipelineTests.test_hdr_needs_explicit_tonemap) ... ok
+test_invalid_capability_inputs (test_pipeline.PipelineTests.test_invalid_capability_inputs) ... ok
+test_protected_never_stages (test_pipeline.PipelineTests.test_protected_never_stages) ... ok
+test_rotation (test_pipeline.PipelineTests.test_rotation) ... ok
+test_target_capabilities_not_brand (test_pipeline.PipelineTests.test_target_capabilities_not_brand) ... ok
+test_yuv_metadata_changes_result (test_pipeline.PipelineTests.test_yuv_metadata_changes_result) ... ok
+test_yuv_neutral_black_white (test_pipeline.PipelineTests.test_yuv_neutral_black_white) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK

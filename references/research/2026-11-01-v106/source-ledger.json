@@ -1,0 +1,153 @@
+[
+  {
+    "id": "KTX",
+    "source": "https://github.com/KhronosGroup/KTX-Software/releases/tag/v4.4.2",
+    "event_at": "2025-10-04T09:03:07Z",
+    "published_at": "2025-10-04T09:03:07Z",
+    "source_sha256": "716b7b74560ef3046c69363a3a3e3ab14c0f9cb2b458fcf3a5fd07973d0c2e82",
+    "source_hash_kind": "raw GitHub release API bytes",
+    "evidence_level": "OFFICIAL_RELEASE_METADATA",
+    "test": "W7-texture",
+    "decision": "Historical libktx runtime tested; no current-month release claim",
+    "affected_rules": [
+      "W7-texture"
+    ],
+    "window": "historical",
+    "collected_at": "2026-11-01T10:54:00.085457+00:00",
+    "gpu/API/version": "v4.4.2"
+  },
+  {
+    "id": "FILAMENT",
+    "source": "https://github.com/google/filament/releases/tag/v1.79.0",
+    "event_at": "2026-10-26T23:44:28Z",
+    "published_at": "2026-10-26T23:44:28Z",
+    "source_sha256": "e0e7ad30d5f2fb74cbf44d64d5ae41c3a96988371e54b3f6f03382890cf341bc",
+    "source_hash_kind": "raw GitHub release API bytes",
+    "evidence_level": "OFFICIAL_RELEASE_METADATA",
+    "test": "W1-W7",
+    "decision": "In-window release metadata only; implementation feature claims require individual diff/device repro",
+    "affected_rules": [
+      "W1-W7"
+    ],
+    "window": "in-window",
+    "collected_at": "2026-11-01T10:54:03.629417+00:00",
+    "gpu/API/version": "v1.79.0"
+  },
+  {
+    "id": "CTS",
+    "source": "https://github.com/KhronosGroup/VK-GL-CTS/releases/tag/opengl-es-cts-3.2.14.1",
+    "event_at": "2026-07-21T14:48:19Z",
+    "published_at": "2026-07-21T14:48:19Z",
+    "source_sha256": "5eb6de2bec65bd6c5bbe9d95aa87c4f096cd405dbf9dc124a556baabcb5524e8",
+    "source_hash_kind": "raw GitHub release API bytes",
+    "evidence_level": "OFFICIAL_RELEASE_METADATA",
+    "test": "W4",
+    "decision": "Historical GLES CTS distinct from Vulkan CTS; no conformance claim",
+    "affected_rules": [
+      "W4"
+    ],
+    "window": "historical",
+    "collected_at": "2026-11-01T10:54:06.521904+00:00",
+    "gpu/API/version": "opengl-es-cts-3.2.14.1"
+  },
+  {
+    "id": "PERFETTO",
+    "source": "https://github.com/google/perfetto/releases/tag/v59.1",
+    "event_at": "2026-10-27T02:09:05Z",
+    "published_at": "2026-10-27T02:09:05Z",
+    "source_sha256": "fb6cb246bccfcb38a9bb4bf69197821de09cbb2f1d05568d3c094f0cbb50e966",
+    "source_hash_kind": "raw GitHub release API bytes",
+    "evidence_level": "OFFICIAL_RELEASE_METADATA",
+    "test": "W2",
+    "decision": "In-window tool release already used in v105; reuse, no new core GLES feature",
+    "affected_rules": [
+      "W2"
+    ],
+    "window": "in-window",
+    "collected_at": "2026-11-01T10:54:09.361214+00:00",
+    "gpu/API/version": "v59.1"
+  },
+  {
+    "id": "EGL_PROTECTED",
+    "source": "https://registry.khronos.org/EGL/extensions/EXT/EGL_EXT_protected_content.txt",
+    "event_at": null,
+    "published_at": null,
+    "evidence_level": "OFFICIAL_REFERENCE",
+    "test": "NOT_RUN",
+    "decision": "Historical normative extension reference; no new October2026 publication claimed",
+    "affected_rules": [
+      "W7"
+    ],
+    "window": "historical/undated",
+    "gpu/API/version": "unknown",
+    "raw_source": "https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/main/extensions/EXT/EGL_EXT_protected_content.txt",
+    "source_sha256": "b28ef787534927389ad35108a7573d7eb81390eef989d04cb5e1fcacf7c70eb4",
+    "source_hash_kind": "raw official Khronos repository mirror HTTP bytes",
+    "collected_at": "2026-11-01T10:55:39.176980+00:00"
+  },
+  {
+    "id": "GL_PROTECTED",
+    "source": "https://registry.khronos.org/OpenGL/extensions/EXT/EXT_protected_textures.txt",
+    "event_at": null,
+    "published_at": null,
+    "evidence_level": "OFFICIAL_REFERENCE",
+    "test": "NOT_RUN",
+    "decision": "Historical normative extension reference; no new October2026 publication claimed",
+    "affected_rules": [
+      "W7"
+    ],
+    "window": "historical/undated",
+    "gpu/API/version": "unknown",
+    "raw_source": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/extensions/EXT/EXT_protected_textures.txt",
+    "source_sha256": "78b9cce3f1e29b015cfa2a53fc245b9cf6191dedadccaa09f3565937c76998b6",
+    "source_hash_kind": "raw official Khronos repository mirror HTTP bytes",
+    "collected_at": "2026-11-01T10:55:42.666817+00:00"
+  },
+  {
+    "id": "EXTERNAL_OES",
+    "source": "https://registry.khronos.org/OpenGL/extensions/OES/OES_EGL_image_external.txt",
+    "event_at": null,
+    "published_at": null,
+    "evidence_level": "OFFICIAL_REFERENCE",
+    "test": "NOT_RUN",
+    "decision": "Historical normative extension reference; no new October2026 publication claimed",
+    "affected_rules": [
+      "W7"
+    ],
+    "window": "historical/undated",
+    "gpu/API/version": "unknown",
+    "raw_source": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/extensions/OES/OES_EGL_image_external.txt",
+    "source_sha256": "c567737b7bbab1f9ec84baaa6dff5c6dd058c71ac846be1dd692a9cce4a9f4f9",
+    "source_hash_kind": "raw official Khronos repository mirror HTTP bytes",
+    "collected_at": "2026-11-01T10:55:45.604596+00:00"
+  },
+  {
+    "id": "FILAMENT_ANDROID",
+    "source": "https://raw.githubusercontent.com/google/filament/v1.79.0/filament/backend/src/opengl/platforms/PlatformEGLAndroid.cpp",
+    "event_at": null,
+    "published_at": null,
+    "source_sha256": "8b60aa0dea7d97224c7cbe887db4d7b6ba226f39bc3ec763e3751ad58d146053",
+    "source_hash_kind": "raw HTTP body bytes",
+    "evidence_level": "OFFICIAL_REFERENCE",
+    "test": "W7-host-policy; Android NOT_RUN",
+    "decision": "Pinned implementation reference only; source age not inferred from fetch date",
+    "affected_rules": [
+      "W7"
+    ],
+    "window": "historical/undated",
+    "collected_at": "2026-11-01T10:54:22.304874+00:00",
+    "gpu/API/version": "EGL/GLES extensions; exact predicates"
+  },
+  {
+    "id": "X",
+    "source": null,
+    "event_at": null,
+    "published_at": null,
+    "evidence_level": "UNVERIFIED",
+    "test": "NOT_RUN",
+    "decision": "No verified original author/post/date/source; excluded from rules",
+    "affected_rules": [],
+    "window": "unknown",
+    "gpu/API/version": null
+  }
+]

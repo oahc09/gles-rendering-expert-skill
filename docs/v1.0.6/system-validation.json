@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "scope": "software EGL runtime / Android arm64 source compile-link, not APK or physical acceptance",
+  "device_roundtrip": "NOT_RUN",
+  "android_lifecycle": "NOT_RUN",
+  "apk_assembly": "NOT_RUN",
+  "source_sha256": {
+    "examples/system_android/app/src/main/cpp/bridge.cpp": "2447644236ae02e56ff843bbe2d379276fcae632a2c6b5f119dacb91252fa067",
+    "examples/system_android/app/src/main/java/org/example/systemlab/MultiSurfaceActivity.java": "fb936b9b1f96d4fcd3c1e556656d08eba2ab1dafd4b4ef473688840683dd751a",
+    "examples/system_android/interop_roundtrip.cpp": "4e09d303c551dc9953330c400ceb7658798a48bda2ecfa96a4a954c2a500df96",
+    "examples/system_android/multi_surface.hpp": "0cefcc6d1716e61b146ef574c8676101c3c7238a28168351cc62728983e817bc",
+    "examples/system_android/multi_surface_host.cpp": "d589c3f7f588d2396bdebc8fa68a62a2c1b4b62ba17bfa85e219a5c39c00cda2",
+    "examples/system_android/validate.py": "f2441a9e03bd45599437b4473a7234fb403f3a88b235b492611716f0802bdf71",
+    "examples/repro/state_fixture.cpp": "46f7824c1447858a834360aee1560e30a63c27a766fa583b58ffc219bb1d84c2",
+    "examples/scenes/scene_lab.cpp": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9"
+  },
+  "checks": [
+    {
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/system_android/multi_surface_host.cpp",
+        "-lEGL",
+        "-lGLESv2",
+        "-pthread",
+        "-o",
+        "/tmp/gles-system-gsvg1fk1/multi"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "PASS",
+      "name": "multi host compile"
+    },
+    {
+      "command": [
+        "/tmp/gles-system-gsvg1fk1/multi"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\":\"PASS\",\"serial_frames\":40,\"worker_frames\":80,\"contexts_generation\":7,\"surface_type\":\"software_pbuffer\",\"real_context_loss\":false}\n",
+      "stderr": "",
+      "status": "PASS",
+      "name": "multi real software execution",
+      "binary_sha256": "68333f2ef6aca14555e574f1d96d6042b70a5175eb93e46a003a8175f12b75d1"
+    },
+    {
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/repro/state_fixture.cpp",
+        "-lEGL",
+        "-lGLESv2",
+        "-pthread",
+        "-o",
+        "/tmp/gles-system-gsvg1fk1/state"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "PASS",
+      "name": "state host compile"
+    },
+    {
+      "command": [
+        "/tmp/gles-system-gsvg1fk1/state"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"schema_version\":1,\"status\":\"PASS\",\"vendor\":\"Mesa\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"before_fbo_status\":36055,\"after_fbo_status\":36053,\"draw_fbo\":1,\"read_fbo\":1,\"program\":0,\"viewport\":[0,0,16,16],\"readback_rgba\":[64,128,191,255],\"protected\":false,\"driver_defect_claim\":false}\n",
+      "stderr": "",
+      "status": "PASS",
+      "name": "state real software execution",
+      "binary_sha256": "1ee3deba66d934785fa7af857e17a97721f14175128a28de062c2d39b5536716"
+    },
+    {
+      "command": [
+        "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/system_android/interop_roundtrip.cpp",
+        "-Wno-missing-field-initializers",
+        "-lvulkan",
+        "-lEGL",
+        "-lGLESv3",
+        "-landroid",
+        "-Wl,--no-undefined",
+        "-Wl,-z,max-page-size=16384",
+        "-o",
+        "/tmp/gles-system-gsvg1fk1/interop"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "PASS",
+      "name": "interop NDK API26 arm64 compile/link",
+      "binary_sha256": "1b2685b2c4c54353fce9a894372b29cf5be2f85c3f8d41c1f9dcb7d3a833a159",
+      "elf": {
+        "command": [
+          "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-readelf",
+          "-h",
+          "-lW",
+          "/tmp/gles-system-gsvg1fk1/interop"
+        ],
+        "exit_code": 0,
+        "stdout": "ELF Header:\n  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00\n  Class:                             ELF64\n  Data:                              2's complement, little endian\n  Version:                           1 (current)\n  OS/ABI:                            UNIX - System V\n  ABI Version:                       0\n  Type:                              DYN (Shared object file)\n  Machine:                           AArch64\n  Version:                           0x1\n  Entry point address:               0xC818\n  Start of program headers:          64 (bytes into file)\n  Start of section headers:          139472 (bytes into file)\n  Flags:                             0x0\n  Size of this header:               64 (bytes)\n  Size of program headers:           56 (bytes)\n  Number of program headers:         11\n  Size of section headers:           64 (bytes)\n  Number of section headers:         27\n  Section header string table index: 25\n\nElf file type is DYN (Shared object file)\nEntry point 0xc818\nThere are 11 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align\n  PHDR           0x000040 0x0000000000000040 0x0000000000000040 0x000268 0x000268 R   0x8\n  INTERP         0x0002a8 0x00000000000002a8 0x00000000000002a8 0x000015 0x000015 R   0x1\n      [Requesting program interpreter: /system/bin/linker64]\n  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x008818 0x008818 R   0x4000\n  LOAD           0x008818 0x000000000000c818 0x000000000000c818 0x00b498 0x00b498 R E 0x4000\n  LOAD           0x013cb0 0x000000000001bcb0 0x000000000001bcb0 0x000710 0x001350 RW  0x4000\n  LOAD           0x0143c0 0x00000000000203c0 0x00000000000203c0 0x000050 0x000898 RW  0x4000\n  DYNAMIC        0x013db8 0x000000000001bdb8 0x000000000001bdb8 0x0001c0 0x0001c0 RW  0x8\n  GNU_RELRO      0x013cb0 0x000000000001bcb0 0x000000000001bcb0 0x000710 0x001350 R   0x1\n  GNU_EH_FRAME   0x0048dc 0x00000000000048dc 0x00000000000048dc 0x000adc 0x000adc R   0x4\n  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0\n  NOTE           0x0002c0 0x00000000000002c0 0x00000000000002c0 0x000098 0x000098 R   0x4\n\n Section to Segment mapping:\n  Segment Sections...\n   00     \n   01     .interp \n   02     .interp .note.android.ident .dynsym .gnu.version .gnu.version_r .gnu.hash .dynstr .rela.dyn .rela.plt .gcc_except_table .rodata .eh_frame_hdr .eh_frame \n   03     .text .plt \n   04     .data.rel.ro .dynamic .got .got.plt .relro_padding \n   05     .data .bss \n   06     .dynamic \n   07     .data.rel.ro .dynamic .got .got.plt .relro_padding \n   08     .eh_frame_hdr \n   09     \n   10     .note.android.ident \n   None   .comment .symtab .shstrtab .strtab \n",
+        "stderr": "",
+        "status": "PASS"
+      }
+    },
+    {
+      "command": [
+        "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/system_android/app/src/main/cpp/bridge.cpp",
+        "-shared",
+        "-fPIC",
+        "-lEGL",
+        "-lGLESv3",
+        "-landroid",
+        "-Wl,--no-undefined",
+        "-Wl,-z,max-page-size=16384",
+        "-o",
+        "/tmp/gles-system-gsvg1fk1/jni.so"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "PASS",
+      "name": "jni NDK API26 arm64 compile/link",
+      "binary_sha256": "4338b9ead81fd21f937a1c3040e2b227518fe86ec2087261d1fe2f55854135be",
+      "elf": {
+        "command": [
+          "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-readelf",
+          "-h",
+          "-lW",
+          "/tmp/gles-system-gsvg1fk1/jni.so"
+        ],
+        "exit_code": 0,
+        "stdout": "ELF Header:\n  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00\n  Class:                             ELF64\n  Data:                              2's complement, little endian\n  Version:                           1 (current)\n  OS/ABI:                            UNIX - System V\n  ABI Version:                       0\n  Type:                              DYN (Shared object file)\n  Machine:                           AArch64\n  Version:                           0x1\n  Entry point address:               0x0\n  Start of program headers:          64 (bytes into file)\n  Start of section headers:          184936 (bytes into file)\n  Flags:                             0x0\n  Size of this header:               64 (bytes)\n  Size of program headers:           56 (bytes)\n  Number of program headers:         10\n  Size of section headers:           64 (bytes)\n  Number of section headers:         28\n  Section header string table index: 26\n\nElf file type is DYN (Shared object file)\nEntry point 0x0\nThere are 10 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align\n  PHDR           0x000040 0x0000000000000040 0x0000000000000040 0x000230 0x000230 R   0x8\n  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x00c3ec 0x00c3ec R   0x4000\n  LOAD           0x00c3f0 0x00000000000103f0 0x00000000000103f0 0x00cd20 0x00cd20 R E 0x4000\n  LOAD           0x019110 0x0000000000021110 0x0000000000021110 0x0008a8 0x000ef0 RW  0x4000\n  LOAD           0x0199b8 0x00000000000259b8 0x00000000000259b8 0x000038 0x000908 RW  0x4000\n  DYNAMIC        0x019220 0x0000000000021220 0x0000000000021220 0x0001e0 0x0001e0 RW  0x8\n  GNU_RELRO      0x019110 0x0000000000021110 0x0000000000021110 0x0008a8 0x000ef0 R   0x1\n  GNU_EH_FRAME   0x00764c 0x000000000000764c 0x000000000000764c 0x000d44 0x000d44 R   0x4\n  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0\n  NOTE           0x000270 0x0000000000000270 0x0000000000000270 0x000098 0x000098 R   0x4\n\n Section to Segment mapping:\n  Segment Sections...\n   00     \n   01     .note.android.ident .dynsym .gnu.version .gnu.version_r .gnu.hash .dynstr .rela.dyn .rela.plt .gcc_except_table .rodata .eh_frame_hdr .eh_frame \n   02     .text .plt \n   03     .data.rel.ro .fini_array .init_array .dynamic .got .got.plt .relro_padding \n   04     .data .bss \n   05     .dynamic \n   06     .data.rel.ro .fini_array .init_array .dynamic .got .got.plt .relro_padding \n   07     .eh_frame_hdr \n   08     \n   09     .note.android.ident \n   None   .comment .symtab .shstrtab .strtab \n",
+        "stderr": "",
+        "status": "PASS"
+      }
+    },
+    {
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles-android-build-tools/jdk/usr/lib/jvm/java-21-openjdk-amd64/bin/javac",
+        "--release",
+        "17",
+        "-Xlint:all",
+        "-classpath",
+        "/tmp/gles-java-toolchain/sdk/android-35/android.jar",
+        "-d",
+        "/tmp/gles-system-gsvg1fk1/classes",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/system_android/app/src/main/java/org/example/systemlab/MultiSurfaceActivity.java"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "PASS",
+      "name": "Android API35 Java compile",
+      "android_jar_sha256": "4566663c3876e022b4fa4ced8c8697c4ab1688267f090114fd92d027b32e619b",
+      "class_sha256": {
+        "org/example/systemlab/MultiSurfaceActivity.class": "a216c58d18bed9a4c01fe83018beaa7c2f5f4f3ea576df9e1008036e39af07da",
+        "org/example/systemlab/MultiSurfaceActivity$Slot.class": "9698f44db1c622c5ecf3a2175a4187fdc5f2c6d4e543184fc079ad85f82b9661"
+      }
+    }
+  ],
+  "status": "PASS"
+}

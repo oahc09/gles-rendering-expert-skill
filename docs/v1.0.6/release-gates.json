@@ -1,0 +1,103 @@
+{
+  "target_version": "1.0.6",
+  "metadata_version": "1.0.2",
+  "release_ready": false,
+  "release_authorized": false,
+  "prior_release_gate": "docs/v1.0.5/release-gates.json",
+  "accepted_limitations": [],
+  "work_packages": {
+    "W0": {
+      "status": "PASS",
+      "implementation": [
+        "docs/v1.0.6/baseline-and-gap.md"
+      ],
+      "acceptance": "Live main/PR3/tag/permission verified; clean baseline captured.",
+      "remaining": "Predecessor candidates remain unreleased."
+    },
+    "W1": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "examples/system_android/interop_roundtrip.cpp"
+      ],
+      "acceptance": "Actual NDK API26 arm64 compile/link, independent ownership review.",
+      "remaining": "Physical same-device Vulkan/GLES/native-fence pixel roundtrip NOT_RUN."
+    },
+    "W2": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "examples/system_android/multi_surface.hpp",
+        "examples/system_android/app"
+      ],
+      "acceptance": "Actual software pbuffer shared-context lifecycle/thread scheduling; Java/JNI compile.",
+      "remaining": "APK assembly attempted but AGP8.7.3 dependency resolution failed; no APK. Physical SurfaceView lock/unlock/loss/Perfetto acceptance NOT_RUN."
+    },
+    "W3": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "examples/system_scenes",
+        "benchmarks/system_scenes"
+      ],
+      "acceptance": "Actual software compute versus CPU deterministic reference and capability fallback.",
+      "remaining": "Physical multi-driver reproducibility and workload performance NOT_RUN."
+    },
+    "W4": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/driver_compat"
+      ],
+      "acceptance": "Exact predicate/expiry matcher and software probe; unverified vendor slots retained.",
+      "remaining": "No confirmed physical-driver defects: no fabricated workaround records."
+    },
+    "W5": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "benchmarks/system_scenes"
+      ],
+      "acceptance": "Actual glass/sand/particle passes, controls and software goldens.",
+      "remaining": "Physical mobile visual/performance budgets not measured."
+    },
+    "W6": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "examples/system_scenes"
+      ],
+      "acceptance": "Actual Forward+ and shadow/water cases; attachment budgets are estimates.",
+      "remaining": "Physical interaction/performance acceptance and bandwidth counters NOT_RUN."
+    },
+    "W7": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "examples/texture_pipeline",
+        "benchmarks/texture_pipeline"
+      ],
+      "acceptance": "Actual runtime KTX transcode and software compressed upload/readback; Android source guard wired.",
+      "remaining": "Physical GPU/video/protected path acceptance NOT_RUN; protected input is rejected."
+    },
+    "W8": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "benchmarks/system_scenes"
+      ],
+      "acceptance": "Twelve authored numerical positive-negative groups with isolated evidence.",
+      "remaining": "Device/driver precision distributions not measured."
+    },
+    "W9": {
+      "status": "PASS",
+      "implementation": [
+        "benchmarks/reducer",
+        "examples/repro/state_fixture.cpp"
+      ],
+      "acceptance": "Ten authored compile failures minimized with repeated predicate and fixed-shader compilation; software FBO snapshot.",
+      "remaining": "Not ten driver bugs or global semantic minimization; target capture replay needs actual target."
+    },
+    "W10": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "implementation": [
+        "benchmarks/agent/cases-v1.0.6.json",
+        "tools/check_release_gates.py"
+      ],
+      "acceptance": "Thirty authored cases appended to exact112 prefix; scorer/regression and recursive gates implemented.",
+      "remaining": "Live paired provider/device evaluation NOT_RUN; no release authorization."
+    }
+  }
+}

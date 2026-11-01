@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "scope": "actual localhost HTTP input to native Mesa GLES renders",
+  "browser_ui": "SEPARATE_EVIDENCE_browser-validation.json",
+  "browser_note": "Chromium normal launch failed IPC socket; reviewed escalation failed environment initialization before command execution; separate normal WPE WebKit test uses an existing authorized current-environment launcher",
+  "invalid_input_rejected": true,
+  "captures": [
+    {
+      "touch": 0,
+      "http_status": 200,
+      "png_sha256": "66e0f9353df85cd76926c93f3d8c0a797be462d58f149a03b543310e66d99834",
+      "bytes": 3831
+    },
+    {
+      "touch": 1,
+      "http_status": 200,
+      "png_sha256": "1ced2c3321dbbdd776525ab52d8567b78a80bec36b4b5c08e66ebfe1842d6fbc",
+      "bytes": 3791
+    },
+    {
+      "touch": -1,
+      "http_status": 200,
+      "png_sha256": "e01ea83f19fcf7fb267b8dd2f423aebe350f10636f4cdd118c7112c43e74249f",
+      "bytes": 3797
+    }
+  ],
+  "binary_sha256": "482b35b5e311e0bc90753d1e5cbf3b4cd13850e75422b46400cac3dc80d6b5a8",
+  "server_source_sha256": "0c4eff0908efd9d0c96d9bcaef42608be3985fd41a9652f4beb9d419df46710c"
+}

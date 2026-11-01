@@ -1,0 +1,19 @@
+{
+  "particle_and_boids": [
+    {"producer":"CPU upload", "resource":"SSBO A", "consumer":"compute read", "sync":"GL command ordering"},
+    {"producer":"dispatch step n", "resource":"SSBO destination alternates A/B", "consumer":"dispatch step n+1", "sync":"GL_SHADER_STORAGE_BARRIER_BIT"},
+    {"producer":"last dispatch", "resource":"final SSBO reused as vertex buffer", "consumer":"GL_POINTS draw", "sync":"GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT"},
+    {"producer":"last dispatch", "resource":"final SSBO", "consumer":"glMapBufferRange CPU validation", "sync":"GL_BUFFER_UPDATE_BARRIER_BIT; blocking map, no unsynchronized mapping"}
+  ],
+  "wave": [
+    {"producer":"dispatch step n imageStore", "resource":"RGBA32F image A/B", "consumer":"dispatch step n+1 imageLoad", "sync":"GL_SHADER_IMAGE_ACCESS_BARRIER_BIT"},
+    {"producer":"last simulation dispatch", "resource":"final RGBA32F image", "consumer":"imageLoad-to-SSBO copy dispatch", "sync":"GL_SHADER_IMAGE_ACCESS_BARRIER_BIT"},
+    {"producer":"copy dispatch", "resource":"result SSBO", "consumer":"CPU map", "sync":"GL_BUFFER_UPDATE_BARRIER_BIT"},
+    {"producer":"last simulation dispatch", "resource":"final RGBA32F texture", "consumer":"preview sampler2D draw", "sync":"GL_TEXTURE_FETCH_BARRIER_BIT"}
+  ],
+  "forwardplus": [
+    {"producer":"compute circle/tile culling", "resource":"tile lists", "consumer":"fragment shader SSBO list read", "sync":"GL_SHADER_STORAGE_BARRIER_BIT"}
+  ],
+  "framebuffer_passes": "Draw to one texture then sample it from a different FBO in the same context. No attachment is sampled while it is the current draw attachment. Ordinary FBO ordering is not replaced with unnecessary compute memory barriers.",
+  "workgroup_note":"Each invocation owns one destination element and only reads the previous ping-pong source. No same-dispatch cross-invocation communication is used; no workgroup barrier is needed."
+}

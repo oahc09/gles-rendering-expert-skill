@@ -1,0 +1,8 @@
+#version 310 es
+precision highp float;
+precision highp int;
+layout(local_size_x=1) in;
+void main() {
+ memoryBarrier();
+ memoryBarrier();
+}

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.1)
+project(gles_system LANGUAGES CXX)
+add_library(gles_system SHARED bridge.cpp)
+target_compile_features(gles_system PRIVATE cxx_std_17)
+target_link_options(gles_system PRIVATE -Wl,--no-undefined -Wl,-z,max-page-size=16384)
+target_link_libraries(gles_system PRIVATE EGL GLESv3 android)

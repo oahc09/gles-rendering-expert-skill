@@ -19,6 +19,18 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
 
 ---
 
+## v1.0.6 system-engineering routing (candidate, not released)
+
+Use [cross-API and multi-Surface lab](examples/system_android/README.md) for
+AHB/native-fence ownership and shared EGL lifecycle; [system scenes](benchmarks/system_scenes/README.md)
+for compute/CPU parity, transparency, lighting and precision; [texture/video pipeline](examples/texture_pipeline/README.md)
+for actual runtime transcoding and protected-input rejection; [driver compatibility](benchmarks/driver_compat/README.md)
+for conditional identity-based decisions; and [fault reduction](benchmarks/reducer/README.md)
+for stable, auditable failure predicates. [Agent2 cases](benchmarks/agent/V106_CASES.md)
+remain unevaluated until an authorized live provider supplies evidence. Software rendering,
+NDK/Java compilation, authored faults and controlled rebuilds never certify physical devices.
+Preserve [all predecessor gates](docs/v1.0.6/release-gates.json); metadata remains 1.0.2.
+
 ## v1.0.5 sustained-quality routing (candidate, not released)
 
 For longrun sampling and thermal/power evidence use [the sustained capture contract](benchmarks/longrun/README.md).
@@ -181,7 +193,7 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 - The **same TBDR bandwidth rules apply** when the SoC uses a Mali/Adreno/PowerVR GPU (common in automotive, set-top, and industrial devices).
 
 ### Android Video, Interop & Presentation
-- Camera/decoder frames enter GLES **only** via `GL_TEXTURE_EXTERNAL_OES` + EGLImage — never `glTexImage2D`; `samplerExternalOES` + extension directive; `GL_CLAMP_TO_EDGE`; no mipmaps; hardware YUV→RGB. API 26+: prefer `AHardwareBuffer` + `EGL_ANDROID_get_native_client_buffer` with fence sync; teardown order texture → EGLImage → AHardwareBuffer. Vulkan↔GLES sharing via `GL_EXT_memory_object_fd` / `GL_EXT_semaphore_fd`. All rules: `references/rules/android-interoperability.md` (incl. **16 KB page alignment** for Android 15+).
+- SurfaceTexture camera/decoder inputs commonly use `GL_TEXTURE_EXTERNAL_OES` and the supported `samplerExternalOES` variant; do not reallocate external textures or apply a second YUV→RGB conversion to already-converted samples. Native AHardwareBuffer/EGLImage targets depend on actual format/usage (RGBA8 may support texture2D). API26+ interoperability must probe image/fence capabilities and transfer ownership explicitly; teardown after producer/consumer completion. Vulkan↔GLES Android sharing may use AHB plus native SYNC_FD; `GL_EXT_memory_object_fd` / `GL_EXT_semaphore_fd` are optional, never assumed portable. All rules: `references/rules/android-interoperability.md` (incl. **16 KB page alignment** for Android 15+).
 - **Frame pacing**: do not rely on `eglSwapInterval`; drive frames from `AChoreographer`, prefer Swappy (`games-frame-pacing`) for steady cadence on 60–144 Hz panels. See `references/rules/frame-pacing.md`.
 - **HDR/wide-gamut output**: query WCG/HDR capability first; declare surface colorspace at creation (scRGB-linear for HDR); HDR10 needs CTA-861-3 metadata; keep the pipeline linear to the final tone map. See `references/rules/hdr-and-display.md`.
 - **Shader startup cost**: cache `glGetProgramBinary` per device+driver; `GL_KHR_parallel_shader_compile` where available; warm programs during loading screens. See `references/rules/glsl-es-optimization.md` §6.3.

@@ -1,0 +1,17 @@
+test_actual_hundred_scene_host_run (test_pressure.ResourcePressureRegression.test_actual_hundred_scene_host_run) ... ok
+test_device_claim_rejected (test_pressure.ResourcePressureRegression.test_device_claim_rejected) ... ok
+test_duplicate_scene_rejected (test_pressure.ResourcePressureRegression.test_duplicate_scene_rejected) ... ok
+test_empty_report_rejected (test_pressure.ResourcePressureRegression.test_empty_report_rejected) ... ok
+test_fence_observation_mismatch_rejected (test_pressure.ResourcePressureRegression.test_fence_observation_mismatch_rejected) ... ok
+test_generation_mismatch_rejected (test_pressure.ResourcePressureRegression.test_generation_mismatch_rejected) ... ok
+test_missing_delete_rejected (test_pressure.ResourcePressureRegression.test_missing_delete_rejected) ... ok
+test_missing_scene_rejected (test_pressure.ResourcePressureRegression.test_missing_scene_rejected) ... ok
+test_residency_claim_rejected (test_pressure.ResourcePressureRegression.test_residency_claim_rejected) ... ok
+test_resource_growth_rejected (test_pressure.ResourcePressureRegression.test_resource_growth_rejected) ... ok
+test_short_run_not_accepted (test_pressure.ResourcePressureRegression.test_short_run_not_accepted) ... ok
+test_undisclosed_synthetic_completion_rejected (test_pressure.ResourcePressureRegression.test_undisclosed_synthetic_completion_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.482s
+
+OK
