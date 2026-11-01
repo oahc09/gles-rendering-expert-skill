@@ -65,3 +65,11 @@ jobs:
           python3 benchmarks/visual_quality/run.py --output reports/visual-quality
       - name: v1.0.5 dependency-aware candidate bookkeeping
         run: python3 tools/check_release_gates.py --gates v1.0.5
+      - name: v1.0.6 system candidate contracts (not target acceptance)
+        run: |
+          python3 -m unittest discover -s benchmarks/reducer -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/system_scenes -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/texture_pipeline -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/driver_compat -p 'test_*.py' -v
+          python3 benchmarks/reducer/reduce.py --output reports/reducer
+          python3 tools/check_release_gates.py --gates v1.0.6

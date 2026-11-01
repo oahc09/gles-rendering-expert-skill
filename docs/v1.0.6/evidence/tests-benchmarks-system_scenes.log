@@ -1,0 +1,29 @@
+test_barrier_consumer_classes (test_contracts.Contracts.test_barrier_consumer_classes) ... ok
+test_black_corruption_detected (test_contracts.Contracts.test_black_corruption_detected) ... ok
+test_fallback_shader_300 (test_contracts.Contracts.test_fallback_shader_300) ... ok
+test_half_float_probe_and_explicit_fallback (test_contracts.Contracts.test_half_float_probe_and_explicit_fallback) ... ok
+test_interaction_extra_arguments (test_contracts.Contracts.test_interaction_extra_arguments) ... ok
+test_interaction_out_of_bounds (test_contracts.Contracts.test_interaction_out_of_bounds) ... ok
+test_invalid_nan_interaction (test_contracts.Contracts.test_invalid_nan_interaction) ... ok
+test_invalid_scene_not_shell (test_contracts.Contracts.test_invalid_scene_not_shell) ... ok
+test_oracle_identity_12 (test_contracts.Contracts.test_oracle_identity_12) ... ok
+test_three_simulations (test_contracts.Contracts.test_three_simulations) ... ok
+test_actual_dimensions_even_with_updated_hash (test_system_manifest.ManifestTests.test_actual_dimensions_even_with_updated_hash) ... ok
+test_color (test_system_manifest.ManifestTests.test_color) ... ok
+test_config_hash (test_system_manifest.ManifestTests.test_config_hash) ... ok
+test_empty (test_system_manifest.ManifestTests.test_empty) ... ok
+test_extra (test_system_manifest.ManifestTests.test_extra) ... ok
+test_image_hash (test_system_manifest.ManifestTests.test_image_hash) ... ok
+test_image_metadata (test_system_manifest.ManifestTests.test_image_metadata) ... ok
+test_interaction (test_system_manifest.ManifestTests.test_interaction) ... ok
+test_missing (test_system_manifest.ManifestTests.test_missing) ... ok
+test_per_image_seed (test_system_manifest.ManifestTests.test_per_image_seed) ... ok
+test_producer_missing (test_system_manifest.ManifestTests.test_producer_missing) ... ok
+test_seed (test_system_manifest.ManifestTests.test_seed) ... ok
+test_size (test_system_manifest.ManifestTests.test_size) ... ok
+test_valid (test_system_manifest.ManifestTests.test_valid) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.053s
+
+OK

@@ -1,0 +1,6 @@
+#version 310 es
+precision highp float;
+layout(local_size_x=1) in;
+void main() {
+  uint count = missing_boid_count;
+}

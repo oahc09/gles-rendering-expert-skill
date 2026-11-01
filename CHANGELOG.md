@@ -296,3 +296,7 @@ and production-grade C++17 / GLSL ES code patterns into AI coding assistants
   ANGLE behavior quirks (silent zeroing of precision-mismatched varyings),
   NDK Clang compatibility, and TBDR rule accuracy against vendor documentation
   (ARM OpenGL ES SDK, Adreno GPU guides, PowerVR performance recommendations).
+
+## Unreleased — v1.0.6 candidate (2026-11-01)
+
+Cross-API AHB/native-fence source, multi-Surface lifecycle, deterministic compute, five advanced effects, twelve precision groups, runtime KTX transcode/video guards, conditional driver records, ten authored compiler reducers and thirty new Agent cases. See [acceptance and limitations](docs/v1.0.6/acceptance.md). Actual software/compile evidence is separated from blocked physical-device/provider acceptance. Metadata remains 1.0.2; no release is claimed.

@@ -1,0 +1,128 @@
+[
+  {
+    "directory": "benchmarks/agent",
+    "exit_code": 0,
+    "log": "tests-benchmarks-agent.log",
+    "log_sha256": "493632bcf266f7aacba1362a793ad982e1a291c690710bc3d7146c66cc2c4423",
+    "test_count": 48
+  },
+  {
+    "directory": "benchmarks/device_lab",
+    "exit_code": 0,
+    "log": "tests-benchmarks-device_lab.log",
+    "log_sha256": "3c2977ade79f562f7117d856fe706269c9a7c722629f2be74b69476908584d72",
+    "test_count": 10
+  },
+  {
+    "directory": "benchmarks/driver_compat",
+    "exit_code": 0,
+    "log": "tests-benchmarks-driver_compat.log",
+    "log_sha256": "f8ece8ac4c381711e0ca1932f658e7054f62fe280549b7961431ae5071e4782f",
+    "test_count": 9
+  },
+  {
+    "directory": "benchmarks/gpu",
+    "exit_code": 0,
+    "log": "tests-benchmarks-gpu.log",
+    "log_sha256": "7f0436963254df8dab73b29c62b96d59b5b8473211002d3204ee4929c0f1f75c",
+    "test_count": 15
+  },
+  {
+    "directory": "benchmarks/longrun",
+    "exit_code": 0,
+    "log": "tests-benchmarks-longrun.log",
+    "log_sha256": "f52ab8bdcfeb89f8016b7690366a65cc4c01768c0f914b2cee28c86a4036dde6",
+    "test_count": 26
+  },
+  {
+    "directory": "benchmarks/quality_policy",
+    "exit_code": 0,
+    "log": "tests-benchmarks-quality_policy.log",
+    "log_sha256": "d4519db3bd0521eebf7877e025de26c607640e459c86e6177d7302a0110f654f",
+    "test_count": 25
+  },
+  {
+    "directory": "benchmarks/reducer",
+    "exit_code": 0,
+    "log": "tests-benchmarks-reducer.log",
+    "log_sha256": "c8922cb507c451677740617ea6715be4e29550cecd7c0ec851392c3087964f9b",
+    "test_count": 13
+  },
+  {
+    "directory": "benchmarks/resource_pressure",
+    "exit_code": 0,
+    "log": "tests-benchmarks-resource_pressure.log",
+    "log_sha256": "e89b7496727f60a5de26b9b19654686677699abdeaf964cec506acf65677ce70",
+    "test_count": 12
+  },
+  {
+    "directory": "benchmarks/scenes",
+    "exit_code": 0,
+    "log": "tests-benchmarks-scenes.log",
+    "log_sha256": "d28bfe03cf6a7fea8564656f94c3f46f9511f4551aa7ccb9a64154860e3c3237",
+    "test_count": 12
+  },
+  {
+    "directory": "benchmarks/system_scenes",
+    "exit_code": 0,
+    "log": "tests-benchmarks-system_scenes.log",
+    "log_sha256": "3a349da6a975905c6e840f82f2d91adc750995631fe1353c5f501d54aafe102d",
+    "test_count": 24
+  },
+  {
+    "directory": "benchmarks/texture_pipeline",
+    "exit_code": 0,
+    "log": "tests-benchmarks-texture_pipeline.log",
+    "log_sha256": "5b232f1c3f955259901e6262e28eab51fe409a8d414dcf3bdc98a1928780d952",
+    "test_count": 9
+  },
+  {
+    "directory": "benchmarks/traces",
+    "exit_code": 0,
+    "log": "tests-benchmarks-traces.log",
+    "log_sha256": "b4bb9d27027145dda238b015c18d5bfe3cc3d9401790554443089f10fdf13e37",
+    "test_count": 10
+  },
+  {
+    "directory": "benchmarks/traces/sql",
+    "exit_code": 0,
+    "log": "tests-benchmarks-traces-sql.log",
+    "log_sha256": "c75d89520a2d51132a5700961152a8f620136ae385dd497936946c4376e5386c",
+    "test_count": 6
+  },
+  {
+    "directory": "benchmarks/visual_quality",
+    "exit_code": 0,
+    "log": "tests-benchmarks-visual_quality.log",
+    "log_sha256": "7331365a1be6bb8721a32933308f23a5de8dd72c8cea7b4da309066569cb2aa2",
+    "test_count": 16
+  },
+  {
+    "directory": "examples/android_cases",
+    "exit_code": 0,
+    "log": "tests-examples-android_cases.log",
+    "log_sha256": "60ad245cd75127884620ef10f8307227e7cac452e87d1044866d85c594ad1215",
+    "test_count": 21
+  },
+  {
+    "directory": "examples/android_cases/wallpaper/tests",
+    "exit_code": 0,
+    "log": "tests-examples-android_cases-wallpaper-tests.log",
+    "log_sha256": "a6fe73799d3ec9a03812a5deb7e81f80179784cbc72386806887853984d9748c",
+    "test_count": 6
+  },
+  {
+    "directory": "references/research",
+    "exit_code": 0,
+    "log": "tests-references-research.log",
+    "log_sha256": "c6bb99feb21915f6af61cecd66cf0585b851ebfe0145ba572ea189c24379980a",
+    "test_count": 24
+  },
+  {
+    "directory": "tools",
+    "exit_code": 0,
+    "log": "tests-tools.log",
+    "log_sha256": "5f6a30c68054be0fda99c1a6db12acaab95f020ecb4aa8ecd7616a8db9ccc67f",
+    "test_count": 44
+  }
+]

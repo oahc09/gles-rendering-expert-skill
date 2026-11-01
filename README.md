@@ -209,3 +209,7 @@ resource pressure, Perfetto SQL and 24 additional Agent cases build on the merge
 v1.0.4 implementation. See [acceptance and limitations](docs/v1.0.5/acceptance.md)
 and the [exact plan](docs/v1.0.5/development-plan.md). Metadata remains **1.0.2**;
 physical-device and provider blockers are not waived by source delivery.
+
+## v1.0.6 system candidate
+
+Cross-API AHB/native-fence source, multi-Surface lifecycle, deterministic compute, five advanced effects, twelve precision groups, runtime KTX transcode/video guards, conditional driver records, ten authored compiler reducers and thirty new Agent cases. See [acceptance and limitations](docs/v1.0.6/acceptance.md). Actual software/compile evidence is separated from blocked physical-device/provider acceptance. Metadata remains 1.0.2; no release is claimed.

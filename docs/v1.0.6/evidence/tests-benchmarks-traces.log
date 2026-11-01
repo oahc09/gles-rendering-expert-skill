@@ -1,0 +1,15 @@
+test_csv_export (test_analyze.TraceTests.test_csv_export) ... ok
+test_hash_mismatch (test_analyze.TraceTests.test_hash_mismatch) ... ok
+test_nan_rejected (test_analyze.TraceTests.test_nan_rejected) ... ok
+test_no_license (test_analyze.TraceTests.test_no_license) ... ok
+test_out_of_range_time (test_analyze.TraceTests.test_out_of_range_time) ... ok
+test_path_escape (test_analyze.TraceTests.test_path_escape) ... ok
+test_proprietary_capture_unsupported (test_analyze.TraceTests.test_proprietary_capture_unsupported) ... ok
+test_synthetic_not_real (test_analyze.TraceTests.test_synthetic_not_real) ... ok
+test_twelve_labeled_synthetic_fixtures (test_analyze.TraceTests.test_twelve_labeled_synthetic_fixtures) ... ok
+test_units_mismatch (test_analyze.TraceTests.test_units_mismatch) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.006s
+
+OK

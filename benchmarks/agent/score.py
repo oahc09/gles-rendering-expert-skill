@@ -50,7 +50,7 @@ def score(summary, adjudications, cases):
             if not all(compile_result.get(k) for k in ('command','artifact_sha256','log_sha256','environment')):
                 raise ValueError('Compile result requires command/artifact/log hashes and environment')
             group['compile_tested']+=1; group['compile_pass']+=compile_result['status']=='PASS'
-        if labels[key[0]].get('repair') or labels[key[0]].get('v105'):
+        if labels[key[0]].get('repair') or labels[key[0]].get('v105') or labels[key[0]].get('v106'):
             for metric in ('root_cause_hit','unsupported_performance_claim'):
                 value=row.get(metric)
                 if value is not None and not isinstance(value,bool):
@@ -58,7 +58,7 @@ def score(summary, adjudications, cases):
                 group.setdefault(metric+'_reviewed',0);group.setdefault(metric+'_count',0)
                 if value is not None:
                     group[metric+'_reviewed']+=1;group[metric+'_count']+=value
-        if labels[key[0]].get('repair'):
+        if labels[key[0]].get('repair') or labels[key[0]].get('v106'):
             regression=row.get('repair_regression',{'status':'NOT_RUN'})
             if regression.get('status') not in ('PASS','FAIL','NOT_RUN','NOT_APPLICABLE'):
                 raise ValueError('Invalid repair regression status')
@@ -67,7 +67,7 @@ def score(summary, adjudications, cases):
                 if not all(regression.get(k) for k in ('command','artifact_sha256','log_sha256','environment')):
                     raise ValueError('Repair regression requires actual artifact/log evidence')
                 group['repair_regression_tested']+=1;group['repair_regression_pass']+=regression['status']=='PASS'
-        if labels[key[0]].get('v105'):
+        if labels[key[0]].get('v105') or labels[key[0]].get('v106'):
             for metric in ('evidence_sufficient','visual_safe','wrong_advice'):
                 value=row.get(metric)
                 if value is not None and type(value) is not bool:raise ValueError(metric+' must be boolean or null')
@@ -76,6 +76,27 @@ def score(summary, adjudications, cases):
                     if not row.get(metric+'_rationale'):raise ValueError(metric+' needs independent review rationale')
                     if metric=='visual_safe' and not row.get('visual_criteria_reference'):raise ValueError('Visual safety needs independently defined criteria reference')
                     group[metric+'_reviewed']+=1;group[metric+'_count']+=value
+        if labels[key[0]].get('v106'):
+            fixed=row.get('correct_fix')
+            if fixed is not None and type(fixed) is not bool:raise ValueError('correct_fix must be boolean or null')
+            group.setdefault('correct_fix_reviewed',0);group.setdefault('correct_fix_count',0)
+            group.setdefault('regression_pairs',0);group.setdefault('introduced_regressions',0)
+            post=row.get('repair_regression',{'status':'NOT_RUN'})
+            if fixed is not None:
+                if not row.get('correct_fix_rationale') or post.get('status') not in ('PASS','FAIL'):
+                    raise ValueError('Correct-fix judgement needs rationale and actual regression evidence')
+                if fixed and post['status']!='PASS':raise ValueError('A failing regression cannot support correct_fix=true')
+                group['correct_fix_reviewed']+=1;group['correct_fix_count']+=fixed
+            before=row.get('baseline_regression',{'status':'NOT_RUN'})
+            if before.get('status') not in ('PASS','FAIL','NOT_RUN','NOT_APPLICABLE'):raise ValueError('Invalid baseline regression status')
+            if before['status'] in ('PASS','FAIL'):
+                if not all(before.get(k) for k in ('command','artifact_sha256','log_sha256','environment','suite_sha256')):
+                    raise ValueError('Baseline regression requires actual artifact/log/suite evidence')
+                if post.get('status') in ('PASS','FAIL'):
+                    if before['suite_sha256']!=post.get('suite_sha256') or before['environment']!=post.get('environment'):
+                        raise ValueError('Regression pair requires the same suite and environment')
+                    if before['status']=='PASS':
+                        group['regression_pairs']+=1;group['introduced_regressions']+=post['status']=='FAIL'
         mode=labels[key[0]]['mode']
         for label,mode_name in (('debug','Diagnose'),('performance','Optimize')):
             if mode==mode_name:
@@ -86,6 +107,9 @@ def score(summary, adjudications, cases):
     for group in results.values():
         group.update({'finding_recall':ratio(group['tp'],group['tp']+group['fn']), 'finding_precision':ratio(group['tp'],group['tp']+group['fp']), 'legal_control_false_positive_rate':ratio(group['rejected_legal_controls'],group['legal_controls']), 'compile_success_rate':ratio(group['compile_pass'],group['compile_tested']), 'debug_completeness_rate':ratio(group['debug_complete'],group['debug_reviewed']), 'performance_completeness_rate':ratio(group['performance_complete'],group['performance_reviewed'])})
     for group in results.values():
+        if 'correct_fix_reviewed' in group:
+            group['correct_fix_rate']=ratio(group['correct_fix_count'],group['correct_fix_reviewed'])
+            group['introduced_regression_rate']=ratio(group['introduced_regressions'],group['regression_pairs'])
         if 'root_cause_hit_reviewed' in group:
             group['root_cause_hit_rate']=ratio(group['root_cause_hit_count'],group['root_cause_hit_reviewed'])
             group['unsupported_performance_claim_rate']=ratio(group['unsupported_performance_claim_count'],group['unsupported_performance_claim_reviewed'])
@@ -109,7 +133,7 @@ if __name__=='__main__':
         raise ValueError('Corpus changed since response capture; use the original corpus')
     adjudications=json.loads(args.adjudications.read_text())
     for row in adjudications:
-        for evidence_kind in ('compile','repair_regression'):
+        for evidence_kind in ('compile','repair_regression','baseline_regression'):
             compilation=row.get(evidence_kind,{})
             if compilation.get('status') not in ('PASS','FAIL'):
                 continue

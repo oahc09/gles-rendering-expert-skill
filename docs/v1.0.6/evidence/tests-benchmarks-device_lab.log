@@ -1,0 +1,15 @@
+test_canonical_fingerprint_stable (test_lab.LabTests.test_canonical_fingerprint_stable) ... ok
+test_different_device_no_pair (test_lab.LabTests.test_different_device_no_pair) ... ok
+test_driver_changes_fingerprint (test_lab.LabTests.test_driver_changes_fingerprint) ... ok
+test_failed_correctness_rejected (test_lab.LabTests.test_failed_correctness_rejected) ... ok
+test_missing_precision_rejected (test_lab.LabTests.test_missing_precision_rejected) ... ok
+test_nan_limit_rejected (test_lab.LabTests.test_nan_limit_rejected) ... ok
+test_pair_still_not_acceptance (test_lab.LabTests.test_pair_still_not_acceptance) ... ok
+test_silent_fallback_rejected (test_lab.LabTests.test_silent_fallback_rejected) ... ok
+test_software_not_target_pair (test_lab.LabTests.test_software_not_target_pair) ... ok
+test_substring_evidence_rejected (test_lab.LabTests.test_substring_evidence_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

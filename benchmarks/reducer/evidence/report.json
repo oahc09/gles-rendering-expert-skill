@@ -1,0 +1,3092 @@
+{
+  "schema_version": 1,
+  "scope": "real glslang compile failures; authored fixtures, not driver defects",
+  "compiler_version": {
+    "exit_code": 0,
+    "stdout": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n",
+    "stderr": ""
+  },
+  "cases": [
+    {
+      "schema_version": 1,
+      "case_id": "R01",
+      "status": "PASS",
+      "source_sha256": "311d652dc82dbef2dbe65cd3105663c2fc83b6fb5b9269a2839cd46339c2eef4",
+      "fixture_sha256": "a133d3978556d38cb376851e9248c591015f3d65b90b9299351530510fa17692",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_transform' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 260,
+      "reduced_bytes": 93,
+      "reduced_sha256": "925f847986b72fa8c3ac1532fc105f8343850bd5a40b283c8abb69274e10e83b",
+      "patch_sha256": "0c0bbe641954b83783628b5f3a12fc3d8aec573a93f28d7200eb25a87bbfd81e",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-xw5xbzel/candidate.vert\nERROR: 0:4: 'missing_transform' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp 4X4 matrix of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "925f847986b72fa8c3ac1532fc105f8343850bd5a40b283c8abb69274e10e83b"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-msy_p6ux/candidate.vert\nERROR: 0:4: 'missing_transform' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp 4X4 matrix of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "925f847986b72fa8c3ac1532fc105f8343850bd5a40b283c8abb69274e10e83b"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-vov3lib3/candidate.vert\nERROR: 0:4: 'missing_transform' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp 4X4 matrix of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "925f847986b72fa8c3ac1532fc105f8343850bd5a40b283c8abb69274e10e83b"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "0c0bbe641954b83783628b5f3a12fc3d8aec573a93f28d7200eb25a87bbfd81e"
+      },
+      "trials": [
+        {
+          "source_sha256": "311d652dc82dbef2dbe65cd3105663c2fc83b6fb5b9269a2839cd46339c2eef4",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-n_f7cw_6/candidate.vert\nERROR: 0:8: 'missing_transform' : undeclared identifier \nERROR: 0:8: '=' :  cannot convert from ' temp float' to ' temp highp 4X4 matrix of float'\nERROR: 0:8: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "dba32293c7c2690a646981d99ece6aa57182a3fc6cd01f2f5de30e31fd24dc1d",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7ea1ad3190a4298f112a1df920254c94c1d0c24856ede7e271276a561863a202",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e6bbfbc241fc0535f486f219fc1bf375179d15cfcdecb16950042fe01e337ca4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "377c139d26ffc3972ca2cca133a37531bb44145929a930ed6c1ca2173f5f69d0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7198253c82499d6409c4b5290b66d81f6c8b4c65c184a800a68faa79a2d373e5",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f04f425a1f6109c1d45edbe242af7260847c50029f15c5fe977021c1e0a18002",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "80b87a7076532ad4243fd2e3b17a5a09c5960f45a2b73efb7d6519d9838ece7e",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8a1c9c34b8111f7e72fa2fef94c63957833c39c03a032bf21adaa93a03cae9f5",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-b17wde_e/candidate.vert\nERROR: 0:6: 'missing_transform' : undeclared identifier \nERROR: 0:6: '=' :  cannot convert from ' temp float' to ' temp highp 4X4 matrix of float'\nERROR: 0:6: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d74edd08ea91ef7bee55ebc60224625448b302d5e264667671443397dc30bf2a",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5ae5a9fd68b9d5a10fa22455c8792d943ce461190dfc52335f3894e3340116ea",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "50b01800d6ac557b326bf6288adf68fa23fc69cc5e462e2b5a49a2a9abd1744c",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "63838cb1ff25b263a7a7da4bc0b9e13311cad00776ea98ae40e2f7297a0167aa",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e4831b1a056d4c997ad32b2f7c59da0bdd59f311bf153c1cac3cc0f11fdd355c",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "03cf48f96926c94e6ea74d960ab5d770ed19ba60e72cc56a90cfe64b3c370d8c",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "edc77d9d91d069c6930c41d97433eaa2560e4f7d8886bbab5214153f4c64351f",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-xdu2i60o/candidate.vert\nERROR: 0:5: 'missing_transform' : undeclared identifier \nERROR: 0:5: '=' :  cannot convert from ' temp float' to ' temp highp 4X4 matrix of float'\nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "01f6c1a4b37ed60a075ed27fa28c40848f9877f8509000be2ea4e83044f27ef6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e3fef7a69a06a50754f437189c8857515aecfab9f341f7aa09cdec5b0a935a4a",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5ae5a9fd68b9d5a10fa22455c8792d943ce461190dfc52335f3894e3340116ea",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e6d86a59b9343e30ddd9cc80769aa2ab4d6e10353006745c7e8861eb0d312438",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-79c5jhaw/candidate.vert\nERROR: 0:4: 'missing_transform' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp 4X4 matrix of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e521f3fe8ab9264bb40b481556806d9374669312bd3414b007f2cd6caae1c15f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c0a8786d2ed47e132fd36ab327e23b07b014f2742f362291d3f6f4f14041bc36",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "77f80f0deff3aa40dd0de52b61a304e64c88a723d2deac56a7e3b6c453f6b40f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e71ad9b04d730fca92f69ae6f21540bc6532b8ce4de8f750d9a87ee3681bd1b0",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "925f847986b72fa8c3ac1532fc105f8343850bd5a40b283c8abb69274e10e83b",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-8o6653pm/candidate.vert\nERROR: 0:4: 'missing_transform' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp 4X4 matrix of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "80bc9836524e1b44084e33acc1b1b9ab70db8ab889438d2a7c9f2fceca3cf96b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a82a77c3e012278bf7b7508ae18597cf013ddb8c9728dbd10a057b963278e821",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e7e1b61b5aa536d74db8126e8cdc1fa5e87cf1f52a3017545c3e14ea7d27754f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6957401185c93174f0cedfc1a40e2b5b9743bc84f09cc358aeefc202c0d270f6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "80bc9836524e1b44084e33acc1b1b9ab70db8ab889438d2a7c9f2fceca3cf96b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a82a77c3e012278bf7b7508ae18597cf013ddb8c9728dbd10a057b963278e821",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e7e1b61b5aa536d74db8126e8cdc1fa5e87cf1f52a3017545c3e14ea7d27754f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6957401185c93174f0cedfc1a40e2b5b9743bc84f09cc358aeefc202c0d270f6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    },
+    {
+      "schema_version": 1,
+      "case_id": "R02",
+      "status": "PASS",
+      "source_sha256": "2c30d293ae9aa6f10728e81cf407c4233104dd36fedd9ae43bf399e56e0915af",
+      "fixture_sha256": "7a525c78206f22814923966396339842d8012998015296bbbb97ed9768ce751c",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_sampler' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 290,
+      "reduced_bytes": 107,
+      "reduced_sha256": "310674f4b9e6640684e92b9ef7adfdce27592150fceba40ebe747c00dabeb9b7",
+      "patch_sha256": "6d51d166546fb76c09eccce64ff5a34ac63294f2dbe02766c6f7502d0f8e4730",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-3e7lb3ey/candidate.frag\nERROR: 0:4: 'missing_sampler' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "310674f4b9e6640684e92b9ef7adfdce27592150fceba40ebe747c00dabeb9b7"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-kybopqg6/candidate.frag\nERROR: 0:4: 'missing_sampler' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "310674f4b9e6640684e92b9ef7adfdce27592150fceba40ebe747c00dabeb9b7"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-i3iff9vt/candidate.frag\nERROR: 0:4: 'missing_sampler' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "310674f4b9e6640684e92b9ef7adfdce27592150fceba40ebe747c00dabeb9b7"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "6d51d166546fb76c09eccce64ff5a34ac63294f2dbe02766c6f7502d0f8e4730"
+      },
+      "trials": [
+        {
+          "source_sha256": "2c30d293ae9aa6f10728e81cf407c4233104dd36fedd9ae43bf399e56e0915af",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-7g1ckn7i/candidate.frag\nERROR: 0:9: 'missing_sampler' : undeclared identifier \nERROR: 0:9: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8714a74e180fe542303527fae7a06a7e444a80880cf7f7617cabd764fb775162",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4b5d5dab3fcdac54dad493ab4b168fd713e7fd49a961633633c4082f329dbdb5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "48ff4382d839f155a9b48ed8f9ecc6a67aa5ddb193ff58008f0feb57ea6bf935",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d0056e72061bb605884d1a58500703a105b3b093839b741f5e526cfcff9da6e6",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-d7d7kb3r/candidate.frag\nERROR: 0:6: 'missing_sampler' : undeclared identifier \nERROR: 0:6: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8714a74e180fe542303527fae7a06a7e444a80880cf7f7617cabd764fb775162",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0856f01d64dd1ccb7ddf0740f0ea29fd63bee597bdb6031a3f0a6f572af52c86",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "239cd8b60bcaf3d9e325595f322f8209f5d04be1ac80e5e3f342c77995dfc52f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3a6c0af27b8a1861ecd415e65c1da0992dcba8043f24321318ff70b9d1bc6b2c",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "fb5083b55f696016c262cb3d0d4e632457f3f7ee9c06e29fb2844423c08a4010",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "86fe1bd80a2279994a0eee1c9caa82eb3c983d64aa2843fd8198ff78f3804a39",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-cjm4_q9q/candidate.frag\nERROR: 0:5: 'outputColor' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "239cd8b60bcaf3d9e325595f322f8209f5d04be1ac80e5e3f342c77995dfc52f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "bca278094c2a77e1000af1a6a542b88e78c46a1b8f7fe423eb0e7768332b765e",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d841239da06179e314d12f1975358059b0e52ffe35ecfa5124bc8fab3b31f7dc",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0d6fe7ef6fc6773135f3acf31483f214f5900774558d0cd6f38c37cae17bde65",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-vdnssku3/candidate.frag\nERROR: 0:5: 'missing_sampler' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "1e22816b88437bb6910b0ac6e353f105b24df1fa056e3e649a34ed06f0f19569",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "072866ee2f07330435ad20de5ce4be01ffc32933a652513801fa826eba63add0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "fb5083b55f696016c262cb3d0d4e632457f3f7ee9c06e29fb2844423c08a4010",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "330cde9103b946f2287f7b17bb6dd8e0a04bcfb7d94a896c8c9e41b7796d9d50",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-ef2_mc_v/candidate.frag\nERROR: 0:4: 'missing_sampler' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "39deff2190bf475f2623e30ed4195234db08315413c76aadbc6d7016bad62909",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6efb3a48fec3b68a784e61454e35be07c3c0dd4e20407f62839b69a850a73d54",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4564135e8ee69fee89641472869e39f65405df02a26e9d8c55e99dc2e79309d6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "23ff6be7bff650ab37851ef4bc49127595fb1adc86b17dc5a9834a11194a7141",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-6z4es9mo/candidate.frag\nERROR: 0:4: 'outputColor' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "310674f4b9e6640684e92b9ef7adfdce27592150fceba40ebe747c00dabeb9b7",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-i2k9_i_x/candidate.frag\nERROR: 0:4: 'missing_sampler' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "bf313a9aef04d8c09e8b522f114f8737aa51f5d13cce9cc823d55b71f0cf85e0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e06b313ad7be7ec2ae546970ad3c91079e8a2c9f47199bb725c4f0786a89161d",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7df254d8badff29ebc74e74c8291a9bc2ac5a74c867d96ed4a50476351a552b1",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2770d3e968ff9b2c254925b7db3c87ca6708905c0e5903b4383e751d595c5421",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "bf313a9aef04d8c09e8b522f114f8737aa51f5d13cce9cc823d55b71f0cf85e0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e06b313ad7be7ec2ae546970ad3c91079e8a2c9f47199bb725c4f0786a89161d",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7df254d8badff29ebc74e74c8291a9bc2ac5a74c867d96ed4a50476351a552b1",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2770d3e968ff9b2c254925b7db3c87ca6708905c0e5903b4383e751d595c5421",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    },
+    {
+      "schema_version": 1,
+      "case_id": "R03",
+      "status": "PASS",
+      "source_sha256": "3b7ffca4d200e6c4a242eb8465808ed6182707a04d047f738092f5924b16fcea",
+      "fixture_sha256": "f4c69e14c8aba2fa54e663d91073cd073022da0313981de8ba99f6af5667d4df",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_normal' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 281,
+      "reduced_bytes": 98,
+      "reduced_sha256": "31a5543370ef9c6b306958ac65748b1881f17b8531088733fdcf99afe3772a88",
+      "patch_sha256": "04d74046ff7de46becc2fc6c11a23a7dff18923d403ca68dbfbf70b9d6da208a",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-pbjoflrd/candidate.frag\nERROR: 0:4: 'missing_normal' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' global float' to ' temp highp 3-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "31a5543370ef9c6b306958ac65748b1881f17b8531088733fdcf99afe3772a88"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-x31sm62g/candidate.frag\nERROR: 0:4: 'missing_normal' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' global float' to ' temp highp 3-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "31a5543370ef9c6b306958ac65748b1881f17b8531088733fdcf99afe3772a88"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-0u5h20nf/candidate.frag\nERROR: 0:4: 'missing_normal' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' global float' to ' temp highp 3-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "31a5543370ef9c6b306958ac65748b1881f17b8531088733fdcf99afe3772a88"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "04d74046ff7de46becc2fc6c11a23a7dff18923d403ca68dbfbf70b9d6da208a"
+      },
+      "trials": [
+        {
+          "source_sha256": "3b7ffca4d200e6c4a242eb8465808ed6182707a04d047f738092f5924b16fcea",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-ij7xhhho/candidate.frag\nERROR: 0:9: 'missing_normal' : undeclared identifier \nERROR: 0:9: '=' :  cannot convert from ' global float' to ' temp highp 3-component vector of float'\nERROR: 0:9: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "aa932413a67c574be3be1f59cddf0a429d287b90eeea3968f471a03e4c31c66e",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4b5d5dab3fcdac54dad493ab4b168fd713e7fd49a961633633c4082f329dbdb5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "1f8898aca83b8d51348c8de9a91cd70056bfb5fc1116954983abb50ac3a8c7cb",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "fe2403454c9c1efcfaedad7252d18fe5d105ecc0c7383caed4411c356f0d84e8",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-8iwnm83v/candidate.frag\nERROR: 0:6: 'missing_normal' : undeclared identifier \nERROR: 0:6: '=' :  cannot convert from ' global float' to ' temp highp 3-component vector of float'\nERROR: 0:6: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "aa932413a67c574be3be1f59cddf0a429d287b90eeea3968f471a03e4c31c66e",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0856f01d64dd1ccb7ddf0740f0ea29fd63bee597bdb6031a3f0a6f572af52c86",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3d32e41da9030d57d423b239ecc643f4dcd96fb94e2ddcfa1aff1d4a28f9e7b0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9164714b5751dbda1ed47afc8f09e93ddd0677176f3a18e093109ab459a4f433",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3aec8cb2149df6ce807deeeb3ebdee82a5a585309d86a0293427ebc76cd0e4f5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "86fe1bd80a2279994a0eee1c9caa82eb3c983d64aa2843fd8198ff78f3804a39",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-znoxgk1d/candidate.frag\nERROR: 0:5: 'outputColor' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3d32e41da9030d57d423b239ecc643f4dcd96fb94e2ddcfa1aff1d4a28f9e7b0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "bfd67c9644159281e0be4f387e8c0526838631b3f13cb3cf458803b89179f2b9",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5d68549cc0f9435f2bd51199e5341b25e85456542b5623aea42ec903c7a6e0b7",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9e253f5d88ce13fa1ec20788d6513890e35c195821b05a46a5bd68bee20caf79",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-zazqic4u/candidate.frag\nERROR: 0:5: 'missing_normal' : undeclared identifier \nERROR: 0:5: '=' :  cannot convert from ' global float' to ' temp highp 3-component vector of float'\nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9ec1fff997bf6ec6195bdd85314c529035a494a686c353c15f5c4859c326bf26",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "ec0da81668fcac4f68e3c50d7eb810d9bd2731975a6b7ef47e247cb8f2c479c5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3aec8cb2149df6ce807deeeb3ebdee82a5a585309d86a0293427ebc76cd0e4f5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "dddd823d9a625362a590e64989ff0a57e7df2e0958870f75c37ac90404fb06f1",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-c_gklplm/candidate.frag\nERROR: 0:4: 'missing_normal' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' global float' to ' temp highp 3-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "106a4d56c3bf1f432b9f33615cc8b35029cceac96a8a1ef26bbe59abadac9c46",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5db3e8635470d789838289d9df274676c4072f197cb16556dfd9e9b0ca8ddf11",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "ced690282b72e28058d04384b2d024a735ef234fdfa72b81ca3b5e56f884e2b0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "23ff6be7bff650ab37851ef4bc49127595fb1adc86b17dc5a9834a11194a7141",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-blcqm5ln/candidate.frag\nERROR: 0:4: 'outputColor' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "31a5543370ef9c6b306958ac65748b1881f17b8531088733fdcf99afe3772a88",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-alyatbab/candidate.frag\nERROR: 0:4: 'missing_normal' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' global float' to ' temp highp 3-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "cca07cb77ed14f043e9b96b35e2b4bf91a3c2a35383bdb48320d821b17c1d2a4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "183874402b2105e970dc7992c151de068aaa063889751bf601f6c9cb4ad6fe33",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "afd4acfbe2d7fbc4a375fe09969c5f0dc2ddf8cd5e55a43faf22435d690444b4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "11f578326fc4155d8b2dbca8c9b59a08899cb1734520910149e6e8a01f565b96",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "cca07cb77ed14f043e9b96b35e2b4bf91a3c2a35383bdb48320d821b17c1d2a4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "183874402b2105e970dc7992c151de068aaa063889751bf601f6c9cb4ad6fe33",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "afd4acfbe2d7fbc4a375fe09969c5f0dc2ddf8cd5e55a43faf22435d690444b4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "11f578326fc4155d8b2dbca8c9b59a08899cb1734520910149e6e8a01f565b96",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    },
+    {
+      "schema_version": 1,
+      "case_id": "R04",
+      "status": "PASS",
+      "source_sha256": "a415eccc262938dc5e88e00a1051d9d7b284160f1ea7e0f539b785b5122d92f8",
+      "fixture_sha256": "b056d067fff9c98b441f8807e018e1a3f7be2d79d362e3720919b75e86175df1",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_instance' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 257,
+      "reduced_bytes": 90,
+      "reduced_sha256": "e7973f0611ed9201243a44a91a8919c94c791bd4c40cd93637d247b6ae516400",
+      "patch_sha256": "932afd8b79ee0699d0ec27b94f9af59299358968925ae3d0a4321ed69ed3da6e",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-gf61arig/candidate.vert\nERROR: 0:4: 'missing_instance' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp int'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "e7973f0611ed9201243a44a91a8919c94c791bd4c40cd93637d247b6ae516400"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-ghndwfuw/candidate.vert\nERROR: 0:4: 'missing_instance' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp int'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "e7973f0611ed9201243a44a91a8919c94c791bd4c40cd93637d247b6ae516400"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-2oex06z0/candidate.vert\nERROR: 0:4: 'missing_instance' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp int'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "e7973f0611ed9201243a44a91a8919c94c791bd4c40cd93637d247b6ae516400"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "932afd8b79ee0699d0ec27b94f9af59299358968925ae3d0a4321ed69ed3da6e"
+      },
+      "trials": [
+        {
+          "source_sha256": "a415eccc262938dc5e88e00a1051d9d7b284160f1ea7e0f539b785b5122d92f8",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-jnsyn6mp/candidate.vert\nERROR: 0:8: 'missing_instance' : undeclared identifier \nERROR: 0:8: '=' :  cannot convert from ' temp float' to ' temp highp int'\nERROR: 0:8: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2edc608ab1191f57feaec852c82ec223e69b00113600d59f7ef98683603b309f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7ea1ad3190a4298f112a1df920254c94c1d0c24856ede7e271276a561863a202",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2c1fe8c8ed51ddc35017fa1f7876748d2708d812a5f368a6516b250d0ad30b55",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0f5ec26ab9511bf0d0768c251e8b2defefa7cadbc3ba60f0653ad9215ea534e6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7198253c82499d6409c4b5290b66d81f6c8b4c65c184a800a68faa79a2d373e5",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "bd60501bb26e03b7455c161c43fc98efe4f2deeab13555c33bb10f6694c923dc",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "ad95b35e71df2730e3b835aa384c6ae9716e10c02cd1fe903a41e98c93190be5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9e54d4ceee1a816089bdb44200582e444e99c281ae065b91fe8a038fcfd7567b",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-jekr7pc0/candidate.vert\nERROR: 0:6: 'missing_instance' : undeclared identifier \nERROR: 0:6: '=' :  cannot convert from ' temp float' to ' temp highp int'\nERROR: 0:6: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5a6cd51e0be9fc68a0e41bc01f3daabd5336485689a7abba2fa83d861ba6be42",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e0d548c814931c8c30667f378f89c1d4b220104efb927c2938c7e2bdddfd3cf2",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "50b01800d6ac557b326bf6288adf68fa23fc69cc5e462e2b5a49a2a9abd1744c",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f6fe459ead13ee1c948716e94821320160244e9c0edd4dd99e3d372d7d3328c8",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e39484389341c62fd921a80bf9f8fa46cf1ddb8d2ed961888cace5093506f2ef",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d5b502609065641d352047582c516ba87a0257e299c493a07f2789ae2300558a",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d34e5100cff08ca8e149ec05efce73afaaae0eebcdbc490373aeb7ae43e2749d",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-xip58iui/candidate.vert\nERROR: 0:5: 'missing_instance' : undeclared identifier \nERROR: 0:5: '=' :  cannot convert from ' temp float' to ' temp highp int'\nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7a7fe6cac04c7c7566c964f505d4c705dd41e7aced59053d716e55c223f66f79",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a6d7d1e0dab0046a8bc923a4948c9da743e1bd6322dc426706360ee631c02530",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e0d548c814931c8c30667f378f89c1d4b220104efb927c2938c7e2bdddfd3cf2",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8aa048f428469d0632af48ae1d13873746c887d5690373b9d857361e8f7fd7dd",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-tgog2kez/candidate.vert\nERROR: 0:4: 'missing_instance' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp int'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "857d0b84a2cb4be8c4d0760ba2a10c8a832ec670c76d4652e32b99982a8fdcdb",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d5027b21f72fbe3476fff1ebb229dd5f8ed7cbd89f83b7b0df3842a83a4d6643",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c77ac86362bc6746009d0ba54be65a11c790f646d20e15a865f20a878d9c8da8",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e71ad9b04d730fca92f69ae6f21540bc6532b8ce4de8f750d9a87ee3681bd1b0",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e7973f0611ed9201243a44a91a8919c94c791bd4c40cd93637d247b6ae516400",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-l33gmdk6/candidate.vert\nERROR: 0:4: 'missing_instance' : undeclared identifier \nERROR: 0:4: '=' :  cannot convert from ' temp float' to ' temp highp int'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "672e205527537a30108f0a2ee8ee10453667906ffeae1182bd6841cb67f53d3d",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "be1f012769ce757b33fefc73c63c83994299d04ad69eed5bb2be6b6bc6d0191c",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e4084debc939dcffcb6f44908b91772cca6ebaf3580c88555446762b54f25208",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "04bbebbe6249749bf5c9138d0ed36f4995d53f5f46580765de7845f230f94dd7",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "672e205527537a30108f0a2ee8ee10453667906ffeae1182bd6841cb67f53d3d",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "be1f012769ce757b33fefc73c63c83994299d04ad69eed5bb2be6b6bc6d0191c",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e4084debc939dcffcb6f44908b91772cca6ebaf3580c88555446762b54f25208",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "04bbebbe6249749bf5c9138d0ed36f4995d53f5f46580765de7845f230f94dd7",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    },
+    {
+      "schema_version": 1,
+      "case_id": "R05",
+      "status": "PASS",
+      "source_sha256": "c3bd7c9bd0261a03eb4b811aba2e88855cf7043afd1852cc248cea8b642a2279",
+      "fixture_sha256": "45b4b73398d1aa5e26af65019902fb846755fd042a97b7abf023b30b2b91f9fa",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_depth' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 269,
+      "reduced_bytes": 86,
+      "reduced_sha256": "f8aa633dede762bd5c92c19cc1c353c475194a67f4f849b727e422dbc4d9106f",
+      "patch_sha256": "b6a6e1d29532bbab43c3a3fa68598eb8c187a8c2e97553d531293ebcaec6adb4",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-evyw6ni_/candidate.frag\nERROR: 0:4: 'missing_depth' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "f8aa633dede762bd5c92c19cc1c353c475194a67f4f849b727e422dbc4d9106f"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-y4fotfo2/candidate.frag\nERROR: 0:4: 'missing_depth' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "f8aa633dede762bd5c92c19cc1c353c475194a67f4f849b727e422dbc4d9106f"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-yvw1afnp/candidate.frag\nERROR: 0:4: 'missing_depth' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "f8aa633dede762bd5c92c19cc1c353c475194a67f4f849b727e422dbc4d9106f"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "b6a6e1d29532bbab43c3a3fa68598eb8c187a8c2e97553d531293ebcaec6adb4"
+      },
+      "trials": [
+        {
+          "source_sha256": "c3bd7c9bd0261a03eb4b811aba2e88855cf7043afd1852cc248cea8b642a2279",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-ho5z1wi3/candidate.frag\nERROR: 0:9: 'missing_depth' : undeclared identifier \nERROR: 0:9: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2e3abc84cf2c279fede2a7a72075dd074e8203a9926fd6d1f7f6771f8d6b82bb",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4b5d5dab3fcdac54dad493ab4b168fd713e7fd49a961633633c4082f329dbdb5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3c0ed5b3f1177487da8ed6e646d3db7db941807ff66785d7713291ef4a4d2020",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "df3751afe3a433a42a9aaa410f280083a5bb55a0638179ee4145e55edfd30afb",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-vmbn9cwi/candidate.frag\nERROR: 0:6: 'missing_depth' : undeclared identifier \nERROR: 0:6: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2e3abc84cf2c279fede2a7a72075dd074e8203a9926fd6d1f7f6771f8d6b82bb",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0856f01d64dd1ccb7ddf0740f0ea29fd63bee597bdb6031a3f0a6f572af52c86",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3709ac840c4eaa93e08e92875207cd33531dd297f9a0f6a52adc07c120d908d9",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "548789e702581ff7ef733132d0c48a4e11442c0cd4c8ac781f41cfbfb89c88b2",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "12972156ca59bb4da291506b446c228d6a5fd32ab992fbad3d9ce8b6b0c57be3",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "86fe1bd80a2279994a0eee1c9caa82eb3c983d64aa2843fd8198ff78f3804a39",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-_i0s3ui2/candidate.frag\nERROR: 0:5: 'outputColor' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3709ac840c4eaa93e08e92875207cd33531dd297f9a0f6a52adc07c120d908d9",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "229ef6e017963251f6bb63a5aacfe61de2dc27b09f4953c17936160c313e1bd6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "cb375e5e6ce47cf95478a072e9dff48deb4821daa74358f2bb830785a765d6c4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e091bc8f4acf7204207b06a1c489fbf0c9cdea161e73ff859b6450e3c217211b",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-iyeplohk/candidate.frag\nERROR: 0:5: 'missing_depth' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0f56845c6174965555c6f7255438694205f628097a4e2c5ab95ce3d16bdbff2b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6ad5de72f9b69b2588319a8700020fee4b669d31b15eab8d4e43149639af3827",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "12972156ca59bb4da291506b446c228d6a5fd32ab992fbad3d9ce8b6b0c57be3",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "347e1834e400a830b0de71a4b4274ffbe65c8f4b0e798bf7057f664c6ad13c02",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-tcitv2qm/candidate.frag\nERROR: 0:4: 'missing_depth' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b59f5741dd47e0b503a0d1288536648e19ded07fee0baa56516dff62c8b04c84",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "efd120da37565a4a8b3eb778dac1293727e6f1a4d8c304b0fe9c92f5aeab9647",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "24e498b79eb699bf254d34baf3bec052942939f8a1450df911f508d6aff0c09d",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "23ff6be7bff650ab37851ef4bc49127595fb1adc86b17dc5a9834a11194a7141",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-aoadrx7x/candidate.frag\nERROR: 0:4: 'outputColor' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f8aa633dede762bd5c92c19cc1c353c475194a67f4f849b727e422dbc4d9106f",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-6_i8zule/candidate.frag\nERROR: 0:4: 'missing_depth' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "780904bc6f493026aa92c42adebe58b2350646e27fe1911c325a50c59025ee17",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d9a86d5c4d40ea99fb53e634e06aa0493e84b547e7c4276467f215c95e1994b8",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e8b314fb3960f122642a9e904770ae3429731bf8d5bb13e87e75fc958b77011b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4c10068a16789c99d3245728d7e562e89cc1ea4e2738583313de84ee7a5049e5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "780904bc6f493026aa92c42adebe58b2350646e27fe1911c325a50c59025ee17",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d9a86d5c4d40ea99fb53e634e06aa0493e84b547e7c4276467f215c95e1994b8",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e8b314fb3960f122642a9e904770ae3429731bf8d5bb13e87e75fc958b77011b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4c10068a16789c99d3245728d7e562e89cc1ea4e2738583313de84ee7a5049e5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    },
+    {
+      "schema_version": 1,
+      "case_id": "R06",
+      "status": "PASS",
+      "source_sha256": "9e3b5aba311d12990cc93b079f1a453e260c264fb57d96447cd7c9b4f4a9c758",
+      "fixture_sha256": "93f4f1eaa3932b10a15d1d410286d3bdbf13de61f1c56d77623e0fa0280afa36",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_image' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 285,
+      "reduced_bytes": 128,
+      "reduced_sha256": "35248ad8c8cfa438bc923f99f3e849ca1892377f6f9978c21e9f992a514a8c05",
+      "patch_sha256": "0f6abbc9a76704146282a23015558df28ee1df6a2a965a04f06f11965fe32779",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-w_p95soa/candidate.comp\nERROR: 0:5: 'missing_image' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "35248ad8c8cfa438bc923f99f3e849ca1892377f6f9978c21e9f992a514a8c05"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-mp06tofi/candidate.comp\nERROR: 0:5: 'missing_image' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "35248ad8c8cfa438bc923f99f3e849ca1892377f6f9978c21e9f992a514a8c05"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-4kv_heef/candidate.comp\nERROR: 0:5: 'missing_image' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "35248ad8c8cfa438bc923f99f3e849ca1892377f6f9978c21e9f992a514a8c05"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "0f6abbc9a76704146282a23015558df28ee1df6a2a965a04f06f11965fe32779"
+      },
+      "trials": [
+        {
+          "source_sha256": "9e3b5aba311d12990cc93b079f1a453e260c264fb57d96447cd7c9b4f4a9c758",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-88p17rch/candidate.comp\nERROR: 0:9: 'missing_image' : undeclared identifier \nERROR: 0:9: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a3f90c87a00c61bb508ecf107eaddf7b08fc282b014cae1462d95e288aeb318a",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c0bd901fecd2f0d77a768c00c1e72f74e65bf47937bc30ce6731a7159ab7f46f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e4ddc4eea3f4afd2749928340f3f5004251726f6f17ccac5fa8120bff779d935",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "1407a6bebe52149b2f0079dd35b3e3cd9b43e297ba935fff00ad824140c70bd9",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b752b11d7f4e4585a0bb4f356143adc3b6a86ff59eaef6b7da67f7a6c4186abd",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b632d503b65b23c553fdf96d563ba4a2181aa1f3027430c3b03d49d62fb25d22",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c9ba83667c525dae76cdd2065e848293d110aad0f2a4470a4e445356b464e07a",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8f3614b9916b8134ee395303f9b6ed71ce64002230086f19a2f6ac353dd75cea",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c742442abb0806b7bdb02ada37699138211c8d51013fdcf4af8d1c2a0d5a0982",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-0nprjoze/candidate.comp\nERROR: 0:7: 'missing_image' : undeclared identifier \nERROR: 0:7: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5effb4f40b141e8b651f60b0e2d89a0e1d5038fa1bf86827a019b9f8c890b5d1",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "63693a1c80118f2e62136f7c470cc0d39606a29a977dfda8ea6bfdd7fae2928b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8fdaf2ba578a99e184766210ab6069ff54553a70678cf465ea97eba05a0ed649",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f8f5efaec46a28549fd2e029819f8e1c0e6e320bb4c151c6fd981dad5cffcf1c",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "161d7fd707bb1cff525339237705fc7269b2f8ccc2e77739dff8f2a1065fc1fa",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "84a08ea5867bf720d8bdc616b3204d6f7b8bc0be0d1db3d8c3a8e88314be6ce9",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "ff643a4559b28e9943d80b3f28f4d7330a2008bc023beaa5a9f30f03f37e3948",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "888e4ad3a287c0e2e8b58d12586e31ba2f7aa13d59f0ebf035ac35ab54b5416c",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-4z4186p3/candidate.comp\nERROR: 0:6: 'missing_image' : undeclared identifier \nERROR: 0:6: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "68db31a04b9c9cb457f7842193aaccc56cf2ca2f80098534acaea711ba4324d7",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c7f0626caa8eb92c1c05ba7c545eb7d0a5755b92532c2ffb04877acbd05b63e5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "63693a1c80118f2e62136f7c470cc0d39606a29a977dfda8ea6bfdd7fae2928b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "aa52e3ea07d7bf21abdb0e867b454aefb308ac5aa71309212ebf37a45e65facc",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "87cfb0a6ca93ddb3c796120d92dc2bc6a74b72c3e1c23ec25d60dfa93c6d05dc",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-6wzcug20/candidate.comp\nERROR: 0:5: 'missing_image' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "51f9ba2139c4713b0d2ba57c8e8c92dadafc1501259daf0a36dfb9ac74be25fd",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2582d33ab968f90be4e22bc02e4ea149b907187043624a1f999cd690652151a1",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8a690a62db72e3df8b98b3092e5f1eacd35649eeaf8dcd3c62d466195727d98e",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "411012c26579aa4da91c62d0c573a095e40bbd167ec5a98b07506a1c197a78bc",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d09051603ae60564890f79250b069913416bfea204f2a71efb3570bc90035120",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "35248ad8c8cfa438bc923f99f3e849ca1892377f6f9978c21e9f992a514a8c05",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-pq0s0m23/candidate.comp\nERROR: 0:5: 'missing_image' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6d9823140eb0d34bbe2854b1ec7ec5cf5b13b8bd77bd6e62a2c4e938fb552f84",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6cf69c4518ac455fcc32e247a15ea152388fb15da895f36ad29ff138fc765fd4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2474203bd72b6bb37e8dce9dc8c82261a85d948b19f126113ecfb1f0215b9679",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "41a7c207cbaa2f56a935755936457b0aea2da243ecafc9c387444046c0b1b64b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d517199b4898aee286ee339efaa4529d8aef43db1683da0c31c9afcdc0dbce65",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7b8b3126f3c4dd1cbb506cfba4608217b7db8e5a9c09d2f39034b97c17d93e56",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6d9823140eb0d34bbe2854b1ec7ec5cf5b13b8bd77bd6e62a2c4e938fb552f84",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6cf69c4518ac455fcc32e247a15ea152388fb15da895f36ad29ff138fc765fd4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2474203bd72b6bb37e8dce9dc8c82261a85d948b19f126113ecfb1f0215b9679",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "41a7c207cbaa2f56a935755936457b0aea2da243ecafc9c387444046c0b1b64b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d517199b4898aee286ee339efaa4529d8aef43db1683da0c31c9afcdc0dbce65",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7b8b3126f3c4dd1cbb506cfba4608217b7db8e5a9c09d2f39034b97c17d93e56",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    },
+    {
+      "schema_version": 1,
+      "case_id": "R07",
+      "status": "PASS",
+      "source_sha256": "b6ad54608aafaed81c0fb92e7892c4b11461ef3abb1e572e79721913cf728356",
+      "fixture_sha256": "bec2a012617d279403d0aa191e0b62e87dd34175d15447731e5882ca853acaf7",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_particles' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 280,
+      "reduced_bytes": 123,
+      "reduced_sha256": "5a0ca2ab6ad400c1a0b4fb14b5c4f9d385b712c36f359d0aff663461ed14f78b",
+      "patch_sha256": "09d918d2b3667569de5cef911e51fa02834c27c5be3e5741dcae89846886ef44",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-andwqnbd/candidate.comp\nERROR: 0:5: 'missing_particles' : undeclared identifier \nERROR: 0:5: 'missing_particles' :  left of '[' is not of type array, matrix, or vector  \nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "5a0ca2ab6ad400c1a0b4fb14b5c4f9d385b712c36f359d0aff663461ed14f78b"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-i8bdkvib/candidate.comp\nERROR: 0:5: 'missing_particles' : undeclared identifier \nERROR: 0:5: 'missing_particles' :  left of '[' is not of type array, matrix, or vector  \nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "5a0ca2ab6ad400c1a0b4fb14b5c4f9d385b712c36f359d0aff663461ed14f78b"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-znzcshw9/candidate.comp\nERROR: 0:5: 'missing_particles' : undeclared identifier \nERROR: 0:5: 'missing_particles' :  left of '[' is not of type array, matrix, or vector  \nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "5a0ca2ab6ad400c1a0b4fb14b5c4f9d385b712c36f359d0aff663461ed14f78b"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "09d918d2b3667569de5cef911e51fa02834c27c5be3e5741dcae89846886ef44"
+      },
+      "trials": [
+        {
+          "source_sha256": "b6ad54608aafaed81c0fb92e7892c4b11461ef3abb1e572e79721913cf728356",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-82hjdqo_/candidate.comp\nERROR: 0:9: 'missing_particles' : undeclared identifier \nERROR: 0:9: 'missing_particles' :  left of '[' is not of type array, matrix, or vector  \nERROR: 0:9: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5ae3dc93bc74e61653a5727aa887e498681ba0b8ccc70c2bacb878feab24f666",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c0bd901fecd2f0d77a768c00c1e72f74e65bf47937bc30ce6731a7159ab7f46f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "af26ea72dbde0a3f65367e8b6570e167126a044e66a69a6596f88a110461ee5a",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d93e895566a32055ebd47951537ea2c07d4dda69fe4f29bf682107805d1c47d8",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b752b11d7f4e4585a0bb4f356143adc3b6a86ff59eaef6b7da67f7a6c4186abd",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b3750b7a7c35b9fcf9f23239b648c803058f0d710894466678c2c723b1a67293",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "77e454e236e2e1f556d0a9283d6dedc0e9eb43f3ec3fb8ff62d1608f88a1b792",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3b3b365009b3833a2eae1c73b60c296910614772dd79ff01c434e6acb9428d1e",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "149b9441d4ac20269456f1a97f65d93c1422acf9a27a404f9d86f17a1c53fcbe",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-6n516nmk/candidate.comp\nERROR: 0:7: 'missing_particles' : undeclared identifier \nERROR: 0:7: 'missing_particles' :  left of '[' is not of type array, matrix, or vector  \nERROR: 0:7: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "dd106318b0962e9aa7f58d41ac214d034f9e3e2703a1e05b547e92ea517aa592",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b6e059e651f21636a8fb5f3b1de179414600a832de76e900b34fdeaec9544691",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "71f0d92bd47ef80851c0aeb6de1786754bf699406ce8f88132c4e64a40033910",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f8f5efaec46a28549fd2e029819f8e1c0e6e320bb4c151c6fd981dad5cffcf1c",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6ed3e22023f86f96ae23fb1a03619dc249eefff9b267615dba4f619a15f00e61",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "ca49384dab732ec9ed49b0241d7630ae3f12bfcccb9c16b86a6390b3b96af5ae",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9ecdae76ae45a7db3b068f1bfd9e467cbceebb4a5f6e0db8b5fbc78866db8d45",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8176f8eeb2b2fbbb0d9d1d8f618caf20f8e531ac5c74ccab2e332ed6965b3a36",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-blt9114i/candidate.comp\nERROR: 0:6: 'missing_particles' : undeclared identifier \nERROR: 0:6: 'missing_particles' :  left of '[' is not of type array, matrix, or vector  \nERROR: 0:6: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "dea8054535d95e56e7f284be40ff60edadc039006c43f1f6fa9e8a296b00880b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f89af54b158bde88d880ee81c31ab2d5107e35fa70a4f99cc34f9f62d9979fcd",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b6e059e651f21636a8fb5f3b1de179414600a832de76e900b34fdeaec9544691",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a8694fee8fbedabbcb2ba138d901b8872fefa67583730e23112e134812e0c0c6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a40424dd681457d81c3372cec20bf093d35fb3cc50ac2cda76688a77644fb028",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-fh20i1ml/candidate.comp\nERROR: 0:5: 'missing_particles' : undeclared identifier \nERROR: 0:5: 'missing_particles' :  left of '[' is not of type array, matrix, or vector  \nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c55b4f132e6526e5b5aeb427671728b8766f59882fd433beb1d39dc19c075a35",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c6dcd9543c99ba2a3520582aaca3294b2fc5a15ac32d319b44403e40ad7aa714",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f3a0c8807a63801feb8bdf1ac0de7d6177f3072d1bf3e1e286dcfce4d299f5a3",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0c348efd04c0461db4d79d863aef18d43c236e797755ee63a18450567715dfac",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d09051603ae60564890f79250b069913416bfea204f2a71efb3570bc90035120",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5a0ca2ab6ad400c1a0b4fb14b5c4f9d385b712c36f359d0aff663461ed14f78b",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-t0kldz8g/candidate.comp\nERROR: 0:5: 'missing_particles' : undeclared identifier \nERROR: 0:5: 'missing_particles' :  left of '[' is not of type array, matrix, or vector  \nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "634d926230817f36099001ad7aaa195da88164e2ed769be825ea0c293e6ff977",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e6ee3178c3b571b741644825447686447e5043be643ea404d006400db249540e",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3ccd86b5901a79b87fd2bd5cd7d551a522d52d88756bb15e88f031e6434409d4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "14056d4befd088ba473d13dd41b3960b5339dd0f702dab1bf2061ea7e90bc198",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d517199b4898aee286ee339efaa4529d8aef43db1683da0c31c9afcdc0dbce65",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f61bbf8eb0612df292579f13e2fe3439202daf610e64e87ef2752478968ee938",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "634d926230817f36099001ad7aaa195da88164e2ed769be825ea0c293e6ff977",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "e6ee3178c3b571b741644825447686447e5043be643ea404d006400db249540e",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3ccd86b5901a79b87fd2bd5cd7d551a522d52d88756bb15e88f031e6434409d4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "14056d4befd088ba473d13dd41b3960b5339dd0f702dab1bf2061ea7e90bc198",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d517199b4898aee286ee339efaa4529d8aef43db1683da0c31c9afcdc0dbce65",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f61bbf8eb0612df292579f13e2fe3439202daf610e64e87ef2752478968ee938",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    },
+    {
+      "schema_version": 1,
+      "case_id": "R08",
+      "status": "PASS",
+      "source_sha256": "749525a9bbb6dddebd001f07961b112bb7e55fea34892a6017f3818edf46e918",
+      "fixture_sha256": "3794a605d00737bcaa62fba469d86b491e782503d8b489e2fa291def91443ebb",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_boid_count' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 274,
+      "reduced_bytes": 117,
+      "reduced_sha256": "dbef5597c371e1cc2cc9150dcd5f6a44ce7b3c6cd16f1c14cac2ff9725a942a5",
+      "patch_sha256": "550e18096a00cc7a0384bee1d9d86a71d41e9c00616a71644a1c63652de9a323",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-wrc5ydz8/candidate.comp\nERROR: 0:5: 'missing_boid_count' : undeclared identifier \nERROR: 0:5: '=' :  cannot convert from ' temp float' to ' temp highp uint'\nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "dbef5597c371e1cc2cc9150dcd5f6a44ce7b3c6cd16f1c14cac2ff9725a942a5"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-6kqhrd25/candidate.comp\nERROR: 0:5: 'missing_boid_count' : undeclared identifier \nERROR: 0:5: '=' :  cannot convert from ' temp float' to ' temp highp uint'\nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "dbef5597c371e1cc2cc9150dcd5f6a44ce7b3c6cd16f1c14cac2ff9725a942a5"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-2frmj9mb/candidate.comp\nERROR: 0:5: 'missing_boid_count' : undeclared identifier \nERROR: 0:5: '=' :  cannot convert from ' temp float' to ' temp highp uint'\nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "dbef5597c371e1cc2cc9150dcd5f6a44ce7b3c6cd16f1c14cac2ff9725a942a5"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "550e18096a00cc7a0384bee1d9d86a71d41e9c00616a71644a1c63652de9a323"
+      },
+      "trials": [
+        {
+          "source_sha256": "749525a9bbb6dddebd001f07961b112bb7e55fea34892a6017f3818edf46e918",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-cmzgorsl/candidate.comp\nERROR: 0:9: 'missing_boid_count' : undeclared identifier \nERROR: 0:9: '=' :  cannot convert from ' temp float' to ' temp highp uint'\nERROR: 0:9: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "165a1b086f0b72b3bd4d3f3acbf6eedb0f11a08a8c0e85025dc63118e6945273",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c0bd901fecd2f0d77a768c00c1e72f74e65bf47937bc30ce6731a7159ab7f46f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "694700fb990ef02f61ecb808bccc804bd286dfd8e0af05b19969a4fd1926d7b0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5de5ebcc26a9fbd20c6e41aa6f3679b1de2a4a9f80b41543bf94bc9afdb08183",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b752b11d7f4e4585a0bb4f356143adc3b6a86ff59eaef6b7da67f7a6c4186abd",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4af6f210be1aa4ef043c37294871f4257f140107e27b43822e0a8cfc68c7afb5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9be100fe9c780610752f854e3f2f835f379c46a1eb47e5fdef6dad300272fe88",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "97185d2baba6ebd1e8ef13ab99584ca8f2b148f01915f836184e59e793c6f729",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d352fa3c757b01f41a25acfa82b9ac210d44529296c24d8fec525471d96ce243",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-4y6_v1q4/candidate.comp\nERROR: 0:7: 'missing_boid_count' : undeclared identifier \nERROR: 0:7: '=' :  cannot convert from ' temp float' to ' temp highp uint'\nERROR: 0:7: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "ba215a8abdfe73f61e457a81e3fecfe3319c419a555ebab7217d242da2933405",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "cf84d7b1e65f9246c243fd9bb89c41ee50a0f0390dcf02f732c9a0e3435b7b69",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "97bb9500f31246f61a40ea18542678097364d04e4c7dec6e36f91e7333ba0a34",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f8f5efaec46a28549fd2e029819f8e1c0e6e320bb4c151c6fd981dad5cffcf1c",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "74af35106fecf5cb9c6584e793b2ce22e3eef44673a2d336a2d86b5cd7d1f94f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0291834c5aa82a686a4b09ed342929ef5520fb7fbbc0ac944667b91a420f4621",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "1dc5afa5114a97f1cd4e28066fb2d6f1d7e53a42bf8f4629e79953ad4deca178",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9fb66c2c2679af453dcf5f6019d02aae8a2340d173fc0eaa1378b555e4b6eaa4",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-otitvt91/candidate.comp\nERROR: 0:6: 'missing_boid_count' : undeclared identifier \nERROR: 0:6: '=' :  cannot convert from ' temp float' to ' temp highp uint'\nERROR: 0:6: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f19532934047ed54850efe853464d460158ad90bcf16be6c1c0fd1a90b299f26",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d864018429c2a894b2d2bb8ffaf89722227a57f4a1fca14058d3bf75512b2e37",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "cf84d7b1e65f9246c243fd9bb89c41ee50a0f0390dcf02f732c9a0e3435b7b69",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "65a325f525cd096f09df955b3d550d6fa8f2fce3823293c5083f0e74520d2bf2",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d4c34683c66b41ee1773061dea10284808afcea041a8f7d8a8c9cb678c308c0e",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-bdxqhma1/candidate.comp\nERROR: 0:5: 'missing_boid_count' : undeclared identifier \nERROR: 0:5: '=' :  cannot convert from ' temp float' to ' temp highp uint'\nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "bafd6f88987c4d5c9c03a54853ba40c4cb4be24ea588be45df04b36069fe80bb",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5a8f7e4c4188f50f15ba5133226b1254297d476847f679303576fcd7d88a9f1d",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "41230b474da6017a1d4c24a771db4f806f157111fdc3735876ee3d931feb037f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "04f0e12adf37deb24722a6dfa39a2721af4ebb8c3ee132e59d6f7322b134f8f6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d09051603ae60564890f79250b069913416bfea204f2a71efb3570bc90035120",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "dbef5597c371e1cc2cc9150dcd5f6a44ce7b3c6cd16f1c14cac2ff9725a942a5",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-v32tjjry/candidate.comp\nERROR: 0:5: 'missing_boid_count' : undeclared identifier \nERROR: 0:5: '=' :  cannot convert from ' temp float' to ' temp highp uint'\nERROR: 0:5: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d0fd80019431f6ee267a25e52960ba32d0aac79607598ff7384267648d485919",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a9f490919cf73a15360b506410ab387691c538a7c2595dbe33b4f45045100da8",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4a943b897e28f5de0b8bc1290ed6716f1c3d08400f8104ecd19b82211efe47a9",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "825ccfe6429e7702540379a41d9b07484c9260b0fa0d4accd8af0c8934c7cbb6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d517199b4898aee286ee339efaa4529d8aef43db1683da0c31c9afcdc0dbce65",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6a77b3d83ed7db39ca11d8938597d95f9eb7689ea703b64b8b821cb015e5aa7a",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d0fd80019431f6ee267a25e52960ba32d0aac79607598ff7384267648d485919",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a9f490919cf73a15360b506410ab387691c538a7c2595dbe33b4f45045100da8",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4a943b897e28f5de0b8bc1290ed6716f1c3d08400f8104ecd19b82211efe47a9",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "825ccfe6429e7702540379a41d9b07484c9260b0fa0d4accd8af0c8934c7cbb6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d517199b4898aee286ee339efaa4529d8aef43db1683da0c31c9afcdc0dbce65",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "6a77b3d83ed7db39ca11d8938597d95f9eb7689ea703b64b8b821cb015e5aa7a",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    },
+    {
+      "schema_version": 1,
+      "case_id": "R09",
+      "status": "PASS",
+      "source_sha256": "2bd6ce0ec8c3bfa1c79175d5196be0a1577c6d70b886d598a1a46d357a62f01f",
+      "fixture_sha256": "ab4675843b87419078ec19becf510c251224dd67ba14636fbb81d33a1efb7925",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_wave' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 268,
+      "reduced_bytes": 111,
+      "reduced_sha256": "ad856b3ffe6d3f2db8a4b0f53cb18d769d9467072f6a6e83231de8939e52da86",
+      "patch_sha256": "772897d8f78d81224a8e9c0ce324d89272ef4d9c4652b4a03fc3ec04149803f5",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-y2g3_sld/candidate.comp\nERROR: 0:5: 'missing_wave' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "ad856b3ffe6d3f2db8a4b0f53cb18d769d9467072f6a6e83231de8939e52da86"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-qfndqt1c/candidate.comp\nERROR: 0:5: 'missing_wave' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "ad856b3ffe6d3f2db8a4b0f53cb18d769d9467072f6a6e83231de8939e52da86"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-r0w7wzgr/candidate.comp\nERROR: 0:5: 'missing_wave' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "ad856b3ffe6d3f2db8a4b0f53cb18d769d9467072f6a6e83231de8939e52da86"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "772897d8f78d81224a8e9c0ce324d89272ef4d9c4652b4a03fc3ec04149803f5"
+      },
+      "trials": [
+        {
+          "source_sha256": "2bd6ce0ec8c3bfa1c79175d5196be0a1577c6d70b886d598a1a46d357a62f01f",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-ucl_hohs/candidate.comp\nERROR: 0:9: 'missing_wave' : undeclared identifier \nERROR: 0:9: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "32e402ab84aa45a439f47755c3e461956b58c721b9e55ac2076207ed6a7eb589",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c0bd901fecd2f0d77a768c00c1e72f74e65bf47937bc30ce6731a7159ab7f46f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "ca8b8ceb9c6d73dc58d65ba478b5aa1d3b4c79d4a24b449529290c177a23608a",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a3790e05b2cdc8b025317cf84809c06b46f8554b6137d5edd4df2270684b93cd",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b752b11d7f4e4585a0bb4f356143adc3b6a86ff59eaef6b7da67f7a6c4186abd",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2f71bfee109cc8beeb7d0ee574009fe287952918f1a138c7e2d620107d30d104",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "75a11cb82d78eea29727aec7eda371f9633cbe2fa81d04739c3d7e3434d1a059",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "79571f1a4f2a8623ca31220023783dd11db66cd9b8c5472a80c9cc20ffdb8939",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "50f286a3550da212f133c072b593dc0912c01113e059fd5b8718247eaf8b2898",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-6sbydgcc/candidate.comp\nERROR: 0:7: 'missing_wave' : undeclared identifier \nERROR: 0:7: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "1f94d701bc113966218e9baf3dc3f1ef7dd13333d51633ce8352d9ef2a007467",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c0bfced79d342562c3a8b5c112896eb7f21c3170a8275b9b67355dcf0f236bc0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "619fcda63c23d1fed6fdaa65587a50e49ac89223ab20445fe09f57373ce76f52",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f8f5efaec46a28549fd2e029819f8e1c0e6e320bb4c151c6fd981dad5cffcf1c",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "96218b191dab369838ce18815e085c47851afcc7064f238e7d03e6731d05aae3",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "be48fe04eb7e9ef81e0354796c6e0ddc76b5d3fbefa363486bcad369b33a346f",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "916a8d5dfe93a4ef4e2f54d357417318c1d5b0aa2064f44b16db796ba910693b",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "85eaae1d2e5255e0e131e326ca355ed48e7d07cf15f302d5abc4651a69df2555",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-htmssc1f/candidate.comp\nERROR: 0:6: 'missing_wave' : undeclared identifier \nERROR: 0:6: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3019b6ae35112c19d86585c493503c51e436e5c5935080b738b42747f76329a9",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a1a4483d00e593aef1a50fe9cbabeda50ae6df7297920c8bf82174dc22efe142",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "c0bfced79d342562c3a8b5c112896eb7f21c3170a8275b9b67355dcf0f236bc0",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "71209b4409bc6b4bc013c0a1d03bba062fd37f480f9edd5977facbf87ebb4638",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3bb8065bb02e41f081256dc70b96017da4cf20b04aea386316c30928eb687eed",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-10md0206/candidate.comp\nERROR: 0:5: 'missing_wave' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4119f4af8f6b7e80b4ef03d32e4b2b9fc6fe5bb76a6b279d3287b9bfe10511f7",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "36e151dd1ba10a169d53cacc6e725253a6da752d03f769acab4812545dec206c",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a65d8b01090df51797569cad61a230bfbe1081e7cae22efb98eb738c686f26e3",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "b77f9b0442ca47dae71dab3cddd114abdb37b4b6ea173643b812211839a7f095",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d09051603ae60564890f79250b069913416bfea204f2a71efb3570bc90035120",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "ad856b3ffe6d3f2db8a4b0f53cb18d769d9467072f6a6e83231de8939e52da86",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-5qy9_pdr/candidate.comp\nERROR: 0:5: 'missing_wave' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "181d89de22bc1a040f4475d97a9971ff02edcd980554cc1417d451b9b3ab22cc",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "17621efee4b8df8c4f597e96b9b124d39f002c9783cb2c6ba4e0fd95e1ce5f31",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "60f3950c3d65b2bdb5b5d7c72ae868f69397cc7452f649aa51c3a04b7d7b383c",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5943cc036f12b4edf80b68732ed614c6086c841d62c699422917548f6e4a7690",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d517199b4898aee286ee339efaa4529d8aef43db1683da0c31c9afcdc0dbce65",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3564686734a833225cf87fd90491cd60ce3d007e666bca29ff8a874f024abd91",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "181d89de22bc1a040f4475d97a9971ff02edcd980554cc1417d451b9b3ab22cc",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "17621efee4b8df8c4f597e96b9b124d39f002c9783cb2c6ba4e0fd95e1ce5f31",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "60f3950c3d65b2bdb5b5d7c72ae868f69397cc7452f649aa51c3a04b7d7b383c",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5943cc036f12b4edf80b68732ed614c6086c841d62c699422917548f6e4a7690",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d517199b4898aee286ee339efaa4529d8aef43db1683da0c31c9afcdc0dbce65",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "3564686734a833225cf87fd90491cd60ce3d007e666bca29ff8a874f024abd91",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    },
+    {
+      "schema_version": 1,
+      "case_id": "R10",
+      "status": "PASS",
+      "source_sha256": "688874f6e70f960d95b1e0941a4805ae4dd4145c29d321ff7dc605458f427000",
+      "fixture_sha256": "9419ddb71087492d986addcb09c5936a5557d11e96323a27bd56f32687e07750",
+      "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "reducer_sha256": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+      "predicate": "'missing_alpha' : undeclared identifier",
+      "minimality_domain": "line deletion preserving original version, precision, stage layout and main envelope",
+      "original_bytes": 269,
+      "reduced_bytes": 86,
+      "reduced_sha256": "8839c52eed1a340743eb83dc80f9b2dd98197cabd2117b357437796c77ef9ab8",
+      "patch_sha256": "8b8110e0f2a3c541e9b95b70e1da43a644b28467a0b026413c5316fc801800a8",
+      "repeat": [
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-0zsoi1pl/candidate.frag\nERROR: 0:4: 'missing_alpha' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "8839c52eed1a340743eb83dc80f9b2dd98197cabd2117b357437796c77ef9ab8"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-dwjooikl/candidate.frag\nERROR: 0:4: 'missing_alpha' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "8839c52eed1a340743eb83dc80f9b2dd98197cabd2117b357437796c77ef9ab8"
+        },
+        {
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-l9296jtf/candidate.frag\nERROR: 0:4: 'missing_alpha' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false,
+          "source_sha256": "8839c52eed1a340743eb83dc80f9b2dd98197cabd2117b357437796c77ef9ab8"
+        }
+      ],
+      "patch_validation": {
+        "exit_code": 0,
+        "diagnostic": "",
+        "matches": false,
+        "compiler_crash": false,
+        "source_sha256": "8b8110e0f2a3c541e9b95b70e1da43a644b28467a0b026413c5316fc801800a8"
+      },
+      "trials": [
+        {
+          "source_sha256": "688874f6e70f960d95b1e0941a4805ae4dd4145c29d321ff7dc605458f427000",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-e0xhwq2y/candidate.frag\nERROR: 0:9: 'missing_alpha' : undeclared identifier \nERROR: 0:9: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "225e836fbdcd397e2a678113a5bc4ce912590b5aad6cd008681769de65b87729",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4b5d5dab3fcdac54dad493ab4b168fd713e7fd49a961633633c4082f329dbdb5",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "1e5c47bdec6cc959a25e8a2e660fd0aec79b2798ca5463c0f6480e0619046962",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9cc4cd48e137875f3af5816127396d09a00b8f76ceddbf18691916568074a95c",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-fh52x2kx/candidate.frag\nERROR: 0:6: 'missing_alpha' : undeclared identifier \nERROR: 0:6: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "225e836fbdcd397e2a678113a5bc4ce912590b5aad6cd008681769de65b87729",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0856f01d64dd1ccb7ddf0740f0ea29fd63bee597bdb6031a3f0a6f572af52c86",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "26b8c93b4c83d5927465366739437cf478914bf4d6ce51ccda1fc84d99e07caa",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d101a11a04af99cff26a2fecbe1bf9caa79feccb454f0041deaef5f0c7596407",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0407f82a9dbd8b236c8e0062f2c3b67e841de1ddf7340718a7dfdfcd3406fac4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "86fe1bd80a2279994a0eee1c9caa82eb3c983d64aa2843fd8198ff78f3804a39",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-xpc3x60q/candidate.frag\nERROR: 0:5: 'outputColor' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "26b8c93b4c83d5927465366739437cf478914bf4d6ce51ccda1fc84d99e07caa",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "eff0a1d64ebccc988eb5bfcfb78eba023de0816b51e8357fbd9563cb5c475404",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f581532a171f5a5bd146b5c1cade8a4d74691a67c489f43f36f6548c12fed8ae",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "df10b36f79ad108db23e16598867604677edbc1af99446d98b88c8993770b860",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-fwoqctov/candidate.frag\nERROR: 0:5: 'missing_alpha' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "2935ebc2f7278a98ff0849807e0147680b8670fcf0075e217cfdc8e165c93ae1",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "be4e7397100d054091c471b2bf4e149a3e5fb9a390666b3faf32792959f1cedb",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0407f82a9dbd8b236c8e0062f2c3b67e841de1ddf7340718a7dfdfcd3406fac4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "0b554e93ea4b3179143fd6cf5923efd92088ec2a025f567910d3a94cd383fbff",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-zj493qdy/candidate.frag\nERROR: 0:4: 'missing_alpha' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "445f7c013214f9fabeffffd6e40adb120c492e8cca0514bf765f20acffabb258",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "5830db0e42392f0aaba857a1a2cb88fa8c5ba6f9cbe64d870c86e9dd2da86447",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "d63d02390bf97e345e672617de620451607c3b1888df828a37ca0336b6736620",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "23ff6be7bff650ab37851ef4bc49127595fb1adc86b17dc5a9834a11194a7141",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-kj5_ngnw/candidate.frag\nERROR: 0:4: 'outputColor' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8839c52eed1a340743eb83dc80f9b2dd98197cabd2117b357437796c77ef9ab8",
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles-reducer-uogaclg6/candidate.frag\nERROR: 0:4: 'missing_alpha' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "matches": true,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "299f64316f17469a84289a1a4773a00b6ab310b8576d4e5cbd039ddda48e2cee",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4c83837ce9bfc9a3537073c88df19403b27c1905cfe53f1e8605b3d0de40b9f1",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "874db60282567d0d07b518cef360069db287e56c86812a792c68ea63caee98d4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9f5793e7ed4801987ff096a6950997418917ed217b387f32c65174e8de73eee6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "299f64316f17469a84289a1a4773a00b6ab310b8576d4e5cbd039ddda48e2cee",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4c83837ce9bfc9a3537073c88df19403b27c1905cfe53f1e8605b3d0de40b9f1",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "874db60282567d0d07b518cef360069db287e56c86812a792c68ea63caee98d4",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "4ed4c7a063e89fc49aeedf13359598e9c66c30ac7e6d436534046353c6200241",
+          "exit_code": 0,
+          "diagnostic": "",
+          "matches": false,
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "9f5793e7ed4801987ff096a6950997418917ed217b387f32c65174e8de73eee6",
+          "exit_code": null,
+          "diagnostic": "outside fixed version/stage/main/precision reduction domain",
+          "matches": false,
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": true,
+      "reproduction_status": "REPRODUCED"
+    }
+  ],
+  "status": "PASS"
+}

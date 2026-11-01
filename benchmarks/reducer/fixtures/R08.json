@@ -1,0 +1,11 @@
+{
+  "id": "R08",
+  "category": "boid_count",
+  "stage": "comp",
+  "source": "R08.comp",
+  "patch": "R08-fixed.comp",
+  "signature": "'missing_boid_count' : undeclared identifier",
+  "origin": "authored fault injection, not driver issue",
+  "expected_rule": "declare and bind pipeline resources for target ESSL stage",
+  "device_evidence": null
+}

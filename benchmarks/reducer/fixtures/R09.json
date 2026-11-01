@@ -1,0 +1,11 @@
+{
+  "id": "R09",
+  "category": "wave_previous",
+  "stage": "comp",
+  "source": "R09.comp",
+  "patch": "R09-fixed.comp",
+  "signature": "'missing_wave' : undeclared identifier",
+  "origin": "authored fault injection, not driver issue",
+  "expected_rule": "declare and bind pipeline resources for target ESSL stage",
+  "device_evidence": null
+}

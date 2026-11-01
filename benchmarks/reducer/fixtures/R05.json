@@ -1,0 +1,11 @@
+{
+  "id": "R05",
+  "category": "depth_reconstruction",
+  "stage": "frag",
+  "source": "R05.frag",
+  "patch": "R05-fixed.frag",
+  "signature": "'missing_depth' : undeclared identifier",
+  "origin": "authored fault injection, not driver issue",
+  "expected_rule": "declare and bind pipeline resources for target ESSL stage",
+  "device_evidence": null
+}

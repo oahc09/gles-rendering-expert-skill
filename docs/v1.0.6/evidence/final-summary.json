@@ -1,0 +1,23 @@
+{
+  "status": "CANDIDATE_VALIDATED_NOT_RELEASE",
+  "unit_contract_groups": 18,
+  "unit_contract_tests": 330,
+  "structured_rule_count": 30,
+  "structured_rule_cases": 112,
+  "legacy_shader_controls": 16,
+  "new_system_scene_rows": 57,
+  "new_system_scene_invocations": 69,
+  "new_unique_shader_stages": 56,
+  "new_runtime_extracted_shader_compilations": 750,
+  "new_precision_groups": 12,
+  "new_advanced_scenes": 5,
+  "compute_types": 3,
+  "reducer_authored_cases": 10,
+  "native_interop_target": "NOT_RUN",
+  "physical_device": "NOT_RUN",
+  "paired_provider_calls": 0,
+  "apk_assembly": "FAILED_DEPENDENCY_RESOLUTION",
+  "browser": "WPE WebKit26.5 local native-render UI PASS; Chromium IPC blocked",
+  "source_version": "1.0.2",
+  "target_candidate": "1.0.6"
+}

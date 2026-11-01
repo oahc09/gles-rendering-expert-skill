@@ -1,0 +1,31 @@
+test_background_excluded (test_longrun.LongRunTests.test_background_excluded) ... ok
+test_bandwidth_no_counter_no_diagnosis (test_longrun.LongRunTests.test_bandwidth_no_counter_no_diagnosis) ... ok
+test_budget_required (test_longrun.LongRunTests.test_budget_required) ... ok
+test_clock_missing_fails (test_longrun.LongRunTests.test_clock_missing_fails) ... ok
+test_configuration_global_slope_unknown (test_longrun.LongRunTests.test_configuration_global_slope_unknown) ... ok
+test_configuration_segmentation (test_longrun.LongRunTests.test_configuration_segmentation) ... ok
+test_correlation_not_causal (test_longrun.LongRunTests.test_correlation_not_causal) ... ok
+test_device_missing_identity_rejected (test_longrun.LongRunTests.test_device_missing_identity_rejected) ... ok
+test_duplicate_timestamp_fails (test_longrun.LongRunTests.test_duplicate_timestamp_fails) ... ok
+test_empty_fails (test_longrun.LongRunTests.test_empty_fails) ... ok
+test_failed_device_rejected (test_longrun.LongRunTests.test_failed_device_rejected) ... ok
+test_false_thermal_without_frequency (test_longrun.LongRunTests.test_false_thermal_without_frequency) ... ok
+test_incomplete_device_rejected (test_longrun.LongRunTests.test_incomplete_device_rejected) ... ok
+test_incomplete_does_not_guess (test_longrun.LongRunTests.test_incomplete_does_not_guess) ... ok
+test_iteration_not_frames (test_longrun.LongRunTests.test_iteration_not_frames) ... ok
+test_nan_fails (test_longrun.LongRunTests.test_nan_fails) ... ok
+test_negative_duration_fails (test_longrun.LongRunTests.test_negative_duration_fails) ... ok
+test_no_power_inferred (test_longrun.LongRunTests.test_no_power_inferred) ... ok
+test_percentile_interpolates (test_longrun.LongRunTests.test_percentile_interpolates) ... ok
+test_power_metadata_without_raw_is_not_measurement (test_longrun.LongRunTests.test_power_metadata_without_raw_is_not_measurement) ... ok
+test_power_raw_binding_and_mismatch (test_longrun.LongRunTests.test_power_raw_binding_and_mismatch) ... ok
+test_running_cannot_infer (test_longrun.LongRunTests.test_running_cannot_infer) ... ok
+test_synthetic_not_wall_time (test_longrun.LongRunTests.test_synthetic_not_wall_time) ... ok
+test_synthetic_power_never_device (test_longrun.LongRunTests.test_synthetic_power_never_device) ... ok
+test_three_hypotheses_and_negative_controls (test_longrun.LongRunTests.test_three_hypotheses_and_negative_controls) ... ok
+test_unknown_backend_fails (test_longrun.LongRunTests.test_unknown_backend_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 1.711s
+
+OK
