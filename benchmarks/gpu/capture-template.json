@@ -1,0 +1,22 @@
+{
+  "status": "BLOCKED_BY_HARDWARE",
+  "conclusion": "UNMEASURED",
+  "scenario_id": "GPU01",
+  "hardware_kind": null,
+  "evidence_origin": null,
+  "device_model": null,
+  "soc_gpu": null,
+  "os_build": null,
+  "driver": null,
+  "api_backend": null,
+  "resolution": null,
+  "refresh_rate": null,
+  "thermal_state": null,
+  "test_build_sha": null,
+  "correctness": {"status": "NOT_RUN", "method": null},
+  "sampling": {"independent_runs": null, "warmup_method": null, "order": null},
+  "baseline": {"frame_time_ms": [], "gpu_time_ms": [], "cpu_time_ms": [], "counters": [], "counter_unavailable_reason": null, "raw_trace_path": null, "raw_trace_sha256": null},
+  "variant": {"frame_time_ms": [], "gpu_time_ms": [], "cpu_time_ms": [], "counters": [], "counter_unavailable_reason": null, "raw_trace_path": null, "raw_trace_sha256": null},
+  "fallback": "Keep baseline until correctness and target-device performance are reviewed.",
+  "negative_result": null
+}

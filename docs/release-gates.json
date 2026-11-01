@@ -1,0 +1,81 @@
+{
+  "target_version": "1.0.3",
+  "metadata_version": "1.0.2",
+  "release_ready": false,
+  "work_packages": {
+    "W0": {
+      "status": "PASS",
+      "implementation": [
+        "docs/baseline-audit.md",
+        "docs/baseline-files.txt"
+      ],
+      "acceptance": "Verified baseline, clean clone and write permission.",
+      "remaining": "None for baseline inventory."
+    },
+    "W1": {
+      "status": "PARTIAL",
+      "implementation": [
+        "SKILL.md",
+        "benchmarks/rules/catalog.json",
+        "references/research"
+      ],
+      "acceptance": "Known API/EGL fixes and structured contracts implemented; official source evidence archived.",
+      "remaining": "Independent annotation review; broad vendor rule audit is not exhaustive source proof."
+    },
+    "W2": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "references/matrices",
+        "examples/validation"
+      ],
+      "acceptance": "Host software EGL capability/lifecycle/shared-context smoke executed.",
+      "remaining": "Android lifecycle, ANGLE WindowsArm and embedded target-device matrix."
+    },
+    "W3": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "references/playbooks/gpu-bandwidth.md"
+      ],
+      "acceptance": "Conditional experiments and evidence contracts implemented.",
+      "remaining": "Physical Mali/Adreno/PowerVR A/B timing, thermal state and counters."
+    },
+    "W4": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "references/playbooks/modern-rendering.md",
+        "references/examples"
+      ],
+      "acceptance": "Six technology capability/fallback engineering paths and examples.",
+      "remaining": "HDR display, Android AHardwareBuffer fences/framepacing, target smoke and performance."
+    },
+    "W5": {
+      "status": "PARTIAL",
+      "implementation": [
+        "tools/validate_rules.py",
+        "tools/validate_shaders.py",
+        "examples/validation",
+        ".github/workflows/validation.yml"
+      ],
+      "acceptance": "112 normalized contract cases; actual host C++17/software EGL and ESSL compiler checks.",
+      "remaining": "Android NDK target compilation/device smoke; manual workflow not dispatched."
+    },
+    "W6": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "implementation": [
+        "benchmarks/agent"
+      ],
+      "acceptance": "64 annotated cases and paired runner; synthetic infrastructure tests only.",
+      "remaining": "Independent corpus adjudication and real no-skill/with-skill provider runs with judged metrics."
+    },
+    "W7": {
+      "status": "PARTIAL",
+      "implementation": [
+        "docs/acceptance-traceability.md",
+        "README.md",
+        "CHANGELOG.md"
+      ],
+      "acceptance": "Candidate docs/routing/manual CI and explicit release guard.",
+      "remaining": "All preceding work packages accepted; version bump/tag separately authorized only afterwards."
+    }
+  }
+}

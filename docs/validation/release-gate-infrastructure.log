@@ -1,0 +1,17 @@
+test_all_pass_wrong_version_rejected (test_release_gates.ReleaseTests.test_all_pass_wrong_version_rejected) ... ok
+test_candidate_not_ready (test_release_gates.ReleaseTests.test_candidate_not_ready) ... ok
+test_consistent_full_acceptance (test_release_gates.ReleaseTests.test_consistent_full_acceptance) ... ok
+test_lie_release_flag_rejected (test_release_gates.ReleaseTests.test_lie_release_flag_rejected) ... ok
+test_missing_work_package_rejected (test_release_gates.ReleaseTests.test_missing_work_package_rejected) ... ok
+test_premature_bump_rejected (test_release_gates.ReleaseTests.test_premature_bump_rejected) ... ok
+test_compile_error_is_expected_rejection (test_shader_runner.ShaderOutcomeTests.test_compile_error_is_expected_rejection) ... ok
+test_link_error_is_expected_rejection (test_shader_runner.ShaderOutcomeTests.test_link_error_is_expected_rejection) ... ok
+test_missing_file_is_not_rejection (test_shader_runner.ShaderOutcomeTests.test_missing_file_is_not_rejection) ... ok
+test_positive_needs_success (test_shader_runner.ShaderOutcomeTests.test_positive_needs_success) ... ok
+test_signal_is_not_rejection (test_shader_runner.ShaderOutcomeTests.test_signal_is_not_rejection) ... ok
+test_silent_exit_is_not_rejection (test_shader_runner.ShaderOutcomeTests.test_silent_exit_is_not_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.003s
+
+OK

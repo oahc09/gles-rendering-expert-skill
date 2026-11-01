@@ -1,0 +1,2867 @@
+{
+  "schema_version": 1,
+  "annotation_status": "REVIEW_REQUIRED_BEFORE_RELEASE",
+  "cases": [
+    {
+      "case_id": "A001",
+      "mode": "Generate",
+      "prompt": "Write GLES 3.0 code to read color attachment 1 of a complete named FBO into RGBA8 CPU memory.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C01",
+      "severity": "high",
+      "expected_findings": [
+        "select-read-attachment",
+        "pack-state",
+        "readback-synchronization"
+      ],
+      "legal_controls": [
+        "glReadBuffer on GLES 3.0"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Read attachment 0 when only one exists.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A002",
+      "mode": "Generate",
+      "prompt": "Allocate a 64x64 GL_RGBA8 texture from RGBA unsigned-byte data with glTexImage2D.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C02",
+      "severity": "high",
+      "expected_findings": [
+        "legal-format-type",
+        "unpack-alignment"
+      ],
+      "legal_controls": [
+        "sized GL_RGBA8 internal format"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use the same legal normalized format; do not substitute integer format.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A003",
+      "mode": "Generate",
+      "prompt": "Generate shared-context texture upload handoff between producer and renderer threads.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C03",
+      "severity": "high",
+      "expected_findings": [
+        "producer-fence-flush",
+        "consumer-wait",
+        "ownership-lifetime"
+      ],
+      "legal_controls": [
+        "shared texture objects"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Upload on rendering context if sharing unavailable.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A004",
+      "mode": "Generate",
+      "prompt": "Write an EGL swap failure handler that distinguishes lost surface and lost context.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C04",
+      "severity": "high",
+      "expected_findings": [
+        "get-egl-error-on-failure",
+        "surface-recreate",
+        "context-resource-recreate"
+      ],
+      "legal_controls": [
+        "APP_CMD_TERM_WINDOW"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Suspend rendering until a valid native window exists.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A005",
+      "mode": "Generate",
+      "prompt": "Generate a GLSL ES 3.10 compute shader and dispatch with SSBO results consumed as vertex attributes.",
+      "device_capabilities": {
+        "gles_version": "3.1",
+        "glsl_version": "310 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "version-310",
+        "compute-capability",
+        "vertex-attrib-barrier"
+      ],
+      "legal_controls": [
+        "compute in GLES 3.1"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "CPU update or transform feedback on GLES 3.0.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A006",
+      "mode": "Generate",
+      "prompt": "Write depth-only FBO setup with completeness validation and end-of-pass invalidation.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C06",
+      "severity": "high",
+      "expected_findings": [
+        "complete-depth-fbo",
+        "invalidate-after-last-use"
+      ],
+      "legal_controls": [
+        "depth-only framebuffer"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Retain depth if a later pass samples it.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A007",
+      "mode": "Generate",
+      "prompt": "Generate alpha-cutout foliage shader and propose two measurable depth strategies.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C07",
+      "severity": "high",
+      "expected_findings": [
+        "discard-needed-for-cutout",
+        "measure-depth-strategies"
+      ],
+      "legal_controls": [
+        "discard with functional alpha cutout"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Keep single-pass foliage when prepass regresses.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A008",
+      "mode": "Generate",
+      "prompt": "Write an explicit GLES 3.0 multisample renderbuffer FBO resolve to single-sample texture.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C08",
+      "severity": "high",
+      "expected_findings": [
+        "matching-resolve-bounds-and-formats",
+        "read-draw-fbo",
+        "filter-rules-by-format-and-mask"
+      ],
+      "legal_controls": [
+        "glBlitFramebuffer in GLES 3.0"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Single-sample rendering if samples unsupported.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer",
+        "https://registry.khronos.org/OpenGL/specs/es/3.0/es_spec_3.0.pdf#page=210"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A009",
+      "mode": "Generate",
+      "prompt": "Generate Android AHardwareBuffer import scaffolding into EGLImage with checked extension entry points.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C09",
+      "severity": "high",
+      "expected_findings": [
+        "android-api-gate",
+        "egl-image-extension-gate",
+        "buffer-image-lifetime",
+        "external-sync"
+      ],
+      "legal_controls": [
+        "AHardwareBuffer on supported Android"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "CPU copy into ordinary GL_TEXTURE_2D.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A010",
+      "mode": "Generate",
+      "prompt": "Generate a capability snapshot that distinguishes ANGLE from the application GL API without guessing backend.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Windows-on-Arm",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C10",
+      "severity": "high",
+      "expected_findings": [
+        "gl-egl-strings",
+        "extensions-limits",
+        "backend-unknown-if-unproven"
+      ],
+      "legal_controls": [
+        "ANGLE may expose GLES"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Retain backend unknown until reliable evidence.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A011",
+      "mode": "Generate",
+      "prompt": "Generate a std140 UBO containing a mat3 and float plus matching C++ layout validation.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C11",
+      "severity": "high",
+      "expected_findings": [
+        "std140-column-stride",
+        "query-offsets",
+        "cpu-layout-check"
+      ],
+      "legal_controls": [
+        "std140 blocks"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Explicit padding or queried offsets.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A012",
+      "mode": "Generate",
+      "prompt": "Write a benchmark comparing a uniform branch versus mix of two texture samples.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C12",
+      "severity": "high",
+      "expected_findings": [
+        "both-samples-cost",
+        "same-output",
+        "timing-thermal-counters"
+      ],
+      "legal_controls": [
+        "uniform branch can be efficient"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Retain original branch if slower.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A013",
+      "mode": "Generate",
+      "prompt": "Generate GLES 3.2 geometry-shader setup with explicit capability rejection on GLES 3.0.",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "geometry-version-gate",
+        "link-log"
+      ],
+      "legal_controls": [
+        "geometry shaders in GLES 3.2"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "CPU expansion or instanced vertex rendering.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A014",
+      "mode": "Generate",
+      "prompt": "Generate asynchronous PBO texture-streaming ring with reuse synchronization and unpack state.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C02",
+      "severity": "high",
+      "expected_findings": [
+        "pbo-offset-not-host-pointer",
+        "reuse-fence",
+        "pixel-store"
+      ],
+      "legal_controls": [
+        "pixel unpack buffers"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Direct upload with measured stall budget.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A015",
+      "mode": "Generate",
+      "prompt": "Generate HDR window-surface selection with an SDR fallback and explicit display validation.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C10",
+      "severity": "high",
+      "expected_findings": [
+        "egl-colorspace-gate",
+        "window-display-support",
+        "tone-map-output"
+      ],
+      "legal_controls": [
+        "HDR is not guaranteed by GLES version"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "SDR sRGB output and tone mapping.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A016",
+      "mode": "Generate",
+      "prompt": "Generate shader program cache loading with binary-format detection and source fallback.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "binary-format-check",
+        "link-status-after-load",
+        "driver-cache-key"
+      ],
+      "legal_controls": [
+        "program binaries in GLES 3.0"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Compile and link original shaders.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": true,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A017",
+      "mode": "Review",
+      "prompt": "Review: default framebuffer is bound and glReadBuffer(GL_COLOR_ATTACHMENT0) is called.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C01",
+      "severity": "high",
+      "expected_findings": [
+        "default-readbuffer-enum"
+      ],
+      "legal_controls": [
+        "glReadBuffer(GL_BACK) on default framebuffer"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use GL_BACK for default framebuffer.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A018",
+      "mode": "Review",
+      "prompt": "Review: glTexImage2D(..., GL_RGBA8UI, ..., GL_RGBA, GL_UNSIGNED_BYTE, data).",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C02",
+      "severity": "high",
+      "expected_findings": [
+        "integer-format-mismatch"
+      ],
+      "legal_controls": [
+        "GL_RGBA8 with GL_RGBA and unsigned byte"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use GL_RGBA_INTEGER for integer texture data.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A019",
+      "mode": "Review",
+      "prompt": "Review producer glFenceSync then consumer glWaitSync without any producer flush.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C03",
+      "severity": "high",
+      "expected_findings": [
+        "producer-not-submitted"
+      ],
+      "legal_controls": [
+        "server-side consumer wait"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Flush producer after fence, manage shared fence lifetime.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A020",
+      "mode": "Review",
+      "prompt": "Review Android code handling APP_CMD_CONTEXT_LOST in native_app_glue.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C04",
+      "severity": "high",
+      "expected_findings": [
+        "invented-app-command"
+      ],
+      "legal_controls": [
+        "APP_CMD_INIT_WINDOW and APP_CMD_TERM_WINDOW"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use real lifecycle commands and EGL_CONTEXT_LOST error.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A021",
+      "mode": "Review",
+      "prompt": "Review a #version 300 es shader declaring layout(local_size_x=64) in;",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "compute-in-300"
+      ],
+      "legal_controls": [
+        "compute shader with version 310 es"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use GLES 3.1 shader or CPU path.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A022",
+      "mode": "Review",
+      "prompt": "Review invalidation of color attachment before a later postprocess samples that color texture.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C06",
+      "severity": "high",
+      "expected_findings": [
+        "invalidate-before-last-use"
+      ],
+      "legal_controls": [
+        "invalidating unused depth after pass"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Preserve color until final consumer.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A023",
+      "mode": "Review",
+      "prompt": "Review a rule claiming all PowerVR scenes must add a depth prepass even when HSR already removes opaque overdraw.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "PowerVR",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C07",
+      "severity": "high",
+      "expected_findings": [
+        "unconditional-prepass"
+      ],
+      "legal_controls": [
+        "vendor-specific profiling"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Compare single-pass and prepass on target hardware.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A024",
+      "mode": "Review",
+      "prompt": "Review a GLES 3.0 color-only RGBA8 multisample-to-single-sample resolve that scales the source rectangle and uses GL_LINEAR.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C08",
+      "severity": "high",
+      "expected_findings": [
+        "msaa-resolve-identical-bounds-required",
+        "normalized-color-filter-not-generic-error"
+      ],
+      "legal_controls": [
+        "GL_LINEAR for normalized-color resolve with identical bounds and formats"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Resolve with identical rectangle bounds and formats before a separate scale pass; integer color or depth/stencil requires GL_NEAREST.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer",
+        "https://registry.khronos.org/OpenGL/specs/es/3.0/es_spec_3.0.pdf#page=210"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A025",
+      "mode": "Review",
+      "prompt": "Review AHardwareBuffer release immediately after asynchronous GPU consumer use, with no completion ownership.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C09",
+      "severity": "high",
+      "expected_findings": [
+        "external-buffer-premature-release"
+      ],
+      "legal_controls": [
+        "reference-counted lifetime"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Retain buffer through consumer completion.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A026",
+      "mode": "Review",
+      "prompt": "Review Windows-on-Arm renderer routing that selects Adreno solely from OS architecture.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Windows-on-Arm",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C10",
+      "severity": "high",
+      "expected_findings": [
+        "os-implies-gpu"
+      ],
+      "legal_controls": [
+        "Windows on Arm may use translation layers"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Probe actual vendor, renderer, version and extensions.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A027",
+      "mode": "Review",
+      "prompt": "Review two GLSL ES 3.00 programs: A shares uniform uColor as highp in vertex and mediump in fragment; B has highp vertex output paired with mediump fragment input of the same type.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C11",
+      "severity": "high",
+      "expected_findings": [
+        "shared-uniform-precision-mismatch",
+        "varying-precision-difference-legal"
+      ],
+      "legal_controls": [
+        "different vertex-output/fragment-input precision with matching types"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Match shared uniform precision; do not falsely reject legal varying precision differences.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A028",
+      "mode": "Review",
+      "prompt": "Review advice that mix(texture(a), texture(b), flag) always beats a uniform branch.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C12",
+      "severity": "high",
+      "expected_findings": [
+        "unconditional-branchless"
+      ],
+      "legal_controls": [
+        "mix has valid semantics when both evaluated"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Measure sample/bandwidth and retain cheaper branch.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A029",
+      "mode": "Review",
+      "prompt": "Review legal glReadBuffer(GL_COLOR_ATTACHMENT1) on complete named FBO; a linter bans the API as desktop-only.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C01",
+      "severity": "high",
+      "expected_findings": [
+        "linter-false-positive"
+      ],
+      "legal_controls": [
+        "named framebuffer color attachment read"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Correct linter boundary rather than removing legal API.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A030",
+      "mode": "Review",
+      "prompt": "Review legal glTexImage2D GL_RGBA8/GL_RGBA/GL_UNSIGNED_BYTE; a reviewer rejects every sized internal format.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C02",
+      "severity": "high",
+      "expected_findings": [
+        "sized-format-false-positive"
+      ],
+      "legal_controls": [
+        "legal sized normalized format"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use specification format table, not blanket ban.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A031",
+      "mode": "Review",
+      "prompt": "Review ES 3.0 extension PLS shader compiled without checking advertised extension or function availability.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Mali",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C06",
+      "severity": "high",
+      "expected_findings": [
+        "pls-extension-gate"
+      ],
+      "legal_controls": [
+        "PLS when supported and declared"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "MRT or multipass baseline.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A032",
+      "mode": "Review",
+      "prompt": "Review an application requiring Vulkan semaphores directly as GLES core entry points.",
+      "device_capabilities": {
+        "gles_version": "3.2",
+        "glsl_version": "320 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C10",
+      "severity": "high",
+      "expected_findings": [
+        "cross-api-feature-confusion"
+      ],
+      "legal_controls": [
+        "separate Vulkan renderer backend"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use GLES sync or explicitly supported interop extension.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A033",
+      "mode": "Diagnose",
+      "prompt": "Readback is black only on the default framebuffer after selecting COLOR_ATTACHMENT0. Give a falsifiable diagnosis.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C01",
+      "severity": "high",
+      "expected_findings": [
+        "readbuffer-enum-check",
+        "gl-error-check",
+        "readback-source-check"
+      ],
+      "legal_controls": [
+        "default framebuffer GL_BACK"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Correct read buffer then reproduce.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A034",
+      "mode": "Diagnose",
+      "prompt": "Uploading an integer texture yields GL_INVALID_OPERATION. Internal format is RGBA8UI, external format RGBA.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C02",
+      "severity": "high",
+      "expected_findings": [
+        "integer-format-table",
+        "minimal-upload-repro"
+      ],
+      "legal_controls": [
+        "RGBA_INTEGER transfer"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Correct external format and integer sampling.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A035",
+      "mode": "Diagnose",
+      "prompt": "Shared texture is intermittently stale; producer issues a fence but never flushes. Diagnose without global glFinish.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C03",
+      "severity": "high",
+      "expected_findings": [
+        "fence-submission",
+        "consumer-wait",
+        "lifetime-check"
+      ],
+      "legal_controls": [
+        "targeted sync"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Single-context reproduction before reintroducing sharing.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A036",
+      "mode": "Diagnose",
+      "prompt": "eglSwapBuffers returns EGL_BAD_SURFACE after Android window replacement, while context remains valid.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C04",
+      "severity": "high",
+      "expected_findings": [
+        "bad-surface-not-context-loss",
+        "recreate-window-surface",
+        "make-current-check"
+      ],
+      "legal_controls": [
+        "retain valid context objects"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Pause frames and recreate surface.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A037",
+      "mode": "Diagnose",
+      "prompt": "An ES 3.0 device rejects #version 320 es geometry stage. Separate API support from shader syntax.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "high",
+      "expected_findings": [
+        "context-version",
+        "shader-version",
+        "compile-log"
+      ],
+      "legal_controls": [
+        "ES 3.2 geometry source on supported context"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use 3.0-compatible vertex path.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A038",
+      "mode": "Diagnose",
+      "prompt": "FBO becomes incomplete after changing color multisample storage but not depth sample count. Diagnose with attachment queries.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C06",
+      "severity": "high",
+      "expected_findings": [
+        "attachment-snapshot",
+        "completeness-status",
+        "match-sample-counts"
+      ],
+      "legal_controls": [
+        "matching supported attachment sample counts"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Rebuild FBO consistently and recheck.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A039",
+      "mode": "Diagnose",
+      "prompt": "Adding alpha discard unexpectedly raises GPU time on one Mali device. Propose measurements, not a universal ban.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Mali",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C07",
+      "severity": "high",
+      "expected_findings": [
+        "overdraw-and-early-tests",
+        "shader-cost",
+        "same-visual-output"
+      ],
+      "legal_controls": [
+        "discard may be required"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Keep correct cutout and select measured strategy.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A040",
+      "mode": "Diagnose",
+      "prompt": "An MSAA image is correct before resize and black after; sample count and attachment dimensions may differ.",
+      "device_capabilities": {
+        "gles_version": "3.1",
+        "glsl_version": "310 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C08",
+      "severity": "high",
+      "expected_findings": [
+        "sample-count-query",
+        "attachment-dimensions",
+        "resolve-errors"
+      ],
+      "legal_controls": [
+        "supported equal-sample attachments"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Single-sample known-good comparison.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer",
+        "https://registry.khronos.org/OpenGL/specs/es/3.0/es_spec_3.0.pdf#page=210"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A041",
+      "mode": "Diagnose",
+      "prompt": "Camera EGLImage import works on one Android device but fails on another. Identify capability and format evidence.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C09",
+      "severity": "high",
+      "expected_findings": [
+        "extension-entrypoint-format",
+        "native-buffer-usage",
+        "lifetime-sync"
+      ],
+      "legal_controls": [
+        "device-specific import support"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "CPU conversion/upload.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A042",
+      "mode": "Diagnose",
+      "prompt": "ANGLE Vulkan backend is slower than native GLES on one phone. Is this proof ANGLE is always slower?",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C10",
+      "severity": "high",
+      "expected_findings": [
+        "backend-driver-snapshot",
+        "controlled-benchmark",
+        "no-generalization"
+      ],
+      "legal_controls": [
+        "backend-dependent tradeoffs"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Select measured compatible backend per device.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A043",
+      "mode": "Diagnose",
+      "prompt": "Animated matrices from a UBO are corrupted but scalar uniforms work. Inspect std140 mat3 stride.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C11",
+      "severity": "high",
+      "expected_findings": [
+        "ubo-layout-query",
+        "cpu-offset-stride",
+        "binding-range-check"
+      ],
+      "legal_controls": [
+        "padded mat3 columns"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Correct packing and add known matrix regression.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A044",
+      "mode": "Diagnose",
+      "prompt": "Replacing a branch with two texture samples doubled bandwidth. Explain an experiment that isolates it.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Adreno",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C12",
+      "severity": "high",
+      "expected_findings": [
+        "texture-fetch-count",
+        "uniformity",
+        "bandwidth-raw-trace"
+      ],
+      "legal_controls": [
+        "branchless can regress"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Restore conditional sampling.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A045",
+      "mode": "Diagnose",
+      "prompt": "Black frame after true EGL_CONTEXT_LOST; old texture names remain cached in application objects.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C04",
+      "severity": "high",
+      "expected_findings": [
+        "recreate-sharegroup-resources",
+        "invalidate-cached-names",
+        "reload-cpu-assets"
+      ],
+      "legal_controls": [
+        "logical resource handles independent of GL names"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Rebuild context and resource graph.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A046",
+      "mode": "Diagnose",
+      "prompt": "Frame times rise after ten minutes with unchanged draw count. Device temperature and clocks are missing.",
+      "device_capabilities": {
+        "gles_version": "3.1",
+        "glsl_version": "310 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C12",
+      "severity": "high",
+      "expected_findings": [
+        "thermal-frequency-evidence",
+        "repeat-steady-state",
+        "cpu-gpu-separation"
+      ],
+      "legal_controls": [
+        "thermal throttling as hypothesis not fact"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Reduce workload only after controlled thermal measurements.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A047",
+      "mode": "Diagnose",
+      "prompt": "PBO texture uploads stall periodically when ring wraps. Diagnose buffer reuse and map flags.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C02",
+      "severity": "high",
+      "expected_findings": [
+        "reuse-fence",
+        "ring-depth",
+        "upload-timeline"
+      ],
+      "legal_controls": [
+        "PBO does not guarantee zero stalls"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Wait safely or increase bounded ring after measurement.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A048",
+      "mode": "Diagnose",
+      "prompt": "Transparent particles flicker after sorting front-to-back with blending enabled.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C07",
+      "severity": "high",
+      "expected_findings": [
+        "blend-order-dependence",
+        "opaque-transparent-separation",
+        "depth-write-policy"
+      ],
+      "legal_controls": [
+        "opaque front-to-back candidate"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Use correct back-to-front transparent ordering.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A049",
+      "mode": "Optimize",
+      "prompt": "Optimize frequent synchronous readbacks while preserving exact CPU results; specify latency contract.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C01",
+      "severity": "medium",
+      "expected_findings": [
+        "readback-pipeline",
+        "fence-polling",
+        "latency-budget"
+      ],
+      "legal_controls": [
+        "PBO readback can remain bandwidth-bound"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Synchronous path for rare latency-critical reads.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A050",
+      "mode": "Optimize",
+      "prompt": "Optimize dynamic texture uploads on mobile with dirty regions and PBO alternatives.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C02",
+      "severity": "medium",
+      "expected_findings": [
+        "upload-bytes",
+        "alignment-stride",
+        "reuse-sync",
+        "benchmark"
+      ],
+      "legal_controls": [
+        "direct upload may win small updates"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Measured direct subimage upload.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A051",
+      "mode": "Optimize",
+      "prompt": "Reduce stalls in cross-context texture loading without replacing every wait with glFinish.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "EGL",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C03",
+      "severity": "medium",
+      "expected_findings": [
+        "producer-flush",
+        "targeted-fences",
+        "bounded-inflight"
+      ],
+      "legal_controls": [
+        "fences do not eliminate real dependencies"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Single-context upload scheduling.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A052",
+      "mode": "Optimize",
+      "prompt": "Reduce Android background/foreground recovery latency without assuming context is always lost.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C04",
+      "severity": "medium",
+      "expected_findings": [
+        "surface-context-distinction",
+        "cpu-asset-cache",
+        "recovery-measurement"
+      ],
+      "legal_controls": [
+        "valid contexts may survive"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Full resource rebuild on actual loss.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A053",
+      "mode": "Optimize",
+      "prompt": "Choose compute or transform feedback for a particle update targeting both GLES 3.0 and 3.1.",
+      "device_capabilities": {
+        "gles_version": "3.1",
+        "glsl_version": "310 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "medium",
+      "expected_findings": [
+        "version-capabilities",
+        "workload-measurement",
+        "fallback-path"
+      ],
+      "legal_controls": [
+        "transform feedback on GLES 3.0"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Transform feedback or CPU simulation.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A054",
+      "mode": "Optimize",
+      "prompt": "Optimize TBDR bandwidth in a postprocess chain where only final color survives.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Mali",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C06",
+      "severity": "medium",
+      "expected_findings": [
+        "attachment-liveness",
+        "discard-unused-depth",
+        "minimize-pass-switches",
+        "counters"
+      ],
+      "legal_controls": [
+        "retain intermediates that are sampled"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Keep correctness baseline when counters unavailable.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A055",
+      "mode": "Optimize",
+      "prompt": "Optimize opaque overdraw on PowerVR while considering HSR and depth-prepass cost.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "PowerVR",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C07",
+      "severity": "medium",
+      "expected_findings": [
+        "hsr-conditions",
+        "prepass-counterexample",
+        "target-counters"
+      ],
+      "legal_controls": [
+        "front-to-back not universal requirement"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Single-pass measured HSR-friendly path.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A056",
+      "mode": "Optimize",
+      "prompt": "Compare 4x MSAA explicit resolve with supported multisampled-render-to-texture extension.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Adreno",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C08",
+      "severity": "medium",
+      "expected_findings": [
+        "extension-gate",
+        "quality-equivalence",
+        "resolve-bandwidth",
+        "memory-cost"
+      ],
+      "legal_controls": [
+        "extension path is conditional"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Core explicit resolve or lower sample count.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer",
+        "https://registry.khronos.org/OpenGL/specs/es/3.0/es_spec_3.0.pdf#page=210"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A057",
+      "mode": "Optimize",
+      "prompt": "Optimize camera display copies using AHardwareBuffer only where formats and fences are supported.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C09",
+      "severity": "medium",
+      "expected_findings": [
+        "interop-capability",
+        "copy-count",
+        "fence-overhead",
+        "lifetime"
+      ],
+      "legal_controls": [
+        "zero-copy claim needs measurement"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "CPU copy/conversion path.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A058",
+      "mode": "Optimize",
+      "prompt": "Choose native GLES, ANGLE, or Vulkan for an Embedded Linux product with etnaviv.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "EmbeddedLinux",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C10",
+      "severity": "medium",
+      "expected_findings": [
+        "driver-device-specific",
+        "api-coverage",
+        "deployment-cost",
+        "measured-backend"
+      ],
+      "legal_controls": [
+        "vendor name does not guarantee certification"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Known compatible GLES path.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A059",
+      "mode": "Optimize",
+      "prompt": "Optimize mediump use in a large-world shader without sacrificing visible stability.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Mali",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C11",
+      "severity": "medium",
+      "expected_findings": [
+        "range-error-analysis",
+        "visual-reference",
+        "selective-highp",
+        "timing"
+      ],
+      "legal_controls": [
+        "highp required for some calculations"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Retain highp for sensitive coordinates.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A060",
+      "mode": "Optimize",
+      "prompt": "Optimize a texture-selection shader where choice is uniform per draw; compare branch and dual sample.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Adreno",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C12",
+      "severity": "medium",
+      "expected_findings": [
+        "uniformity",
+        "sample-count",
+        "gpu-bandwidth",
+        "negative-result"
+      ],
+      "legal_controls": [
+        "branch can skip texture work"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Retain whichever passes visual and timing tests.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A061",
+      "mode": "Optimize",
+      "prompt": "Reduce frame pacing variance when CPU and GPU times are below display period.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C10",
+      "severity": "medium",
+      "expected_findings": [
+        "present-timeline",
+        "queue-depth",
+        "refresh-rate",
+        "frame-pacing-integration"
+      ],
+      "legal_controls": [
+        "low average GPU time does not prove smooth presentation"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Stable pacing before resolution changes.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A062",
+      "mode": "Optimize",
+      "prompt": "Reduce first-use shader hitching without assuming program binaries are portable across drivers.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C05",
+      "severity": "medium",
+      "expected_findings": [
+        "warmup",
+        "binary-cache-key",
+        "compile-link-fallback",
+        "hitch-distribution"
+      ],
+      "legal_controls": [
+        "binary cache may be rejected"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Source compile outside critical path.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A063",
+      "mode": "Optimize",
+      "prompt": "Optimize bloom for a thermal-constrained mobile game with HDR targets.",
+      "device_capabilities": {
+        "gles_version": "3.1",
+        "glsl_version": "310 es",
+        "platform": "Android",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C06",
+      "severity": "medium",
+      "expected_findings": [
+        "downsample-chain",
+        "format-support",
+        "bandwidth-quality",
+        "thermal-steady-state"
+      ],
+      "legal_controls": [
+        "HDR renderability requires checks"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "SDR bloom or fewer levels.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    },
+    {
+      "case_id": "A064",
+      "mode": "Optimize",
+      "prompt": "Reduce CPU submit overhead with instancing while preserving transparent ordering and culling.",
+      "device_capabilities": {
+        "gles_version": "3.0",
+        "glsl_version": "300 es",
+        "platform": "portable",
+        "extensions": "unknown: must probe",
+        "renderer": "unspecified: do not infer",
+        "hardware_evidence_available": false
+      },
+      "core_case": "C07",
+      "severity": "medium",
+      "expected_findings": [
+        "cpu-profile",
+        "batch-material-state",
+        "instance-visibility",
+        "blend-order"
+      ],
+      "legal_controls": [
+        "larger batches may increase GPU work"
+      ],
+      "forbidden_advice": [
+        "Invent supported extensions or device measurements.",
+        "Claim universal performance wins without before/after evidence."
+      ],
+      "fallback": "Smaller correctly ordered batches.",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+        "https://registry.khronos.org/OpenGL/specs/es/3.20/GLSL_ES_Specification_3.20.pdf",
+        "https://developer.android.com/ndk/reference/group/a-hardware-buffer"
+      ],
+      "compile_evidence": {
+        "required": false,
+        "artifact": null,
+        "status": "NOT_RUN"
+      },
+      "rubric": {
+        "accuracy": "Human reviewer maps justified findings to expected_findings; count TP/FN and unsupported findings as FP.",
+        "false_positive": "Any legal_controls rejected without additional evidence count as false positives.",
+        "debug_steps": "For Diagnose, require symptom, capability snapshot, minimal reproduction, falsifiable causes, minimal fix and regression.",
+        "performance": "For Optimize, require baseline, device/driver/backend, repeated stable-thermal timing, raw trace/counters where available, negative result and rollback."
+      }
+    }
+  ]
+}

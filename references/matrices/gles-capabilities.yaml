@@ -1,0 +1,71 @@
+# Capability requirements, NOT a device compatibility claim. Unknown is not false.
+schema_version: 1
+status: candidate
+snapshot:
+  required: [os, os_build, api_level, egl_vendor, egl_version, egl_extensions, gl_vendor, gl_renderer, gl_version, glsl_version, gl_extensions, limits, formats, function_entries, backend, backend_evidence, surface_generation, context_generation]
+  unknown_value: null
+  backend_rule: Only set backend from controlled creation parameters or reliable implementation query; renderer-string inference must be labeled inferred.
+  refresh_on: [context_recreation, driver_update, backend_change]
+capabilities:
+  - id: core30
+    class: API Core
+    minimum_gles: '3.0'
+    glsl: '300 es'
+    features: [read_buffer, sync_objects, pixel_unpack_buffer, uniform_buffer, framebuffer_blit, invalidate_framebuffer]
+    runtime: Check actual current-context GL_VERSION and limits, not headers or Android API level.
+    fallback: Negotiate a supported context or report unsupported; do not emit 3.0 code in a 2.0 path.
+  - id: compute31
+    class: API Core
+    minimum_gles: '3.1'
+    glsl: '310 es'
+    runtime: Query workgroup counts/sizes/invocations and SSBO/image limits; synchronize writes with matching memory-barrier bits.
+    fallback: CPU processing or supported fragment-render pass.
+  - id: geometry32
+    class: API Core
+    minimum_gles: '3.2'
+    glsl: '320 es'
+    runtime: Check geometry stage and per-stage output limits.
+    fallback: CPU/vertex expansion; earlier GLES requires the specific geometry extension and its language rules.
+  - id: external_video_essl3
+    class: Extension
+    minimum_gles: '3.0'
+    glsl: '300 es'
+    required_gl_extensions: [GL_OES_EGL_image_external, GL_OES_EGL_image_external_essl3]
+    required_egl: EGL 1.2 plus EGL_KHR_image_base or EGL_KHR_image
+    function_entries: [glEGLImageTargetTexture2DOES]
+    runtime: Image import and texture sampling must both succeed for the actual format/usage.
+    fallback: CPU YUV conversion and ordinary GL_TEXTURE_2D upload when content is CPU-readable and unprotected.
+  - id: ahardwarebuffer
+    class: Extension
+    platform: Android API 26 or later
+    required_egl_extensions: [EGL_ANDROID_get_native_client_buffer, EGL_ANDROID_image_native_buffer, EGL_KHR_image_base]
+    function_entries: [eglGetNativeClientBufferANDROID, eglCreateImageKHR, eglDestroyImageKHR]
+    runtime: Check allocation/import format and usage; native producer fence plus EGL/GL synchronization; API level alone is insufficient.
+    fallback: Copy to supported readable buffer or reject protected/non-readable content explicitly.
+  - id: half_float_render_target
+    class: Extension
+    minimum_gles: '3.0'
+    required_gl_extensions_any: [GL_EXT_color_buffer_half_float, GL_EXT_color_buffer_float]
+    runtime: Check chosen sized format, framebuffer completeness, filtering and blending separately.
+    fallback: RGBA8 and SDR tone-map path.
+  - id: hdr_output
+    class: Extension
+    platform: Display and compositor dependent
+    runtime: Check display HDR capabilities, EGL config bit depths, supported colorspace extension and surface creation; WCG does not imply HDR.
+    fallback: SDR sRGB with explicit gamut mapping and tone mapping.
+  - id: parallel_compile
+    class: Extension
+    required_gl_extensions: [GL_KHR_parallel_shader_compile]
+    function_entries: [glMaxShaderCompilerThreadsKHR]
+    runtime: Poll GL_COMPLETION_STATUS_KHR before demanding compile/link status.
+    fallback: Precompile during loading; program-binary cache only with validation and source rebuild fallback.
+  - id: framebuffer_fetch_or_pls
+    class: Extension
+    runtime: Match exact EXT/ARM/QCOM fetch or PLS extension semantics, coherency/barriers and storage limits; not interchangeable.
+    fallback: Ping-pong FBOs; never sample a currently attached writable image as an implicit substitute.
+  - id: gpu_timer
+    class: Extension
+    required_gl_extensions: [GL_EXT_disjoint_timer_query]
+    runtime: Load extension functions; query asynchronously, discard disjoint intervals, keep CPU submission and GPU durations distinct.
+    fallback: Report GPU time unavailable; CPU wall time is not a substitute.
+source: https://registry.khronos.org/OpenGL/index_es.php

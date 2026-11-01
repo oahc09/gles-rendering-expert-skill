@@ -1,0 +1,1122 @@
+[
+  {
+    "case_id": "R001-P1",
+    "rule_id": "R001",
+    "input": {
+      "buffer": "BACK"
+    },
+    "expected_valid": true,
+    "scenario": "ReadBuffer default FBO \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R001-P2",
+    "rule_id": "R001",
+    "input": {
+      "buffer": "NONE"
+    },
+    "expected_valid": true,
+    "scenario": "ReadBuffer default FBO \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R001-N1",
+    "rule_id": "R001",
+    "input": {
+      "buffer": "COLOR_ATTACHMENT0"
+    },
+    "expected_valid": false,
+    "scenario": "ReadBuffer default FBO \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R001-N2",
+    "rule_id": "R001",
+    "input": {
+      "buffer": "FRONT"
+    },
+    "expected_valid": false,
+    "scenario": "ReadBuffer default FBO \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R002-P1",
+    "rule_id": "R002",
+    "input": {
+      "buffer": "NONE",
+      "max_attachments": 4
+    },
+    "expected_valid": true,
+    "scenario": "ReadBuffer named FBO \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R002-P2",
+    "rule_id": "R002",
+    "input": {
+      "buffer": 3,
+      "max_attachments": 4
+    },
+    "expected_valid": true,
+    "scenario": "ReadBuffer named FBO \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R002-N1",
+    "rule_id": "R002",
+    "input": {
+      "buffer": "BACK",
+      "max_attachments": 4
+    },
+    "expected_valid": false,
+    "scenario": "ReadBuffer named FBO \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R002-N2",
+    "rule_id": "R002",
+    "input": {
+      "buffer": 4,
+      "max_attachments": 4
+    },
+    "expected_valid": false,
+    "scenario": "ReadBuffer named FBO \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R003-P1",
+    "rule_id": "R003",
+    "input": {
+      "format": "RGBA",
+      "type": "UNSIGNED_BYTE"
+    },
+    "expected_valid": true,
+    "scenario": "RGBA8 upload tuple \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R003-N1",
+    "rule_id": "R003",
+    "input": {
+      "format": "RGB",
+      "type": "UNSIGNED_BYTE"
+    },
+    "expected_valid": false,
+    "scenario": "RGBA8 upload tuple \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R003-N2",
+    "rule_id": "R003",
+    "input": {
+      "format": "RGBA_INTEGER",
+      "type": "UNSIGNED_BYTE"
+    },
+    "expected_valid": false,
+    "scenario": "RGBA8 upload tuple \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R004-P1",
+    "rule_id": "R004",
+    "input": {
+      "border": 0
+    },
+    "expected_valid": true,
+    "scenario": "TexImage border \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R004-N1",
+    "rule_id": "R004",
+    "input": {
+      "border": 1
+    },
+    "expected_valid": false,
+    "scenario": "TexImage border \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R004-N2",
+    "rule_id": "R004",
+    "input": {
+      "border": -1
+    },
+    "expected_valid": false,
+    "scenario": "TexImage border \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R005-P1",
+    "rule_id": "R005",
+    "input": {
+      "width": 0,
+      "height": 8,
+      "limit": 2048
+    },
+    "expected_valid": true,
+    "scenario": "TexImage dimensions \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R005-P2",
+    "rule_id": "R005",
+    "input": {
+      "width": 2048,
+      "height": 2048,
+      "limit": 2048
+    },
+    "expected_valid": true,
+    "scenario": "TexImage dimensions \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R005-N1",
+    "rule_id": "R005",
+    "input": {
+      "width": -1,
+      "height": 8,
+      "limit": 2048
+    },
+    "expected_valid": false,
+    "scenario": "TexImage dimensions \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R005-N2",
+    "rule_id": "R005",
+    "input": {
+      "width": 8,
+      "height": 2049,
+      "limit": 2048
+    },
+    "expected_valid": false,
+    "scenario": "TexImage dimensions \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R006-P1",
+    "rule_id": "R006",
+    "input": {
+      "flags": 0
+    },
+    "expected_valid": true,
+    "scenario": "WaitSync flags \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R006-N1",
+    "rule_id": "R006",
+    "input": {
+      "flags": 1
+    },
+    "expected_valid": false,
+    "scenario": "WaitSync flags \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R006-N2",
+    "rule_id": "R006",
+    "input": {
+      "flags": 2
+    },
+    "expected_valid": false,
+    "scenario": "WaitSync flags \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R007-P1",
+    "rule_id": "R007",
+    "input": {
+      "timeout": "TIMEOUT_IGNORED"
+    },
+    "expected_valid": true,
+    "scenario": "WaitSync timeout \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R007-N1",
+    "rule_id": "R007",
+    "input": {
+      "timeout": 0
+    },
+    "expected_valid": false,
+    "scenario": "WaitSync timeout \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R007-N2",
+    "rule_id": "R007",
+    "input": {
+      "timeout": 1000000
+    },
+    "expected_valid": false,
+    "scenario": "WaitSync timeout \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R008-P1",
+    "rule_id": "R008",
+    "input": {
+      "condition": "GPU_COMMANDS_COMPLETE",
+      "flags": 0
+    },
+    "expected_valid": true,
+    "scenario": "FenceSync condition \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R008-N1",
+    "rule_id": "R008",
+    "input": {
+      "condition": "ALREADY_SIGNALED",
+      "flags": 0
+    },
+    "expected_valid": false,
+    "scenario": "FenceSync condition \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R008-N2",
+    "rule_id": "R008",
+    "input": {
+      "condition": "GPU_COMMANDS_COMPLETE",
+      "flags": 1
+    },
+    "expected_valid": false,
+    "scenario": "FenceSync condition \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R009-P1",
+    "rule_id": "R009",
+    "input": {
+      "shared": true,
+      "producer_flush": true,
+      "consumer_wait": true
+    },
+    "expected_valid": true,
+    "scenario": "Producer submission before cross-context wait \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R009-N1",
+    "rule_id": "R009",
+    "input": {
+      "shared": true,
+      "producer_flush": false,
+      "consumer_wait": true
+    },
+    "expected_valid": false,
+    "scenario": "Producer submission before cross-context wait \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R009-N2",
+    "rule_id": "R009",
+    "input": {
+      "shared": false,
+      "producer_flush": true,
+      "consumer_wait": true
+    },
+    "expected_valid": false,
+    "scenario": "Producer submission before cross-context wait \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R010-P1",
+    "rule_id": "R010",
+    "input": {
+      "gles": 30,
+      "glsl": 300
+    },
+    "expected_valid": true,
+    "scenario": "GLSL version capability \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R010-P2",
+    "rule_id": "R010",
+    "input": {
+      "gles": 32,
+      "glsl": 320
+    },
+    "expected_valid": true,
+    "scenario": "GLSL version capability \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R010-N1",
+    "rule_id": "R010",
+    "input": {
+      "gles": 30,
+      "glsl": 310
+    },
+    "expected_valid": false,
+    "scenario": "GLSL version capability \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R010-N2",
+    "rule_id": "R010",
+    "input": {
+      "gles": 31,
+      "glsl": 320
+    },
+    "expected_valid": false,
+    "scenario": "GLSL version capability \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R011-P1",
+    "rule_id": "R011",
+    "input": {
+      "gles": 31,
+      "uses_core_compute": true
+    },
+    "expected_valid": true,
+    "scenario": "Compute core capability \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R011-P2",
+    "rule_id": "R011",
+    "input": {
+      "gles": 30,
+      "uses_core_compute": false
+    },
+    "expected_valid": true,
+    "scenario": "Compute core capability \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R011-N1",
+    "rule_id": "R011",
+    "input": {
+      "gles": 30,
+      "uses_core_compute": true
+    },
+    "expected_valid": false,
+    "scenario": "Compute core capability \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R011-N2",
+    "rule_id": "R011",
+    "input": {
+      "gles": 20,
+      "uses_core_compute": true
+    },
+    "expected_valid": false,
+    "scenario": "Compute core capability \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R012-P1",
+    "rule_id": "R012",
+    "input": {
+      "gles": 32,
+      "uses_core_geometry": true
+    },
+    "expected_valid": true,
+    "scenario": "Geometry core capability \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R012-P2",
+    "rule_id": "R012",
+    "input": {
+      "gles": 31,
+      "uses_core_geometry": false
+    },
+    "expected_valid": true,
+    "scenario": "Geometry core capability \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R012-N1",
+    "rule_id": "R012",
+    "input": {
+      "gles": 30,
+      "uses_core_geometry": true
+    },
+    "expected_valid": false,
+    "scenario": "Geometry core capability \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R012-N2",
+    "rule_id": "R012",
+    "input": {
+      "gles": 31,
+      "uses_core_geometry": true
+    },
+    "expected_valid": false,
+    "scenario": "Geometry core capability \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R013-P1",
+    "rule_id": "R013",
+    "input": {
+      "offset": 0,
+      "alignment": 256
+    },
+    "expected_valid": true,
+    "scenario": "Uniform block binding alignment \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R013-P2",
+    "rule_id": "R013",
+    "input": {
+      "offset": 512,
+      "alignment": 256
+    },
+    "expected_valid": true,
+    "scenario": "Uniform block binding alignment \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R013-N1",
+    "rule_id": "R013",
+    "input": {
+      "offset": 1,
+      "alignment": 256
+    },
+    "expected_valid": false,
+    "scenario": "Uniform block binding alignment \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R013-N2",
+    "rule_id": "R013",
+    "input": {
+      "offset": 128,
+      "alignment": 256
+    },
+    "expected_valid": false,
+    "scenario": "Uniform block binding alignment \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R014-P1",
+    "rule_id": "R014",
+    "input": {
+      "alignment": 1
+    },
+    "expected_valid": true,
+    "scenario": "Pixel unpack alignment \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R014-P2",
+    "rule_id": "R014",
+    "input": {
+      "alignment": 8
+    },
+    "expected_valid": true,
+    "scenario": "Pixel unpack alignment \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R014-N1",
+    "rule_id": "R014",
+    "input": {
+      "alignment": 3
+    },
+    "expected_valid": false,
+    "scenario": "Pixel unpack alignment \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R014-N2",
+    "rule_id": "R014",
+    "input": {
+      "alignment": 0
+    },
+    "expected_valid": false,
+    "scenario": "Pixel unpack alignment \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R015-P1",
+    "rule_id": "R015",
+    "input": {
+      "read": true,
+      "write": false,
+      "invalidate": false
+    },
+    "expected_valid": true,
+    "scenario": "MapBufferRange access \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R015-P2",
+    "rule_id": "R015",
+    "input": {
+      "read": false,
+      "write": true,
+      "invalidate": true
+    },
+    "expected_valid": true,
+    "scenario": "MapBufferRange access \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R015-N1",
+    "rule_id": "R015",
+    "input": {
+      "read": false,
+      "write": false,
+      "invalidate": false
+    },
+    "expected_valid": false,
+    "scenario": "MapBufferRange access \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R015-N2",
+    "rule_id": "R015",
+    "input": {
+      "read": true,
+      "write": true,
+      "invalidate": true
+    },
+    "expected_valid": false,
+    "scenario": "MapBufferRange access \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R016-P1",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "DEPTH_ATTACHMENT",
+      "max_attachments": 4
+    },
+    "expected_valid": true,
+    "scenario": "Invalidate named framebuffer enums \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R016-P2",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "COLOR_ATTACHMENT0",
+      "max_attachments": 4
+    },
+    "expected_valid": true,
+    "scenario": "Invalidate named framebuffer enums \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R016-N1",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "DEPTH",
+      "max_attachments": 4
+    },
+    "expected_valid": false,
+    "scenario": "Invalidate named framebuffer enums \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R016-N2",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "COLOR",
+      "max_attachments": 4
+    },
+    "expected_valid": false,
+    "scenario": "Invalidate named framebuffer enums \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R017-P1",
+    "rule_id": "R017",
+    "input": {
+      "attachment": "DEPTH"
+    },
+    "expected_valid": true,
+    "scenario": "Invalidate default framebuffer enums \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R017-P2",
+    "rule_id": "R017",
+    "input": {
+      "attachment": "COLOR"
+    },
+    "expected_valid": true,
+    "scenario": "Invalidate default framebuffer enums \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R017-N1",
+    "rule_id": "R017",
+    "input": {
+      "attachment": "DEPTH_ATTACHMENT"
+    },
+    "expected_valid": false,
+    "scenario": "Invalidate default framebuffer enums \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R017-N2",
+    "rule_id": "R017",
+    "input": {
+      "attachment": "COLOR_ATTACHMENT0"
+    },
+    "expected_valid": false,
+    "scenario": "Invalidate default framebuffer enums \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R018-P1",
+    "rule_id": "R018",
+    "input": {
+      "future_read": false,
+      "invalidate": true
+    },
+    "expected_valid": true,
+    "scenario": "Preserve live attachments \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R018-P2",
+    "rule_id": "R018",
+    "input": {
+      "future_read": true,
+      "invalidate": false
+    },
+    "expected_valid": true,
+    "scenario": "Preserve live attachments \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R018-N1",
+    "rule_id": "R018",
+    "input": {
+      "future_read": true,
+      "invalidate": true
+    },
+    "expected_valid": false,
+    "scenario": "Preserve live attachments \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R019-P1",
+    "rule_id": "R019",
+    "input": {
+      "buffer_kind": "integer_color",
+      "filter": "NEAREST"
+    },
+    "expected_valid": true,
+    "scenario": "Blit filter legality depends on buffer component type, not generic MSAA ban"
+  },
+  {
+    "case_id": "R019-P2",
+    "rule_id": "R019",
+    "input": {
+      "buffer_kind": "normalized_color",
+      "filter": "LINEAR"
+    },
+    "expected_valid": true,
+    "scenario": "Blit filter legality depends on buffer component type, not generic MSAA ban"
+  },
+  {
+    "case_id": "R019-N1",
+    "rule_id": "R019",
+    "input": {
+      "buffer_kind": "integer_color",
+      "filter": "LINEAR"
+    },
+    "expected_valid": false,
+    "scenario": "Blit filter legality depends on buffer component type, not generic MSAA ban"
+  },
+  {
+    "case_id": "R019-N2",
+    "rule_id": "R019",
+    "input": {
+      "buffer_kind": "depth",
+      "filter": "LINEAR"
+    },
+    "expected_valid": false,
+    "scenario": "Blit filter legality depends on buffer component type, not generic MSAA ban"
+  },
+  {
+    "case_id": "R020-P1",
+    "rule_id": "R020",
+    "input": {
+      "complete": true,
+      "draw": true
+    },
+    "expected_valid": true,
+    "scenario": "Framebuffer completeness \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R020-P2",
+    "rule_id": "R020",
+    "input": {
+      "complete": false,
+      "draw": false
+    },
+    "expected_valid": true,
+    "scenario": "Framebuffer completeness \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R020-N1",
+    "rule_id": "R020",
+    "input": {
+      "complete": false,
+      "draw": true
+    },
+    "expected_valid": false,
+    "scenario": "Framebuffer completeness \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R021-P1",
+    "rule_id": "R021",
+    "input": {
+      "advertised": true,
+      "entrypoint": true,
+      "call": true
+    },
+    "expected_valid": true,
+    "scenario": "Extension dispatch guard \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R021-P2",
+    "rule_id": "R021",
+    "input": {
+      "advertised": false,
+      "entrypoint": true,
+      "call": false
+    },
+    "expected_valid": true,
+    "scenario": "Extension dispatch guard \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R021-N1",
+    "rule_id": "R021",
+    "input": {
+      "advertised": false,
+      "entrypoint": true,
+      "call": true
+    },
+    "expected_valid": false,
+    "scenario": "Extension dispatch guard \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R021-N2",
+    "rule_id": "R021",
+    "input": {
+      "advertised": true,
+      "entrypoint": false,
+      "call": true
+    },
+    "expected_valid": false,
+    "scenario": "Extension dispatch guard \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R022-P1",
+    "rule_id": "R022",
+    "input": {
+      "error": "CONTEXT_LOST",
+      "action": "recreate_context_resources"
+    },
+    "expected_valid": true,
+    "scenario": "EGL context loss recovery \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R022-P2",
+    "rule_id": "R022",
+    "input": {
+      "error": "BAD_SURFACE",
+      "action": "recreate_surface"
+    },
+    "expected_valid": true,
+    "scenario": "EGL context loss recovery \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R022-N1",
+    "rule_id": "R022",
+    "input": {
+      "error": "CONTEXT_LOST",
+      "action": "recreate_surface"
+    },
+    "expected_valid": false,
+    "scenario": "EGL context loss recovery \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R022-N2",
+    "rule_id": "R022",
+    "input": {
+      "error": "BAD_SURFACE",
+      "action": "continue_failed_swap"
+    },
+    "expected_valid": false,
+    "scenario": "EGL context loss recovery \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R023-P1",
+    "rule_id": "R023",
+    "input": {
+      "event": "APP_CMD_INIT_WINDOW"
+    },
+    "expected_valid": true,
+    "scenario": "Native app glue real commands \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R023-P2",
+    "rule_id": "R023",
+    "input": {
+      "event": "APP_CMD_TERM_WINDOW"
+    },
+    "expected_valid": true,
+    "scenario": "Native app glue real commands \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R023-N1",
+    "rule_id": "R023",
+    "input": {
+      "event": "APP_CMD_CONTEXT_LOST"
+    },
+    "expected_valid": false,
+    "scenario": "Native app glue real commands \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R023-N2",
+    "rule_id": "R023",
+    "input": {
+      "event": "APP_CMD_EGL_CONTEXT_LOST"
+    },
+    "expected_valid": false,
+    "scenario": "Native app glue real commands \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R024-P1",
+    "rule_id": "R024",
+    "input": {
+      "pbo_bound": true,
+      "mapped": false
+    },
+    "expected_valid": true,
+    "scenario": "PBO upload mapped state \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R024-P2",
+    "rule_id": "R024",
+    "input": {
+      "pbo_bound": false,
+      "mapped": true
+    },
+    "expected_valid": true,
+    "scenario": "PBO upload mapped state \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R024-N1",
+    "rule_id": "R024",
+    "input": {
+      "pbo_bound": true,
+      "mapped": true
+    },
+    "expected_valid": false,
+    "scenario": "PBO upload mapped state \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R025-P1",
+    "rule_id": "R025",
+    "input": {
+      "index": 0,
+      "max_attributes": 16
+    },
+    "expected_valid": true,
+    "scenario": "Instanced attribute divisor \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R025-P2",
+    "rule_id": "R025",
+    "input": {
+      "index": 15,
+      "max_attributes": 16
+    },
+    "expected_valid": true,
+    "scenario": "Instanced attribute divisor \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R025-N1",
+    "rule_id": "R025",
+    "input": {
+      "index": 16,
+      "max_attributes": 16
+    },
+    "expected_valid": false,
+    "scenario": "Instanced attribute divisor \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R025-N2",
+    "rule_id": "R025",
+    "input": {
+      "index": -1,
+      "max_attributes": 16
+    },
+    "expected_valid": false,
+    "scenario": "Instanced attribute divisor \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R026-P1",
+    "rule_id": "R026",
+    "input": {
+      "two_fetches": true,
+      "claims_faster": false,
+      "measured": false
+    },
+    "expected_valid": true,
+    "scenario": "Branchless two-fetch performance claim \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R026-P2",
+    "rule_id": "R026",
+    "input": {
+      "two_fetches": true,
+      "claims_faster": true,
+      "measured": true
+    },
+    "expected_valid": true,
+    "scenario": "Branchless two-fetch performance claim \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R026-N1",
+    "rule_id": "R026",
+    "input": {
+      "two_fetches": true,
+      "claims_faster": true,
+      "measured": false
+    },
+    "expected_valid": false,
+    "scenario": "Branchless two-fetch performance claim \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R027-P1",
+    "rule_id": "R027",
+    "input": {
+      "claims_bandwidth_win": true,
+      "hardware": true,
+      "counters": true
+    },
+    "expected_valid": true,
+    "scenario": "Device performance evidence \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R027-P2",
+    "rule_id": "R027",
+    "input": {
+      "claims_bandwidth_win": false,
+      "hardware": false,
+      "counters": false
+    },
+    "expected_valid": true,
+    "scenario": "Device performance evidence \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R027-N1",
+    "rule_id": "R027",
+    "input": {
+      "claims_bandwidth_win": true,
+      "hardware": false,
+      "counters": true
+    },
+    "expected_valid": false,
+    "scenario": "Device performance evidence \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R027-N2",
+    "rule_id": "R027",
+    "input": {
+      "claims_bandwidth_win": true,
+      "hardware": true,
+      "counters": false
+    },
+    "expected_valid": false,
+    "scenario": "Device performance evidence \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R028-P1",
+    "rule_id": "R028",
+    "input": {
+      "essl": 300,
+      "external": true,
+      "essl3_extension": true
+    },
+    "expected_valid": true,
+    "scenario": "External ESSL3 texture extension \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R028-P2",
+    "rule_id": "R028",
+    "input": {
+      "essl": 300,
+      "external": false,
+      "essl3_extension": false
+    },
+    "expected_valid": true,
+    "scenario": "External ESSL3 texture extension \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R028-N1",
+    "rule_id": "R028",
+    "input": {
+      "essl": 300,
+      "external": true,
+      "essl3_extension": false
+    },
+    "expected_valid": false,
+    "scenario": "External ESSL3 texture extension \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R028-N2",
+    "rule_id": "R028",
+    "input": {
+      "essl": 310,
+      "external": true,
+      "essl3_extension": false
+    },
+    "expected_valid": false,
+    "scenario": "External ESSL3 texture extension \u2014 violation/counterexample 2"
+  },
+  {
+    "case_id": "R029-P1",
+    "rule_id": "R029",
+    "input": {
+      "uses_float": true,
+      "declared_precision": true
+    },
+    "expected_valid": true,
+    "scenario": "Fragment float precision \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R029-P2",
+    "rule_id": "R029",
+    "input": {
+      "uses_float": false,
+      "declared_precision": false
+    },
+    "expected_valid": true,
+    "scenario": "Fragment float precision \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R029-N1",
+    "rule_id": "R029",
+    "input": {
+      "uses_float": true,
+      "declared_precision": false
+    },
+    "expected_valid": false,
+    "scenario": "Fragment float precision \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R030-P1",
+    "rule_id": "R030",
+    "input": {
+      "same_image_sampled_written": false,
+      "draw": true
+    },
+    "expected_valid": true,
+    "scenario": "Texture feedback loop \u2014 legal/boundary 1"
+  },
+  {
+    "case_id": "R030-P2",
+    "rule_id": "R030",
+    "input": {
+      "same_image_sampled_written": true,
+      "draw": false
+    },
+    "expected_valid": true,
+    "scenario": "Texture feedback loop \u2014 legal/boundary 2"
+  },
+  {
+    "case_id": "R030-N1",
+    "rule_id": "R030",
+    "input": {
+      "same_image_sampled_written": true,
+      "draw": true
+    },
+    "expected_valid": false,
+    "scenario": "Texture feedback loop \u2014 violation/counterexample 1"
+  },
+  {
+    "case_id": "R016-P3",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "COLOR_ATTACHMENT1",
+      "max_attachments": 4
+    },
+    "expected_valid": true,
+    "scenario": "Nonzero named color attachment is legal"
+  },
+  {
+    "case_id": "R016-N3",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "COLOR_ATTACHMENT4",
+      "max_attachments": 4
+    },
+    "expected_valid": false,
+    "scenario": "Index equal to maximum is outside valid enum range"
+  },
+  {
+    "case_id": "R023-P3",
+    "rule_id": "R023",
+    "input": {
+      "event": "APP_CMD_RESUME"
+    },
+    "expected_valid": true,
+    "scenario": "Actual lifecycle command is not context loss"
+  },
+  {
+    "case_id": "R016-P4",
+    "rule_id": "R016",
+    "input": {
+      "attachment": "DEPTH_STENCIL_ATTACHMENT",
+      "max_attachments": 4
+    },
+    "expected_valid": true,
+    "scenario": "Combined depth-stencil named attachment is legal"
+  }
+]

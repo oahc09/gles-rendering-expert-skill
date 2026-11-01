@@ -20,6 +20,7 @@
 
 #include <GLES3/gl3.h>
 #include <GLES3/gl3ext.h>
+#include <GLES2/gl2ext.h>
 #include <EGL/egl.h>
 #include <EGL/eglext.h>
 #include <cstdio>
@@ -35,7 +36,8 @@
 #define GL_TEXTURE_EXTERNAL_OES 0x8D65
 #endif
 
-using PFNGLBINDTEXTUREEXOESPROC = void (*)(GLenum target, GLuint texture);
+// EGLImage handles are pointer-sized, not GLuint texture names.
+using ImageTargetProc = PFNGLEGLIMAGETARGETTEXTURE2DOESPROC;
 
 // ============================================================================
 // RAII External Texture (GL_TEXTURE_EXTERNAL_OES)
@@ -82,6 +84,7 @@ private:
 // ============================================================================
 class ShaderProgram {
 public:
+    ShaderProgram() = default;
     ~ShaderProgram() {
         if (program_ != 0) glDeleteProgram(program_);
         if (vs_ != 0) glDeleteShader(vs_);
@@ -164,17 +167,20 @@ void main() {
 // ============================================================================
 class VideoTexturePipeline {
 public:
+    VideoTexturePipeline() = default;
     /// Must be called with a current EGL context. Returns false when the
     /// device lacks GL_OES_EGL_image_external (no usable video path).
     bool Init() {
-        if (!HasExtension("GL_OES_EGL_image_external")) {
-            LOGE("GL_OES_EGL_image_external unavailable — cannot render video frames");
+        if (!HasExtension("GL_OES_EGL_image_external") ||
+            !HasExtension("GL_OES_EGL_image_external_essl3")) {
+            LOGE("External image / ESSL3 extension unavailable — use regular 2D fallback");
             return false;
         }
         // glEGLImageTargetTexture2DOES is an OES entry point; the NDK exposes
         // it in glext.h, but resolve defensively.
-        glBindTextureTarget_ = reinterpret_cast<PFNGLBINDTEXTUREEXOESPROC>(
+        glBindTextureTarget_ = reinterpret_cast<ImageTargetProc>(
             eglGetProcAddress("glEGLImageTargetTexture2DOES"));
+        if (glBindTextureTarget_ == nullptr) return false;
 
         if (!externalTex_.Create()) return false;
         if (!program_.Build(kQuadVert, kExternalFrag)) return false;
@@ -191,7 +197,7 @@ public:
         if (glBindTextureTarget_ != nullptr) {
             glBindTexture(GL_TEXTURE_EXTERNAL_OES, externalTex_.Id());
             glBindTextureTarget_(GL_TEXTURE_EXTERNAL_OES,
-                                 static_cast<GLuint>(reinterpret_cast<uintptr_t>(image)));
+                                 reinterpret_cast<GLeglImageOES>(image));
             glBindTexture(GL_TEXTURE_EXTERNAL_OES, 0);
         }
     }
@@ -275,7 +281,7 @@ private:
 
     ExternalTexture externalTex_;
     ShaderProgram program_;
-    PFNGLBINDTEXTUREEXOESPROC glBindTextureTarget_ = nullptr;
+    ImageTargetProc glBindTextureTarget_ = nullptr;
     GLuint quadVao_ = 0, quadVbo_ = 0, copyFbo_ = 0;
     GLint u_STMatrix_ = -1, u_Frame_ = -1;
     static constexpr float identityMatrix_[16] = {

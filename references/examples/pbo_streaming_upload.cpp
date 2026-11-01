@@ -1,6 +1,6 @@
 /**
  * @file pbo_streaming_upload.cpp
- * @brief Hitch-free texture streaming with triple-buffered PBOs
+ * @brief Fence-protected texture streaming with triple-buffered PBOs
  *        (GL_PIXEL_UNPACK_BUFFER) + fence synchronization.
  *
  * Scenario: Large textures updated continuously (video tiles, streamed map
@@ -17,7 +17,7 @@
  *
  * Pattern (N-buffered ring, N=3):
  *   Frame F writes into PBO[F % 3] (mapped pointer, CPU side)
- *   Frame F issues glTexSubImage2D from PBO[(F-1) % 3]  (already filled, GPU waits via fence)
+ *   Frame F unmaps and issues glTexSubImage2D from PBO[F % 3]
  *   Fence on the upload; the slot is not re-mapped until the fence signals.
  */
 
@@ -27,14 +27,15 @@
 #include <array>
 #include <utility>
 
-#define LOGI(...) printf("[INFO] " __VA_ARGS__), printf("\n")
-#define LOGE(...) printf("[ERROR] " __VA_ARGS__), printf("\n")
+#define LOGI(...) fprintf(stderr, "[INFO] " __VA_ARGS__), fprintf(stderr, "\n")
+#define LOGE(...) fprintf(stderr, "[ERROR] " __VA_ARGS__), fprintf(stderr, "\n")
 
 // ============================================================================
 // RAII Buffer
 // ============================================================================
 class GlBuffer {
 public:
+    GlBuffer() = default;
     ~GlBuffer() { if (id_ != 0) glDeleteBuffers(1, &id_); }
     GlBuffer(const GlBuffer&) = delete;
     GlBuffer& operator=(const GlBuffer&) = delete;
@@ -49,6 +50,7 @@ private:
 
 class GlSync {
 public:
+    GlSync() = default;
     ~GlSync() { Reset(); }
     GlSync(const GlSync&) = delete;
     GlSync& operator=(const GlSync&) = delete;
@@ -86,7 +88,8 @@ public:
         }
         glBindBuffer(GL_PIXEL_UNPACK_BUFFER, 0);
         writeIndex_ = 0;
-        primed_ = false;
+        mapped_ = false;
+        failed_ = false;
         LOGI("PBO streaming uploader: %d slots x %lld bytes",
              kSlots, static_cast<long long>(slotBytes));
         return true;
@@ -96,6 +99,7 @@ public:
     /// Blocks only if the slot's upload fence from 3 frames ago has not
     /// signaled (rare at 3 slots). Returns nullptr on failure.
     void* MapWriteSlot() {
+        if (mapped_ || failed_) return nullptr;
         // Wait (bounded) for the slot's previous consumer fence
         if (!fences_[writeIndex_].IsSignaled(10'000'000 /* 10 ms */)) {
             LOGE("PBO slot %d still busy after 10ms — consider more slots", writeIndex_);
@@ -108,50 +112,46 @@ public:
         void* ptr = glMapBufferRange(GL_PIXEL_UNPACK_BUFFER, 0, slotBytes_,
                                      GL_MAP_WRITE_BIT | GL_MAP_INVALIDATE_BUFFER_BIT |
                                      GL_MAP_UNSYNCHRONIZED_BIT);
-        // NOTE: keep the buffer bound; glTexSubImage2D below reads from it.
+        mapped_ = ptr != nullptr;
+        // CommitUpload unmaps THIS slot before issuing any GL transfer.
         return ptr;
     }
 
-    /// GPU-side: enqueue the upload of the slot written LAST frame into a
-    /// region of dstTexture, then set a fence protecting the slot.
-    ///
-    /// The one-frame delay between MapWriteSlot and CommitUpload is what makes
-    /// the transfer asynchronous: the CPU never touches data the GPU may be
-    /// copying right now.
-    void CommitUpload(GLuint dstTexture, GLint x, GLint y,
+    /// Unmap this frame's written slot before enqueueing its upload.
+    /// The fence, not a fixed frame delay, protects reuse. A failure is not a ready slot.
+    bool CommitUpload(GLuint dstTexture, GLint x, GLint y,
                       GLsizei w, GLsizei h, GLenum format, GLenum type) {
-        // First frame has no previously-filled slot: just advance the ring.
-        if (!primed_) {
-            primed_ = true;
-            writeIndex_ = (writeIndex_ + 1) % kSlots;
-            return;
+        if (!mapped_ || failed_) return false;
+        pbos_[writeIndex_].Bind(GL_PIXEL_UNPACK_BUFFER);
+        mapped_ = false;
+        if (glUnmapBuffer(GL_PIXEL_UNPACK_BUFFER) != GL_TRUE) {
+            glBindBuffer(GL_PIXEL_UNPACK_BUFFER, 0);
+            return false; // contents corrupt; refill this slot instead of uploading it
         }
-        const int slot = PrevSlot();  // slot filled on the previous frame
-        pbos_[slot].Bind(GL_PIXEL_UNPACK_BUFFER);
-
         glBindTexture(GL_TEXTURE_2D, dstTexture);
-        // 'data' is a BYTE OFFSET into the bound PIXEL_UNPACK_BUFFER, not a pointer
         glTexSubImage2D(GL_TEXTURE_2D, 0, x, y, w, h, format, type, nullptr);
+        const GLenum error = glGetError();
         glBindTexture(GL_TEXTURE_2D, 0);
-
-        // Fence: this slot may not be re-mapped until the copy completes
-        fences_[slot].Set(glFenceSync(GL_SYNC_GPU_COMMANDS_COMPLETE, 0));
-
-        glUnmapBuffer(GL_PIXEL_UNPACK_BUFFER);
         glBindBuffer(GL_PIXEL_UNPACK_BUFFER, 0);
-
+        if (error != GL_NO_ERROR) return false;
+        GLsync fence = glFenceSync(GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
+        if (fence == nullptr) {
+            failed_ = true; // upload may be in flight: no unprotected buffer reuse
+            return false;
+        }
+        fences_[writeIndex_].Set(fence);
+        glFlush();
         writeIndex_ = (writeIndex_ + 1) % kSlots;
-        glFlush();  // let the copy engine start without waiting
+        return true;
     }
 
 private:
-    int PrevSlot() const { return (writeIndex_ + kSlots - 1) % kSlots; }
-
     std::array<GlBuffer, kSlots> pbos_;
     std::array<GlSync, kSlots> fences_;
     GLsizeiptr slotBytes_ = 0;
     int writeIndex_ = 0;
-    bool primed_ = false;
+    bool mapped_ = false;
+    bool failed_ = false;
 };
 
 // ============================================================================
@@ -162,9 +162,12 @@ private:
 //
 //   // Frame F:
 //   void* dst = up.MapWriteSlot();          // CPU writes this frame's tile
-//   if (dst) { DecodeTileInto(dst); }
-//   up.CommitUpload(tileTexture, tileX, tileY, 1024, 1024,
-//                   GL_RGBA, GL_UNSIGNED_BYTE);   // uploads PREVIOUS frame's slot
+//   if (dst) {
+//       DecodeTileInto(dst);
+//       bool uploaded = up.CommitUpload(tileTexture, tileX, tileY, 1024, 1024,
+//                                       GL_RGBA, GL_UNSIGNED_BYTE);
+//       // If false: do not claim upload success; inspect error/recover.
+//   }
 //
 // Anti-patterns avoided:
 //   - glTexSubImage2D directly from CPU pointer every frame (pipeline stall)
@@ -172,7 +175,10 @@ private:
 //   - glFinish() to "be safe" (kills CPU/GPU overlap entirely)
 // ============================================================================
 
+#ifndef GLES_EXAMPLE_NO_MAIN
 int main() {
     LOGI("pbo_streaming_upload: reference implementation — see header comments");
     return 0;
 }
+
+#endif

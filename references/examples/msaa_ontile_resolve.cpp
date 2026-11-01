@@ -47,6 +47,7 @@ using PFNGLFRAMEBUFFERTEXTURE2DMULTISAMPLEEXTPROC =
 // ============================================================================
 class Renderbuffer {
 public:
+    Renderbuffer() = default;
     ~Renderbuffer() { if (id_ != 0) glDeleteRenderbuffers(1, &id_); }
     Renderbuffer(const Renderbuffer&) = delete;
     Renderbuffer& operator=(const Renderbuffer&) = delete;
@@ -65,6 +66,7 @@ private:
 
 class Framebuffer {
 public:
+    Framebuffer() = default;
     ~Framebuffer() { if (id_ != 0) glDeleteFramebuffers(1, &id_); }
     Framebuffer(const Framebuffer&) = delete;
     Framebuffer& operator=(const Framebuffer&) = delete;
@@ -78,6 +80,7 @@ private:
 
 class Texture2D {
 public:
+    Texture2D() = default;
     ~Texture2D() { if (id_ != 0) glDeleteTextures(1, &id_); }
     Texture2D(const Texture2D&) = delete;
     Texture2D& operator=(const Texture2D&) = delete;
@@ -106,7 +109,7 @@ class MsaaOnTilePipeline {
 public:
     /// samples: 4 recommended by default (see mali-arm-best-practices.md §5).
     /// Returns false when the extension is missing — caller falls back to
-    /// single-sample rendering (never to blit-resolve).
+    /// single-sample rendering or supported core MSAA + blit resolve after measurement.
     bool Init(GLsizei width, GLsizei height, GLsizei samples) {
         if (!HasExtension("GL_EXT_multisampled_render_to_texture")) {
             LOGE("EXT_multisampled_render_to_texture missing — use 1x rendering");

@@ -7,10 +7,11 @@ Every GLSL ES shader **MUST** begin with a version directive on the very first l
 
 ```glsl
 #version 300 es   // For OpenGL ES 3.0 (GLSL ES 3.00)
+#version 310 es   // For OpenGL ES 3.1 (GLSL ES 3.10)
 #version 320 es   // For OpenGL ES 3.2 (GLSL ES 3.20)
 ```
 
-- No blank lines or comments before `#version`.
+- Project style: place `#version` first. Specification permits preceding whitespace/comments; do not report these alone as a shader compile error.
 - Use `300 es` as default; use `320 es` only when geometry/tessellation shaders or advanced features are needed.
 
 ### 1.2 Precision Qualifiers
@@ -18,7 +19,7 @@ Every GLSL ES shader **MUST** begin with a version directive on the very first l
 | Shader Stage | Requirement |
 |:---|:---|
 | Vertex | `highp` is default for float. No explicit declaration needed but recommended. |
-| Fragment | **MUST** declare: `precision mediump float;` (minimum). No default exists. |
+| Fragment | Float declarations need explicit or default precision; `precision highp float;` is legal. No built-in default float precision exists. |
 | Compute (3.1+) | `highp` is default. Declare if using lower precision. |
 
 ### 1.3 Precision Selection Guide
@@ -105,19 +106,14 @@ uniform mediump vec3 u_CameraPos;
 - **Always** use `layout(location = N)` for attributes and fragment outputs.
 - **Never** rely on `glGetAttribLocation` for attribute binding in production code.
 - Use `in`/`out` keywords (GLES 3.0+); never `attribute`/`varying` (GLES 2.0 legacy).
-- **Varying precision MUST match between vertex and fragment shader.** The precision
-  qualifier on a vertex shader `out` variable must be identical to the fragment
-  shader's corresponding `in` variable. ANGLE silently zeros mismatched varyings
-  (no compile/link error) — this manifests as black surfaces or missing lighting
-  that is extremely hard to diagnose.
-
-  ```glsl
-  // ✅ Vertex: out mediump vec3 v_Normal;
-  // ✅ Fragment: in mediump vec3 v_Normal;  ← same precision
-
-  // ❌ Vertex: out highp vec3 v_Normal;
-  // ❌ Fragment: in mediump vec3 v_Normal;  ← ANGLE zeros this!
-  ```
+- **MUST** match the types of statically used vertex outputs and fragment inputs.
+  GLSL ES 3.00 §4.3.10 allows different precision qualifiers across that interface;
+  do not classify `out highp vec3` / `in mediump vec3` as a link error.
+  Choosing matching precision is a useful consistency policy, not that normative rule.
+  The same uniform declared in linked shaders **must** have matching precision
+  (GLSL ES 3.00 §4.5.3). A claim that a specific ANGLE backend mishandles legal
+  precision combinations requires a pinned driver/build and a minimal reproduction.
+  [Official GLSL ES 3.00 specification](https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf).
 
 ---
 
@@ -153,24 +149,26 @@ layout(std140) uniform LightBlock {
 
 ## 4. Fragment Shader Optimization
 
-### 4.1 Avoid Dynamic Branching
+### 4.1 CONDITIONAL: Branching Versus Branchless Selection
 
 ```glsl
-// ❌ BAD: Divergent branch causes both paths to execute on GPU (SIMD)
+// Candidate A: divergence may serialize paths; coherent branches can skip work.
 if (v_TexCoord.x > 0.5) {
     color = texture(u_TexA, v_TexCoord);
 } else {
     color = texture(u_TexB, v_TexCoord);
 }
 
-// ✅ GOOD: Branchless selection
+// Candidate B: unconditionally fetches BOTH textures; not necessarily faster.
 mediump float selector = step(0.5, v_TexCoord.x);
 mediump vec4 texA = texture(u_TexA, v_TexCoord);
 mediump vec4 texB = texture(u_TexB, v_TexCoord);
 color = mix(texB, texA, selector);
 ```
 
-**Exception**: Uniform branches (same for all fragments in a warp/wavefront) are fine:
+**Counterexample**: A uniform branch can skip a costly texture path. Compare texture transactions, shader time and register pressure on the target device; branchless is not a correctness requirement. For derivatives in non-uniform control flow, use a legal explicit-gradient/LOD strategy when appropriate rather than assuming these forms are interchangeable.
+
+Uniform branch example:
 ```glsl
 // ✅ OK: Uniform branch — all fragments take same path
 if (u_UseNormalMap) {
@@ -178,15 +176,16 @@ if (u_UseNormalMap) {
 }
 ```
 
-### 4.2 Minimize Texture Fetches
+### 4.2 CONDITIONAL: Reduce Expensive Fetches Without Assuming Unrolling Wins
 
 ```glsl
-// ❌ BAD: Fetching in a loop with dynamic index
+// Illegal in GLSL ES 3.00 for sampler arrays: non-constant sampler index.
+// This is an API language constraint, not proof all dynamic loops are slow.
 for (int i = 0; i < u_LightCount; i++) {
     color += texture(u_ShadowMaps[i], shadowCoord[i]);  // Dynamic indexing!
 }
 
-// ✅ GOOD: Fixed iteration with constant bounds
+// Candidate: fixed loop bounds may help a compiler; measure code size/register pressure.
 const int MAX_LIGHTS = 4;
 for (int i = 0; i < MAX_LIGHTS; i++) {
     if (i >= u_LightCount) break;  // Uniform break — OK
@@ -402,7 +401,7 @@ backend code generation at first draw). Mitigate at three levels:
 | Color banding in gradients | `lowp` color interpolation | Use `mediump` for gradient colors |
 | Normal map artifacts | `mediump` normal after multiple transforms | Use `highp` for normal matrix multiplication |
 | Time-based animation stutter | `mediump` time uniform overflows | Use `highp` for time; wrap with `mod()` |
-| Black surfaces / missing lighting | Varying precision mismatch (VS `out highp` ≠ FS `in mediump`) | Ensure identical precision on all `out`/`in` pairs |
+| Black surfaces / missing lighting | Inspect link logs, interface types, bindings and numeric ranges | Different vertex/fragment precision is legal in ES 3.00; isolate any backend defect before blaming it |
 
 ---
 

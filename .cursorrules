@@ -4,36 +4,36 @@
 ## Core Constraints
 - Target: OpenGL ES 3.0 / 3.1 / 3.2 — NEVER use desktop OpenGL APIs (glBegin, glEnd, GL_QUADS, glPolygonMode, etc.).
 - GLSL ES versions: 3.00, 3.10, 3.20. Always place `#version` on the FIRST line of shader source.
-- Fragment shaders MUST declare `precision mediump float;` (use highp only where needed).
-- Use RAII C++17 for all GPU resources (move-only handles, destructor calls glDelete*).
+- MUST provide float precision for fragment declarations, either per-variable or a default. SHOULD select mediump/highp from numerical error bounds.
+- SHOULD use move-only C++17 ownership; delete GL objects only with a compatible live current context. Context loss invalidates old names; queue cleanup when necessary.
 
 ## TBDR Bandwidth (Mali, Adreno, PowerVR)
-- SHOULD clear or call `glInvalidateFramebuffer` on every FBO attachment at pass start/end.
-- Never read back via `glReadPixels` synchronously in the render loop — use PBO async readback.
-- Prefer `EXT_multisampled_render_to_texture` for MSAA on mobile (on-tile resolve, no blit).
+- SHOULD clear attachments whose previous contents are not needed at pass start; invalidate only attachments no later pass consumes. These are optimization hints, not mandatory operations for every attachment.
+- SHOULD avoid synchronous readback in latency-sensitive rendering; PBO readback needs a signaled fence before mapping/reuse, not simply a one-frame delay.
+- CONDITIONAL: compare core MSAA resolve with supported `EXT_multisampled_render_to_texture`; query sample/format limits and measure on target hardware.
 
 ## EGL Lifecycle
-- Use `EGL_CONTEXT_CLIENT_VERSION` (EGL 1.4-compatible), not `EGL_CONTEXT_MAJOR_VERSION`.
+- `EGL_CONTEXT_CLIENT_VERSION` is EGL 1.4-compatible; major/minor attributes are legal with EGL 1.5 or `EGL_KHR_create_context`. Query actual version.
 - Handle `EGL_CONTEXT_LOST`: recreate context + all GPU resources.
-- One EGL context per thread; share via `EGL_KHR_create_context` shared contexts.
+- At most one current context per thread and one owner thread per context. Core EGL `share_context` enables sharing; producer fence + glFlush + synchronized publication, consumer wait + rebind, retained resource lifetime are required.
 
 ## Compute & Synchronization
-- After SSBO/image writes: `memoryBarrierBuffer()` / `memoryBarrierImage()` in shader.
-- Between dispatches: `glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT)` on host.
-- Use `glFenceSync` / `glClientWaitSync` (core in GLES 3.0+) for CPU-GPU synchronization, never `glFinish`.
+- MUST choose shader memory/execution barriers for the actual communication scope; workgroup `barrier()` cannot synchronize different workgroups.
+- GLES 3.1+: host glMemoryBarrier bits describe subsequent consumers (SSBO, image, vertex fetch etc.), not just the producer write type.
+- Use `glFenceSync` / `glClientWaitSync` (core in GLES 3.0+) for CPU-GPU synchronization, SHOULD avoid `glFinish` except intentional blocking/diagnostics.
 
 ## Vendor Extensions
-- Always check `glGetString(GL_EXTENSIONS)` at runtime before using vendor-specific APIs.
+- Use exact-token runtime extension checks (`glGetStringi` + `GL_NUM_EXTENSIONS` for GLES 3.x) at runtime before using vendor-specific APIs.
 - Mali: Pixel Local Storage (`GL_EXT_shader_pixel_local_storage`) for on-tile deferred.
 - Adreno: GMEM load/store avoidance, `QCOM_shading_rate`, LRZ.
-- PowerVR: HSR (no depth pre-pass needed), `IMG_framebuffer_downsample`.
+- PowerVR: HSR and `IMG_framebuffer_downsample` are architecture/extension-dependent. Depth pre-pass benefit must be measured; expensive overdraw can justify it.
 
 ## Windows / ANGLE
 - ANGLE EGL tokens (`EGL_PLATFORM_ANGLE_ANGLE` etc.) are NOT in Khronos eglext.h — use `#ifndef` guards.
-- Acquire ANGLE from Chrome/Edge pre-built DLLs; generate import libs via `dumpbin→.def→lib /def:`.
+- Use a pinned official ANGLE build/distribution with matching headers, ABI and runtime DLLs; do not assume browser-private DLLs are a stable SDK.
 
 ## Android Video / Buffer Interop
-- Camera/decoder frames only via `GL_TEXTURE_EXTERNAL_OES` + EGLImage — never `glTexImage2D`; shader uses `samplerExternalOES` + extension directive; wrap = `CLAMP_TO_EDGE`; no mipmaps.
+- For the external-image path, import camera/decoder frames via `GL_TEXTURE_EXTERNAL_OES` + EGLImage — external textures cannot use `glTexImage2D`; CPU-copy into ordinary 2D textures is a separate legal fallback; shader uses `samplerExternalOES` + extension directive; wrap = `CLAMP_TO_EDGE`; no mipmaps.
 - API 26+: prefer `AHardwareBuffer` + `EGL_ANDROID_get_native_client_buffer` with native fence sync.
 
 ## Profiling & Feature Boundary
@@ -41,10 +41,10 @@
 - OpenGL ES has NO ray tracing / mesh shaders / bindless textures — redirect to Vulkan or GLES-legal alternatives.
 
 ## VRS / Transform Feedback / Geometry Shaders / MRT
-- VRS: runtime extension check (`GL_QCOM_shading_rate` or `GL_EXT_fragment_shading_rate` family); set combiners explicitly; query rates per MSAA sample count; VRS 与 PLS/framebuffer fetch 同 pass 互斥。VRS 降 shading 成本，不降带宽。
+- VRS: runtime extension check (`GL_QCOM_shading_rate` or `GL_EXT_fragment_shading_rate` family); set combiners explicitly; query rates per MSAA sample count; 按具体扩展检查 VRS 与 PLS/framebuffer fetch 的兼容限制；不能推导通用互斥或带宽收益。
 - Transform Feedback (3.0 core)：`glTransformFeedbackVaryings` 必须在 `glLinkProgram` 前；feedback 缓冲按最坏情况分配；3.1+ 优先 compute。ES 无 `glGetBufferSubData`，回读用 `glMapBufferRange`。
-- Geometry Shader 仅 GLES 3.2（`#version 320 es`）：版本门控 + instancing 回退；`max_vertices` 写紧；与 `GL_OVR_multiview` 互斥。
-- MRT：所有 attachment 同宽高/采样数；每个附件 = 一次 tile store，不写的不挂；法线 `n*0.5+0.5` 编码，深度入颜色附件须 RGBA 打包；Mali 同 pass 消费优先 PLS。
+- Geometry Shader 核心路径 GLES 3.2（低版本仅明确扩展支持时）（`#version 320 es`）：版本门控 + instancing 回退；`max_vertices` 写紧；与 `GL_OVR_multiview` 互斥。
+- MRT：检查 GLES framebuffer completeness 与采样数约束；统一尺寸是工程建议，不是 ES 3.x 完整性通则；附件存储成本需实测，不写的不挂；法线 `n*0.5+0.5` 编码，深度入颜色附件须 RGBA 打包；Mali 同 pass 消费优先 PLS。
 
 ## File References
 - Rules: `references/rules/` (detailed enforcement documents)

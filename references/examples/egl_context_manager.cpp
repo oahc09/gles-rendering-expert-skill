@@ -384,7 +384,11 @@ private:
 
             // For this example, we wait and delete the fence here (not ideal,
             // but prevents resource leak in this simplified demo).
-            glClientWaitSync(fence, GL_SYNC_FLUSH_COMMANDS_BIT, 1000000000ULL);
+            const GLenum waitResult = glClientWaitSync(fence, GL_SYNC_FLUSH_COMMANDS_BIT, 1000000000ULL);
+            if (waitResult != GL_ALREADY_SIGNALED && waitResult != GL_CONDITION_SATISFIED) {
+                LOGE("Upload fence not complete: 0x%x; do not publish/reuse resource", waitResult);
+                // This sketch abandons the transfer; production retains it for retry or recovery.
+            }
             glDeleteSync(fence);
         }
 
@@ -407,7 +411,7 @@ int main() {
 
     // On Android: nativeWindow comes from ANativeWindow
     // On Linux: from X11 Window or wl_egl_window
-    EGLNativeWindowType nativeWindow = nullptr;  // Platform-specific
+    EGLNativeWindowType nativeWindow{};  // Supply a real platform window before Initialize
 
     EGLContextManager::Config cfg;
     cfg.glesMajor = 3;

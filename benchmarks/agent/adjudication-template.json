@@ -1,0 +1,15 @@
+[
+  {
+    "case_id": "A001",
+    "condition": "no_skill",
+    "response_sha256": "REPLACE_WITH_CAPTURED_RESPONSE_HASH",
+    "reviewer": "REQUIRED_REVIEWER_ID",
+    "rationale": "REQUIRED evidence-based explanation, including any disagreements",
+    "true_positive_findings": [],
+    "rejected_legal_controls": [],
+    "unsupported_findings": [],
+    "compile": {"status": "NOT_RUN", "command": null, "artifact_sha256": null, "artifact_file": null, "log_sha256": null, "log_file": null, "environment": null},
+    "debug_complete": false,
+    "performance_complete": false
+  }
+]

@@ -184,6 +184,7 @@ void WorkerThread_UploadTexture(/* ... */) {
     
     // Insert fence so render thread knows upload is complete
     GLsync fence = glFenceSync(GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
+    glFlush(); // Submit producer commands before publishing fence to another context.
     
     // Signal render thread (via condition variable, queue, etc.)
     renderThread.NotifyTextureReady(texId, fence);
@@ -207,7 +208,8 @@ void RenderThread_UseTexture(GLuint texId, GLsync fence) {
 - **Shared objects**: Textures, Buffers, Shaders, Programs, Samplers, Sync objects.
 - **NOT shared**: VAOs, FBOs, Queries (per-context state).
 - Each thread must have its own VAO/FBO even if referencing shared textures/buffers.
-- `eglMakeCurrent` is **per-thread** — one context active per thread at a time.
+- `eglMakeCurrent` is **per-thread** — one context active per thread at a time, and one thread owns each current context.
+- EGL core `eglCreateContext` has `share_context`; sharing does not require `EGL_KHR_create_context`. Publish handles/fences with a CPU synchronized queue. Producer must flush; consumer must wait then bind/rebind changed objects. Do not delete/recycle objects until every consumer is finished. Handle fence allocation failure and context loss instead of publishing invalid handles.
 
 ---
 
@@ -277,6 +279,8 @@ void HandleContextLost() {
 
 ### 3.4 Android NDK Integration
 
+There is no native-app-glue context-lost command. Detect `EGL_CONTEXT_LOST` from a failed EGL operation; `APP_CMD_TERM_WINDOW` is surface lifetime, not proof that shared GL resources were lost. Synchronize worker shutdown before destroying shared contexts. The following callback is an integration sketch, not a runnable Android application.
+
 ```cpp
 // Using android_native_app_glue:
 void HandleCmd(android_app* app, int32_t cmd) {
@@ -288,10 +292,6 @@ void HandleCmd(android_app* app, int32_t cmd) {
         case APP_CMD_TERM_WINDOW:
             // Surface destroyed — release EGL surface, keep context if possible
             ReleaseEGLSurface();
-            break;
-        case APP_CMD_CONTEXT_LOST:
-            // Explicit context loss notification (API 31+)
-            HandleContextLost();
             break;
         case APP_CMD_GAINED_FOCUS:
             // Resume rendering
