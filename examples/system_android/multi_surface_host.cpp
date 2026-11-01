@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: MIT
+#include "multi_surface.hpp"
+#include <atomic>
+#include <iostream>
+#include <thread>
+int main(){try{MultiSurface lab;std::array<uint64_t,4> ids{};for(size_t i=0;i<4;i++)ids[i]=lab.pbuffer(16+int(i)*3,19+int(i));{ MultiSurface second;auto other=second.pbuffer(12,12);if(!second.render(other,true)||!lab.render(ids[0],true))throw std::runtime_error("coexisting groups"); } if(!lab.render(ids[0],true))throw std::runtime_error("peer destruction terminated display");
+ lab.surfaceLost(ids[1]);if(lab.render(ids[1],true)||!lab.render(ids[0],true))throw std::runtime_error("surface isolation");lab.forceRebuild();if(lab.render(ids[1],true)||!lab.render(ids[0],true))throw std::runtime_error("retired surface resurrected");lab.remove(ids[1]);ids[1]=lab.pbuffer(23,23);
+ unsigned rendered=0;for(int i=0;i<40;i++){auto k=unsigned(i)%4;lab.pause(ids[k],true);if(lab.render(ids[k],true))throw std::runtime_error("paused rendered");lab.pause(ids[k],false);rendered+=lab.render(ids[k],true);if(i%7==0){auto old=ids[k];lab.remove(old);ids[k]=lab.pbuffer(21+i,18+i);if(lab.render(old))throw std::runtime_error("stale handle reused");}if(i%9==0)lab.forceRebuild();}
+ std::atomic<unsigned> parallel{0};std::atomic<bool> failed{false};std::array<std::thread,4> threads;for(size_t k=0;k<4;++k)threads[k]=std::thread([&,k]{try{for(int n=0;n<20;n++)parallel+=lab.render(ids[k],true);}catch(...){failed=true;}});for(auto&t:threads)t.join();if(failed||parallel!=80)throw std::runtime_error("multi scheduler failed");for(auto id:ids)lab.remove(id);std::cout<<"{\"status\":\"PASS\",\"serial_frames\":"<<rendered<<",\"worker_frames\":"<<parallel<<",\"contexts_generation\":"<<lab.generation()<<",\"surface_type\":\"software_pbuffer\",\"real_context_loss\":false}\n";return 0;}catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}
