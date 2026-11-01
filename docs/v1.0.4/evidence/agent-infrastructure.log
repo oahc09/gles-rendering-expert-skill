@@ -1,0 +1,27 @@
+test_64_unique_cases_balanced (test_infrastructure.InfrastructureTests.test_64_unique_cases_balanced) ... ok
+test_cli_rejects_changed_corpus (test_infrastructure.InfrastructureTests.test_cli_rejects_changed_corpus) ... ok
+test_cli_rejects_evidence_path_escape (test_infrastructure.InfrastructureTests.test_cli_rejects_evidence_path_escape) ... ok
+test_cli_valid_adjudication (test_infrastructure.InfrastructureTests.test_cli_valid_adjudication) ... ok
+test_compile_claim_requires_artifact_evidence (test_infrastructure.InfrastructureTests.test_compile_claim_requires_artifact_evidence) ... ok
+test_duplicate_id_rejected (test_infrastructure.InfrastructureTests.test_duplicate_id_rejected) ... ok
+test_empty_adjudication_is_not_success (test_infrastructure.InfrastructureTests.test_empty_adjudication_is_not_success) ... ok
+test_fixture_adapter_records_both_conditions (test_infrastructure.InfrastructureTests.test_fixture_adapter_records_both_conditions) ... ok
+test_materialized_cases_current (test_infrastructure.InfrastructureTests.test_materialized_cases_current) ... ok
+test_metric_arithmetic_and_unmeasured_compile (test_infrastructure.InfrastructureTests.test_metric_arithmetic_and_unmeasured_compile) ... ok
+test_no_provider_is_blocked (test_infrastructure.InfrastructureTests.test_no_provider_is_blocked) ... ok
+test_skill_conditioning_and_no_groundtruth_leak (test_infrastructure.InfrastructureTests.test_skill_conditioning_and_no_groundtruth_leak) ... ok
+test_stale_hash_rejected (test_infrastructure.InfrastructureTests.test_stale_hash_rejected) ... ok
+test_timeout_is_failure_not_response (test_infrastructure.InfrastructureTests.test_timeout_is_failure_not_response) ... ok
+test_unknown_true_positive_rejected (test_infrastructure.InfrastructureTests.test_unknown_true_positive_rejected) ... ok
+test_88_unique_and_24_repairs (test_repairs.RepairTests.test_88_unique_and_24_repairs) ... ok
+test_failure_logs_are_inputs_not_gold (test_repairs.RepairTests.test_failure_logs_are_inputs_not_gold) ... ok
+test_fake_repair_pass_no_evidence_rejected (test_repairs.RepairTests.test_fake_repair_pass_no_evidence_rejected) ... ok
+test_original_64_unchanged (test_repairs.RepairTests.test_original_64_unchanged) ... ok
+test_report_identity (test_repairs.RepairTests.test_report_identity) ... ok
+test_scored_repair_denominators (test_repairs.RepairTests.test_scored_repair_denominators) ... ok
+test_unknown_metrics_null (test_repairs.RepairTests.test_unknown_metrics_null) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.491s
+
+OK

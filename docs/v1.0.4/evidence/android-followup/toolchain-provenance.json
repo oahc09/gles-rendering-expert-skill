@@ -1,0 +1,70 @@
+{
+  "scope": "Tool provenance and actual Gradle failure; compile results are separate in source-compile.json",
+  "timestamp": "2026-11-01T09:14:48.415785+00:00",
+  "sources": [
+    {
+      "url": "https://dl.google.com/android/repository/platform-35_r02.zip",
+      "bytes": 64273788,
+      "sha256": "0988cacad01b38a18a47bac14a0695f246bc76c1b06c0eeb8eb0dc825ab0c8e0",
+      "expected_official_sha1": "0bb560a90a7a2cbd0dd8348224d518b638fe7949",
+      "actual_sha1": "0bb560a90a7a2cbd0dd8348224d518b638fe7949",
+      "checksum_match": true
+    },
+    {
+      "url": "https://dl.google.com/android/repository/build-tools_r35_linux.zip",
+      "bytes": 61958799,
+      "sha256": "bd3a4966912eb8b30ed0d00b0cda6b6543b949d5ffe00bea54c04c81e1561d88",
+      "expected_official_sha1": "2cfaa0bbb2336e9ec18ed3ecea84fa2e2af607bc",
+      "actual_sha1": "2cfaa0bbb2336e9ec18ed3ecea84fa2e2af607bc",
+      "checksum_match": true
+    },
+    {
+      "url": "https://dl.google.com/android/repository/cmake-3.22.1-linux.zip",
+      "bytes": 22308647,
+      "sha256": "9196644852a978012caf7a4067ba1898debf6cc204c3341562771e31080d6869",
+      "expected_official_sha1": "fd0a48b4a758310df8c7aa51f59840ed48fe7ed8",
+      "actual_sha1": "fd0a48b4a758310df8c7aa51f59840ed48fe7ed8",
+      "checksum_match": true
+    },
+    {
+      "url": "https://services.gradle.org/distributions/gradle-8.9-bin.zip",
+      "bytes": 136114148,
+      "sha256": "d725d707bfabd4dfdc958c624003b3c80accc03f7037b5122c4b1d0ef15cecab",
+      "expected_official_sha256": "d725d707bfabd4dfdc958c624003b3c80accc03f7037b5122c4b1d0ef15cecab",
+      "checksum_match": true
+    },
+    {
+      "url": "https://deb.debian.org/debian/pool/main/o/openjdk-21/openjdk-21-jdk-headless_21.0.12.1+1-1~deb13u1_amd64.deb",
+      "bytes": 83035048,
+      "sha256": "f3abafb6c644b03df042824e707cd211ea33254761d7f7b75be3f8dc0df97c7a"
+    }
+  ],
+  "android_checksum_source": "https://dl.google.com/android/repository/repository2-1.xml",
+  "android_repository_metadata_sha256": "be0bea1fc993ec75ce69c929927ef0b3fb3b67ecb857a95095b34e1fcd7a1312",
+  "jdk_notes": "Debian development package copied into isolated workspace JDK with existing same-version OpenJDK21.0.12.1 runtime. Package download hash recorded; no separate signed Packages-index verification.",
+  "gradle": {
+    "status": "BLOCKED_BY_GRADLE_NETWORK",
+    "exit_code": 1,
+    "tasks": [
+      ":wallpaper:assembleDebug",
+      ":surfacevideo:assembleDebug"
+    ],
+    "plugin": "com.android.application:8.7.3",
+    "cause": "Java SocketException Network is unreachable connecting through configured proxy; plugin artifact cannot resolve",
+    "attempts": 3,
+    "license_acceptance_performed": false,
+    "APK_created": false,
+    "device_run": false,
+    "network_settings_modified": false,
+    "ipv4_diagnostic_retry": {
+      "flag": "-Djava.net.preferIPv4Stack=true",
+      "exit_code": 1,
+      "result": "same SocketException Network is unreachable; no settings/proxy/target substitution"
+    },
+    "logs_sha256": {
+      "gradle-assemble-info.log": "edf6116970570d2a783f9b45b1850da23902c01a435e7db101e97428092a3d35",
+      "gradle-assemble.log": "b9e98676d52491680c059d5f999df9210a50760a2f8449d3e0689676ef05739d",
+      "gradle-assemble-ipv4.log": "f35d8cabced80f3543ba9ba81bb1762bc4c2e370657228a39069327c0e258b7b"
+    }
+  }
+}

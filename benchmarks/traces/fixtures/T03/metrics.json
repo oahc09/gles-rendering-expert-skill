@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp_ms": 0,
+    "metric": "tiler_busy_pct",
+    "value": 94,
+    "unit": "percent"
+  },
+  {
+    "timestamp_ms": 0,
+    "metric": "vertex_count",
+    "value": 200000,
+    "unit": "count"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "tiler_busy_pct",
+    "value": 94,
+    "unit": "percent"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "vertex_count",
+    "value": 200000,
+    "unit": "count"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "tiler_busy_pct",
+    "value": 94,
+    "unit": "percent"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "vertex_count",
+    "value": 200000,
+    "unit": "count"
+  }
+]

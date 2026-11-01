@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-feature android:glEsVersion="0x00030000" android:required="true"/>
+  <application android:label="GLES lifecycle wallpaper" android:allowBackup="false">
+    <service android:name="org.example.gleslab.IslandWallpaper" android:label="GLES lifecycle wallpaper" android:permission="android.permission.BIND_WALLPAPER" android:exported="true">
+      <intent-filter><action android:name="android.service.wallpaper.WallpaperService"/></intent-filter>
+      <meta-data android:name="android.service.wallpaper" android:resource="@xml/wallpaper"/>
+    </service>
+  </application>
+</manifest>

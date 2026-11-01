@@ -1,0 +1,50 @@
+{
+  "scope": "Actual arm64-v8a Android API26 shared-library compile/link and ELF alignment; not APK build or device execution",
+  "status": "PASS",
+  "command": [
+    "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic",
+    "-fPIC",
+    "-shared",
+    "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/android_cases/surfacevideo/src/main/cpp/ahb_texture.cpp",
+    "-landroid",
+    "-lEGL",
+    "-lGLESv3",
+    "-llog",
+    "-Wl,--no-undefined",
+    "-Wl,-z,max-page-size=16384",
+    "-o",
+    "/tmp/gles-ahb-target-9_v2nuux/libgles_ahb_case.so"
+  ],
+  "compiler_version": "Android (12027248, +pgo, +bolt, +lto, +mlgo, based on r522817) clang version 18.0.1 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)\nTarget: aarch64-unknown-linux-android26\nThread model: posix\nInstalledDir: /tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin\n",
+  "ndk_properties": "Pkg.Desc = Android NDK\nPkg.Revision = 27.0.12077973\nPkg.BaseRevision = 27.0.12077973\nPkg.ReleaseName = r27\n",
+  "source_sha256": "689b373eb7b8322f25fd65252b4403f148d9a029455876b8b18594812efc2fd4",
+  "script_sha256": "3900f108e37fb6c37bc53edbd734ed1c71459e18bbdd81d43b20bbbdd0a1512c",
+  "binary_sha256": "bd6b29a19708c29686de47e768f7cbf43bda7372ed696b2085eda68a25f8486f",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "elf_program_headers": "\nElf file type is DYN (Shared object file)\nEntry point 0x0\nThere are 10 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align\n  PHDR           0x000040 0x0000000000000040 0x0000000000000040 0x000230 0x000230 R   0x8\n  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0043f8 0x0043f8 R   0x4000\n  LOAD           0x0043f8 0x00000000000083f8 0x00000000000083f8 0x0065c8 0x0065c8 R E 0x4000\n  LOAD           0x00a9c0 0x00000000000129c0 0x00000000000129c0 0x000468 0x000640 RW  0x4000\n  LOAD           0x00ae28 0x0000000000016e28 0x0000000000016e28 0x000068 0x0008a8 RW  0x4000\n  DYNAMIC        0x00aa60 0x0000000000012a60 0x0000000000012a60 0x0001d0 0x0001d0 RW  0x8\n  GNU_RELRO      0x00a9c0 0x00000000000129c0 0x00000000000129c0 0x000468 0x000640 R   0x1\n  GNU_EH_FRAME   0x002928 0x0000000000002928 0x0000000000002928 0x00044c 0x00044c R   0x4\n  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0\n  NOTE           0x000270 0x0000000000000270 0x0000000000000270 0x000098 0x000098 R   0x4\n\n Section to Segment mapping:\n  Segment Sections...\n   00     \n   01     .note.android.ident .dynsym .gnu.version .gnu.version_r .gnu.hash .dynstr .rela.dyn .rela.plt .gcc_except_table .rodata .eh_frame_hdr .eh_frame \n   02     .text .plt \n   03     .data.rel.ro .fini_array .dynamic .got .got.plt .relro_padding \n   04     .data .bss \n   05     .dynamic \n   06     .data.rel.ro .fini_array .dynamic .got .got.plt .relro_padding \n   07     .eh_frame_hdr \n   08     \n   09     .note.android.ident \n   None   .comment .symtab .shstrtab .strtab \n",
+  "load_alignments": [
+    16384,
+    16384,
+    16384,
+    16384
+  ],
+  "libcxx_shared_sha256": "46b51d661454b9cfaf42c1dc90893b5ad601b7a7ffc2e09d44bb3cc9d20e7ae2",
+  "libcxx_shared_program_headers": "\nElf file type is DYN (Shared object file)\nEntry point 0x0\nThere are 12 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align\n  PHDR           0x000040 0x0000000000000040 0x0000000000000040 0x0002a0 0x0002a0 R   0x8\n  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x09aca8 0x09aca8 R   0x4000\n  LOAD           0x09acb0 0x000000000009ecb0 0x000000000009ecb0 0x096640 0x096640 R E 0x4000\n  LOAD           0x1312f0 0x00000000001392f0 0x00000000001392f0 0x009b50 0x009d10 RW  0x4000\n  LOAD           0x13ae40 0x0000000000146e40 0x0000000000146e40 0x000238 0x007d10 RW  0x4000\n  DYNAMIC        0x1397c0 0x00000000001417c0 0x00000000001417c0 0x0001d0 0x0001d0 RW  0x8\n  GNU_RELRO      0x1312f0 0x00000000001392f0 0x00000000001392f0 0x009b50 0x009d10 R   0x1\n  GNU_EH_FRAME   0x078e8c 0x0000000000078e8c 0x0000000000078e8c 0x004bec 0x004bec R   0x4\n  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0\n  GNU_PROPERTY   0x0003a0 0x00000000000003a0 0x00000000000003a0 0x000020 0x000020 R   0x8\n  NOTE           0x0002e0 0x00000000000002e0 0x00000000000002e0 0x0000bc 0x0000bc R   0x4\n  NOTE           0x0003a0 0x00000000000003a0 0x00000000000003a0 0x000020 0x000020 R   0x8\n\n Section to Segment mapping:\n  Segment Sections...\n   00     \n   01     .note.android.ident .note.gnu.build-id .note.gnu.property .dynsym .gnu.version .gnu.version_r .gnu.hash .hash .dynstr .rela.dyn .rela.plt .gcc_except_table .rodata .eh_frame_hdr .eh_frame \n   02     .text .plt \n   03     .data.rel.ro .fini_array .init_array .dynamic .got .got.plt .relro_padding \n   04     .data .bss \n   05     .dynamic \n   06     .data.rel.ro .fini_array .init_array .dynamic .got .got.plt .relro_padding \n   07     .eh_frame_hdr \n   08     \n   09     .note.gnu.property \n   10     .note.android.ident .note.gnu.build-id \n   11     .note.gnu.property \n   None   .comment .symtab .shstrtab .strtab \n",
+  "libcxx_shared_load_alignments": [
+    16384,
+    16384,
+    16384,
+    16384
+  ],
+  "alignment_16k": true,
+  "device_runtime": "NOT_RUN",
+  "AHB_import_readback": "NOT_RUN",
+  "other_abis": "NOT_RUN"
+}

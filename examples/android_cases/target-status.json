@@ -1,0 +1,20 @@
+{
+  "status": "CANDIDATE_COMPILED_DEVICE_VALIDATION_BLOCKED",
+  "modules": [
+    "wallpaper",
+    "surfacevideo"
+  ],
+  "apk_compile": "BLOCKED_BY_GRADLE_NETWORK: actual assemble attempt cannot resolve AGP through configured Java network path",
+  "android_device_runtime": "NOT_RUN",
+  "android_visual_goldens": "NOT_RUN",
+  "native_angle_comparison": "NOT_RUN",
+  "explicit_AHardwareBuffer_import": "IMPLEMENTED: synchronous CPU RGBA8 producer to EGLImage/2D texture with device-time exact pattern validation; actual device import NOT_RUN",
+  "HDR_WCG_surface_output": "IMPLEMENTED: conditional BT2020/PQ RGB10A2 request and queries with SDR fallback; physical output NOT_VERIFIED; static mastering metadata and P3/HLG paths not implemented",
+  "frame_pacing_performance": "NOT_MEASURED; Choreographer submission only",
+  "source_contract_tests": "Separate structural checks, not compilation or lifecycle proof",
+  "shader_extraction_validation": "PASS: 3 actual GLSL compile/link pairs, separate from Java/native evidence",
+  "java_source_compile": "PASS: 7 Java sources, --release 17 against official Android API35; not DEX/APK verification",
+  "native_source_compile": "PASS: Android API26 arm64 strict compile/link of AHB JNI library, existing harness and 6 legacy examples; no target execution",
+  "host_policy_tests": "PASS: 18 HDR and 14 shared-display lease assertions, not EGL/device tests",
+  "source_compile_evidence": "../../docs/v1.0.4/evidence/android-followup/source-compile.json"
+}

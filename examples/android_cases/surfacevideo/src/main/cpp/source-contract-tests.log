@@ -1,0 +1,14 @@
+test_16k_link_flag (test_ahb_contract.AhbContractTests.test_16k_link_flag) ... ok
+test_allocation_ownership_and_stride (test_ahb_contract.AhbContractTests.test_allocation_ownership_and_stride) ... ok
+test_cpu_unlock_is_synchronous (test_ahb_contract.AhbContractTests.test_cpu_unlock_is_synchronous) ... ok
+test_gl_completion_before_delete (test_ahb_contract.AhbContractTests.test_gl_completion_before_delete) ... ok
+test_import_has_no_context (test_ahb_contract.AhbContractTests.test_import_has_no_context) ... ok
+test_pack_state_not_assumed (test_ahb_contract.AhbContractTests.test_pack_state_not_assumed) ... ok
+test_pattern_failure_falls_back (test_ahb_contract.AhbContractTests.test_pattern_failure_falls_back) ... ok
+test_private_handle_reset_after_release (test_ahb_contract.AhbContractTests.test_private_handle_reset_after_release) ... ok
+test_strict_extension_gate (test_ahb_contract.AhbContractTests.test_strict_extension_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.000s
+
+OK

@@ -1,0 +1,1381 @@
+{
+  "status": "PASS",
+  "scope": "24 authored controlled failure/fix reproductions, not production incidents or model-produced patches",
+  "live_provider_calls": 0,
+  "results": [
+    {
+      "case_id": "A073",
+      "kind": "actual_shader_failure_fix",
+      "status": "PASS",
+      "captures": {
+        "bad": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-binding-invalid.frag"
+          ],
+          "exit_code": 2,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-binding-invalid.frag\nERROR: 0:3: 'binding' : not supported for this version or the enabled extensions \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/300-binding-invalid.frag": "2df587c388888ce684fdd9ddf56a63a9076802511c6776b5a767fb7b7a2df211"
+          }
+        },
+        "good": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/310-binding.frag"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/310-binding.frag": "f3f1b8de3ec034263d7113933ac6d8052e69175ef80aadf164aada6308845708"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "A074",
+      "kind": "actual_shader_failure_fix",
+      "status": "PASS",
+      "captures": {
+        "bad": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-compute-invalid.comp"
+          ],
+          "exit_code": 2,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-compute-invalid.comp\nERROR: #version: compute shaders require es profile with version 310 or above, or non-es profile with version 420 or above\nERROR: 1 compilation errors.  No code generated.\n\n\n",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/300-compute-invalid.comp": "25a7cc589de670dd242f3536f93a6401ca4692a51bde038d85877358952a3246"
+          }
+        },
+        "good": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/310-compute.comp"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/310-compute.comp": "d6eada6604c46477b83d651e7867309c8c74706ff1421fce48a0964284e04f01"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "A075",
+      "kind": "actual_shader_failure_fix",
+      "status": "PASS",
+      "captures": {
+        "bad": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-ssbo-invalid.frag"
+          ],
+          "exit_code": 2,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-ssbo-invalid.frag\nERROR: 0:3: 'std430' : not supported for this version or the enabled extensions \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/300-ssbo-invalid.frag": "75bebc15d3a7cee8cf1dcf7bbce483b64cb7215da5b291f5c3c809aabc4f8580"
+          }
+        },
+        "good": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/310-ssbo.frag"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/310-ssbo.frag": "735b816b5050484013ea3a2d3355430ba08a0a045607b30899f5a437cc794529"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "A076",
+      "kind": "actual_shader_failure_fix",
+      "status": "PASS",
+      "captures": {
+        "bad": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/310-geometry-invalid.geom"
+          ],
+          "exit_code": 2,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/310-geometry-invalid.geom\nERROR: 0:5: 'geometry shaders' : required extension not requested: Possible extensions include:\nGL_EXT_geometry_shader\nGL_OES_geometry_shader\nERROR: 1 compilation errors.  No code generated.\n\n\n",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/310-geometry-invalid.geom": "ad02b00bef492610f923c3ebd391c1695b91c00702ea7158af36a54c76f201eb"
+          }
+        },
+        "good": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/320-geometry.geom"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/320-geometry.geom": "32db5fdba7f042e3fb634776a02b14f4e4898afadbc220a8419de47325471860"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "A077",
+      "kind": "actual_shader_failure_fix",
+      "status": "PASS",
+      "captures": {
+        "bad": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-precision.vert",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-interface-type-mismatch.frag"
+          ],
+          "exit_code": 3,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-precision.vert\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-interface-type-mismatch.frag\nERROR: Linking vertex and fragment stages: Types must match:\n    vertex stage: \" vec3 value\"\n    fragment stage: \" vec2 value\"\n\n",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/300-precision.vert": "320c56de1ee49df6ebe838ee8d797c960c270f4fba22c3049700f6f56b19a408",
+            "examples/validation/shaders/300-interface-type-mismatch.frag": "1333794a96d5a6e32b5ef3a5a9566cce48304c821bd97a2d7cc1bcf460716065"
+          }
+        },
+        "good": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-precision.vert",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-precision.frag"
+          ],
+          "exit_code": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-precision.vert\n/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders/300-precision.frag\n",
+          "stderr": "",
+          "sources_sha256": {
+            "examples/validation/shaders/300-precision.vert": "320c56de1ee49df6ebe838ee8d797c960c270f4fba22c3049700f6f56b19a408",
+            "examples/validation/shaders/300-precision.frag": "842233c987cc4f64f0508a7ba3d169084f62625c17795fcaa1aff979070662cd"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "A078",
+      "kind": "actual_shader_failure_fix",
+      "status": "PASS",
+      "captures": {
+        "bad": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/missing-precision-bad.frag"
+          ],
+          "exit_code": 2,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/missing-precision-bad.frag\nERROR: 0:2: 'float' : type requires declaration of default precision qualifier \nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "stderr": "",
+          "sources_sha256": {
+            "benchmarks/agent/repair-fixtures/shaders/missing-precision-bad.frag": "00fc3fcf8648551f78a2439abfcb787f61c3f1d5119e5f0059cfeb9c1d493f61"
+          }
+        },
+        "good": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/missing-precision-good.frag"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "sources_sha256": {
+            "benchmarks/agent/repair-fixtures/shaders/missing-precision-good.frag": "04e2d972eabb2d2ca042ef097042ab89c4f2e14e98866be43c8258f1f1baa099"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "A079",
+      "kind": "actual_shader_failure_fix",
+      "status": "PASS",
+      "captures": {
+        "bad": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/legacy-fragcolor-bad.frag"
+          ],
+          "exit_code": 2,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/legacy-fragcolor-bad.frag\nERROR: 0:2: 'gl_FragColor' : undeclared identifier \nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "stderr": "",
+          "sources_sha256": {
+            "benchmarks/agent/repair-fixtures/shaders/legacy-fragcolor-bad.frag": "ba0d3ea094ba0b3160f34212288518100e0658c2e66b0ccb4814811083a10028"
+          }
+        },
+        "good": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/legacy-fragcolor-good.frag"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "sources_sha256": {
+            "benchmarks/agent/repair-fixtures/shaders/legacy-fragcolor-good.frag": "04e2d972eabb2d2ca042ef097042ab89c4f2e14e98866be43c8258f1f1baa099"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "A080",
+      "kind": "actual_shader_failure_fix",
+      "status": "PASS",
+      "captures": {
+        "bad": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/vector-type-bad.frag"
+          ],
+          "exit_code": 2,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/vector-type-bad.frag\nERROR: 0:2: '=' :  cannot convert from ' const 3-component vector of float' to ' temp highp float'\nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "stderr": "",
+          "sources_sha256": {
+            "benchmarks/agent/repair-fixtures/shaders/vector-type-bad.frag": "97b9d2ef813605f304840328ad73e3995841892db85093e399fa443d8c64e60b"
+          }
+        },
+        "good": {
+          "command": [
+            "/tmp/gles-local-deps/root/usr/bin/glslangValidator",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/benchmarks/agent/repair-fixtures/shaders/vector-type-good.frag"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "sources_sha256": {
+            "benchmarks/agent/repair-fixtures/shaders/vector-type-good.frag": "281cd02ced84fcbf67261a7c24eaddc9f00d14fb4a36e6247815e6edcbf2a860"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "A065",
+      "kind": "actual_software_runtime_failure_fix",
+      "status": "PASS",
+      "bad": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/A065.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/A065"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/A065",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 1,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n",
+          "stderr": "FAIL: C01 default BACK legal\n"
+        },
+        "scratch_source_sha256": "a28eb52a1b99e4b1df6f39bde1fee59e7c764b821292baa2f56557dbce618ba5",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      },
+      "fixed": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C03-shared-context-fence-flush-wait-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-PBO-map-unmap-upload-fence-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-legacy-PBO-eight-frame-reuse-regression\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-300-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-310-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-320-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"300-binding-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"300-compute-invalid.comp\",\"status\":\"PASS\"}\n{\"case\":\"300-ssbo-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-geometry-invalid.geom\",\"status\":\"PASS\"}\n{\"case\":\"310-binding.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-compute.comp\",\"status\":\"PASS\"}\n{\"case\":\"310-ssbo.frag\",\"status\":\"PASS\"}\n{\"case\":\"320-geometry.geom\",\"status\":\"PASS\"}\n{\"case\":\"C11-varying-precision-difference-legal\",\"status\":\"PASS\"}\n{\"case\":\"C11-interface-type-mismatch-rejected\",\"status\":\"PASS\"}\n{\"case\":\"C04-surface-recreate-resize-preserves-context\",\"status\":\"PASS\"}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C04-controlled-context-rebuild-not-driver-loss\",\"status\":\"PASS\"}\n{\"real_android_lifecycle\":\"NOT_RUN\",\"driver_context_loss\":\"NOT_INJECTED\",\"mobile_gpu_performance\":\"BLOCKED_BY_HARDWARE\"}\n",
+          "stderr": "[INFO] PBO streaming uploader: 3 slots x 4 bytes\n"
+        },
+        "scratch_source_sha256": "ef8d6c5a2304e9cc4487ae25c9e424266a31e1195a30e61b2d51975460a97441",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      }
+    },
+    {
+      "case_id": "A066",
+      "kind": "actual_software_runtime_failure_fix",
+      "status": "PASS",
+      "bad": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/A066.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/A066"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/A066",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 1,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n",
+          "stderr": "FAIL: C01 FBO read attachment legal\n"
+        },
+        "scratch_source_sha256": "9e61261ebc41f566fb0ba507b8b9f02b88fe6ff5bb94cf5c5484d7cab3e0cf38",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      },
+      "fixed": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C03-shared-context-fence-flush-wait-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-PBO-map-unmap-upload-fence-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-legacy-PBO-eight-frame-reuse-regression\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-300-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-310-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-320-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"300-binding-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"300-compute-invalid.comp\",\"status\":\"PASS\"}\n{\"case\":\"300-ssbo-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-geometry-invalid.geom\",\"status\":\"PASS\"}\n{\"case\":\"310-binding.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-compute.comp\",\"status\":\"PASS\"}\n{\"case\":\"310-ssbo.frag\",\"status\":\"PASS\"}\n{\"case\":\"320-geometry.geom\",\"status\":\"PASS\"}\n{\"case\":\"C11-varying-precision-difference-legal\",\"status\":\"PASS\"}\n{\"case\":\"C11-interface-type-mismatch-rejected\",\"status\":\"PASS\"}\n{\"case\":\"C04-surface-recreate-resize-preserves-context\",\"status\":\"PASS\"}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C04-controlled-context-rebuild-not-driver-loss\",\"status\":\"PASS\"}\n{\"real_android_lifecycle\":\"NOT_RUN\",\"driver_context_loss\":\"NOT_INJECTED\",\"mobile_gpu_performance\":\"BLOCKED_BY_HARDWARE\"}\n",
+          "stderr": "[INFO] PBO streaming uploader: 3 slots x 4 bytes\n"
+        },
+        "scratch_source_sha256": "ef8d6c5a2304e9cc4487ae25c9e424266a31e1195a30e61b2d51975460a97441",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      }
+    },
+    {
+      "case_id": "A067",
+      "kind": "actual_software_runtime_failure_fix",
+      "status": "PASS",
+      "bad": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/A067.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/A067"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/A067",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 1,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n",
+          "stderr": "FAIL: C02 sized RGBA8 legal\n"
+        },
+        "scratch_source_sha256": "2d297961466542f52cda0a4b0310c2e724ce129c6dae0079c649ad95fa513188",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      },
+      "fixed": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C03-shared-context-fence-flush-wait-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-PBO-map-unmap-upload-fence-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-legacy-PBO-eight-frame-reuse-regression\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-300-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-310-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-320-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"300-binding-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"300-compute-invalid.comp\",\"status\":\"PASS\"}\n{\"case\":\"300-ssbo-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-geometry-invalid.geom\",\"status\":\"PASS\"}\n{\"case\":\"310-binding.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-compute.comp\",\"status\":\"PASS\"}\n{\"case\":\"310-ssbo.frag\",\"status\":\"PASS\"}\n{\"case\":\"320-geometry.geom\",\"status\":\"PASS\"}\n{\"case\":\"C11-varying-precision-difference-legal\",\"status\":\"PASS\"}\n{\"case\":\"C11-interface-type-mismatch-rejected\",\"status\":\"PASS\"}\n{\"case\":\"C04-surface-recreate-resize-preserves-context\",\"status\":\"PASS\"}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C04-controlled-context-rebuild-not-driver-loss\",\"status\":\"PASS\"}\n{\"real_android_lifecycle\":\"NOT_RUN\",\"driver_context_loss\":\"NOT_INJECTED\",\"mobile_gpu_performance\":\"BLOCKED_BY_HARDWARE\"}\n",
+          "stderr": "[INFO] PBO streaming uploader: 3 slots x 4 bytes\n"
+        },
+        "scratch_source_sha256": "ef8d6c5a2304e9cc4487ae25c9e424266a31e1195a30e61b2d51975460a97441",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      }
+    },
+    {
+      "case_id": "A068",
+      "kind": "actual_software_runtime_failure_fix",
+      "status": "PASS",
+      "bad": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/A068.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/A068"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/A068",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 1,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n",
+          "stderr": "FAIL: C02 sized RGBA8 legal\n"
+        },
+        "scratch_source_sha256": "f7704517c2dda364ac7629678bd87e509297bee55850095c70206cb6b2fefebc",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      },
+      "fixed": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C03-shared-context-fence-flush-wait-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-PBO-map-unmap-upload-fence-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-legacy-PBO-eight-frame-reuse-regression\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-300-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-310-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-320-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"300-binding-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"300-compute-invalid.comp\",\"status\":\"PASS\"}\n{\"case\":\"300-ssbo-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-geometry-invalid.geom\",\"status\":\"PASS\"}\n{\"case\":\"310-binding.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-compute.comp\",\"status\":\"PASS\"}\n{\"case\":\"310-ssbo.frag\",\"status\":\"PASS\"}\n{\"case\":\"320-geometry.geom\",\"status\":\"PASS\"}\n{\"case\":\"C11-varying-precision-difference-legal\",\"status\":\"PASS\"}\n{\"case\":\"C11-interface-type-mismatch-rejected\",\"status\":\"PASS\"}\n{\"case\":\"C04-surface-recreate-resize-preserves-context\",\"status\":\"PASS\"}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C04-controlled-context-rebuild-not-driver-loss\",\"status\":\"PASS\"}\n{\"real_android_lifecycle\":\"NOT_RUN\",\"driver_context_loss\":\"NOT_INJECTED\",\"mobile_gpu_performance\":\"BLOCKED_BY_HARDWARE\"}\n",
+          "stderr": "[INFO] PBO streaming uploader: 3 slots x 4 bytes\n"
+        },
+        "scratch_source_sha256": "ef8d6c5a2304e9cc4487ae25c9e424266a31e1195a30e61b2d51975460a97441",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      }
+    },
+    {
+      "case_id": "A069",
+      "kind": "actual_software_runtime_failure_fix",
+      "status": "PASS",
+      "bad": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/A069.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/A069"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/A069",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 1,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n",
+          "stderr": "FAIL: pixel mismatch\n"
+        },
+        "scratch_source_sha256": "3815ea107b8c22f3844f21e09b80debf3f44832cb4252091388d06c98eacac89",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      },
+      "fixed": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C03-shared-context-fence-flush-wait-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-PBO-map-unmap-upload-fence-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-legacy-PBO-eight-frame-reuse-regression\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-300-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-310-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-320-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"300-binding-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"300-compute-invalid.comp\",\"status\":\"PASS\"}\n{\"case\":\"300-ssbo-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-geometry-invalid.geom\",\"status\":\"PASS\"}\n{\"case\":\"310-binding.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-compute.comp\",\"status\":\"PASS\"}\n{\"case\":\"310-ssbo.frag\",\"status\":\"PASS\"}\n{\"case\":\"320-geometry.geom\",\"status\":\"PASS\"}\n{\"case\":\"C11-varying-precision-difference-legal\",\"status\":\"PASS\"}\n{\"case\":\"C11-interface-type-mismatch-rejected\",\"status\":\"PASS\"}\n{\"case\":\"C04-surface-recreate-resize-preserves-context\",\"status\":\"PASS\"}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C04-controlled-context-rebuild-not-driver-loss\",\"status\":\"PASS\"}\n{\"real_android_lifecycle\":\"NOT_RUN\",\"driver_context_loss\":\"NOT_INJECTED\",\"mobile_gpu_performance\":\"BLOCKED_BY_HARDWARE\"}\n",
+          "stderr": "[INFO] PBO streaming uploader: 3 slots x 4 bytes\n"
+        },
+        "scratch_source_sha256": "ef8d6c5a2304e9cc4487ae25c9e424266a31e1195a30e61b2d51975460a97441",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      }
+    },
+    {
+      "case_id": "A070",
+      "kind": "actual_software_runtime_failure_fix",
+      "status": "PASS",
+      "bad": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/A070.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/A070"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/A070",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 1,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n",
+          "stderr": "FAIL: read pixel\n"
+        },
+        "scratch_source_sha256": "820429595e4311cdb29aedc1c98ef23b859453ed27a05491add8c17ecfd5c8a3",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      },
+      "fixed": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C03-shared-context-fence-flush-wait-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-PBO-map-unmap-upload-fence-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-legacy-PBO-eight-frame-reuse-regression\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-300-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-310-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-320-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"300-binding-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"300-compute-invalid.comp\",\"status\":\"PASS\"}\n{\"case\":\"300-ssbo-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-geometry-invalid.geom\",\"status\":\"PASS\"}\n{\"case\":\"310-binding.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-compute.comp\",\"status\":\"PASS\"}\n{\"case\":\"310-ssbo.frag\",\"status\":\"PASS\"}\n{\"case\":\"320-geometry.geom\",\"status\":\"PASS\"}\n{\"case\":\"C11-varying-precision-difference-legal\",\"status\":\"PASS\"}\n{\"case\":\"C11-interface-type-mismatch-rejected\",\"status\":\"PASS\"}\n{\"case\":\"C04-surface-recreate-resize-preserves-context\",\"status\":\"PASS\"}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C04-controlled-context-rebuild-not-driver-loss\",\"status\":\"PASS\"}\n{\"real_android_lifecycle\":\"NOT_RUN\",\"driver_context_loss\":\"NOT_INJECTED\",\"mobile_gpu_performance\":\"BLOCKED_BY_HARDWARE\"}\n",
+          "stderr": "[INFO] PBO streaming uploader: 3 slots x 4 bytes\n"
+        },
+        "scratch_source_sha256": "ef8d6c5a2304e9cc4487ae25c9e424266a31e1195a30e61b2d51975460a97441",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      }
+    },
+    {
+      "case_id": "A071",
+      "kind": "actual_software_runtime_failure_fix",
+      "status": "PASS",
+      "bad": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/A071.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/A071"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/A071",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 1,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n",
+          "stderr": "FAIL: read pixel\n"
+        },
+        "scratch_source_sha256": "0088bc4aae92b06025ec7ad5535bece17a9bb1b1aa16735eded6f1ad790b5476",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      },
+      "fixed": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C03-shared-context-fence-flush-wait-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-PBO-map-unmap-upload-fence-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-legacy-PBO-eight-frame-reuse-regression\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-300-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-310-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-320-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"300-binding-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"300-compute-invalid.comp\",\"status\":\"PASS\"}\n{\"case\":\"300-ssbo-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-geometry-invalid.geom\",\"status\":\"PASS\"}\n{\"case\":\"310-binding.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-compute.comp\",\"status\":\"PASS\"}\n{\"case\":\"310-ssbo.frag\",\"status\":\"PASS\"}\n{\"case\":\"320-geometry.geom\",\"status\":\"PASS\"}\n{\"case\":\"C11-varying-precision-difference-legal\",\"status\":\"PASS\"}\n{\"case\":\"C11-interface-type-mismatch-rejected\",\"status\":\"PASS\"}\n{\"case\":\"C04-surface-recreate-resize-preserves-context\",\"status\":\"PASS\"}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C04-controlled-context-rebuild-not-driver-loss\",\"status\":\"PASS\"}\n{\"real_android_lifecycle\":\"NOT_RUN\",\"driver_context_loss\":\"NOT_INJECTED\",\"mobile_gpu_performance\":\"BLOCKED_BY_HARDWARE\"}\n",
+          "stderr": "[INFO] PBO streaming uploader: 3 slots x 4 bytes\n"
+        },
+        "scratch_source_sha256": "ef8d6c5a2304e9cc4487ae25c9e424266a31e1195a30e61b2d51975460a97441",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      }
+    },
+    {
+      "case_id": "A072",
+      "kind": "actual_software_runtime_failure_fix",
+      "status": "PASS",
+      "bad": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/A072.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/A072"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/A072",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 1,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C03-shared-context-fence-flush-wait-pixel\",\"status\":\"PASS\"}\n",
+          "stderr": "FAIL: PBO map\n"
+        },
+        "scratch_source_sha256": "ac0f3d5d33475ab595fa649a26c0faa43b09e473128e52bf0eb7459dac655fe4",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      },
+      "fixed": {
+        "build": {
+          "command": [
+            "c++",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-pedantic",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline.cpp",
+            "-lEGL",
+            "-lGLESv2",
+            "-pthread",
+            "-o",
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "run": {
+          "command": [
+            "/tmp/gles-repair-controls-tiyn4_xd/fixed-baseline",
+            "/workspace/scratch/62d43a81bbde/gles-v104-20261101/examples/validation/shaders"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"CapabilitySnapshot\":{\"platform\":\"host EGL pbuffer\",\"android_api\":null,\"angle_backend\":null,\"egl_vendor\":\"Mesa Project\",\"egl_version\":\"1.5\",\"egl_extensions\":\"EGL_ANDROID_blob_cache EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_query_driver EGL_MESA_x11_native_visual_id \",\"gl_vendor\":\"Mesa\",\"gl_renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"gl_version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"gles_major\":3,\"gles_minor\":2,\"max_texture_size\":16384,\"max_color_attachments\":8,\"glFenceSync_entrypoint\":true,\"gl_extensions\":[\"GL_ANDROID_extension_pack_es31a\",\"GL_ANGLE_pack_reverse_row_order\",\"GL_ANGLE_texture_compression_dxt3\",\"GL_ANGLE_texture_compression_dxt5\",\"GL_APPLE_sync\",\"GL_APPLE_texture_max_level\",\"GL_ARM_shader_framebuffer_fetch_depth_stencil\",\"GL_EXT_EGL_image_storage\",\"GL_EXT_EGL_image_storage_compression\",\"GL_EXT_base_instance\",\"GL_EXT_blend_func_extended\",\"GL_EXT_blend_minmax\",\"GL_EXT_buffer_storage\",\"GL_EXT_clear_texture\",\"GL_EXT_clip_control\",\"GL_EXT_clip_cull_distance\",\"GL_EXT_color_buffer_float\",\"GL_EXT_color_buffer_half_float\",\"GL_EXT_compressed_ETC1_RGB8_sub_texture\",\"GL_EXT_conservative_depth\",\"GL_EXT_copy_image\",\"GL_EXT_debug_label\",\"GL_EXT_depth_clamp\",\"GL_EXT_discard_framebuffer\",\"GL_EXT_disjoint_timer_query\",\"GL_EXT_draw_buffers\",\"GL_EXT_draw_buffers_indexed\",\"GL_EXT_draw_elements_base_vertex\",\"GL_EXT_draw_instanced\",\"GL_EXT_float_blend\",\"GL_EXT_frag_depth\",\"GL_EXT_geometry_point_size\",\"GL_EXT_geometry_shader\",\"GL_EXT_gpu_shader5\",\"GL_EXT_instanced_arrays\",\"GL_EXT_map_buffer_range\",\"GL_EXT_memory_object\",\"GL_EXT_memory_object_fd\",\"GL_EXT_multi_draw_arrays\",\"GL_EXT_multi_draw_indirect\",\"GL_EXT_occlusion_query_boolean\",\"GL_EXT_polygon_offset_clamp\",\"GL_EXT_primitive_bounding_box\",\"GL_EXT_read_format_bgra\",\"GL_EXT_render_snorm\",\"GL_EXT_robustness\",\"GL_EXT_sRGB_write_control\",\"GL_EXT_separate_shader_objects\",\"GL_EXT_shader_framebuffer_fetch\",\"GL_EXT_shader_framebuffer_fetch_non_coherent\",\"GL_EXT_shader_group_vote\",\"GL_EXT_shader_implicit_conversions\",\"GL_EXT_shader_integer_mix\",\"GL_EXT_shader_io_blocks\",\"GL_EXT_shadow_samplers\",\"GL_EXT_tessellation_point_size\",\"GL_EXT_tessellation_shader\",\"GL_EXT_texture_border_clamp\",\"GL_EXT_texture_buffer\",\"GL_EXT_texture_compression_bptc\",\"GL_EXT_texture_compression_dxt1\",\"GL_EXT_texture_compression_rgtc\",\"GL_EXT_texture_compression_s3tc\",\"GL_EXT_texture_compression_s3tc_srgb\",\"GL_EXT_texture_cube_map_array\",\"GL_EXT_texture_filter_anisotropic\",\"GL_EXT_texture_filter_minmax\",\"GL_EXT_texture_format_BGRA8888\",\"GL_EXT_texture_mirror_clamp_to_edge\",\"GL_EXT_texture_norm16\",\"GL_EXT_texture_query_lod\",\"GL_EXT_texture_rg\",\"GL_EXT_texture_sRGB_R8\",\"GL_EXT_texture_sRGB_RG8\",\"GL_EXT_texture_sRGB_decode\",\"GL_EXT_texture_shadow_lod\",\"GL_EXT_texture_storage\",\"GL_EXT_texture_storage_compression\",\"GL_EXT_texture_type_2_10_10_10_REV\",\"GL_EXT_texture_view\",\"GL_EXT_unpack_subimage\",\"GL_KHR_blend_equation_advanced\",\"GL_KHR_blend_equation_advanced_coherent\",\"GL_KHR_context_flush_control\",\"GL_KHR_debug\",\"GL_KHR_no_error\",\"GL_KHR_parallel_shader_compile\",\"GL_KHR_robust_buffer_access_behavior\",\"GL_KHR_robustness\",\"GL_KHR_texture_compression_astc_ldr\",\"GL_KHR_texture_compression_astc_sliced_3d\",\"GL_MESA_bgra\",\"GL_MESA_framebuffer_flip_y\",\"GL_MESA_sampler_objects\",\"GL_MESA_shader_integer_functions\",\"GL_NV_alpha_to_coverage_dither_control\",\"GL_NV_conditional_render\",\"GL_NV_draw_buffers\",\"GL_NV_fbo_color_attachments\",\"GL_NV_generate_mipmap_sRGB\",\"GL_NV_image_formats\",\"GL_NV_pack_subimage\",\"GL_NV_pixel_buffer_object\",\"GL_NV_read_buffer\",\"GL_NV_read_depth\",\"GL_NV_read_depth_stencil\",\"GL_NV_read_stencil\",\"GL_NV_shader_noperspective_interpolation\",\"GL_NV_texture_barrier\",\"GL_OES_EGL_image\",\"GL_OES_EGL_image_external\",\"GL_OES_EGL_image_external_essl3\",\"GL_OES_EGL_sync\",\"GL_OES_compressed_ETC1_RGB8_texture\",\"GL_OES_copy_image\",\"GL_OES_depth24\",\"GL_OES_depth_texture\",\"GL_OES_depth_texture_cube_map\",\"GL_OES_draw_buffers_indexed\",\"GL_OES_draw_elements_base_vertex\",\"GL_OES_element_index_uint\",\"GL_OES_fbo_render_mipmap\",\"GL_OES_geometry_point_size\",\"GL_OES_geometry_shader\",\"GL_OES_get_program_binary\",\"GL_OES_gpu_shader5\",\"GL_OES_mapbuffer\",\"GL_OES_packed_depth_stencil\",\"GL_OES_primitive_bounding_box\",\"GL_OES_required_internalformat\",\"GL_OES_rgb8_rgba8\",\"GL_OES_sample_shading\",\"GL_OES_sample_variables\",\"GL_OES_shader_image_atomic\",\"GL_OES_shader_io_blocks\",\"GL_OES_shader_multisample_interpolation\",\"GL_OES_standard_derivatives\",\"GL_OES_stencil8\",\"GL_OES_surfaceless_context\",\"GL_OES_tessellation_point_size\",\"GL_OES_tessellation_shader\",\"GL_OES_texture_3D\",\"GL_OES_texture_border_clamp\",\"GL_OES_texture_buffer\",\"GL_OES_texture_cube_map_array\",\"GL_OES_texture_float\",\"GL_OES_texture_float_linear\",\"GL_OES_texture_half_float\",\"GL_OES_texture_half_float_linear\",\"GL_OES_texture_npot\",\"GL_OES_texture_stencil8\",\"GL_OES_texture_storage_multisample_2d_array\",\"GL_OES_texture_view\",\"GL_OES_vertex_array_object\",\"GL_OES_vertex_half_float\",\"GL_OES_viewport_array\",\"GL_OVR_multiview\",\"GL_OVR_multiview2\"]}}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C03-shared-context-fence-flush-wait-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-PBO-map-unmap-upload-fence-pixel\",\"status\":\"PASS\"}\n{\"case\":\"W4-legacy-PBO-eight-frame-reuse-regression\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-300-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-310-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"GLSL-320-compile-link-and-negative\",\"status\":\"PASS\"}\n{\"case\":\"300-binding-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"300-compute-invalid.comp\",\"status\":\"PASS\"}\n{\"case\":\"300-ssbo-invalid.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-geometry-invalid.geom\",\"status\":\"PASS\"}\n{\"case\":\"310-binding.frag\",\"status\":\"PASS\"}\n{\"case\":\"310-compute.comp\",\"status\":\"PASS\"}\n{\"case\":\"310-ssbo.frag\",\"status\":\"PASS\"}\n{\"case\":\"320-geometry.geom\",\"status\":\"PASS\"}\n{\"case\":\"C11-varying-precision-difference-legal\",\"status\":\"PASS\"}\n{\"case\":\"C11-interface-type-mismatch-rejected\",\"status\":\"PASS\"}\n{\"case\":\"C04-surface-recreate-resize-preserves-context\",\"status\":\"PASS\"}\n{\"case\":\"C01-read-buffer-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C02-format-positive-negative\",\"status\":\"PASS\"}\n{\"case\":\"C06-preserve-color-after-depth-invalidate\",\"status\":\"PASS\"}\n{\"case\":\"C04-controlled-context-rebuild-not-driver-loss\",\"status\":\"PASS\"}\n{\"real_android_lifecycle\":\"NOT_RUN\",\"driver_context_loss\":\"NOT_INJECTED\",\"mobile_gpu_performance\":\"BLOCKED_BY_HARDWARE\"}\n",
+          "stderr": "[INFO] PBO streaming uploader: 3 slots x 4 bytes\n"
+        },
+        "scratch_source_sha256": "ef8d6c5a2304e9cc4487ae25c9e424266a31e1195a30e61b2d51975460a97441",
+        "base_source_sha256": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+        "import_sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+      }
+    },
+    {
+      "case_id": "A081",
+      "kind": "actual_scene_visual_failure_fix",
+      "status": "PASS",
+      "source_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+      "report_sha256": "b2c971bff044683e404c6f57884d932fc97042ccafa2fdd462a36321fb1b3d0e",
+      "baseline": [
+        {
+          "scene": "S01",
+          "variant": "baseline",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 58.7729,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S01",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S01-baseline.ppm",
+            "96",
+            "64",
+            "baseline"
+          ],
+          "image_sha256": "969c9f7a0016e33307cdcec92cfbe4ce5a13d3b95be13f73f05a9015fd8dff1b",
+          "stderr": "",
+          "golden": {
+            "mae_8bit": 0.0,
+            "max_error_8bit": 0,
+            "fraction_channels_over_8": 0.0,
+            "pass": true
+          }
+        }
+      ],
+      "degraded": [
+        {
+          "scene": "S01",
+          "variant": "degraded",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 64.9587,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S01",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S01-degraded.ppm",
+            "96",
+            "64",
+            "degraded"
+          ],
+          "image_sha256": "8ff5883328c66bc88254fb96b4d2c951105e6a1448fbe977ba90570b26ee70c2",
+          "stderr": "",
+          "baseline_difference": {
+            "mae_8bit": 38.06984230324074,
+            "max_error_8bit": 146,
+            "fraction_channels_over_8": 0.7783926504629629,
+            "pass": false
+          },
+          "expected_visual_match": false,
+          "expectation_met": true
+        }
+      ]
+    },
+    {
+      "case_id": "A082",
+      "kind": "actual_scene_visual_failure_fix",
+      "status": "PASS",
+      "source_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+      "report_sha256": "b2c971bff044683e404c6f57884d932fc97042ccafa2fdd462a36321fb1b3d0e",
+      "baseline": [
+        {
+          "scene": "S02",
+          "variant": "baseline",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 143.81,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S02",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S02-baseline.ppm",
+            "96",
+            "64",
+            "baseline"
+          ],
+          "image_sha256": "5bf3ca0af48734dfb1e08fd960adc109e8c55d928bb91468b6d1b8d914c7b17b",
+          "stderr": "",
+          "golden": {
+            "mae_8bit": 0.0,
+            "max_error_8bit": 0,
+            "fraction_channels_over_8": 0.0,
+            "pass": true
+          }
+        }
+      ],
+      "degraded": [
+        {
+          "scene": "S02",
+          "variant": "degraded",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 147.049,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S02",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S02-degraded.ppm",
+            "96",
+            "64",
+            "degraded"
+          ],
+          "image_sha256": "285ae6ab26e8f9e022b1f16ec844284624c7a19c5acab24e9f4235fcab06cdd4",
+          "stderr": "",
+          "baseline_difference": {
+            "mae_8bit": 7.7529296875,
+            "max_error_8bit": 55,
+            "fraction_channels_over_8": 0.2837818287037037,
+            "pass": false
+          },
+          "expected_visual_match": false,
+          "expectation_met": true
+        }
+      ]
+    },
+    {
+      "case_id": "A083",
+      "kind": "actual_scene_visual_failure_fix",
+      "status": "PASS",
+      "source_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+      "report_sha256": "b2c971bff044683e404c6f57884d932fc97042ccafa2fdd462a36321fb1b3d0e",
+      "baseline": [
+        {
+          "scene": "S03",
+          "variant": "baseline",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 134.841,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S03",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S03-baseline.ppm",
+            "96",
+            "64",
+            "baseline"
+          ],
+          "image_sha256": "7e1f41e6250999f272d971af4db58822837d0221699fb80a0073bb403f9ed47f",
+          "stderr": "",
+          "golden": {
+            "mae_8bit": 0.0,
+            "max_error_8bit": 0,
+            "fraction_channels_over_8": 0.0,
+            "pass": true
+          }
+        }
+      ],
+      "degraded": [
+        {
+          "scene": "S03",
+          "variant": "degraded",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 122.038,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S03",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S03-degraded.ppm",
+            "96",
+            "64",
+            "degraded"
+          ],
+          "image_sha256": "e21b8c2ddf15f62819437e29287737d07af6fdb9e714b556b862210b15b107d0",
+          "stderr": "",
+          "baseline_difference": {
+            "mae_8bit": 2.883427372685185,
+            "max_error_8bit": 120,
+            "fraction_channels_over_8": 0.080078125,
+            "pass": false
+          },
+          "expected_visual_match": false,
+          "expectation_met": true
+        }
+      ]
+    },
+    {
+      "case_id": "A084",
+      "kind": "actual_scene_visual_failure_fix",
+      "status": "PASS",
+      "source_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+      "report_sha256": "b2c971bff044683e404c6f57884d932fc97042ccafa2fdd462a36321fb1b3d0e",
+      "baseline": [
+        {
+          "scene": "S04",
+          "variant": "baseline",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 255.954,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S04",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S04-baseline.ppm",
+            "96",
+            "64",
+            "baseline"
+          ],
+          "image_sha256": "94eb20c61fbb1b42fd98f4e9a944a6336d70b543d6fb8bca04da3c816f21d64d",
+          "stderr": "",
+          "golden": {
+            "mae_8bit": 0.0,
+            "max_error_8bit": 0,
+            "fraction_channels_over_8": 0.0,
+            "pass": true
+          }
+        }
+      ],
+      "degraded": [
+        {
+          "scene": "S04",
+          "variant": "degraded",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 197.141,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S04",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S04-degraded.ppm",
+            "96",
+            "64",
+            "degraded"
+          ],
+          "image_sha256": "d53d3273fa65cbff0452e212c63d18689110acba9d8e0588316e7ca9a4950da5",
+          "stderr": "",
+          "baseline_difference": {
+            "mae_8bit": 51.513454861111114,
+            "max_error_8bit": 73,
+            "fraction_channels_over_8": 0.9958767361111112,
+            "pass": false
+          },
+          "expected_visual_match": false,
+          "expectation_met": true
+        }
+      ]
+    },
+    {
+      "case_id": "A085",
+      "kind": "actual_scene_visual_failure_fix",
+      "status": "PASS",
+      "source_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+      "report_sha256": "b2c971bff044683e404c6f57884d932fc97042ccafa2fdd462a36321fb1b3d0e",
+      "baseline": [
+        {
+          "scene": "S05",
+          "variant": "baseline",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 179.28,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S05",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S05-baseline.ppm",
+            "96",
+            "64",
+            "baseline"
+          ],
+          "image_sha256": "ba0e5e2fc3fd2d8edca2234f1973b25b24120eec72c46c767ac2df2dddc06e88",
+          "stderr": "",
+          "golden": {
+            "mae_8bit": 0.0,
+            "max_error_8bit": 0,
+            "fraction_channels_over_8": 0.0,
+            "pass": true
+          }
+        }
+      ],
+      "degraded": [
+        {
+          "scene": "S05",
+          "variant": "degraded",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 106.818,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S05",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S05-degraded.ppm",
+            "96",
+            "64",
+            "degraded"
+          ],
+          "image_sha256": "6a95705c8afb2690164a40fcb6387f89b2520bfd429c354ba8df76f5dc419f81",
+          "stderr": "",
+          "baseline_difference": {
+            "mae_8bit": 14.244068287037036,
+            "max_error_8bit": 215,
+            "fraction_channels_over_8": 0.2082248263888889,
+            "pass": false
+          },
+          "expected_visual_match": false,
+          "expectation_met": true
+        }
+      ]
+    },
+    {
+      "case_id": "A086",
+      "kind": "actual_scene_visual_failure_fix",
+      "status": "PASS",
+      "source_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+      "report_sha256": "b2c971bff044683e404c6f57884d932fc97042ccafa2fdd462a36321fb1b3d0e",
+      "baseline": [
+        {
+          "scene": "S06",
+          "variant": "baseline",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 59.1459,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S06",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S06-baseline.ppm",
+            "96",
+            "64",
+            "baseline"
+          ],
+          "image_sha256": "5cc3aa74bac388482464a1451cfff06132ca2a775b2f14281aa4ad098138a7df",
+          "stderr": "",
+          "golden": {
+            "mae_8bit": 0.0,
+            "max_error_8bit": 0,
+            "fraction_channels_over_8": 0.0,
+            "pass": true
+          }
+        }
+      ],
+      "degraded": [
+        {
+          "scene": "S06",
+          "variant": "degraded",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 55.957,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S06",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S06-degraded.ppm",
+            "96",
+            "64",
+            "degraded"
+          ],
+          "image_sha256": "0181f9b2267798dc78049071386aebdfb8cc472ab4d95b2660134ae82aad24d9",
+          "stderr": "",
+          "baseline_difference": {
+            "mae_8bit": 68.8963035300926,
+            "max_error_8bit": 249,
+            "fraction_channels_over_8": 0.6428674768518519,
+            "pass": false
+          },
+          "expected_visual_match": false,
+          "expectation_met": true
+        }
+      ]
+    },
+    {
+      "case_id": "A087",
+      "kind": "actual_scene_visual_failure_fix",
+      "status": "PASS",
+      "source_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+      "report_sha256": "b2c971bff044683e404c6f57884d932fc97042ccafa2fdd462a36321fb1b3d0e",
+      "baseline": [
+        {
+          "scene": "S07",
+          "variant": "baseline",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 92.1272,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S07",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S07-baseline.ppm",
+            "96",
+            "64",
+            "baseline"
+          ],
+          "image_sha256": "4a2659867b8756f41cf700e59108aed602d539e0cfe22429e7e18aa962250218",
+          "stderr": "",
+          "golden": {
+            "mae_8bit": 0.0,
+            "max_error_8bit": 0,
+            "fraction_channels_over_8": 0.0,
+            "pass": true
+          }
+        }
+      ],
+      "degraded": [
+        {
+          "scene": "S07",
+          "variant": "degraded",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 49.5412,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S07",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S07-degraded.ppm",
+            "96",
+            "64",
+            "degraded"
+          ],
+          "image_sha256": "a0f2f1a0fbd315f2a551d954ef8feff6a874536b9cdac884abef856cce1532b7",
+          "stderr": "",
+          "baseline_difference": {
+            "mae_8bit": 12.53761574074074,
+            "max_error_8bit": 217,
+            "fraction_channels_over_8": 0.10706018518518519,
+            "pass": false
+          },
+          "expected_visual_match": false,
+          "expectation_met": true
+        }
+      ]
+    },
+    {
+      "case_id": "A088",
+      "kind": "actual_scene_visual_failure_fix",
+      "status": "PASS",
+      "source_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9",
+      "report_sha256": "b2c971bff044683e404c6f57884d932fc97042ccafa2fdd462a36321fb1b3d0e",
+      "baseline": [
+        {
+          "scene": "S08",
+          "variant": "baseline",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 59.6539,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S08",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S08-baseline.ppm",
+            "96",
+            "64",
+            "baseline"
+          ],
+          "image_sha256": "e790fffadd29591f0f900fc4d354dc61e677d0ebd39fea906250caf540107bb0",
+          "stderr": "",
+          "golden": {
+            "mae_8bit": 0.0,
+            "max_error_8bit": 0,
+            "fraction_channels_over_8": 0.0,
+            "pass": true
+          }
+        }
+      ],
+      "degraded": [
+        {
+          "scene": "S08",
+          "variant": "degraded",
+          "seed": 1337,
+          "size": 96,
+          "instances": 64,
+          "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+          "cpu_wall_including_compile_readback_ms": 58.9931,
+          "gpu_time_ms": null,
+          "hardware_performance": "NOT_MEASURED",
+          "command": [
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/build/scene-lab",
+            "S08",
+            "docs/v1.0.4/evidence/repair-scenes-1793522829289191590/images/S08-degraded.ppm",
+            "96",
+            "64",
+            "degraded"
+          ],
+          "image_sha256": "d8acf3b8c77b5f67058081ed86c5825887dc854ca0face4e3e16da64ffcef31e",
+          "stderr": "",
+          "baseline_difference": {
+            "mae_8bit": 54.7255859375,
+            "max_error_8bit": 160,
+            "fraction_channels_over_8": 0.8564814814814815,
+            "pass": false
+          },
+          "expected_visual_match": false,
+          "expectation_met": true
+        }
+      ]
+    }
+  ]
+}

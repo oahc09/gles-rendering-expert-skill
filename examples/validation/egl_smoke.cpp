@@ -287,4 +287,5 @@ int main(int argc,char** argv) {
         shaders(argc>1 ? argv[1] : "examples/validation/shaders"); lifecycle(session);
         std::cout << "{\"real_android_lifecycle\":\"NOT_RUN\",\"driver_context_loss\":\"NOT_INJECTED\",\"mobile_gpu_performance\":\"BLOCKED_BY_HARDWARE\"}\n";
     } catch(const std::exception& e) { std::cerr << "FAIL: "<<e.what()<<'\n'; return 1; }
+    return 0;
 }

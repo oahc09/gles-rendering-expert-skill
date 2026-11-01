@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22.1)
+project(gles_ahb_case LANGUAGES CXX)
+add_library(gles_ahb_case SHARED ahb_texture.cpp)
+target_compile_features(gles_ahb_case PRIVATE cxx_std_17)
+target_compile_options(gles_ahb_case PRIVATE -Wall -Wextra -Werror -pedantic)
+target_link_options(gles_ahb_case PRIVATE -Wl,--no-undefined -Wl,-z,max-page-size=16384)
+target_link_libraries(gles_ahb_case PRIVATE android EGL GLESv3 log)

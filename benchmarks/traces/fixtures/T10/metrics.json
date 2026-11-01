@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp_ms": 0,
+    "metric": "gpu_ms",
+    "value": 18,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "gpu_ms",
+    "value": 18,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "gpu_ms",
+    "value": 18,
+    "unit": "ms"
+  }
+]

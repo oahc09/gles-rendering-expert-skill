@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "source": "synthetic-fixture",
+  "license": "MIT; authored synthetic fixture, not captured hardware",
+  "provenance": "synthetic",
+  "device": "synthetic",
+  "gpu": "synthetic",
+  "driver": "synthetic",
+  "backend": "synthetic",
+  "build": "fixture-v1",
+  "time_range": [
+    0,
+    32
+  ],
+  "aggregation": "individual_samples",
+  "metrics": {
+    "fragment_busy_pct": {
+      "unit": "percent",
+      "sample_method": "authored synthetic samples"
+    },
+    "gpu_ms": {
+      "unit": "ms",
+      "sample_method": "authored synthetic samples"
+    }
+  },
+  "raw_artifacts": [
+    {
+      "path": "metrics.json",
+      "sha256": "4afd56a7d49c18bf1dad0a0e20ce39cf77abac8229a8df0acf7450d760566ac4",
+      "format": "json"
+    }
+  ],
+  "missing": [
+    "cpu_submit_ms",
+    "frame_ms",
+    "tiler_busy_pct",
+    "bandwidth_pct_peak",
+    "sync_wait_ms",
+    "shader_compile_ms",
+    "temperature_c",
+    "clock_mhz",
+    "swap_wait_ms",
+    "vertex_count"
+  ]
+}

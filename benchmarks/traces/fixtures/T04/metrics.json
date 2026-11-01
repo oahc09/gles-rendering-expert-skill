@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp_ms": 0,
+    "metric": "bandwidth_pct_peak",
+    "value": 94,
+    "unit": "percent"
+  },
+  {
+    "timestamp_ms": 0,
+    "metric": "gpu_ms",
+    "value": 14,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "bandwidth_pct_peak",
+    "value": 94,
+    "unit": "percent"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "gpu_ms",
+    "value": 14,
+    "unit": "ms"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "bandwidth_pct_peak",
+    "value": 94,
+    "unit": "percent"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "gpu_ms",
+    "value": 14,
+    "unit": "ms"
+  }
+]

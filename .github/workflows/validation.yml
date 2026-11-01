@@ -6,7 +6,11 @@ permissions:
 jobs:
   host-contracts:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 25
+    env:
+      EGL_PLATFORM: surfaceless
+      LIBGL_ALWAYS_SOFTWARE: '1'
+      MESA_SHADER_CACHE_DISABLE: 'true'
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Install host-only validation toolchain
@@ -33,3 +37,17 @@ jobs:
         run: python3 -m unittest discover -s tools -p 'test_*.py' -v
       - name: Release gate remains separate
         run: python3 tools/check_release_gates.py
+      - name: v1.0.4 software scene correctness (not mobile performance)
+        run: |
+          sh examples/scenes/run-host.sh S01 /tmp/scene-build-smoke.ppm 96 64 baseline
+          python3 benchmarks/scenes/run.py --output reports/scenes --sweep
+      - name: v1.0.4 lab/trace/Android source contracts (not APK/device acceptance)
+        run: |
+          python3 -m unittest discover -s benchmarks/scenes -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/device_lab -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/traces -p 'test_*.py' -v
+          python3 -m unittest discover -s examples/android_cases -p 'test_*.py' -v
+      - name: v1.0.4 actual controlled failure/fix reproduction (not model patches)
+        run: python3 benchmarks/agent/reproduce_repairs.py --output reports/repair-reproduction.json
+      - name: v1.0.4 candidate bookkeeping (release remains separately blocked)
+        run: python3 tools/check_release_gates.py --gates v1.0.4

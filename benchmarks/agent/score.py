@@ -50,6 +50,22 @@ def score(summary, adjudications, cases):
             if not all(compile_result.get(k) for k in ('command','artifact_sha256','log_sha256','environment')):
                 raise ValueError('Compile result requires command/artifact/log hashes and environment')
             group['compile_tested']+=1; group['compile_pass']+=compile_result['status']=='PASS'
+        if labels[key[0]].get('repair'):
+            for metric in ('root_cause_hit','unsupported_performance_claim'):
+                value=row.get(metric)
+                if value is not None and not isinstance(value,bool):
+                    raise ValueError(metric+' must be boolean or null')
+                group.setdefault(metric+'_reviewed',0);group.setdefault(metric+'_count',0)
+                if value is not None:
+                    group[metric+'_reviewed']+=1;group[metric+'_count']+=value
+            regression=row.get('repair_regression',{'status':'NOT_RUN'})
+            if regression.get('status') not in ('PASS','FAIL','NOT_RUN','NOT_APPLICABLE'):
+                raise ValueError('Invalid repair regression status')
+            group.setdefault('repair_regression_tested',0);group.setdefault('repair_regression_pass',0)
+            if regression['status'] in ('PASS','FAIL'):
+                if not all(regression.get(k) for k in ('command','artifact_sha256','log_sha256','environment')):
+                    raise ValueError('Repair regression requires actual artifact/log evidence')
+                group['repair_regression_tested']+=1;group['repair_regression_pass']+=regression['status']=='PASS'
         mode=labels[key[0]]['mode']
         for label,mode_name in (('debug','Diagnose'),('performance','Optimize')):
             if mode==mode_name:
@@ -59,6 +75,11 @@ def score(summary, adjudications, cases):
                 group[label+'_reviewed']+=1; group[label+'_complete']+=value
     for group in results.values():
         group.update({'finding_recall':ratio(group['tp'],group['tp']+group['fn']), 'finding_precision':ratio(group['tp'],group['tp']+group['fp']), 'legal_control_false_positive_rate':ratio(group['rejected_legal_controls'],group['legal_controls']), 'compile_success_rate':ratio(group['compile_pass'],group['compile_tested']), 'debug_completeness_rate':ratio(group['debug_complete'],group['debug_reviewed']), 'performance_completeness_rate':ratio(group['performance_complete'],group['performance_reviewed'])})
+    for group in results.values():
+        if 'root_cause_hit_reviewed' in group:
+            group['root_cause_hit_rate']=ratio(group['root_cause_hit_count'],group['root_cause_hit_reviewed'])
+            group['unsupported_performance_claim_rate']=ratio(group['unsupported_performance_claim_count'],group['unsupported_performance_claim_reviewed'])
+            group['repair_regression_success_rate']=ratio(group['repair_regression_pass'],group['repair_regression_tested'])
     paired=sum((case_id,'no_skill') in seen and (case_id,'with_skill') in seen for case_id in labels)
     return {'status':'REVIEWED' if len(seen)==len(actual) and actual else 'PARTIAL_REVIEW','adjudicated_responses':len(seen),'paired_cases':paired,'metrics':results,'limitations':'Human-adjudicated rubric; not automatic semantic truth. Compile, hardware runtime and performance are independent. Null means no evidence, not zero.'}
 
@@ -75,15 +96,18 @@ if __name__=='__main__':
         raise ValueError('Corpus changed since response capture; use the original corpus')
     adjudications=json.loads(args.adjudications.read_text())
     for row in adjudications:
-        compilation=row.get('compile',{})
-        if compilation.get('status') in ('PASS','FAIL'):
-            if not args.evidence_root:
-                raise ValueError('Compile claim requires --evidence-root')
-            root=args.evidence_root.resolve()
-            for kind in ('artifact','log'):
-                evidence=(root/compilation[kind+'_file']).resolve()
-                if not evidence.is_relative_to(root) or hashlib.sha256(evidence.read_bytes()).hexdigest()!=compilation[kind+'_sha256']:
-                    raise ValueError('Compile evidence missing, outside root, or hash mismatched')
+        for evidence_kind in ('compile','repair_regression'):
+            compilation=row.get(evidence_kind,{})
+            if compilation.get('status') not in ('PASS','FAIL'):
+                continue
+            if compilation.get('status') in ('PASS','FAIL'):
+                if not args.evidence_root:
+                    raise ValueError('Compile claim requires --evidence-root')
+                root=args.evidence_root.resolve()
+                for kind in ('artifact','log'):
+                    evidence=(root/compilation[kind+'_file']).resolve()
+                    if not evidence.is_relative_to(root) or hashlib.sha256(evidence.read_bytes()).hexdigest()!=compilation[kind+'_sha256']:
+                        raise ValueError('Compile evidence missing, outside root, or hash mismatched')
     for result in summary['results']:
         path=args.run/result['response_file']
         if path.resolve().parent!=args.run.resolve() or digest(path.read_text())!=result['response_sha256']:

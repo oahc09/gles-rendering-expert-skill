@@ -1,0 +1,90 @@
+[
+  {
+    "id": "T01",
+    "expected_hypotheses": [
+      "cpu_submit_bound"
+    ],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T01/trace-manifest.json"
+  },
+  {
+    "id": "T02",
+    "expected_hypotheses": [
+      "fragment_bound"
+    ],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T02/trace-manifest.json"
+  },
+  {
+    "id": "T03",
+    "expected_hypotheses": [
+      "geometry_bound"
+    ],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T03/trace-manifest.json"
+  },
+  {
+    "id": "T04",
+    "expected_hypotheses": [
+      "bandwidth_bound"
+    ],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T04/trace-manifest.json"
+  },
+  {
+    "id": "T05",
+    "expected_hypotheses": [
+      "sync_stall"
+    ],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T05/trace-manifest.json"
+  },
+  {
+    "id": "T06",
+    "expected_hypotheses": [
+      "shader_compile_hitch"
+    ],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T06/trace-manifest.json"
+  },
+  {
+    "id": "T07",
+    "expected_hypotheses": [
+      "thermal_drift"
+    ],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T07/trace-manifest.json"
+  },
+  {
+    "id": "T08",
+    "expected_hypotheses": [
+      "swap_backpressure"
+    ],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T08/trace-manifest.json"
+  },
+  {
+    "id": "T09",
+    "expected_hypotheses": [],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T09/trace-manifest.json"
+  },
+  {
+    "id": "T10",
+    "expected_hypotheses": [],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T10/trace-manifest.json"
+  },
+  {
+    "id": "T11",
+    "expected_hypotheses": [],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T11/trace-manifest.json"
+  },
+  {
+    "id": "T12",
+    "expected_hypotheses": [],
+    "ground_truth_origin": "authored triage mechanism; not measured device evidence",
+    "manifest": "T12/trace-manifest.json"
+  }
+]

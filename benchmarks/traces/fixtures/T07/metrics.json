@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp_ms": 0,
+    "metric": "temperature_c",
+    "value": 84,
+    "unit": "C"
+  },
+  {
+    "timestamp_ms": 0,
+    "metric": "clock_mhz",
+    "value": 250,
+    "unit": "MHz"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "temperature_c",
+    "value": 84,
+    "unit": "C"
+  },
+  {
+    "timestamp_ms": 16,
+    "metric": "clock_mhz",
+    "value": 250,
+    "unit": "MHz"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "temperature_c",
+    "value": 84,
+    "unit": "C"
+  },
+  {
+    "timestamp_ms": 32,
+    "metric": "clock_mhz",
+    "value": 250,
+    "unit": "MHz"
+  }
+]

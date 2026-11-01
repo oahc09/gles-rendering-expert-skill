@@ -1,0 +1,26 @@
+test_all_pass_wrong_version_rejected (test_release_gates.ReleaseTests.test_all_pass_wrong_version_rejected) ... ok
+test_candidate_not_ready (test_release_gates.ReleaseTests.test_candidate_not_ready) ... ok
+test_consistent_full_acceptance (test_release_gates.ReleaseTests.test_consistent_full_acceptance) ... ok
+test_lie_release_flag_rejected (test_release_gates.ReleaseTests.test_lie_release_flag_rejected) ... ok
+test_missing_work_package_rejected (test_release_gates.ReleaseTests.test_missing_work_package_rejected) ... ok
+test_premature_bump_rejected (test_release_gates.ReleaseTests.test_premature_bump_rejected) ... ok
+test_compile_error_is_expected_rejection (test_shader_runner.ShaderOutcomeTests.test_compile_error_is_expected_rejection) ... ok
+test_link_error_is_expected_rejection (test_shader_runner.ShaderOutcomeTests.test_link_error_is_expected_rejection) ... ok
+test_missing_file_is_not_rejection (test_shader_runner.ShaderOutcomeTests.test_missing_file_is_not_rejection) ... ok
+test_positive_needs_success (test_shader_runner.ShaderOutcomeTests.test_positive_needs_success) ... ok
+test_signal_is_not_rejection (test_shader_runner.ShaderOutcomeTests.test_signal_is_not_rejection) ... ok
+test_silent_exit_is_not_rejection (test_shader_runner.ShaderOutcomeTests.test_silent_exit_is_not_rejection) ... ok
+test_future_prior_release_preserves_its_metadata_until_new_ready (test_v104_gates.V104GateTests.test_future_prior_release_preserves_its_metadata_until_new_ready) ... ok
+test_inconsistent_prior_flag_rejected (test_v104_gates.V104GateTests.test_inconsistent_prior_flag_rejected) ... ok
+test_missing_prior_package_rejected (test_v104_gates.V104GateTests.test_missing_prior_package_rejected) ... ok
+test_missing_prior_rejected (test_v104_gates.V104GateTests.test_missing_prior_rejected) ... ok
+test_no_inferred_risk_waiver (test_v104_gates.V104GateTests.test_no_inferred_risk_waiver) ... ok
+test_no_premature_v104_metadata (test_v104_gates.V104GateTests.test_no_premature_v104_metadata) ... ok
+test_old_block_cannot_be_hidden (test_v104_gates.V104GateTests.test_old_block_cannot_be_hidden) ... ok
+test_prior_preserved (test_v104_gates.V104GateTests.test_prior_preserved) ... ok
+test_wrong_prior_target_rejected (test_v104_gates.V104GateTests.test_wrong_prior_target_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.005s
+
+OK

@@ -1,0 +1,78 @@
+{
+  "target_version": "1.0.4",
+  "metadata_version": "1.0.2",
+  "release_ready": false,
+  "prior_release_gate": "docs/release-gates.json",
+  "accepted_limitations": [],
+  "work_packages": {
+    "W0": {
+      "status": "PASS",
+      "implementation": [
+        "docs/v1.0.3-closure.md",
+        "docs/v1.0.4-development-plan.md"
+      ],
+      "acceptance": "Baseline audited and old unresolved gates separately retained.",
+      "remaining": "No old release completion or risk acceptance inferred."
+    },
+    "W1": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "benchmarks/device_lab"
+      ],
+      "acceptance": "Actual extended software EGL snapshot and repeated fingerprint/correctness capture.",
+      "remaining": "Native vs ANGLE same physical device and Windows/GBM target reports absent."
+    },
+    "W2": {
+      "status": "PARTIAL",
+      "implementation": [
+        "references/vendor-adapters"
+      ],
+      "acceptance": "Four adapters / 44 explicitly conditioned hypotheses with counterexamples and null hardware evidence.",
+      "remaining": "Target-specific counter mapping and independent broad architecture review."
+    },
+    "W3": {
+      "status": "PARTIAL",
+      "implementation": [
+        "examples/scenes",
+        "benchmarks/scenes"
+      ],
+      "acceptance": "Eight real GLES scene sources, frozen visual goldens, baseline/control/degraded and sweep.",
+      "remaining": "Two physical device/driver performance reports and target visual tolerance calibration."
+    },
+    "W4": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/traces"
+      ],
+      "acceptance": "CSV/JSON manifest/hash parser and 12 authored labeled trace fixtures with conservative diagnoses.",
+      "remaining": "Real licensed target captures and independent ground-truth review; binary captures unsupported."
+    },
+    "W5": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "examples/android_cases",
+        "references/playbooks/v1.0.4-high-value.md"
+      ],
+      "acceptance": "Two Android app projects; explicit native AHardwareBuffer EGLImage import and capability-gated BT.2020/PQ output sources, with separate compiler and policy evidence.",
+      "remaining": "Android device lifecycle/import/HDR validation, physical color goldens and native/ANGLE comparison remain unverified; complete HDR10 mastering metadata and asynchronous external-producer fence import are outside the minimal diagnostic path."
+    },
+    "W6": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "implementation": [
+        "benchmarks/agent/cases-v1.0.4.json",
+        "benchmarks/agent/REPAIR_WORKFLOW.md"
+      ],
+      "acceptance": "Original 64 unchanged plus 24 executed controlled failure/fix cases; scoring denominators extended.",
+      "remaining": "Zero live model calls; model-produced patch regression and independent corpus acceptance pending."
+    },
+    "W7": {
+      "status": "PARTIAL",
+      "implementation": [
+        "docs/v1.0.4-traceability.md",
+        ".github/workflows/validation.yml"
+      ],
+      "acceptance": "Candidate routing/manual workflow and explicit prior+new release guard.",
+      "remaining": "No PR-triggered required-check policy change authorized; no version/tag/release; preceding gates unresolved."
+    }
+  }
+}

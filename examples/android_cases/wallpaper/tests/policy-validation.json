@@ -1,0 +1,21 @@
+{
+  "scope": "Real Java17 language/API compile and host policy execution; not Android display/EGL execution",
+  "source_sha256": {
+    "src/main/java/org/example/gleslab/HdrOutputPolicy.java": "fae98b8f7c4e770605cd89cda5f5c6700aae9300b8f777264965654e54b994cc",
+    "src/main/java/org/example/gleslab/SharedLease.java": "b5bb2d218a655f8cafa2c063077fe492754c6fb6ccf485d55a197921afa7ce80",
+    "tests/HdrOutputPolicyTest.java": "cc2bdc0752e9e58c68520e146b24a64f2f1ed0d007f289732dd7c4f3ce9c052e",
+    "tests/SharedLeaseTest.java": "57fd5f433fbbf52ebacf8414cf8d5bb56f460f991ac8fc8e0e83fe7a57f993b4"
+  },
+  "compile_exit": 0,
+  "compile_stdout": "",
+  "compile_stderr": "",
+  "execution_exit": 0,
+  "execution_stdout": "HDR_POLICY_CHECKS=18 PASS; Android/EGL/device=NOT_RUN\n",
+  "execution_stderr": "",
+  "lease_execution_exit": 0,
+  "lease_execution_stdout": "SHARED_LEASE_CHECKS=14 PASS; EGL driver=NOT_RUN\n",
+  "lease_execution_stderr": "",
+  "android_display_runtime": "NOT_RUN",
+  "apk_build": "NOT_RUN",
+  "status": "PASS"
+}
