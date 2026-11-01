@@ -1,0 +1,51 @@
+{
+  "scope": "Actual glslang compile/link of extracted GLSL strings only; NOT Java/Android validation",
+  "compiler_version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n",
+  "results": [
+    {
+      "module": "surfacevideo",
+      "source": "surfacevideo/src/main/java/org/example/gleslab/ExternalSurfaceActivity.java",
+      "java_source_sha256": "9c6dc0737eeebc08b009ed4f4b72be9cd9ae5cab1fe5f938329573e44621516d",
+      "shader_sha256": {
+        ".vert": "8352a03fcd1268fe6e08863c69c42bff1248f6384ad5ff6c2416f342aa4fa9ef",
+        ".frag": "aa77359bb1d21d78bbd8cc562284d1fa6b02833dcda058a48b816d29ea8f11c7"
+      },
+      "glsl_compile_link": "PASS",
+      "exit_code": 0,
+      "stdout": "/tmp/gles-android-shaders-4zr25_l3/surfacevideo-ExternalSurfaceActivity.vert\n/tmp/gles-android-shaders-4zr25_l3/surfacevideo-ExternalSurfaceActivity.frag\n",
+      "stderr": "",
+      "android_target_compile": "NOT_RUN_BY_THIS_SHADER_CHECK",
+      "device_runtime": "NOT_RUN"
+    },
+    {
+      "module": "surfacevideo",
+      "source": "surfacevideo/src/main/java/org/example/gleslab/NativeHardwareBufferDisplay.java",
+      "java_source_sha256": "2962c1246b5881b89249f7f6d157a7d31e1b423a6c315ed3a44844d4f765c68a",
+      "shader_sha256": {
+        ".vert": "a6edf626917fe902787ca59ca5081bc52ddec5c115e2859606abb0f0cc742424",
+        ".frag": "49e936afb73ac6d619060f99e764af56bad75ff8291983a7a6c715661cba09e2"
+      },
+      "glsl_compile_link": "PASS",
+      "exit_code": 0,
+      "stdout": "/tmp/gles-android-shaders-4zr25_l3/surfacevideo-NativeHardwareBufferDisplay.vert\n/tmp/gles-android-shaders-4zr25_l3/surfacevideo-NativeHardwareBufferDisplay.frag\n",
+      "stderr": "",
+      "android_target_compile": "NOT_RUN_BY_THIS_SHADER_CHECK",
+      "device_runtime": "NOT_RUN"
+    },
+    {
+      "module": "wallpaper",
+      "source": "wallpaper/src/main/java/org/example/gleslab/IslandWallpaper.java",
+      "java_source_sha256": "a8d779190cb1c3a34a0773b0f510576ad4762470cb0d958bcdfdc1dd3b2ec577",
+      "shader_sha256": {
+        ".vert": "9e85c649c74457a20d08db8668ec68c48486e139c33fcb4f1a63d791a9ca8285",
+        ".frag": "8105312f4a93118f2ecd026194d039dfc3aa7d3650d96e340d12e9d52deb4ee1"
+      },
+      "glsl_compile_link": "PASS",
+      "exit_code": 0,
+      "stdout": "/tmp/gles-android-shaders-4zr25_l3/wallpaper-IslandWallpaper.vert\n/tmp/gles-android-shaders-4zr25_l3/wallpaper-IslandWallpaper.frag\n",
+      "stderr": "",
+      "android_target_compile": "NOT_RUN_BY_THIS_SHADER_CHECK",
+      "device_runtime": "NOT_RUN"
+    }
+  ]
+}

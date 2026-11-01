@@ -53,8 +53,8 @@
         "examples/android_cases",
         "references/playbooks/v1.0.4-high-value.md"
       ],
-      "acceptance": "Two Android app source projects plus extracted shader compilation and lifecycle source checks.",
-      "remaining": "APK/device tests, explicit AHardwareBuffer import and HDR/WCG output are not implemented/accepted; SDR/external-texture path only."
+      "acceptance": "Two Android app projects; explicit native AHardwareBuffer EGLImage import and capability-gated BT.2020/PQ output sources, with separate compiler and policy evidence.",
+      "remaining": "Android device lifecycle/import/HDR validation, physical color goldens and native/ANGLE comparison remain unverified; complete HDR10 mastering metadata and asynchronous external-producer fence import are outside the minimal diagnostic path."
     },
     "W6": {
       "status": "BLOCKED_BY_PROVIDER",

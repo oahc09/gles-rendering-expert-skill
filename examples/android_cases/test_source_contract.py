@@ -6,7 +6,9 @@ import xml.etree.ElementTree as ET
 ROOT=Path(__file__).parent
 NS='{http://schemas.android.com/apk/res/android}'
 class SourceContracts(unittest.TestCase):
-    def source(self,module):return next((ROOT/module/'src/main/java').rglob('*.java')).read_text()
+    def source(self,module):
+        name = 'IslandWallpaper.java' if module == 'wallpaper' else 'ExternalSurfaceActivity.java'
+        return next((ROOT/module/'src/main/java').rglob(name)).read_text()
     def test_manifests_parse_and_entrypoint_exists(self):
         for module,kind in [('wallpaper','service'),('surfacevideo','activity')]:
             root=ET.parse(ROOT/module/'src/main/AndroidManifest.xml').getroot()
@@ -39,6 +41,6 @@ class SourceContracts(unittest.TestCase):
     def test_pause_stops_producer_before_consumer(self):
         s=self.source('surfacevideo');self.assertLess(s.index('renderer.stopProducer(); view.queueEvent'),s.index('view.onPause();'))
     def test_sdr_not_hdr_claim(self):self.assertIn('chosenOutput=SDR_RGBA8',self.source('surfacevideo'))
-    def test_target_unrun_documented(self):self.assertIn('NOT been compiled or run on Android',(ROOT/'README.md').read_text())
+    def test_target_unrun_documented(self):self.assertIn('NOT been run on Android hardware',(ROOT/'README.md').read_text())
 
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,8 @@
+.gradle/
+**/.cxx/
+**/build/
+local.properties
+# These are source regression tests, not generated top-level test artifacts.
+!wallpaper/tests/
+!wallpaper/tests/**
+wallpaper/tests/__pycache__/

@@ -1,15 +1,18 @@
 # Android end-to-end source cases — target NOT_RUN
 
-Two separate, pinned Gradle app modules exercise actual Android lifecycle APIs.
-No Android SDK/NDK, Gradle, Java target toolchain or device is available in this
-execution environment. **These sources have NOT been compiled or run on Android.**
-The structural tests below do not substitute for an APK build or device validation.
-Neither app claims AHardwareBuffer native import, HDR display output or real GPU
-performance acceptance.
+Two separate, pinned Gradle app modules exercise Android lifecycle APIs.
+The follow-up adds an explicit native AHardwareBuffer import and a capability-gated
+BT.2020/PQ surface path. Java and Android-target native compilation are recorded
+separately in `../../docs/v1.0.4/evidence/android-followup/`; neither proves device
+execution. **These apps have NOT been run on Android hardware.** Source contracts,
+shader compilation, Java bytecode and ELF linking are different validation levels.
+No physical HDR, gralloc compatibility, native/ANGLE comparison or GPU performance
+acceptance is claimed.
 
 ## Build on an authorized Android development environment
 
-Install JDK17, Gradle8.9, Android SDK platform35/build-tools and platform-tools.
+Install JDK17-compatible tooling, Gradle8.9, Android SDK platform35/build-tools,
+platform-tools, NDK27.0.12077973 and CMake3.22.1 for the native module.
 Android Gradle Plugin8.7.3 is pinned in the root build file; repositories are Google
 and Maven Central. No binary Gradle wrapper is bundled or downloaded automatically.
 
@@ -43,7 +46,7 @@ The surface is borrowed from SurfaceHolder (never released by this renderer).
 EGL_BAD_SURFACE/BAD_NATIVE_WINDOW waits for a new window; EGL_CONTEXT_LOST discards
 old GL names, rebuilds context and shaders, and preserves only CPU state. No invented
 APP_CMD_CONTEXT_LOST event is used. Errors are logged and retries are bounded by
-surface/frame events rather than a busy loop. Output is explicit SDR RGBA8.
+surface/frame events rather than a busy loop. Output attempts a verified BT.2020/PQ RGB10A2 EGL surface only when the matching display and EGL capabilities permit it; otherwise it rebuilds an SDR RGBA8 path. See `wallpaper/HDR-OUTPUT.md` for the precise acceptance boundary. Surface request acceptance is not physical HDR verification.
 
 ## Case B: Surface producer → SurfaceTexture/external texture → GLSurfaceView
 
@@ -54,13 +57,31 @@ The external ESSL3 extension is checked by exact-token enumeration; absent suppo
 shows a clear-color fallback, never an illegal sampler or claimed imported frame.
 SurfaceTexture.updateTexImage runs only on the GL owner, with its supplied transform
 matrix, and Android's SurfaceTexture synchronization is used rather than invented
-native fence ownership. This is **not an explicit AHardwareBuffer/EGLImage importer**.
+native fence ownership. This default mode remains separate from the explicit native AHardwareBuffer/EGLImage mode described below.
 
 Choreographer drives the UI producer; OnFrameAvailable schedules rendering on the GL
 thread. Pause stops production first and queues resource release before pausing the
 view. Context preservation is disabled to exercise recreation on resume. Display HDR
 and wide-color capabilities are logged, but the chosen EGL output remains SDR RGBA8;
 capable hardware is not confused with an HDR-configured surface.
+
+## Explicit AHardwareBuffer mode
+
+To request the native diagnostic after installing the app:
+
+```sh
+adb shell am start -n org.example.gleslab.surfacevideo/org.example.gleslab.ExternalSurfaceActivity --ez ahb true
+```
+
+The `surfacevideo` module also contains a JNI/CMake path for a small deterministic
+CPU-produced RGBA8 AHardwareBuffer, imported as EGLImage and sampled with a regular
+2D texture. It validates an imported FBO/readback pattern before displaying the
+texture, and falls back to the default external-texture path if a capability,
+allocation, import or correctness check fails. This is a synchronous correctness
+example, not an asynchronous camera/Vulkan/native-fence importer and not a measured
+zero-copy optimization. Native source owns its allocation; the EGL context/display
+remain borrowed from GLSurfaceView. Context recreation must not delete stale GL
+names in a new context.
 
 ## Device acceptance and goldens still required
 
@@ -84,4 +105,20 @@ Primary documentation: [WallpaperService.Engine](https://developer.android.com/r
 
 ## Available local checks
 
-`python3 -m unittest discover -s examples/android_cases -p "test_*.py" -v` runs ten structural safeguards only. `python3 examples/android_cases/validate_shaders.py` actually compiles and links the two embedded GLSL pairs using glslang; it does not compile Java or prove Android lifecycle behavior. `target-status.json` retains those distinctions.
+`python3 -m unittest discover -s examples/android_cases -p "test_*.py" -v` runs structural safeguards only. `python3 examples/android_cases/validate_shaders.py` actually compiles and links all embedded GLSL pairs using glslang; it does not compile Java or prove Android lifecycle behavior. `target-status.json` retains those distinctions.
+
+
+## Reproduce source compilation without claiming APK or device execution
+
+```sh
+python3 examples/android_cases/compile_sources.py --jdk /path/to/jdk \
+  --android-jar /path/to/android-35/android.jar --ndk /path/to/android-ndk-r27 \
+  --output /tmp/android-source-validation.json
+```
+
+This actually compiles Java against Android APIs and links arm64 API26 native
+code, including the existing validation harness and six legacy examples. A
+successful compiler run does not run the imported image or display pipeline.
+The native compiler check also validates the ELF LOAD alignment of the module
+and its packaged C++ shared runtime; APK ZIP alignment is a separate packaging
+check. Toolchains are not committed to the repository.

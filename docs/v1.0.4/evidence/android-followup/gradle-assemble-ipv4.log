@@ -1,0 +1,101 @@
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
+Initialized native services in: /workspace/scratch/62d43a81bbde/gles-android-build-tools/gradle-cache/native
+Initialized jansi services in: /workspace/scratch/62d43a81bbde/gles-android-build-tools/gradle-cache/native
+Received JVM installation metadata from '/workspace/scratch/62d43a81bbde/gles-android-build-tools/jdk/usr/lib/jvm/java-21-openjdk-amd64': {JAVA_HOME=/workspace/scratch/62d43a81bbde/gles-android-build-tools/jdk/usr/lib/jvm/java-21-openjdk-amd64, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Debian, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_VENDOR=Debian, OS_ARCH=amd64}
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Starting process 'Gradle build daemon'. Working directory: /workspace/scratch/62d43a81bbde/gles-android-build-tools/gradle-cache/daemon/8.9 Command: /workspace/scratch/62d43a81bbde/gles-android-build-tools/jdk/usr/lib/jvm/java-21-openjdk-amd64/bin/java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -cp /workspace/scratch/62d43a81bbde/gles-android-build-tools/gradle-8.9/lib/gradle-daemon-main-8.9.jar -javaagent:/workspace/scratch/62d43a81bbde/gles-android-build-tools/gradle-8.9/lib/agents/gradle-instrumentation-agent-8.9.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.9
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 1.318 secs.
+The client will now receive all logging from the daemon (pid: 44). The daemon log file: /workspace/scratch/62d43a81bbde/gles-android-build-tools/gradle-cache/daemon/8.9/daemon-44.out.log
+Daemon will be stopped at the end of the build 
+Using 9 worker leases.
+Received JVM installation metadata from '/workspace/scratch/62d43a81bbde/gles-android-build-tools/jdk/usr/lib/jvm/java-21-openjdk-amd64': {JAVA_HOME=/workspace/scratch/62d43a81bbde/gles-android-build-tools/jdk/usr/lib/jvm/java-21-openjdk-amd64, JAVA_VERSION=21.0.12.1, JAVA_VENDOR=Debian, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.12.1+1-1-deb13u1-Debian, VM_VENDOR=Debian, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Not watching /workspace/scratch/62d43a81bbde/gles-android-build-tools/project since the file system is not supported
+File system watching is active
+Starting Build
+Settings evaluated using settings file '/workspace/scratch/62d43a81bbde/gles-android-build-tools/project/settings.gradle'.
+Projects loaded. Root project using build file '/workspace/scratch/62d43a81bbde/gles-android-build-tools/project/build.gradle'.
+Included projects: [root project 'GlesLifecycleCases', project ':surfacevideo', project ':wallpaper']
+
+> Configure project :
+Evaluating root project 'GlesLifecycleCases' using build file '/workspace/scratch/62d43a81bbde/gles-android-build-tools/project/build.gradle'.
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://dl.google.com:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://dl.google.com:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://dl.google.com:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://dl.google.com:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://dl.google.com:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://dl.google.com:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://dl.google.com:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://dl.google.com:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://dl.google.com:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://dl.google.com:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://dl.google.com:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://dl.google.com:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://dl.google.com:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://dl.google.com:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://dl.google.com:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://dl.google.com:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://dl.google.com:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://dl.google.com:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://repo.maven.apache.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443
+I/O exception (java.net.SocketException) caught when processing request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443: Network is unreachable
+Retrying request to {tls}->http://browser-proxy:8889->https://plugins.gradle.org:443
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/workspace/scratch/62d43a81bbde/gles-android-build-tools/project/build.gradle' line: 1
+
+* What went wrong:
+Plugin [id: 'com.android.application', version: '8.7.3', apply: false] was not found in any of the following sources:
+
+- Gradle Core Plugins (plugin is not in 'org.gradle' namespace)
+- Included Builds (No included builds contain this plugin)
+- Plugin Repositories (could not resolve plugin artifact 'com.android.application:com.android.application.gradle.plugin:8.7.3')
+  Searched in the following repositories:
+    Google
+    MavenRepo
+    Gradle Central Plugin Repository
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 15s
+Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.

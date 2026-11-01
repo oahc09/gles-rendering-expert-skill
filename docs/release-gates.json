@@ -56,8 +56,8 @@
         "examples/validation",
         ".github/workflows/validation.yml"
       ],
-      "acceptance": "112 normalized contract cases; actual host C++17/software EGL and ESSL compiler checks.",
-      "remaining": "Android NDK target compilation/device smoke; manual workflow not dispatched."
+      "acceptance": "112 normalized contract cases; actual host C++17/software EGL and ESSL compiler checks. Follow-up: actual Android API26 arm64 compile/link of the validation harness and six legacy examples.",
+      "remaining": "Android physical-device smoke and manual workflow execution remain absent."
     },
     "W6": {
       "status": "BLOCKED_BY_PROVIDER",

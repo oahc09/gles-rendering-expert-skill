@@ -22,11 +22,12 @@ import javax.microedition.khronos.opengles.GL10;
 public final class ExternalSurfaceActivity extends Activity implements Choreographer.FrameCallback {
     private GLSurfaceView view;
     private final ExternalRenderer renderer = new ExternalRenderer();
-    private boolean resumed;
+    private boolean resumed, ahbRequested;
     private final Paint paint = new Paint();
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
+        ahbRequested=getIntent().getBooleanExtra("ahb",false);
         view = new GLSurfaceView(this); view.setEGLContextClientVersion(3);
         view.setEGLConfigChooser(8, 8, 8, 8, 0, 0);
         view.setPreserveEGLContextOnPause(false); // Resource recreation is an explicit exercise.
@@ -70,11 +71,14 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
         private final AtomicBoolean frameAvailable=new AtomicBoolean();
         private final float[] transform=new float[16];
         private int texture,program;
+        private final NativeHardwareBufferDisplay ahb=new NativeHardwareBufferDisplay();
         private boolean supported, hasImage;
         private final Handler ui = new Handler(Looper.getMainLooper());
         @Override public void onSurfaceCreated(GL10 unused, EGLConfig config) {
             // A lost context owns no reusable names. Java Surface objects still need release.
             stopProducer();if(consumer!=null){consumer.release();consumer=null;}texture=0;program=0;hasImage=false;
+            ahb.onContextRecreated();
+            if(ahbRequested&&ahb.create()){supported=false;view.requestRender();return;}
             supported=extension("GL_OES_EGL_image_external")&&extension("GL_OES_EGL_image_external_essl3");
             Log.i("GLESSurface","renderer="+GLES30.glGetString(GLES30.GL_RENDERER)+" externalESSL3="+supported);
             if(!supported) return; // Visible SDR clear fallback, not an illegal sampler path.
@@ -97,6 +101,7 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
         @Override public void onSurfaceChanged(GL10 unused,int w,int h){GLES30.glViewport(0,0,w,h);}
         @Override public void onDrawFrame(GL10 unused){
             GLES30.glClearColor(.08f,.12f,.2f,1);GLES30.glClear(GLES30.GL_COLOR_BUFFER_BIT);
+            if(ahb.active()){ahb.draw();return;}
             if(!supported||consumer==null)return;
             // SurfaceTexture manages producer acquire synchronization; this must run on the owning GL thread.
             if(frameAvailable.getAndSet(false)){consumer.updateTexImage();consumer.getTransformMatrix(transform);hasImage=true;}
@@ -109,6 +114,7 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
         }
         synchronized void stopProducer(){Surface old=producer;producer=null;if(old!=null)old.release();}
         void releaseCurrentContextResources(){
+            ahb.release();
             stopProducer();if(consumer!=null){consumer.setOnFrameAvailableListener(null);consumer.release();consumer=null;}
             if(texture!=0){GLES30.glDeleteTextures(1,new int[]{texture},0);texture=0;}
             if(program!=0){GLES30.glDeleteProgram(program);program=0;}frameAvailable.set(false);hasImage=false;
