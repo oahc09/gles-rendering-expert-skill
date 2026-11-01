@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "scope": "actual WPE WebKit UI event to native Mesa GLES rendering; not Android device UI",
+  "browser": "26.5",
+  "screenshots": "INTERNAL_ONLY_TMP_NOT_SOURCE_OR_LIBRARY",
+  "server_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/62d43a81bbde/gles-v106-20261101/benchmarks/system_scenes/interactive.py",
+    "--port",
+    "49419"
+  ],
+  "before_sha256": "c4ae6c29dad1e9f2ae2e4e29e209c82f8089009d3151cc7f7fca9c4ef27d7525",
+  "after_sha256": "ce6dc2d881a587bf9bf1377ff40c960c30a73c66dd17416f41106f6a90f49cda",
+  "page_errors": [],
+  "server_source_sha256": "0c4eff0908efd9d0c96d9bcaef42608be3985fd41a9652f4beb9d419df46710c",
+  "harness_sha256": "e38b39f23220f3d0e2ba0ae3e9a1bfc9071e748fc5157be25d7258e47224f69c",
+  "native_binary_sha256": "482b35b5e311e0bc90753d1e5cbf3b4cd13850e75422b46400cac3dc80d6b5a8"
+}

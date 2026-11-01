@@ -1,0 +1,79 @@
+{
+  "images": {
+    "glass.ppm": {
+      "sha256": "a4e9d48b9e1a53db1f52e87eaea8518dccb06a3178ef6332a31c31931ae3ebe1",
+      "metadata": {
+        "scene": "glass",
+        "mode": "baseline",
+        "touch": 0,
+        "seed": 1337,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "hardware_performance": "NOT_MEASURED"
+      }
+    },
+    "sand.ppm": {
+      "sha256": "a3aaa87c6c9d0b96b3153d22b2817e8616a95092a3e64fc10a1eeb2bb83b1f5f",
+      "metadata": {
+        "scene": "sand",
+        "mode": "baseline",
+        "touch": 0,
+        "seed": 1337,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "hardware_performance": "NOT_MEASURED"
+      }
+    },
+    "particle.ppm": {
+      "sha256": "3f4eb7b45b717729ebf5a668b0af99e68b9d7d3fff1ca2d2f813c58445789830",
+      "metadata": {
+        "scene": "particle",
+        "mode": "baseline",
+        "touch": 0,
+        "seed": 1337,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "hardware_performance": "NOT_MEASURED"
+      }
+    },
+    "shadowwater.ppm": {
+      "sha256": "ebe2d4bfbd7da453d54c75b6fba289cba41b2c08aa60b2d5fb50d10e7e1f87e9",
+      "metadata": {
+        "scene": "shadowwater",
+        "mode": "baseline",
+        "touch": 0,
+        "seed": 1337,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "hardware_performance": "NOT_MEASURED"
+      }
+    },
+    "forwardplus.ppm": {
+      "sha256": "632cd6f6088430854bcd92446a5899e6aa5e5a596d4a2f6e8f2abcf4cb053e6a",
+      "metadata": {
+        "scene": "forwardplus",
+        "mode": "baseline",
+        "touch": 0,
+        "seed": 1337,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "hardware_performance": "NOT_MEASURED"
+      }
+    }
+  },
+  "created_at": "2026-11-01T10:54:01.887747+00:00",
+  "source_hashes": {
+    "common.hpp": "dbc8a5070aafb238a40513346f5bb25a219f0d0a8c5ceb5edd9927a41a1c5f22",
+    "build.sh": "5c85fb82ee5390d1dad58ac761853ecfc04cd7dd5849a29c769855b784dda1b1",
+    "simulation.cpp": "32f5d85a69821874de4401525347786a13341a2da4578e86a226bd13b4b4bb03",
+    "precision.cpp": "e5837cdc2b094207203574f83b84a0451f46a96c2d9da0b82dccd6cc2394386e",
+    "effects.cpp": "c35785202107083928116076df06c509d857541c2fce68be1338e8a4710c67e3"
+  },
+  "size": [
+    96,
+    96
+  ],
+  "color_space": "RGB8 engineering output, shader explicit transfers; no display HDR/WCG",
+  "compression": "none",
+  "seed": 1337,
+  "interaction": 0,
+  "hardware": "software Mesa only",
+  "schema_version": 1,
+  "comparison_config_sha256": "80332b5d4347a7a8c0875134b4ee5680736777c2ee2fcb9c3d1c0bf893f8a995",
+  "metadata_review_note": "v1.0.6 inventory/contract validation added after initial capture. Pixels and original producer hashes preserved; current comparison configuration explicitly reviewed."
+}

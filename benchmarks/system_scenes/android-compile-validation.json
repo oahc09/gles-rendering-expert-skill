@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "scope": "actual NDK r27 Android API26 arm64 compile/link; device NOT_RUN",
+  "results": [
+    {
+      "source": "examples/system_scenes/effects.cpp",
+      "source_sha256": "1f828c18513300cf865983864b0cc806520a716ebbc5632b38690d2828089186",
+      "command": [
+        "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "examples/system_scenes/effects.cpp",
+        "-lEGL",
+        "-lGLESv3",
+        "-Wl,-z,max-page-size=16384",
+        "-o",
+        "/tmp/gles-system-effects-android"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "binary_sha256": "8ad7bf997b8956feabae67abe00e4b44045873743f5ff9767d4e88e2e24c930c"
+    },
+    {
+      "source": "examples/system_scenes/simulation.cpp",
+      "source_sha256": "ed34ebc37c42c86bc27edce1243a6c9665c34174ec2cef491174826d864cf8e5",
+      "command": [
+        "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "examples/system_scenes/simulation.cpp",
+        "-lEGL",
+        "-lGLESv3",
+        "-Wl,-z,max-page-size=16384",
+        "-o",
+        "/tmp/gles-system-simulation-android"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "binary_sha256": "dc14115651fb60a487b38aea82be56bbee40c8e5ef0e7378f17086e3e2a0910e"
+    },
+    {
+      "source": "examples/system_scenes/precision.cpp",
+      "source_sha256": "e5837cdc2b094207203574f83b84a0451f46a96c2d9da0b82dccd6cc2394386e",
+      "command": [
+        "/tmp/gles-android-ndk/android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "examples/system_scenes/precision.cpp",
+        "-lEGL",
+        "-lGLESv3",
+        "-Wl,-z,max-page-size=16384",
+        "-o",
+        "/tmp/gles-system-precision-android"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "binary_sha256": "242d98d5bba95041d3df1c4b644d68524b6e5de6ae2f1ce9f2de73a05d18c29c"
+    }
+  ],
+  "common_header_sha256": "a4197fe5ad177a6709aae08b5976f2c456782cbac205112ab370e5623a8a8a9b"
+}

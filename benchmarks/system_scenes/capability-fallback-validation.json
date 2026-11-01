@@ -1,0 +1,214 @@
+{
+  "status": "PASS",
+  "scope": "Mesa GLES3.0 restriction + synthetic missing16F hook; NOT physical unsupported hardware",
+  "rows": [
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "forwardplus",
+        "/tmp/gles-capability-0.ppm",
+        "fallback",
+        "0"
+      ],
+      "override": {
+        "MESA_GLES_VERSION_OVERRIDE": "3.0"
+      },
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "{\"scene\":\"forwardplus\",\"mode\":\"fallback\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "capture": {
+        "scene": "forwardplus",
+        "mode": "fallback",
+        "touch": 0,
+        "seed": 1337,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1",
+        "hardware_performance": "NOT_MEASURED"
+      },
+      "image_sha256": "632cd6f6088430854bcd92446a5899e6aa5e5a596d4a2f6e8f2abcf4cb053e6a",
+      "comparison": {
+        "scales": {
+          "1": {
+            "mae": 0.0,
+            "local_luma_ssim": 1.0,
+            "pass": true
+          },
+          "2": {
+            "mae": 0.0,
+            "local_luma_ssim": 1.0,
+            "pass": true
+          },
+          "4": {
+            "mae": 0.0,
+            "local_luma_ssim": 1.0,
+            "pass": true
+          }
+        },
+        "regions": {
+          "global": {
+            "pixels": 9216,
+            "mae": 0.0,
+            "max_error": 0,
+            "bad_fraction": 0.0,
+            "pass": true
+          },
+          "edge": {
+            "pixels": 84,
+            "mae": 0.0,
+            "max_error": 0,
+            "bad_fraction": 0.0,
+            "pass": true
+          },
+          "shadow": {
+            "pixels": 333,
+            "mae": 0.0,
+            "max_error": 0,
+            "bad_fraction": 0.0,
+            "pass": true
+          },
+          "glow": {
+            "status": "NOT_APPLICABLE",
+            "pixels": 0
+          },
+          "transparent": {
+            "status": "NOT_APPLICABLE",
+            "pixels": 0
+          }
+        },
+        "pass": true
+      }
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "sand",
+        "/tmp/gles-capability-1.ppm",
+        "sorted",
+        "0"
+      ],
+      "override": {
+        "MESA_GLES_VERSION_OVERRIDE": "3.0"
+      },
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "{\"scene\":\"sand\",\"mode\":\"sorted\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "capture": {
+        "scene": "sand",
+        "mode": "sorted",
+        "touch": 0,
+        "seed": 1337,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1",
+        "hardware_performance": "NOT_MEASURED"
+      },
+      "image_sha256": "c56123c89b9254d3f6f0b9790896c4ac03153632a54fbbfa14e000bbc9a8b2d2"
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "particle",
+        "/tmp/gles-capability-2.ppm",
+        "fallback",
+        "0"
+      ],
+      "override": {
+        "MESA_GLES_VERSION_OVERRIDE": "3.0",
+        "GLES_TEST_FORCE_NO_RGBA16F": "1"
+      },
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "{\"scene\":\"particle\",\"mode\":\"fallback\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "capture": {
+        "scene": "particle",
+        "mode": "fallback",
+        "touch": 0,
+        "seed": 1337,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1",
+        "hardware_performance": "NOT_MEASURED"
+      },
+      "image_sha256": "14a6d52594614756e613f91da00ddcd90de4c250acffa4856acdd38fe15c0ef3"
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "sand",
+        "/tmp/gles-capability-3.ppm",
+        "baseline",
+        "0"
+      ],
+      "override": {
+        "GLES_TEST_FORCE_NO_RGBA16F": "1"
+      },
+      "returncode": 3,
+      "expected": 3,
+      "stdout": "",
+      "stderr": "BLOCKED_BY_CAPABILITY: RGBA16F color attachment unsupported; use sorted or fallback mode (ES3.0 RGBA8 path)\n"
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/effects",
+        "particle",
+        "/tmp/gles-capability-4.ppm",
+        "sorted",
+        "0"
+      ],
+      "override": {
+        "GLES_TEST_FORCE_NO_RGBA16F": "1"
+      },
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "{\"scene\":\"particle\",\"mode\":\"sorted\",\"touch\":0,\"seed\":1337,\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"hardware_performance\":\"NOT_MEASURED\"}\n",
+      "stderr": "",
+      "capture": {
+        "scene": "particle",
+        "mode": "sorted",
+        "touch": 0,
+        "seed": 1337,
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+        "hardware_performance": "NOT_MEASURED"
+      },
+      "image_sha256": "14a6d52594614756e613f91da00ddcd90de4c250acffa4856acdd38fe15c0ef3"
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/simulation",
+        "particle",
+        "16",
+        "gpu",
+        "/tmp/gles-capability-gpu.json"
+      ],
+      "override": {
+        "MESA_GLES_VERSION_OVERRIDE": "3.0"
+      },
+      "returncode": 1,
+      "expected": 1,
+      "stdout": "",
+      "stderr": "BLOCKED_BY_CAPABILITY: GLES 3.1 required; CPU fallback is not silently substituted\n"
+    },
+    {
+      "command": [
+        "/tmp/gles-system-scenes/simulation",
+        "particle",
+        "16",
+        "cpu",
+        "/tmp/gles-capability-cpu.json"
+      ],
+      "override": {
+        "MESA_GLES_VERSION_OVERRIDE": "3.0"
+      },
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "binary_hashes": {
+    "effects": "482b35b5e311e0bc90753d1e5cbf3b4cd13850e75422b46400cac3dc80d6b5a8",
+    "simulation": "75d46729ba8c59dcd488047f9ee3d345024506f6a009850c8e6ee0f7f32239bb"
+  }
+}

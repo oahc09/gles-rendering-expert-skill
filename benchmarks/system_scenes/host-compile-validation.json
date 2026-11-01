@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "compiler": "c++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "results": [
+    {
+      "name": "simulation",
+      "source_sha256": "ed34ebc37c42c86bc27edce1243a6c9665c34174ec2cef491174826d864cf8e5",
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/system_scenes/simulation.cpp",
+        "-lEGL",
+        "-lGLESv2",
+        "-o",
+        "/tmp/gles-system-simulation-host-verify"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "binary_sha256": "75d46729ba8c59dcd488047f9ee3d345024506f6a009850c8e6ee0f7f32239bb"
+    },
+    {
+      "name": "effects",
+      "source_sha256": "1f828c18513300cf865983864b0cc806520a716ebbc5632b38690d2828089186",
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/system_scenes/effects.cpp",
+        "-lEGL",
+        "-lGLESv2",
+        "-o",
+        "/tmp/gles-system-effects-host-verify"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "binary_sha256": "482b35b5e311e0bc90753d1e5cbf3b4cd13850e75422b46400cac3dc80d6b5a8"
+    },
+    {
+      "name": "precision",
+      "source_sha256": "e5837cdc2b094207203574f83b84a0451f46a96c2d9da0b82dccd6cc2394386e",
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "/workspace/scratch/62d43a81bbde/gles-v106-20261101/examples/system_scenes/precision.cpp",
+        "-lEGL",
+        "-lGLESv2",
+        "-o",
+        "/tmp/gles-system-precision-host-verify"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "binary_sha256": "65508704e8e06c1ddb8c62cde1f7aab259c82b04e3a3e3a7b600ac53fbd5079f"
+    }
+  ],
+  "common_header_sha256": "a4197fe5ad177a6709aae08b5976f2c456782cbac205112ab370e5623a8a8a9b",
+  "inherited_scene_sha256": "7e73eb94a06920d98d19a3f869045997ccd337f2ac47aec4f9c2ff20708747b9"
+}
