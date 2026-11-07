@@ -1,0 +1,152 @@
+[
+  {
+    "id": "variant_macro",
+    "symptom": "Compute variant fails on ES 3.0",
+    "capture": "Record GLES version, macros and source",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "Feature macro selects unsupported core compute stage",
+    "fix": "Gate feature on probed ES 3.1; use ES 3.0 graphics fallback",
+    "regression": "Variant validator rejects unsupported feature",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  },
+  {
+    "id": "cache_invalid",
+    "symptom": "Program binary fails after driver change",
+    "capture": "Capture binary format, GL_LINK_STATUS and cache identity",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "Driver identity changed",
+    "fix": "Invalidate key and recompile source",
+    "regression": "Driver changes key; identical identity is stable",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  },
+  {
+    "id": "material_abi",
+    "symptom": "Wrong material color",
+    "capture": "Compare reflected offsets with host manifest",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "vec4 std140 alignment is 16, not packed offset 4",
+    "fix": "Pad host struct and verify reflection",
+    "regression": "Calculated color offset is 16",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  },
+  {
+    "id": "fbo_feedback",
+    "symptom": "Invalid or undefined image",
+    "capture": "Capture FBO attachments and pass graph",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "Read and write attachment in same pass",
+    "fix": "Ping-pong distinct textures",
+    "regression": "Negative graph fails; corrected graph passes",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  },
+  {
+    "id": "msaa_resolve",
+    "symptom": "Invalid or undefined image",
+    "capture": "Capture FBO attachments and pass graph",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "Resolve rectangles have different dimensions",
+    "fix": "Equal size/format, NEAREST and single-sample destination",
+    "regression": "Negative graph fails; corrected graph passes",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  },
+  {
+    "id": "barrier_missing",
+    "symptom": "Stale compute-produced texture",
+    "capture": "Capture dispatch, image binding, barrier and sample",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "Image writes not visible to texture fetch",
+    "fix": "GL_TEXTURE_FETCH_BARRIER_BIT after dispatch",
+    "regression": "Consumer-specific barrier accepted",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  },
+  {
+    "id": "double_srgb",
+    "symptom": "Washed out midtones",
+    "capture": "Record attachment encoding and shader output",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "Manual encoding plus sRGB attachment conversion",
+    "fix": "Encode exactly once",
+    "regression": "Piecewise sRGB CPU oracle tolerance 1e-5",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  },
+  {
+    "id": "alpha_edge",
+    "symptom": "Dark transparent edges",
+    "capture": "Record blend factors and texture alpha convention",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "Premultiplied RGB multiplied by alpha twice",
+    "fix": "Premultiply once with ONE, ONE_MINUS_SRC_ALPHA",
+    "regression": "Single multiplication reference",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  },
+  {
+    "id": "hdr_clip",
+    "symptom": "Lost highlights",
+    "capture": "Capture pre-tone-map attachment format",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "UNORM intermediate clips HDR before tone mapping",
+    "fix": "Use renderable HDR intermediate and validate support",
+    "regression": "4.0 maps to 0.8 before display encoding",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  },
+  {
+    "id": "startup_compile",
+    "symptom": "Cold startup compilation work",
+    "capture": "Count compile callbacks; real timing requires trace",
+    "minimal_reproduction": {
+      "broken": true,
+      "fixed": true
+    },
+    "root_cause": "Cache miss invokes source compilation",
+    "fix": "Warm permitted variants asynchronously and collect real cold/warm traces",
+    "regression": "Cold miss compiles; valid warm cache bypasses compile; no invented timing",
+    "reproduced": true,
+    "evidence": "CPU_MODEL_REPRODUCED",
+    "hardware": "NOT_RUN"
+  }
+]

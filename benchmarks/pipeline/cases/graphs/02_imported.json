@@ -1,0 +1,25 @@
+{
+  "input": {
+    "resources": {
+      "a": {
+        "format": "RGBA8",
+        "size": [
+          64,
+          64
+        ],
+        "samples": 1,
+        "imported": true
+      }
+    },
+    "passes": [
+      {
+        "id": "present",
+        "reads": [
+          "a"
+        ]
+      }
+    ]
+  },
+  "expected_valid": true,
+  "expected_rule": null
+}

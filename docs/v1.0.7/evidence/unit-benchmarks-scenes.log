@@ -1,0 +1,17 @@
+test_capability_exit_is_not_pass (test_runner.ImageContractTests.test_capability_exit_is_not_pass) ... ok
+test_crash_is_not_visual_rejection (test_runner.ImageContractTests.test_crash_is_not_visual_rejection) ... ok
+test_equal (test_runner.ImageContractTests.test_equal) ... ok
+test_golden_inventory (test_runner.ImageContractTests.test_golden_inventory) ... ok
+test_mismatched_dimensions (test_runner.ImageContractTests.test_mismatched_dimensions) ... ok
+test_shader_to_api_buffer_update_guard (test_runner.ImageContractTests.test_shader_to_api_buffer_update_guard) ... ok
+test_size_limit (test_runner.ImageContractTests.test_size_limit) ... ok
+test_small_tolerance (test_runner.ImageContractTests.test_small_tolerance) ... ok
+test_trailing_rejected (test_runner.ImageContractTests.test_trailing_rejected) ... ok
+test_truncated_rejected (test_runner.ImageContractTests.test_truncated_rejected) ... ok
+test_visible_regression (test_runner.ImageContractTests.test_visible_regression) ... ok
+test_wrong_magic (test_runner.ImageContractTests.test_wrong_magic) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.006s
+
+OK

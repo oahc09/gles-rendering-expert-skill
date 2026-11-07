@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GLES whole-resource RenderGraph planning contract",
+  "type": "object",
+  "required": [
+    "resources",
+    "passes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "resources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "format",
+          "size"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "format": {
+            "enum": [
+              "RGBA8",
+              "SRGB8_ALPHA8",
+              "RGBA16F",
+              "R32UI",
+              "DEPTH24_STENCIL8",
+              "DEPTH_COMPONENT24"
+            ]
+          },
+          "size": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "samples": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "imported": {
+            "type": "boolean"
+          },
+          "transient": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "passes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "reads": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "writes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "discard": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "expected_formats": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "subranges": {
+            "type": "object"
+          },
+          "resolve": {
+            "type": "object",
+            "required": [
+              "src",
+              "dst"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "dst": {
+                "type": "string"
+              },
+              "filter": {
+                "enum": [
+                  "NEAREST",
+                  "LINEAR"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

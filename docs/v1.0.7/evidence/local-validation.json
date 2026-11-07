@@ -1,0 +1,674 @@
+{
+  "status": "PASS",
+  "executed_at": "2026-11-07T04:22:04.088551+00:00",
+  "baseline": "dbef940fd261d269ad950770a9105636bab4f915",
+  "scope": "Current environment, host unit/schema and actual software EGL/GLSL validation; not remote CI or device/model acceptance",
+  "total_unittests": 415,
+  "results": [
+    {
+      "name": "unit-benchmarks-agent",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/agent",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-agent.log",
+      "log_sha256": "28e89715baf862f0bc4e3e34dd74a72037c63d88365e0b18111cabe7ab380f1d",
+      "unittest_count": 57
+    },
+    {
+      "name": "unit-benchmarks-device_lab",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/device_lab",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-device_lab.log",
+      "log_sha256": "3c2977ade79f562f7117d856fe706269c9a7c722629f2be74b69476908584d72",
+      "unittest_count": 10
+    },
+    {
+      "name": "unit-benchmarks-driver_compat",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/driver_compat",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-driver_compat.log",
+      "log_sha256": "f8ece8ac4c381711e0ca1932f658e7054f62fe280549b7961431ae5071e4782f",
+      "unittest_count": 9
+    },
+    {
+      "name": "unit-benchmarks-gpu",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/gpu",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-gpu.log",
+      "log_sha256": "e56eb0e9e5eff80d7c1329f8607dbda1ade22f17893ffdbf41862f9ace47e7d4",
+      "unittest_count": 15
+    },
+    {
+      "name": "unit-benchmarks-longrun",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/longrun",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-longrun.log",
+      "log_sha256": "bf1b719534d3803dcf9cc420c37c50eea25bc2c70fdb8c01efd0feee9bf1c9b7",
+      "unittest_count": 26
+    },
+    {
+      "name": "unit-benchmarks-pipeline",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/pipeline",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-pipeline.log",
+      "log_sha256": "85852b4184538d4a80e754a0476ed95d3d8496a81faf72e4ac2fb1209ca5706e",
+      "unittest_count": 60
+    },
+    {
+      "name": "unit-benchmarks-quality_policy",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/quality_policy",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-quality_policy.log",
+      "log_sha256": "65fab0751fb0e62c9ec1088b51a7e1dfa8bc585bffe2d46324c3bb4e085a2f1d",
+      "unittest_count": 25
+    },
+    {
+      "name": "unit-benchmarks-reducer",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/reducer",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-reducer.log",
+      "log_sha256": "8fc77647f374cfc2c57bf31c86363a6c90f2a6a50a24adedfa4fd0ef533587ff",
+      "unittest_count": 13
+    },
+    {
+      "name": "unit-benchmarks-resource_pressure",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/resource_pressure",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-resource_pressure.log",
+      "log_sha256": "e5dadaaec4554c0ba07c378513498394d600eee1ce05c1fa324e9648be797021",
+      "unittest_count": 12
+    },
+    {
+      "name": "unit-benchmarks-scenes",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/scenes",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-scenes.log",
+      "log_sha256": "6f46f269579aaaa7762b3b1567c5e6c062c6088efbb346bc50fa73cf93dfcab6",
+      "unittest_count": 12
+    },
+    {
+      "name": "unit-benchmarks-system_scenes",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/system_scenes",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-system_scenes.log",
+      "log_sha256": "995e7eca389271342646a16ecf38c9ae8b770834ff715eb645ac4777c3705400",
+      "unittest_count": 24
+    },
+    {
+      "name": "unit-benchmarks-texture_pipeline",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/texture_pipeline",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-texture_pipeline.log",
+      "log_sha256": "5b232f1c3f955259901e6262e28eab51fe409a8d414dcf3bdc98a1928780d952",
+      "unittest_count": 9
+    },
+    {
+      "name": "unit-benchmarks-traces",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/traces",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-traces.log",
+      "log_sha256": "35f5f4c71d0a797e430a111fa26f10930c140328c96542d95bf5be1508ea7c4a",
+      "unittest_count": 10
+    },
+    {
+      "name": "unit-benchmarks-traces-sql",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/traces/sql",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-traces-sql.log",
+      "log_sha256": "ca68490ae3015e81c10a9245f45d33011b6fae2c13758301f4d352a02b32c4c1",
+      "unittest_count": 6
+    },
+    {
+      "name": "unit-benchmarks-visual_quality",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "benchmarks/visual_quality",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-benchmarks-visual_quality.log",
+      "log_sha256": "a824ba0a33eec8261e4bc1f8780fc05cf8086347980befdaec23efe987f83932",
+      "unittest_count": 16
+    },
+    {
+      "name": "unit-examples-android_cases",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "examples/android_cases",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-examples-android_cases.log",
+      "log_sha256": "1bb07fc15b4924cc199d828dfe255a16c0e43afb5b26a5247c1bc39773b62808",
+      "unittest_count": 21
+    },
+    {
+      "name": "unit-examples-android_cases-wallpaper-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "examples/android_cases/wallpaper/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-examples-android_cases-wallpaper-tests.log",
+      "log_sha256": "a6fe73799d3ec9a03812a5deb7e81f80179784cbc72386806887853984d9748c",
+      "unittest_count": 6
+    },
+    {
+      "name": "unit-references-research",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "references/research",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-references-research.log",
+      "log_sha256": "ec1a8056e86d606695feaa5e99a9c1225deee5d6c32a53326cfbb9d9109c3203",
+      "unittest_count": 31
+    },
+    {
+      "name": "unit-tools",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/unit-tools.log",
+      "log_sha256": "60952ac36251080cfb50a4e0e9ed352714342c514c2794d44614539b1db38c8f",
+      "unittest_count": 53
+    },
+    {
+      "name": "pipeline-schema",
+      "command": [
+        "python3",
+        "tools/validate_pipeline.py",
+        "--output",
+        "docs/v1.0.7/evidence/pipeline-contracts.json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/pipeline-schema.log",
+      "log_sha256": "131fb97e85c1491822d4dfdb8d72a4d79bbcd04e4599bd67fbb22d960a3afad5",
+      "unittest_count": null
+    },
+    {
+      "name": "pipeline-diagnostics",
+      "command": [
+        "python3",
+        "benchmarks/pipeline/diagnose.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/pipeline-diagnostics.log",
+      "log_sha256": "3be9eef042a96d85d5a38a2a9ca49a50768503d1d5fd3fdc349b29ab653e311b",
+      "unittest_count": null
+    },
+    {
+      "name": "shader-experiments",
+      "command": [
+        "python3",
+        "benchmarks/pipeline/shader_experiments.py",
+        "--output",
+        "docs/v1.0.7/evidence/shader-experiments.json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/shader-experiments.log",
+      "log_sha256": "53676523e76cacb3c4566ea9e0f543bfce0e778faf2a02098535a8d31fe1b754",
+      "unittest_count": null
+    },
+    {
+      "name": "pipeline-build",
+      "command": [
+        "sh",
+        "examples/pipeline/build.sh"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/pipeline-build.log",
+      "log_sha256": "a9847053a6a7135efcb4a5e76809445b4d759677c275ca2954fb114f6901794e",
+      "unittest_count": null
+    },
+    {
+      "name": "pipeline-runtime",
+      "command": [
+        "python3",
+        "benchmarks/pipeline/runtime.py",
+        "--output",
+        "docs/v1.0.7/evidence/runtime"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/pipeline-runtime.log",
+      "log_sha256": "196a36db2f270d45e21b68888e9b551b385dbff2bf316760e145130196ff4635",
+      "unittest_count": null
+    },
+    {
+      "name": "pipeline-version-matrix",
+      "command": [
+        "python3",
+        "benchmarks/pipeline/runtime.py",
+        "--mesa-version-matrix",
+        "--output",
+        "docs/v1.0.7/evidence/versions"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/pipeline-version-matrix.log",
+      "log_sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431",
+      "unittest_count": null
+    },
+    {
+      "name": "legacy-compile",
+      "command": [
+        "python3",
+        "examples/validation/compile-legacy.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/legacy-compile.log",
+      "log_sha256": "f777cf511c203024bf139ee5164b811f9313ef5e61d3c7e531c7a9992eeb4819",
+      "unittest_count": null
+    },
+    {
+      "name": "legacy-egl-smoke",
+      "command": [
+        "sh",
+        "examples/validation/run-host.sh"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/legacy-egl-smoke.log",
+      "log_sha256": "02253afa67c68f53c8fdb934c126c1be87cc50f00396aaa6fec8b1811ac946d7",
+      "unittest_count": null
+    },
+    {
+      "name": "legacy-shaders",
+      "command": [
+        "python3",
+        "tools/validate_shaders.py",
+        "--output",
+        "docs/v1.0.7/evidence/legacy-shaders.json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/legacy-shaders.log",
+      "log_sha256": "41418d144214cfdcc577e4fa1c70339c1e59e3bc59b713a5069635aba68ad66e",
+      "unittest_count": null
+    },
+    {
+      "name": "rule-contracts",
+      "command": [
+        "python3",
+        "tools/validate_rules.py",
+        "--output",
+        "docs/v1.0.7/evidence/rules.json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/rule-contracts.log",
+      "log_sha256": "c98ec60c2105acac184e51af46ea9bf4c2c0477c8180c0b9761df2008e80c6bd",
+      "unittest_count": null
+    },
+    {
+      "name": "reducer",
+      "command": [
+        "python3",
+        "benchmarks/reducer/reduce.py",
+        "--output",
+        "/tmp/gles-v107-reducer"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/reducer.log",
+      "log_sha256": "67e9d6b86579eddf0148fbd45f07bdd12c777e722a68a8dd503373abea680b64",
+      "unittest_count": null
+    },
+    {
+      "name": "gate-v1.0.3",
+      "command": [
+        "python3",
+        "tools/check_release_gates.py",
+        "--gates",
+        "v1.0.3"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/gate-v1.0.3.log",
+      "log_sha256": "deccb1bbc08fb8bc76152e7de5e9101f2d5a39f294b5da80e35764395d31d55a",
+      "unittest_count": null
+    },
+    {
+      "name": "gate-v1.0.4",
+      "command": [
+        "python3",
+        "tools/check_release_gates.py",
+        "--gates",
+        "v1.0.4"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/gate-v1.0.4.log",
+      "log_sha256": "d2e5e20e55267d95b750c4b0420305ffe60b33573e27bbfff612e8d8fd334a3f",
+      "unittest_count": null
+    },
+    {
+      "name": "gate-v1.0.5",
+      "command": [
+        "python3",
+        "tools/check_release_gates.py",
+        "--gates",
+        "v1.0.5"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/gate-v1.0.5.log",
+      "log_sha256": "9f29da43f14e029ccf7fb1af457f4ce39d87f419a1a814435e97ad8dc7633e76",
+      "unittest_count": null
+    },
+    {
+      "name": "gate-v1.0.6",
+      "command": [
+        "python3",
+        "tools/check_release_gates.py",
+        "--gates",
+        "v1.0.6"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/gate-v1.0.6.log",
+      "log_sha256": "ec4f2cf59bf98bda24706ea4490d4dd024d3d75005edb6b9c581fb50e5ed8fcd",
+      "unittest_count": null
+    },
+    {
+      "name": "gate-v1.0.7",
+      "command": [
+        "python3",
+        "tools/check_release_gates.py",
+        "--gates",
+        "v1.0.7"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/gate-v1.0.7.log",
+      "log_sha256": "40decfbfd132c1c5d76338cd89321a0b711770727c63892b85a5c064ec005983",
+      "unittest_count": null
+    },
+    {
+      "name": "release-must-remain-blocked",
+      "command": [
+        "python3",
+        "tools/check_release_gates.py",
+        "--gates",
+        "v1.0.7",
+        "--require-release"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/release-must-remain-blocked.log",
+      "log_sha256": "40decfbfd132c1c5d76338cd89321a0b711770727c63892b85a5c064ec005983",
+      "unittest_count": null
+    },
+    {
+      "name": "source-hygiene",
+      "command": [
+        "python3",
+        "tools/audit_v107.py",
+        "--output",
+        "docs/v1.0.7/evidence/source-hygiene.json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/source-hygiene.log",
+      "log_sha256": "78bb95ecec24bb396377da100b6868ddb16cbc4c2368a2e472e6b00fde28cb23",
+      "unittest_count": null
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "status": "PASS",
+      "log": "docs/v1.0.7/evidence/diff-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unittest_count": null
+    }
+  ],
+  "not_run": [
+    "Physical Mali/Adreno/PowerVR acceptance",
+    "Live paired provider/model evaluation",
+    "Calibrated display / cross-backend MSAA edge coverage",
+    "New Android/NDK builds and real Android lifecycle",
+    "Remote GitHub Actions (manual-only; no new cloud execution authorized)"
+  ]
+}

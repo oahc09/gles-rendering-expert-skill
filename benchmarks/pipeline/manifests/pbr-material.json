@@ -1,0 +1,37 @@
+{
+  "gles": "3.0",
+  "blocks": [
+    {
+      "name": "Material",
+      "kind": "ubo",
+      "layout": "std140",
+      "binding": 0,
+      "size": 32,
+      "members": [
+        {
+          "name": "baseColor",
+          "type": "vec4",
+          "offset": 0
+        },
+        {
+          "name": "roughness",
+          "type": "float",
+          "offset": 16
+        },
+        {
+          "name": "metallic",
+          "type": "float",
+          "offset": 20
+        }
+      ]
+    }
+  ],
+  "samplers": [
+    {
+      "name": "baseColorTex",
+      "type": "sampler2D",
+      "unit": 0,
+      "format": "RGBA8"
+    }
+  ]
+}

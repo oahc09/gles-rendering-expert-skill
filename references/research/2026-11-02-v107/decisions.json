@@ -1,0 +1,179 @@
+[
+  {
+    "id": "material-bindings",
+    "stage": "accepted",
+    "evidence_state": "REPRODUCED",
+    "original_url": "https://github.com/google/filament/commit/1758f2c27dc5ca69bd0205d0c301e065808970f3",
+    "event_at": "2026-10-27T00:39:46Z",
+    "published_at": null,
+    "discovered_at": "2026-11-07T04:14:58.511600+00:00",
+    "window_class": "in-window",
+    "source_sha256": "7328e6c4a0359fdc64c5a97dbdbc4ce920ef5a132e7fe4fec21913e0ec387da3",
+    "source_evidence": "references/research/2026-11-02-v107/sources/1758f2c27dc5ca69bd0205d0c301e065808970f3.json",
+    "retrieval_complete": true,
+    "engineering_impact": "Review of MaterialDefinition.cpp and MaterialParser.cpp: duplicate per-material bindings are rejected; layout binding and type must match. Adapt the validation principle to separate GLES UBO/SSBO/sampler namespaces, not descriptor sets.",
+    "gpu_api_version": "GLES3.0/3.1/3.2 except explicitly rejected Vulkan performance transfer",
+    "performance_status": "NOT_RUN",
+    "rule_ids": [
+      "MATERIAL_BINDING",
+      "MATERIAL_ABI"
+    ],
+    "affected_sections": [
+      "references/pipeline/material-abi.md"
+    ],
+    "minimal_sample": "benchmarks/pipeline/manifests/pbr-material.json",
+    "test_ids": [
+      "test_material.MaterialTests.test_binding_namespaces",
+      "test_material.MaterialTests.test_reflection"
+    ],
+    "device_conditions": "Host model/software tests only; actual device identity and capabilities are required for hardware claims.",
+    "reviewer": "Source diff review and independent code review; not a device lab",
+    "reproduction_evidence": [
+      "python3 -m unittest discover -s benchmarks/pipeline -p test_*.py"
+    ]
+  },
+  {
+    "id": "material-version",
+    "stage": "accepted",
+    "evidence_state": "REPRODUCED",
+    "original_url": "https://github.com/google/filament/commit/35137392f7719ee14f745b3d49ceec75a80dfbc4",
+    "event_at": "2026-10-27T00:02:21Z",
+    "published_at": null,
+    "discovered_at": "2026-11-07T04:14:58.511911+00:00",
+    "window_class": "in-window",
+    "source_sha256": "8dd16e8446e8c4a40579bce5065969b060ae4c603022db97f40f4c3f989e305a",
+    "source_evidence": "references/research/2026-11-02-v107/sources/35137392f7719ee14f745b3d49ceec75a80dfbc4.json",
+    "retrieval_complete": true,
+    "engineering_impact": "The exact diff changes MATERIAL_VERSION 79 to 80; its comment defines material package compatibility. Adopt explicit ABI/cache invalidation rather than infer a new GLES feature.",
+    "gpu_api_version": "GLES3.0/3.1/3.2 except explicitly rejected Vulkan performance transfer",
+    "performance_status": "NOT_RUN",
+    "rule_ids": [
+      "PROGRAM_CACHE_ABI"
+    ],
+    "affected_sections": [
+      "references/pipeline/shader-variants.md"
+    ],
+    "minimal_sample": "benchmarks/pipeline/variants.py",
+    "test_ids": [
+      "test_variants.VariantTests.test_explicit_backend_abi"
+    ],
+    "device_conditions": "Host model/software tests only; actual device identity and capabilities are required for hardware claims.",
+    "reviewer": "Source diff review and independent code review; not a device lab",
+    "reproduction_evidence": [
+      "python3 -m unittest discover -s benchmarks/pipeline -p test_*.py"
+    ]
+  },
+  {
+    "id": "variant-pruning",
+    "stage": "deferred",
+    "evidence_state": "VERIFIED_SOURCE",
+    "original_url": "https://github.com/google/filament/commit/4e2df5e24d745a332faacccd5dd10660f232e514",
+    "event_at": "2026-10-27T05:05:25Z",
+    "published_at": null,
+    "discovered_at": "2026-11-07T04:14:58.512357+00:00",
+    "window_class": "in-window",
+    "source_sha256": "a078ebe8179cd1b8fa16539e3834bd59992de611172e1db8767aef055c5b2d9d",
+    "source_evidence": "references/research/2026-11-02-v107/sources/4e2df5e24d745a332faacccd5dd10660f232e514.json",
+    "retrieval_complete": true,
+    "engineering_impact": "Diff filters MOT shaders only when no custom vertex/depth behavior is required, and supplies default-program fallback. Our generic budget checker does not prove semantic shader equivalence or implement Filament MOT sharing. Do not claim this specific optimization reproduced.",
+    "gpu_api_version": "GLES3.0/3.1/3.2 except explicitly rejected Vulkan performance transfer",
+    "performance_status": "NOT_RUN",
+    "rule_ids": [
+      "VARIANT_BUDGET"
+    ],
+    "affected_sections": [
+      "references/pipeline/shader-performance.md"
+    ],
+    "minimal_sample": "benchmarks/pipeline/variants.py",
+    "test_ids": [],
+    "device_conditions": "Host model/software tests only; actual device identity and capabilities are required for hardware claims.",
+    "reviewer": "Source diff review and independent code review; not a device lab",
+    "reproduction_evidence": []
+  },
+  {
+    "id": "vulkan-performance-not-gles",
+    "stage": "rejected",
+    "evidence_state": "REJECTED",
+    "original_url": "https://github.com/google/filament/commit/26b427773c9292317c4e65d7cd371d87daa1eebc",
+    "event_at": "2026-10-26T19:37:35Z",
+    "published_at": null,
+    "discovered_at": "2026-11-07T04:14:58.512592+00:00",
+    "window_class": "in-window",
+    "source_sha256": "c73f3e0178cd304ccb9e651908f09f89aabb2667cc6a657f0fa9343d0dcc3a02",
+    "source_evidence": "references/research/2026-11-02-v107/sources/26b427773c9292317c4e65d7cd371d87daa1eebc.json",
+    "retrieval_complete": true,
+    "engineering_impact": "Vulkan backend depth-view restriction removal and an upstream Pixel6Pro result cannot support a GLES 0.6ms gain or a portable GLES rule. Retain as an explicit rejected transfer.",
+    "gpu_api_version": "GLES3.0/3.1/3.2 except explicitly rejected Vulkan performance transfer",
+    "performance_status": "NOT_RUN",
+    "rule_ids": [
+      "API_BOUNDARY"
+    ],
+    "affected_sections": [
+      "references/pipeline/resource-hazards.md"
+    ],
+    "minimal_sample": null,
+    "test_ids": [],
+    "device_conditions": "Host model/software tests only; actual device identity and capabilities are required for hardware claims.",
+    "reviewer": "Source diff review and independent code review; not a device lab",
+    "reproduction_evidence": []
+  },
+  {
+    "id": "perfetto-59.1",
+    "stage": "deferred",
+    "evidence_state": "VERIFIED_SOURCE",
+    "original_url": "https://github.com/google/perfetto/releases/tag/v59.1",
+    "event_at": "2026-10-27T02:09:05Z",
+    "published_at": "2026-10-27T02:09:05Z",
+    "discovered_at": "2026-11-07T04:14:58.513075+00:00",
+    "window_class": "in-window",
+    "source_sha256": "c0736b883aef708125877c3d4e9ee020e0efb4b98e5e052d3058c10d705e4373",
+    "source_evidence": "references/research/2026-11-02-v107/sources/perfetto.json",
+    "retrieval_complete": true,
+    "engineering_impact": "Published 2026-10-27, not creation date Oct23. Release documents agent-mode output and GPU drawcall stage slices. Reuse existing trace adapters; do not assume target producers expose new slices or change parsers without a captured trace.",
+    "gpu_api_version": "GLES3.0/3.1/3.2 except explicitly rejected Vulkan performance transfer",
+    "performance_status": "NOT_RUN",
+    "rule_ids": [
+      "TRACE_SCHEMA_PROBE"
+    ],
+    "affected_sections": [
+      "references/rules/profiling-tools.md"
+    ],
+    "minimal_sample": "benchmarks/traces",
+    "test_ids": [],
+    "device_conditions": "Host model/software tests only; actual device identity and capabilities are required for hardware claims.",
+    "reviewer": "Source diff review and independent code review; not a device lab",
+    "reproduction_evidence": []
+  },
+  {
+    "id": "x-unverified",
+    "stage": "deferred",
+    "evidence_state": "UNVERIFIED",
+    "original_url": null,
+    "event_at": null,
+    "published_at": null,
+    "discovered_at": "2026-11-07T04:14:58.513108+00:00",
+    "window_class": "date-unknown",
+    "source_sha256": null,
+    "source_evidence": "No verified original dated X post was available in this review.",
+    "retrieval_complete": false,
+    "engineering_impact": "Manual verification queue only. No link, date, technical result or rule invented.",
+    "gpu_api_version": "unknown",
+    "performance_status": "NOT_RUN"
+  },
+  {
+    "id": "gles-cts-series",
+    "stage": "deferred",
+    "evidence_state": "UNVERIFIED",
+    "original_url": "https://github.com/KhronosGroup/VK-GL-CTS/wiki/Overview-of-releases",
+    "event_at": null,
+    "published_at": null,
+    "discovered_at": "2026-11-07T04:14:58.513111+00:00",
+    "window_class": "date-unknown",
+    "source_sha256": null,
+    "source_evidence": "Plan mentions Active 3.2.14.x; current release API window yielded Vulkan tags, not evidence for a newly released GLES feature. Active-series wiki claim not independently archived here.",
+    "retrieval_complete": false,
+    "engineering_impact": "Use established GLES specifications for API rules; do not present Vulkan CTS releases as GLES updates.",
+    "gpu_api_version": "GLES CTS series status unverified",
+    "performance_status": "NOT_APPLICABLE"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "input": {
+    "resources": {
+      "a": {
+        "format": "RGBA8",
+        "size": [
+          64,
+          64
+        ],
+        "samples": 1
+      }
+    },
+    "passes": [
+      {
+        "id": "draw",
+        "writes": [
+          "a"
+        ],
+        "subranges": {
+          "a": [
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "id": "present",
+        "depends_on": [
+          "draw"
+        ],
+        "reads": [
+          "a"
+        ]
+      }
+    ]
+  },
+  "expected_valid": false,
+  "expected_rule": "RG_SUBRANGE_UNSUPPORTED"
+}

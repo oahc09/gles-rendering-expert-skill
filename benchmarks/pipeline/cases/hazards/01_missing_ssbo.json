@@ -1,0 +1,29 @@
+{
+  "input": {
+    "gles": "3.1",
+    "events": [
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "ssbo",
+            "mode": "write",
+            "stage": "compute"
+          }
+        ]
+      },
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "ssbo",
+            "mode": "read",
+            "stage": "fragment"
+          }
+        ]
+      }
+    ]
+  },
+  "expected_valid": false,
+  "expected_rule": "HZ_BARRIER"
+}

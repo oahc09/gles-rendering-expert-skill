@@ -1,0 +1,32 @@
+{
+  "input": {
+    "gles": "3.1",
+    "events": [
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "image",
+            "mode": "write",
+            "stage": "compute"
+          }
+        ]
+      },
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "framebuffer",
+            "mode": "read",
+            "stage": "fragment"
+          }
+        ],
+        "barrier": [
+          "GL_FRAMEBUFFER_BARRIER_BIT"
+        ]
+      }
+    ]
+  },
+  "expected_valid": true,
+  "expected_rule": null
+}

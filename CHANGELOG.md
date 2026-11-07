@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.0.7 pipeline engineering candidate — 2026-11-07 (not released)
+
+- Added bounded shader-variant/cache contracts, material ABI/reflection validator,
+  standalone RenderGraph/hazard analysis and ten executable diagnostic controls.
+- Added ten actual C++17/GLES acceptance scenarios, six independent CPU-analytic
+  color/material references and GLES3.0/3.1/3.2 software routing checks.
+- Added eight complete shader A/B compile experiments; static warnings and host
+  timing remain separate from unmeasured physical-device performance.
+- Appended thirty independent pipeline Agent tasks without changing the earlier 142
+  cases; added evidence-gated first-run, numeric and visual scoring.
+- Extended the existing research radar and archived the plan's 90-day window and
+  reviewed Filament source diffs. Added schema validation and recursive v1.0.7
+  release bookkeeping to the existing manual workflow.
+- No version bump, new release/tag, fabricated hardware/model result, scheduler,
+  permission change or replacement of prior release gates.
+
+
+
 ## v1.0.5 implementation candidate (not released)
 
 - Added LongRunCapture and deterministic adaptive-quality recommendations with hysteresis, floors, disabled/background handling and visual/capability gates.

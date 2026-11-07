@@ -10,9 +10,9 @@ def require(condition, message):
     if not condition:
         raise AssertionError(message)
 
-def check(data, skill, previous=None, ancestor=None, oldest=None):
-    require(data['target_version'] in ('1.0.3', '1.0.4', '1.0.5', '1.0.6'), 'Gate validation failed')
-    require(set(data['work_packages']) == {f'W{i}' for i in range(11 if data['target_version']=='1.0.6' else 9 if data['target_version']=='1.0.5' else 8)}, 'Gate validation failed')
+def check(data, skill, previous=None, ancestor=None, oldest=None, origin=None):
+    require(data['target_version'] in ('1.0.3', '1.0.4', '1.0.5', '1.0.6', '1.0.7'), 'Gate validation failed')
+    require(set(data['work_packages']) == {f'W{i}' for i in range(10 if data['target_version']=='1.0.7' else 11 if data['target_version']=='1.0.6' else 9 if data['target_version']=='1.0.5' else 8)}, 'Gate validation failed')
     for key, item in data['work_packages'].items():
         require(item['status'] in ALLOWED, key)
         require(item['implementation'] and item['acceptance'] and item['remaining'], key)
@@ -54,6 +54,17 @@ def check(data, skill, previous=None, ancestor=None, oldest=None):
         prior_ready = check(previous, 'version: '+str(previous.get('metadata_version')), ancestor, oldest)
         unreleased_metadata = previous['metadata_version']
         ready = ready and prior_ready and data['release_authorized']
+    if data['target_version'] == '1.0.7':
+        require(previous is not None and previous.get('target_version') == '1.0.6', 'v1.0.7 requires exact v1.0.6 predecessor')
+        require(ancestor is not None and ancestor.get('target_version') == '1.0.5', 'v1.0.7 requires exact v1.0.5 ancestor')
+        require(oldest is not None and oldest.get('target_version') == '1.0.4', 'v1.0.7 requires exact v1.0.4 ancestor')
+        require(origin is not None and origin.get('target_version') == '1.0.3', 'v1.0.7 requires exact v1.0.3 origin')
+        require(data.get('prior_release_gate') == 'docs/v1.0.6/release-gates.json', 'Do not replace prior gates')
+        require(not data.get('accepted_limitations'), 'No risk waiver authorized')
+        require(type(data.get('release_authorized')) is bool, 'Explicit release authorization flag required')
+        prior_ready = check(previous, 'version: '+str(previous.get('metadata_version')), ancestor, oldest, origin)
+        unreleased_metadata = previous['metadata_version']
+        ready = ready and prior_ready and data['release_authorized']
     match = re.search('^\\s*version:\\s*[\\"\\\']?([0-9]+\\.[0-9]+\\.[0-9]+)', skill, re.M)
     require(match, 'SKILL metadata version missing')
     if not ready:
@@ -68,10 +79,16 @@ def check(data, skill, previous=None, ancestor=None, oldest=None):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--require-release', action='store_true')
-    p.add_argument('--gates', choices=['v1.0.3', 'v1.0.4', 'v1.0.5', 'v1.0.6'], default='v1.0.3')
+    p.add_argument('--gates', choices=['v1.0.3', 'v1.0.4', 'v1.0.5', 'v1.0.6', 'v1.0.7'], default='v1.0.3')
     args = p.parse_args()
     previous = json.loads((ROOT / 'docs/release-gates.json').read_text())
-    if args.gates == 'v1.0.6':
+    if args.gates == 'v1.0.7':
+        data = json.loads((ROOT / 'docs/v1.0.7-release-gates.json').read_text())
+        predecessor = json.loads((ROOT / 'docs/v1.0.6/release-gates.json').read_text())
+        ancestor = json.loads((ROOT / 'docs/v1.0.5/release-gates.json').read_text())
+        oldest = json.loads((ROOT / 'docs/v1.0.4-release-gates.json').read_text())
+        ready = check(data, (ROOT / 'SKILL.md').read_text(), predecessor, ancestor, oldest, previous)
+    elif args.gates == 'v1.0.6':
         data = json.loads((ROOT / 'docs/v1.0.6/release-gates.json').read_text())
         predecessor = json.loads((ROOT / 'docs/v1.0.5/release-gates.json').read_text())
         ancestor = json.loads((ROOT / 'docs/v1.0.4-release-gates.json').read_text())

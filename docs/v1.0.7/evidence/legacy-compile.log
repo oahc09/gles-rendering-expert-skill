@@ -1,0 +1,84 @@
+{
+  "scope": "host C++ constructor instantiation + compile/link, not platform runtime",
+  "compiler": "c++ (Debian 14.2.0-19) 14.2.0",
+  "results": [
+    {
+      "file": "references/examples/egl_context_manager.cpp",
+      "sha256": "b495258f10ec404b5599b021942e7c1570c6c0499eafe7a00f5e7b62acaf13dc",
+      "instantiated_types": [
+        "EGLContextManager"
+      ],
+      "host_compile_link": "PASS",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "runtime": "NOT_RUN (PBO separately executed by egl_smoke)",
+      "android_target_compile": "NOT_RUN: no NDK target toolchain"
+    },
+    {
+      "file": "references/examples/msaa_ontile_resolve.cpp",
+      "sha256": "5a8dc9ead4f15864469be25e5cff739fd5cb9698addcd99b9f4baf6115051459",
+      "instantiated_types": [
+        "MsaaOnTilePipeline"
+      ],
+      "host_compile_link": "PASS",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "runtime": "NOT_RUN (PBO separately executed by egl_smoke)",
+      "android_target_compile": "NOT_RUN: no NDK target toolchain"
+    },
+    {
+      "file": "references/examples/offscreen_pipeline.cpp",
+      "sha256": "05c034704b63ea8a1b8c98921ceb0ed60d0e1970117845a24fa9f24f38d19b49",
+      "instantiated_types": [
+        "OffscreenPipeline"
+      ],
+      "host_compile_link": "PASS",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "runtime": "NOT_RUN (PBO separately executed by egl_smoke)",
+      "android_target_compile": "NOT_RUN: no NDK target toolchain"
+    },
+    {
+      "file": "references/examples/pbo_streaming_upload.cpp",
+      "sha256": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed",
+      "instantiated_types": [
+        "PboStreamingUploader"
+      ],
+      "host_compile_link": "PASS",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "runtime": "NOT_RUN (PBO separately executed by egl_smoke)",
+      "android_target_compile": "NOT_RUN: no NDK target toolchain"
+    },
+    {
+      "file": "references/examples/video_texture_pipeline.cpp",
+      "sha256": "4b27983dc0456586e1c0ded411dcb382c8e5ba078ded744207eb4bb0dee39319",
+      "instantiated_types": [
+        "VideoTexturePipeline"
+      ],
+      "host_compile_link": "PASS",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "runtime": "NOT_RUN (PBO separately executed by egl_smoke)",
+      "android_target_compile": "NOT_RUN: no NDK target toolchain"
+    },
+    {
+      "file": "references/examples/vertex_array_object.hpp",
+      "sha256": "67b9b8ec44939091357e3e53c0b9f3df2f8e997d51791ff25317cf3407f276df",
+      "instantiated_types": [
+        "Mesh"
+      ],
+      "host_compile_link": "PASS",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "runtime": "NOT_RUN (PBO separately executed by egl_smoke)",
+      "android_target_compile": "NOT_RUN: no NDK target toolchain"
+    }
+  ]
+}

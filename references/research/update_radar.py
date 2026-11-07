@@ -12,6 +12,8 @@ import urllib.request
 SOURCES = {
     "cts": ("KhronosGroup/VK-GL-CTS", "releases"),
     "filament": ("google/filament", "releases"),
+    "filament-commits": ("google/filament", "commits"),
+    "spirv-tools": ("KhronosGroup/SPIRV-Tools", "releases"),
     "agi": ("google/agi", "releases"),
     "perfetto": ("google/perfetto", "releases"),
     "renderdoc": ("baldurk/renderdoc", "releases"),
@@ -87,6 +89,33 @@ def validate_v105_evidence(row):
         if row[field] is not None and event_utc_day(row[field]) is None:raise ValueError('Invalid UTC-aware '+field)
     if row.get('window_class')=='in-window' and (event_utc_day(row['event_at']) is None or not dt.date(2026,10,2)<=event_utc_day(row['event_at'])<=dt.date(2026,11,1)):
         raise ValueError('Historical/unknown event cannot be called current-window')
+    return row
+
+def validate_v107_evidence(row, start=dt.date(2026, 8, 5), end=dt.date(2026, 11, 2)):
+    """Extend the same radar decision contract with explicit 90-day provenance."""
+    validate_decision(row)
+    states = {'VERIFIED_SOURCE', 'SPEC_CONFIRMED', 'REPRODUCED', 'UNVERIFIED', 'REJECTED'}
+    if row.get('evidence_state') not in states:
+        raise ValueError('Unknown v1.0.7 evidence state')
+    if row.get('window_class') not in {'in-window', 'historical-context', 'date-unknown'}:
+        raise ValueError('Missing window classification')
+    event = event_utc_day(row.get('event_at'))
+    if row['window_class'] == 'in-window' and (event is None or not start <= event <= end):
+        raise ValueError('Event is outside the declared 90-day window')
+    if row['window_class'] == 'historical-context' and (event is None or event >= start):
+        raise ValueError('Historical context requires an older known event date')
+    if row['window_class'] == 'date-unknown' and event is not None:
+        raise ValueError('Known event date must be classified explicitly')
+    if event_utc_day(row.get('discovered_at')) is None:
+        raise ValueError('UTC discovery timestamp required')
+    if row['evidence_state'] not in {'UNVERIFIED', 'REJECTED'}:
+        value = row.get('source_sha256')
+        if not isinstance(value, str) or len(value) != 64 or any(c not in '0123456789abcdef' for c in value):
+            raise ValueError('Verified source requires captured SHA256')
+    if row['stage'] == 'accepted' and row['evidence_state'] not in {'REPRODUCED', 'SPEC_CONFIRMED'}:
+        raise ValueError('Source verification alone cannot promote a technical rule')
+    if row.get('performance_status') not in {'NOT_RUN', 'NOT_APPLICABLE'}:
+        raise ValueError('This candidate has no independently measured device performance')
     return row
 
 def select(records, start, end, known):

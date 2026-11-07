@@ -1,0 +1,30 @@
+{
+  "input": {
+    "gles": "3.1",
+    "events": [
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "framebuffer",
+            "mode": "write",
+            "stage": "fragment"
+          }
+        ]
+      },
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "sample",
+            "mode": "read",
+            "stage": "fragment"
+          }
+        ],
+        "context": "other"
+      }
+    ]
+  },
+  "expected_valid": false,
+  "expected_rule": "HZ_CONTEXT_SYNC"
+}

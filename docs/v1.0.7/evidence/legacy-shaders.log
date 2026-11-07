@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "scope": "glslang standalone compile/link; not driver or hardware validation",
+  "compiler_version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n",
+  "cases": [
+    {
+      "case": "300-link",
+      "expected": "accept",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300.frag\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/300.vert": "e69bda791c2a48c6dcaf47e690928f825abd6f89fc654ee0f481561700a25ece",
+        "examples/validation/shaders/300.frag": "f8d8bc54821dab8b19e716d2b6b3b32e660f732c2610f4c31ee6c486a5601834"
+      }
+    },
+    {
+      "case": "300-negative",
+      "expected": "reject",
+      "status": "PASS",
+      "exit_code": 2,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300-invalid.frag\nERROR: 0:4: 'undefined_identifier' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/300-invalid.frag": "6038fb38d2459085f1edec2d4c1332a1c0fd0b48cb7e5110fd5a1abdd651176e"
+      }
+    },
+    {
+      "case": "310-link",
+      "expected": "accept",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/310.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/310.frag\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/310.vert": "06b95097ba97aa87b261e023ae253e0bfae5dc4c465b880f18e31158e403e512",
+        "examples/validation/shaders/310.frag": "c058d2d140126002e150aac4535db1424b85bef6705cea347dff0070c031229e"
+      }
+    },
+    {
+      "case": "310-negative",
+      "expected": "reject",
+      "status": "PASS",
+      "exit_code": 2,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/310-invalid.frag\nERROR: 0:4: 'undefined_identifier' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/310-invalid.frag": "bf5aeb59f7e5e17c5f089aad5da2af7f882e58abe08ed467adc9abdbdbddf234"
+      }
+    },
+    {
+      "case": "320-link",
+      "expected": "accept",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/320.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/320.frag\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/320.vert": "4c2cea60d6501f16058a3852e9ac185edffbf2bae643303db0a04f384af998f2",
+        "examples/validation/shaders/320.frag": "0c08bb4a107fecb0f4dd43ba193263babd1a5ea4e829adfb244622dd95a1f436"
+      }
+    },
+    {
+      "case": "320-negative",
+      "expected": "reject",
+      "status": "PASS",
+      "exit_code": 2,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/320-invalid.frag\nERROR: 0:4: 'undefined_identifier' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/320-invalid.frag": "f7e87ee9e6eba7fc5f3ceffbf70699a78dd854c4d0162a8e264fb9ce22a76cbb"
+      }
+    },
+    {
+      "case": "300-binding-invalid.frag",
+      "expected": "reject",
+      "status": "PASS",
+      "exit_code": 2,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300-binding-invalid.frag\nERROR: 0:3: 'binding' : not supported for this version or the enabled extensions \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/300-binding-invalid.frag": "2df587c388888ce684fdd9ddf56a63a9076802511c6776b5a767fb7b7a2df211"
+      }
+    },
+    {
+      "case": "310-binding.frag",
+      "expected": "accept",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/310-binding.frag": "f3f1b8de3ec034263d7113933ac6d8052e69175ef80aadf164aada6308845708"
+      }
+    },
+    {
+      "case": "300-compute-invalid.comp",
+      "expected": "reject",
+      "status": "PASS",
+      "exit_code": 2,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300-compute-invalid.comp\nERROR: #version: compute shaders require es profile with version 310 or above, or non-es profile with version 420 or above\nERROR: 1 compilation errors.  No code generated.\n\n\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/300-compute-invalid.comp": "25a7cc589de670dd242f3536f93a6401ca4692a51bde038d85877358952a3246"
+      }
+    },
+    {
+      "case": "310-compute.comp",
+      "expected": "accept",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/310-compute.comp": "d6eada6604c46477b83d651e7867309c8c74706ff1421fce48a0964284e04f01"
+      }
+    },
+    {
+      "case": "300-ssbo-invalid.frag",
+      "expected": "reject",
+      "status": "PASS",
+      "exit_code": 2,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300-ssbo-invalid.frag\nERROR: 0:3: 'std430' : not supported for this version or the enabled extensions \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/300-ssbo-invalid.frag": "75bebc15d3a7cee8cf1dcf7bbce483b64cb7215da5b291f5c3c809aabc4f8580"
+      }
+    },
+    {
+      "case": "310-ssbo.frag",
+      "expected": "accept",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/310-ssbo.frag": "735b816b5050484013ea3a2d3355430ba08a0a045607b30899f5a437cc794529"
+      }
+    },
+    {
+      "case": "310-geometry-invalid.geom",
+      "expected": "reject",
+      "status": "PASS",
+      "exit_code": 2,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/310-geometry-invalid.geom\nERROR: 0:5: 'geometry shaders' : required extension not requested: Possible extensions include:\nGL_EXT_geometry_shader\nGL_OES_geometry_shader\nERROR: 1 compilation errors.  No code generated.\n\n\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/310-geometry-invalid.geom": "ad02b00bef492610f923c3ebd391c1695b91c00702ea7158af36a54c76f201eb"
+      }
+    },
+    {
+      "case": "320-geometry.geom",
+      "expected": "accept",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/320-geometry.geom": "32db5fdba7f042e3fb634776a02b14f4e4898afadbc220a8419de47325471860"
+      }
+    },
+    {
+      "case": "varying-precision-difference-legal",
+      "expected": "accept",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300-precision.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300-precision.frag\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/300-precision.vert": "320c56de1ee49df6ebe838ee8d797c960c270f4fba22c3049700f6f56b19a408",
+        "examples/validation/shaders/300-precision.frag": "842233c987cc4f64f0508a7ba3d169084f62625c17795fcaa1aff979070662cd"
+      }
+    },
+    {
+      "case": "varying-type-mismatch-illegal",
+      "expected": "reject",
+      "status": "PASS",
+      "exit_code": 3,
+      "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300-precision.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/examples/validation/shaders/300-interface-type-mismatch.frag\nERROR: Linking vertex and fragment stages: Types must match:\n    vertex stage: \" vec3 value\"\n    fragment stage: \" vec2 value\"\n\n",
+      "stderr": "",
+      "sha256": {
+        "examples/validation/shaders/300-precision.vert": "320c56de1ee49df6ebe838ee8d797c960c270f4fba22c3049700f6f56b19a408",
+        "examples/validation/shaders/300-interface-type-mismatch.frag": "1333794a96d5a6e32b5ef3a5a9566cce48304c821bd97a2d7cc1bcf460716065"
+      }
+    }
+  ]
+}

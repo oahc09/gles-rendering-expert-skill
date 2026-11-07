@@ -1,0 +1,14 @@
+{
+  "candidate_bookkeeping": "PASS",
+  "release_ready": false,
+  "blocked_work_packages": {
+    "W1": "PARTIAL",
+    "W2": "BLOCKED_BY_HARDWARE",
+    "W3": "BLOCKED_BY_HARDWARE",
+    "W4": "BLOCKED_BY_HARDWARE",
+    "W5": "PARTIAL",
+    "W6": "BLOCKED_BY_PROVIDER",
+    "W7": "PARTIAL"
+  },
+  "note": "Bookkeeping PASS is NOT release acceptance."
+}
