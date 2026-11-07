@@ -1,0 +1,40 @@
+test_cancel_before_run (test_robustness.Robustness.test_cancel_before_run) ... ok
+test_cleanup_exception (test_robustness.Robustness.test_cleanup_exception) ... ok
+test_cleanup_rejection (test_robustness.Robustness.test_cleanup_rejection) ... ok
+test_decode_short (test_robustness.Robustness.test_decode_short) ... ok
+test_decode_valid (test_robustness.Robustness.test_decode_valid) ... ok
+test_dispatch_huge (test_robustness.Robustness.test_dispatch_huge) ... ok
+test_dispatch_negative (test_robustness.Robustness.test_dispatch_negative) ... ok
+test_dispatch_product (test_robustness.Robustness.test_dispatch_product) ... ok
+test_dispatch_valid (test_robustness.Robustness.test_dispatch_valid) ... ok
+test_missing_executable (test_robustness.Robustness.test_missing_executable) ... ok
+test_process_descendants_cleaned (test_robustness.Robustness.test_process_descendants_cleaned) ... ok
+test_process_error (test_robustness.Robustness.test_process_error) ... ok
+test_process_memory_quota (test_robustness.Robustness.test_process_memory_quota) ... ok
+test_process_output_quota (test_robustness.Robustness.test_process_output_quota) ... ok
+test_process_quota_validation (test_robustness.Robustness.test_process_quota_validation) ... ok
+test_process_signal_not_driver_proof (test_robustness.Robustness.test_process_signal_not_driver_proof) ... ok
+test_process_timeout (test_robustness.Robustness.test_process_timeout) ... ok
+test_quota_cleanup (test_robustness.Robustness.test_quota_cleanup) ... ok
+test_quota_overflow (test_robustness.Robustness.test_quota_overflow) ... ok
+test_retry_cap (test_robustness.Robustness.test_retry_cap) ... ok
+test_retry_timeout (test_robustness.Robustness.test_retry_timeout) ... ok
+test_shader_encoding (test_robustness.Robustness.test_shader_encoding) ... ok
+test_shader_length (test_robustness.Robustness.test_shader_length) ... ok
+test_shader_nul (test_robustness.Robustness.test_shader_nul) ... ok
+test_shader_valid (test_robustness.Robustness.test_shader_valid) ... ok
+test_shader_version (test_robustness.Robustness.test_shader_version) ... ok
+test_simulated_reset_cleanup (test_robustness.Robustness.test_simulated_reset_cleanup) ... ok
+test_texture_bool (test_robustness.Robustness.test_texture_bool) ... ok
+test_texture_budget (test_robustness.Robustness.test_texture_budget) ... ok
+test_texture_channels (test_robustness.Robustness.test_texture_channels) ... ok
+test_texture_huge (test_robustness.Robustness.test_texture_huge) ... ok
+test_texture_negative (test_robustness.Robustness.test_texture_negative) ... ok
+test_texture_valid (test_robustness.Robustness.test_texture_valid) ... ok
+test_texture_zero (test_robustness.Robustness.test_texture_zero) ... ok
+test_worker_cancel (test_robustness.Robustness.test_worker_cancel) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 2.347s
+
+OK

@@ -1,0 +1,3748 @@
+{
+  "timestamp": "2026-11-07T09:54:07.592213+00:00",
+  "gles_library_sha256": "a705c66de30ca4e883120c70acae0f1011d7c3f97605eef331e03493beae3812",
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "bounded host and explicit model evidence; not mobile certification",
+  "source_sha256": {
+    "benchmarks/robustness/run.py": "2c3a362b82477f6935d281f9ee9b76e390b7d8d1a84904daa52d35ea143df4fc",
+    "benchmarks/robustness/policy.py": "95cc9c91745899f3241cd9709961ab9a2b435877b7d6abdbca3b647b3beca6b2",
+    "benchmarks/robustness/test_robustness.py": "7092b627ea25ecd01c4d653574238ee1fcbdaa6a02ad069b1d30b43c82b1ae45",
+    "benchmarks/state_machine/host.py": "b572a9e70894966ae314db61f88608f572af1ddf26ca7c9c94e8e606bc3d4a66",
+    "benchmarks/state_machine/test_state_machine.py": "d84bd4d45577bc0e34c60e4a12558a3a8ea7b9c12d25df6572f435c364eabce0",
+    "benchmarks/state_machine/model.py": "cd46a85f7254b14983c921499cc32df2e6759b420b9eff78375434d8720e1d09",
+    "benchmarks/reducer/reduce.py": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c",
+    "tools/shader_fuzz.py": "a1697cdae0fcd8fa3d3240fbe2865a647de7d5b7ee6e92fe151ff321349200c3",
+    "tools/validate_shaders.py": "2b56533695bb1fafbaaac965497b1904d466aa78b5fab88cac2c65dbe61422c6"
+  },
+  "cases": [
+    {
+      "id": "ROB-001",
+      "test": "robustness_tests.Robustness.test_cancel_before_run",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-002",
+      "test": "robustness_tests.Robustness.test_cleanup_exception",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-003",
+      "test": "robustness_tests.Robustness.test_cleanup_rejection",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-004",
+      "test": "robustness_tests.Robustness.test_decode_short",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-005",
+      "test": "robustness_tests.Robustness.test_decode_valid",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-006",
+      "test": "robustness_tests.Robustness.test_dispatch_huge",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-007",
+      "test": "robustness_tests.Robustness.test_dispatch_negative",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-008",
+      "test": "robustness_tests.Robustness.test_dispatch_product",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-009",
+      "test": "robustness_tests.Robustness.test_dispatch_valid",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-010",
+      "test": "robustness_tests.Robustness.test_missing_executable",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-011",
+      "test": "robustness_tests.Robustness.test_process_descendants_cleaned",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-012",
+      "test": "robustness_tests.Robustness.test_process_error",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-013",
+      "test": "robustness_tests.Robustness.test_process_memory_quota",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-014",
+      "test": "robustness_tests.Robustness.test_process_output_quota",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-015",
+      "test": "robustness_tests.Robustness.test_process_quota_validation",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-016",
+      "test": "robustness_tests.Robustness.test_process_signal_not_driver_proof",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-017",
+      "test": "robustness_tests.Robustness.test_process_timeout",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-018",
+      "test": "robustness_tests.Robustness.test_quota_cleanup",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-019",
+      "test": "robustness_tests.Robustness.test_quota_overflow",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-020",
+      "test": "robustness_tests.Robustness.test_retry_cap",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-021",
+      "test": "robustness_tests.Robustness.test_retry_timeout",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-022",
+      "test": "robustness_tests.Robustness.test_shader_encoding",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-023",
+      "test": "robustness_tests.Robustness.test_shader_length",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-024",
+      "test": "robustness_tests.Robustness.test_shader_nul",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-025",
+      "test": "robustness_tests.Robustness.test_shader_valid",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-026",
+      "test": "robustness_tests.Robustness.test_shader_version",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-027",
+      "test": "robustness_tests.Robustness.test_simulated_reset_cleanup",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-028",
+      "test": "robustness_tests.Robustness.test_texture_bool",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-029",
+      "test": "robustness_tests.Robustness.test_texture_budget",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-030",
+      "test": "robustness_tests.Robustness.test_texture_channels",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-031",
+      "test": "robustness_tests.Robustness.test_texture_huge",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-032",
+      "test": "robustness_tests.Robustness.test_texture_negative",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-033",
+      "test": "robustness_tests.Robustness.test_texture_valid",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-034",
+      "test": "robustness_tests.Robustness.test_texture_zero",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    },
+    {
+      "id": "ROB-035",
+      "test": "robustness_tests.Robustness.test_worker_cancel",
+      "status": "PASS",
+      "evidence": "HOST_PYTHON_EXECUTED",
+      "diagnostic": ""
+    }
+  ],
+  "state_machine": {
+    "schema_version": 1,
+    "scope": "offline explicit application state model and deterministic injected faults; not driver conformance",
+    "status": "PASS",
+    "cases": [
+      {
+        "id": "SM-001",
+        "label": "texture create/bind",
+        "domain": "texture",
+        "sequence": [
+          "create:texture",
+          "bind:texture"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-002",
+        "label": "texture delete/cache invalidation",
+        "domain": "texture",
+        "sequence": [
+          "create:texture",
+          "bind:texture",
+          "delete:texture",
+          "audit:texture"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-003",
+        "label": "texture delete/rebuild",
+        "domain": "texture",
+        "sequence": [
+          "create:texture",
+          "delete:texture",
+          "create:texture",
+          "bind:texture"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-004",
+        "label": "renderbuffer create/bind",
+        "domain": "renderbuffer",
+        "sequence": [
+          "create:renderbuffer",
+          "bind:renderbuffer"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-005",
+        "label": "renderbuffer delete/cache invalidation",
+        "domain": "renderbuffer",
+        "sequence": [
+          "create:renderbuffer",
+          "bind:renderbuffer",
+          "delete:renderbuffer",
+          "audit:renderbuffer"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-006",
+        "label": "renderbuffer delete/rebuild",
+        "domain": "renderbuffer",
+        "sequence": [
+          "create:renderbuffer",
+          "delete:renderbuffer",
+          "create:renderbuffer",
+          "bind:renderbuffer"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-007",
+        "label": "framebuffer create/bind",
+        "domain": "framebuffer",
+        "sequence": [
+          "create:framebuffer",
+          "bind:framebuffer"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-008",
+        "label": "framebuffer delete/cache invalidation",
+        "domain": "framebuffer",
+        "sequence": [
+          "create:framebuffer",
+          "bind:framebuffer",
+          "delete:framebuffer",
+          "audit:framebuffer"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-009",
+        "label": "framebuffer delete/rebuild",
+        "domain": "framebuffer",
+        "sequence": [
+          "create:framebuffer",
+          "delete:framebuffer",
+          "create:framebuffer",
+          "bind:framebuffer"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-010",
+        "label": "vao create/bind",
+        "domain": "vao",
+        "sequence": [
+          "create:vao",
+          "bind:vao"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-011",
+        "label": "vao delete/cache invalidation",
+        "domain": "vao",
+        "sequence": [
+          "create:vao",
+          "bind:vao",
+          "delete:vao",
+          "audit:vao"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-012",
+        "label": "vao delete/rebuild",
+        "domain": "vao",
+        "sequence": [
+          "create:vao",
+          "delete:vao",
+          "create:vao",
+          "bind:vao"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-013",
+        "label": "vbo create/bind",
+        "domain": "vbo",
+        "sequence": [
+          "create:vbo",
+          "bind:vbo"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-014",
+        "label": "vbo delete/cache invalidation",
+        "domain": "vbo",
+        "sequence": [
+          "create:vbo",
+          "bind:vbo",
+          "delete:vbo",
+          "audit:vbo"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-015",
+        "label": "vbo delete/rebuild",
+        "domain": "vbo",
+        "sequence": [
+          "create:vbo",
+          "delete:vbo",
+          "create:vbo",
+          "bind:vbo"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-016",
+        "label": "ubo create/bind",
+        "domain": "ubo",
+        "sequence": [
+          "create:ubo",
+          "bind:ubo"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-017",
+        "label": "ubo delete/cache invalidation",
+        "domain": "ubo",
+        "sequence": [
+          "create:ubo",
+          "bind:ubo",
+          "delete:ubo",
+          "audit:ubo"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-018",
+        "label": "ubo delete/rebuild",
+        "domain": "ubo",
+        "sequence": [
+          "create:ubo",
+          "delete:ubo",
+          "create:ubo",
+          "bind:ubo"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-019",
+        "label": "program create/bind",
+        "domain": "program",
+        "sequence": [
+          "create:program",
+          "bind:program"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-020",
+        "label": "program delete/cache invalidation",
+        "domain": "program",
+        "sequence": [
+          "create:program",
+          "bind:program",
+          "delete:program",
+          "audit:program"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-021",
+        "label": "program delete/rebuild",
+        "domain": "program",
+        "sequence": [
+          "create:program",
+          "delete:program",
+          "create:program",
+          "bind:program"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-022",
+        "label": "pipeline create/bind",
+        "domain": "pipeline",
+        "sequence": [
+          "create:pipeline",
+          "bind:pipeline"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-023",
+        "label": "pipeline delete/cache invalidation",
+        "domain": "pipeline",
+        "sequence": [
+          "create:pipeline",
+          "bind:pipeline",
+          "delete:pipeline",
+          "audit:pipeline"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-024",
+        "label": "pipeline delete/rebuild",
+        "domain": "pipeline",
+        "sequence": [
+          "create:pipeline",
+          "delete:pipeline",
+          "create:pipeline",
+          "bind:pipeline"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-025",
+        "label": "sync create/bind",
+        "domain": "sync",
+        "sequence": [
+          "create:sync",
+          "bind:sync"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-026",
+        "label": "sync delete/cache invalidation",
+        "domain": "sync",
+        "sequence": [
+          "create:sync",
+          "bind:sync",
+          "delete:sync",
+          "audit:sync"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-027",
+        "label": "sync delete/rebuild",
+        "domain": "sync",
+        "sequence": [
+          "create:sync",
+          "delete:sync",
+          "create:sync",
+          "bind:sync"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-028",
+        "label": "query create/bind",
+        "domain": "query",
+        "sequence": [
+          "create:query",
+          "bind:query"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-029",
+        "label": "query delete/cache invalidation",
+        "domain": "query",
+        "sequence": [
+          "create:query",
+          "bind:query",
+          "delete:query",
+          "audit:query"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-030",
+        "label": "query delete/rebuild",
+        "domain": "query",
+        "sequence": [
+          "create:query",
+          "delete:query",
+          "create:query",
+          "bind:query"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-031",
+        "label": "pbo create/bind",
+        "domain": "pbo",
+        "sequence": [
+          "create:pbo",
+          "bind:pbo"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "live object allowed by application ownership policy",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-032",
+        "label": "pbo delete/cache invalidation",
+        "domain": "pbo",
+        "sequence": [
+          "create:pbo",
+          "bind:pbo",
+          "delete:pbo",
+          "audit:pbo"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "deleted object cannot remain in application binding cache",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-033",
+        "label": "pbo delete/rebuild",
+        "domain": "pbo",
+        "sequence": [
+          "create:pbo",
+          "delete:pbo",
+          "create:pbo",
+          "bind:pbo"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "recreated owned object may be rebound",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-034",
+        "label": "framebuffer cross-context ownership",
+        "domain": "framebuffer",
+        "sequence": [
+          "create:framebuffer",
+          "switch:b",
+          "bind:framebuffer"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "EXPECTED_ERROR"
+        ],
+        "oracle": "application policy rejects nonshared container misuse; not a GL error assertion",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "EXPECTED_ERROR"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-035",
+        "label": "pipeline cross-context ownership",
+        "domain": "pipeline",
+        "sequence": [
+          "create:pipeline",
+          "switch:b",
+          "bind:pipeline"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "EXPECTED_ERROR"
+        ],
+        "oracle": "application policy rejects nonshared container misuse; not a GL error assertion",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "EXPECTED_ERROR"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-036",
+        "label": "query cross-context ownership",
+        "domain": "query",
+        "sequence": [
+          "create:query",
+          "switch:b",
+          "bind:query"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "EXPECTED_ERROR"
+        ],
+        "oracle": "application policy rejects nonshared container misuse; not a GL error assertion",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "EXPECTED_ERROR"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-037",
+        "label": "vao cross-context ownership",
+        "domain": "vao",
+        "sequence": [
+          "create:vao",
+          "switch:b",
+          "bind:vao"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "EXPECTED_ERROR"
+        ],
+        "oracle": "application policy rejects nonshared container misuse; not a GL error assertion",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "EXPECTED_ERROR"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-038",
+        "label": "thread handoff",
+        "domain": "EGL/lifecycle",
+        "sequence": [
+          "unbind_thread",
+          "bind_thread"
+        ],
+        "expected": [
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "controlled model only; undefined and implementation-dependent cases are not executed on GPU",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-039",
+        "label": "thread double bind",
+        "domain": "EGL/lifecycle",
+        "sequence": [
+          "bind_thread"
+        ],
+        "expected": [
+          "EXPECTED_ERROR"
+        ],
+        "oracle": "controlled model only; undefined and implementation-dependent cases are not executed on GPU",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "EXPECTED_ERROR"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-040",
+        "label": "surface loss",
+        "domain": "EGL/lifecycle",
+        "sequence": [
+          "surface_loss",
+          "swap",
+          "surface_restore",
+          "swap"
+        ],
+        "expected": [
+          "EXPECTED_ERROR",
+          "EXPECTED_ERROR",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "controlled model only; undefined and implementation-dependent cases are not executed on GPU",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "EXPECTED_ERROR",
+          "EXPECTED_ERROR",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-041",
+        "label": "wrong display",
+        "domain": "EGL/lifecycle",
+        "sequence": [
+          "bad_display"
+        ],
+        "expected": [
+          "EXPECTED_ERROR"
+        ],
+        "oracle": "controlled model only; undefined and implementation-dependent cases are not executed on GPU",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "EXPECTED_ERROR"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-042",
+        "label": "simulated context loss",
+        "domain": "EGL/lifecycle",
+        "sequence": [
+          "create:texture",
+          "bind:texture",
+          "reset",
+          "audit:texture"
+        ],
+        "expected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "oracle": "controlled model only; undefined and implementation-dependent cases are not executed on GPU",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-043",
+        "label": "uninitialized read",
+        "domain": "EGL/lifecycle",
+        "sequence": [
+          "undefined"
+        ],
+        "expected": [
+          "UNDEFINED"
+        ],
+        "oracle": "controlled model only; undefined and implementation-dependent cases are not executed on GPU",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "UNDEFINED"
+        ],
+        "status": "PASS"
+      },
+      {
+        "id": "SM-044",
+        "label": "numeric name reuse",
+        "domain": "EGL/lifecycle",
+        "sequence": [
+          "reuse_name"
+        ],
+        "expected": [
+          "IMPLEMENTATION_DEPENDENT"
+        ],
+        "oracle": "controlled model only; undefined and implementation-dependent cases are not executed on GPU",
+        "evidence": "MODEL_EXECUTED",
+        "observed": [
+          "IMPLEMENTATION_DEPENDENT"
+        ],
+        "status": "PASS"
+      }
+    ],
+    "faults": [
+      {
+        "domain": "texture",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:texture",
+          "bind:texture",
+          "noise",
+          "delete:texture",
+          "audit:texture",
+          "noise"
+        ],
+        "minimal": [
+          "create:texture",
+          "bind:texture",
+          "delete:texture",
+          "audit:texture"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "dfae07ce4cedddb6d704c2c72e00152ece9d4b6ae3c301895e94d1a0dabb30b4",
+            "matches": true,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "1ea5953c52b5670b6d9d48483c2ab9081f4b00caf741334bbb75bedf8f0c4e17",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "354c56e649221ab52a4b3ed27653be99847c93e5381b09046770de0ac67b81cd",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "8d2d099d2e28425b9c5bea8ea1490993e4cc1d83b94433539c6a772c724486af",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "370477d940b4040549dab9046c0132087358b599dc8f4e9f5ff3af60097ee9d5",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c9771a475371e623236b0672d833fde7476891e0e63d545590acb1a1ece6c576",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "fe79d6f9c23f32ce4e177cb4a040c34a06119297c66322299fe4005ee819b0e0",
+            "matches": true,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d664cdc0f6d40d740f0834da38d1fdd76ddf393355fc0b249bc0d7df05307c29",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "00cb8608b47b2c185b3c5882b9f56e59b03a4a7ceeb10a55958540ba64c79fdc",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "354c56e649221ab52a4b3ed27653be99847c93e5381b09046770de0ac67b81cd",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "334aec4fc1701cb568c6732bb0680ef707b7236f01c39c261ac16a2b0dfd0824",
+            "matches": true,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d664cdc0f6d40d740f0834da38d1fdd76ddf393355fc0b249bc0d7df05307c29",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "ff53880be8ecf1b185049647341e9721fc6ceae09cf51b0e32ce5cd21a029821",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "6a641b92981ba4d2b842dfa221447372920cf4e2fca867b340a1de887937df90",
+            "matches": true,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "95f2dee07aec64dcebffd0b614a4781b835c63ef9186010cdd4d0f45a5eabb53",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "f7af03c0697c3b2baecc0d13e46203ccf3f629cd41ecf3669e83cd2a9ca7da14",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "762e57c9ed07b8f696d008a02aded7c6458641ba053f8a184d60f84d824dba92",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9e281f7f9bcd5df3f9156d7424007c0539c2510188a31f75d5b4805f5f36269c",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "95f2dee07aec64dcebffd0b614a4781b835c63ef9186010cdd4d0f45a5eabb53",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "f7af03c0697c3b2baecc0d13e46203ccf3f629cd41ecf3669e83cd2a9ca7da14",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "762e57c9ed07b8f696d008a02aded7c6458641ba053f8a184d60f84d824dba92",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9e281f7f9bcd5df3f9156d7424007c0539c2510188a31f75d5b4805f5f36269c",
+            "matches": false,
+            "diagnostic": "stale application cache texture",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "renderbuffer",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:renderbuffer",
+          "bind:renderbuffer",
+          "noise",
+          "delete:renderbuffer",
+          "audit:renderbuffer",
+          "noise"
+        ],
+        "minimal": [
+          "create:renderbuffer",
+          "bind:renderbuffer",
+          "delete:renderbuffer",
+          "audit:renderbuffer"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "e47c517ede11b53e2557c53a514aebc41ee74d063454faff31be7a707f3939fa",
+            "matches": true,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "f081834f289f2a76487b80216501d933238d105ca4c67f9a995fa3301a4a24b4",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "385ce81c0963c12782843001b9be8a45d2a50a982364fcd785a330de078ffc84",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "b8d521097b760d3dbffc19ff7887f0658187eb569f32402c45265e9e2d815033",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "02600bc535fd6e9af76e587786bf8aaf7d89f4becc4da0c2fc09b84f57ae2ab2",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "0d1caad21ba6fde7feb3698d7a4ecce056ccbb0aeadc2f007cd2ba33beae9bd6",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "4674e49a1b5cb9e735095a51b1160a8015c5dfe6ef6aa1f5e5f34cd5f13ab3f1",
+            "matches": true,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "025cc31a520e2d955729b8505bd0aa3370759c2ed936b0df58f2bb04a9e6df51",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "461414a80eda3e9e1ea51780ae6086a3b027ffa2af8e032c20802af9781e5962",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "385ce81c0963c12782843001b9be8a45d2a50a982364fcd785a330de078ffc84",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "637a3be71446faf23315fe327c809604f227a2926ab7904bc92e1fcc86385252",
+            "matches": true,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "025cc31a520e2d955729b8505bd0aa3370759c2ed936b0df58f2bb04a9e6df51",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "bf184f665f1f5897bf03bfeb6cd1b0268e8a9b329cd2238b99b69fdf21b3bc9b",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e2f3d3511d1bd0456a541707268be03507f09cfe6c1bfde5909328b79e8a147e",
+            "matches": true,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "527662b13439bd92b7bfce1ea6993a3793d6802b7a33e4d3bbc4a2f283a8e0d7",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "2a97e3f3509e380646ebff8577a6761225f7fadd310379e9a20e3626c11a613f",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "54339157837867b6f2b30c5b8d97100dba937903adcc0496554be8040a030e35",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d680f4a31d9ca42b4e17b409592410efb4a0f6beb9b83e0457f038daab3937fc",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "527662b13439bd92b7bfce1ea6993a3793d6802b7a33e4d3bbc4a2f283a8e0d7",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "2a97e3f3509e380646ebff8577a6761225f7fadd310379e9a20e3626c11a613f",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "54339157837867b6f2b30c5b8d97100dba937903adcc0496554be8040a030e35",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d680f4a31d9ca42b4e17b409592410efb4a0f6beb9b83e0457f038daab3937fc",
+            "matches": false,
+            "diagnostic": "stale application cache renderbuffer",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "framebuffer",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:framebuffer",
+          "bind:framebuffer",
+          "noise",
+          "delete:framebuffer",
+          "audit:framebuffer",
+          "noise"
+        ],
+        "minimal": [
+          "create:framebuffer",
+          "bind:framebuffer",
+          "delete:framebuffer",
+          "audit:framebuffer"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "385a7280fcda5768e18f2e83b7a6d7b44eba14559bee102cde11a951b1b51a94",
+            "matches": true,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "b8fc03aca88f3f62480a8584570fb0183047b39fb048e095583f1e1671888bbc",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d4870b070a38d2e9aa8b924410ca3a81d9475bc320620e5868950a3aec02e6dd",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d48341b7578b3c01a4ebb3b574bca142803ee0258b0469944bd03e8a0265ba46",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "ef824ee0fe18a72c867f1f234a839de865a484b16ba219eff9082b9b8a4ab022",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "dbe78352a8454d3227b0d4bdaa43803bf73736c1825bc4b008584c196b6d8c4f",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "699853ef66f74e483355a036dfe3f5741fc407771c080cd4926c71f028a71642",
+            "matches": true,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "32d832ff0b2c132086306d63e64059b65edc98b98bf5fe8a8d1f6d07e7004ec9",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "2e2daf18ccad2f05a4faac19cd2cce5a2b9371cc20823e0aac2d7aeaf852fcea",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d4870b070a38d2e9aa8b924410ca3a81d9475bc320620e5868950a3aec02e6dd",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "2ce5c5c12748c2b53820c2569753fe8d484ca447abc7d20f0d6191236ae2ca1c",
+            "matches": true,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "32d832ff0b2c132086306d63e64059b65edc98b98bf5fe8a8d1f6d07e7004ec9",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "098cf70ef2acf0fe06d78961c9d8e8961357728ca4f5857933d16a94c30c888f",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d3c2557f25f9bb9572850bd8f6c71c54f97878af10a35a10353bce42560cfebf",
+            "matches": true,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "94ec61df1bac7d53f40ec41772cc38faf7eff14d3ab6d325337839111cc4bb90",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c1bb623f264bb031ac34146eee94e1afa1b5026a3c588d9221c4e6a3297dffb7",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "7eb7db067a7b91136883350cae5bb0d0e40c5276029d67bc2d7a0de91ac2f283",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c61f58840da09bb714e89ca97b85bc07ceead2c093616de380b8fcac9e018960",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "94ec61df1bac7d53f40ec41772cc38faf7eff14d3ab6d325337839111cc4bb90",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c1bb623f264bb031ac34146eee94e1afa1b5026a3c588d9221c4e6a3297dffb7",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "7eb7db067a7b91136883350cae5bb0d0e40c5276029d67bc2d7a0de91ac2f283",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c61f58840da09bb714e89ca97b85bc07ceead2c093616de380b8fcac9e018960",
+            "matches": false,
+            "diagnostic": "stale application cache framebuffer",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "vao",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:vao",
+          "bind:vao",
+          "noise",
+          "delete:vao",
+          "audit:vao",
+          "noise"
+        ],
+        "minimal": [
+          "create:vao",
+          "bind:vao",
+          "delete:vao",
+          "audit:vao"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "ec296c1396105d4b0b0a406aebd3e99f74e75cc7375c04a6ce1600e1b022216c",
+            "matches": true,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "48fbf30ab50ef1986be69b02c4332c4da37903bedc3ed3ebc4905ded9a6fb62d",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "4addeb39ba85227cc4da3a9771e0d5aca9e863b6389cd27bb37d6184f4561572",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c028deeb827a472b9037944fdbe69b1b49bcb700f78bdeb2e590617508323d49",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e38f5322148ae98e8c551a31d8382857ab7c8e82c98378525ed2a3ce22ca26f3",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "b1f3976cf10258e4f5e3ae078258b0a6bc2fed8f2e923e597530a54440fb246a",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "df77701c514ead69a0b361807e4a2a1a502737431e7bfa8c635310530b943dc1",
+            "matches": true,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "1f7e6eb654995c5679c9a101590a3c47c1852907002a992497eebe48f03c94f8",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d6ae5bb70f6ef627121abca610a5b9a463feeadfc4dbac4dff91e9c5a12e624b",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "4addeb39ba85227cc4da3a9771e0d5aca9e863b6389cd27bb37d6184f4561572",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "16e5a7f40bd82231b71be47f04b1ff8d17cde3231d8cd2ac22fcce310c9a808e",
+            "matches": true,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "1f7e6eb654995c5679c9a101590a3c47c1852907002a992497eebe48f03c94f8",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "75987cccae7da3ef12d522a7b1c50e2e7f1b94d85fbd11fc0e263d4dcf2fbeec",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "bf140e27f2342a1e07ec8c02a86be535ab1ab5a283a50668c59efc3e69054452",
+            "matches": true,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "a2ceee3faddeaf081d05aff2fcca51c5e1c5469f6368087f76deb4cba4c187bc",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e477cbaca7924032717e9d073dd45ef4e7abadd50133c3475464f7fd4ea8f287",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "91bd418f4dfdc3d7efdce528367c1cfbad99696b9e3f2822d9e47b2c4d97ad51",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9c6bd60887f1ec22d43c7a79a883f045328a024816550ac7ae66520849c0c2ac",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "a2ceee3faddeaf081d05aff2fcca51c5e1c5469f6368087f76deb4cba4c187bc",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e477cbaca7924032717e9d073dd45ef4e7abadd50133c3475464f7fd4ea8f287",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "91bd418f4dfdc3d7efdce528367c1cfbad99696b9e3f2822d9e47b2c4d97ad51",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9c6bd60887f1ec22d43c7a79a883f045328a024816550ac7ae66520849c0c2ac",
+            "matches": false,
+            "diagnostic": "stale application cache vao",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "vbo",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:vbo",
+          "bind:vbo",
+          "noise",
+          "delete:vbo",
+          "audit:vbo",
+          "noise"
+        ],
+        "minimal": [
+          "create:vbo",
+          "bind:vbo",
+          "delete:vbo",
+          "audit:vbo"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "6b9db7abed3651c69785434872dc5e034b7d36725b7242e5edfd347aac4600ee",
+            "matches": true,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c9fe6c7339eea36807361f94efb9519cb8b7ad6fad9cfab1d0231bbcc9ed5953",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "668f36ade5db6a4df267ca7d9dc3f38d71d16c05e512f8a8f55e89fd19687ae6",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e28524b3a8e4f283d2f8d9ed834dafdcef59b0e2b64a668c9fb32acdea1222c6",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "85c0cfa5b3b3a76af001207d4716b270ac6c717a8d8a08b521abc8438ba91525",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "5e6faa02c9431d221242dde08e50ed33b1e4e5188c73ccbefbf39a5ab709dfef",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "27ebb1fa14073ed66af6f02d22e98cc65520e46bdc026789cdbc64c6a6c036a7",
+            "matches": true,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "94f95f6f0c27b6103f7309f423cb300422c9119444fbfafa6217276f54b9dab0",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "b1a92a5d4a92719d27c09ece5a33474d08b49e710523f696750e958e68e2afde",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "668f36ade5db6a4df267ca7d9dc3f38d71d16c05e512f8a8f55e89fd19687ae6",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "3d614c0854fbdca3568bc49b070f083236a16fb60cece5e352c67bae51ec6fdf",
+            "matches": true,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "94f95f6f0c27b6103f7309f423cb300422c9119444fbfafa6217276f54b9dab0",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e59d8d3539b095edba9872fdd09b2aef6932606242efeb1cbe300f0913a812ce",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "a9192719ff7f20e3a4511573b1e2567d22c9d87901c56d3a11dd81b0f04f3653",
+            "matches": true,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9984bf6afa587345668fd2e3c0218c04e7da0335525e8fa042da5046e53263c3",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "fda54396304ddd050b7495ba141394f17edb641cffb489f2b8abf5747db00ee9",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "ec1641070e295a05b78d6c7e2472180cf148cc178082c8402441444cd66ceb3b",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "aef3f7ad627752c9d602eede8d36c62f0d698a9827fbcd37e539dfc2e07e3ba2",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9984bf6afa587345668fd2e3c0218c04e7da0335525e8fa042da5046e53263c3",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "fda54396304ddd050b7495ba141394f17edb641cffb489f2b8abf5747db00ee9",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "ec1641070e295a05b78d6c7e2472180cf148cc178082c8402441444cd66ceb3b",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "aef3f7ad627752c9d602eede8d36c62f0d698a9827fbcd37e539dfc2e07e3ba2",
+            "matches": false,
+            "diagnostic": "stale application cache vbo",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "ubo",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:ubo",
+          "bind:ubo",
+          "noise",
+          "delete:ubo",
+          "audit:ubo",
+          "noise"
+        ],
+        "minimal": [
+          "create:ubo",
+          "bind:ubo",
+          "delete:ubo",
+          "audit:ubo"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "2a7c7ce6b240673804af713ba3a6e9668b84d0814437735a8d177be069952b34",
+            "matches": true,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "a72a82b111d7cd4a034d39800039e80944137dadfc5460c473ced12079cfcb70",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c7ec8ad8e37b0793ec592c6f0dc76da624314d29624e3f8c8fc4bdb894476ebb",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "738d8834eaa50d85bd6673400d4119659ebcc123dc6c27d3a4b41b25a15ed5fd",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "ef126baab39ddef393b32ebb50a623b162a7aeceb35e8feb3dd1f0a63c6e2273",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "ca1a335c51b175decda44b1ea009afbc6557c5e4029127e552f9fef1c1476473",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "ee3bf70a4c082b0d4af943703cbabeb7ad090f7074d0f69582a8ef1d930e7fb4",
+            "matches": true,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "00c4b88a26f518165ccbb2bdd3a3e23203e23fe891fd4c9d8fc669d11a402995",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d60073fd6f0d27a488e5636c5fc45926f6bb87f537140bf45f4eb118ab171c42",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c7ec8ad8e37b0793ec592c6f0dc76da624314d29624e3f8c8fc4bdb894476ebb",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "895fb37869881454dff1ace5d388790d808fd9d3b36aed27f1d73f84c0addd04",
+            "matches": true,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "00c4b88a26f518165ccbb2bdd3a3e23203e23fe891fd4c9d8fc669d11a402995",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "bc54f4378d9c329ef73c0ca77ea35e01f7a6f53ebc191340c29918ebb7505653",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "4b22643e4581f2f76014f95031c538059f7c1f465c96b353c42e4ed2ef8bcf4e",
+            "matches": true,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "8e5448498c2bbfbb625724224dfafefd46c1f743329f8a905544249e0d6c3db6",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "5d489c50928ed5a2f8dd4f814efbe950531d55fd27ec029d0967bfae6c532c5c",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "3baed5a63e436108b91141f65d03db45db0b98250dd16b4f90c05769e883db58",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "272f076d3e8616d15031daec6051e235d09c1770cd2f6d4e553560b4376198d0",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "8e5448498c2bbfbb625724224dfafefd46c1f743329f8a905544249e0d6c3db6",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "5d489c50928ed5a2f8dd4f814efbe950531d55fd27ec029d0967bfae6c532c5c",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "3baed5a63e436108b91141f65d03db45db0b98250dd16b4f90c05769e883db58",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "272f076d3e8616d15031daec6051e235d09c1770cd2f6d4e553560b4376198d0",
+            "matches": false,
+            "diagnostic": "stale application cache ubo",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "program",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:program",
+          "bind:program",
+          "noise",
+          "delete:program",
+          "audit:program",
+          "noise"
+        ],
+        "minimal": [
+          "create:program",
+          "bind:program",
+          "delete:program",
+          "audit:program"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "a7f3302bd4632365d88051358906aeba9c619dce0ea9852b6049469134e7dccf",
+            "matches": true,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "7f64b3a0d1864e0d352e1129eccea14beccd6447c5d245a3f138d602b16d654c",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "181b5d6f209bd54c6a44a980d05172afadb1ef03cd18e09e50b176817fcd4b2a",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "1f7d04e530b90cae56ffa6eb57400cf632ce8ae25602ff65390fee8782128b62",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "c99ce9ad1608f98064c10134558c5d095ce4779e8f7d8ccd160336be2334444d",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "5ac71a4f3fcbaf90bf3c61d5736b6304a4ad81389aadc3b9de3ab28acbe5d22d",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "0e7936b450ae414fcda66c5119028576b1be43a854226df3d8938b3e8b1f99bf",
+            "matches": true,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e6e52f2ba6ea93f6d20b15adf0915be2217ccc58608c06ad2924c539e259d089",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "064c3b17f5828c0aa8cc6085a4fe1d4f5baef7f8226f49e092069bdfb2015935",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "181b5d6f209bd54c6a44a980d05172afadb1ef03cd18e09e50b176817fcd4b2a",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "7488cc0d2d95a4b0cdff6e81b0660221c856689ca0be52d020925f74ff414152",
+            "matches": true,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e6e52f2ba6ea93f6d20b15adf0915be2217ccc58608c06ad2924c539e259d089",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "1e7aab2e9a15f55ab44a8831a58bcbfc365ae84cd8e0936b822819d2d77ee50a",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "8d0142e86dd8e4cbeac5c598378e8a46c30925fb0d844818cd514bee399253ff",
+            "matches": true,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "fa336b55a0c39dad88ee9fb07623667e065969ad91bd1ae362c5aa6419cf4120",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "cd6a3e5ec21552ec5cd2974da81c815074a02a37406000228463560491e7c880",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "96195b9c0cab4675c511ab1e2ffc0e33abb457346c8affd83edef64da4479f8c",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d806644451768d9d6ae61e6418cb15b5f963835057e9de73f611b25f77faea3e",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "fa336b55a0c39dad88ee9fb07623667e065969ad91bd1ae362c5aa6419cf4120",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "cd6a3e5ec21552ec5cd2974da81c815074a02a37406000228463560491e7c880",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "96195b9c0cab4675c511ab1e2ffc0e33abb457346c8affd83edef64da4479f8c",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d806644451768d9d6ae61e6418cb15b5f963835057e9de73f611b25f77faea3e",
+            "matches": false,
+            "diagnostic": "stale application cache program",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "pipeline",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:pipeline",
+          "bind:pipeline",
+          "noise",
+          "delete:pipeline",
+          "audit:pipeline",
+          "noise"
+        ],
+        "minimal": [
+          "create:pipeline",
+          "bind:pipeline",
+          "delete:pipeline",
+          "audit:pipeline"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "208e52ecdf05f192d23dfd8e31155f50d81fd97718ab37dea502b0ba2d0bae0f",
+            "matches": true,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "3f1d8fa63018bed799c0a9f6e6d4105d78b50367385ef07a4485afd1642a3c22",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "cf7009c853d0ecd1b1014d1126e7b4b189c40cbb865d02e45ff98e410d01e0c3",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "ced429076009dba662c809d1359a4ef7984d27a9cd3eebb92dc7dc40388b7ea5",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "74de96073e5268ffc4b6ea7c1fceb3da7cd95f70bc5aec5ce9e211c2fdc16116",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "4b83e743aaf77918fd4de55041e1a9a26d1ca94f63c6c1b769ad1230a8cb680b",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "1e4d6627c6aacdcd606a635c4edccd2475008fe829a11b9fa6ea04468986e50b",
+            "matches": true,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "914208bcff53e441b12fb2b2d627d6ae20bd5148a78dbe732afd2aff0549f22f",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "65c4078102025a4cffa7324965ed4ffb03647358ee1a253b5dfe103ba17934b6",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "cf7009c853d0ecd1b1014d1126e7b4b189c40cbb865d02e45ff98e410d01e0c3",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e7b136ec0e43342afc60f9b334b7b821472d3927f7b1de9f89492144affd4e5d",
+            "matches": true,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "914208bcff53e441b12fb2b2d627d6ae20bd5148a78dbe732afd2aff0549f22f",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "44aed2627cc3c4a57a4ae575ef414a7c0a4ed53cb5b57db1ba1b81002c6f3cb9",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "a0f6291a2d40f52ccd66183a2dd3c12255f66cacbd2d53f711742512bdc8b168",
+            "matches": true,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "30fd4ef2e337a1ffb709adb7486bf893989a7312dcc4e7e2d3be3dc0aebf87c1",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "0914e2ec48e50ed1611027e96e7157e648c72a64361626ed06e6c88ad7a1188c",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "39327c25b69540a02ea67a01edf42fd72fdd79b2e807859275fe5bfdd778ab84",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "2f837e28db225f39fd91d19ff14b976e8c2329441d38b941d821e32e37110b6f",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "30fd4ef2e337a1ffb709adb7486bf893989a7312dcc4e7e2d3be3dc0aebf87c1",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "0914e2ec48e50ed1611027e96e7157e648c72a64361626ed06e6c88ad7a1188c",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "39327c25b69540a02ea67a01edf42fd72fdd79b2e807859275fe5bfdd778ab84",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "2f837e28db225f39fd91d19ff14b976e8c2329441d38b941d821e32e37110b6f",
+            "matches": false,
+            "diagnostic": "stale application cache pipeline",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "sync",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:sync",
+          "bind:sync",
+          "noise",
+          "delete:sync",
+          "audit:sync",
+          "noise"
+        ],
+        "minimal": [
+          "create:sync",
+          "bind:sync",
+          "delete:sync",
+          "audit:sync"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "c09270bb6ba7da26f0919b11d2586623a407a5b08039a8b8de78e24f547bf7a0",
+            "matches": true,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "82f7876d9ec6d637d7dd0b5eee095f8957e631278ec882ff1c00b926e7157154",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "574430a00587f956a09c39197cae3921889c3f4eae21a29791f81465518d3d7f",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "76f43260e27b2cf32fc1c57da8a792b30ff0f6fce694f8f9b7815f33dd3adecf",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "45df338bb34a4b7dc3d891c81e84d6804c2642a45c753cc584d9a9949eb30859",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "b3388405886c89ef09094ed13e2fe0d3f7a6a320e0d9c3c86fb23351ed2cf630",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d06d39cba979580472ba11ade1f1197ab3f91c6129da80a41e04c520c53a1bef",
+            "matches": true,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e0bd8685ee45d6beefd98396b5ad603a29dd868ddd8918767e1ae90292a775b0",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "2593566f6fc73ca3e8baaac6828b2a7e2f7d0bd7038484701747a12c09b5d657",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "574430a00587f956a09c39197cae3921889c3f4eae21a29791f81465518d3d7f",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9b8f34c77ece618a3cba56ab4ff890a31beabaebce8dfbd7754bd68abf626cbe",
+            "matches": true,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e0bd8685ee45d6beefd98396b5ad603a29dd868ddd8918767e1ae90292a775b0",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "659e938ad041f2da2ae868bc02efb09407aaf5696ce6e6e4022b9e23afa9033d",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "a3ffda537aa9cf3665f170fcf182902bd4597645e379129746d1ee5cb5561b9b",
+            "matches": true,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "520a7e1f21ca3b50ad3f0d58d06a105e2b8dbf8bfbb1d5e1722fe5e695434475",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9a7e3f7060b2b5d0149f3ecea15804dcee160f14b8745421d57bfcd6cdf0c99c",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "783ef6434f2681cea149109c0ba6f705b4a27f38561fc8ed4fd5c288c63c1394",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "666069de49b3bcfb9a08b03e2734cf321c4d8f64edc24959b28b5760a3f1211a",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "520a7e1f21ca3b50ad3f0d58d06a105e2b8dbf8bfbb1d5e1722fe5e695434475",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9a7e3f7060b2b5d0149f3ecea15804dcee160f14b8745421d57bfcd6cdf0c99c",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "783ef6434f2681cea149109c0ba6f705b4a27f38561fc8ed4fd5c288c63c1394",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "666069de49b3bcfb9a08b03e2734cf321c4d8f64edc24959b28b5760a3f1211a",
+            "matches": false,
+            "diagnostic": "stale application cache sync",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "query",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:query",
+          "bind:query",
+          "noise",
+          "delete:query",
+          "audit:query",
+          "noise"
+        ],
+        "minimal": [
+          "create:query",
+          "bind:query",
+          "delete:query",
+          "audit:query"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "b8c0be67cb0ef24ed2eb539221bccf16f2aa38c8226f12f10ea67d6aed9d78e5",
+            "matches": true,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "f7e90907be11f54bd36d49bb0568c6e8772c5f7f9f4b4c880a03ac4c9f5fe4ca",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d71c0030084cf976cd181a50fb7f25e168604133205b5c1af155731b0dae0f1a",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d48b26f3d3a9e28d81010f2b2a2f7a81c02201e413c110d1a26c601123029ae8",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "68a7d6848495d286912de2c7d2967ba50053bf00985eb56698864b3a940187c8",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "309df18c129164ff2dffbc5d823049c80995b930b016276a6a1cf858d67e7d19",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "bcdf25472e92717457df976cc41f7218745ecea800151b0a6d8e29a11a66493d",
+            "matches": true,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9f783dceda16add955bfcc67895d44026eb82732e61d74db5d5e688d2fe57d2d",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "8ce665e34c263a46e3634cf19985cc7d8e8718960964509119559f11d26dda5f",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "d71c0030084cf976cd181a50fb7f25e168604133205b5c1af155731b0dae0f1a",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "be82fe8432acdbcde3860d6ebf9bd688c41d8a576ad2e862f7362737db9a2608",
+            "matches": true,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "9f783dceda16add955bfcc67895d44026eb82732e61d74db5d5e688d2fe57d2d",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "3ccf24f04848b8278d7c76322eb2f91cb5a3992a03eb2e2222f29875119a8000",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "17bc748b7a299abab1614d9ac65af746d4c24140c810445871b20e8781c785c0",
+            "matches": true,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "aa902b6ae0249111ae98849d9784a3a01ef29d4a4ee54fadf174229929f96645",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "2fbad62a5e6b695ab5f7c3e1bbb7296b796bf817fe327a93ce45357d534f0312",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "b07d88c0a57b87b82928b81de4756a40c7101d05f901648ff96b3d5b0129f18c",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "f92fd33550e917b89127f7b1b3e16b64b8758a5a8e3f8cf2d27cda596757b393",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "aa902b6ae0249111ae98849d9784a3a01ef29d4a4ee54fadf174229929f96645",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "2fbad62a5e6b695ab5f7c3e1bbb7296b796bf817fe327a93ce45357d534f0312",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "b07d88c0a57b87b82928b81de4756a40c7101d05f901648ff96b3d5b0129f18c",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "f92fd33550e917b89127f7b1b3e16b64b8758a5a8e3f8cf2d27cda596757b393",
+            "matches": false,
+            "diagnostic": "stale application cache query",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      },
+      {
+        "domain": "pbo",
+        "injected": true,
+        "fault": "stale application cache",
+        "actual_device_reset": false,
+        "original": [
+          "noise",
+          "create:pbo",
+          "bind:pbo",
+          "noise",
+          "delete:pbo",
+          "audit:pbo",
+          "noise"
+        ],
+        "minimal": [
+          "create:pbo",
+          "bind:pbo",
+          "delete:pbo",
+          "audit:pbo"
+        ],
+        "repetitions": [
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ],
+          [
+            "PASS",
+            "PASS",
+            "PASS",
+            "HARNESS_FAILURE"
+          ]
+        ],
+        "corrected": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ],
+        "minimality_domain": "operation deletion, fixed injected cache fault",
+        "status": "REPRODUCED",
+        "trials": [
+          {
+            "source_sha256": "62673d3dc037cde93314f7aa6f447ff5c5c058f3dfaa43e13aff663c3ac63022",
+            "matches": true,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "5cf5a9691043962534bf00a77d4775cfc6d9e519d7bff7843c1d91bfe963f4d4",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e61560d62ea3f113884273a95da7f5eafeec2801dcfed2104dd318fe58ff6e1b",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "b061e81cf021089da2d42c69e89ab03201d77a24e41f657c745ab40fa9a5f21d",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "f51bee39595c1ccc18475b325a4e6d4b3c9f7ab72e19c1f5005abb8c4ec1c819",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "0f5440ff4d25d09ee7d9031299b067aec7dd6167d84321fb40f9ab76b41bbe51",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "79dcabe8a16e42b72ddf195d20ed65ae5430d164ee6df2c2f7e114f93311419b",
+            "matches": true,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "8b361bdc170e770355df968f5286f4c29f3bca2aea2d889bd7cb4f894fd90712",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "f650b3ac7a63fd67a3fd668b121fabba5eb37718918bad2649b9012b62d08937",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "e61560d62ea3f113884273a95da7f5eafeec2801dcfed2104dd318fe58ff6e1b",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "bd98d9db3ed2e0b0b96502a1f36c9dae8a3ef94d7b55d8669f9ef7a0ee4d7a61",
+            "matches": true,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "8b361bdc170e770355df968f5286f4c29f3bca2aea2d889bd7cb4f894fd90712",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "014e9e1b40a7293675451d4fd1a15b92d39f2d69c4891bf16b1f3adfe206c174",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "0e33b73e28ae56fdac2655884718420248514773e51cb0c6fab4d41fba57c2ad",
+            "matches": true,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "66360794204a50d2d2f8a1dc3e0979f4928780af7d65cf1bd3f7690f07a0686f",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "6698dfbe49b7b206f70928f7691dc4c434775e2dc20f182e4966dcbe44e86050",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "8c305c853a9f91d853b0f5a0313ef18abbbee65046ceb47ff2a51f44be568a31",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "4bcce412bd8d49cc41a520e10f87adc34d57e777e1e33c42070b281a78767754",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "66360794204a50d2d2f8a1dc3e0979f4928780af7d65cf1bd3f7690f07a0686f",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "6698dfbe49b7b206f70928f7691dc4c434775e2dc20f182e4966dcbe44e86050",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "8c305c853a9f91d853b0f5a0313ef18abbbee65046ceb47ff2a51f44be568a31",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          },
+          {
+            "source_sha256": "4bcce412bd8d49cc41a520e10f87adc34d57e777e1e33c42070b281a78767754",
+            "matches": false,
+            "diagnostic": "stale application cache pbo",
+            "compiler_crash": false
+          }
+        ],
+        "one_minimal": true
+      }
+    ],
+    "device_status": "BLOCKED_BY_HARDWARE"
+  },
+  "host": {
+    "schema_version": 1,
+    "status": "PASS",
+    "scope": "actual bounded host GLES/EGL calls, not physical GPU validation",
+    "vendor": "Mesa",
+    "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+    "extensions": [
+      "GL_ANDROID_extension_pack_es31a",
+      "GL_ANGLE_pack_reverse_row_order",
+      "GL_ANGLE_texture_compression_dxt3",
+      "GL_ANGLE_texture_compression_dxt5",
+      "GL_APPLE_sync",
+      "GL_APPLE_texture_max_level",
+      "GL_ARM_shader_framebuffer_fetch_depth_stencil",
+      "GL_EXT_EGL_image_storage",
+      "GL_EXT_EGL_image_storage_compression",
+      "GL_EXT_base_instance",
+      "GL_EXT_blend_func_extended",
+      "GL_EXT_blend_minmax",
+      "GL_EXT_buffer_storage",
+      "GL_EXT_clear_texture",
+      "GL_EXT_clip_control",
+      "GL_EXT_clip_cull_distance",
+      "GL_EXT_color_buffer_float",
+      "GL_EXT_color_buffer_half_float",
+      "GL_EXT_compressed_ETC1_RGB8_sub_texture",
+      "GL_EXT_conservative_depth",
+      "GL_EXT_copy_image",
+      "GL_EXT_debug_label",
+      "GL_EXT_depth_clamp",
+      "GL_EXT_discard_framebuffer",
+      "GL_EXT_disjoint_timer_query",
+      "GL_EXT_draw_buffers",
+      "GL_EXT_draw_buffers_indexed",
+      "GL_EXT_draw_elements_base_vertex",
+      "GL_EXT_draw_instanced",
+      "GL_EXT_float_blend",
+      "GL_EXT_frag_depth",
+      "GL_EXT_geometry_point_size",
+      "GL_EXT_geometry_shader",
+      "GL_EXT_gpu_shader5",
+      "GL_EXT_instanced_arrays",
+      "GL_EXT_map_buffer_range",
+      "GL_EXT_memory_object",
+      "GL_EXT_memory_object_fd",
+      "GL_EXT_multi_draw_arrays",
+      "GL_EXT_multi_draw_indirect",
+      "GL_EXT_occlusion_query_boolean",
+      "GL_EXT_polygon_offset_clamp",
+      "GL_EXT_primitive_bounding_box",
+      "GL_EXT_read_format_bgra",
+      "GL_EXT_render_snorm",
+      "GL_EXT_robustness",
+      "GL_EXT_sRGB_write_control",
+      "GL_EXT_separate_shader_objects",
+      "GL_EXT_shader_framebuffer_fetch",
+      "GL_EXT_shader_framebuffer_fetch_non_coherent",
+      "GL_EXT_shader_group_vote",
+      "GL_EXT_shader_implicit_conversions",
+      "GL_EXT_shader_integer_mix",
+      "GL_EXT_shader_io_blocks",
+      "GL_EXT_shadow_samplers",
+      "GL_EXT_tessellation_point_size",
+      "GL_EXT_tessellation_shader",
+      "GL_EXT_texture_border_clamp",
+      "GL_EXT_texture_buffer",
+      "GL_EXT_texture_compression_bptc",
+      "GL_EXT_texture_compression_dxt1",
+      "GL_EXT_texture_compression_rgtc",
+      "GL_EXT_texture_compression_s3tc",
+      "GL_EXT_texture_compression_s3tc_srgb",
+      "GL_EXT_texture_cube_map_array",
+      "GL_EXT_texture_filter_anisotropic",
+      "GL_EXT_texture_filter_minmax",
+      "GL_EXT_texture_format_BGRA8888",
+      "GL_EXT_texture_mirror_clamp_to_edge",
+      "GL_EXT_texture_norm16",
+      "GL_EXT_texture_query_lod",
+      "GL_EXT_texture_rg",
+      "GL_EXT_texture_sRGB_R8",
+      "GL_EXT_texture_sRGB_RG8",
+      "GL_EXT_texture_sRGB_decode",
+      "GL_EXT_texture_shadow_lod",
+      "GL_EXT_texture_storage",
+      "GL_EXT_texture_storage_compression",
+      "GL_EXT_texture_type_2_10_10_10_REV",
+      "GL_EXT_texture_view",
+      "GL_EXT_unpack_subimage",
+      "GL_KHR_blend_equation_advanced",
+      "GL_KHR_blend_equation_advanced_coherent",
+      "GL_KHR_context_flush_control",
+      "GL_KHR_debug",
+      "GL_KHR_no_error",
+      "GL_KHR_parallel_shader_compile",
+      "GL_KHR_robust_buffer_access_behavior",
+      "GL_KHR_robustness",
+      "GL_KHR_texture_compression_astc_ldr",
+      "GL_KHR_texture_compression_astc_sliced_3d",
+      "GL_MESA_bgra",
+      "GL_MESA_framebuffer_flip_y",
+      "GL_MESA_sampler_objects",
+      "GL_MESA_shader_integer_functions",
+      "GL_NV_alpha_to_coverage_dither_control",
+      "GL_NV_conditional_render",
+      "GL_NV_draw_buffers",
+      "GL_NV_fbo_color_attachments",
+      "GL_NV_generate_mipmap_sRGB",
+      "GL_NV_image_formats",
+      "GL_NV_pack_subimage",
+      "GL_NV_pixel_buffer_object",
+      "GL_NV_read_buffer",
+      "GL_NV_read_depth",
+      "GL_NV_read_depth_stencil",
+      "GL_NV_read_stencil",
+      "GL_NV_shader_noperspective_interpolation",
+      "GL_NV_texture_barrier",
+      "GL_OES_EGL_image",
+      "GL_OES_EGL_image_external",
+      "GL_OES_EGL_image_external_essl3",
+      "GL_OES_EGL_sync",
+      "GL_OES_compressed_ETC1_RGB8_texture",
+      "GL_OES_copy_image",
+      "GL_OES_depth24",
+      "GL_OES_depth_texture",
+      "GL_OES_depth_texture_cube_map",
+      "GL_OES_draw_buffers_indexed",
+      "GL_OES_draw_elements_base_vertex",
+      "GL_OES_element_index_uint",
+      "GL_OES_fbo_render_mipmap",
+      "GL_OES_geometry_point_size",
+      "GL_OES_geometry_shader",
+      "GL_OES_get_program_binary",
+      "GL_OES_gpu_shader5",
+      "GL_OES_mapbuffer",
+      "GL_OES_packed_depth_stencil",
+      "GL_OES_primitive_bounding_box",
+      "GL_OES_required_internalformat",
+      "GL_OES_rgb8_rgba8",
+      "GL_OES_sample_shading",
+      "GL_OES_sample_variables",
+      "GL_OES_shader_image_atomic",
+      "GL_OES_shader_io_blocks",
+      "GL_OES_shader_multisample_interpolation",
+      "GL_OES_standard_derivatives",
+      "GL_OES_stencil8",
+      "GL_OES_surfaceless_context",
+      "GL_OES_tessellation_point_size",
+      "GL_OES_tessellation_shader",
+      "GL_OES_texture_3D",
+      "GL_OES_texture_border_clamp",
+      "GL_OES_texture_buffer",
+      "GL_OES_texture_cube_map_array",
+      "GL_OES_texture_float",
+      "GL_OES_texture_float_linear",
+      "GL_OES_texture_half_float",
+      "GL_OES_texture_half_float_linear",
+      "GL_OES_texture_npot",
+      "GL_OES_texture_stencil8",
+      "GL_OES_texture_storage_multisample_2d_array",
+      "GL_OES_texture_view",
+      "GL_OES_vertex_array_object",
+      "GL_OES_vertex_half_float",
+      "GL_OES_viewport_array",
+      "GL_OVR_multiview",
+      "GL_OVR_multiview2"
+    ],
+    "capabilities": [
+      {
+        "extension": "GL_KHR_robustness",
+        "advertised": true,
+        "entrypoints": {
+          "glGetGraphicsResetStatusKHR": true,
+          "glReadnPixelsKHR": true
+        },
+        "status": "SUPPORTED",
+        "reset_status": 0,
+        "actual_device_reset": false
+      },
+      {
+        "extension": "GL_EXT_robustness",
+        "advertised": true,
+        "entrypoints": {
+          "glGetGraphicsResetStatusEXT": true,
+          "glReadnPixelsEXT": true
+        },
+        "status": "SUPPORTED",
+        "reset_status": 0,
+        "actual_device_reset": false
+      },
+      {
+        "extension": "GL_KHR_debug",
+        "advertised": true,
+        "entrypoints": {
+          "glDebugMessageCallbackKHR": true,
+          "glDebugMessageInsertKHR": true
+        },
+        "status": "SUPPORTED"
+      }
+    ],
+    "cases": [
+      {
+        "id": "HOST-001",
+        "label": "valid viewport",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-002",
+        "label": "negative viewport width",
+        "expected_error": 1281,
+        "observed_error": 1281,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-003",
+        "label": "valid pack alignment",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-004",
+        "label": "invalid pack alignment",
+        "expected_error": 1281,
+        "observed_error": 1281,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-005",
+        "label": "invalid enable capability",
+        "expected_error": 1280,
+        "observed_error": 1280,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-006",
+        "label": "negative scissor width",
+        "expected_error": 1281,
+        "observed_error": 1281,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-007",
+        "label": "valid clear",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-008",
+        "label": "invalid clear bit",
+        "expected_error": 1281,
+        "observed_error": 1281,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-009",
+        "label": "Buffers bind",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-010",
+        "label": "Buffers invalid target",
+        "expected_error": 1280,
+        "observed_error": 1280,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-011",
+        "label": "VBO allocate bounded 64 bytes",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-012",
+        "label": "VBO negative allocation",
+        "expected_error": 1281,
+        "observed_error": 1281,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-013",
+        "label": "VBO range overflow",
+        "expected_error": 1281,
+        "observed_error": 1281,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-014",
+        "label": "Textures bind",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-015",
+        "label": "Textures invalid target",
+        "expected_error": 1280,
+        "observed_error": 1280,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-016",
+        "label": "texture bounded storage",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-017",
+        "label": "immutable texture redefinition",
+        "expected_error": 1282,
+        "observed_error": 1282,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-018",
+        "label": "Framebuffers bind",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-019",
+        "label": "Framebuffers invalid target",
+        "expected_error": 1280,
+        "observed_error": 1280,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-020",
+        "label": "missing attachment",
+        "classification": "EXPECTED_ERROR",
+        "expected_error": 36055,
+        "observed_error": 36055,
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-021",
+        "label": "Renderbuffers bind",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-022",
+        "label": "Renderbuffers invalid target",
+        "expected_error": 1280,
+        "observed_error": 1280,
+        "classification": "EXPECTED_ERROR",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-023",
+        "label": "unbind program",
+        "expected_error": 0,
+        "observed_error": 0,
+        "classification": "PASS",
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      },
+      {
+        "id": "HOST-024",
+        "label": "swap EGL_NO_SURFACE",
+        "classification": "EXPECTED_ERROR",
+        "expected_error": 12301,
+        "observed_error": 12301,
+        "status": "PASS",
+        "evidence": "HOST_REPRODUCED"
+      }
+    ],
+    "device_status": "BLOCKED_BY_HARDWARE",
+    "exit_code": 0,
+    "stderr": "PASS\n"
+  },
+  "unittest_log": "test_cancel_before_run (robustness_tests.Robustness.test_cancel_before_run) ... ok\ntest_cleanup_exception (robustness_tests.Robustness.test_cleanup_exception) ... ok\ntest_cleanup_rejection (robustness_tests.Robustness.test_cleanup_rejection) ... ok\ntest_decode_short (robustness_tests.Robustness.test_decode_short) ... ok\ntest_decode_valid (robustness_tests.Robustness.test_decode_valid) ... ok\ntest_dispatch_huge (robustness_tests.Robustness.test_dispatch_huge) ... ok\ntest_dispatch_negative (robustness_tests.Robustness.test_dispatch_negative) ... ok\ntest_dispatch_product (robustness_tests.Robustness.test_dispatch_product) ... ok\ntest_dispatch_valid (robustness_tests.Robustness.test_dispatch_valid) ... ok\ntest_missing_executable (robustness_tests.Robustness.test_missing_executable) ... ok\ntest_process_descendants_cleaned (robustness_tests.Robustness.test_process_descendants_cleaned) ... ok\ntest_process_error (robustness_tests.Robustness.test_process_error) ... ok\ntest_process_memory_quota (robustness_tests.Robustness.test_process_memory_quota) ... ok\ntest_process_output_quota (robustness_tests.Robustness.test_process_output_quota) ... ok\ntest_process_quota_validation (robustness_tests.Robustness.test_process_quota_validation) ... ok\ntest_process_signal_not_driver_proof (robustness_tests.Robustness.test_process_signal_not_driver_proof) ... ok\ntest_process_timeout (robustness_tests.Robustness.test_process_timeout) ... ok\ntest_quota_cleanup (robustness_tests.Robustness.test_quota_cleanup) ... ok\ntest_quota_overflow (robustness_tests.Robustness.test_quota_overflow) ... ok\ntest_retry_cap (robustness_tests.Robustness.test_retry_cap) ... ok\ntest_retry_timeout (robustness_tests.Robustness.test_retry_timeout) ... ok\ntest_shader_encoding (robustness_tests.Robustness.test_shader_encoding) ... ok\ntest_shader_length (robustness_tests.Robustness.test_shader_length) ... ok\ntest_shader_nul (robustness_tests.Robustness.test_shader_nul) ... ok\ntest_shader_valid (robustness_tests.Robustness.test_shader_valid) ... ok\ntest_shader_version (robustness_tests.Robustness.test_shader_version) ... ok\ntest_simulated_reset_cleanup (robustness_tests.Robustness.test_simulated_reset_cleanup) ... ok\ntest_texture_bool (robustness_tests.Robustness.test_texture_bool) ... ok\ntest_texture_budget (robustness_tests.Robustness.test_texture_budget) ... ok\ntest_texture_channels (robustness_tests.Robustness.test_texture_channels) ... ok\ntest_texture_huge (robustness_tests.Robustness.test_texture_huge) ... ok\ntest_texture_negative (robustness_tests.Robustness.test_texture_negative) ... ok\ntest_texture_valid (robustness_tests.Robustness.test_texture_valid) ... ok\ntest_texture_zero (robustness_tests.Robustness.test_texture_zero) ... ok\ntest_worker_cancel (robustness_tests.Robustness.test_worker_cancel) ... ok\n\n----------------------------------------------------------------------\nRan 35 tests in 2.412s\n\nOK\n",
+  "device_status": "BLOCKED_BY_HARDWARE",
+  "actual_device_reset": false
+}
