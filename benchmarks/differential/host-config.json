@@ -1,0 +1,4 @@
+[
+  {"kind":"mesa", "egl":"/lib/x86_64-linux-gnu/libEGL.so.1", "gles":"/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/lib/x86_64-linux-gnu/libGLESv2.so.2"},
+  {"kind":"angle", "egl":"/workspace/scratch/62d43a81bbde/browser-runtime/browsers/chromium_headless_shell-1194/chrome-linux/libEGL.so", "gles":"/workspace/scratch/62d43a81bbde/browser-runtime/browsers/chromium_headless_shell-1194/chrome-linux/libGLESv2.so", "icd":"/workspace/scratch/62d43a81bbde/browser-runtime/browsers/chromium_headless_shell-1194/chrome-linux/vk_swiftshader_icd.json"}
+]

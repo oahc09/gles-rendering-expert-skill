@@ -1,0 +1,625 @@
+[
+  {
+    "id": "300-scalar-identity",
+    "version": 300,
+    "family": "scalar",
+    "mutation": "identity",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nvoid main() {\ncolor = vec4((8.0 + 1.0));\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-scalar-exact_fold",
+    "version": 300,
+    "family": "scalar",
+    "mutation": "exact_fold",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nvoid main() {\ncolor = vec4(9.0);\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-scalar-local_binding",
+    "version": 300,
+    "family": "scalar",
+    "mutation": "local_binding",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nvoid main() {\nfloat localValue = (8.0 + 1.0);\ncolor = vec4(localValue);\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-scalar-dead_branch",
+    "version": 300,
+    "family": "scalar",
+    "mutation": "dead_branch",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nvoid main() {\ncolor = vec4((8.0 + 1.0));\nif (false) { color = vec4(0.0); }\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-vector-identity",
+    "version": 300,
+    "family": "vector",
+    "mutation": "identity",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nvoid main() {\nvec2 pair = vec2((8.0 + 1.0)); color = vec4(pair, pair);\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-vector-exact_fold",
+    "version": 300,
+    "family": "vector",
+    "mutation": "exact_fold",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nvoid main() {\nvec2 pair = vec2(9.0); color = vec4(pair, pair);\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-vector-local_binding",
+    "version": 300,
+    "family": "vector",
+    "mutation": "local_binding",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nvoid main() {\nfloat localValue = (8.0 + 1.0);\nvec2 pair = vec2(localValue); color = vec4(pair, pair);\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-vector-dead_branch",
+    "version": 300,
+    "family": "vector",
+    "mutation": "dead_branch",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nvoid main() {\nvec2 pair = vec2((8.0 + 1.0)); color = vec4(pair, pair);\nif (false) { color = vec4(0.0); }\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-function-identity",
+    "version": 300,
+    "family": "function",
+    "mutation": "identity",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nfloat identityValue(float x) { return x; }\nvoid main() {\ncolor = vec4(identityValue((8.0 + 1.0)));\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-function-exact_fold",
+    "version": 300,
+    "family": "function",
+    "mutation": "exact_fold",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nfloat identityValue(float x) { return x; }\nvoid main() {\ncolor = vec4(identityValue(9.0));\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-function-local_binding",
+    "version": 300,
+    "family": "function",
+    "mutation": "local_binding",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nfloat identityValue(float x) { return x; }\nvoid main() {\nfloat localValue = (8.0 + 1.0);\ncolor = vec4(identityValue(localValue));\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-function-dead_branch",
+    "version": 300,
+    "family": "function",
+    "mutation": "dead_branch",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nfloat identityValue(float x) { return x; }\nvoid main() {\ncolor = vec4(identityValue((8.0 + 1.0)));\nif (false) { color = vec4(0.0); }\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-ubo-identity",
+    "version": 300,
+    "family": "ubo",
+    "mutation": "identity",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nlayout(std140) uniform Params { vec4 tint; };\nvoid main() {\ncolor = tint * (8.0 + 1.0);\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-ubo-exact_fold",
+    "version": 300,
+    "family": "ubo",
+    "mutation": "exact_fold",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nlayout(std140) uniform Params { vec4 tint; };\nvoid main() {\ncolor = tint * 9.0;\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-ubo-local_binding",
+    "version": 300,
+    "family": "ubo",
+    "mutation": "local_binding",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nlayout(std140) uniform Params { vec4 tint; };\nvoid main() {\nfloat localValue = (8.0 + 1.0);\ncolor = tint * localValue;\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-ubo-dead_branch",
+    "version": 300,
+    "family": "ubo",
+    "mutation": "dead_branch",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nlayout(std140) uniform Params { vec4 tint; };\nvoid main() {\ncolor = tint * (8.0 + 1.0);\nif (false) { color = vec4(0.0); }\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-sampler-identity",
+    "version": 300,
+    "family": "sampler",
+    "mutation": "identity",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nuniform highp sampler2D tex;\nvoid main() {\ncolor = texture(tex, vec2(0.5)) * (8.0 + 1.0);\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-sampler-exact_fold",
+    "version": 300,
+    "family": "sampler",
+    "mutation": "exact_fold",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nuniform highp sampler2D tex;\nvoid main() {\ncolor = texture(tex, vec2(0.5)) * 9.0;\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-sampler-local_binding",
+    "version": 300,
+    "family": "sampler",
+    "mutation": "local_binding",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nuniform highp sampler2D tex;\nvoid main() {\nfloat localValue = (8.0 + 1.0);\ncolor = texture(tex, vec2(0.5)) * localValue;\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-sampler-dead_branch",
+    "version": 300,
+    "family": "sampler",
+    "mutation": "dead_branch",
+    "expected": "accept",
+    "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color;\nuniform highp sampler2D tex;\nvoid main() {\ncolor = texture(tex, vec2(0.5)) * (8.0 + 1.0);\nif (false) { color = vec4(0.0); }\n}\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": true
+  },
+  {
+    "id": "300-invalid-type",
+    "version": 300,
+    "family": "type",
+    "mutation": "invalid",
+    "expected": "reject",
+    "rule": "Assignment types must match",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color; void main() { color = mat4(1.0); }\n"
+    },
+    "kind": "shader",
+    "expected_compile": false,
+    "expected_link": false
+  },
+  {
+    "id": "300-invalid-precision",
+    "version": 300,
+    "family": "precision",
+    "mutation": "invalid",
+    "expected": "reject",
+    "rule": "Fragment float requires a default or explicit precision",
+    "sources": {
+      "shader.frag": "#version 300 es\nlayout(location=0) out vec4 color; void main() { color=vec4(1.0); }\n"
+    },
+    "kind": "shader",
+    "expected_compile": false,
+    "expected_link": false
+  },
+  {
+    "id": "300-invalid-sampler",
+    "version": 300,
+    "family": "sampler",
+    "mutation": "invalid",
+    "expected": "reject",
+    "rule": "sampler2D texture coordinates must be vec2",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nuniform sampler2D tex; layout(location=0) out vec4 color; void main() { color=texture(tex, vec3(0.0)); }\n"
+    },
+    "kind": "shader",
+    "expected_compile": false,
+    "expected_link": false
+  },
+  {
+    "id": "300-invalid-extension",
+    "version": 300,
+    "family": "extension",
+    "mutation": "invalid",
+    "expected": "reject",
+    "rule": "Unsupported required extension must be rejected",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\n#extension GL_NONEXISTENT_fuzz_extension : require\nvoid main() {}\n"
+    },
+    "kind": "shader",
+    "expected_compile": false,
+    "expected_link": false
+  },
+  {
+    "id": "300-invalid-array_size",
+    "version": 300,
+    "family": "array_size",
+    "mutation": "invalid",
+    "expected": "reject",
+    "rule": "Array sizes must be positive integral constants",
+    "sources": {
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nfloat values[-1]; void main() {}\n"
+    },
+    "kind": "shader",
+    "expected_compile": false,
+    "expected_link": false
+  },
+  {
+    "id": "300-invalid-varying",
+    "version": 300,
+    "family": "varying",
+    "mutation": "invalid",
+    "expected": "reject",
+    "rule": "Statically used linked varying types must agree",
+    "sources": {
+      "shader.vert": "#version 300 es\nprecision highp float;\nprecision highp int;\nout vec3 bridge; void main() { bridge=vec3(1.0); gl_Position=vec4(0.0,0.0,0.0,1.0); }\n",
+      "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nin vec4 bridge; layout(location=0) out vec4 color; void main() { color=bridge; }\n"
+    },
+    "kind": "shader",
+    "expected_compile": true,
+    "expected_link": false
+  },
+  {
+    "id": "viewport-valid",
+    "kind": "api_error",
+    "function": "glViewport",
+    "args": [
+      0,
+      0,
+      4,
+      4
+    ],
+    "expected": 0
+  },
+  {
+    "id": "viewport-negative",
+    "kind": "api_error",
+    "function": "glViewport",
+    "args": [
+      0,
+      0,
+      -1,
+      4
+    ],
+    "expected": 1281
+  },
+  {
+    "id": "scissor-negative",
+    "kind": "api_error",
+    "function": "glScissor",
+    "args": [
+      0,
+      0,
+      -1,
+      4
+    ],
+    "expected": 1281
+  },
+  {
+    "id": "pack-valid",
+    "kind": "api_error",
+    "function": "glPixelStorei",
+    "args": [
+      3333,
+      4
+    ],
+    "expected": 0
+  },
+  {
+    "id": "pack-invalid",
+    "kind": "api_error",
+    "function": "glPixelStorei",
+    "args": [
+      3333,
+      3
+    ],
+    "expected": 1281
+  },
+  {
+    "id": "enable-invalid",
+    "kind": "api_error",
+    "function": "glEnable",
+    "args": [
+      57005
+    ],
+    "expected": 1280
+  },
+  {
+    "id": "clear-valid",
+    "kind": "api_error",
+    "function": "glClear",
+    "args": [
+      16384
+    ],
+    "expected": 0
+  },
+  {
+    "id": "clear-invalid",
+    "kind": "api_error",
+    "function": "glClear",
+    "args": [
+      1
+    ],
+    "expected": 1281
+  },
+  {
+    "id": "buffer-target-invalid",
+    "kind": "api_error",
+    "function": "glBindBuffer",
+    "args": [
+      57005,
+      0
+    ],
+    "expected": 1280
+  },
+  {
+    "id": "texture-target-invalid",
+    "kind": "api_error",
+    "function": "glBindTexture",
+    "args": [
+      57005,
+      0
+    ],
+    "expected": 1280
+  },
+  {
+    "id": "unbind-program",
+    "kind": "api_error",
+    "function": "glUseProgram",
+    "args": [
+      0
+    ],
+    "expected": 0
+  },
+  {
+    "id": "fbo-black",
+    "kind": "fbo_pixels",
+    "color": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "expected": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "tolerance": 1
+  },
+  {
+    "id": "fbo-white",
+    "kind": "fbo_pixels",
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "expected": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "tolerance": 1
+  },
+  {
+    "id": "fbo-primaries",
+    "kind": "fbo_pixels",
+    "color": [
+      1,
+      0,
+      0.5,
+      1
+    ],
+    "expected": [
+      255,
+      0,
+      128,
+      255
+    ],
+    "tolerance": 1
+  },
+  {
+    "id": "fbo-fractions",
+    "kind": "fbo_pixels",
+    "color": [
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "expected": [
+      26,
+      51,
+      77,
+      102
+    ],
+    "tolerance": 1
+  },
+  {
+    "id": "fbo-clamp",
+    "kind": "fbo_pixels",
+    "color": [
+      -1,
+      2,
+      0.25,
+      1
+    ],
+    "expected": [
+      0,
+      255,
+      64,
+      255
+    ],
+    "tolerance": 1
+  },
+  {
+    "id": "fbo-midpoint",
+    "kind": "fbo_pixels",
+    "color": [
+      0.5,
+      0.5,
+      0.5,
+      1
+    ],
+    "expected": [
+      128,
+      128,
+      128,
+      255
+    ],
+    "tolerance": 1
+  },
+  {
+    "id": "ssbo-add",
+    "kind": "ssbo_numeric",
+    "version": 310,
+    "sources": {
+      "shader.comp": "#version 310 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(std430,binding=0) buffer Data { float value; };\nvoid main() { value=2.0+3.0; }\n"
+    },
+    "expected": 5,
+    "absolute_tolerance": 1e-06,
+    "relative_tolerance": 1e-06
+  },
+  {
+    "id": "ssbo-multiply",
+    "kind": "ssbo_numeric",
+    "version": 310,
+    "sources": {
+      "shader.comp": "#version 310 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(std430,binding=0) buffer Data { float value; };\nvoid main() { value=1.25*4.0; }\n"
+    },
+    "expected": 5,
+    "absolute_tolerance": 1e-06,
+    "relative_tolerance": 1e-06
+  },
+  {
+    "id": "ssbo-divide",
+    "kind": "ssbo_numeric",
+    "version": 310,
+    "sources": {
+      "shader.comp": "#version 310 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(std430,binding=0) buffer Data { float value; };\nvoid main() { value=1.0/4.0; }\n"
+    },
+    "expected": 0.25,
+    "absolute_tolerance": 1e-06,
+    "relative_tolerance": 1e-06
+  },
+  {
+    "id": "ssbo-sqrt",
+    "kind": "ssbo_numeric",
+    "version": 310,
+    "sources": {
+      "shader.comp": "#version 310 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(std430,binding=0) buffer Data { float value; };\nvoid main() { value=sqrt(4.0); }\n"
+    },
+    "expected": 2,
+    "absolute_tolerance": 1e-06,
+    "relative_tolerance": 1e-06
+  }
+]
