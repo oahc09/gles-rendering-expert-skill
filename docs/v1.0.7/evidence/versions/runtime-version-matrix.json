@@ -1,0 +1,278 @@
+{
+  "status": "PASS",
+  "scope": "Mesa GLES version override exercises API fallback, not independent physical 3.0/3.1/3.2 devices",
+  "binary_sha256": "a2ceb54d328c5001e9f47f5d7a470b54aa974f4f799af1101fc6e2024aab9faf",
+  "source_sha256": "f3d98ccb776371dd1ac7804dad2f3034574c260c061be674415e55c83d5a5915",
+  "results": [
+    {
+      "gles_override": "3.0",
+      "scene": "S01",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S01",
+        "docs/v1.0.7/evidence/versions/version-3.0-S01.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S01\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1\",\"compiled_glsl_versions\":[300],\"missing_extension_rejected\":true}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.0",
+      "scene": "S03",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S03",
+        "docs/v1.0.7/evidence/versions/version-3.0-S03.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S03\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1\",\"block_size\":32,\"offsets\":[0,16,20],\"block_binding\":0,\"sampler_type\":\"sampler2D\",\"sampler_unit\":0,\"checked_faults\":[\"Material.roughness expected offset16 vs12\",\"baseColorTex expected unit0 vs1\"],\"member_types\":[35666,5126,5126],\"member_sizes\":[1,1,1],\"member_row_major\":[0,0,0]}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.0",
+      "scene": "S05",
+      "pass": true,
+      "expected_blocked": true,
+      "returncode": 1,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S05",
+        "docs/v1.0.7/evidence/versions/version-3.0-S05.ppm",
+        "baseline"
+      ],
+      "stdout": "",
+      "stderr": "BLOCKED_BY_CAPABILITY: compute requires GLES3.1\n"
+    },
+    {
+      "gles_override": "3.0",
+      "scene": "S06",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S06",
+        "docs/v1.0.7/evidence/versions/version-3.0-S06.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S06\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1\",\"resolve_format\":\"RGBA8\",\"samples\":4,\"resolve_filter\":\"GL_NEAREST\",\"scope\":\"LDR MSAA premultiplied full-coverage blending followed by tonemap; edge coverage not certified; HDR path separate\"}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.0",
+      "scene": "C01",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C01",
+        "docs/v1.0.7/evidence/versions/version-3.0-C01.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"C01\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1\",\"input\":\"SRGB8_ALPHA8\",\"lighting\":\"linear\",\"intermediate\":\"SRGB8_ALPHA8 FBO\",\"readback\":\"encoded RGB8\"}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.0",
+      "scene": "C03",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C03",
+        "docs/v1.0.7/evidence/versions/version-3.0-C03.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"C03\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.0 Mesa 25.0.7-2+deb13u1\",\"intermediate\":\"RGBA16F\",\"tonemap\":\"Reinhard\",\"injection\":\"pre-tonemap HDR clamp\"}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.1",
+      "scene": "S01",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S01",
+        "docs/v1.0.7/evidence/versions/version-3.1-S01.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S01\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.1 Mesa 25.0.7-2+deb13u1\",\"compiled_glsl_versions\":[300,310],\"missing_extension_rejected\":true}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.1",
+      "scene": "S03",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S03",
+        "docs/v1.0.7/evidence/versions/version-3.1-S03.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S03\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.1 Mesa 25.0.7-2+deb13u1\",\"block_size\":32,\"offsets\":[0,16,20],\"block_binding\":0,\"sampler_type\":\"sampler2D\",\"sampler_unit\":0,\"checked_faults\":[\"Material.roughness expected offset16 vs12\",\"baseColorTex expected unit0 vs1\"],\"member_types\":[35666,5126,5126],\"member_sizes\":[1,1,1],\"member_row_major\":[0,0,0]}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.1",
+      "scene": "S05",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S05",
+        "docs/v1.0.7/evidence/versions/version-3.1-S05.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S05\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.1 Mesa 25.0.7-2+deb13u1\",\"producer\":\"compute SSBO write\",\"consumer\":\"vertex attribute fetch\",\"required_barrier\":\"GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT\",\"negative_preflight_rejected\":false}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.1",
+      "scene": "S06",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S06",
+        "docs/v1.0.7/evidence/versions/version-3.1-S06.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S06\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.1 Mesa 25.0.7-2+deb13u1\",\"resolve_format\":\"RGBA8\",\"samples\":4,\"resolve_filter\":\"GL_NEAREST\",\"scope\":\"LDR MSAA premultiplied full-coverage blending followed by tonemap; edge coverage not certified; HDR path separate\"}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.1",
+      "scene": "C01",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C01",
+        "docs/v1.0.7/evidence/versions/version-3.1-C01.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"C01\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.1 Mesa 25.0.7-2+deb13u1\",\"input\":\"SRGB8_ALPHA8\",\"lighting\":\"linear\",\"intermediate\":\"SRGB8_ALPHA8 FBO\",\"readback\":\"encoded RGB8\"}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.1",
+      "scene": "C03",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C03",
+        "docs/v1.0.7/evidence/versions/version-3.1-C03.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"C03\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.1 Mesa 25.0.7-2+deb13u1\",\"intermediate\":\"RGBA16F\",\"tonemap\":\"Reinhard\",\"injection\":\"pre-tonemap HDR clamp\"}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.2",
+      "scene": "S01",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S01",
+        "docs/v1.0.7/evidence/versions/version-3.2-S01.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S01\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"compiled_glsl_versions\":[300,310,320],\"missing_extension_rejected\":true}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.2",
+      "scene": "S03",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S03",
+        "docs/v1.0.7/evidence/versions/version-3.2-S03.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S03\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"block_size\":32,\"offsets\":[0,16,20],\"block_binding\":0,\"sampler_type\":\"sampler2D\",\"sampler_unit\":0,\"checked_faults\":[\"Material.roughness expected offset16 vs12\",\"baseColorTex expected unit0 vs1\"],\"member_types\":[35666,5126,5126],\"member_sizes\":[1,1,1],\"member_row_major\":[0,0,0]}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.2",
+      "scene": "S05",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S05",
+        "docs/v1.0.7/evidence/versions/version-3.2-S05.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S05\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"producer\":\"compute SSBO write\",\"consumer\":\"vertex attribute fetch\",\"required_barrier\":\"GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT\",\"negative_preflight_rejected\":false}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.2",
+      "scene": "S06",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S06",
+        "docs/v1.0.7/evidence/versions/version-3.2-S06.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"S06\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"resolve_format\":\"RGBA8\",\"samples\":4,\"resolve_filter\":\"GL_NEAREST\",\"scope\":\"LDR MSAA premultiplied full-coverage blending followed by tonemap; edge coverage not certified; HDR path separate\"}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.2",
+      "scene": "C01",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C01",
+        "docs/v1.0.7/evidence/versions/version-3.2-C01.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"C01\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"input\":\"SRGB8_ALPHA8\",\"lighting\":\"linear\",\"intermediate\":\"SRGB8_ALPHA8 FBO\",\"readback\":\"encoded RGB8\"}\n",
+      "stderr": ""
+    },
+    {
+      "gles_override": "3.2",
+      "scene": "C03",
+      "pass": true,
+      "expected_blocked": false,
+      "returncode": 0,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C03",
+        "docs/v1.0.7/evidence/versions/version-3.2-C03.ppm",
+        "baseline"
+      ],
+      "stdout": "{\"status\":\"PASS\",\"scene\":\"C03\",\"mode\":\"baseline\",\"renderer\":\"llvmpipe (LLVM 19.1.7, 256 bits)\",\"version\":\"OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1\",\"intermediate\":\"RGBA16F\",\"tonemap\":\"Reinhard\",\"injection\":\"pre-tonemap HDR clamp\"}\n",
+      "stderr": ""
+    }
+  ]
+}

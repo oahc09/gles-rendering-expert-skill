@@ -1,0 +1,101 @@
+{
+  "target_version": "1.0.7",
+  "metadata_version": "1.0.2",
+  "release_ready": false,
+  "release_authorized": false,
+  "prior_release_gate": "docs/v1.0.6/release-gates.json",
+  "accepted_limitations": [],
+  "work_packages": {
+    "W0": {
+      "status": "PASS",
+      "implementation": [
+        "docs/v1.0.7-baseline-and-gap.md"
+      ],
+      "acceptance": "Exact main/permissions/tags/open PR inventory and preserved predecessor gates.",
+      "remaining": "Prior releases remain unaccepted; this is an incremental candidate."
+    },
+    "W1": {
+      "status": "PASS",
+      "implementation": [
+        "benchmarks/pipeline/variants.py",
+        "examples/pipeline/pipeline_lab.cpp"
+      ],
+      "acceptance": "Version/extension/mutual-exclusion/budget cases and actual ESSL 300/310/320 links; driver binary cache source fallback.",
+      "remaining": "Driver binaries remain implementation-specific; physical driver matrix NOT_RUN."
+    },
+    "W2": {
+      "status": "PASS",
+      "implementation": [
+        "benchmarks/pipeline/material.py",
+        "benchmarks/pipeline/manifests/pbr-material.json"
+      ],
+      "acceptance": "Layout, binding and variant ABI positive/negative cases; actual std140 reflection and transparent/PBR parameter binding.",
+      "remaining": "This bounded manifest is not arbitrary GLSL reflection or an engine ABI replacement."
+    },
+    "W3": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "benchmarks/pipeline/rendergraph.py",
+        "examples/pipeline/pipeline_lab.cpp"
+      ],
+      "acceptance": "Executable topology/lifetime/feedback/resolve checker and actual multipass bloom with analytic images.",
+      "remaining": "Logical alias/invalidate recommendations have no physical TBDR bandwidth measurements."
+    },
+    "W4": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/pipeline/hazards.py",
+        "examples/pipeline/pipeline_lab.cpp"
+      ],
+      "acceptance": "Consumer barrier analysis, feedback rejection, context contract and actual compute-to-vertex draw.",
+      "remaining": "Whole-resource model does not prove arbitrary WAR/intra-dispatch races; cross-driver and GLES extension-specific paths NOT_RUN."
+    },
+    "W5": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "benchmarks/pipeline/runtime.py",
+        "benchmarks/pipeline/goldens",
+        "references/pipeline/color-pipeline.md"
+      ],
+      "acceptance": "Six independent CPU-analytic reference images, sRGB/alpha/HDR/FP16/material and MSAA resolve positive-negative captures.",
+      "remaining": "Physical backend image distributions, MSAA polygon-edge coverage and calibrated HDR display acceptance NOT_RUN."
+    },
+    "W6": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "benchmarks/pipeline/shader_risks.py",
+        "benchmarks/pipeline/cases/shader-risk-experiments.json"
+      ],
+      "acceptance": "Source/stage/line advisory risks and eight A/B protocols including no-gain/regression controls.",
+      "remaining": "No hardware GPU time/bandwidth/thermal capture; static warnings are not speedups."
+    },
+    "W7": {
+      "status": "PASS",
+      "implementation": [
+        "benchmarks/pipeline/diagnose.py",
+        "references/pipeline/diagnostics.md"
+      ],
+      "acceptance": "Ten executable failure/fix diagnostic contracts with numeric/static CPU reproduction and linked runtime controls.",
+      "remaining": "Authored faults are not ten observed physical driver bugs; startup GPU conclusions need target capture."
+    },
+    "W8": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "implementation": [
+        "benchmarks/agent/cases-v1.0.7.json",
+        "benchmarks/agent/V107_CASES.md"
+      ],
+      "acceptance": "Thirty independent pipeline tasks appended to unchanged142 prefix; evidence-gated first-run/numeric/visual metrics and tests.",
+      "remaining": "No live paired provider run or blinded model-quality evaluation; cost and gains unknown."
+    },
+    "W9": {
+      "status": "PARTIAL",
+      "implementation": [
+        "references/research/2026-11-02-v107",
+        "docs/v1.0.7-traceability.md",
+        "tools/check_release_gates.py"
+      ],
+      "acceptance": "90-day radar, source-diff review and decisions, local regression, manual CI additions and recursive candidate gates.",
+      "remaining": "No independent cloud execution, release authorization, physical/provider acceptance or new tag/release."
+    }
+  }
+}

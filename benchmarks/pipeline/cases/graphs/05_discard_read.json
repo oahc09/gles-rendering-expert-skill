@@ -1,0 +1,36 @@
+{
+  "input": {
+    "resources": {
+      "a": {
+        "format": "RGBA8",
+        "size": [
+          64,
+          64
+        ],
+        "samples": 1
+      }
+    },
+    "passes": [
+      {
+        "id": "draw",
+        "writes": [
+          "a"
+        ],
+        "discard": [
+          "a"
+        ]
+      },
+      {
+        "id": "present",
+        "depends_on": [
+          "draw"
+        ],
+        "reads": [
+          "a"
+        ]
+      }
+    ]
+  },
+  "expected_valid": false,
+  "expected_rule": "RG_UNDEFINED_READ"
+}

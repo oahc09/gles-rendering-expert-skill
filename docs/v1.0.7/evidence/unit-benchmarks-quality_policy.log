@@ -1,0 +1,30 @@
+test_approved_does_not_change_os (test_policy.PolicyTests.test_approved_does_not_change_os) ... ok
+test_backend_kept (test_policy.PolicyTests.test_backend_kept) ... ok
+test_background_does_not_degrade (test_policy.PolicyTests.test_background_does_not_degrade) ... ok
+test_changes_rate_limited (test_policy.PolicyTests.test_changes_rate_limited) ... ok
+test_deterministic (test_policy.PolicyTests.test_deterministic) ... ok
+test_disabled_retains (test_policy.PolicyTests.test_disabled_retains) ... ok
+test_floor (test_policy.PolicyTests.test_floor) ... ok
+test_gap_not_continuous_pressure (test_policy.PolicyTests.test_gap_not_continuous_pressure) ... ok
+test_hot_degrades_even_fast (test_policy.PolicyTests.test_hot_degrades_even_fast) ... ok
+test_invalid_capabilities_atomic (test_policy.PolicyTests.test_invalid_capabilities_atomic) ... ok
+test_invalid_foreground_is_atomic (test_policy.PolicyTests.test_invalid_foreground_is_atomic) ... ok
+test_invalid_time_and_nan (test_policy.PolicyTests.test_invalid_time_and_nan) ... ok
+test_jitter_no_oscillation (test_policy.PolicyTests.test_jitter_no_oscillation) ... ok
+test_no_anisotropy_extension_assumption (test_policy.PolicyTests.test_no_anisotropy_extension_assumption) ... ok
+test_output_does_not_mutate_other_instances (test_policy.PolicyTests.test_output_does_not_mutate_other_instances) ... ok
+test_spike (test_policy.PolicyTests.test_spike) ... ok
+test_sustained_then_recovers (test_policy.PolicyTests.test_sustained_then_recovers) ... ok
+test_temperature_rise_blocks_recovery (test_policy.PolicyTests.test_temperature_rise_blocks_recovery) ... ok
+test_unknown_capability_blocks_apply (test_policy.PolicyTests.test_unknown_capability_blocks_apply) ... ok
+test_visual_gate (test_policy.PolicyTests.test_visual_gate) ... ok
+test_changed_source_evidence_rejected (test_visual_bridge.VisualBridge.test_changed_source_evidence_rejected) ... ok
+test_failed_suite_rejected (test_visual_bridge.VisualBridge.test_failed_suite_rejected) ... ok
+test_measured_water_rejected (test_visual_bridge.VisualBridge.test_measured_water_rejected) ... ok
+test_other_scale_does_not_approve_full_preset (test_visual_bridge.VisualBridge.test_other_scale_does_not_approve_full_preset) ... ok
+test_unknown_scene_rejected (test_visual_bridge.VisualBridge.test_unknown_scene_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.026s
+
+OK

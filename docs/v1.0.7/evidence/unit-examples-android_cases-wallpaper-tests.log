@@ -1,0 +1,11 @@
+test_exactly_one_output_encoding (test_hdr_source.HdrSourceTests.test_exactly_one_output_encoding) ... ok
+test_fallback_rebuild_not_relabel (test_hdr_source.HdrSourceTests.test_fallback_rebuild_not_relabel) ... ok
+test_foreground_reprobes (test_hdr_source.HdrSourceTests.test_foreground_reprobes) ... ok
+test_mode_specific_api_guard (test_hdr_source.HdrSourceTests.test_mode_specific_api_guard) ... ok
+test_pq_constants_and_gamut_transform (test_hdr_source.HdrSourceTests.test_pq_constants_and_gamut_transform) ... ok
+test_surface_and_attachment_queries (test_hdr_source.HdrSourceTests.test_surface_and_attachment_queries) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

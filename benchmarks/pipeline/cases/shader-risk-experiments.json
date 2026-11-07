@@ -1,0 +1,226 @@
+[
+  {
+    "id": "SR01",
+    "title": "dynamic-sampler",
+    "source_a": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nuniform sampler2D images[2];\nuniform int index;\nvoid main(){color=texture(images[index],uv);}\n",
+    "source_b": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nuniform sampler2D images[2];\nuniform int index;\nvoid main(){color=index==0?texture(images[0],uv):texture(images[1],uv);}\n",
+    "stage": "fragment",
+    "variant_count": 1,
+    "status": "NOT_RUN",
+    "expected_caveat": "Legality may differ; compare only equivalent valid programs.",
+    "protocol": [
+      "Run python benchmarks/pipeline/shader_experiments.py --compiler /path/to/glslangValidator. Both arms are complete linked GLSL ES 3.00 stages, except SR01-A intentionally rejected.",
+      "Match output within scene-specific visual tolerance before timing.",
+      "Warm up; alternate randomized A/B at fixed resolution, frequency policy and identical inputs.",
+      "Capture at least 30 GPU timer samples (reject disjoint), bandwidth counters where available and thermal state.",
+      "Retain raw captures, device/driver/extensions, compiler logs and negative results."
+    ],
+    "measurements": null,
+    "sources": {
+      "vertex": "experiments/shader-risks/fullscreen.vert",
+      "a": "experiments/shader-risks/SR01-a.frag",
+      "b": "experiments/shader-risks/SR01-b.frag"
+    },
+    "expected_compile": {
+      "a": "REJECT",
+      "b": "ACCEPT"
+    },
+    "input_equivalence": "A deliberately violates GLSL ES 3.00 constant sampler-array indexing. B selects the same texture for index 0 or 1. No GPU A/B timing is valid for rejected A."
+  },
+  {
+    "id": "SR02",
+    "title": "incoherent-branch",
+    "source_a": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nvoid main(){if(uv.x>0.5) color=texture(image,uv);else color=vec4(0,0,0,1);}\n",
+    "source_b": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nvoid main(){vec4 sampled=texture(image,uv);color=mix(vec4(0,0,0,1),sampled,step(0.5,uv.x));}\n",
+    "stage": "fragment",
+    "variant_count": 1,
+    "status": "NOT_RUN",
+    "expected_caveat": "Extra sampling in B may regress performance.",
+    "protocol": [
+      "Run python benchmarks/pipeline/shader_experiments.py --compiler /path/to/glslangValidator. Both arms are complete linked GLSL ES 3.00 stages, except SR01-A intentionally rejected.",
+      "Match output within scene-specific visual tolerance before timing.",
+      "Warm up; alternate randomized A/B at fixed resolution, frequency policy and identical inputs.",
+      "Capture at least 30 GPU timer samples (reject disjoint), bandwidth counters where available and thermal state.",
+      "Retain raw captures, device/driver/extensions, compiler logs and negative results."
+    ],
+    "measurements": null,
+    "sources": {
+      "vertex": "experiments/shader-risks/fullscreen.vert",
+      "a": "experiments/shader-risks/SR02-a.frag",
+      "b": "experiments/shader-risks/SR02-b.frag"
+    },
+    "expected_compile": {
+      "a": "ACCEPT",
+      "b": "ACCEPT"
+    },
+    "input_equivalence": "Use an even-width target (e.g. 32) so no pixel center has uv.x=0.5. Use complete non-mipmapped texture, nearest filtering and matching sampler state. B samples all pixels and may regress despite reducing explicit branching."
+  },
+  {
+    "id": "SR03",
+    "title": "uniform-branch-control",
+    "source_a": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nuniform bool enabled;\nvoid main(){if(enabled)color=texture(image,uv);else color=vec4(0,0,0,1);}\n",
+    "source_b": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nuniform bool enabled;\nvoid main(){vec4 sampled=texture(image,uv);color=enabled?sampled:vec4(0,0,0,1);}\n",
+    "stage": "fragment",
+    "variant_count": 1,
+    "status": "NOT_RUN",
+    "expected_caveat": "Uniform A may already be efficient; no gain is plausible.",
+    "protocol": [
+      "Run python benchmarks/pipeline/shader_experiments.py --compiler /path/to/glslangValidator. Both arms are complete linked GLSL ES 3.00 stages, except SR01-A intentionally rejected.",
+      "Match output within scene-specific visual tolerance before timing.",
+      "Warm up; alternate randomized A/B at fixed resolution, frequency policy and identical inputs.",
+      "Capture at least 30 GPU timer samples (reject disjoint), bandwidth counters where available and thermal state.",
+      "Retain raw captures, device/driver/extensions, compiler logs and negative results."
+    ],
+    "measurements": null,
+    "sources": {
+      "vertex": "experiments/shader-risks/fullscreen.vert",
+      "a": "experiments/shader-risks/SR03-a.frag",
+      "b": "experiments/shader-risks/SR03-b.frag"
+    },
+    "expected_compile": {
+      "a": "ACCEPT",
+      "b": "ACCEPT"
+    },
+    "input_equivalence": "Use identical enabled value for all fragments and both variants. Complete nearest/non-mipmapped texture. Uniform branch may already be efficient; B can be slower when disabled, and no gain is plausible."
+  },
+  {
+    "id": "SR04",
+    "title": "high-tap-count",
+    "source_a": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nvoid main(){vec4 c=vec4(0);\nc+=texture(image,uv);\nc+=texture(image,uv);\nc+=texture(image,uv);\nc+=texture(image,uv);\nc+=texture(image,uv);\nc+=texture(image,uv);\nc+=texture(image,uv);\nc+=texture(image,uv);\ncolor=c*0.125;}\n",
+    "source_b": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nvoid main(){color=texture(image,uv);}\n",
+    "stage": "fragment",
+    "variant_count": 1,
+    "status": "NOT_RUN",
+    "expected_caveat": "Only equivalent for these identical sample coordinates.",
+    "protocol": [
+      "Run python benchmarks/pipeline/shader_experiments.py --compiler /path/to/glslangValidator. Both arms are complete linked GLSL ES 3.00 stages, except SR01-A intentionally rejected.",
+      "Match output within scene-specific visual tolerance before timing.",
+      "Warm up; alternate randomized A/B at fixed resolution, frequency policy and identical inputs.",
+      "Capture at least 30 GPU timer samples (reject disjoint), bandwidth counters where available and thermal state.",
+      "Retain raw captures, device/driver/extensions, compiler logs and negative results."
+    ],
+    "measurements": null,
+    "sources": {
+      "vertex": "experiments/shader-risks/fullscreen.vert",
+      "a": "experiments/shader-risks/SR04-a.frag",
+      "b": "experiments/shader-risks/SR04-b.frag"
+    },
+    "expected_compile": {
+      "a": "ACCEPT",
+      "b": "ACCEPT"
+    },
+    "input_equivalence": "All eight coordinates and sampler states are identical. RGBA8 nearest samples; allow <=1 output LSB arithmetic error. This does not justify reducing distinct filter taps. Compiler may merge accesses, yielding no gain."
+  },
+  {
+    "id": "SR05",
+    "title": "loop-taps",
+    "source_a": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nvoid main(){vec4 c=vec4(0);for(int i=0;i<4;i++){c+=texture(image,uv);}color=c*0.25;}\n",
+    "source_b": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nvoid main(){color=texture(image,uv);}\n",
+    "stage": "fragment",
+    "variant_count": 1,
+    "status": "NOT_RUN",
+    "expected_caveat": "Compiler may optimize both equally; no gain is plausible.",
+    "protocol": [
+      "Run python benchmarks/pipeline/shader_experiments.py --compiler /path/to/glslangValidator. Both arms are complete linked GLSL ES 3.00 stages, except SR01-A intentionally rejected.",
+      "Match output within scene-specific visual tolerance before timing.",
+      "Warm up; alternate randomized A/B at fixed resolution, frequency policy and identical inputs.",
+      "Capture at least 30 GPU timer samples (reject disjoint), bandwidth counters where available and thermal state.",
+      "Retain raw captures, device/driver/extensions, compiler logs and negative results."
+    ],
+    "measurements": null,
+    "sources": {
+      "vertex": "experiments/shader-risks/fullscreen.vert",
+      "a": "experiments/shader-risks/SR05-a.frag",
+      "b": "experiments/shader-risks/SR05-b.frag"
+    },
+    "expected_compile": {
+      "a": "ACCEPT",
+      "b": "ACCEPT"
+    },
+    "input_equivalence": "Same coordinate, nearest non-mipmapped RGBA8 texture and <=1 output LSB tolerance. Compiler may already unroll/fold the identical samples."
+  },
+  {
+    "id": "SR06",
+    "title": "mrt-output",
+    "source_a": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nlayout(location=1) out vec4 extra;\nvoid main(){color=texture(image,uv);extra=color;}\n",
+    "source_b": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nvoid main(){color=texture(image,uv);}\n",
+    "stage": "fragment",
+    "variant_count": 1,
+    "status": "NOT_RUN",
+    "expected_caveat": "Removal invalid if downstream reads extra; check full graph.",
+    "protocol": [
+      "Run python benchmarks/pipeline/shader_experiments.py --compiler /path/to/glslangValidator. Both arms are complete linked GLSL ES 3.00 stages, except SR01-A intentionally rejected.",
+      "Match output within scene-specific visual tolerance before timing.",
+      "Warm up; alternate randomized A/B at fixed resolution, frequency policy and identical inputs.",
+      "Capture at least 30 GPU timer samples (reject disjoint), bandwidth counters where available and thermal state.",
+      "Retain raw captures, device/driver/extensions, compiler logs and negative results."
+    ],
+    "measurements": null,
+    "sources": {
+      "vertex": "experiments/shader-risks/fullscreen.vert",
+      "a": "experiments/shader-risks/SR06-a.frag",
+      "b": "experiments/shader-risks/SR06-b.frag"
+    },
+    "expected_compile": {
+      "a": "ACCEPT",
+      "b": "ACCEPT"
+    },
+    "input_equivalence": "Only attachment 0 is part of the consumed result. A has two equal-size RGBA8 attachments and draw buffers 0/1; B only attachment 0. No downstream pass may read attachment 1. Measure complete pass cost including attachment configuration."
+  },
+  {
+    "id": "SR07",
+    "title": "register-pressure",
+    "source_a": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nvoid main(){\nvec4 v0=vec4(0.03125);\nvec4 v1=vec4(0.0625);\nvec4 v2=vec4(0.09375);\nvec4 v3=vec4(0.125);\nvec4 v4=vec4(0.15625);\nvec4 v5=vec4(0.1875);\nvec4 v6=vec4(0.21875);\nvec4 v7=vec4(0.25);\nvec4 v8=vec4(0.28125);\nvec4 v9=vec4(0.3125);\nvec4 v10=vec4(0.34375);\nvec4 v11=vec4(0.375);\nvec4 v12=vec4(0.40625);\nvec4 v13=vec4(0.4375);\nvec4 v14=vec4(0.46875);\nvec4 v15=vec4(0.5);\nvec4 v16=vec4(0.53125);\nvec4 v17=vec4(0.5625);\nvec4 v18=vec4(0.59375);\nvec4 v19=vec4(0.625);\ncolor=texture(image,uv);}\n",
+    "source_b": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\nvoid main(){color=texture(image,uv);}\n",
+    "stage": "fragment",
+    "variant_count": 1,
+    "status": "NOT_RUN",
+    "expected_caveat": "Dead variables may already be removed; no gain expected for this control.",
+    "protocol": [
+      "Run python benchmarks/pipeline/shader_experiments.py --compiler /path/to/glslangValidator. Both arms are complete linked GLSL ES 3.00 stages, except SR01-A intentionally rejected.",
+      "Match output within scene-specific visual tolerance before timing.",
+      "Warm up; alternate randomized A/B at fixed resolution, frequency policy and identical inputs.",
+      "Capture at least 30 GPU timer samples (reject disjoint), bandwidth counters where available and thermal state.",
+      "Retain raw captures, device/driver/extensions, compiler logs and negative results."
+    ],
+    "measurements": null,
+    "sources": {
+      "vertex": "experiments/shader-risks/fullscreen.vert",
+      "a": "experiments/shader-risks/SR07-a.frag",
+      "b": "experiments/shader-risks/SR07-b.frag"
+    },
+    "expected_compile": {
+      "a": "ACCEPT",
+      "b": "ACCEPT"
+    },
+    "input_equivalence": "Declarations in A are intentionally unused. Exact output equivalence; a competent compiler eliminates them. This is a no-gain/false-positive control, not evidence of actual occupancy pressure."
+  },
+  {
+    "id": "SR08",
+    "title": "variant-cardinality",
+    "source_a": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\n// Build 256 macro combinations; shader semantics intentionally identical.\nvoid main(){color=texture(image,uv);}\n",
+    "source_b": "#version 300 es\nprecision highp float;\nprecision highp int;\nin highp vec2 uv;\nuniform sampler2D image;\nlayout(location = 0) out vec4 color;\n// Build only the used macro combination.\nvoid main(){color=texture(image,uv);}\n",
+    "stage": "fragment",
+    "variant_count": 256,
+    "status": "NOT_RUN",
+    "expected_caveat": "Reduced variants affect startup/storage, not necessarily GPU time.",
+    "protocol": [
+      "Run python benchmarks/pipeline/shader_experiments.py --compiler /path/to/glslangValidator. Both arms are complete linked GLSL ES 3.00 stages, except SR01-A intentionally rejected.",
+      "Match output within scene-specific visual tolerance before timing.",
+      "Warm up; alternate randomized A/B at fixed resolution, frequency policy and identical inputs.",
+      "Capture at least 30 GPU timer samples (reject disjoint), bandwidth counters where available and thermal state.",
+      "Retain raw captures, device/driver/extensions, compiler logs and negative results."
+    ],
+    "measurements": null,
+    "sources": {
+      "vertex": "experiments/shader-risks/fullscreen.vert",
+      "a": "experiments/shader-risks/SR08-a.frag",
+      "b": "experiments/shader-risks/SR08-b.frag"
+    },
+    "expected_compile": {
+      "a": "ACCEPT",
+      "b": "ACCEPT"
+    },
+    "input_equivalence": "Each macro combination is semantically identical and uses identical texture/input. GPU timing should not be inferred from variant-count reduction. Compare offline build or application startup/storage separately; driver caches can eliminate repeated work."
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "size": [
+    32,
+    32
+  ],
+  "orientation": "top-to-bottom",
+  "color_space": "RGB8 encoded or explicitly tone-mapped numerical output; not display calibration",
+  "images": {
+    "C01": {
+      "file": "C01.ppm",
+      "sha256": "f2763f2694af7016b3aa8f470723708ac97211894459131974dc206f9fe7ae73",
+      "description": "sRGB texture decode, linear lighting, sRGB FBO encode",
+      "max_channel_error_u8": 2,
+      "origin": "independent CPU analytic oracle"
+    },
+    "C02": {
+      "file": "C02.ppm",
+      "sha256": "5e547f3217d0960b8118ef16bdfa832f1a91264dd9f41e6cabb68f68c8c337fc",
+      "description": "Premultiplied glass gradient and particle disk",
+      "max_channel_error_u8": 2,
+      "origin": "independent CPU analytic oracle"
+    },
+    "C03": {
+      "file": "C03.ppm",
+      "sha256": "faf79b005e0f51f13f1ac358998321b9bde8121ae1afcdc5ff4231f94bb7522a",
+      "description": "RGBA16F radiance, Reinhard tonemap",
+      "max_channel_error_u8": 1,
+      "origin": "independent CPU analytic oracle"
+    },
+    "C04": {
+      "file": "C04.ppm",
+      "sha256": "26784c92cf2f262e503ece6ba1eb5f2508b56315e155c5d732a88b116ce54f67",
+      "description": "Scene, bright extraction, blur, bloom composite",
+      "max_channel_error_u8": 2,
+      "origin": "independent CPU analytic oracle"
+    },
+    "C05": {
+      "file": "C05.ppm",
+      "sha256": "58bf8a3ba7fbdd73ba66616d8e6f8b6427764bc701b84193a090c24dd726e190",
+      "description": "Reflected std140 material and RGBA8 base color texture",
+      "max_channel_error_u8": 1,
+      "origin": "independent CPU analytic oracle"
+    },
+    "C06": {
+      "file": "C06.ppm",
+      "sha256": "5779dd2c94d4690e2ed4554d989d08f908fa9b3ea88b04e3613f82d965a6d5c5",
+      "description": "RGBA8 multisample blend and resolve followed by tonemap",
+      "max_channel_error_u8": 1,
+      "origin": "independent CPU analytic oracle"
+    }
+  }
+}

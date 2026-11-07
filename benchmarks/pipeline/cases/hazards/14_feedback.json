@@ -1,0 +1,34 @@
+{
+  "input": {
+    "gles": "3.1",
+    "events": [
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "framebuffer",
+            "mode": "write",
+            "stage": "fragment"
+          }
+        ]
+      },
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "sample",
+            "mode": "read",
+            "stage": "fragment"
+          },
+          {
+            "resource": "a",
+            "kind": "framebuffer",
+            "mode": "write"
+          }
+        ]
+      }
+    ]
+  },
+  "expected_valid": false,
+  "expected_rule": "HZ_FEEDBACK"
+}

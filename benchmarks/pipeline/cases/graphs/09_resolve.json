@@ -1,0 +1,49 @@
+{
+  "input": {
+    "resources": {
+      "a": {
+        "format": "RGBA8",
+        "size": [
+          64,
+          64
+        ],
+        "samples": 4
+      },
+      "b": {
+        "format": "RGBA8",
+        "size": [
+          64,
+          64
+        ],
+        "samples": 1
+      }
+    },
+    "passes": [
+      {
+        "id": "draw",
+        "writes": [
+          "a"
+        ]
+      },
+      {
+        "id": "present",
+        "depends_on": [
+          "draw"
+        ],
+        "reads": [
+          "a"
+        ],
+        "writes": [
+          "b"
+        ],
+        "resolve": {
+          "src": "a",
+          "dst": "b",
+          "filter": "NEAREST"
+        }
+      }
+    ]
+  },
+  "expected_valid": true,
+  "expected_rule": null
+}

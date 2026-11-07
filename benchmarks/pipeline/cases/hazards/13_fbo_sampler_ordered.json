@@ -1,0 +1,29 @@
+{
+  "input": {
+    "gles": "3.0",
+    "events": [
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "framebuffer",
+            "mode": "write",
+            "stage": "fragment"
+          }
+        ]
+      },
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "sample",
+            "mode": "read",
+            "stage": "fragment"
+          }
+        ]
+      }
+    ]
+  },
+  "expected_valid": true,
+  "expected_rule": null
+}

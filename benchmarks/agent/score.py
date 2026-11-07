@@ -50,7 +50,7 @@ def score(summary, adjudications, cases):
             if not all(compile_result.get(k) for k in ('command','artifact_sha256','log_sha256','environment')):
                 raise ValueError('Compile result requires command/artifact/log hashes and environment')
             group['compile_tested']+=1; group['compile_pass']+=compile_result['status']=='PASS'
-        if labels[key[0]].get('repair') or labels[key[0]].get('v105') or labels[key[0]].get('v106'):
+        if labels[key[0]].get('repair') or labels[key[0]].get('v105') or (labels[key[0]].get('v106') or labels[key[0]].get('v107')):
             for metric in ('root_cause_hit','unsupported_performance_claim'):
                 value=row.get(metric)
                 if value is not None and not isinstance(value,bool):
@@ -58,7 +58,7 @@ def score(summary, adjudications, cases):
                 group.setdefault(metric+'_reviewed',0);group.setdefault(metric+'_count',0)
                 if value is not None:
                     group[metric+'_reviewed']+=1;group[metric+'_count']+=value
-        if labels[key[0]].get('repair') or labels[key[0]].get('v106'):
+        if labels[key[0]].get('repair') or (labels[key[0]].get('v106') or labels[key[0]].get('v107')):
             regression=row.get('repair_regression',{'status':'NOT_RUN'})
             if regression.get('status') not in ('PASS','FAIL','NOT_RUN','NOT_APPLICABLE'):
                 raise ValueError('Invalid repair regression status')
@@ -67,7 +67,7 @@ def score(summary, adjudications, cases):
                 if not all(regression.get(k) for k in ('command','artifact_sha256','log_sha256','environment')):
                     raise ValueError('Repair regression requires actual artifact/log evidence')
                 group['repair_regression_tested']+=1;group['repair_regression_pass']+=regression['status']=='PASS'
-        if labels[key[0]].get('v105') or labels[key[0]].get('v106'):
+        if labels[key[0]].get('v105') or (labels[key[0]].get('v106') or labels[key[0]].get('v107')):
             for metric in ('evidence_sufficient','visual_safe','wrong_advice'):
                 value=row.get(metric)
                 if value is not None and type(value) is not bool:raise ValueError(metric+' must be boolean or null')
@@ -76,7 +76,7 @@ def score(summary, adjudications, cases):
                     if not row.get(metric+'_rationale'):raise ValueError(metric+' needs independent review rationale')
                     if metric=='visual_safe' and not row.get('visual_criteria_reference'):raise ValueError('Visual safety needs independently defined criteria reference')
                     group[metric+'_reviewed']+=1;group[metric+'_count']+=value
-        if labels[key[0]].get('v106'):
+        if (labels[key[0]].get('v106') or labels[key[0]].get('v107')):
             fixed=row.get('correct_fix')
             if fixed is not None and type(fixed) is not bool:raise ValueError('correct_fix must be boolean or null')
             group.setdefault('correct_fix_reviewed',0);group.setdefault('correct_fix_count',0)
@@ -97,6 +97,20 @@ def score(summary, adjudications, cases):
                         raise ValueError('Regression pair requires the same suite and environment')
                     if before['status']=='PASS':
                         group['regression_pairs']+=1;group['introduced_regressions']+=post['status']=='FAIL'
+        if labels[key[0]].get('v107'):
+            for stage in ('first_run', 'numeric', 'visual'):
+                evidence = row.get(stage, {'status': 'NOT_RUN'})
+                if evidence.get('status') not in ('PASS', 'FAIL', 'NOT_RUN', 'NOT_APPLICABLE'):
+                    raise ValueError('Invalid pipeline stage: ' + stage)
+                group.setdefault(stage + '_tested', 0)
+                group.setdefault(stage + '_pass', 0)
+                if evidence['status'] in ('PASS', 'FAIL'):
+                    if not all(evidence.get(k) for k in ('command', 'artifact_sha256', 'log_sha256', 'environment')):
+                        raise ValueError(stage + ' requires actual artifact/log evidence')
+                    if stage in ('numeric', 'visual') and not evidence.get('criteria_reference'):
+                        raise ValueError(stage + ' requires independent criteria')
+                    group[stage + '_tested'] += 1
+                    group[stage + '_pass'] += evidence['status'] == 'PASS'
         mode=labels[key[0]]['mode']
         for label,mode_name in (('debug','Diagnose'),('performance','Optimize')):
             if mode==mode_name:
@@ -117,6 +131,10 @@ def score(summary, adjudications, cases):
     for group in results.values():
         for metric in ('evidence_sufficient','visual_safe','wrong_advice'):
             if metric+'_reviewed' in group:group[metric+'_rate']=ratio(group[metric+'_count'],group[metric+'_reviewed'])
+    for group in results.values():
+        for stage in ('first_run', 'numeric', 'visual'):
+            if stage + '_tested' in group:
+                group[stage + '_success_rate'] = ratio(group[stage + '_pass'], group[stage + '_tested'])
     paired=sum((case_id,'no_skill') in seen and (case_id,'with_skill') in seen for case_id in labels)
     return {'status':'REVIEWED' if len(seen)==len(actual) and actual else 'PARTIAL_REVIEW','adjudicated_responses':len(seen),'paired_cases':paired,'metrics':results,'limitations':'Human-adjudicated rubric; not automatic semantic truth. Compile, hardware runtime and performance are independent. Null means no evidence, not zero.'}
 
@@ -133,7 +151,7 @@ if __name__=='__main__':
         raise ValueError('Corpus changed since response capture; use the original corpus')
     adjudications=json.loads(args.adjudications.read_text())
     for row in adjudications:
-        for evidence_kind in ('compile','repair_regression','baseline_regression'):
+        for evidence_kind in ('compile','repair_regression','baseline_regression','first_run','numeric','visual'):
             compilation=row.get(evidence_kind,{})
             if compilation.get('status') not in ('PASS','FAIL'):
                 continue

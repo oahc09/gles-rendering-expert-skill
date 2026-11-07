@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "scope": "Static GLSL ES compile/link only",
+  "device_measurement_status": "NOT_RUN",
+  "status": "PASS",
+  "compiler": {
+    "path": "/tmp/gles-v107-deps/root/usr/bin/glslang",
+    "sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+    "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100"
+  },
+  "experiments": [
+    {
+      "id": "SR01",
+      "input_equivalence": "A deliberately violates GLSL ES 3.00 constant sampler-array indexing. B selects the same texture for index 0 or 1. No GPU A/B timing is valid for rejected A.",
+      "device_measurement_status": "NOT_RUN",
+      "arms": {
+        "a": {
+          "expected": "REJECT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR01-a.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "aca669dcd4ef4bf57942114bc2b0530efd72da61e988d9cb89051ffe9d7336e1",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 2,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR01-a.frag\nERROR: /workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR01-a.frag:9: 'variable indexing sampler array' : not supported for this version or the enabled extensions \nERROR: /workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR01-a.frag:9: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "stderr": ""
+        },
+        "b": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR01-b.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "cbb8e4839a0b335be715f89099d0160b67c7036f362f12a14cfc82286bcd3405",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR01-b.frag\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "id": "SR02",
+      "input_equivalence": "Use an even-width target (e.g. 32) so no pixel center has uv.x=0.5. Use complete non-mipmapped texture, nearest filtering and matching sampler state. B samples all pixels and may regress despite reducing explicit branching.",
+      "device_measurement_status": "NOT_RUN",
+      "arms": {
+        "a": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR02-a.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "748de3c3625314e07a13798eea6ff58a7287c736983cabc73fdf6abdf53fbe5f",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR02-a.frag\n",
+          "stderr": ""
+        },
+        "b": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR02-b.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "8d9b48e1461057f6b350dd01641bd4dbb3bcea89de005c488c6d036b31788667",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR02-b.frag\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "id": "SR03",
+      "input_equivalence": "Use identical enabled value for all fragments and both variants. Complete nearest/non-mipmapped texture. Uniform branch may already be efficient; B can be slower when disabled, and no gain is plausible.",
+      "device_measurement_status": "NOT_RUN",
+      "arms": {
+        "a": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR03-a.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "2e78c010fde8a0368fa93fb583bd3ae9773d7220db8808d0a1aa8954fdffd483",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR03-a.frag\n",
+          "stderr": ""
+        },
+        "b": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR03-b.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "380154bf886df5e4aeeb783b07679fc38af6179f22521ca782249c891830f544",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR03-b.frag\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "id": "SR04",
+      "input_equivalence": "All eight coordinates and sampler states are identical. RGBA8 nearest samples; allow <=1 output LSB arithmetic error. This does not justify reducing distinct filter taps. Compiler may merge accesses, yielding no gain.",
+      "device_measurement_status": "NOT_RUN",
+      "arms": {
+        "a": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR04-a.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "fa144824d79d8982410122fc421a368da655ed77c27156c8d18cafcd07ec8733",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR04-a.frag\n",
+          "stderr": ""
+        },
+        "b": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR04-b.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "3066ee475e7a8f24c04297105ef49c5a8bef94cc6d3136f61d6386baad880bff",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR04-b.frag\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "id": "SR05",
+      "input_equivalence": "Same coordinate, nearest non-mipmapped RGBA8 texture and <=1 output LSB tolerance. Compiler may already unroll/fold the identical samples.",
+      "device_measurement_status": "NOT_RUN",
+      "arms": {
+        "a": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR05-a.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "4019460ef292ee2ad900e2318bddaba3ddfd236e40b0e6e22f46ae8534e24790",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR05-a.frag\n",
+          "stderr": ""
+        },
+        "b": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR05-b.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "3066ee475e7a8f24c04297105ef49c5a8bef94cc6d3136f61d6386baad880bff",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR05-b.frag\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "id": "SR06",
+      "input_equivalence": "Only attachment 0 is part of the consumed result. A has two equal-size RGBA8 attachments and draw buffers 0/1; B only attachment 0. No downstream pass may read attachment 1. Measure complete pass cost including attachment configuration.",
+      "device_measurement_status": "NOT_RUN",
+      "arms": {
+        "a": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR06-a.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "8fc6a02056dcf0e285823fc6307c2854ab69bd44dd883dec8e8de18632231145",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR06-a.frag\n",
+          "stderr": ""
+        },
+        "b": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR06-b.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "3066ee475e7a8f24c04297105ef49c5a8bef94cc6d3136f61d6386baad880bff",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR06-b.frag\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "id": "SR07",
+      "input_equivalence": "Declarations in A are intentionally unused. Exact output equivalence; a competent compiler eliminates them. This is a no-gain/false-positive control, not evidence of actual occupancy pressure.",
+      "device_measurement_status": "NOT_RUN",
+      "arms": {
+        "a": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR07-a.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "facbc8320ae993d3812ba87a1f7400e447f8f3b6fad4cb79f894158e87f6ed89",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR07-a.frag\n",
+          "stderr": ""
+        },
+        "b": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR07-b.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "3066ee475e7a8f24c04297105ef49c5a8bef94cc6d3136f61d6386baad880bff",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR07-b.frag\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "id": "SR08",
+      "input_equivalence": "Each macro combination is semantically identical and uses identical texture/input. GPU timing should not be inferred from variant-count reduction. Compare offline build or application startup/storage separately; driver caches can eliminate repeated work.",
+      "device_measurement_status": "NOT_RUN",
+      "arms": {
+        "a": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR08-a.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "da92e6460a120ba587ee957023e59bc7924053ca2d029b314671c855e106dbb6",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR08-a.frag\n",
+          "stderr": ""
+        },
+        "b": {
+          "expected": "ACCEPT",
+          "command": [
+            "/tmp/gles-v107-deps/root/usr/bin/glslang",
+            "-l",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert",
+            "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR08-b.frag"
+          ],
+          "vertex_sha256": "93701e43ebf7beb6bcdfb37ee2c829097845064751370771176f2274b0c3726a",
+          "fragment_sha256": "2e4b20874da476eb2df0996425998bc9d28f7a5783db27ad0e1066c12a0662c6",
+          "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "status": "PASS",
+          "returncode": 0,
+          "stdout": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/fullscreen.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/pipeline/experiments/shader-risks/SR08-b.frag\n",
+          "stderr": ""
+        }
+      }
+    }
+  ],
+  "failures": []
+}

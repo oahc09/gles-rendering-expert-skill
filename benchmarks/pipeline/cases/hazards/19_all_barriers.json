@@ -1,0 +1,32 @@
+{
+  "input": {
+    "gles": "3.2",
+    "events": [
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "image",
+            "mode": "write",
+            "stage": "compute"
+          }
+        ]
+      },
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "sample",
+            "mode": "read",
+            "stage": "fragment"
+          }
+        ],
+        "barrier": [
+          "GL_ALL_BARRIER_BITS"
+        ]
+      }
+    ]
+  },
+  "expected_valid": true,
+  "expected_rule": null
+}

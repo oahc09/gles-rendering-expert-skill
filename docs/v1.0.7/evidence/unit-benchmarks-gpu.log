@@ -1,0 +1,20 @@
+test_adapter_failure (test_capture.CaptureTest.test_adapter_failure) ... ok
+test_blocked_cannot_claim_win (test_capture.CaptureTest.test_blocked_cannot_claim_win) ... ok
+test_correctness_first (test_capture.CaptureTest.test_correctness_first) ... ok
+test_counter_null_not_fabricated (test_capture.CaptureTest.test_counter_null_not_fabricated) ... ok
+test_default_blocked_exit (test_capture.CaptureTest.test_default_blocked_exit) ... ok
+test_hardware_required (test_capture.CaptureTest.test_hardware_required) ... ok
+test_malformed_shapes (test_capture.CaptureTest.test_malformed_shapes) ... ok
+test_missing_identity (test_capture.CaptureTest.test_missing_identity) ... ok
+test_missing_raw_trace (test_capture.CaptureTest.test_missing_raw_trace) ... ok
+test_negative_and_fallback (test_capture.CaptureTest.test_negative_and_fallback) ... ok
+test_numerical_values (test_capture.CaptureTest.test_numerical_values) ... ok
+test_raw_trace_hash (test_capture.CaptureTest.test_raw_trace_hash) ... ok
+test_structural_fixture_not_authentication (test_capture.CaptureTest.test_structural_fixture_not_authentication) ... ok
+test_trace_escape (test_capture.CaptureTest.test_trace_escape) ... ok
+test_unknown_scene (test_capture.CaptureTest.test_unknown_scene) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.108s
+
+OK

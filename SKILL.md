@@ -19,6 +19,29 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
 
 ---
 
+## v1.0.7 shader/material/pipeline routing (candidate, not released)
+
+For complete multi-material or multi-pass GLES work, start with the
+[pipeline contract tools](benchmarks/pipeline/README.md), then select the
+[variant/cache](references/pipeline/shader-variants.md),
+[material ABI](references/pipeline/material-abi.md),
+[RenderGraph](references/pipeline/rendergraph-gles.md),
+[resource hazard](references/pipeline/resource-hazards.md),
+[color pipeline](references/pipeline/color-pipeline.md) and
+[diagnostic](references/pipeline/diagnostics.md) references.
+Keep GLES Core, capability-gated extensions, implementation-specific binaries and
+performance recommendations distinct. Reject unsupported version/extension paths
+before use; validate linked-program ABI and sampler state, not only shader syntax.
+Use the [actual C++17/EGL lab](examples/pipeline/README.md) for compile/link,
+reflection, binary fallback, compute-to-draw, MSAA and analytic image controls.
+Treat [static shader risks](references/pipeline/shader-performance.md) as hypotheses,
+not measurements. A valid whole-resource graph is not proof of dynamic GL state,
+intra-dispatch race freedom or physical memory aliasing.
+Preserve all earlier cases and [recursive release gates](docs/v1.0.7-release-gates.json).
+The [30 new Agent tasks](benchmarks/agent/V107_CASES.md) have no live model results;
+software images are not calibrated displays or mobile performance. Metadata stays
+1.0.2 until every inherited gate and release authorization passes.
+
 ## v1.0.6 system-engineering routing (candidate, not released)
 
 Use [cross-API and multi-Surface lab](examples/system_android/README.md) for

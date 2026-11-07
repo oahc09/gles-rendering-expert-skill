@@ -1,0 +1,1077 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "generated_at": "2026-11-07T04:21:53.298595+00:00",
+  "scope": "Actual EGL/GLES software correctness and host wall-clock measurements; no physical GPU performance claim",
+  "physical_gpu_performance": "NOT_RUN",
+  "display_calibration": "NOT_RUN",
+  "MSAA_edge_coverage_cross_backend": "NOT_RUN",
+  "binary_sha256": "a2ceb54d328c5001e9f47f5d7a470b54aa974f4f799af1101fc6e2024aab9faf",
+  "source_sha256": "f3d98ccb776371dd1ac7804dad2f3034574c260c061be674415e55c83d5a5915",
+  "reference_manifest_sha256": "6f6eaa7cb8a6e0c94ebb1be0011215317b525ab37ec96125347ab2b86a136e9e",
+  "results": [
+    {
+      "status": "PASS",
+      "scene": "S01",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "compiled_glsl_versions": [
+        300,
+        310,
+        320
+      ],
+      "missing_extension_rejected": true,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S01",
+        "docs/v1.0.7/evidence/runtime/S01-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "c12db05e24954cd410fb39ce977a1b6aefa36d51a3a5c39ab78a0fad824ba495",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S01",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "compiled_glsl_versions": [
+        300,
+        310,
+        320
+      ],
+      "missing_extension_rejected": true,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S01",
+        "docs/v1.0.7/evidence/runtime/S01-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "c12db05e24954cd410fb39ce977a1b6aefa36d51a3a5c39ab78a0fad824ba495",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S02",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "binary_supported": true,
+      "fallback": false,
+      "source_compile_link_wall_ms": 5.27935,
+      "binary_load_or_fallback_wall_ms": 0.429583,
+      "source_macro_driver_invalidations": 3,
+      "timing_scope": "host wall clock; not GPU performance or guaranteed cold driver cache",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S02",
+        "docs/v1.0.7/evidence/runtime/S02-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "c12db05e24954cd410fb39ce977a1b6aefa36d51a3a5c39ab78a0fad824ba495",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S02",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "binary_supported": true,
+      "fallback": true,
+      "source_compile_link_wall_ms": 5.78567,
+      "binary_load_or_fallback_wall_ms": 0.78048,
+      "source_macro_driver_invalidations": 3,
+      "timing_scope": "host wall clock; not GPU performance or guaranteed cold driver cache",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S02",
+        "docs/v1.0.7/evidence/runtime/S02-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "c12db05e24954cd410fb39ce977a1b6aefa36d51a3a5c39ab78a0fad824ba495",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S03",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "block_size": 32,
+      "offsets": [
+        0,
+        16,
+        20
+      ],
+      "block_binding": 0,
+      "sampler_type": "sampler2D",
+      "sampler_unit": 0,
+      "checked_faults": [
+        "Material.roughness expected offset16 vs12",
+        "baseColorTex expected unit0 vs1"
+      ],
+      "member_types": [
+        35666,
+        5126,
+        5126
+      ],
+      "member_sizes": [
+        1,
+        1,
+        1
+      ],
+      "member_row_major": [
+        0,
+        0,
+        0
+      ],
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S03",
+        "docs/v1.0.7/evidence/runtime/S03-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "58bf8a3ba7fbdd73ba66616d8e6f8b6427764bc701b84193a090c24dd726e190",
+      "manifest_reflection_errors": [],
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S03",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "block_size": 32,
+      "offsets": [
+        0,
+        16,
+        20
+      ],
+      "block_binding": 0,
+      "sampler_type": "sampler2D",
+      "sampler_unit": 0,
+      "checked_faults": [
+        "Material.roughness expected offset16 vs12",
+        "baseColorTex expected unit0 vs1"
+      ],
+      "member_types": [
+        35666,
+        5126,
+        5126
+      ],
+      "member_sizes": [
+        1,
+        1,
+        1
+      ],
+      "member_row_major": [
+        0,
+        0,
+        0
+      ],
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S03",
+        "docs/v1.0.7/evidence/runtime/S03-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "58bf8a3ba7fbdd73ba66616d8e6f8b6427764bc701b84193a090c24dd726e190",
+      "manifest_reflection_errors": [],
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S04",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "passes": [
+        "scene",
+        "bright",
+        "horizontal_blur",
+        "composite"
+      ],
+      "injection": "omit_bloom_contribution",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S04",
+        "docs/v1.0.7/evidence/runtime/S04-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "5295b90687266d57219828b3e7d30c3b0e7b33e77391b31e415c947cdc077fd6",
+      "comparison": {
+        "max_channel_error_u8": 1,
+        "mae_u8": 0.10416666666666667,
+        "tolerance_u8": 2,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S04",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "passes": [
+        "scene",
+        "bright",
+        "horizontal_blur",
+        "composite"
+      ],
+      "injection": "omit_bloom_contribution",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S04",
+        "docs/v1.0.7/evidence/runtime/S04-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "564c1c71c6a51254a41bee6b33e6ef5fa6fce28f9129a1f03b5bb30fd3cbcca2",
+      "comparison": {
+        "max_channel_error_u8": 50,
+        "mae_u8": 5.572916666666667,
+        "tolerance_u8": 2,
+        "pass": false
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S05",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "producer": "compute SSBO write",
+      "consumer": "vertex attribute fetch",
+      "required_barrier": "GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT",
+      "negative_preflight_rejected": false,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S05",
+        "docs/v1.0.7/evidence/runtime/S05-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "c12db05e24954cd410fb39ce977a1b6aefa36d51a3a5c39ab78a0fad824ba495",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S05",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "producer": "compute SSBO write",
+      "consumer": "vertex attribute fetch",
+      "required_barrier": "GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT",
+      "negative_preflight_rejected": true,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S05",
+        "docs/v1.0.7/evidence/runtime/S05-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "c12db05e24954cd410fb39ce977a1b6aefa36d51a3a5c39ab78a0fad824ba495",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S06",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "resolve_format": "RGBA8",
+      "samples": 4,
+      "resolve_filter": "GL_NEAREST",
+      "scope": "LDR MSAA premultiplied full-coverage blending followed by tonemap; edge coverage not certified; HDR path separate",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S06",
+        "docs/v1.0.7/evidence/runtime/S06-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "8954b463edfec920ce8d7177867d6560b177626331fef0eabf16198907dbbdb7",
+      "comparison": {
+        "max_channel_error_u8": 1,
+        "mae_u8": 0.3333333333333333,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S06",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "resolve_format": "RGBA8",
+      "samples": 4,
+      "resolve_filter": "GL_NEAREST",
+      "scope": "LDR MSAA premultiplied full-coverage blending followed by tonemap; edge coverage not certified; HDR path separate",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S06",
+        "docs/v1.0.7/evidence/runtime/S06-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "8954b463edfec920ce8d7177867d6560b177626331fef0eabf16198907dbbdb7",
+      "comparison": {
+        "max_channel_error_u8": 1,
+        "mae_u8": 0.3333333333333333,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S07",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "blend": "premultiplied ONE,ONE_MINUS_SRC_ALPHA",
+      "layers": [
+        "glass_gradient",
+        "particle_disk"
+      ],
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S07",
+        "docs/v1.0.7/evidence/runtime/S07-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "015286b5ccb577d893babdf688d96bb99f0c42ecabf5ed0049722e393dcfa94a",
+      "comparison": {
+        "max_channel_error_u8": 2,
+        "mae_u8": 0.4088541666666667,
+        "tolerance_u8": 2,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S07",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "blend": "premultiplied ONE,ONE_MINUS_SRC_ALPHA",
+      "layers": [
+        "glass_gradient",
+        "particle_disk"
+      ],
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S07",
+        "docs/v1.0.7/evidence/runtime/S07-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "8c8e92b8b7e54405cbe85b148157edd4688c897f800bdd10362f2f7177799a76",
+      "comparison": {
+        "max_channel_error_u8": 52,
+        "mae_u8": 24.48828125,
+        "tolerance_u8": 2,
+        "pass": false
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S08",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "input": "SRGB8_ALPHA8",
+      "lighting": "linear",
+      "intermediate": "SRGB8_ALPHA8 FBO",
+      "readback": "encoded RGB8",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S08",
+        "docs/v1.0.7/evidence/runtime/S08-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "3df446db3e2cf7c79f90a0145e856a50894777dfc46fa9876a80af254b1fe5bf",
+      "comparison": {
+        "max_channel_error_u8": 1,
+        "mae_u8": 0.17708333333333334,
+        "tolerance_u8": 2,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S08",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "input": "SRGB8_ALPHA8",
+      "lighting": "linear",
+      "intermediate": "SRGB8_ALPHA8 FBO",
+      "readback": "encoded RGB8",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S08",
+        "docs/v1.0.7/evidence/runtime/S08-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "c7d74d4df53a5d26aef8ce6557d5c200d7ae0efce7f02d0f68dba4e0cb458ae0",
+      "comparison": {
+        "max_channel_error_u8": 77,
+        "mae_u8": 65.96875,
+        "tolerance_u8": 2,
+        "pass": false
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S09",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "block_size": 32,
+      "offsets": [
+        0,
+        16,
+        20
+      ],
+      "block_binding": 0,
+      "sampler_type": "sampler2D",
+      "sampler_unit": 0,
+      "checked_faults": [
+        "Material.roughness expected offset16 vs12",
+        "baseColorTex expected unit0 vs1"
+      ],
+      "member_types": [
+        35666,
+        5126,
+        5126
+      ],
+      "member_sizes": [
+        1,
+        1,
+        1
+      ],
+      "member_row_major": [
+        0,
+        0,
+        0
+      ],
+      "variant_ABI_conflict_rejected": true,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S09",
+        "docs/v1.0.7/evidence/runtime/S09-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "fa2fe02aaa02b2bdc9bd8aa9e7b07551e3468373352722c1c44c51f032f41f77",
+      "manifest_reflection_errors": [],
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S09",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "block_size": 32,
+      "offsets": [
+        0,
+        16,
+        20
+      ],
+      "block_binding": 0,
+      "sampler_type": "sampler2D",
+      "sampler_unit": 0,
+      "checked_faults": [
+        "Material.roughness expected offset16 vs12",
+        "baseColorTex expected unit0 vs1"
+      ],
+      "member_types": [
+        35666,
+        5126,
+        5126
+      ],
+      "member_sizes": [
+        1,
+        1,
+        1
+      ],
+      "member_row_major": [
+        0,
+        0,
+        0
+      ],
+      "variant_ABI_conflict_rejected": true,
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S09",
+        "docs/v1.0.7/evidence/runtime/S09-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "fa2fe02aaa02b2bdc9bd8aa9e7b07551e3468373352722c1c44c51f032f41f77",
+      "manifest_reflection_errors": [],
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S10",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "binary_supported": true,
+      "fallback": false,
+      "source_compile_link_wall_ms": 6.10883,
+      "binary_load_or_fallback_wall_ms": 0.29814,
+      "startup_trials": [
+        {
+          "binary_supported": true,
+          "fallback": false,
+          "source_compile_link_wall_ms": 6.10883,
+          "binary_load_or_fallback_wall_ms": 0.29814
+        },
+        {
+          "binary_supported": true,
+          "fallback": false,
+          "source_compile_link_wall_ms": 0.865056,
+          "binary_load_or_fallback_wall_ms": 0.096572
+        },
+        {
+          "binary_supported": true,
+          "fallback": false,
+          "source_compile_link_wall_ms": 0.887168,
+          "binary_load_or_fallback_wall_ms": 0.079117
+        },
+        {
+          "binary_supported": true,
+          "fallback": false,
+          "source_compile_link_wall_ms": 0.933076,
+          "binary_load_or_fallback_wall_ms": 0.051466
+        }
+      ],
+      "diagnosis": "valid binary loaded; compare host trial distributions only",
+      "source_macro_driver_invalidations": 3,
+      "timing_scope": "host wall clock; not GPU performance or guaranteed cold driver cache",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S10",
+        "docs/v1.0.7/evidence/runtime/S10-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "c12db05e24954cd410fb39ce977a1b6aefa36d51a3a5c39ab78a0fad824ba495",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "S10",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "binary_supported": true,
+      "fallback": true,
+      "source_compile_link_wall_ms": 5.51377,
+      "binary_load_or_fallback_wall_ms": 0.565163,
+      "startup_trials": [
+        {
+          "binary_supported": true,
+          "fallback": true,
+          "source_compile_link_wall_ms": 5.51377,
+          "binary_load_or_fallback_wall_ms": 0.565163
+        },
+        {
+          "binary_supported": true,
+          "fallback": true,
+          "source_compile_link_wall_ms": 0.822843,
+          "binary_load_or_fallback_wall_ms": 0.500929
+        },
+        {
+          "binary_supported": true,
+          "fallback": true,
+          "source_compile_link_wall_ms": 0.853969,
+          "binary_load_or_fallback_wall_ms": 0.52205
+        },
+        {
+          "binary_supported": true,
+          "fallback": true,
+          "source_compile_link_wall_ms": 0.933246,
+          "binary_load_or_fallback_wall_ms": 0.53612
+        }
+      ],
+      "diagnosis": "invalid binary causes source recompilation",
+      "source_macro_driver_invalidations": 3,
+      "timing_scope": "host wall clock; not GPU performance or guaranteed cold driver cache",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "S10",
+        "docs/v1.0.7/evidence/runtime/S10-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "c12db05e24954cd410fb39ce977a1b6aefa36d51a3a5c39ab78a0fad824ba495",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C01",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "input": "SRGB8_ALPHA8",
+      "lighting": "linear",
+      "intermediate": "SRGB8_ALPHA8 FBO",
+      "readback": "encoded RGB8",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C01",
+        "docs/v1.0.7/evidence/runtime/C01-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "3df446db3e2cf7c79f90a0145e856a50894777dfc46fa9876a80af254b1fe5bf",
+      "comparison": {
+        "max_channel_error_u8": 1,
+        "mae_u8": 0.17708333333333334,
+        "tolerance_u8": 2,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C01",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "input": "SRGB8_ALPHA8",
+      "lighting": "linear",
+      "intermediate": "SRGB8_ALPHA8 FBO",
+      "readback": "encoded RGB8",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C01",
+        "docs/v1.0.7/evidence/runtime/C01-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "c7d74d4df53a5d26aef8ce6557d5c200d7ae0efce7f02d0f68dba4e0cb458ae0",
+      "comparison": {
+        "max_channel_error_u8": 77,
+        "mae_u8": 65.96875,
+        "tolerance_u8": 2,
+        "pass": false
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C02",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "blend": "premultiplied ONE,ONE_MINUS_SRC_ALPHA",
+      "layers": [
+        "glass_gradient",
+        "particle_disk"
+      ],
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C02",
+        "docs/v1.0.7/evidence/runtime/C02-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "015286b5ccb577d893babdf688d96bb99f0c42ecabf5ed0049722e393dcfa94a",
+      "comparison": {
+        "max_channel_error_u8": 2,
+        "mae_u8": 0.4088541666666667,
+        "tolerance_u8": 2,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C02",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "blend": "premultiplied ONE,ONE_MINUS_SRC_ALPHA",
+      "layers": [
+        "glass_gradient",
+        "particle_disk"
+      ],
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C02",
+        "docs/v1.0.7/evidence/runtime/C02-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "8c8e92b8b7e54405cbe85b148157edd4688c897f800bdd10362f2f7177799a76",
+      "comparison": {
+        "max_channel_error_u8": 52,
+        "mae_u8": 24.48828125,
+        "tolerance_u8": 2,
+        "pass": false
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C03",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "intermediate": "RGBA16F",
+      "tonemap": "Reinhard",
+      "injection": "pre-tonemap HDR clamp",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C03",
+        "docs/v1.0.7/evidence/runtime/C03-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "faf79b005e0f51f13f1ac358998321b9bde8121ae1afcdc5ff4231f94bb7522a",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C03",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "intermediate": "RGBA16F",
+      "tonemap": "Reinhard",
+      "injection": "pre-tonemap HDR clamp",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C03",
+        "docs/v1.0.7/evidence/runtime/C03-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "e6c87e2170fc70eeda983b40e062078f5dd6ddc20ea99045ba3d523c1a81b245",
+      "comparison": {
+        "max_channel_error_u8": 98,
+        "mae_u8": 25.0,
+        "tolerance_u8": 1,
+        "pass": false
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C04",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "passes": [
+        "scene",
+        "bright",
+        "horizontal_blur",
+        "composite"
+      ],
+      "injection": "omit_bloom_contribution",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C04",
+        "docs/v1.0.7/evidence/runtime/C04-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "5295b90687266d57219828b3e7d30c3b0e7b33e77391b31e415c947cdc077fd6",
+      "comparison": {
+        "max_channel_error_u8": 1,
+        "mae_u8": 0.10416666666666667,
+        "tolerance_u8": 2,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C04",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "passes": [
+        "scene",
+        "bright",
+        "horizontal_blur",
+        "composite"
+      ],
+      "injection": "omit_bloom_contribution",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C04",
+        "docs/v1.0.7/evidence/runtime/C04-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "564c1c71c6a51254a41bee6b33e6ef5fa6fce28f9129a1f03b5bb30fd3cbcca2",
+      "comparison": {
+        "max_channel_error_u8": 50,
+        "mae_u8": 5.572916666666667,
+        "tolerance_u8": 2,
+        "pass": false
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C05",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "block_size": 32,
+      "offsets": [
+        0,
+        16,
+        20
+      ],
+      "block_binding": 0,
+      "sampler_type": "sampler2D",
+      "sampler_unit": 0,
+      "checked_faults": [
+        "Material.roughness expected offset16 vs12",
+        "baseColorTex expected unit0 vs1"
+      ],
+      "member_types": [
+        35666,
+        5126,
+        5126
+      ],
+      "member_sizes": [
+        1,
+        1,
+        1
+      ],
+      "member_row_major": [
+        0,
+        0,
+        0
+      ],
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C05",
+        "docs/v1.0.7/evidence/runtime/C05-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "58bf8a3ba7fbdd73ba66616d8e6f8b6427764bc701b84193a090c24dd726e190",
+      "comparison": {
+        "max_channel_error_u8": 0,
+        "mae_u8": 0.0,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C05",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "block_size": 32,
+      "offsets": [
+        0,
+        16,
+        20
+      ],
+      "block_binding": 0,
+      "sampler_type": "sampler2D",
+      "sampler_unit": 0,
+      "checked_faults": [
+        "Material.roughness expected offset16 vs12",
+        "baseColorTex expected unit0 vs1"
+      ],
+      "member_types": [
+        35666,
+        5126,
+        5126
+      ],
+      "member_sizes": [
+        1,
+        1,
+        1
+      ],
+      "member_row_major": [
+        0,
+        0,
+        0
+      ],
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C05",
+        "docs/v1.0.7/evidence/runtime/C05-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "c838ef391f2944b63f329b814c6d23c37ef653654ce72b14dc4848d29af4ebbc",
+      "comparison": {
+        "max_channel_error_u8": 62,
+        "mae_u8": 20.666666666666668,
+        "tolerance_u8": 1,
+        "pass": false
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C06",
+      "mode": "baseline",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "resolve_format": "RGBA8",
+      "samples": 4,
+      "resolve_filter": "GL_NEAREST",
+      "scope": "LDR MSAA premultiplied full-coverage blending followed by tonemap; edge coverage not certified; HDR path separate",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C06",
+        "docs/v1.0.7/evidence/runtime/C06-baseline.ppm",
+        "baseline"
+      ],
+      "stderr": "",
+      "image_sha256": "8954b463edfec920ce8d7177867d6560b177626331fef0eabf16198907dbbdb7",
+      "comparison": {
+        "max_channel_error_u8": 1,
+        "mae_u8": 0.3333333333333333,
+        "tolerance_u8": 1,
+        "pass": true
+      },
+      "acceptance_pass": true
+    },
+    {
+      "status": "PASS",
+      "scene": "C06",
+      "mode": "injected",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "resolve_format": "RGBA8",
+      "samples": 4,
+      "resolve_filter": "GL_NEAREST",
+      "scope": "LDR MSAA premultiplied full-coverage blending followed by tonemap; edge coverage not certified; HDR path separate",
+      "command": [
+        "/tmp/gles-pipeline-lab/pipeline-lab",
+        "C06",
+        "docs/v1.0.7/evidence/runtime/C06-injected.ppm",
+        "injected"
+      ],
+      "stderr": "",
+      "image_sha256": "dc6473511ccbb25535c520e6120d2c9634cc87e42ba4b7e5937689c3b0c864f9",
+      "comparison": {
+        "max_channel_error_u8": 53,
+        "mae_u8": 40.666666666666664,
+        "tolerance_u8": 1,
+        "pass": false
+      },
+      "acceptance_pass": true
+    }
+  ],
+  "failures": []
+}

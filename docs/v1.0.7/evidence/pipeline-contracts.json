@@ -1,0 +1,462 @@
+{
+  "status": "PASS",
+  "scope": "Draft 2020-12 schemas and authored semantic controls, not GL/device/model results",
+  "schemas": {
+    "material.schema.json": "ce55e2478a6839bf353a10528c5ef86e7c8b1bef5ccc6dc0d28e42801d6643fc",
+    "rendergraph.schema.json": "b0765f576194315e0a256d5d9826c8a7b424c09ca932dd9b1c98f8d0897c7171",
+    "shader-risk-report.schema.json": "ad5959dfa17a8238cf79e3a6688371574c04d3cbadad47893c25530818292302",
+    "variant.schema.json": "80c5574aed39e15a35c1f2662ecf99f02017c1772ba66e4ba6359e202a4ab2d1"
+  },
+  "cases": [
+    {
+      "id": "V01-es30-pbr",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "V02-es31-compute",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "V03-es32-geometry",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "V04-es30-compute",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "GLES_VERSION:compute:requires 3.1"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "V05-es31-geometry",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "GLES_VERSION:geometry:requires 3.2"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "V06-mutual",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "MUTUALLY_EXCLUSIVE:pbr,unlit"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "V07-low-fallback",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "V08-missing-extension",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "MISSING_EXTENSION:GL_EXT_fake"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "V09-probed-extension",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "V10-external-missing",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "MISSING_EXTENSION:GL_OES_EGL_image_external_essl3"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "V11-external-enabled",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "V12-invalid-version",
+      "expected_valid": false,
+      "schema_errors": [
+        "'4.0' is not one of ['3.0', '3.1', '3.2']"
+      ],
+      "semantic_errors": [
+        "gles must be 3.0, 3.1 or 3.2"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "V13-invalid-quality",
+      "expected_valid": false,
+      "schema_errors": [
+        "'ultra' is not one of ['low', 'medium', 'high']"
+      ],
+      "semantic_errors": [
+        "QUALITY_TIER"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "V14-unknown-feature",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "UNKNOWN_FEATURE:descriptor_set"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M01-pbr",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "M02-bad-offset",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "Material.roughness:OFFSET:expected 16"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M03-bad-size",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "Material:BLOCK_SIZE:expected 32"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M04-std430-ubo",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "Material:UBO_REQUIRES_STD140_CONTRACT"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M05-es30-ssbo",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "Material:SSBO_REQUIRES_GLES_3.1"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M06-es31-ssbo",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "M07-unit-range",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "baseColorTex:TEXTURE_UNIT_LIMIT:16"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M08-sampler-format",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "baseColorTex:TEXTURE_FORMAT_MISMATCH"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M09-sampler-collision",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "other:SAMPLER_TYPE_COLLISION:0"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M10-binding-collision",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "Other:BINDING_COLLISION:0"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M11-descriptor-set",
+      "expected_valid": false,
+      "schema_errors": [
+        "Additional properties are not allowed ('set' was unexpected)"
+      ],
+      "semantic_errors": [
+        "Material:DESCRIPTOR_SET_NOT_GLES"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M12-srgb",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "M13-binding-limit",
+      "expected_valid": false,
+      "schema_errors": [
+        "0 is less than the minimum of 1"
+      ],
+      "semantic_errors": [
+        "binding limit must be integer >= 1"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "M14-array-stride",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        "Material.weights:ARRAY_STRIDE:expected 16"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "01_sequential",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "02_imported",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "03_cycle",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_CYCLE",
+          "path": "/passes/draw",
+          "message": "draw -> present -> draw"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "04_read_before_write",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_UNDEFINED_READ",
+          "path": "/passes/draw",
+          "message": "Read before initialized write or after discard: a"
+        },
+        {
+          "rule": "RG_UNDEFINED_READ",
+          "path": "/passes/present",
+          "message": "Read before initialized write or after discard: a"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "05_discard_read",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_UNDEFINED_READ",
+          "path": "/passes/present",
+          "message": "Read before initialized write or after discard: a"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "06_feedback",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_FEEDBACK",
+          "path": "/passes/present",
+          "message": "Simultaneous attachment/sample feedback: a"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "07_format",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_FORMAT",
+          "path": "/passes/draw",
+          "message": "Attachment contract mismatch: a"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "08_attachment_shape",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_ATTACHMENT_SHAPE",
+          "path": "/passes/draw",
+          "message": "Attachment dimensions/sample counts differ (planner contract)"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "09_resolve",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "10_resolve_bad_size",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_RESOLVE",
+          "path": "/passes/present",
+          "message": "MSAA resolve requires multisample source, single sample target, equal size/format and NEAREST"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "11_unknown_dependency",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_DEPENDENCY",
+          "path": "/passes/draw",
+          "message": "Unknown dependency: missing"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "12_subrange_rejected",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_SUBRANGE_UNSUPPORTED",
+          "path": "/passes/draw",
+          "message": "Whole-resource model: split disjoint mip/layer allocations explicitly"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "13_unknown_resource",
+      "expected_valid": false,
+      "schema_errors": [],
+      "semantic_errors": [
+        {
+          "rule": "RG_UNKNOWN_RESOURCE",
+          "path": "/passes/present",
+          "message": "missing"
+        },
+        {
+          "rule": "RG_UNDEFINED_READ",
+          "path": "/passes/present",
+          "message": "Read before initialized write or after discard: missing"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "14_transient",
+      "expected_valid": true,
+      "schema_errors": [],
+      "semantic_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "SR01",
+      "schema_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "SR02",
+      "schema_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "SR03",
+      "schema_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "SR04",
+      "schema_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "SR05",
+      "schema_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "SR06",
+      "schema_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "SR07",
+      "schema_errors": [],
+      "status": "PASS"
+    },
+    {
+      "id": "SR08",
+      "schema_errors": [],
+      "status": "PASS"
+    }
+  ]
+}

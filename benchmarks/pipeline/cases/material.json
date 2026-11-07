@@ -1,0 +1,600 @@
+[
+  {
+    "id": "M01-pbr",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "M02-bad-offset",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 12
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "M03-bad-size",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 24,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "M04-std430-ubo",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std430",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "M05-es30-ssbo",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ssbo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "M06-es31-ssbo",
+    "input": {
+      "gles": "3.1",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ssbo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "M07-unit-range",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 16,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "M08-sampler-format",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8I"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "M09-sampler-collision",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        },
+        {
+          "name": "other",
+          "type": "isampler2D",
+          "unit": 0,
+          "format": "RGBA8I"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "M10-binding-collision",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        },
+        {
+          "name": "Other",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "M11-descriptor-set",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ],
+          "set": 0
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "M12-srgb",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "SRGB8_ALPHA8"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "M13-binding-limit",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "baseColor",
+              "type": "vec4",
+              "offset": 0
+            },
+            {
+              "name": "roughness",
+              "type": "float",
+              "offset": 16
+            },
+            {
+              "name": "metallic",
+              "type": "float",
+              "offset": 20
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ],
+      "max_ubo_bindings": 0
+    },
+    "valid": false
+  },
+  {
+    "id": "M14-array-stride",
+    "input": {
+      "gles": "3.0",
+      "blocks": [
+        {
+          "name": "Material",
+          "kind": "ubo",
+          "layout": "std140",
+          "binding": 0,
+          "size": 32,
+          "members": [
+            {
+              "name": "weights",
+              "type": "float",
+              "array": 2,
+              "offset": 0,
+              "array_stride": 4
+            }
+          ]
+        }
+      ],
+      "samplers": [
+        {
+          "name": "baseColorTex",
+          "type": "sampler2D",
+          "unit": 0,
+          "format": "RGBA8"
+        }
+      ]
+    },
+    "valid": false
+  }
+]

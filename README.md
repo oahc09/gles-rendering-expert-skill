@@ -4,6 +4,30 @@
 
 > **AI Expert Skill for OpenGL ES 3.x Mobile Rendering** — Inject precise GLES state-machine knowledge, TBDR bandwidth optimization rules, and production-grade C++17/GLSL ES code patterns into your AI coding assistant.
 
+## v1.0.7 shader/material/pipeline candidate
+
+See the [exact development plan](docs/v1.0.7-development-plan.md),
+[baseline/gaps](docs/v1.0.7-baseline-and-gap.md),
+[acceptance traceability](docs/v1.0.7-traceability.md) and
+[release gates](docs/v1.0.7-release-gates.json).
+
+- [Standalone tools](benchmarks/pipeline/README.md): bounded shader variants/cache
+  policy, material ABI/reflection, RenderGraph lifetimes, hazard and diagnostic checks.
+- [C++17/GLES runtime lab](examples/pipeline/README.md): ten acceptance scenarios,
+  six analytic color/material reference images, positive/negative software captures
+  and explicit GLES3.0/3.1/3.2 routing checks.
+- [Eight shader A/B experiments](references/pipeline/shader-performance.md): actual
+  compile/link controls with static risks; physical GPU measurements remain NOT_RUN.
+- [Agent Benchmark 3.0](benchmarks/agent/V107_CASES.md): 30 new tasks, 172 total,
+  independent first-run/numeric/visual evidence metrics. No live provider run.
+- [90-day source review](references/research/2026-11-02-v107/README.md): exact
+  Filament diffs, source→rule→sample→test decisions and explicitly deferred signals.
+
+This is a reviewable source candidate, **not a released v1.0.7**. Metadata remains
+**1.0.2** and all v1.0.3–v1.0.6 gates are preserved. Physical-device, calibrated
+screen and live-model acceptance remain open. Local validation is not remote CI;
+[the workflow](.github/workflows/validation.yml) stays manual-only.
+
 ## v1.0.4 device/scene/repair candidate
 
 See [exact plan](docs/v1.0.4-development-plan.md), [old closure](docs/v1.0.3-closure.md),

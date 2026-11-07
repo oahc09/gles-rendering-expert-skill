@@ -1,0 +1,14 @@
+test_bad_snapshot_rejected (test_compat.CompatTests.test_bad_snapshot_rejected) ... ok
+test_blocked_capture (test_compat.CompatTests.test_blocked_capture) ... ok
+test_confirmed_requires_evidence (test_compat.CompatTests.test_confirmed_requires_evidence) ... ok
+test_each_identity_mismatch (test_compat.CompatTests.test_each_identity_mismatch) ... ok
+test_exact_match_only_review (test_compat.CompatTests.test_exact_match_only_review) ... ok
+test_expiry (test_compat.CompatTests.test_expiry) ... ok
+test_extensions_exact (test_compat.CompatTests.test_extensions_exact) ... ok
+test_no_brand_wildcard (test_compat.CompatTests.test_no_brand_wildcard) ... ok
+test_no_invented_confirmed_issues (test_compat.CompatTests.test_no_invented_confirmed_issues) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+OK

@@ -13,6 +13,8 @@ jobs:
       MESA_SHADER_CACHE_DISABLE: 'true'
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
       - name: Install host-only validation toolchain
         run: sudo apt-get update && sudo apt-get install -y g++ libegl-dev libgles-dev libegl-mesa0 glslang-tools
       - name: Structured rule contracts (not source compilation)
@@ -73,3 +75,18 @@ jobs:
           python3 -m unittest discover -s benchmarks/driver_compat -p 'test_*.py' -v
           python3 benchmarks/reducer/reduce.py --output reports/reducer
           python3 tools/check_release_gates.py --gates v1.0.6
+      - name: v1.0.7 schema and pipeline contracts (not device/model acceptance)
+        run: |
+          python3 -m pip install jsonschema==4.23.0
+          python3 tools/validate_pipeline.py --output reports/pipeline-contracts.json
+          python3 tools/audit_v107.py --output reports/v107-hygiene.json
+          python3 -m unittest discover -s benchmarks/pipeline -p 'test_*.py' -v
+          python3 benchmarks/pipeline/diagnose.py
+          python3 benchmarks/pipeline/shader_experiments.py --output reports/shader-experiments.json
+      - name: v1.0.7 actual software pipeline images and version routing
+        run: |
+          sh examples/pipeline/build.sh
+          python3 benchmarks/pipeline/runtime.py --output reports/pipeline-runtime
+          python3 benchmarks/pipeline/runtime.py --mesa-version-matrix --output reports/pipeline-versions
+      - name: v1.0.7 recursive candidate gate (not release approval)
+        run: python3 tools/check_release_gates.py --gates v1.0.7

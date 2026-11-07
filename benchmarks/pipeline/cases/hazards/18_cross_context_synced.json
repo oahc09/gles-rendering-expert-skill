@@ -1,0 +1,37 @@
+{
+  "input": {
+    "gles": "3.1",
+    "events": [
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "framebuffer",
+            "mode": "write",
+            "stage": "fragment"
+          }
+        ]
+      },
+      {
+        "accesses": [
+          {
+            "resource": "a",
+            "kind": "sample",
+            "mode": "read",
+            "stage": "fragment"
+          }
+        ],
+        "context": "other",
+        "sync": {
+          "producer": "main",
+          "fence_after_write": true,
+          "producer_flush": true,
+          "consumer_wait": true,
+          "consumer_rebind": true
+        }
+      }
+    ]
+  },
+  "expected_valid": true,
+  "expected_rule": null
+}

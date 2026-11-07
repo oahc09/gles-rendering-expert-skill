@@ -1,0 +1,41 @@
+{
+  "input": {
+    "resources": {
+      "a": {
+        "format": "RGBA8",
+        "size": [
+          64,
+          64
+        ],
+        "samples": 1
+      },
+      "b": {
+        "format": "RGBA8",
+        "size": [
+          32,
+          32
+        ]
+      }
+    },
+    "passes": [
+      {
+        "id": "draw",
+        "writes": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "id": "present",
+        "depends_on": [
+          "draw"
+        ],
+        "reads": [
+          "a"
+        ]
+      }
+    ]
+  },
+  "expected_valid": false,
+  "expected_rule": "RG_ATTACHMENT_SHAPE"
+}

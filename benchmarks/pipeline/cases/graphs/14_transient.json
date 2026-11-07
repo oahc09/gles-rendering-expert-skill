@@ -1,0 +1,34 @@
+{
+  "input": {
+    "resources": {
+      "a": {
+        "format": "RGBA8",
+        "size": [
+          64,
+          64
+        ],
+        "samples": 1,
+        "transient": true
+      }
+    },
+    "passes": [
+      {
+        "id": "draw",
+        "writes": [
+          "a"
+        ]
+      },
+      {
+        "id": "present",
+        "depends_on": [
+          "draw"
+        ],
+        "reads": [
+          "a"
+        ]
+      }
+    ]
+  },
+  "expected_valid": true,
+  "expected_rule": null
+}

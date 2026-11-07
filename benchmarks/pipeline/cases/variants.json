@@ -1,0 +1,209 @@
+[
+  {
+    "id": "V01-es30-pbr",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "pbr"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": true
+  },
+  {
+    "id": "V02-es31-compute",
+    "input": {
+      "gles": "3.1",
+      "features": [
+        "compute",
+        "ssbo"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": true
+  },
+  {
+    "id": "V03-es32-geometry",
+    "input": {
+      "gles": "3.2",
+      "features": [
+        "geometry",
+        "tessellation"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": true
+  },
+  {
+    "id": "V04-es30-compute",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "compute"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": false
+  },
+  {
+    "id": "V05-es31-geometry",
+    "input": {
+      "gles": "3.1",
+      "features": [
+        "geometry"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": false
+  },
+  {
+    "id": "V06-mutual",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "unlit",
+        "pbr"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": false
+  },
+  {
+    "id": "V07-low-fallback",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "unlit"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": true
+  },
+  {
+    "id": "V08-missing-extension",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "pbr"
+      ],
+      "extensions": [],
+      "required_extensions": [
+        "GL_EXT_fake"
+      ],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": false
+  },
+  {
+    "id": "V09-probed-extension",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "pbr"
+      ],
+      "extensions": [
+        "GL_EXT_color_buffer_float"
+      ],
+      "required_extensions": [
+        "GL_EXT_color_buffer_float"
+      ],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": true
+  },
+  {
+    "id": "V10-external-missing",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "external_texture"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": false
+  },
+  {
+    "id": "V11-external-enabled",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "external_texture"
+      ],
+      "extensions": [
+        "GL_OES_EGL_image_external_essl3"
+      ],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": true
+  },
+  {
+    "id": "V12-invalid-version",
+    "input": {
+      "gles": "4.0",
+      "features": [
+        "pbr"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": false
+  },
+  {
+    "id": "V13-invalid-quality",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "pbr"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "ultra",
+      "macros": {}
+    },
+    "valid": false
+  },
+  {
+    "id": "V14-unknown-feature",
+    "input": {
+      "gles": "3.0",
+      "features": [
+        "descriptor_set"
+      ],
+      "extensions": [],
+      "required_extensions": [],
+      "quality": "low",
+      "macros": {}
+    },
+    "valid": false
+  }
+]
