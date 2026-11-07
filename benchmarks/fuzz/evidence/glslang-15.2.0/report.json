@@ -1,0 +1,2881 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "seed": 0,
+  "scope": "glslang standalone compile/link only; no GLES driver, GPU execution, image or performance evidence",
+  "device": null,
+  "extensions": null,
+  "generator_sha256": "a1697cdae0fcd8fa3d3240fbe2865a647de7d5b7ee6e92fe151ff321349200c3",
+  "compiler": "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+  "compiler_version": {
+    "status": "EXITED",
+    "exit_code": 0,
+    "log": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+  },
+  "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+  "limits": {
+    "timeout_seconds": 3,
+    "budget_seconds": 90.0,
+    "memory_mb": 512,
+    "max_shader_bytes": 16384
+  },
+  "cases": [
+    {
+      "id": "300-scalar-identity",
+      "version": 300,
+      "family": "scalar",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "dd9ee9a9ebcbccae0eb5305b1297fa9e693768ef92d5f8c481828df4e3809ded"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-scalar-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-scalar-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-scalar-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-scalar-exact_fold",
+      "version": 300,
+      "family": "scalar",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "f82c2e3e4c04bab02d159f3bc6ae5a906540c4f94500fafcf2bd0261d968ca5f"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-scalar-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-scalar-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-scalar-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-scalar-local_binding",
+      "version": 300,
+      "family": "scalar",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "50c1bb1271804ab820438e0f6368be9e3dac18cd7f6ebde02f722f1bb6d01144"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-scalar-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-scalar-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-scalar-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-scalar-dead_branch",
+      "version": 300,
+      "family": "scalar",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "b5610895a928cfe2db4c523d61dcfe24e883d547ec5c989c3922c7d1fb060f2c"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-scalar-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-scalar-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-scalar-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-vector-identity",
+      "version": 300,
+      "family": "vector",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "dc5e5a9b254be76696d34dfc25417ab08c5c9ece60da02421061320ad21b2049"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-vector-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-vector-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-vector-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-vector-exact_fold",
+      "version": 300,
+      "family": "vector",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "07a39d8a414fe951157e610cdcb341474d0c3d36e03c3e417f7e7577121eb964"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-vector-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-vector-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-vector-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-vector-local_binding",
+      "version": 300,
+      "family": "vector",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "beaee4d59a5222c90ded7ca863eff0125352a7414645a968e605737c6706ac2b"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-vector-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-vector-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-vector-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-vector-dead_branch",
+      "version": 300,
+      "family": "vector",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "8c4057cdcb1291b23a99c9e3c30ccbd9cacc9ea43a8c129ed3dab0f48fe209be"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-vector-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-vector-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-vector-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-function-identity",
+      "version": 300,
+      "family": "function",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "540f8514cbdd106ac44dad98aba1445b27ed46e8f313736c11d54bd1332f3e73"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-function-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-function-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-function-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-function-exact_fold",
+      "version": 300,
+      "family": "function",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "74388b8cb46dc36cddb790cdfbf6b73bf73f384c20f53c86ea08a1215f07f526"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-function-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-function-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-function-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-function-local_binding",
+      "version": 300,
+      "family": "function",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "00d28f86f2d55587879915d71e91abd64f727b0503c6cd2ea441972d0d3df4c4"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-function-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-function-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-function-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-function-dead_branch",
+      "version": 300,
+      "family": "function",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "0015612e8a3cb82a59feeee2d767867a45c4c7781e1583a20a3d95f073efb763"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-function-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-function-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-function-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-ubo-identity",
+      "version": 300,
+      "family": "ubo",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "2d5a3657a78491e7f1e3c5e55d6fb3a64a1cd3d73710cae3e698d6c94705797a"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-ubo-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-ubo-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-ubo-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-ubo-exact_fold",
+      "version": 300,
+      "family": "ubo",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "b8448d2782e66cad52c4c93f289cce4df7674dc1344f4805f5c7262ef1452665"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-ubo-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-ubo-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-ubo-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-ubo-local_binding",
+      "version": 300,
+      "family": "ubo",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "dacbd600d2c0f6080af8de417caba266ea3a1cae8b914293dc7e301c0f40df46"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-ubo-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-ubo-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-ubo-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-ubo-dead_branch",
+      "version": 300,
+      "family": "ubo",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "d5c1418575411ffa26e1cfa01b29abf4398397e5c6aa7711c9e554d4e53c71d3"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-ubo-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-ubo-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-ubo-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-sampler-identity",
+      "version": 300,
+      "family": "sampler",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "008f6a8096dca104a6409855f00af6b9090b41c238ffad4ba4a3748509ac7d49"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-sampler-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-sampler-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-sampler-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-sampler-exact_fold",
+      "version": 300,
+      "family": "sampler",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "21c262eb29fda29e538ce2875a1e872edaf68b8e3ba5a887ca472d60b4475717"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-sampler-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-sampler-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-sampler-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-sampler-local_binding",
+      "version": 300,
+      "family": "sampler",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "722d48f6271ff6fa7f40b944ca40b952e3b93fa5619a93aafa438f9fdc19d489"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-sampler-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-sampler-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-sampler-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-sampler-dead_branch",
+      "version": 300,
+      "family": "sampler",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "f0d4b1d73d6afefd8f4f6516800be661f75ac6f561237b49f455c75ded2f46b7"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-sampler-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-sampler-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-sampler-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-invalid-type",
+      "version": 300,
+      "family": "type",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Assignment types must match",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-type/shader.frag\nERROR: 0:4: 'assign' :  cannot convert from ' const 4X4 matrix of float' to 'layout( location=0) out highp 4-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "e89bd96fad067b9a9e90ac18d97c842ef209669226586da881e1f90b88803edc"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-type/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-type",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-invalid-type",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-invalid-precision",
+      "version": 300,
+      "family": "precision",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Fragment float requires a default or explicit precision",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-precision/shader.frag\nERROR: 0:2: 'float' : type requires declaration of default precision qualifier \nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "cc1cf881058b4e44f30fff67b275b8e08e75128aba017a96a27816c4c8dbc3b2"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-precision/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-precision",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-invalid-precision",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-invalid-sampler",
+      "version": 300,
+      "family": "sampler",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "sampler2D texture coordinates must be vec2",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-sampler/shader.frag\nERROR: 0:4: 'texture' : no matching overloaded function found \nERROR: 0:4: 'assign' :  cannot convert from ' const float' to 'layout( location=0) out highp 4-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "a43b59a7d5f0cf10fa7179caa4cd53a24a749999c5778eda0a326d8c07efd50b"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-sampler/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-sampler",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-invalid-sampler",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-invalid-extension",
+      "version": 300,
+      "family": "extension",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Unsupported required extension must be rejected",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-extension/shader.frag\nERROR: 0:4: '#extension' : extension not supported: GL_NONEXISTENT_fuzz_extension\nERROR: 0:4: '#extension' : extra tokens -- expected newline \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "a8000aa5d67351c3c2c7efbe19ac0abec5fba69fcbb251c8ba7796bba288c803"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-extension/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-extension",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-invalid-extension",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-invalid-array_size",
+      "version": 300,
+      "family": "array_size",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Array sizes must be positive integral constants",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-array_size/shader.frag\nERROR: 0:4: '' : array size must be a positive integer\nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "fba08e4ec400add553adeb5de0dbdb3194965d4ece6c1a7e119ef073048f2eec"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-array_size/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-array_size",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-invalid-array_size",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-invalid-varying",
+      "version": 300,
+      "family": "varying",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Statically used linked varying types must agree",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 3,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-varying/shader.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-varying/shader.frag\nERROR: Linking vertex and fragment stages: Types must match:\n    vertex stage: \" vec3 bridge\"\n    fragment stage: \" vec4 bridge\"\n\n",
+      "sha256": {
+        "shader.vert": "7f8fef0053cc6be877ebdb63a4ad6747cb4142b9afdf34d58d264da84198e0d7",
+        "shader.frag": "10060a5216cb0a543d671a1d9b20c6514657a7e2debdb52568edcac7a2464d56"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "-l",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-varying/shader.vert",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-varying/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-invalid-varying",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-invalid-varying",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-compute-ssbo",
+      "version": 300,
+      "family": "ssbo",
+      "mutation": "version_boundary",
+      "expected": "reject",
+      "rule": "Compute, SSBO, image and shared atomic operations require ESSL 310 or later; one invocation, no race.",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-compute-ssbo/shader.comp\nERROR: #version: compute shaders require es profile with version 310 or above, or non-es profile with version 420 or above\nERROR: 1 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.comp": "2ca9a20c9d0d56f0b806c04c2da666623a0a392af3a597739d88f3f64ff14fcf"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-compute-ssbo/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-compute-ssbo",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-compute-ssbo",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-compute-image",
+      "version": 300,
+      "family": "image",
+      "mutation": "version_boundary",
+      "expected": "reject",
+      "rule": "Compute, SSBO, image and shared atomic operations require ESSL 310 or later; one invocation, no race.",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-compute-image/shader.comp\nERROR: #version: compute shaders require es profile with version 310 or above, or non-es profile with version 420 or above\nERROR: 1 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.comp": "451959cf0262b4cb0ec12e70f1098b7bc553f103b5687b2dfba5a136f94a64ff"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-compute-image/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-compute-image",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-compute-image",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "300-compute-atomic",
+      "version": 300,
+      "family": "atomic",
+      "mutation": "version_boundary",
+      "expected": "reject",
+      "rule": "Compute, SSBO, image and shared atomic operations require ESSL 310 or later; one invocation, no race.",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-compute-atomic/shader.comp\nERROR: #version: compute shaders require es profile with version 310 or above, or non-es profile with version 420 or above\nERROR: 1 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.comp": "86c761bfe50fbee3d70a8cc41659532fbe4ee05342060b7855272ca80614ceb1"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/300-compute-atomic/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/300-compute-atomic",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "300-compute-atomic",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-scalar-identity",
+      "version": 310,
+      "family": "scalar",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "4c06615e3ec5b29de92f9084d542cca22537f1f1e5648c6a6aad81ee36e317b7"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-scalar-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-scalar-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-scalar-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-scalar-exact_fold",
+      "version": 310,
+      "family": "scalar",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "64c86a7e661360ee83c96c9259dcfe3ed1121b195da0e93fdf0b9a80fcb35cbc"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-scalar-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-scalar-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-scalar-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-scalar-local_binding",
+      "version": 310,
+      "family": "scalar",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "db3dda6c60898bdf8fcc393c6955759015135d3d45798adb8df25e1068778b7d"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-scalar-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-scalar-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-scalar-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-scalar-dead_branch",
+      "version": 310,
+      "family": "scalar",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "3d65ed8537f1b7021e91390bdef4ff28686f4695970c653dfab7aeb918de6eb6"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-scalar-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-scalar-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-scalar-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-vector-identity",
+      "version": 310,
+      "family": "vector",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "e93e99667ede5621e059ffb6d5a4ff6a4597d61b571af21ff4bb0d6da3ac67a6"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-vector-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-vector-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-vector-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-vector-exact_fold",
+      "version": 310,
+      "family": "vector",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "0da0f42f9cfbd20ca56077bf1b1dfee6c16b67d2cc866b7a8012955bb935deff"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-vector-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-vector-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-vector-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-vector-local_binding",
+      "version": 310,
+      "family": "vector",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "d526efaaa55f15ebe1a9e783aeff109defed9a627069448c76dea4ea7274172f"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-vector-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-vector-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-vector-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-vector-dead_branch",
+      "version": 310,
+      "family": "vector",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "ad0a5ca0da63a1e62e8df384301f36929848e12d15768eccb6927a9143adeee1"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-vector-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-vector-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-vector-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-function-identity",
+      "version": 310,
+      "family": "function",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "b27de98e1d99a5491b906bfbee6a44387c14d3998c549f9f566dd6308cf99d55"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-function-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-function-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-function-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-function-exact_fold",
+      "version": 310,
+      "family": "function",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "7a5be1a27074881727a3d6e99de3588d5e6ab7bd403d0245849928ff09d4b8ff"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-function-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-function-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-function-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-function-local_binding",
+      "version": 310,
+      "family": "function",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "13fb0414d3f33090c260209c02cd39246fb8aaa9a63f6b405b0e361f8f422457"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-function-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-function-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-function-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-function-dead_branch",
+      "version": 310,
+      "family": "function",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "5f7df335dc82442225225ed9abcdda5998e32362d3a0f66a8105846917844fa8"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-function-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-function-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-function-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-ubo-identity",
+      "version": 310,
+      "family": "ubo",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "6858908164b90ac30a2dee4e8f1cb458854f7251d129dd7030d3f98b6a562e43"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-ubo-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-ubo-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-ubo-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-ubo-exact_fold",
+      "version": 310,
+      "family": "ubo",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "dcef4bfa8dfc81cf32bda9e65604660c06b0768b6024eb742efff030678102b0"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-ubo-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-ubo-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-ubo-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-ubo-local_binding",
+      "version": 310,
+      "family": "ubo",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "b56bd91b0bceb3fedcfd19812b49cd09b12075a36f6b576983613f53caf65472"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-ubo-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-ubo-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-ubo-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-ubo-dead_branch",
+      "version": 310,
+      "family": "ubo",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "324ed491cd909b62bac6125c2396998f913a1ba66e7ea262dfa2ee0937014ef9"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-ubo-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-ubo-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-ubo-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-sampler-identity",
+      "version": 310,
+      "family": "sampler",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "b00e93ead6367601d85a1af35b87f075eb4db9d69e0685215e24c07a63a1fdec"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-sampler-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-sampler-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-sampler-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-sampler-exact_fold",
+      "version": 310,
+      "family": "sampler",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "c1f1a6aae60866c8e2ab21e5469eb7b71f99f249c28e4cdc8130449eb3700f0e"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-sampler-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-sampler-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-sampler-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-sampler-local_binding",
+      "version": 310,
+      "family": "sampler",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "34b86a2ef2b446b93c9c932742f457a772ffa227000b15596d21b35c82428d79"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-sampler-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-sampler-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-sampler-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-sampler-dead_branch",
+      "version": 310,
+      "family": "sampler",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "1ec019df2ce511b889bb7ba8d1d07bf16ecd465c98fe02e02c6d6a276f29b5f4"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-sampler-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-sampler-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-sampler-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-invalid-type",
+      "version": 310,
+      "family": "type",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Assignment types must match",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-type/shader.frag\nERROR: 0:4: 'assign' :  cannot convert from ' const 4X4 matrix of float' to 'layout( location=0) out highp 4-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "a31d4b0fd67799df1f50b28a56daa542de32a3ff6f0951686f05d5c93cbdf85d"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-type/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-type",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-invalid-type",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-invalid-precision",
+      "version": 310,
+      "family": "precision",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Fragment float requires a default or explicit precision",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-precision/shader.frag\nERROR: 0:2: 'float' : type requires declaration of default precision qualifier \nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "952e7cbd35b327ee9776523ce690059efbc221e166d180b16d6696b082e39ba6"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-precision/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-precision",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-invalid-precision",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-invalid-sampler",
+      "version": 310,
+      "family": "sampler",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "sampler2D texture coordinates must be vec2",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-sampler/shader.frag\nERROR: 0:4: 'texture' : no matching overloaded function found \nERROR: 0:4: 'assign' :  cannot convert from ' const float' to 'layout( location=0) out highp 4-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "d06b6a24264b91ca9dfd56252a34455e93ee082eba4167875744413b911ca0c7"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-sampler/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-sampler",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-invalid-sampler",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-invalid-extension",
+      "version": 310,
+      "family": "extension",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Unsupported required extension must be rejected",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-extension/shader.frag\nERROR: 0:4: '#extension' : extension not supported: GL_NONEXISTENT_fuzz_extension\nERROR: 0:4: '#extension' : extra tokens -- expected newline \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "079182bd67c87800a86a50aa49f7e1565d3193d7e0139b40118a55ebcf726218"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-extension/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-extension",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-invalid-extension",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-invalid-array_size",
+      "version": 310,
+      "family": "array_size",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Array sizes must be positive integral constants",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-array_size/shader.frag\nERROR: 0:4: '' : array size must be a positive integer\nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "075f80dc686c10e64874b5ae908eaae804a0e917ddf90d88417498daf4ccdac7"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-array_size/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-array_size",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-invalid-array_size",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-invalid-varying",
+      "version": 310,
+      "family": "varying",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Statically used linked varying types must agree",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 3,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-varying/shader.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-varying/shader.frag\nERROR: Linking vertex and fragment stages: Types must match:\n    vertex stage: \" vec3 bridge\"\n    fragment stage: \" vec4 bridge\"\n\n",
+      "sha256": {
+        "shader.vert": "b945034ede7f2eb18a552195eb270ddc10348e1b389490688f7c9b2a392f357f",
+        "shader.frag": "3cd0a8c3da08bc97b3bd99e2f88a8bbc88e4bf1ff9dd191fcca5fdbe776b8ca6"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "-l",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-varying/shader.vert",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-varying/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-varying",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-invalid-varying",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-compute-ssbo",
+      "version": 310,
+      "family": "ssbo",
+      "mutation": "version_boundary",
+      "expected": "accept",
+      "rule": "Compute, SSBO, image and shared atomic operations require ESSL 310 or later; one invocation, no race.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.comp": "64bba64af8508cc66374402b2a918debcd58174d49a6265d68489f3c0c44d121"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-compute-ssbo/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-compute-ssbo",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-compute-ssbo",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-compute-image",
+      "version": 310,
+      "family": "image",
+      "mutation": "version_boundary",
+      "expected": "accept",
+      "rule": "Compute, SSBO, image and shared atomic operations require ESSL 310 or later; one invocation, no race.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.comp": "4a38ae0ca60032d81af6db9d9e345a2d59d62b6908ae743199aa3c76d607ad6c"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-compute-image/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-compute-image",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-compute-image",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-compute-atomic",
+      "version": 310,
+      "family": "atomic",
+      "mutation": "version_boundary",
+      "expected": "accept",
+      "rule": "Compute, SSBO, image and shared atomic operations require ESSL 310 or later; one invocation, no race.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.comp": "64546c5b97561a275753ae042f54a81235235191b3d8f02559e0b08995221d7b"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-compute-atomic/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-compute-atomic",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-compute-atomic",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "310-invalid-workgroup-limit",
+      "version": 310,
+      "family": "compute_limit",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Local workgroup dimension exceeds the glslang built-in static resource limit; compiler-profile oracle only, not a universal device limit.",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-workgroup-limit/shader.comp\nERROR: 0:4: 'local_size' : too large; see gl_MaxComputeWorkGroupSize \nERROR: 1 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.comp": "521078e827580c0e6fd2f1c7c9ec7b76abdee76fd870826e7f3f082de8a4e96b"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-workgroup-limit/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/310-invalid-workgroup-limit",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "310-invalid-workgroup-limit",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-scalar-identity",
+      "version": 320,
+      "family": "scalar",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "486dad8ef4175834a74980f41aaa96d98517f78b0155ceb620bb6856ff3ee47c"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-scalar-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-scalar-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-scalar-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-scalar-exact_fold",
+      "version": 320,
+      "family": "scalar",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "3a3f1267c6c01a0630c9c9728049b2c8281ecd0ccb389819d1573f3e833a2238"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-scalar-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-scalar-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-scalar-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-scalar-local_binding",
+      "version": 320,
+      "family": "scalar",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "9948ddee1680e3e392c0d3d7212db60284eff653137660233017c7341fd4c2fc"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-scalar-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-scalar-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-scalar-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-scalar-dead_branch",
+      "version": 320,
+      "family": "scalar",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "4632ed6d74a4b19c4ddf498235d359def319a9227fce92077bc91f1bed1687ea"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-scalar-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-scalar-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-scalar-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-vector-identity",
+      "version": 320,
+      "family": "vector",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "c68dd7cf210fb73b3dc8ad1d44603dc5742cf4d5f3cc53e252238dd7c5d00a42"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-vector-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-vector-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-vector-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-vector-exact_fold",
+      "version": 320,
+      "family": "vector",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "d3f563d778fa6b75a7d74c8f7db0f32c7b13060aacc00cf242748d8989039596"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-vector-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-vector-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-vector-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-vector-local_binding",
+      "version": 320,
+      "family": "vector",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "b38352e4b20aa44ccc291147ace88dd3765b95448800ac297ff5d08dc43ab026"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-vector-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-vector-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-vector-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-vector-dead_branch",
+      "version": 320,
+      "family": "vector",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "b9c409781ef9901e78724505c9d866965d9aef493e72b3bee20364cfa7f01531"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-vector-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-vector-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-vector-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-function-identity",
+      "version": 320,
+      "family": "function",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "3f9894db966caaa3b53c093e83f6312e1363da8b4e74e3720970d1b024032568"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-function-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-function-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-function-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-function-exact_fold",
+      "version": 320,
+      "family": "function",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "f887f9598b46896436e077e3c091e15a0dd0adb0dff92870de9704b90ff73afd"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-function-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-function-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-function-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-function-local_binding",
+      "version": 320,
+      "family": "function",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "66d631583ba09e716dd4e0ba0ffdf6a0f29854e12425a7b4e63d1fea1ade592c"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-function-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-function-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-function-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-function-dead_branch",
+      "version": 320,
+      "family": "function",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "334cfe443ac9aeb66b771e6716051b48d6c550810df2ded9b96476e45da9b0bc"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-function-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-function-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-function-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-ubo-identity",
+      "version": 320,
+      "family": "ubo",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "11340be99c405bc73cc7bcd2ebf0322ac4622f18c74de7e34789dfd3a79ededd"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-ubo-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-ubo-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-ubo-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-ubo-exact_fold",
+      "version": 320,
+      "family": "ubo",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "e5a8663dfb2c5028a5f7e6b57e2efb5166774330674069b35465f9f10769a39c"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-ubo-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-ubo-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-ubo-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-ubo-local_binding",
+      "version": 320,
+      "family": "ubo",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "e302e0aa70bba16e78af86c327b919ed7be5c4d4faba67023980982b51871d96"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-ubo-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-ubo-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-ubo-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-ubo-dead_branch",
+      "version": 320,
+      "family": "ubo",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "16957adfd35485119eaa75e53e352f18c979b0a921da3dc80a7c46e9c45a6b9b"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-ubo-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-ubo-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-ubo-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-sampler-identity",
+      "version": 320,
+      "family": "sampler",
+      "mutation": "identity",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "9c1bd735e0b794186af999d4b47152683e62b9f528d6f639167dfd98bd51b55f"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-sampler-identity/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-sampler-identity",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-sampler-identity",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-sampler-exact_fold",
+      "version": 320,
+      "family": "sampler",
+      "mutation": "exact_fold",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "094f7d7e68c9623667540c244b1edf40a1ec5adcf2d947f200a5067c5482102b"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-sampler-exact_fold/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-sampler-exact_fold",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-sampler-exact_fold",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-sampler-local_binding",
+      "version": 320,
+      "family": "sampler",
+      "mutation": "local_binding",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "d56c90fcadc858e1f110657eff86939c23d763d912d36d978c42250cf2f1ca59"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-sampler-local_binding/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-sampler-local_binding",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-sampler-local_binding",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-sampler-dead_branch",
+      "version": 320,
+      "family": "sampler",
+      "mutation": "dead_branch",
+      "expected": "accept",
+      "rule": "Exact integer float addition in [2,16]; local binding and unreachable branch preserve the expression and all resource operations.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.frag": "0f3e696e580c064b0ea5b1b3a5268624ccc24236458f44636571d0e3e2f10f77"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-sampler-dead_branch/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-sampler-dead_branch",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-sampler-dead_branch",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-invalid-type",
+      "version": 320,
+      "family": "type",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Assignment types must match",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-type/shader.frag\nERROR: 0:4: 'assign' :  cannot convert from ' const 4X4 matrix of float' to 'layout( location=0) out highp 4-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "74c6f162794ad677b8e6f94a87455a3f554c15d1dd81a6bc7cae631b4c655b2e"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-type/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-type",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-invalid-type",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-invalid-precision",
+      "version": 320,
+      "family": "precision",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Fragment float requires a default or explicit precision",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-precision/shader.frag\nERROR: 0:2: 'float' : type requires declaration of default precision qualifier \nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "c892c662e3da3950b9acdd8f973e939351c24b0b07153bd814dcfaca716490cd"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-precision/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-precision",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-invalid-precision",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-invalid-sampler",
+      "version": 320,
+      "family": "sampler",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "sampler2D texture coordinates must be vec2",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-sampler/shader.frag\nERROR: 0:4: 'texture' : no matching overloaded function found \nERROR: 0:4: 'assign' :  cannot convert from ' const float' to 'layout( location=0) out highp 4-component vector of float'\nERROR: 0:4: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "158153c7521bea0e2abf6251f6f4a4965743876e63392aa05b531ad475cb9b23"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-sampler/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-sampler",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-invalid-sampler",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-invalid-extension",
+      "version": 320,
+      "family": "extension",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Unsupported required extension must be rejected",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-extension/shader.frag\nERROR: 0:4: '#extension' : extension not supported: GL_NONEXISTENT_fuzz_extension\nERROR: 0:4: '#extension' : extra tokens -- expected newline \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "a9c108a39da15e1bd76a9e34207f2b244309186d5dd5ba5160d915a776dc1027"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-extension/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-extension",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-invalid-extension",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-invalid-array_size",
+      "version": 320,
+      "family": "array_size",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Array sizes must be positive integral constants",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-array_size/shader.frag\nERROR: 0:4: '' : array size must be a positive integer\nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.frag": "3c76e78401f001d8a697df457c465adc6e7b4b90d1e681e93318a814581d6931"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-array_size/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-array_size",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-invalid-array_size",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-invalid-varying",
+      "version": 320,
+      "family": "varying",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Statically used linked varying types must agree",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 3,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-varying/shader.vert\n/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-varying/shader.frag\nERROR: Linking vertex and fragment stages: Types must match:\n    vertex stage: \" vec3 bridge\"\n    fragment stage: \" vec4 bridge\"\n\n",
+      "sha256": {
+        "shader.vert": "a3fa4280905d809b3d1f6dcfb45e5ddc407f62fcf024356bcfef3d20cb74e71a",
+        "shader.frag": "b5caceee0c673731e7aec24b056177d962832cbac2f35638598d3a90ae068769"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "-l",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-varying/shader.vert",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-varying/shader.frag"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-varying",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-invalid-varying",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-compute-ssbo",
+      "version": 320,
+      "family": "ssbo",
+      "mutation": "version_boundary",
+      "expected": "accept",
+      "rule": "Compute, SSBO, image and shared atomic operations require ESSL 310 or later; one invocation, no race.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.comp": "c71948625a7d4094d2181a655a50239598b78941a9ee957f8d771a0c60db3585"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-compute-ssbo/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-compute-ssbo",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-compute-ssbo",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-compute-image",
+      "version": 320,
+      "family": "image",
+      "mutation": "version_boundary",
+      "expected": "accept",
+      "rule": "Compute, SSBO, image and shared atomic operations require ESSL 310 or later; one invocation, no race.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.comp": "e7b65e32e46cfff12d09683cf4b46ac17b0c515b3ebcee12ea2a174af0d35ca3"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-compute-image/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-compute-image",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-compute-image",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-compute-atomic",
+      "version": 320,
+      "family": "atomic",
+      "mutation": "version_boundary",
+      "expected": "accept",
+      "rule": "Compute, SSBO, image and shared atomic operations require ESSL 310 or later; one invocation, no race.",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "",
+      "sha256": {
+        "shader.comp": "213de8209d57117995e7562d80f902d71c2b3b60590f2040578526224d9540bd"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-compute-atomic/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-compute-atomic",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-compute-atomic",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    },
+    {
+      "id": "320-invalid-workgroup-limit",
+      "version": 320,
+      "family": "compute_limit",
+      "mutation": "invalid",
+      "expected": "reject",
+      "rule": "Local workgroup dimension exceeds the glslang built-in static resource limit; compiler-profile oracle only, not a universal device limit.",
+      "status": "EXPECTED_ERROR",
+      "exit_code": 2,
+      "log": "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-workgroup-limit/shader.comp\nERROR: 0:4: 'local_size' : too large; see gl_MaxComputeWorkGroupSize \nERROR: 1 compilation errors.  No code generated.\n\n\n",
+      "sha256": {
+        "shader.comp": "5c6e3e01f4fd60cb23f17388893c59e34173c4640f8453d41b7107b6cae1f291"
+      },
+      "command": [
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "/workspace/scratch/62d43a81bbde/gles-rendering-expert-skill/benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-workgroup-limit/shader.comp"
+      ],
+      "artifacts": "benchmarks/fuzz/evidence/glslang-15.2.0/320-invalid-workgroup-limit",
+      "output_image": null,
+      "replay": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/shader_fuzz.py",
+        "--seed",
+        "0",
+        "--case",
+        "320-invalid-workgroup-limit",
+        "--compiler",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/bin/glslangValidator",
+        "--output",
+        "benchmarks/fuzz/evidence/glslang-15.2.0/replay"
+      ]
+    }
+  ]
+}

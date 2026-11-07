@@ -1,0 +1,4 @@
+#version 320 es
+precision highp float;
+precision highp int;
+layout(local_size_x=2147483647) in; void main() {}

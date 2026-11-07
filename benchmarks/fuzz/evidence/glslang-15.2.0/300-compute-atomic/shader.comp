@@ -1,0 +1,5 @@
+#version 300 es
+precision highp float;
+precision highp int;
+layout(local_size_x=1) in;
+shared uint value; void main() { value=0u; barrier(); atomicAdd(value,1u); }
