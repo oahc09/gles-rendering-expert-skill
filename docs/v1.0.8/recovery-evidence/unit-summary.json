@@ -1,0 +1,158 @@
+[
+  {
+    "suite": "benchmarks/agent",
+    "exit_code": 0,
+    "tests": 57,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/agent/v108",
+    "exit_code": 0,
+    "tests": 12,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/device_lab",
+    "exit_code": 0,
+    "tests": 10,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/differential",
+    "exit_code": 0,
+    "tests": 9,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/driver_compat",
+    "exit_code": 0,
+    "tests": 9,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/fuzz",
+    "exit_code": 0,
+    "tests": 11,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/gpu",
+    "exit_code": 0,
+    "tests": 15,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/longrun",
+    "exit_code": 0,
+    "tests": 26,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/material_upgrade",
+    "exit_code": 0,
+    "tests": 11,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/pipeline",
+    "exit_code": 0,
+    "tests": 60,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/pipeline/adversarial",
+    "exit_code": 0,
+    "tests": 18,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/quality_policy",
+    "exit_code": 0,
+    "tests": 25,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/reducer",
+    "exit_code": 0,
+    "tests": 13,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/resource_pressure",
+    "exit_code": 5,
+    "tests": 0,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/robustness",
+    "exit_code": 0,
+    "tests": 35,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/scenes",
+    "exit_code": 0,
+    "tests": 12,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/state_machine",
+    "exit_code": 0,
+    "tests": 6,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/system_scenes",
+    "exit_code": 0,
+    "tests": 24,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/texture_pipeline",
+    "exit_code": 0,
+    "tests": 9,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/traces",
+    "exit_code": 0,
+    "tests": 10,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/traces/sql",
+    "exit_code": 0,
+    "tests": 6,
+    "skipped": 0
+  },
+  {
+    "suite": "benchmarks/visual_quality",
+    "exit_code": 0,
+    "tests": 16,
+    "skipped": 0
+  },
+  {
+    "suite": "examples/android_cases",
+    "exit_code": 0,
+    "tests": 21,
+    "skipped": 0
+  },
+  {
+    "suite": "examples/android_cases/wallpaper/tests",
+    "exit_code": 0,
+    "tests": 6,
+    "skipped": 0
+  },
+  {
+    "suite": "references/research",
+    "exit_code": 0,
+    "tests": 31,
+    "skipped": 0
+  },
+  {
+    "suite": "tools",
+    "exit_code": 0,
+    "tests": 53,
+    "skipped": 0
+  }
+]

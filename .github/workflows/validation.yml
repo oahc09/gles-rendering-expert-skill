@@ -90,3 +90,23 @@ jobs:
           python3 benchmarks/pipeline/runtime.py --mesa-version-matrix --output reports/pipeline-versions
       - name: v1.0.7 recursive candidate gate (not release approval)
         run: python3 tools/check_release_gates.py --gates v1.0.7
+      - name: v1.0.8 bounded recovery contracts (not release approval)
+        run: |
+          python3 -m unittest discover -s benchmarks/fuzz -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/state_machine -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/robustness -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/pipeline/adversarial -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/differential -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/material_upgrade -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/agent/v108 -p 'test_*.py' -v
+          python3 benchmarks/material_upgrade/run.py --output reports/v108-film
+          python3 tools/check_v108_gates.py
+      - name: v1.0.8 locked dual-implementation acceptance
+        run: python3 benchmarks/differential/ci.py --output reports/v108-differential
+      - name: Preserve v108 results and failure evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: gles-v108-host-reports
+          path: reports/
+          if-no-files-found: warn

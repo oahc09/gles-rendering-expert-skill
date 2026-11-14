@@ -1,0 +1,82 @@
+{
+  "target_version": "1.0.8",
+  "metadata_version": "1.0.2",
+  "release_ready": false,
+  "release_authorized": false,
+  "accepted_limitations": [],
+  "prior_release_gate": "docs/v1.0.7-release-gates.json",
+  "work_packages": {
+    "W0": {
+      "status": "PARTIAL",
+      "implementation": [
+        "docs/v1.0.8/baseline.json"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W1": {
+      "status": "PARTIAL",
+      "implementation": [
+        "tools/shader_fuzz.py"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W2": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/state_machine/README.md"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W3": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/robustness/README.md"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W4": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/pipeline/adversarial/test_adversarial.py"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W5": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/differential/README.md"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Fresh two-implementation replay and physical-device differential acceptance pending"
+    },
+    "W6": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/material_upgrade/README.md"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W7": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "implementation": [
+        "benchmarks/agent/v108/README.md"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Full source repair/minimize/runtime differential pipeline and authorized real provider paired runs incomplete"
+    },
+    "W8": {
+      "status": "PARTIAL",
+      "implementation": [
+        "tools/check_v108_gates.py"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    }
+  }
+}
