@@ -6,6 +6,9 @@
     "libEGL.so": "36bbedb16eef9425b702c4325362b63a2ed31735c342d68aa6ed1a57284dbbf8",
     "libGLESv2.so": "602e78cc86c71f68d7f78bae64b48d950492c2e4dbe100a5ab12f514b5e63504",
     "libvk_swiftshader.so": "ebd1de03529341b8298b24cb12daae94036bc1c145df6c7d8c61dc988aae0e5e",
-    "vk_swiftshader_icd.json": "c9eef28b6b984fec220ef0abfecc40b502d46946706e47bfe97707027cb818bd"
-  }
+    "vk_swiftshader_icd.json": "c9eef28b6b984fec220ef0abfecc40b502d46946706e47bfe97707027cb818bd",
+    "libvulkan.so.1": "4196730a533313e1f93b6aade4269fa325f7ae98f41434ec4fb215f150cc75a6"
+  },
+  "download_url": "https://playwright.download.prss.microsoft.com/dbazure/download/playwright/builds/chromium/1194/chromium-headless-shell-linux.zip",
+  "archive_sha256": "d745c7210cc88b73c7991a22c9624819960d84bc3de77ac7336d2de841a8c91f"
 }

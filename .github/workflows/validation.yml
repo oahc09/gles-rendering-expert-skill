@@ -1,6 +1,8 @@
-name: GLES candidate validation (manual)
+name: GLES candidate validation
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
 permissions:
   contents: read
 jobs:
@@ -16,7 +18,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install host-only validation toolchain
-        run: sudo apt-get update && sudo apt-get install -y g++ libegl-dev libgles-dev libegl-mesa0 glslang-tools
+        run: sudo apt-get update && sudo apt-get install -y g++ libegl-dev libgles-dev libegl-mesa0 glslang-tools libvulkan1
       - name: Structured rule contracts (not source compilation)
         run: python3 tools/validate_rules.py --output reports/rules.json
       - name: Actual GLSL compiler positive and negative controls
@@ -101,8 +103,12 @@ jobs:
           python3 -m unittest discover -s benchmarks/agent/v108 -p 'test_*.py' -v
           python3 benchmarks/material_upgrade/run.py --output reports/v108-film
           python3 tools/check_v108_gates.py
+      - name: Provision pinned official ANGLE bundle
+        run: |
+          curl --fail --location --max-time 150 https://playwright.download.prss.microsoft.com/dbazure/download/playwright/builds/chromium/1194/chromium-headless-shell-linux.zip -o /tmp/angle.zip
+          python3 benchmarks/differential/extract_locked.py /tmp/angle.zip /tmp/gles-angle
       - name: v1.0.8 locked dual-implementation acceptance
-        run: python3 benchmarks/differential/ci.py --output reports/v108-differential
+        run: python3 benchmarks/differential/ci.py --angle-root /tmp/gles-angle --output reports/v108-differential
       - name: Preserve v108 results and failure evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
