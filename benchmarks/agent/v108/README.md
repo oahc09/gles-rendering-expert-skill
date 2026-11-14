@@ -47,8 +47,8 @@ an arbitrary supplied hash refers to a genuine run.
   here, and no fixture score may substitute for them.
 - Extend to arbitrary source patches with isolated compile/run, same-defect
   minimization, actual host differential verification and regression controls.
-- Add independently reviewed diagnosis accuracy, false positives, minimization
-  fidelity and evidence completeness metrics, not just repair/regression counts.
+- Populate the strict `score_v3` diagnosis, false-positive, minimization fidelity
+  and evidence-completeness metrics with genuine independently reviewed runs.
 - Integrate provider request capture with this narrow structured patch protocol.
 
 No prior corpora, scoring rules, or release gates were changed.
@@ -95,3 +95,56 @@ on numeric verification. These are authored control patches, not Agent output.
 Initial ANGLE initialization failures remain in `evidence/2026-11-14/` as historical
 blocked runs and are not counted as passed. No image rendering or device/model
 acceptance is claimed by numeric SSBO readback.
+
+## Strict paired review metrics (`score_v3`)
+
+The legacy `score_provider` API is unchanged. The new function takes the frozen
+corpus, schema-v3 provider-capture manifest, complete independent adjudications,
+and an in-memory `SHA256 → UTF-8 content` evidence map. It performs **no file,
+credential, network or provider access**. All supplied content hashes are checked,
+with 1 MiB per artifact, 16 MiB total and 2,048 artifact limits. The manifest must
+bind the exact corpus hash and explicitly mark the run non-synthetic. Both paired
+conditions must cover every unique case, with nonempty response text and matching
+response hashes. Synthetic test invocations validate the interface only and do
+not emit a model-quality report.
+
+Each review additionally requires:
+
+- `diagnosis`: unique expected-failure IDs, unsupported findings, rejected legal
+  controls, rationale, and evidence hashes. The expected ID is the frozen case's
+  `oracle.failure`. Unknown true positives/control IDs are rejected. The three
+  explicit control IDs are `valid_baseline_must_remain_valid`,
+  `unavailable_evidence_is_not_pass`, and `fixtures_are_not_model_results`.
+- Explicit boolean `repair_attempted`, existing `correct_fix` and regression
+  outcomes. A correct-fix claim cannot accompany a failed regression or missing
+  reproduce/patch/compile-run/differential/report PASS evidence.
+- `stage_evidence` for all seven workflow stages, including explicit `NOT_RUN`
+  or reasoned `NOT_APPLICABLE`. PASS/FAIL requires supplied artifact content;
+  unmeasured stages cannot present measurement artifacts.
+- `minimization`: matching stage status, original/reduced failure IDs and hashes,
+  replay log and rationale. Original artifact must match the frozen case input's
+  canonical JSON hash. PASS requires identical failure identity, while FAIL
+  requires a different identity. Unmeasured fields must be null, not fabricated.
+
+Rates retain their denominators:
+
+| Metric | Definition |
+|---|---|
+| Diagnosis accuracy | Exact expected finding, no unsupported finding/control rejection / reviewed cases |
+| Diagnosis recall | True positives / expected findings |
+| False-repair rate | Attempted but not correct repairs / repair attempts |
+| False-positive control rate | Rejected legal controls / reviewed legal controls |
+| False-discovery rate | Unsupported findings + rejected controls / all positive findings |
+| Minimization fidelity | Same-failure reproductions / measured minimizations |
+| Minimization coverage | Measured / applicable minimizations |
+| Evidence completeness | Measured PASS/FAIL stages / applicable stages |
+
+Zero denominators produce `null`, not zero or one. `NOT_RUN` lowers coverage;
+failures stay in denominators. Counts of missing and nonapplicable stages remain
+visible. Both condition metrics and `with_skill - no_skill` deltas are returned,
+with null deltas when either side is unmeasured. Test fixtures are not results.
+
+Hash checking detects altered or absent evidence, **not fabricated provenance**.
+Provider identity, independent reviewer identity, and the truth of their
+interpretation still require external audit. No genuine provider data has been
+captured here; the project remains **BLOCKED_BY_PROVIDER / NOT_EVALUATED**.

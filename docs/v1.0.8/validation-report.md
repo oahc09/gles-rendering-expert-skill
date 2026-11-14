@@ -51,3 +51,17 @@ are authored patches, not model scores; no general source/image equivalence is
 claimed. W7 complete metrics and provider coverage remain incomplete.
 
 PR workflow run [43608344642](https://github.com/oahc09/gles-rendering-expert-skill/actions/runs/43608344642) passed on c9bd35b, including pinned driver provisioning and dual-driver tests. This historical CI result does not cover later commits. Local replay ran 22 validation steps: the v107 audit initially lacked the tarball recovery git history; fetching real history and repeating the audit passed (180 files, zero findings).
+
+## Paired-review metric increment
+
+Added strict score_v3 diagnosis accuracy/recall, false repair and false-positive
+metrics, minimization fidelity/coverage, evidence completeness and condition
+deltas. Evidence bytes must match supplied SHA256; unknown fields, missing
+pairs and unmeasured-as-PASS records fail closed. Hashes do not authenticate
+provider/reviewer identity. No real provider score produced.
+
+Fresh complete unittest directory sweep: **555 passed, zero skipped, 26 suites**
+(final-unit-summary.json). v108 repair tests: 41 passed including 21 new metric
+boundary tests. Hosted CI on **fe88d6d** passed, including four actual dual-driver
+repair controls and wrong-repair rejection: https://github.com/oahc09/gles-rendering-expert-skill/actions/runs/43608796300 .
+This run precedes the review-metric increment; its new head requires separate CI.

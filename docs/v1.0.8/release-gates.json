@@ -51,32 +51,32 @@
       "implementation": [
         "benchmarks/differential/README.md"
       ],
-      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
-      "remaining": "Fresh two-implementation replay and physical-device differential acceptance pending"
+      "acceptance": "47 fresh cases PASS on distinct Mesa llvmpipe and ANGLE SwiftShader processes; hash-locked official driver bundle",
+      "remaining": "Real physical GPU/Android driver differential acceptance remains BLOCKED_BY_HARDWARE"
     },
     "W6": {
       "status": "PARTIAL",
       "implementation": [
         "benchmarks/material_upgrade/README.md"
       ],
-      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
-      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+      "acceptance": "CPU and real EGL/GLES thin-film chart highp/mediump golden, forced ES3.0 fallback, migration/rollback/cache contracts PASS",
+      "remaining": "Mobile device precision distributions and physically calibrated spectral/visual acceptance not established"
     },
     "W7": {
       "status": "BLOCKED_BY_PROVIDER",
       "implementation": [
         "benchmarks/agent/v108/README.md"
       ],
-      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
-      "remaining": "Full source repair/minimize/runtime differential pipeline and authorized real provider paired runs incomplete"
+      "acceptance": "36 structured cases; four narrow actual shader compile/minimize/reproduce/dual-driver numeric repair controls and wrong-repair rejection PASS",
+      "remaining": "Real provider paired outputs and independent review; broader non-arithmetic source/image repair coverage remain incomplete"
     },
     "W8": {
       "status": "PARTIAL",
       "implementation": [
         "tools/check_v108_gates.py"
       ],
-      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
-      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+      "acceptance": "Hosted CI on fe88d6d passed including real W7 repair controls; latest review-metric increment needs own CI",
+      "remaining": "Latest-head hosted CI, remaining scope and all inherited hardware/provider gates; release not authorized"
     }
   }
 }

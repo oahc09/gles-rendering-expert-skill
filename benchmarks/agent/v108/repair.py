@@ -126,6 +126,125 @@ def score_provider(corpus, manifest, adjudications):
     if seen!=expected:raise ValueError('complete paired independent review required')
     return {'provider':manifest['provider'],'evidence':'EXTERNAL_PROVIDER_REVIEWED','metrics':metrics}
 
+V3_STAGES=('diagnose','reproduce','minimize','patch','compile_run','differential','report')
+V3_CONTROLS=('valid_baseline_must_remain_valid','unavailable_evidence_is_not_pass','fixtures_are_not_model_results')
+
+def score_v3(corpus, manifest, adjudications, artifacts):
+    """Strict, evidence-bound paired review metrics, not automatic truth inference.
+
+    `artifacts` maps SHA256 to UTF-8 artifact/log text, supplied by the caller.
+    No files, credentials, commands or provider APIs are accessed here. All
+    declared evidence is checked against actual supplied bytes. Authenticity of
+    provider identity and independent review remains an external audit boundary.
+    """
+    import re
+    sha_pattern=re.compile(r'^[0-9a-f]{64}$')
+    def text(value,name):
+        if not isinstance(value,str) or not value.strip():raise ValueError(name+' must be nonempty text')
+        return value
+    def boolean(value,name):
+        if type(value) is not bool:raise ValueError(name+' must be boolean')
+        return value
+    def hashes(value,name):
+        if not isinstance(value,list) or not value or any(not isinstance(h,str) for h in value) or len(value)!=len(set(value)):
+            raise ValueError(name+' requires unique artifact hashes')
+        for h in value:
+            if not isinstance(h,str) or not sha_pattern.fullmatch(h) or h not in artifacts:raise ValueError(name+' missing/invalid hash')
+        return value
+    if not isinstance(artifacts,dict) or len(artifacts)>2048:raise ValueError('bounded artifact map required')
+    total=0
+    for h,body in artifacts.items():
+        if not isinstance(h,str) or not sha_pattern.fullmatch(h) or not isinstance(body,str):raise ValueError('invalid artifact entry')
+        raw=body.encode();total+=len(raw)
+        if len(raw)>2**20 or total>16*2**20:raise ValueError('artifact quota exceeded')
+        if hashlib.sha256(raw).hexdigest()!=h:raise ValueError('artifact content hash mismatch')
+    if manifest.get('schema_version')!=3 or manifest.get('corpus_sha256')!=digest(corpus):raise ValueError('v3 frozen corpus binding required')
+    text(manifest.get('provider'),'provider')
+    if manifest.get('synthetic_infrastructure_test') is not False:raise ValueError('explicit non-synthetic provider record required')
+    cases=corpus.get('cases',[])
+    if not cases or len({c['case_id'] for c in cases})!=len(cases):raise ValueError('nonempty unique corpus required')
+    # Retain the legacy pair, capture hash, regression and reviewer checks.
+    legacy=score_provider(corpus,manifest,adjudications)
+    by_id={c['case_id']:c for c in cases}
+    metrics={mode:dict(reviewed=0,diagnosis_correct=0,true_positives=0,false_negatives=0,false_positives=0,
+        legal_controls=0,rejected_legal_controls=0,repair_attempted=0,false_repairs=0,
+        minimization_applicable=0,minimization_measured=0,minimization_faithful=0,
+        evidence_required=0,evidence_present=0,unmeasured_stages=0,not_applicable_stages=0)
+        for mode in ('no_skill','with_skill')}
+    def unique_ids(value,allowed,name):
+        if not isinstance(value,list) or any(not isinstance(x,str) for x in value) or len(value)!=len(set(value)):
+            raise ValueError(name+' must be unique string IDs')
+        if allowed is not None and not set(value)<=set(allowed):raise ValueError(name+' has unknown ID')
+        return set(value)
+    for a in adjudications:
+        case=by_id[a['case_id']];m=metrics[a['condition']];m['reviewed']+=1
+        for stage in ('baseline','patched'):
+            e=a[stage]
+            hashes([e['artifact_sha256'],e['log_sha256']],stage)
+            hashes([e['suite_sha256']],stage+' suite')
+            text(e['command'],stage+' command');text(e['environment'],stage+' environment')
+        d=a.get('diagnosis',{})
+        if set(d)!={'true_positive_ids','unsupported_findings','rejected_legal_controls','rationale','evidence_sha256'}:raise ValueError('exact diagnosis fields required')
+        expected={case['oracle']['failure']}
+        tp=unique_ids(d['true_positive_ids'],expected,'true positives')
+        unsupported=unique_ids(d['unsupported_findings'],None,'unsupported findings')
+        rejected=unique_ids(d['rejected_legal_controls'],V3_CONTROLS,'rejected legal controls')
+        if unsupported & (expected|set(V3_CONTROLS)):raise ValueError('unsupported finding overlaps known ID')
+        text(d['rationale'],'diagnosis rationale');hashes(d['evidence_sha256'],'diagnosis')
+        m['true_positives']+=len(tp);m['false_negatives']+=len(expected-tp);m['false_positives']+=len(unsupported)+len(rejected)
+        m['diagnosis_correct']+=tp==expected and not unsupported and not rejected
+        m['legal_controls']+=len(V3_CONTROLS);m['rejected_legal_controls']+=len(rejected)
+        attempted=boolean(a.get('repair_attempted'),'repair_attempted')
+        if a['correct_fix'] and not attempted:raise ValueError('correct fix requires attempted repair')
+        m['repair_attempted']+=attempted;m['false_repairs']+=attempted and not a['correct_fix']
+        stages=a.get('stage_evidence',{})
+        if set(stages)!=set(V3_STAGES):raise ValueError('all named evidence stages required, even when not run')
+        for name,e in stages.items():
+            if set(e)!={'status','artifact_sha256','rationale'}:raise ValueError('exact stage evidence fields required')
+            status=e['status'];text(e['rationale'],name+' rationale')
+            if status not in ('PASS','FAIL','NOT_RUN','NOT_APPLICABLE'):raise ValueError('invalid stage status')
+            if status in ('PASS','FAIL'):
+                hashes(e['artifact_sha256'],name);m['evidence_present']+=1
+            elif e['artifact_sha256']!=[]:raise ValueError('unmeasured stage cannot cite measurement artifacts')
+            if status=='NOT_APPLICABLE':m['not_applicable_stages']+=1
+            else:m['evidence_required']+=1
+            if status=='NOT_RUN':m['unmeasured_stages']+=1
+        # A correct-fix assertion needs run and report evidence; missing stages
+        # remain measurable incompleteness, never silently become a pass.
+        if a['correct_fix'] and any(stages[k]['status']!='PASS' for k in ('reproduce','patch','compile_run','differential','report')):
+            raise ValueError('correct fix requires successful complete execution evidence')
+        z=a.get('minimization',{})
+        if set(z)!={'status','original_failure_id','reduced_failure_id','original_sha256','reduced_sha256','replay_log_sha256','rationale'}:raise ValueError('exact minimization fields required')
+        text(z['rationale'],'minimization rationale');status=z['status']
+        if status not in ('PASS','FAIL','NOT_RUN','NOT_APPLICABLE') or status!=stages['minimize']['status']:raise ValueError('minimization stage mismatch')
+        if status!='NOT_APPLICABLE':m['minimization_applicable']+=1
+        if status in ('PASS','FAIL'):
+            if z['original_failure_id']!=case['oracle']['failure']:raise ValueError('original failure identity mismatch')
+            text(z['reduced_failure_id'],'reduced failure ID')
+            hashes([z['original_sha256']],'original reproducer');hashes([z['reduced_sha256']],'reduced reproducer');hashes([z['replay_log_sha256']],'replay log')
+            if z['original_sha256']!=digest(case['input']):raise ValueError('original reproducer must match frozen case input')
+            faithful=z['original_failure_id']==z['reduced_failure_id']
+            if (status=='PASS')!=faithful:raise ValueError('minimization status contradicts failure fidelity')
+            m['minimization_measured']+=1;m['minimization_faithful']+=faithful
+        elif any(z[k] is not None for k in ('original_failure_id','reduced_failure_id','original_sha256','reduced_sha256','replay_log_sha256')):
+            raise ValueError('unmeasured minimization fields must be null')
+    def ratio(n,d):return n/d if d else None
+    for m in metrics.values():
+        m.update(diagnosis_accuracy=ratio(m['diagnosis_correct'],m['reviewed']),
+            diagnosis_recall=ratio(m['true_positives'],m['true_positives']+m['false_negatives']),
+            false_repair_rate=ratio(m['false_repairs'],m['repair_attempted']),
+            false_positive_control_rate=ratio(m['rejected_legal_controls'],m['legal_controls']),
+            false_discovery_rate=ratio(m['false_positives'],m['true_positives']+m['false_positives']),
+            minimization_fidelity=ratio(m['minimization_faithful'],m['minimization_measured']),
+            minimization_coverage=ratio(m['minimization_measured'],m['minimization_applicable']),
+            evidence_completeness=ratio(m['evidence_present'],m['evidence_required']))
+    rates=('diagnosis_accuracy','diagnosis_recall','false_repair_rate','false_positive_control_rate',
+           'false_discovery_rate','minimization_fidelity','minimization_coverage','evidence_completeness')
+    delta={k:None if any(metrics[c][k] is None for c in metrics) else metrics['with_skill'][k]-metrics['no_skill'][k] for k in rates}
+    return dict(schema_version=3,provider=manifest['provider'],evidence='HASH_BOUND_EXTERNAL_REVIEW',
+        metrics=metrics,paired_delta_with_minus_without=delta,legacy=legacy,
+        authenticity='PROVIDER_AND_REVIEW_IDENTITY_REQUIRE_EXTERNAL_AUDIT')
+
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);a=p.parse_args()
     a.output.write_text(json.dumps(build(),indent=2)+'\n')
