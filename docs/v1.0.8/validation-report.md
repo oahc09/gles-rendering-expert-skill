@@ -50,5 +50,4 @@ patch compiles on both drivers but correctly FAILs the numeric oracle. These
 are authored patches, not model scores; no general source/image equivalence is
 claimed. W7 complete metrics and provider coverage remain incomplete.
 
-PR workflow trigger added, but GitHub Actions API currently returns zero runs for
-the entire repository. Do not equate local workflow replay with hosted CI success.
+PR workflow run [43608344642](https://github.com/oahc09/gles-rendering-expert-skill/actions/runs/43608344642) passed on c9bd35b, including pinned driver provisioning and dual-driver tests. This historical CI result does not cover later commits. Local replay ran 22 validation steps: the v107 audit initially lacked the tarball recovery git history; fetching real history and repeating the audit passed (180 files, zero findings).
