@@ -1,16 +1,18 @@
 {
-  "timestamp": "2026-11-14T14:57:25.848132+00:00",
+  "timestamp": "2026-11-14T15:05:33.847899+00:00",
   "scope": "AUTHORED_HOST_FIXTURES_NOT_MODEL_EVALUATION",
   "command": "python3 -m unittest discover -s benchmarks/agent/v108 -p test_*.py -v",
   "exit_code": 0,
   "case_count": 36,
-  "tests": 12,
+  "tests": 20,
   "provider_status": "BLOCKED_BY_PROVIDER",
   "model_quality": "NOT_EVALUATED",
   "source_sha256": {
+    "benchmarks/agent/v108/test_shader_pipeline.py": "9de1e58fbd7035abf18d10d1ffaf52deeee83dc053b131d52883e44327bb3fa5",
+    "benchmarks/agent/v108/shader_pipeline.py": "0499b1c3624a2e6d68d5bf7b8008bb9cf8db6fe0d8ea3bbfb78ca6dafb07629c",
     "benchmarks/agent/v108/test_repair.py": "e724b1a0cef1b0b727d58f48e749b281748189def83bbd32552cfa1cf3d0fd42",
     "benchmarks/agent/v108/repair.py": "a3d532bdee1675fb1c12481c521e70d039ea540afd503be298d861e5ec24e057"
   },
   "stdout": "",
-  "stderr": "test_fixture_cannot_claim_driver_bug (test_repair.RepairTests.test_fixture_cannot_claim_driver_bug) ... ok\ntest_input_immutable (test_repair.RepairTests.test_input_immutable) ... ok\ntest_inventory_and_frozen_corpus (test_repair.RepairTests.test_inventory_and_frozen_corpus) ... ok\ntest_negative_controls (test_repair.RepairTests.test_negative_controls) ... ok\ntest_no_provider_claim (test_repair.RepairTests.test_no_provider_claim) ... ok\ntest_nonshader_fixed_controls (test_repair.RepairTests.test_nonshader_fixed_controls) ... ok\ntest_oracle_not_leaked (test_repair.RepairTests.test_oracle_not_leaked) ... ok\ntest_patch_bounded (test_repair.RepairTests.test_patch_bounded) ... ok\ntest_response_hash_bound (test_repair.RepairTests.test_response_hash_bound) ... ok\ntest_shader_requires_actual_compiler (test_repair.RepairTests.test_shader_requires_actual_compiler) ... ok\ntest_unmodified_shader_never_passes (test_repair.RepairTests.test_unmodified_shader_never_passes) ... ok\ntest_unpaired_rejected (test_repair.RepairTests.test_unpaired_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.024s\n\nOK\n"
+  "stderr": "test_fixture_cannot_claim_driver_bug (test_repair.RepairTests.test_fixture_cannot_claim_driver_bug) ... ok\ntest_input_immutable (test_repair.RepairTests.test_input_immutable) ... ok\ntest_inventory_and_frozen_corpus (test_repair.RepairTests.test_inventory_and_frozen_corpus) ... ok\ntest_negative_controls (test_repair.RepairTests.test_negative_controls) ... ok\ntest_no_provider_claim (test_repair.RepairTests.test_no_provider_claim) ... ok\ntest_nonshader_fixed_controls (test_repair.RepairTests.test_nonshader_fixed_controls) ... ok\ntest_oracle_not_leaked (test_repair.RepairTests.test_oracle_not_leaked) ... ok\ntest_patch_bounded (test_repair.RepairTests.test_patch_bounded) ... ok\ntest_response_hash_bound (test_repair.RepairTests.test_response_hash_bound) ... ok\ntest_shader_requires_actual_compiler (test_repair.RepairTests.test_shader_requires_actual_compiler) ... ok\ntest_unmodified_shader_never_passes (test_repair.RepairTests.test_unmodified_shader_never_passes) ... ok\ntest_unpaired_rejected (test_repair.RepairTests.test_unpaired_rejected) ... ok\ntest_config_requires_two_implementations (test_shader_pipeline.PipelineTests.test_config_requires_two_implementations) ... ok\ntest_frozen_expression_envelope (test_shader_pipeline.PipelineTests.test_frozen_expression_envelope) ... ok\ntest_inventory (test_shader_pipeline.PipelineTests.test_inventory) ... ok\ntest_missing_compiler_closed (test_shader_pipeline.PipelineTests.test_missing_compiler_closed) ... ok\ntest_never_accepts_missing_driver (test_shader_pipeline.PipelineTests.test_never_accepts_missing_driver) ... ok\ntest_original_corruption_is_fixed (test_shader_pipeline.PipelineTests.test_original_corruption_is_fixed) ... ok\ntest_output_not_overwritten (test_shader_pipeline.PipelineTests.test_output_not_overwritten) ... ok\ntest_patch_quota (test_shader_pipeline.PipelineTests.test_patch_quota) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.021s\n\nOK\n"
 }

@@ -32,3 +32,23 @@ bookkeeping and manual CI, without claiming lost batch 6/7 was recovered.
   matrix and research revalidation remain incomplete. Manual CI has not run here.
 - Forced MESA_GLES_VERSION_OVERRIDE=3.0 replay also passes both precision paths
   (film-es30.json); mobile precision coverage still remains pending.
+
+## Follow-up: locked loader and W7 runtime pipeline
+
+Restored official Playwright revision1194; four historical library hashes matched.
+ANGLE initialization first failed because the old lock omitted the bundled
+libvulkan.so.1, loaded alongside ANGLE; locking/extracting that fifth file fixed
+it. Fresh Mesa llvmpipe + ANGLE SwiftShader differential now passes 47/47 cases
+(recovery-evidence/dual-driver). This supersedes the missing-bundle blocker above,
+not the hardware/provider blockers.
+
+W7 adds a bounded ES310 arithmetic-source patch pipeline: compile/link, preserve
+original diagnostic during ddmin, reproduce failure 3 times, independently execute
+positive control, broken and fixed shader in both drivers with SSBO numeric CPU
+oracles. Four arithmetic cases HOST_PASS with one-minimal reductions. A wrong
+patch compiles on both drivers but correctly FAILs the numeric oracle. These
+are authored patches, not model scores; no general source/image equivalence is
+claimed. W7 complete metrics and provider coverage remain incomplete.
+
+PR workflow trigger added, but GitHub Actions API currently returns zero runs for
+the entire repository. Do not equate local workflow replay with hosted CI success.

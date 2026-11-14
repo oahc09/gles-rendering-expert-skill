@@ -52,3 +52,46 @@ an arbitrary supplied hash refers to a genuine run.
 - Integrate provider request capture with this narrow structured patch protocol.
 
 No prior corpora, scoring rules, or release gates were changed.
+
+## Narrow real-source repair pipeline
+
+`shader_pipeline.py` adds a separately gated path for four CPU-oracle SSBO
+arithmetic cases (`ssbo-add`, `ssbo-multiply`, `ssbo-divide`, `ssbo-sqrt`). It reuses
+W1's bounded compiler processes and exact-diagnostic reducer, and W5's isolated
+Mesa/ANGLE processes and numeric readback oracle. The shader interface, single
+invocation, buffer declaration and main envelope are frozen; only a ≤256-character
+numeric arithmetic/sqrt expression may change. No model command or arbitrary OS
+program is executed. This is deliberately not an arbitrary GLSL repair runner.
+
+```sh
+python3 benchmarks/agent/v108/shader_pipeline.py \
+  --case ssbo-add --patch /path/to/repaired.comp \
+  --compiler /path/to/glslangValidator \
+  --config /path/to/two-driver-config.json --output /tmp/new-w7-report
+```
+
+Config must contain exactly `mesa` and `angle`, with existing absolute `egl` and
+`gles` library paths; ANGLE also requires an existing `icd` path. Use trusted,
+previously installed driver/toolchain files only. Reports contain original/patch
+source hashes, actual compiler outcomes, original-diagnostic-preserving reduction,
+three independent repeat compiles, and all three original/baseline/patch outcomes
+on both drivers. A missing toolchain/driver, skip, failed oracle, or incomplete
+minimality proof cannot produce `HOST_PASS`. GPU work is one bounded software
+invocation, subject to the inherited W5 process quotas.
+
+Even `HOST_PASS` means authored-host validation only. Provider remains
+`BLOCKED_BY_PROVIDER`, model quality `NOT_EVALUATED`; physical GPU and general
+semantic/visual preservation are not implied. These four cases do not complete
+all W7 metrics or the 36-case arbitrary-code execution workflow.
+
+### Fresh 2026-11-14 execution
+
+`evidence/2026-11-14-host/` records **four HOST_PASS** real pipelines on llvmpipe
+and ANGLE/SwiftShader: add, multiply, divide and sqrt. Each includes actual
+compile-invalid reproduction, same-diagnostic 1-minimal reduction, three repeat
+compiles, and two-implementation CPU-oracle SSBO readback. The explicit wrong
+repair (`9.0` for expected `5.0`) compiles on both but correctly returns **FAIL**
+on numeric verification. These are authored control patches, not Agent output.
+Initial ANGLE initialization failures remain in `evidence/2026-11-14/` as historical
+blocked runs and are not counted as passed. No image rendering or device/model
+acceptance is claimed by numeric SSBO readback.
