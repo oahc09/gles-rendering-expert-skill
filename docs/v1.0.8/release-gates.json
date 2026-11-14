@@ -67,8 +67,8 @@
       "implementation": [
         "benchmarks/agent/v108/README.md"
       ],
-      "acceptance": "36 structured cases; four narrow actual shader compile/minimize/reproduce/dual-driver numeric repair controls and wrong-repair rejection PASS",
-      "remaining": "Real provider paired outputs and independent review; broader non-arithmetic source/image repair coverage remain incomplete"
+      "acceptance": "36 structured fixtures; 4 arithmetic repairs, 7 real API source repairs, 4 image repairs with 8 compilable negative variants; evidence-bound paired review metrics; 572 total unit tests pass",
+      "remaining": "Real provider paired outputs and independent authenticated review; arbitrary unbounded source/scene/material coverage not claimed"
     },
     "W8": {
       "status": "PARTIAL",

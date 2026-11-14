@@ -111,6 +111,10 @@ jobs:
         run: python3 benchmarks/differential/ci.py --angle-root /tmp/gles-angle --output reports/v108-differential
       - name: v1.0.8 real bounded repair controls (not model scores)
         run: python3 benchmarks/agent/v108/run_host_controls.py --config reports/v108-differential/config.json --output reports/v108-repairs
+      - name: v1.0.8 actual API source-repair controls
+        run: python3 benchmarks/agent/v108/api_pipeline.py --config reports/v108-differential/config.json --output reports/v108-api-repairs
+      - name: v1.0.8 actual fragment-image repair controls
+        run: python3 benchmarks/agent/v108/image_pipeline.py --config reports/v108-repairs/implementations.json --output reports/v108-image-repairs
       - name: Preserve v108 results and failure evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

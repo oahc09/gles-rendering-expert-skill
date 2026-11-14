@@ -65,3 +65,24 @@ Fresh complete unittest directory sweep: **555 passed, zero skipped, 26 suites**
 boundary tests. Hosted CI on **fe88d6d** passed, including four actual dual-driver
 repair controls and wrong-repair rejection: https://github.com/oahc09/gles-rendering-expert-skill/actions/runs/43608796300 .
 This run precedes the review-metric increment; its new head requires separate CI.
+
+## Non-arithmetic API and image coverage
+
+Added seven bounded API-call-source repairs. Each original invalid call reproduces
+its expected GL error three times per implementation; each corrected frozen
+operation is error-free on both Mesa and ANGLE. A no-op cannot substitute for
+intended behavior; this literal-call parser is not arbitrary C++ compilation.
+
+Four non-arithmetic fragment-source repairs now exercise actual RGBA8 rasterized
+images: UV/color swizzles and alpha/premultiplication. 12 variants × 2 drivers =
+24 actual draws/readbacks. All compile/link; four repairs image-PASS, eight
+original/wrong repairs image-FAIL as expected. Independent CPU scalar goldens
+and peer comparison both required. This extends earlier SSBO-only coverage;
+no arbitrary model code is executed. See benchmarks/agent/v108/IMAGE_PIPELINE.md.
+
+Current external blockers remain real provider paired runs + independent review
+and physical mobile GPU acceptance. Broader arbitrary source/material/scene
+equivalence is not inferred from these bounded controls.
+
+Fresh post-image full suite sweep: **572 passed, zero skips, 26 directories**.
+The integrated normalized-config runner plus image pipeline also HOST_PASS.

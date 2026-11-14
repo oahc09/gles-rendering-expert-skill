@@ -1,0 +1,35 @@
+{
+  "scope": "AUTHORED_SOURCE_REPAIRS",
+  "provider_status": "BLOCKED_BY_PROVIDER",
+  "cases": [
+    {
+      "case": "viewport-negative",
+      "status": "HOST_PASS"
+    },
+    {
+      "case": "scissor-negative",
+      "status": "HOST_PASS"
+    },
+    {
+      "case": "pack-invalid",
+      "status": "HOST_PASS"
+    },
+    {
+      "case": "enable-invalid",
+      "status": "HOST_PASS"
+    },
+    {
+      "case": "clear-invalid",
+      "status": "HOST_PASS"
+    },
+    {
+      "case": "buffer-target-invalid",
+      "status": "HOST_PASS"
+    },
+    {
+      "case": "texture-target-invalid",
+      "status": "HOST_PASS"
+    }
+  ],
+  "status": "PASS"
+}

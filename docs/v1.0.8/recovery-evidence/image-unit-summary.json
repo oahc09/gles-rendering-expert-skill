@@ -1,0 +1,175 @@
+{
+  "measured_at_utc": "2026-11-14T15:24:59.416605+00:00",
+  "tests": 572,
+  "skips": 0,
+  "suite_failures": 0,
+  "suites": [
+    {
+      "suite": "benchmarks/agent",
+      "tests": 57,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/agent/v108",
+      "tests": 58,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/device_lab",
+      "tests": 10,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/differential",
+      "tests": 13,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/driver_compat",
+      "tests": 9,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/fuzz",
+      "tests": 11,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/gpu",
+      "tests": 15,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/longrun",
+      "tests": 26,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/material_upgrade",
+      "tests": 11,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/pipeline",
+      "tests": 60,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/pipeline/adversarial",
+      "tests": 18,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/quality_policy",
+      "tests": 25,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/reducer",
+      "tests": 13,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/resource_pressure",
+      "tests": 12,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/robustness",
+      "tests": 35,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/scenes",
+      "tests": 12,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/state_machine",
+      "tests": 6,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/system_scenes",
+      "tests": 24,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/texture_pipeline",
+      "tests": 9,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/traces",
+      "tests": 10,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/traces/sql",
+      "tests": 6,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "benchmarks/visual_quality",
+      "tests": 16,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "examples/android_cases",
+      "tests": 21,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "examples/android_cases/wallpaper/tests",
+      "tests": 6,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "references/research",
+      "tests": 31,
+      "exit_code": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "tools",
+      "tests": 58,
+      "exit_code": 0,
+      "skipped": 0
+    }
+  ],
+  "source_sha256": {
+    "benchmarks/agent/v108/test_image_pipeline.py": "855d38106b410bca677e60ffc95bd34212c9152e691829935ab0775adbfd0568",
+    "benchmarks/agent/v108/image_pipeline.py": "a0bbb8e7221589dc6a54427bf5a4f5b3441e0647ae89bba11a6f339677d4153a",
+    "benchmarks/agent/v108/test_api_pipeline.py": "e4270784e491e4199101376b4d402fe283ce9088b4b9a5ecd669d2bf1c90066b",
+    "benchmarks/agent/v108/api_pipeline.py": "6d4f234162a39e3aa58b4a1a0d816535b5cd5b5eb822e4bfd22b3abb79c2f92d",
+    "benchmarks/agent/v108/run_host_controls.py": "b990ca9fd3cc274a3e45eb295808207201d441771997c0ba9915897372510004",
+    "benchmarks/agent/v108/test_shader_pipeline.py": "9de1e58fbd7035abf18d10d1ffaf52deeee83dc053b131d52883e44327bb3fa5",
+    "benchmarks/agent/v108/shader_pipeline.py": "0499b1c3624a2e6d68d5bf7b8008bb9cf8db6fe0d8ea3bbfb78ca6dafb07629c",
+    "benchmarks/agent/v108/test_repair.py": "36c0a509ea49ce26dafbf32bc4ec5c2f63c9fcefd8b1f32723ea1b5c9bf3c99c",
+    "benchmarks/agent/v108/repair.py": "d0faa7439fb4045c674a75fad29c3a0ab6ed149f986b4edb207875ba618affc7"
+  }
+}

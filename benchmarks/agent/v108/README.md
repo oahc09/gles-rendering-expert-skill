@@ -148,3 +148,24 @@ Hash checking detects altered or absent evidence, **not fabricated provenance**.
 Provider identity, independent reviewer identity, and the truth of their
 interpretation still require external audit. No genuine provider data has been
 captured here; the project remains **BLOCKED_BY_PROVIDER / NOT_EVALUATED**.
+
+## Actual API call-source repair controls
+
+`api_pipeline.py` parses a single literal-argument GL call, never arbitrary C++
+or shell code. Seven API misuse repairs (viewport, scissor, pack alignment,
+enable enum, clear mask, buffer and texture targets) reproduce the exact original
+GL error three times on each real driver and verify the corrected intended
+operation is error-free. Error-free no-ops are rejected against frozen intent.
+This is actual parsed-source-to-GL execution, not C++ compilation, EGL context
+reset recovery or general source equivalence. Four tests plus an inventory test
+cover parser injection, ranges/arity, no-op misuse and missing-driver rejection.
+Run `python3 benchmarks/agent/v108/api_pipeline.py --config CONFIG --output OUT`.
+
+## Actual non-arithmetic image repairs
+
+See [IMAGE_PIPELINE.md](IMAGE_PIPELINE.md): four finite-domain fragment-source
+repairs (UV and color swizzle, premultiplied alpha, output alpha), each with the
+original defect and a compilable wrong repair. 24 actual Mesa/ANGLE draws are
+checked against independent 4×4 CPU RGBA goldens and peer outputs. Compilation
+alone cannot pass; both equally wrong drivers cannot pass. This adds image
+coverage, but does not claim arbitrary source equivalence or real Agent scores.

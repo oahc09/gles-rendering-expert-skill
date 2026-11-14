@@ -13,7 +13,7 @@ for c in configs:
    found=next((p for p in matches if p.is_file()),None)
    if found is None:raise SystemExit('BLOCKED_BY_DRIVER: unresolved '+c[key])
    c[key]=str(found)
-a.output.mkdir(parents=True,exist_ok=False);rows=[]
+a.output.mkdir(parents=True,exist_ok=False);(a.output/'implementations.json').write_text(json.dumps(configs,indent=2));rows=[]
 for cid in pipeline.inventory():
  case,_=pipeline.fixture(cid)
  r=pipeline.run(cid,case['sources']['shader.comp'],shutil.which('glslangValidator'),configs,a.output/cid)
