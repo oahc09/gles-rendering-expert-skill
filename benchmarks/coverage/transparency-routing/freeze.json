@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "weighted": {
+      "path": "benchmarks/coverage/weighted-oit/run.py",
+      "sha256": "a3b1b133a8c7e6e65780c13a38c29b7af4f2515f250d481dc378ae635b711d13"
+    },
+    "sorted": {
+      "path": "benchmarks/coverage/weighted-oit/exact_replay.py",
+      "sha256": "cede047c817f10c744e0bd72ccd7ae53ffafc7d24562f19d32043f907073667d"
+    },
+    "peel": {
+      "path": "benchmarks/coverage/depth-peeling/run.py",
+      "sha256": "fc7a1482c75696809ce40dea4c7fa30ab7994aae1ef9297e730180e366d2fcb7"
+    },
+    "policy": {
+      "path": "benchmarks/coverage/weighted-oit/exact_policy.py",
+      "sha256": "d25adec4f3a5c62e79148de0c6223dcc65d4034a1ab1747712d654d2711f5373"
+    }
+  },
+  "scope": "Existing collector source snapshots, no upstream HEAD fetch",
+  "dependencies": {
+    "benchmarks/differential/run.py": "2fda297aeb63af6443863f0a742f7ed6869455731a9193ebce8ae2ab8b3cb0a4",
+    "tools/shader_fuzz.py": "a1697cdae0fcd8fa3d3240fbe2865a647de7d5b7ee6e92fe151ff321349200c3",
+    "benchmarks/pipeline/runtime.py": "9ba6222551d437b8f27c61d7883e905916149be6a23a4dbed90d961f444e0d1f",
+    "benchmarks/reducer/reduce.py": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c"
+  }
+}

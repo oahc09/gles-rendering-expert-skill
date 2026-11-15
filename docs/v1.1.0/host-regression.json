@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "total_tests": 1334,
+  "total_tests": 1351,
   "total_skipped": 0,
   "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
   "rows": [
@@ -428,6 +428,13 @@
     {
       "directory": "benchmarks/coverage/depth-peeling",
       "tests": 11,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/transparency-routing",
+      "tests": 17,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"

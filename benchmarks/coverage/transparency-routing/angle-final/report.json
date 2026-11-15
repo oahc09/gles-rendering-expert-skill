@@ -1,0 +1,1509 @@
+{
+  "schema_version": 1,
+  "status": "HOST_ROUTING_PASS",
+  "source_sha256": "9c6a7ee9662b03c016e3e63eda9e3f4b127d788374f7903d57b87530bae0a6d1",
+  "freeze_sha256": "397ef1743a1ecbf72220a0a28f206005d725f270d652496931e0549407819a26",
+  "receipts": {
+    "weighted": {
+      "collector": "benchmarks/coverage/weighted-oit/run.py",
+      "source_sha256": "a3b1b133a8c7e6e65780c13a38c29b7af4f2515f250d481dc378ae635b711d13",
+      "exit_code": 0,
+      "artifact": "weighted.json",
+      "artifact_sha256": "4a47a6a90994aaada4c09a193e2c675b753fb5e6fde262c4ff8e0863944df33a",
+      "body_sha256": "c58fa7ee812f4742f036c151557af1c42a26d5989cb6222f10b1e367b607becb"
+    },
+    "sorted": {
+      "collector": "benchmarks/coverage/weighted-oit/exact_replay.py",
+      "source_sha256": "cede047c817f10c744e0bd72ccd7ae53ffafc7d24562f19d32043f907073667d",
+      "exit_code": 0,
+      "artifact": "sorted.json",
+      "artifact_sha256": "583f4c3b6d0cb109e719d163b13af035a54bfaeb3d720d2c0137d0b7ea9e0e2c",
+      "body_sha256": "7efe6316c2f546160bc1bb572bd3294c472ba8e2363ee35f7f3ef87289796a66"
+    },
+    "peel": {
+      "collector": "benchmarks/coverage/depth-peeling/run.py",
+      "source_sha256": "fc7a1482c75696809ce40dea4c7fa30ab7994aae1ef9297e730180e366d2fcb7",
+      "exit_code": 0,
+      "artifact": "peel.json",
+      "artifact_sha256": "153358f774f07107cf04a30d4d6183730808ebbcba74e6ca7282c472b44aee26",
+      "body_sha256": "1a1ce78f3a0cddf7e476bece0e325439e034dc56d9e5e768c4e4689ef9065261"
+    }
+  },
+  "results": [
+    {
+      "request": {
+        "id": "constant-k2-t2",
+        "scene": "constant",
+        "layers": [
+          {
+            "id": "0",
+            "plane": [
+              0.2,
+              0
+            ],
+            "rgba": [
+              1,
+              0,
+              0,
+              0.5
+            ]
+          },
+          {
+            "id": "1",
+            "plane": [
+              0.8,
+              0
+            ],
+            "rgba": [
+              0,
+              0,
+              1,
+              0.5
+            ]
+          }
+        ],
+        "layer_budget": 2,
+        "quality_max_byte_error": 2,
+        "require_exact": true
+      },
+      "selection": "SORTED_ALPHA",
+      "performance": "NOT_MEASURED",
+      "input_sha256": "0cc2907bfa0553ab850d56244ae5edd5aa44c5c1ad6757f5181fb9b6f8c171fb",
+      "independent_cpu_oracle": [
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191
+      ],
+      "weighted_candidate_audit": {
+        "status": "NOT_APPLICABLE_DIFFERENT_REGISTERED_INPUTS",
+        "evidence_scenes": [
+          {
+            "id": "soft-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          },
+          {
+            "id": "high-opacity-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          }
+        ],
+        "exact_fallback_allowed": false
+      },
+      "global_order_decision": {
+        "selection": "EXACT_SORTED_ALPHA",
+        "reason": "STRICT_GLOBAL_ORDER_FOR_FINITE_FULL_COVERAGE_GRID",
+        "far_to_near": [
+          "1",
+          "0"
+        ],
+        "scope": "Requires complete validated full-coverage depths for this sample grid, straight RGBA and no refraction; not arbitrary mesh proof",
+        "performance": "NOT_MEASURED"
+      },
+      "pixels": [
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191
+      ],
+      "max_error": 0,
+      "evidence_binding": {
+        "scene": "constant_nonintersecting",
+        "order": [
+          "1",
+          "0"
+        ]
+      },
+      "reason": "SOURCE_INPUT_BUDGET_AND_PIXEL_EVIDENCE_VERIFIED"
+    },
+    {
+      "request": {
+        "id": "sloped-k2-t2",
+        "scene": "sloped",
+        "layers": [
+          {
+            "id": "0",
+            "plane": [
+              0.1,
+              0.04
+            ],
+            "rgba": [
+              1,
+              0,
+              0,
+              0.5
+            ]
+          },
+          {
+            "id": "1",
+            "plane": [
+              0.6,
+              0.04
+            ],
+            "rgba": [
+              0,
+              0,
+              1,
+              0.5
+            ]
+          }
+        ],
+        "layer_budget": 2,
+        "quality_max_byte_error": 2,
+        "require_exact": true
+      },
+      "selection": "SORTED_ALPHA",
+      "performance": "NOT_MEASURED",
+      "input_sha256": "93fbcf3fa1e3ccbf0f8c3912bdca114af9635062a3826f81915d4f1d886d86de",
+      "independent_cpu_oracle": [
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191
+      ],
+      "weighted_candidate_audit": {
+        "status": "NOT_APPLICABLE_DIFFERENT_REGISTERED_INPUTS",
+        "evidence_scenes": [
+          {
+            "id": "soft-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          },
+          {
+            "id": "high-opacity-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          }
+        ],
+        "exact_fallback_allowed": false
+      },
+      "global_order_decision": {
+        "selection": "EXACT_SORTED_ALPHA",
+        "reason": "STRICT_GLOBAL_ORDER_FOR_FINITE_FULL_COVERAGE_GRID",
+        "far_to_near": [
+          "1",
+          "0"
+        ],
+        "scope": "Requires complete validated full-coverage depths for this sample grid, straight RGBA and no refraction; not arbitrary mesh proof",
+        "performance": "NOT_MEASURED"
+      },
+      "pixels": [
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191
+      ],
+      "max_error": 0,
+      "evidence_binding": {
+        "scene": "sloped_nonintersecting",
+        "order": [
+          "1",
+          "0"
+        ]
+      },
+      "reason": "SOURCE_INPUT_BUDGET_AND_PIXEL_EVIDENCE_VERIFIED"
+    },
+    {
+      "request": {
+        "id": "crossing2-k2-t2",
+        "scene": "crossing2",
+        "layers": [
+          {
+            "id": "0",
+            "plane": [
+              0.1,
+              0.2
+            ],
+            "rgba": [
+              1,
+              0,
+              0,
+              0.5
+            ]
+          },
+          {
+            "id": "1",
+            "plane": [
+              0.9,
+              -0.2
+            ],
+            "rgba": [
+              0,
+              0,
+              1,
+              0.5
+            ]
+          }
+        ],
+        "layer_budget": 2,
+        "quality_max_byte_error": 2,
+        "require_exact": true
+      },
+      "selection": "DEPTH_PEELING",
+      "performance": "NOT_MEASURED",
+      "input_sha256": "848d6437ad0972618c5511213694cb5c9b10ee2ddf6e3c8636e9b45fcebf1467",
+      "independent_cpu_oracle": [
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191
+      ],
+      "weighted_candidate_audit": {
+        "status": "NOT_APPLICABLE_DIFFERENT_REGISTERED_INPUTS",
+        "evidence_scenes": [
+          {
+            "id": "soft-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          },
+          {
+            "id": "high-opacity-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          }
+        ],
+        "exact_fallback_allowed": false
+      },
+      "global_order_decision": {
+        "selection": "UNAVAILABLE",
+        "reason": "CROSSING_PER_PIXEL_ORDER"
+      },
+      "pixels": [
+        128,
+        0,
+        64,
+        192,
+        128,
+        0,
+        64,
+        192,
+        64,
+        0,
+        128,
+        192,
+        64,
+        0,
+        128,
+        192,
+        128,
+        0,
+        64,
+        192,
+        128,
+        0,
+        64,
+        192,
+        64,
+        0,
+        128,
+        192,
+        64,
+        0,
+        128,
+        192,
+        128,
+        0,
+        64,
+        192,
+        128,
+        0,
+        64,
+        192,
+        64,
+        0,
+        128,
+        192,
+        64,
+        0,
+        128,
+        192,
+        128,
+        0,
+        64,
+        192,
+        128,
+        0,
+        64,
+        192,
+        64,
+        0,
+        128,
+        192,
+        64,
+        0,
+        128,
+        192
+      ],
+      "max_error": 1,
+      "evidence_binding": {
+        "scene": "two-crossing",
+        "layer_budget": 2,
+        "actual_query_any_samples": [
+          true,
+          true,
+          false
+        ],
+        "quantized_domain": {
+          "storage": "DEPTH_COMPONENT32F",
+          "quantum": 0.000244140625,
+          "shader": "floor(z*4096+0.5)/4096",
+          "comparison": "z_quantized <= previousDepth; no epsilon",
+          "ties": "reject equal quantized depth bins"
+        }
+      },
+      "reason": "SOURCE_INPUT_BUDGET_AND_PIXEL_EVIDENCE_VERIFIED"
+    },
+    {
+      "request": {
+        "id": "crossing3-k3-t2",
+        "scene": "crossing3",
+        "layers": [
+          {
+            "id": "0",
+            "plane": [
+              0.1,
+              0.2
+            ],
+            "rgba": [
+              1,
+              0,
+              0,
+              0.5
+            ]
+          },
+          {
+            "id": "1",
+            "plane": [
+              0.9,
+              -0.2
+            ],
+            "rgba": [
+              0,
+              0,
+              1,
+              0.5
+            ]
+          },
+          {
+            "id": "2",
+            "plane": [
+              0.45,
+              0
+            ],
+            "rgba": [
+              0,
+              1,
+              0,
+              0.25
+            ]
+          }
+        ],
+        "layer_budget": 3,
+        "quality_max_byte_error": 2,
+        "require_exact": true
+      },
+      "selection": "DEPTH_PEELING",
+      "performance": "NOT_MEASURED",
+      "input_sha256": "cee84ddb1b473e43fd43214848f38fa5d5db42463f47fc5363b6811f741a0434",
+      "independent_cpu_oracle": [
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207,
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207,
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207,
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207
+      ],
+      "weighted_candidate_audit": {
+        "status": "NOT_APPLICABLE_DIFFERENT_REGISTERED_INPUTS",
+        "evidence_scenes": [
+          {
+            "id": "soft-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          },
+          {
+            "id": "high-opacity-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          }
+        ],
+        "exact_fallback_allowed": false
+      },
+      "global_order_decision": {
+        "selection": "UNAVAILABLE",
+        "reason": "CROSSING_PER_PIXEL_ORDER"
+      },
+      "pixels": [
+        128,
+        32,
+        48,
+        208,
+        128,
+        32,
+        48,
+        208,
+        48,
+        32,
+        128,
+        208,
+        48,
+        32,
+        128,
+        208,
+        128,
+        32,
+        48,
+        208,
+        128,
+        32,
+        48,
+        208,
+        48,
+        32,
+        128,
+        208,
+        48,
+        32,
+        128,
+        208,
+        128,
+        32,
+        48,
+        208,
+        128,
+        32,
+        48,
+        208,
+        48,
+        32,
+        128,
+        208,
+        48,
+        32,
+        128,
+        208,
+        128,
+        32,
+        48,
+        208,
+        128,
+        32,
+        48,
+        208,
+        48,
+        32,
+        128,
+        208,
+        48,
+        32,
+        128,
+        208
+      ],
+      "max_error": 1,
+      "evidence_binding": {
+        "scene": "three-012",
+        "layer_budget": 3,
+        "actual_query_any_samples": [
+          true,
+          true,
+          true,
+          false
+        ],
+        "quantized_domain": {
+          "storage": "DEPTH_COMPONENT32F",
+          "quantum": 0.000244140625,
+          "shader": "floor(z*4096+0.5)/4096",
+          "comparison": "z_quantized <= previousDepth; no epsilon",
+          "ties": "reject equal quantized depth bins"
+        }
+      },
+      "reason": "SOURCE_INPUT_BUDGET_AND_PIXEL_EVIDENCE_VERIFIED"
+    },
+    {
+      "request": {
+        "id": "crossing3-k2-t2",
+        "scene": "crossing3",
+        "layers": [
+          {
+            "id": "0",
+            "plane": [
+              0.1,
+              0.2
+            ],
+            "rgba": [
+              1,
+              0,
+              0,
+              0.5
+            ]
+          },
+          {
+            "id": "1",
+            "plane": [
+              0.9,
+              -0.2
+            ],
+            "rgba": [
+              0,
+              0,
+              1,
+              0.5
+            ]
+          },
+          {
+            "id": "2",
+            "plane": [
+              0.45,
+              0
+            ],
+            "rgba": [
+              0,
+              1,
+              0,
+              0.25
+            ]
+          }
+        ],
+        "layer_budget": 2,
+        "quality_max_byte_error": 2,
+        "require_exact": true
+      },
+      "selection": "UNAVAILABLE",
+      "performance": "NOT_MEASURED",
+      "input_sha256": "cee84ddb1b473e43fd43214848f38fa5d5db42463f47fc5363b6811f741a0434",
+      "independent_cpu_oracle": [
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207,
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207,
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207,
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207
+      ],
+      "weighted_candidate_audit": {
+        "status": "NOT_APPLICABLE_DIFFERENT_REGISTERED_INPUTS",
+        "evidence_scenes": [
+          {
+            "id": "soft-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          },
+          {
+            "id": "high-opacity-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          }
+        ],
+        "exact_fallback_allowed": false
+      },
+      "global_order_decision": {
+        "selection": "UNAVAILABLE",
+        "reason": "CROSSING_PER_PIXEL_ORDER"
+      },
+      "reason": "LAYER_BUDGET_OVERFLOW"
+    },
+    {
+      "request": {
+        "id": "crossing2-k1-t2",
+        "scene": "crossing2",
+        "layers": [
+          {
+            "id": "0",
+            "plane": [
+              0.1,
+              0.2
+            ],
+            "rgba": [
+              1,
+              0,
+              0,
+              0.5
+            ]
+          },
+          {
+            "id": "1",
+            "plane": [
+              0.9,
+              -0.2
+            ],
+            "rgba": [
+              0,
+              0,
+              1,
+              0.5
+            ]
+          }
+        ],
+        "layer_budget": 1,
+        "quality_max_byte_error": 2,
+        "require_exact": true
+      },
+      "selection": "UNAVAILABLE",
+      "performance": "NOT_MEASURED",
+      "input_sha256": "848d6437ad0972618c5511213694cb5c9b10ee2ddf6e3c8636e9b45fcebf1467",
+      "independent_cpu_oracle": [
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        128,
+        0,
+        64,
+        191,
+        128,
+        0,
+        64,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191
+      ],
+      "weighted_candidate_audit": {
+        "status": "NOT_APPLICABLE_DIFFERENT_REGISTERED_INPUTS",
+        "evidence_scenes": [
+          {
+            "id": "soft-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          },
+          {
+            "id": "high-opacity-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          }
+        ],
+        "exact_fallback_allowed": false
+      },
+      "global_order_decision": {
+        "selection": "UNAVAILABLE",
+        "reason": "CROSSING_PER_PIXEL_ORDER"
+      },
+      "reason": "BUDGET_NOT_CAPTURED"
+    },
+    {
+      "request": {
+        "id": "crossing3-k3-t0",
+        "scene": "crossing3",
+        "layers": [
+          {
+            "id": "0",
+            "plane": [
+              0.1,
+              0.2
+            ],
+            "rgba": [
+              1,
+              0,
+              0,
+              0.5
+            ]
+          },
+          {
+            "id": "1",
+            "plane": [
+              0.9,
+              -0.2
+            ],
+            "rgba": [
+              0,
+              0,
+              1,
+              0.5
+            ]
+          },
+          {
+            "id": "2",
+            "plane": [
+              0.45,
+              0
+            ],
+            "rgba": [
+              0,
+              1,
+              0,
+              0.25
+            ]
+          }
+        ],
+        "layer_budget": 3,
+        "quality_max_byte_error": 0,
+        "require_exact": true
+      },
+      "selection": "UNAVAILABLE",
+      "performance": "NOT_MEASURED",
+      "input_sha256": "cee84ddb1b473e43fd43214848f38fa5d5db42463f47fc5363b6811f741a0434",
+      "independent_cpu_oracle": [
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207,
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207,
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207,
+        128,
+        32,
+        48,
+        207,
+        128,
+        32,
+        48,
+        207,
+        48,
+        32,
+        128,
+        207,
+        48,
+        32,
+        128,
+        207
+      ],
+      "weighted_candidate_audit": {
+        "status": "NOT_APPLICABLE_DIFFERENT_REGISTERED_INPUTS",
+        "evidence_scenes": [
+          {
+            "id": "soft-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          },
+          {
+            "id": "high-opacity-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          }
+        ],
+        "exact_fallback_allowed": false
+      },
+      "global_order_decision": {
+        "selection": "UNAVAILABLE",
+        "reason": "CROSSING_PER_PIXEL_ORDER"
+      },
+      "pixels": [
+        128,
+        32,
+        48,
+        208,
+        128,
+        32,
+        48,
+        208,
+        48,
+        32,
+        128,
+        208,
+        48,
+        32,
+        128,
+        208,
+        128,
+        32,
+        48,
+        208,
+        128,
+        32,
+        48,
+        208,
+        48,
+        32,
+        128,
+        208,
+        48,
+        32,
+        128,
+        208,
+        128,
+        32,
+        48,
+        208,
+        128,
+        32,
+        48,
+        208,
+        48,
+        32,
+        128,
+        208,
+        48,
+        32,
+        128,
+        208,
+        128,
+        32,
+        48,
+        208,
+        128,
+        32,
+        48,
+        208,
+        48,
+        32,
+        128,
+        208,
+        48,
+        32,
+        128,
+        208
+      ],
+      "max_error": 1,
+      "evidence_binding": {
+        "scene": "three-012",
+        "layer_budget": 3,
+        "actual_query_any_samples": [
+          true,
+          true,
+          true,
+          false
+        ],
+        "quantized_domain": {
+          "storage": "DEPTH_COMPONENT32F",
+          "quantum": 0.000244140625,
+          "shader": "floor(z*4096+0.5)/4096",
+          "comparison": "z_quantized <= previousDepth; no epsilon",
+          "ties": "reject equal quantized depth bins"
+        }
+      },
+      "reason": "REQUEST_QUALITY_NOT_MET"
+    },
+    {
+      "request": {
+        "id": "ties-k2-t2",
+        "scene": "ties",
+        "layers": [
+          {
+            "id": "0",
+            "plane": [
+              0.5,
+              0
+            ],
+            "rgba": [
+              1,
+              0,
+              0,
+              0.5
+            ]
+          },
+          {
+            "id": "1",
+            "plane": [
+              0.5,
+              0
+            ],
+            "rgba": [
+              0,
+              0,
+              1,
+              0.5
+            ]
+          }
+        ],
+        "layer_budget": 2,
+        "quality_max_byte_error": 2,
+        "require_exact": true
+      },
+      "selection": "UNAVAILABLE",
+      "performance": "NOT_MEASURED",
+      "input_sha256": "8a1e6cb6bff57e8cdfffbfaec4ab7e72bcdf9cda7c37165dca6e06a2a4af457f",
+      "independent_cpu_oracle": [
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191,
+        64,
+        0,
+        128,
+        191
+      ],
+      "weighted_candidate_audit": {
+        "status": "NOT_APPLICABLE_DIFFERENT_REGISTERED_INPUTS",
+        "evidence_scenes": [
+          {
+            "id": "soft-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          },
+          {
+            "id": "high-opacity-colored",
+            "quality_status": "REJECTED_APPROXIMATION",
+            "selection": "SORTED_ALPHA"
+          }
+        ],
+        "exact_fallback_allowed": false
+      },
+      "global_order_decision": {
+        "selection": "UNAVAILABLE",
+        "reason": "AMBIGUOUS_TIE"
+      },
+      "reason": "UNSUPPORTED_GEOMETRY_AMBIGUOUS_TIE"
+    }
+  ],
+  "actual_full_suite_counts": {
+    "draws": 278,
+    "readbacks": 65,
+    "occlusion_queries": 38
+  },
+  "physical_device": "NOT_RUN",
+  "performance": "NOT_MEASURED",
+  "scope": "Closed fixed full-coverage analytic samples; not generic renderer or original W7/W8 release acceptance",
+  "default_suite_acceptance": "PASS"
+}

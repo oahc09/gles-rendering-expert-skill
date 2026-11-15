@@ -43,3 +43,5 @@ Public artifacts exclude local paths and OS/library fingerprints. `mesa.json` an
 For the algebraic limitation of fixed depth-only weights and the finite strict-order guard, see [exact-policy analysis](../../benchmarks/coverage/weighted-oit/exact-policy-analysis.md). It rejects crossing/tied inputs instead of presenting sorted alpha as a universal exact fallback.
 
 For a separately validated finite crossing-layer alternative, see [bounded GLES3 depth peeling](../../benchmarks/coverage/depth-peeling/README.md). Its K+1 overflow proof and depth-domain rejection are mandatory; the original weighted-OIT approximation has not been changed or reclassified.
+
+The [finite integration adapter](transparency-routing.md) executes and validates the full source-bound evidence chain before selecting a route. Exact requests with unavailable evidence, inadequate budget or failed quality remain unavailable rather than silently choosing approximation.

@@ -61,6 +61,7 @@
     "benchmarks/coverage/distance-text",
     "benchmarks/coverage/weighted-oit",
     "benchmarks/coverage/texture-buffer",
-    "benchmarks/coverage/depth-peeling"
+    "benchmarks/coverage/depth-peeling",
+    "benchmarks/coverage/transparency-routing"
   ]
 }
