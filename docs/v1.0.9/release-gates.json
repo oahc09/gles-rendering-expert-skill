@@ -54,7 +54,7 @@
         "benchmarks/overlap_scenes/projected.py",
         "benchmarks/overlap_scenes/advanced.py"
       ],
-      "remaining": "Original RGBA8 Mesa24/48 CPU-golden failures retained. Quantization models support a precision explanation, not confirmed installed-driver root cause or bug. Capability-gated RGBA32F linear composition is a separate contract, not original UNORM equivalence. Larger scale, general background merge, volume/rain distributions and depth/background statistics remain incomplete. Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition.",
+      "remaining": "Original RGBA8 Mesa24/48 CPU-golden failures retained. Quantization models support a precision explanation, not confirmed installed-driver root cause or bug. Capability-gated RGBA32F linear composition is a separate contract, not original UNORM equivalence. Larger scale, general background merge, volume/rain distributions and depth/background statistics remain incomplete. Format/target-specific quality, capability and logical budget admission plus actual selected redraw now implemented; no physical budget/performance acceptance. Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition.",
       "host_delivery": "PARTIAL",
       "acceptance": "PARTIAL_HOST_SCOPE"
     },

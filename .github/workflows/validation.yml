@@ -169,6 +169,7 @@ jobs:
       - name: v1.0.9 tier quality gate contract (not all-tier visual acceptance)
         run: |
           for driver in mesa angle; do
+            python3 benchmarks/overlap_scenes/precision_replay.py --config /tmp/v109-$driver.json --output reports/v109-precision-admission-$driver.json
             python3 benchmarks/overlap_scenes/blend_precision.py --config /tmp/v109-$driver.json --output reports/v109-blend-precision-$driver.json --require-contract-only
             python3 benchmarks/overlap_scenes/tiered.py --config /tmp/v109-$driver.json --output reports/v109-tiered-$driver.json --require-harness-only
           done

@@ -112,3 +112,13 @@ retroactive original-tier acceptance.
 W6 adds finite affine oblique-gradient and same-texel locality-permutation
 controls with independent CPU center references. These do not establish general
 high-frequency anisotropic quality or cache/performance improvements.
+
+## Precision admission/fallback cost gate
+The explicit policy now requires per-target quality and format/blend capabilities,
+queried renderbuffer dimension bounds, logical attachment and transfer budgets.
+It selects the cheapest eligible format; when no route meets the original target
+and budget it returns UNAVAILABLE, not a failed RGBA8 fallback. Actual selected
+routes are redrawn and rechecked; rejected routes cause no admission replay.
+Independent quality probes have separately declared finite overhead, not
+production zero-cost switching. RGBA32F+conversion allocation is 5× RGBA8 here,
+with >4× modeled logical transfers; no physical bandwidth/timing claim.

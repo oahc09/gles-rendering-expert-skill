@@ -280,3 +280,19 @@ Independent repeated affine texture/locality runs also return HOST_PASS on both
 backends, four readbacks each with zero error against their finite CPU reference.
 
 Current complete regression: **945 tests, zero skips**, 36 directories; `evidence/host-regression-blend-precision.json`. Both final-source precision runners independently re-executed; their intentional half/UNORM failure remains distinct from the float32 contract pass.
+
+## Precision capability, cost and fallback admission
+Added a strict single-sample policy plus actual selected-format replay.
+original_unorm and linear quality are separately computed; capability and size,
+logical allocation and logical transfer budgets all gate selection. Among
+eligible routes choose cheapest, not automatically RGBA32F. All-rejected cases
+are UNAVAILABLE with zero additional replay operations. Selected candidates are
+actually redrawn and quality checked, not accepted from a cached PASS flag.
+
+For64×64×48, RGBA32F plus conversion output uses81,920 logical bytes (5× baseline)
+and6,373,376 modeled transfer bytes (>4× baseline). These are not physical
+residency/DRAM/time. Candidate probes are independent bounded validation overhead
+before scenario admission, explicitly not a zero-cost production switcher.
+Original Mesa UNORM failures are still unresolved; hardware/provider unchanged.
+
+Current complete regression: **967 tests, zero skips**, 36 directories. Final-source admission runners independently returned HOST_PASS; Mesa34/ANGLE28 of48 policy scenarios are explicitly UNAVAILABLE, not accepted scenes.

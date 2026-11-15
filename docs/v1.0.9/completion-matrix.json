@@ -76,10 +76,12 @@
         "benchmarks/overlap_scenes/tiered.py",
         "benchmarks/overlap_scenes/TIERED.md",
         "benchmarks/overlap_scenes/blend_precision.py",
-        "benchmarks/overlap_scenes/evidence/tiered-baseline-bias.json"
+        "benchmarks/overlap_scenes/evidence/tiered-baseline-bias.json",
+        "benchmarks/overlap_scenes/precision_policy.py",
+        "benchmarks/overlap_scenes/precision_replay.py"
       ],
       "remaining_host": [
-        "Original RGBA8 Mesa24/48 CPU-golden failures retained. Quantization models support a precision explanation, not confirmed installed-driver root cause or bug. Capability-gated RGBA32F linear composition is a separate contract, not original UNORM equivalence. Larger scale, general background merge, volume/rain distributions and depth/background statistics remain incomplete."
+        "Original RGBA8 Mesa24/48 CPU-golden failures retained. Quantization models support a precision explanation, not confirmed installed-driver root cause or bug. Capability-gated RGBA32F linear composition is a separate contract, not original UNORM equivalence. Larger scale, general background merge, volume/rain distributions and depth/background statistics remain incomplete. Format/target-specific quality, capability and logical budget admission plus actual selected redraw now implemented; no physical budget/performance acceptance."
       ],
       "external_requirements": [
         "Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition."
