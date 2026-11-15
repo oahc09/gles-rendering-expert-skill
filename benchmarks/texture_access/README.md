@@ -147,3 +147,23 @@ optimization status is always **REJECTED_BY_QUALITY**, never a successful
 optimization. Smooth software correctness yields **INSUFFICIENT_EVIDENCE** for
 performance. Automatic acceptance and verified improvement are always false.
 Integration tests exercise these distinctions against the actual saved reports.
+
+## Oblique footprint and locality follow-up
+
+`oblique.py --config DRIVER.json --output REPORT.json` uploads a 64×64 affine
+RGBA ramp, rather than the old constant-red image. Two mip0 texelFetch controls
+access the same sixteen texels in coherent versus permuted order; CPU expected
+values are calculated from coordinates, not fitted to GPU output. They must match
+exactly. They establish sampling correctness, not a cache hit or speedup claim.
+
+The oblique control uses explicit gradients (0.125,0) and (0.02,0.0078125),
+including shear and unequal footprint axes; real mipmaps are generated. It
+compares legal extension-capped anisotropy (up to2) with a forced1 isotropic
+trilinear fallback. When the extension is missing no extension parameter is set.
+The oracle is the center value of an affine ramp away from edges: R=256u−2,
+G=256v−2, B=64, A=255, with fixed channel tolerance3 for mip/filter quantization.
+This is a finite footprint/coordinate/mip correctness check, not an oracle for
+arbitrary implementation-dependent anisotropic kernels or high-frequency image
+quality. No claim is made that anisotropy should improve this affine image.
+General oblique-detail quality and GPU locality/bandwidth performance remain open.
+Reports contain actual pixels and safe source hashes, without host fingerprints.

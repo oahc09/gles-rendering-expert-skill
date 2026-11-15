@@ -1,0 +1,403 @@
+{
+  "status": "DIAGNOSTIC_NOT_CAUSAL_PROOF",
+  "scope": "Reanalysis of retained baseline RGBA8 readbacks; no rerender or threshold change",
+  "interpretation": "Layer-dependent signed bias is compatible with quantization differences; not alone evidence of source, hardware precision, or driver bug.",
+  "rows": [
+    {
+      "backend": "mesa",
+      "tier": 8,
+      "camera": -0.3,
+      "report_sha256": "2aa88ea113831cfdf887cc16b86684afc8a7bf8c6951e26701f279c4753af720",
+      "baseline_pixel_sha256": "b657111627b3ef4c4e5fb3e512f6aa7ff288ba324c551e37bb70d188415f98b3",
+      "cpu_pixel_sha256": "1c7ce3ff5349219bfb5a97962e0b090d06e5044c33ea6fa952392a973ca565e7",
+      "channel_max_abs": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "channel_signed_sum": [
+        89,
+        37,
+        104,
+        21
+      ],
+      "positive_channels": 331,
+      "negative_channels": 102
+    },
+    {
+      "backend": "mesa",
+      "tier": 8,
+      "camera": 0,
+      "report_sha256": "2aa88ea113831cfdf887cc16b86684afc8a7bf8c6951e26701f279c4753af720",
+      "baseline_pixel_sha256": "240d67c43fa2831e49fadc6ce398ae97081d2254431316ce4166a35d5764e821",
+      "cpu_pixel_sha256": "d6eca54d48a936005d2e81345c2bfa33f021dcece34c014f709bd415bfcb4d53",
+      "channel_max_abs": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "channel_signed_sum": [
+        129,
+        30,
+        129,
+        32
+      ],
+      "positive_channels": 382,
+      "negative_channels": 92
+    },
+    {
+      "backend": "mesa",
+      "tier": 8,
+      "camera": 0.3,
+      "report_sha256": "2aa88ea113831cfdf887cc16b86684afc8a7bf8c6951e26701f279c4753af720",
+      "baseline_pixel_sha256": "56968d7e80af213fc139607902672b9c07bd2cb86f6468865bd0528b18876d89",
+      "cpu_pixel_sha256": "c5e361b88ab70fab89e71638772a13f70c2867b26660d680b36b22b9ee488b7b",
+      "channel_max_abs": [
+        3,
+        1,
+        2,
+        1
+      ],
+      "channel_signed_sum": [
+        89,
+        13,
+        90,
+        14
+      ],
+      "positive_channels": 307,
+      "negative_channels": 119
+    },
+    {
+      "backend": "mesa",
+      "tier": 24,
+      "camera": -0.3,
+      "report_sha256": "2aa88ea113831cfdf887cc16b86684afc8a7bf8c6951e26701f279c4753af720",
+      "baseline_pixel_sha256": "f3baf730a0f057fd216f7dcaa6bde3545e939552bfd32ca9146127f08cd93838",
+      "cpu_pixel_sha256": "56dd52d3133628a88a7d2a1b7dd5bde9e201ce9ff57cd6d05220c0b7260cc401",
+      "channel_max_abs": [
+        4,
+        4,
+        5,
+        3
+      ],
+      "channel_signed_sum": [
+        331,
+        116,
+        331,
+        100
+      ],
+      "positive_channels": 831,
+      "negative_channels": 242
+    },
+    {
+      "backend": "mesa",
+      "tier": 24,
+      "camera": 0,
+      "report_sha256": "2aa88ea113831cfdf887cc16b86684afc8a7bf8c6951e26701f279c4753af720",
+      "baseline_pixel_sha256": "c60dad028bac1f22fac79fbd52139062d8e499bc35756ea41b37509f710601e4",
+      "cpu_pixel_sha256": "6269355d53e435d7fb0cc6bcaa7d0d657f1952f8a7c20cc54a539f5193ac1a1e",
+      "channel_max_abs": [
+        6,
+        4,
+        6,
+        5
+      ],
+      "channel_signed_sum": [
+        419,
+        148,
+        419,
+        118
+      ],
+      "positive_channels": 759,
+      "negative_channels": 257
+    },
+    {
+      "backend": "mesa",
+      "tier": 24,
+      "camera": 0.3,
+      "report_sha256": "2aa88ea113831cfdf887cc16b86684afc8a7bf8c6951e26701f279c4753af720",
+      "baseline_pixel_sha256": "525e3c2a6d3bac714b88ffa6afdec880f6f8c6a60492dc64d5e71dd689696108",
+      "cpu_pixel_sha256": "38710fd6662e621a568d9d9fdeb2df81fcc2b52932dbeb5223cc752272b0ed07",
+      "channel_max_abs": [
+        4,
+        4,
+        5,
+        3
+      ],
+      "channel_signed_sum": [
+        322,
+        139,
+        328,
+        88
+      ],
+      "positive_channels": 851,
+      "negative_channels": 245
+    },
+    {
+      "backend": "mesa",
+      "tier": 48,
+      "camera": -0.3,
+      "report_sha256": "2aa88ea113831cfdf887cc16b86684afc8a7bf8c6951e26701f279c4753af720",
+      "baseline_pixel_sha256": "33060d94d74f7ec2ae0c2b6c6c017bf1b9070d02d5e86bc64ffcc93956cf8473",
+      "cpu_pixel_sha256": "b4ace02e6df2a73159b3c1b2b04a8b016d9dfc2e43ff24afdc4577a0732d644c",
+      "channel_max_abs": [
+        6,
+        8,
+        7,
+        5
+      ],
+      "channel_signed_sum": [
+        599,
+        244,
+        613,
+        195
+      ],
+      "positive_channels": 1141,
+      "negative_channels": 353
+    },
+    {
+      "backend": "mesa",
+      "tier": 48,
+      "camera": 0,
+      "report_sha256": "2aa88ea113831cfdf887cc16b86684afc8a7bf8c6951e26701f279c4753af720",
+      "baseline_pixel_sha256": "4d35db771f5e9447785924aac839e59b8b1e51124687315c3719a80a04c41074",
+      "cpu_pixel_sha256": "eda9216013863959b8408063ed73f928a1521b8b68f974ba3828abf165bcd1bd",
+      "channel_max_abs": [
+        11,
+        9,
+        11,
+        8
+      ],
+      "channel_signed_sum": [
+        790,
+        315,
+        790,
+        284
+      ],
+      "positive_channels": 938,
+      "negative_channels": 416
+    },
+    {
+      "backend": "mesa",
+      "tier": 48,
+      "camera": 0.3,
+      "report_sha256": "2aa88ea113831cfdf887cc16b86684afc8a7bf8c6951e26701f279c4753af720",
+      "baseline_pixel_sha256": "cdf870902d6ec51ee654e036965c9b4e6232e05d7d0c2d76ba86e93188c47d8a",
+      "cpu_pixel_sha256": "bf0274d739720220fab3f34c6a32e64fce08154605c181a684f0598690769d1f",
+      "channel_max_abs": [
+        7,
+        6,
+        7,
+        4
+      ],
+      "channel_signed_sum": [
+        606,
+        208,
+        615,
+        199
+      ],
+      "positive_channels": 1130,
+      "negative_channels": 351
+    },
+    {
+      "backend": "angle",
+      "tier": 8,
+      "camera": -0.3,
+      "report_sha256": "b335bdf2d08c3e4db78176c9fcb506bee7d593f066bb1bb4ef1beb3dd22cdc1b",
+      "baseline_pixel_sha256": "1c7ce3ff5349219bfb5a97962e0b090d06e5044c33ea6fa952392a973ca565e7",
+      "cpu_pixel_sha256": "1c7ce3ff5349219bfb5a97962e0b090d06e5044c33ea6fa952392a973ca565e7",
+      "channel_max_abs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channel_signed_sum": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_channels": 0,
+      "negative_channels": 0
+    },
+    {
+      "backend": "angle",
+      "tier": 8,
+      "camera": 0,
+      "report_sha256": "b335bdf2d08c3e4db78176c9fcb506bee7d593f066bb1bb4ef1beb3dd22cdc1b",
+      "baseline_pixel_sha256": "d6eca54d48a936005d2e81345c2bfa33f021dcece34c014f709bd415bfcb4d53",
+      "cpu_pixel_sha256": "d6eca54d48a936005d2e81345c2bfa33f021dcece34c014f709bd415bfcb4d53",
+      "channel_max_abs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channel_signed_sum": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_channels": 0,
+      "negative_channels": 0
+    },
+    {
+      "backend": "angle",
+      "tier": 8,
+      "camera": 0.3,
+      "report_sha256": "b335bdf2d08c3e4db78176c9fcb506bee7d593f066bb1bb4ef1beb3dd22cdc1b",
+      "baseline_pixel_sha256": "c5e361b88ab70fab89e71638772a13f70c2867b26660d680b36b22b9ee488b7b",
+      "cpu_pixel_sha256": "c5e361b88ab70fab89e71638772a13f70c2867b26660d680b36b22b9ee488b7b",
+      "channel_max_abs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channel_signed_sum": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_channels": 0,
+      "negative_channels": 0
+    },
+    {
+      "backend": "angle",
+      "tier": 24,
+      "camera": -0.3,
+      "report_sha256": "b335bdf2d08c3e4db78176c9fcb506bee7d593f066bb1bb4ef1beb3dd22cdc1b",
+      "baseline_pixel_sha256": "56dd52d3133628a88a7d2a1b7dd5bde9e201ce9ff57cd6d05220c0b7260cc401",
+      "cpu_pixel_sha256": "56dd52d3133628a88a7d2a1b7dd5bde9e201ce9ff57cd6d05220c0b7260cc401",
+      "channel_max_abs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channel_signed_sum": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_channels": 0,
+      "negative_channels": 0
+    },
+    {
+      "backend": "angle",
+      "tier": 24,
+      "camera": 0,
+      "report_sha256": "b335bdf2d08c3e4db78176c9fcb506bee7d593f066bb1bb4ef1beb3dd22cdc1b",
+      "baseline_pixel_sha256": "6269355d53e435d7fb0cc6bcaa7d0d657f1952f8a7c20cc54a539f5193ac1a1e",
+      "cpu_pixel_sha256": "6269355d53e435d7fb0cc6bcaa7d0d657f1952f8a7c20cc54a539f5193ac1a1e",
+      "channel_max_abs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channel_signed_sum": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_channels": 0,
+      "negative_channels": 0
+    },
+    {
+      "backend": "angle",
+      "tier": 24,
+      "camera": 0.3,
+      "report_sha256": "b335bdf2d08c3e4db78176c9fcb506bee7d593f066bb1bb4ef1beb3dd22cdc1b",
+      "baseline_pixel_sha256": "38710fd6662e621a568d9d9fdeb2df81fcc2b52932dbeb5223cc752272b0ed07",
+      "cpu_pixel_sha256": "38710fd6662e621a568d9d9fdeb2df81fcc2b52932dbeb5223cc752272b0ed07",
+      "channel_max_abs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channel_signed_sum": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_channels": 0,
+      "negative_channels": 0
+    },
+    {
+      "backend": "angle",
+      "tier": 48,
+      "camera": -0.3,
+      "report_sha256": "b335bdf2d08c3e4db78176c9fcb506bee7d593f066bb1bb4ef1beb3dd22cdc1b",
+      "baseline_pixel_sha256": "b4ace02e6df2a73159b3c1b2b04a8b016d9dfc2e43ff24afdc4577a0732d644c",
+      "cpu_pixel_sha256": "b4ace02e6df2a73159b3c1b2b04a8b016d9dfc2e43ff24afdc4577a0732d644c",
+      "channel_max_abs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channel_signed_sum": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_channels": 0,
+      "negative_channels": 0
+    },
+    {
+      "backend": "angle",
+      "tier": 48,
+      "camera": 0,
+      "report_sha256": "b335bdf2d08c3e4db78176c9fcb506bee7d593f066bb1bb4ef1beb3dd22cdc1b",
+      "baseline_pixel_sha256": "eda9216013863959b8408063ed73f928a1521b8b68f974ba3828abf165bcd1bd",
+      "cpu_pixel_sha256": "eda9216013863959b8408063ed73f928a1521b8b68f974ba3828abf165bcd1bd",
+      "channel_max_abs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channel_signed_sum": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_channels": 0,
+      "negative_channels": 0
+    },
+    {
+      "backend": "angle",
+      "tier": 48,
+      "camera": 0.3,
+      "report_sha256": "b335bdf2d08c3e4db78176c9fcb506bee7d593f066bb1bb4ef1beb3dd22cdc1b",
+      "baseline_pixel_sha256": "bf0274d739720220fab3f34c6a32e64fce08154605c181a684f0598690769d1f",
+      "cpu_pixel_sha256": "bf0274d739720220fab3f34c6a32e64fce08154605c181a684f0598690769d1f",
+      "channel_max_abs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channel_signed_sum": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_channels": 0,
+      "negative_channels": 0
+    }
+  ]
+}

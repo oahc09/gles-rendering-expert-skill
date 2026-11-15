@@ -93,3 +93,22 @@ and rejects checkerboard degradation without relaxing quality budgets.
   independent reviewer/provider verdicts remain absent.
 - W10 binds the four inspected source reviews to bounded experiment/test hashes.
   Integrity checks do not create independent review or promote performance rules.
+
+## Blend precision diagnosis (original threshold unchanged)
+Retained readback analysis shows layer-dependent positive error. Alternative
+source-UNORM and split-product rounding models reduce the discrepancy but do not
+fully explain it. GLES permits internal fixed-point blending/rounding choices;
+this does not establish a bug or the installed implementation's exact cause.
+
+Actual capability-gated RGBA32F accumulation then RGBA8 conversion matches the
+independent linear reference exactly on both software backends across nine views.
+It remains a **different precision contract**, not equivalence to the original
+per-layer RGBA8 reference; original-reference silhouette comparisons still fail
+some cases. RGBA16F also retains Mesa's 8-object central-view silhouette failure.
+No original failures or budgets were changed. See blend_precision report's
+original/half/linear comparisons rather than treating its float32 PASS as a
+retroactive original-tier acceptance.
+
+W6 adds finite affine oblique-gradient and same-texel locality-permutation
+controls with independent CPU center references. These do not establish general
+high-frequency anisotropic quality or cache/performance improvements.

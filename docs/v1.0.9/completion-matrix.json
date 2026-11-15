@@ -74,10 +74,12 @@
         "benchmarks/overlap_scenes/projected.py",
         "benchmarks/overlap_scenes/advanced.py",
         "benchmarks/overlap_scenes/tiered.py",
-        "benchmarks/overlap_scenes/TIERED.md"
+        "benchmarks/overlap_scenes/TIERED.md",
+        "benchmarks/overlap_scenes/blend_precision.py",
+        "benchmarks/overlap_scenes/evidence/tiered-baseline-bias.json"
       ],
       "remaining_host": [
-        "Tiered 8/24/48 screen-disjoint grouping and half-resolution actual replay implemented, but Mesa 24/48 baseline CPU-golden errors exceed unchanged thresholds; root cause unresolved. Larger scale, general background merge, volume/rain distributions and depth/background-specific statistics remain incomplete."
+        "Original RGBA8 Mesa24/48 CPU-golden failures retained. Quantization models support a precision explanation, not confirmed installed-driver root cause or bug. Capability-gated RGBA32F linear composition is a separate contract, not original UNORM equivalence. Larger scale, general background merge, volume/rain distributions and depth/background statistics remain incomplete."
       ],
       "external_requirements": [
         "Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition."
@@ -109,10 +111,11 @@
         "benchmarks/texture_access/mechanisms.py",
         "benchmarks/texture_access/ktx2_experiment.py",
         "benchmarks/texture_streaming/run.py",
-        "benchmarks/texture_streaming/progressive.py"
+        "benchmarks/texture_streaming/progressive.py",
+        "benchmarks/texture_access/oblique.py"
       ],
       "remaining_host": [
-        "Synchronous explicit RGBA mip refinement with budget/quality/restore now implemented; compressed/asynchronous streaming, representative oblique anisotropy/locality distributions and isolated transcoder phase accounting remain incomplete."
+        "Synchronous mip refinement and finite affine oblique/locality controls implemented; high-frequency/general anisotropic quality, compressed/asynchronous streaming and isolated transcoder phase accounting remain incomplete."
       ],
       "external_requirements": [
         "Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics."

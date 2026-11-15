@@ -260,3 +260,23 @@ results. W10 source-review/experiment/test hash links reject stale bindings and
 unauthorized rule promotion; full corpus/vendor/X and independent review remain.
 
 Complete host regression for this increment: **934 tests, zero skips**, 36 directories; summary `evidence/host-regression-scene-collector.json`. This does not override the explicitly failed Mesa high-tier images.
+
+## Quantitative blend-precision investigation
+RGBA8 source quantization/split-product hypotheses reduce but do not eliminate
+Mesa's discrepancy; installed-driver root cause remains unconfirmed. Original
+RGBA8 evidence/thresholds stay unchanged. RGBA16F and capability-gated RGBA32F
+are actually rendered and compared against three explicitly different reference
+contracts (original per-layer UNORM, half accumulation, ideal linear).
+
+RGBA32F matches ideal linear RGBA8 output exactly for all nine views on both
+backends and rejects deliberate object removal. It is not a lossless fix for the
+original UNORM target: original-reference silhouettes can still differ.
+RGBA16F retains Mesa central-view eight-object silhouette FAIL. Missing advertised
+capabilities are NOT_SUPPORTED, while compile/FBO/GL errors fail rather than
+being swallowed as successful skips. CI's explicit float32 contract check does
+not overwrite any retained half/UNORM failure.
+
+Independent repeated affine texture/locality runs also return HOST_PASS on both
+backends, four readbacks each with zero error against their finite CPU reference.
+
+Current complete regression: **945 tests, zero skips**, 36 directories; `evidence/host-regression-blend-precision.json`. Both final-source precision runners independently re-executed; their intentional half/UNORM failure remains distinct from the float32 contract pass.
