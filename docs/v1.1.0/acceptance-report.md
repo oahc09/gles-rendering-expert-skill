@@ -13,7 +13,7 @@
 | W6 | HOST_KNOWLEDGE_BOUNDED | Counters/tool names and device workarounds require exact targets, trace, range and expiry; physical evidence absent. |
 | W7 | PARTIAL | 15 categories indexed. Finite examples reused; animation/SDF/MSDF/OIT/multiview representatives not all executed and video target blocked. |
 | W8 | HOST_INDEX_AND_LINK_CONTRACT | Offline reconstruction, pinned online source verification and explicit positive/negative linkage; no assertion of universal semantic acceptance. |
-| W9 | BLOCKED_BY_TOOLCHAIN_AND_HARDWARE | No Android APK/install; Gradle8.9 now verified locally, SDK35/NDK27/CMake/build-tools still missing and their Google SDK agreement acceptance not established. No actual CTS QPA, Windows native or mobile target run. Parser fixtures are not CTS evidence. |
+| W9 | PARTIAL_HOST_CTS_TARGET_BLOCKED | Official pinned software Mesa CTS FBO completeness subset: 578/578 Pass, not certification/full CTS/device coverage. ANGLE CTS initialization blocked before enumeration (0 cases). No Android APK/install; Gradle8.9 verified, SDK35/NDK27/CMake/build-tools and SDK agreement acceptance remain absent. Windows native and mobile target runs not performed. |
 | W10 | BLOCKED_BY_PROVIDER | 100 authored frozen tasks, evaluator integrity and null-score no-provider execution delivered. Semantic deduplication, independent blind review and real paired model outputs unavailable. |
 | W11 | PARTIAL | Review-only governance, no scheduling activation; original plan-window full review and independent acceptance remain incomplete. |
 | W12 | ACCEPTANCE_BLOCKED | Original plan requires hardware/provider and inherited closure; no automatic release, version bump, tag or merge. |

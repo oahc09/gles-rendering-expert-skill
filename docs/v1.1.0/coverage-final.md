@@ -5,8 +5,8 @@ The structural report is `coverage-report.json`, rebuilt from fixed licensed Reg
 - Indexed: frozen GLES2.0–3.2 and cumulative EGL1.4/1.5 snapshots; migration-only GLES1 extension entries are not modern runtime capabilities.
 - Semantic: explicit 24 positive/negative links for 18 distinct APIs plus narrow capability adapters. Remaining Registry entries stay INDEXED_ONLY.
 - Compiled: 16 language-family pairs via actual glslang link and GLES compiler/linker; compile failure controls count as expected negatives, not runtime successes.
-- Runtime: software EGL lifecycle and 48 GL interaction checks, plus inherited bounded software scenes. ANGLE GLES3.2 unavailable stages are PARTIAL, not PASS.
-- Device: BLOCKED_BY_HARDWARE; Android build dependencies separately identified as BLOCKED_BY_TOOLCHAIN.
+- Runtime: software EGL lifecycle and 48 GL interaction checks, plus inherited bounded software scenes. A locally built pinned official GLES3 CTS executable ran the 578-case FBO completeness subset; all case records passed. CI validates its archived evidence, not a fresh CTS run. ANGLE GLES3.2 unavailable stages are PARTIAL, not PASS.
+- Device: BLOCKED_BY_HARDWARE; Android SDK components and unresolved SDK agreement acceptance remain separate build blockers; verified Gradle alone is not an APK.
 - Provider: BLOCKED_BY_PROVIDER; evaluator tests do not establish model scores.
 
 Read the acceptance matrix before describing completeness. Public evidence omits private machine fingerprints and does not substitute hashes for independently authenticated measurements.

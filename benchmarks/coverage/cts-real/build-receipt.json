@@ -1,0 +1,23 @@
+{
+  "source_revision": "5bb4c7e83acea0fc73e3333625e4f20542e584d0",
+  "tracked_source_clean": true,
+  "dependencies": {
+    "vulkansc-pcutil": "9723c1288a33f902a8129eda8f3f7577d4716b00",
+    "video_generator": "9703a0c9d8dcb25f71860a4978fe73922d05004a",
+    "glslang": "83f75db6ada23801a65eed1cde4763a0a5bfbda6",
+    "vulkan-docs": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+    "spirv-headers": "6efe5ae6b7c6ad29da3f2cc3f164b9c3d72b78b1",
+    "jsoncpp": "89e2973c754a9c02a49974d839779b151e95afd6",
+    "vulkan-video-samples": "91e352c73b7ff597bd537a1bd0753bbd260c0e9b",
+    "amber": "c9f1e2871ccbb0b0564c4a33e359801144f6b7c1",
+    "spirv-tools": "b570f00a782a7bf4006964e8284dd8c10c4c549b"
+  },
+  "dependency_manifest_sha256": "8b708bfab2b103724239be19907cbc4558707d2c0dd0bae2c037bf27a0844fce",
+  "executable_sha256": "19fd19a9bb37e7ce5c6479f84cbe25ea51cebf6bd31c0b6e58cb760ad3d34915",
+  "target": "deqp-gles3",
+  "configure_exit_code": 0,
+  "build_exit_code": 0,
+  "target_platform": "surfaceless",
+  "certification_claim": false,
+  "helper_sha256": "7e876e2e59b4a9440644830ba306f54187ce902d0667d46dbf96170de17dfd6c"
+}

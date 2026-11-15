@@ -53,9 +53,11 @@
         "tools/coverage/priority_boundaries.py",
         "references/coverage/priority-boundaries.json",
         "benchmarks/coverage/extensions/evidence/priority-mesa.json",
-        "benchmarks/coverage/extensions/evidence/priority-angle.json"
+        "benchmarks/coverage/extensions/evidence/priority-angle.json",
+        "benchmarks/coverage/extensions/evidence/astc-decode-mesa.json",
+        "benchmarks/coverage/extensions/evidence/astc-decode-angle.json"
       ],
-      "remaining": "Three initial priority routes plus six narrow reviewed policies. Dual software probes pass Sync/EGLImage/reset-query/ASTC upload; MSRTT not advertised and protected secure path unverified. Multiview/Fetch-PLS/VRS/AHB remain NOT_REVIEWED. Not full extension semantic acceptance."
+      "remaining": "Three initial priority routes plus six narrow reviewed policies. Dual software probes pass Sync/EGLImage/reset-query/ASTC upload and reused constant-block decode; MSRTT not advertised and protected secure path unverified. Multiview/Fetch-PLS/VRS/AHB remain NOT_REVIEWED. Not full extension semantic acceptance."
     },
     "W5": {
       "status": "HOST_BOUNDED",
@@ -93,14 +95,18 @@
       "remaining": "Offline reconstruction, pinned online source verification and explicit positive/negative linkage; no assertion of universal semantic acceptance. Clean offline checkout is INCOMPLETE because public gl.xml is an explicit non-vendored dependency; CI fetches its pinned hash."
     },
     "W9": {
-      "status": "BLOCKED_BY_TOOLCHAIN_AND_HARDWARE",
+      "status": "PARTIAL_HOST_CTS_TARGET_BLOCKED",
       "evidence": [
         "docs/v1.1.0/platform-preflight.json",
         "docs/v1.1.0/platform-matrix.md",
         "tools/coverage/cts_results.py",
-        "benchmarks/coverage/platforms/cts-config.json"
+        "benchmarks/coverage/platforms/cts-config.json",
+        "benchmarks/coverage/cts-real/build-receipt.json",
+        "benchmarks/coverage/cts-real/evidence/mesa/report.json",
+        "benchmarks/coverage/cts-real/evidence/angle/blocked.json",
+        "benchmarks/coverage/android-build/evidence/report.json"
       ],
-      "remaining": "No Android APK/install; SDK/NDK/Gradle dependencies missing. No actual CTS QPA, Windows native or mobile target run. Parser fixtures are not CTS evidence."
+      "remaining": "Official pinned software Mesa CTS FBO completeness subset: 578/578 Pass, not certification/full CTS/device coverage. ANGLE CTS initialization blocked before enumeration (0 cases). No Android APK/install; Gradle8.9 verified, SDK35/NDK27/CMake/build-tools and SDK agreement acceptance remain absent. Windows native and mobile target runs not performed."
     },
     "W10": {
       "status": "BLOCKED_BY_PROVIDER",

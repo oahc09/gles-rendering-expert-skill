@@ -1,0 +1,11 @@
+{
+  "status": "BLOCKED_BEFORE_ENUMERATION",
+  "attempts": 2,
+  "first_blocker": "Dynamic ANGLE loader required an unversioned adjacent GLES library; supplied a symlink to the existing official library.",
+  "remaining_blocker": "Official CTS surfaceless platform with default ANGLE Vulkan display returned EGL_NOT_INITIALIZED (Vulkan initialization error -3).",
+  "enumeration_process_exit_nonzero": true,
+  "executed_cases": 0,
+  "raw_qpa": null,
+  "certification_claim": false,
+  "scope": "This CTS platform initialization route only; other explicit-display ANGLE host tests are independent and do not substitute for CTS."
+}

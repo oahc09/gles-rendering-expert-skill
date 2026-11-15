@@ -50,6 +50,7 @@
     "benchmarks/coverage/governance",
     "benchmarks/coverage/platforms",
     "benchmarks/coverage/state-machine",
-    "benchmarks/coverage/android-build"
+    "benchmarks/coverage/android-build",
+    "benchmarks/coverage/cts-real"
   ]
 }
