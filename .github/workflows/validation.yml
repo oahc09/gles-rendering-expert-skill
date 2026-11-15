@@ -115,6 +115,17 @@ jobs:
         run: python3 benchmarks/agent/v108/api_pipeline.py --config reports/v108-differential/config.json --output reports/v108-api-repairs
       - name: v1.0.8 actual fragment-image repair controls
         run: python3 benchmarks/agent/v108/image_pipeline.py --config reports/v108-repairs/implementations.json --output reports/v108-image-repairs
+      - name: v1.0.9 workload optimization candidate contracts
+        run: |
+          python3 -m unittest discover -s benchmarks/workloads -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/device_portability -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/shader_ab -p 'test_*.py' -v
+          python3 tools/check_v109_gates.py
+      - name: v1.0.9 actual software image controls (not device speedup)
+        run: |
+          echo '{"kind":"mesa","egl":"/usr/lib/x86_64-linux-gnu/libEGL.so.1","gles":"/usr/lib/x86_64-linux-gnu/libGLESv2.so.2"}' > /tmp/v109-mesa.json
+          python3 benchmarks/shader_ab/run.py --config /tmp/v109-mesa.json --output reports/v109-shader-ab.json
+          python3 benchmarks/texture_access/run.py --config /tmp/v109-mesa.json --output reports/v109-textures.json
       - name: Preserve v108 results and failure evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

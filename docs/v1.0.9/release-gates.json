@@ -1,0 +1,86 @@
+{
+  "target_version": "1.0.9",
+  "release_ready": false,
+  "release_authorized": false,
+  "accepted_limitations": [],
+  "prior_release_gate": "docs/v1.0.8/release-gates.json",
+  "work_packages": {
+    "W0": {
+      "status": "PARTIAL",
+      "implementation": [
+        "docs/v1.0.9/baseline-gap.md"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W1": {
+      "status": "PARTIAL",
+      "implementation": [
+        "tools/workload_fingerprint.py"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W2": {
+      "status": "PARTIAL",
+      "implementation": [
+        "tools/estimate_gpu_cost.py"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W3": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/shader_ab/run.py"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W4": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/overlap_scenes/README.md"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W5": {
+      "status": "PARTIAL",
+      "implementation": [
+        "tools/rendergraph_optimizer.py"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W6": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/texture_access/run.py"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W7": {
+      "status": "PARTIAL",
+      "implementation": [
+        "tools/optimization_advisor.py"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W8": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "implementation": [
+        "benchmarks/device_portability/protocol.py"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W9": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "implementation": [
+        "benchmarks/agent/V109_CASES.md"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    },
+    "W10": {
+      "status": "PARTIAL",
+      "implementation": [
+        "docs/v1.0.9/research/ledger.json"
+      ],
+      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+    }
+  }
+}

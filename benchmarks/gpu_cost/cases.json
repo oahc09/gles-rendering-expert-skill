@@ -1,0 +1,275 @@
+[
+  {
+    "id": "base",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 1,
+          "passes": 1,
+          "clear": false,
+          "invalidate": false,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "expected_upper": 800
+  },
+  {
+    "id": "clear",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 1,
+          "passes": 1,
+          "clear": true,
+          "invalidate": false,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "expected_upper": 400
+  },
+  {
+    "id": "invalidate",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 1,
+          "passes": 1,
+          "clear": false,
+          "invalidate": true,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "expected_upper": 400
+  },
+  {
+    "id": "both",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 1,
+          "passes": 1,
+          "clear": true,
+          "invalidate": true,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "expected_upper": 0
+  },
+  {
+    "id": "msaa",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 4,
+          "passes": 1,
+          "clear": false,
+          "invalidate": false,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "expected_upper": 3200
+  },
+  {
+    "id": "resolve",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 4,
+          "passes": 1,
+          "clear": false,
+          "invalidate": false,
+          "resolve": true,
+          "external_consumer": false
+        }
+      ]
+    },
+    "expected_upper": 5200
+  },
+  {
+    "id": "multipass",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 1,
+          "passes": 3,
+          "clear": false,
+          "invalidate": false,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "expected_upper": 2400
+  },
+  {
+    "id": "half-float",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA16F",
+          "width": 10,
+          "height": 10,
+          "samples": 1,
+          "passes": 1,
+          "clear": false,
+          "invalidate": false,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "expected_upper": 1600
+  },
+  {
+    "id": "unknown-format",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "ASTC",
+          "width": 10,
+          "height": 10,
+          "samples": 1,
+          "passes": 1,
+          "clear": false,
+          "invalidate": false,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "expected_upper": null
+  },
+  {
+    "id": "invalid-consumer",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 1,
+          "passes": 1,
+          "clear": false,
+          "invalidate": true,
+          "resolve": false,
+          "external_consumer": true
+        }
+      ]
+    },
+    "invalid": true
+  },
+  {
+    "id": "zero-width",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 0,
+          "height": 10,
+          "samples": 1,
+          "passes": 1,
+          "clear": false,
+          "invalidate": false,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "invalid": true
+  },
+  {
+    "id": "bad-samples",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 3,
+          "passes": 1,
+          "clear": false,
+          "invalidate": false,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "invalid": true
+  },
+  {
+    "id": "negative-passes",
+    "provenance": "synthetic",
+    "input": {
+      "attachments": [
+        {
+          "id": "a",
+          "format": "RGBA8",
+          "width": 10,
+          "height": 10,
+          "samples": 1,
+          "passes": -1,
+          "clear": false,
+          "invalidate": false,
+          "resolve": false,
+          "external_consumer": false
+        }
+      ]
+    },
+    "invalid": true
+  }
+]

@@ -237,3 +237,13 @@ physical-device and provider blockers are not waived by source delivery.
 ## v1.0.6 system candidate
 
 Cross-API AHB/native-fence source, multi-Surface lifecycle, deterministic compute, five advanced effects, twelve precision groups, runtime KTX transcode/video guards, conditional driver records, ten authored compiler reducers and thirty new Agent cases. See [acceptance and limitations](docs/v1.0.6/acceptance.md). Actual software/compile evidence is separated from blocked physical-device/provider acceptance. Metadata remains 1.0.2; no release is claimed.
+
+## v1.0.9 development candidate (not a release)
+
+Incremental workload fingerprints, estimated attachment cost, evidence-constrained
+optimization advice, read-only RenderGraph suggestions, 30 new Agent tasks, and
+bounded software GLES shader/overlap/texture controls. See
+[original plan](docs/v1.0.9/development-plan.md) and
+[validation and remaining scope](docs/v1.0.9/validation-report.md).
+All predecessor gates remain binding. Real GPU/provider acceptance and broader
+original-plan experiments remain incomplete; metadata stays unchanged.

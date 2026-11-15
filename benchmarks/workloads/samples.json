@@ -1,0 +1,405 @@
+[
+  {
+    "workload_id": "cpu_submit",
+    "input": {
+      "workload_id": "cpu_submit",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "cpu_submit_ms": {
+          "value": 9,
+          "unit": "ms",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        },
+        "draw_count": {
+          "value": 501,
+          "unit": "count",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "CPU_SUBMIT"
+    ]
+  },
+  {
+    "workload_id": "bandwidth",
+    "input": {
+      "workload_id": "bandwidth",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "bandwidth_pct_peak": {
+          "value": 81,
+          "unit": "percent",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        },
+        "gpu_ms": {
+          "value": 9,
+          "unit": "ms",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "BANDWIDTH"
+    ]
+  },
+  {
+    "workload_id": "fragment_alu",
+    "input": {
+      "workload_id": "fragment_alu",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "fragment_alu_pct": {
+          "value": 81,
+          "unit": "percent",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        },
+        "gpu_ms": {
+          "value": 9,
+          "unit": "ms",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "FRAGMENT_ALU"
+    ]
+  },
+  {
+    "workload_id": "overdraw_blend",
+    "input": {
+      "workload_id": "overdraw_blend",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "blend_layers": {
+          "value": 5,
+          "unit": "count",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        },
+        "coverage_ratio": {
+          "value": 3,
+          "unit": "ratio",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "OVERDRAW_BLEND"
+    ]
+  },
+  {
+    "workload_id": "vertex_geometry",
+    "input": {
+      "workload_id": "vertex_geometry",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "vertex_busy_pct": {
+          "value": 81,
+          "unit": "percent",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        },
+        "vertex_count": {
+          "value": 100001,
+          "unit": "count",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "VERTEX_GEOMETRY"
+    ]
+  },
+  {
+    "workload_id": "compute",
+    "input": {
+      "workload_id": "compute",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "compute_ms": {
+          "value": 9,
+          "unit": "ms",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        },
+        "dispatch_count": {
+          "value": 1,
+          "unit": "count",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "COMPUTE"
+    ]
+  },
+  {
+    "workload_id": "sync",
+    "input": {
+      "workload_id": "sync",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "sync_wait_ms": {
+          "value": 5,
+          "unit": "ms",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        },
+        "frame_p95_ms": {
+          "value": 17,
+          "unit": "ms",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "SYNC"
+    ]
+  },
+  {
+    "workload_id": "upload",
+    "input": {
+      "workload_id": "upload",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "upload_ms": {
+          "value": 5,
+          "unit": "ms",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        },
+        "upload_bytes": {
+          "value": 1,
+          "unit": "bytes",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "UPLOAD"
+    ]
+  },
+  {
+    "workload_id": "thermal",
+    "input": {
+      "workload_id": "thermal",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "temperature_c": {
+          "value": 76,
+          "unit": "C",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        },
+        "clock_drop_pct": {
+          "value": 21,
+          "unit": "percent",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "THERMAL"
+    ]
+  },
+  {
+    "workload_id": "missing",
+    "input": {
+      "workload_id": "missing",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {},
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "UNKNOWN"
+    ]
+  },
+  {
+    "workload_id": "utilization-only",
+    "input": {
+      "workload_id": "utilization-only",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "gpu_utilization_pct": {
+          "value": 99,
+          "unit": "percent",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "UNKNOWN"
+    ]
+  },
+  {
+    "workload_id": "one-low-counter",
+    "input": {
+      "workload_id": "one-low-counter",
+      "provenance": "synthetic",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "gpu_ms": {
+          "value": 3,
+          "unit": "ms",
+          "tool": "synthetic-generator",
+          "raw_trace": "synthetic-fixture",
+          "sample_count": 10
+        }
+      },
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false,
+      "frame_times_ms": []
+    },
+    "expected_labels": [
+      "UNKNOWN"
+    ]
+  }
+]
