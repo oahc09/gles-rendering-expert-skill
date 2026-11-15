@@ -28,6 +28,18 @@ def number(value, name, minimum=0):
         raise ValueError(f'{name}: finite number >= {minimum} required')
     return value
 
+def frame_distribution(times):
+    """Nearest-rank empirical quantiles, not a latency confidence interval."""
+    ordered=sorted(number(x,'frame_times_ms') for x in times)
+    n=len(ordered)
+    return {'sample_count':n,'unit':'ms','method':'nearest-rank',
+            'min':ordered[0] if n else None,'max':ordered[-1] if n else None,
+            'p50':ordered[math.ceil(.50*n)-1] if n else None,
+            'p95':ordered[math.ceil(.95*n)-1] if n else None,
+            'p99':ordered[math.ceil(.99*n)-1] if n else None,
+            'mean':math.fsum(x/n for x in ordered) if n else None,
+            'measurement_scope':'supplied frame samples, not GPU duration'}
+
 def fingerprint(data):
     if data.get('provenance') not in ('synthetic','real-export') or not data.get('workload_id'):
         raise ValueError('workload_id and explicit provenance required')
@@ -74,6 +86,7 @@ def fingerprint(data):
             'labels':[x['label'] for x in hypotheses] or ['UNKNOWN'],'hypotheses':hypotheses,
             'missing_metrics':missing,'next_collection':missing or ['controlled interleaved A/B and visual oracle'],
             'cpu_gpu_overlap_ms':overlap,'warnings':interval_warning,
+            'frame_time_distribution':frame_distribution(times),
             'performance_improvement':'NOT_MEASURED','input':data}
 
 def main():

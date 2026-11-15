@@ -1,0 +1,15 @@
+{
+  "start": "2026-08-18",
+  "end": "2026-11-15",
+  "days_inclusive": 90,
+  "source_count": 10,
+  "candidate_count": 1319,
+  "retrieval_complete": true,
+  "manual_review": "NOT_RUN",
+  "rule_promotion": "NONE",
+  "archive": "radar.json.gz",
+  "archive_sha256": "8f702d7532b0284d71fd388b341b40a7b143951cd8196bcc552e00af7264de8c",
+  "decoded_sha256": "6ae884b48df90271c7ffc2b1bb24d874e558e0d215b5cfeb95a50ed64ac22c27",
+  "decoded_bytes": 856906,
+  "note": "Same existing radar normalize/select/dedup logic; three HTTP403 reads recovered through authorized GitHub connector, public API page2 empty; metadata only, not verified optimization claims."
+}

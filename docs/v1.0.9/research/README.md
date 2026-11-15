@@ -14,3 +14,18 @@ event date, claim, reproduction and review before linking an accepted rule.
 Current chain: official release → engineering reference → candidate A/B protocol →
 no accepted performance rule → protocol negative tests. GPU vendor-specific rules
 remain blocked until actual trace/counter evidence and review exist.
+
+## Third increment: current 90-day metadata collection
+
+`rolling/2026-11-15/receipt.json` records a full **2026-08-18–2026-11-15**
+90-day inclusive collection using the existing radar normalize/select/dedup logic.
+Ten public GitHub sources yielded 1,319 unique metadata candidates. Initial
+HTTP 403 failures for three sources were recovered with the authorized GitHub
+connector's public API; empty second pages confirmed completion. Initial failures
+remain in the archive. No credentials or environmental inventory are included.
+
+`radar.json.gz` is deterministic gzip of the original JSON; receipt binds both
+archive and decompressed hashes. To reproduce or feed the existing radar, decompress
+first (`gzip -dc radar.json.gz > radar.json`). Metadata retrieval is complete,
+**manual vendor/X review and promotion are NOT_RUN**, and no new performance rule
+is accepted. This supersedes only the earlier NOT_RUN collection status, not review.

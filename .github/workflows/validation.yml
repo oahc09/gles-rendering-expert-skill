@@ -121,6 +121,7 @@ jobs:
           python3 -m unittest discover -s benchmarks/device_portability -p 'test_*.py' -v
           python3 -m unittest discover -s benchmarks/shader_ab -p 'test_*.py' -v
           python3 tools/check_v109_gates.py
+          python3 tools/check_v109_scene_coverage.py
       - name: v1.0.9 actual software image controls (not device speedup)
         run: |
           echo '{"kind":"mesa","egl":"/usr/lib/x86_64-linux-gnu/libEGL.so.1","gles":"/usr/lib/x86_64-linux-gnu/libGLESv2.so.2"}' > /tmp/v109-mesa.json
@@ -136,6 +137,20 @@ jobs:
             python3 benchmarks/shader_ab/advanced.py --config /tmp/v109-$driver.json --output reports/v109-advanced-$driver.json
             python3 benchmarks/overlap_scenes/projected.py --config /tmp/v109-$driver.json --output reports/v109-projected-$driver.json
             python3 benchmarks/texture_access/mechanisms.py --config /tmp/v109-$driver.json --output reports/v109-texture-mechanisms-$driver.json
+          done
+      - name: Provision pinned official KTX tools for v1.0.9
+        run: |
+          curl --fail --location --max-time 150 https://github.com/KhronosGroup/KTX-Software/releases/download/v4.4.2/KTX-Software-4.4.2-Linux-x86_64.tar.bz2 -o /tmp/v109-ktx.tar.bz2
+          echo 'a8781bad05f9624edbf910b7f258cd0a4ba7d3e63b49ecc0a0ab440bf6a0a245  /tmp/v109-ktx.tar.bz2' | sha256sum -c
+          tar -xjf /tmp/v109-ktx.tar.bz2 -C /tmp
+      - name: v1.0.9 covariance refraction and actual KTX transcode controls
+        run: |
+          for driver in mesa angle; do
+            python3 benchmarks/overlap_scenes/advanced.py --config /tmp/v109-$driver.json --output reports/v109-overlap-advanced-$driver.json
+            python3 benchmarks/pipeline/postfx_quality.py --config /tmp/v109-$driver.json --output reports/v109-postfx-$driver.json
+            for pattern in smooth steep; do
+              python3 benchmarks/texture_access/ktx2_experiment.py --config /tmp/v109-$driver.json --ktx-root /tmp/KTX-Software-4.4.2-Linux-x86_64 --pattern $pattern --output reports/v109-ktx-$driver-$pattern.json
+            done
           done
       - name: Preserve v108 results and failure evidence
         if: always()

@@ -24,3 +24,10 @@ UBO/SSBO/compute/depth/discard); W4 `benchmarks/overlap_scenes/projected.py`
 `benchmarks/texture_access/mechanisms.py` (14 actual texture mechanism controls).
 `tools/check_v109_evidence.py` guards public evidence. These supersede the initial
 4×4-only scope descriptions above, not the real hardware/provider release gates.
+
+
+Third increment: W1 frame distributions; W4 `overlap_scenes/advanced.py` covariance,
+LOD and finite refraction; W5 registered `pipeline/postfx_quality.py` and explicit
+sidecar (recommendation only); W6 `texture_access/ktx2_experiment.py` actual KTX
+conversion and strict bounded `ktx2_container.py`. `scene-coverage.json` separates
+all eight scene dimensions and `check_v109_scene_coverage.py` rejects false acceptance.

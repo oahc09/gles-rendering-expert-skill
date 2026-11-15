@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "release_ready": false,
+  "scenes": [
+    {
+      "id": "S01",
+      "scope": "Bounded authored covariance Gaussian scenes and error-budget LOD, not million-splat trained 3DGS",
+      "implementation": [
+        "benchmarks/overlap_scenes/projected.py",
+        "benchmarks/overlap_scenes/advanced.py"
+      ],
+      "remaining": "Million-proxy scale and physical GPU coverage/time remain unmeasured.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S02",
+      "scope": "Finite layered Snell refractive plates sampling a background, not recursive multi-interface optics",
+      "implementation": [
+        "benchmarks/overlap_scenes/projected.py",
+        "benchmarks/overlap_scenes/advanced.py"
+      ],
+      "remaining": "Refraction, order-dependent content and mobile bandwidth need further coverage.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S03",
+      "scope": "Graph semantic candidates and finite pipeline controls, not unified UI+3D+PostFX capture",
+      "implementation": [
+        "tools/rendergraph_optimizer.py"
+      ],
+      "remaining": "End-to-end combined scene and attachment/load-store capture remain missing.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S04",
+      "scope": "Finite compute storage barrier to fragment readback; not a particle workload",
+      "implementation": [
+        "benchmarks/shader_ab/advanced.py"
+      ],
+      "remaining": "Particle scale, synchronization duration and frame distribution remain missing.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S05",
+      "scope": "No v1.0.9 end-to-end HDR/SDR paired capture",
+      "implementation": [],
+      "remaining": "HDR target/display and complete tone-map/quantization validation remain NOT_RUN.",
+      "correctness": {
+        "status": "NOT_RUN",
+        "reason": "No complete capture."
+      },
+      "quality": {
+        "status": "NOT_RUN",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S06",
+      "scope": "Actual KTX UASTC conversion and multicolor compressed upload controls; finite two-gradient quality distribution",
+      "implementation": [
+        "benchmarks/texture_access/mechanisms.py",
+        "benchmarks/texture_access/ktx2_experiment.py"
+      ],
+      "remaining": "Streaming residency, stalls, realistic codec distributions and physical metrics remain missing.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S07",
+      "scope": "Protocol and device matrix only, no physical GPU strategy result",
+      "implementation": [
+        "benchmarks/device_portability/protocol.py"
+      ],
+      "remaining": "Physical Mali/Adreno paired captures and independent review required.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "NOT_RUN",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S08",
+      "scope": "Rule-level negative-gain rejection, not deployed renderer rollback",
+      "implementation": [
+        "tools/optimization_advisor.py"
+      ],
+      "remaining": "End-to-end renderer state rollback and physical performance trace remain missing.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "NOT_RUN",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    }
+  ]
+}

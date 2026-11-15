@@ -1,0 +1,57 @@
+{
+  "resources": {
+    "scene": {
+      "format": "RGBA8",
+      "size": [
+        64,
+        64
+      ]
+    },
+    "blur": {
+      "format": "RGBA8",
+      "size": [
+        64,
+        64
+      ]
+    },
+    "screen": {
+      "format": "RGBA8",
+      "size": [
+        64,
+        64
+      ]
+    }
+  },
+  "passes": [
+    {
+      "id": "scene",
+      "writes": [
+        "scene"
+      ]
+    },
+    {
+      "id": "postfx",
+      "reads": [
+        "scene"
+      ],
+      "writes": [
+        "blur"
+      ],
+      "depends_on": [
+        "scene"
+      ]
+    },
+    {
+      "id": "present",
+      "reads": [
+        "blur"
+      ],
+      "writes": [
+        "screen"
+      ],
+      "depends_on": [
+        "postfx"
+      ]
+    }
+  ]
+}

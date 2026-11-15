@@ -21,7 +21,7 @@ release approval, or a claim of mobile GPU performance improvement.
 - Recursive predecessor gate bookkeeping passes with release_ready=false; original
   gate files remain byte-for-byte unchanged and archived by hash.
 
-## Not complete
+## Historical gaps after first increment (superseded below)
 
 - W3: UBO/SSBO, texture formats, discard/depth, compute/draw fusion and broader
   precision distributions. Sixteen bounded pairs alone are not coverage of these.
@@ -81,3 +81,44 @@ All work packages remain conservative PARTIAL/BLOCKED until original DoD is met.
 Expanded full local regression: **669 unittest tests passed, zero failures/skips**,
 31 directories. Logs: evidence/unit-tests-expanded.json. Final new-head hosted CI
 is pending; only the earlier head has the successful run cited above.
+
+
+## Third increment — bounded software coverage
+
+Exact preceding remote head `da9369e1b0d68178bb9d433c1ede5b3bd3d7ac63`
+passed hosted CI run [43668034493](https://github.com/oahc09/gles-rendering-expert-skill/actions/runs/43668034493).
+This is prior-head evidence, not evidence of any later commit.
+
+- W1 outputs deterministic nearest-rank p50/p95/p99, min/max/mean and sample count;
+  empty samples remain null. These are supplied frame samples, not GPU timings.
+- W4 adds authored 3D covariance projection (JΣJᵀ), sorted anisotropic alpha,
+  bounded opacity LOD and over-budget fallback, and three refractive plates with
+  actual Snell-direction background sampling. Each software driver executes 24
+  images over three camera views: 15 positive and nine intentional negatives.
+  Correct images max error: Mesa 3 RGBA8 code values, ANGLE 0. This is not learned
+  3DGS, million-splat scale, recursive optics or physical performance evidence.
+- W5 now accepts explicit PostFX UV/kernel/downstream/quality-budget contracts,
+  validates a registered runnable experiment and rejects unsafe output scaling.
+  The actual finite texture-resolution oracle passes on both drivers (eight total
+  readbacks), but does not prove arbitrary PostFX semantics or execute a 64→32 blur.
+- W6 uses checksum-pinned official KTX 4.4.2 to encode UASTC and actually convert
+  to RGBA32/ETC2/ASTC, validate a bounded KTX2 container and upload/read back.
+  Two gradients × three formats × two drivers = 12 readbacks. Smooth gradient
+  passes fixed 32-code budget; steep gradient fails and is preserved as a rejected
+  regression, not a successful optimization. Independent CPU RGBA/ASTC decode
+  confirms codec-chain error rather than vertical orientation or sRGB mismatch.
+  ETC2 lacks an independent CPU decoder, so its error is not attributed to a stage.
+  Process elapsed includes startup/I/O and is not isolated transcoder/GPU time.
+- Added S01–S08 explicit correctness/quality/performance coverage ledger and strict
+  bookkeeping tests; it cannot promote software tests to physical acceptance.
+
+The third increment adds **68 actual output readbacks** (48 W4 + 8 W5 + 12 W6).
+No hardware/provider gate is waived. Public reports remain environment-sanitized.
+Current limitations include physical mobile timing/counters/thermal/power, real
+model paired results, trained/large-scale 3DGS, recursive optics, general KTX2 and
+codec distributions, complete research review and all inherited gates.
+
+Third-increment full local regression: **725 unittest tests passed, no failures or
+skips**, 31 directories; `evidence/unit-tests-third.json`. Rolling research metadata
+collection now has ten sources and 1,319 deduplicated candidates for the inclusive
+90-day window ending 2026-11-15. Manual review and rule promotion remain incomplete.

@@ -38,7 +38,8 @@
       "status": "PARTIAL",
       "implementation": [
         "benchmarks/overlap_scenes/README.md",
-        "benchmarks/overlap_scenes/projected.py"
+        "benchmarks/overlap_scenes/projected.py",
+        "benchmarks/overlap_scenes/advanced.py"
       ],
       "remaining": "Expanded dual-software-driver correctness controls pass; actual GPU A/B performance, broader scene/material/format distributions and original inherited gates remain incomplete. See validation-report.md."
     },
@@ -47,13 +48,14 @@
       "implementation": [
         "tools/rendergraph_optimizer.py"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "PostFX suggestions and finite runnable quality oracle implemented; arbitrary renderer semantic equivalence, actual scaled PostFX and real-device benefit remain unverified."
     },
     "W6": {
       "status": "PARTIAL",
       "implementation": [
         "benchmarks/texture_access/run.py",
-        "benchmarks/texture_access/mechanisms.py"
+        "benchmarks/texture_access/mechanisms.py",
+        "benchmarks/texture_access/ktx2_experiment.py"
       ],
       "remaining": "Expanded dual-software-driver correctness controls pass; actual GPU A/B performance, broader scene/material/format distributions and original inherited gates remain incomplete. See validation-report.md."
     },
