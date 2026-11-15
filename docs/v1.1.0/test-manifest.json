@@ -49,6 +49,7 @@
     "benchmarks/coverage/glsl",
     "benchmarks/coverage/governance",
     "benchmarks/coverage/platforms",
-    "benchmarks/coverage/state-machine"
+    "benchmarks/coverage/state-machine",
+    "benchmarks/coverage/android-build"
   ]
 }

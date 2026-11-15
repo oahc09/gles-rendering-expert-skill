@@ -64,3 +64,13 @@ reset/MSRTT entrypoint, invalid queried MSRTT limit, actual probe failure or
 incomplete/duplicate family set returnsFAIL and nonzero. NOT_SUPPORTED is
 reserved for absent reviewed capability or explicitly unverified protected
 platform path; it never converts an executed failing probe into success.
+
+### ASTC decode binding (increment)
+`benchmarks/coverage/extensions/astc_decode.py` reuses the existing texture mechanism,
+not a new decoder. Both current software configurations sampled one authored LDR
+4x4 constant void-extent block into RGBA8 with zero pixel error. The wrapper binds
+mechanism/source hashes and rejects wrong-color, wrong-alpha, wrong-length,
+compile/link/error/quality failures. Published evidence omits host fingerprints
+and upload timing. Arbitrary ASTC modes, HDR, transcode quality and physical-device
+acceptance are **not** established by this one-block result. Prior upload-size
+negative checks remain independently required.

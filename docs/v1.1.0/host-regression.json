@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "total_tests": 1240,
+  "total_tests": 1250,
   "total_skipped": 0,
   "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
   "rows": [
@@ -315,7 +315,7 @@
     },
     {
       "directory": "benchmarks/coverage/extensions",
-      "tests": 14,
+      "tests": 16,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"
@@ -329,7 +329,7 @@
     },
     {
       "directory": "benchmarks/coverage/governance",
-      "tests": 31,
+      "tests": 34,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"
@@ -343,6 +343,13 @@
     },
     {
       "directory": "benchmarks/coverage/state-machine",
+      "tests": 5,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/android-build",
       "tests": 5,
       "skipped": 0,
       "returncode": 0,

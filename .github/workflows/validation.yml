@@ -207,6 +207,7 @@ jobs:
           for driver in mesa angle; do
             python3 examples/closure/egl-lifecycle/run.py --config /tmp/v109-$driver.json --output reports/v110-egl-$driver.json
             python3 benchmarks/coverage/extensions/run_priority.py --config /tmp/v109-$driver.json --output reports/v110-priority-$driver.json
+            python3 benchmarks/coverage/extensions/astc_decode.py --config /tmp/v109-$driver.json --output reports/v110-astc-decode-$driver.json
           done
           python3 benchmarks/coverage/state-machine/run.py --output reports/v110-state-interactions.json
       - name: v1.1.0 frozen evaluation and review-only governance
