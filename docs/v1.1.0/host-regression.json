@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "total_tests": 1375,
+  "total_tests": 1385,
   "total_skipped": 0,
   "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
   "rows": [
@@ -456,6 +456,13 @@
     {
       "directory": "benchmarks/coverage/external-image",
       "tests": 8,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/image-sync",
+      "tests": 10,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"

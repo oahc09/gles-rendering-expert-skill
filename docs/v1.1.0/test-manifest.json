@@ -65,6 +65,7 @@
     "benchmarks/coverage/transparency-routing",
     "benchmarks/coverage/debug-output",
     "benchmarks/coverage/timer-query",
-    "benchmarks/coverage/external-image"
+    "benchmarks/coverage/external-image",
+    "benchmarks/coverage/image-sync"
   ]
 }
