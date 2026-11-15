@@ -14,8 +14,8 @@ No claim that every algorithm is required for API index completeness. Partial an
 | Fluid / sand | PARTIAL | Bounded simulation, not all fluid algorithms |
 | Glass / refraction | PARTIAL | Layered Snell proxy, not recursive optical transport |
 | Compute | SOFTWARE_RUNTIME | Bounded SSBO/image controls; ES3.0 CPU alternative needed per workload |
-| Animation / skinning | DEPENDENCY | Knowledge route exists; actual skinned scene representative absent |
+| Animation / skinning | SOFTWARE_RUNTIME | Two translation poses, actual UBO skinning/TF/image oracle and CPU VBO fallback; not full skeletal animation |
 | 3DGS high overlap | PARTIAL | Authored covariance splats; original high-layer failures inherited |
 | Texture streaming | SOFTWARE_RUNTIME | Actual KTX transcode/cache/budget/upload readback |
 | Video fusion | BLOCKED_BY_HARDWARE | Android/AHB build/install and external media device evidence absent |
-| Multiview | DEPENDENCY | Extension knowledge route; no multiview device representative |
+| Multiview | SOFTWARE_RUNTIME | Two-layer actual draw/readback and sequential fallback on both software hosts; no device acceptance |

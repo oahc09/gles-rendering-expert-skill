@@ -54,6 +54,9 @@
     "benchmarks/coverage/cts-real",
     "benchmarks/coverage/multiview",
     "benchmarks/coverage/robust-readback",
-    "benchmarks/coverage/framebuffer-fetch"
+    "benchmarks/coverage/framebuffer-fetch",
+    "benchmarks/coverage/fetch-diagnosis",
+    "benchmarks/coverage/pixel-local-storage",
+    "benchmarks/coverage/skinning"
   ]
 }

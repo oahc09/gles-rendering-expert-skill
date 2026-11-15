@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "total_tests": 1274,
+  "total_tests": 1288,
   "total_skipped": 0,
   "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
   "rows": [
@@ -379,6 +379,27 @@
     {
       "directory": "benchmarks/coverage/framebuffer-fetch",
       "tests": 2,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/fetch-diagnosis",
+      "tests": 2,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/pixel-local-storage",
+      "tests": 6,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/skinning",
+      "tests": 6,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"

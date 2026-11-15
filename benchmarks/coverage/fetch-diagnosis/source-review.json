@@ -1,0 +1,7 @@
+{
+  "source_url": "https://android.googlesource.com/platform/external/mesa3d/+/refs/tags/upstream-mesa-25.0.7/src/gallium/drivers/llvmpipe/lp_state_fs.c",
+  "sha256": "8c0696490eaada44b058c18c5552c4540c735508f0066c400f5e8f8b8dc503a6",
+  "license": "MIT-style permission notice in upstream source; full text not redistributed",
+  "review": "fs_fb_fetch separates color from depth/stencil and accesses color attachments and fragment-loop state; single-sample test does not enter multisample handling. Source inspection alone cannot locate this signal without a matching build/debug stack. Distribution patch equivalence not asserted.",
+  "full_text_vendored": false
+}

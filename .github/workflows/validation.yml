@@ -210,6 +210,8 @@ jobs:
             python3 benchmarks/coverage/extensions/astc_decode.py --config /tmp/v109-$driver.json --output reports/v110-astc-decode-$driver.json
             python3 tools/coverage/multiview.py --config /tmp/v109-$driver.json --output reports/v110-multiview-$driver.json
             python3 benchmarks/coverage/robust-readback/run.py --config /tmp/v109-$driver.json --output reports/v110-robust-readback-$driver.json
+            python3 benchmarks/coverage/pixel-local-storage/run.py --config /tmp/v109-$driver.json --output reports/v110-pls-$driver.json
+            python3 benchmarks/coverage/skinning/run.py --config /tmp/v109-$driver.json --output reports/v110-skinning-$driver.json
           done
           # Mesa fetch runtime crashes remain archived FAIL, not a waived runtime pass.
           python3 benchmarks/coverage/framebuffer-fetch/suite.py --config /tmp/v109-angle.json --output reports/v110-fetch-angle.json

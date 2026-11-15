@@ -104,10 +104,10 @@
     {
       "category": "Animation / skinning",
       "knowledge_route": "references/cards/22-gpu-skinning.md",
-      "implementation": null,
-      "status": "DEPENDENCY",
-      "scope": "Knowledge route exists; actual skinned scene representative absent",
-      "es30_fallback": "CPU skinning and vertex attributes",
+      "implementation": "benchmarks/coverage/skinning/run.py",
+      "status": "SOFTWARE_RUNTIME",
+      "scope": "Two translation poses, two-bone std140 UBO, four normalized influences: actual transform feedback and exact RGBA8 goldens vs CPU VBO fallback; wrong matrix/weights/stall rejected. Not full skeletal animation.",
+      "es30_fallback": "Actual GLES3 CPU pre-skinned VBO path verified for both poses.",
       "device": "BLOCKED_BY_HARDWARE",
       "performance": null
     },
@@ -144,10 +144,10 @@
     {
       "category": "Multiview",
       "knowledge_route": "references/cards/13-mali-pls-multiview.md",
-      "implementation": null,
-      "status": "DEPENDENCY",
-      "scope": "Extension knowledge route; no multiview device representative",
-      "es30_fallback": "Separate non-multiview draws",
+      "implementation": "tools/coverage/multiview.py",
+      "status": "SOFTWARE_RUNTIME",
+      "scope": "One draw writes two array layers, actual readback on Mesa/ANGLE with blue sentinel; sequential fallback and four specified API negatives. Not multiview device acceptance.",
+      "es30_fallback": "Two separately verified per-layer draws; no extension-only call without capability and entrypoint.",
       "device": "BLOCKED_BY_HARDWARE",
       "performance": null
     }
