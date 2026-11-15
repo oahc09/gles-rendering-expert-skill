@@ -17,5 +17,5 @@ No claim that every algorithm is required for API index completeness. Partial an
 | Animation / skinning | SOFTWARE_RUNTIME | Two translation poses, two-bone std140 UBO, four normalized influences: actual transform feedback and exact RGBA8 goldens vs CPU VBO fallback; wrong matrix/weights/stall rejected. Not full skeletal animation. |
 | 3DGS high overlap | PARTIAL | Authored covariance splats; original high-layer failures inherited |
 | Texture streaming | SOFTWARE_RUNTIME | Actual KTX transcode/cache/budget/upload readback |
-| Video fusion | BLOCKED_BY_HARDWARE | Android/AHB build/install and external media device evidence absent |
+| Video fusion | PARTIAL_HOST_VIDEO_FUSION | Authored NV12 planes → explicit BT.709 limited encoded RGB/UI fusion; actual CPU RGBA fallback, two-frame quality/error controls. No decoder/native/AHB/device video validation. |
 | Multiview | SOFTWARE_RUNTIME | One draw writes two array layers, actual readback on Mesa/ANGLE with blue sentinel; sequential fallback and four specified API negatives. Not multiview device acceptance. |

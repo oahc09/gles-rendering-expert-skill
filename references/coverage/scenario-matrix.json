@@ -134,10 +134,10 @@
     {
       "category": "Video fusion",
       "knowledge_route": "references/cards/17-android-video-interoperability.md",
-      "implementation": "examples/android_cases/surfacevideo/src/main/cpp/ahb_texture.cpp",
-      "status": "BLOCKED_BY_HARDWARE",
-      "scope": "Android/AHB build/install and external media device evidence absent",
-      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "implementation": "benchmarks/coverage/video-fusion/run.py",
+      "status": "PARTIAL_HOST_VIDEO_FUSION",
+      "scope": "Authored NV12 R8/RG8 to explicit BT.709 limited encoded RGB/UI fusion with actual CPU RGBA fallback, two frames and fixed two-byte oracle; not decoder/native/AHB/device video.",
+      "es30_fallback": "Actually uploaded CPU-converted RGBA8 follows the same UI composite; Android/AHB build/install and external media device evidence remain blocked.",
       "device": "BLOCKED_BY_HARDWARE",
       "performance": null
     },

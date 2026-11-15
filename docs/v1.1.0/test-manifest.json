@@ -66,6 +66,7 @@
     "benchmarks/coverage/debug-output",
     "benchmarks/coverage/timer-query",
     "benchmarks/coverage/external-image",
-    "benchmarks/coverage/image-sync"
+    "benchmarks/coverage/image-sync",
+    "benchmarks/coverage/video-fusion"
   ]
 }
