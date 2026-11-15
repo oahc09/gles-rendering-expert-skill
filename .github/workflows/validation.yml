@@ -236,6 +236,7 @@ jobs:
         run: |
           python3 benchmarks/agent/final-eval/evaluate.py validate
           python3 tools/coverage/lifecycle.py --ledger docs/v1.1.0/source-ledger.json --date 2026-11-15 --output reports/v110-lifecycle.json
+          python3 tools/coverage/change_impact.py --root . --date 2026-11-15 --output reports/v110-change-impact.json
           python3 tools/coverage/platform_preflight.py --output reports/v110-platform-preflight.json
           python3 tools/coverage/run_regression.py --output reports/v110-unit-manifest.json
       - name: Preserve v108 results and failure evidence

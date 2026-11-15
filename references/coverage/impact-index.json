@@ -1,0 +1,500 @@
+{
+  "schema_version": 1,
+  "subjects": [
+    "candidate:ANGLE_STORAGE_REBINDS",
+    "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+    "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH",
+    "candidate:FILAMENT_PACKING_PRECISION",
+    "runtime:debug-output-mesa",
+    "runtime:debug-output-angle",
+    "runtime:timer-query-mesa",
+    "runtime:timer-query-angle",
+    "runtime:robust-readback-mesa",
+    "runtime:robust-readback-angle",
+    "runtime:external-image-mesa",
+    "runtime:external-image-angle"
+  ],
+  "nodes": [
+    {
+      "id": "candidate:ANGLE_STORAGE_REBINDS",
+      "kind": "candidate",
+      "path": "docs/v1.1.0/source-ledger.json",
+      "base_sha256": "73326dc6180880251ebe67a5c182a756f1f4da7da26e68a6e2a9daf0843ea915",
+      "subject": "candidate:ANGLE_STORAGE_REBINDS"
+    },
+    {
+      "id": "candidate:ANGLE_STORAGE_REBINDS:evidence:0",
+      "kind": "evidence",
+      "path": "docs/v1.0.9/research/implementation-review.json",
+      "base_sha256": "3532c907c9a5c0991713c9113b8f5f05e2d502811e6c0394c179ed6ab7ac1760",
+      "subject": "candidate:ANGLE_STORAGE_REBINDS"
+    },
+    {
+      "id": "candidate:ANGLE_STORAGE_REBINDS:rule",
+      "kind": "rule",
+      "path": null,
+      "base_sha256": null,
+      "subject": "candidate:ANGLE_STORAGE_REBINDS"
+    },
+    {
+      "id": "candidate:ANGLE_STORAGE_REBINDS:example",
+      "kind": "example",
+      "path": "benchmarks/shader_ab/advanced.py",
+      "base_sha256": "1bdd720bcb45f872dc17726f358707c2b3fa26330fce88e89a166aa648c3d724",
+      "subject": "candidate:ANGLE_STORAGE_REBINDS"
+    },
+    {
+      "id": "candidate:ANGLE_STORAGE_REBINDS:test",
+      "kind": "test",
+      "path": "benchmarks/shader_ab/test_advanced.py",
+      "base_sha256": "429ff13a023c5c87983d2ce8dbd14f88727620fd842166b5efdb4c87f9252f06",
+      "subject": "candidate:ANGLE_STORAGE_REBINDS"
+    },
+    {
+      "id": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+      "kind": "candidate",
+      "path": "docs/v1.1.0/source-ledger.json",
+      "base_sha256": "73326dc6180880251ebe67a5c182a756f1f4da7da26e68a6e2a9daf0843ea915",
+      "subject": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS"
+    },
+    {
+      "id": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS:evidence:0",
+      "kind": "evidence",
+      "path": "docs/v1.0.9/research/implementation-review.json",
+      "base_sha256": "3532c907c9a5c0991713c9113b8f5f05e2d502811e6c0394c179ed6ab7ac1760",
+      "subject": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS"
+    },
+    {
+      "id": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS:rule",
+      "kind": "rule",
+      "path": null,
+      "base_sha256": null,
+      "subject": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS"
+    },
+    {
+      "id": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS:example",
+      "kind": "example",
+      "path": "benchmarks/overlap_scenes/advanced.py",
+      "base_sha256": "e0a463a513b331d8a53781e51ffefdf15838d9c5842f52c8eea59a335e5c74b6",
+      "subject": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS"
+    },
+    {
+      "id": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS:test",
+      "kind": "test",
+      "path": "tools/rendergraph_optimizer.py",
+      "base_sha256": "4554aa9de7a880b75a28193ffdc6718f83a18b4b7568ef293b8694ca62ddcec1",
+      "subject": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS"
+    },
+    {
+      "id": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH",
+      "kind": "candidate",
+      "path": "docs/v1.1.0/source-ledger.json",
+      "base_sha256": "73326dc6180880251ebe67a5c182a756f1f4da7da26e68a6e2a9daf0843ea915",
+      "subject": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH"
+    },
+    {
+      "id": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH:evidence:0",
+      "kind": "evidence",
+      "path": "docs/v1.0.9/research/implementation-review.json",
+      "base_sha256": "3532c907c9a5c0991713c9113b8f5f05e2d502811e6c0394c179ed6ab7ac1760",
+      "subject": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH"
+    },
+    {
+      "id": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH:rule",
+      "kind": "rule",
+      "path": null,
+      "base_sha256": null,
+      "subject": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH"
+    },
+    {
+      "id": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH:example",
+      "kind": "example",
+      "path": "tools/rendergraph_optimizer.py",
+      "base_sha256": "4554aa9de7a880b75a28193ffdc6718f83a18b4b7568ef293b8694ca62ddcec1",
+      "subject": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH"
+    },
+    {
+      "id": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH:test",
+      "kind": "test",
+      "path": "tools/test_rendergraph_optimizer.py",
+      "base_sha256": "1b4ca00c5f8f07bdeb51ba685dda3ddab561c2f0bdc7fe5d077936ba29c06313",
+      "subject": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH"
+    },
+    {
+      "id": "candidate:FILAMENT_PACKING_PRECISION",
+      "kind": "candidate",
+      "path": "docs/v1.1.0/source-ledger.json",
+      "base_sha256": "73326dc6180880251ebe67a5c182a756f1f4da7da26e68a6e2a9daf0843ea915",
+      "subject": "candidate:FILAMENT_PACKING_PRECISION"
+    },
+    {
+      "id": "candidate:FILAMENT_PACKING_PRECISION:evidence:0",
+      "kind": "evidence",
+      "path": "docs/v1.0.9/research/implementation-review.json",
+      "base_sha256": "3532c907c9a5c0991713c9113b8f5f05e2d502811e6c0394c179ed6ab7ac1760",
+      "subject": "candidate:FILAMENT_PACKING_PRECISION"
+    },
+    {
+      "id": "candidate:FILAMENT_PACKING_PRECISION:rule",
+      "kind": "rule",
+      "path": null,
+      "base_sha256": null,
+      "subject": "candidate:FILAMENT_PACKING_PRECISION"
+    },
+    {
+      "id": "candidate:FILAMENT_PACKING_PRECISION:example",
+      "kind": "example",
+      "path": "benchmarks/shader_ab/run.py",
+      "base_sha256": "7f6a13d0ab66ab9972547b6044683b7af0f59875e12221022f11a1a785f62d5e",
+      "subject": "candidate:FILAMENT_PACKING_PRECISION"
+    },
+    {
+      "id": "candidate:FILAMENT_PACKING_PRECISION:test",
+      "kind": "test",
+      "path": "benchmarks/shader_ab/build_cases.py",
+      "base_sha256": "88158c338e23c4fdad983a5c146a8648a0c2a0812e01d67acdb516197f7f73fe",
+      "subject": "candidate:FILAMENT_PACKING_PRECISION"
+    },
+    {
+      "id": "runtime:debug-output-mesa",
+      "kind": "receipt",
+      "path": "references/coverage/runtime-links.json",
+      "base_sha256": "06b5daa1253cc88a84624c3d7eb3ba49c49022b0eceaa4be4b97cbc75e3ffe4b",
+      "subject": "runtime:debug-output-mesa"
+    },
+    {
+      "id": "runtime:debug-output-mesa:collector",
+      "kind": "collector",
+      "path": "benchmarks/coverage/debug-output/run.py",
+      "base_sha256": "259b1671a2210c85f80ae499eea4764d5bda52e5fce8bc9e24ff2cacb825350b",
+      "subject": "runtime:debug-output-mesa"
+    },
+    {
+      "id": "runtime:debug-output-mesa:report",
+      "kind": "report",
+      "path": "benchmarks/coverage/debug-output/mesa.json",
+      "base_sha256": "73462f70a9e8849626692bfa3c363c2f4b510fa4f11fdb83766d08a4a413e42b",
+      "subject": "runtime:debug-output-mesa"
+    },
+    {
+      "id": "runtime:debug-output-angle",
+      "kind": "receipt",
+      "path": "references/coverage/runtime-links.json",
+      "base_sha256": "06b5daa1253cc88a84624c3d7eb3ba49c49022b0eceaa4be4b97cbc75e3ffe4b",
+      "subject": "runtime:debug-output-angle"
+    },
+    {
+      "id": "runtime:debug-output-angle:collector",
+      "kind": "collector",
+      "path": "benchmarks/coverage/debug-output/run.py",
+      "base_sha256": "259b1671a2210c85f80ae499eea4764d5bda52e5fce8bc9e24ff2cacb825350b",
+      "subject": "runtime:debug-output-angle"
+    },
+    {
+      "id": "runtime:debug-output-angle:report",
+      "kind": "report",
+      "path": "benchmarks/coverage/debug-output/angle.json",
+      "base_sha256": "d1c5da71435f99c843bc777ae40acdde65dc1fd36a3e22bb2a3e2027dc325fb1",
+      "subject": "runtime:debug-output-angle"
+    },
+    {
+      "id": "runtime:timer-query-mesa",
+      "kind": "receipt",
+      "path": "references/coverage/runtime-links.json",
+      "base_sha256": "06b5daa1253cc88a84624c3d7eb3ba49c49022b0eceaa4be4b97cbc75e3ffe4b",
+      "subject": "runtime:timer-query-mesa"
+    },
+    {
+      "id": "runtime:timer-query-mesa:collector",
+      "kind": "collector",
+      "path": "benchmarks/coverage/timer-query/run.py",
+      "base_sha256": "ca2426bd8877280ad35420b89c4f74e26a7ed8705200e8c94fd36eb57657286d",
+      "subject": "runtime:timer-query-mesa"
+    },
+    {
+      "id": "runtime:timer-query-mesa:report",
+      "kind": "report",
+      "path": "benchmarks/coverage/timer-query/mesa.json",
+      "base_sha256": "6b39a1d0f2d9e1651f365562742c4f1aab2e2780ee8281a0d3c028483b2f757f",
+      "subject": "runtime:timer-query-mesa"
+    },
+    {
+      "id": "runtime:timer-query-angle",
+      "kind": "receipt",
+      "path": "references/coverage/runtime-links.json",
+      "base_sha256": "06b5daa1253cc88a84624c3d7eb3ba49c49022b0eceaa4be4b97cbc75e3ffe4b",
+      "subject": "runtime:timer-query-angle"
+    },
+    {
+      "id": "runtime:timer-query-angle:collector",
+      "kind": "collector",
+      "path": "benchmarks/coverage/timer-query/run.py",
+      "base_sha256": "ca2426bd8877280ad35420b89c4f74e26a7ed8705200e8c94fd36eb57657286d",
+      "subject": "runtime:timer-query-angle"
+    },
+    {
+      "id": "runtime:timer-query-angle:report",
+      "kind": "report",
+      "path": "benchmarks/coverage/timer-query/angle.json",
+      "base_sha256": "6b39a1d0f2d9e1651f365562742c4f1aab2e2780ee8281a0d3c028483b2f757f",
+      "subject": "runtime:timer-query-angle"
+    },
+    {
+      "id": "runtime:robust-readback-mesa",
+      "kind": "receipt",
+      "path": "references/coverage/runtime-links.json",
+      "base_sha256": "06b5daa1253cc88a84624c3d7eb3ba49c49022b0eceaa4be4b97cbc75e3ffe4b",
+      "subject": "runtime:robust-readback-mesa"
+    },
+    {
+      "id": "runtime:robust-readback-mesa:collector",
+      "kind": "collector",
+      "path": "benchmarks/coverage/robust-readback/run.py",
+      "base_sha256": "f772f9ea5b81e5648ae3b990cacbf6449c4cb89a728dbbeb36e41da0eca8a1ee",
+      "subject": "runtime:robust-readback-mesa"
+    },
+    {
+      "id": "runtime:robust-readback-mesa:report",
+      "kind": "report",
+      "path": "benchmarks/coverage/robust-readback/mesa.json",
+      "base_sha256": "29b16436bf0d38aba7c119f79f7c3cdab211c5f800da294ea5e47c262bc0558f",
+      "subject": "runtime:robust-readback-mesa"
+    },
+    {
+      "id": "runtime:robust-readback-angle",
+      "kind": "receipt",
+      "path": "references/coverage/runtime-links.json",
+      "base_sha256": "06b5daa1253cc88a84624c3d7eb3ba49c49022b0eceaa4be4b97cbc75e3ffe4b",
+      "subject": "runtime:robust-readback-angle"
+    },
+    {
+      "id": "runtime:robust-readback-angle:collector",
+      "kind": "collector",
+      "path": "benchmarks/coverage/robust-readback/run.py",
+      "base_sha256": "f772f9ea5b81e5648ae3b990cacbf6449c4cb89a728dbbeb36e41da0eca8a1ee",
+      "subject": "runtime:robust-readback-angle"
+    },
+    {
+      "id": "runtime:robust-readback-angle:report",
+      "kind": "report",
+      "path": "benchmarks/coverage/robust-readback/angle.json",
+      "base_sha256": "567ab85d302bb29acd95f9cf0644670f52e8d2b7c3cd8f8d084dd39a9debb53d",
+      "subject": "runtime:robust-readback-angle"
+    },
+    {
+      "id": "runtime:external-image-mesa",
+      "kind": "receipt",
+      "path": "references/coverage/runtime-links.json",
+      "base_sha256": "06b5daa1253cc88a84624c3d7eb3ba49c49022b0eceaa4be4b97cbc75e3ffe4b",
+      "subject": "runtime:external-image-mesa"
+    },
+    {
+      "id": "runtime:external-image-mesa:collector",
+      "kind": "collector",
+      "path": "benchmarks/coverage/external-image/run.py",
+      "base_sha256": "a1736182a7395a41f6878a11ca42aba7020cefa7dac3a918d4cf35c84c132bd4",
+      "subject": "runtime:external-image-mesa"
+    },
+    {
+      "id": "runtime:external-image-mesa:report",
+      "kind": "report",
+      "path": "benchmarks/coverage/external-image/mesa.json",
+      "base_sha256": "a0e9959d4c2149a27e02b751ff60ac2648fe365ac01b6da117257e3381e0f4c6",
+      "subject": "runtime:external-image-mesa"
+    },
+    {
+      "id": "runtime:external-image-angle",
+      "kind": "receipt",
+      "path": "references/coverage/runtime-links.json",
+      "base_sha256": "06b5daa1253cc88a84624c3d7eb3ba49c49022b0eceaa4be4b97cbc75e3ffe4b",
+      "subject": "runtime:external-image-angle"
+    },
+    {
+      "id": "runtime:external-image-angle:collector",
+      "kind": "collector",
+      "path": "benchmarks/coverage/external-image/run.py",
+      "base_sha256": "a1736182a7395a41f6878a11ca42aba7020cefa7dac3a918d4cf35c84c132bd4",
+      "subject": "runtime:external-image-angle"
+    },
+    {
+      "id": "runtime:external-image-angle:report",
+      "kind": "report",
+      "path": "benchmarks/coverage/external-image/angle.json",
+      "base_sha256": "4e5953828124d84904d1cac23019bab4acceafbbafc15cbbe2f735db1fdffeaf",
+      "subject": "runtime:external-image-angle"
+    },
+    {
+      "id": "registry:gles",
+      "kind": "registry",
+      "path": "references/coverage/gles-api-catalog.json",
+      "base_sha256": "c7258ccbae285650ba34fb6c3db35aaf378c1a371bf546f01e4ce5d971553580",
+      "subject": "registry:gles"
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate:ANGLE_STORAGE_REBINDS:evidence:0",
+      "to": "candidate:ANGLE_STORAGE_REBINDS"
+    },
+    {
+      "from": "candidate:ANGLE_STORAGE_REBINDS",
+      "to": "candidate:ANGLE_STORAGE_REBINDS:rule"
+    },
+    {
+      "from": "candidate:ANGLE_STORAGE_REBINDS",
+      "to": "candidate:ANGLE_STORAGE_REBINDS:example"
+    },
+    {
+      "from": "candidate:ANGLE_STORAGE_REBINDS",
+      "to": "candidate:ANGLE_STORAGE_REBINDS:test"
+    },
+    {
+      "from": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS:evidence:0",
+      "to": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS"
+    },
+    {
+      "from": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+      "to": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS:rule"
+    },
+    {
+      "from": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+      "to": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS:example"
+    },
+    {
+      "from": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+      "to": "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS:test"
+    },
+    {
+      "from": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH:evidence:0",
+      "to": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH"
+    },
+    {
+      "from": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH",
+      "to": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH:rule"
+    },
+    {
+      "from": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH",
+      "to": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH:example"
+    },
+    {
+      "from": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH",
+      "to": "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH:test"
+    },
+    {
+      "from": "candidate:FILAMENT_PACKING_PRECISION:evidence:0",
+      "to": "candidate:FILAMENT_PACKING_PRECISION"
+    },
+    {
+      "from": "candidate:FILAMENT_PACKING_PRECISION",
+      "to": "candidate:FILAMENT_PACKING_PRECISION:rule"
+    },
+    {
+      "from": "candidate:FILAMENT_PACKING_PRECISION",
+      "to": "candidate:FILAMENT_PACKING_PRECISION:example"
+    },
+    {
+      "from": "candidate:FILAMENT_PACKING_PRECISION",
+      "to": "candidate:FILAMENT_PACKING_PRECISION:test"
+    },
+    {
+      "from": "runtime:debug-output-mesa:collector",
+      "to": "runtime:debug-output-mesa"
+    },
+    {
+      "from": "runtime:debug-output-mesa:report",
+      "to": "runtime:debug-output-mesa"
+    },
+    {
+      "from": "runtime:debug-output-angle:collector",
+      "to": "runtime:debug-output-angle"
+    },
+    {
+      "from": "runtime:debug-output-angle:report",
+      "to": "runtime:debug-output-angle"
+    },
+    {
+      "from": "runtime:timer-query-mesa:collector",
+      "to": "runtime:timer-query-mesa"
+    },
+    {
+      "from": "runtime:timer-query-mesa:report",
+      "to": "runtime:timer-query-mesa"
+    },
+    {
+      "from": "runtime:timer-query-angle:collector",
+      "to": "runtime:timer-query-angle"
+    },
+    {
+      "from": "runtime:timer-query-angle:report",
+      "to": "runtime:timer-query-angle"
+    },
+    {
+      "from": "runtime:robust-readback-mesa:collector",
+      "to": "runtime:robust-readback-mesa"
+    },
+    {
+      "from": "runtime:robust-readback-mesa:report",
+      "to": "runtime:robust-readback-mesa"
+    },
+    {
+      "from": "runtime:robust-readback-angle:collector",
+      "to": "runtime:robust-readback-angle"
+    },
+    {
+      "from": "runtime:robust-readback-angle:report",
+      "to": "runtime:robust-readback-angle"
+    },
+    {
+      "from": "runtime:external-image-mesa:collector",
+      "to": "runtime:external-image-mesa"
+    },
+    {
+      "from": "runtime:external-image-mesa:report",
+      "to": "runtime:external-image-mesa"
+    },
+    {
+      "from": "runtime:external-image-angle:collector",
+      "to": "runtime:external-image-angle"
+    },
+    {
+      "from": "runtime:external-image-angle:report",
+      "to": "runtime:external-image-angle"
+    },
+    {
+      "from": "registry:gles",
+      "to": "runtime:debug-output-mesa"
+    },
+    {
+      "from": "registry:gles",
+      "to": "runtime:debug-output-angle"
+    },
+    {
+      "from": "registry:gles",
+      "to": "runtime:timer-query-mesa"
+    },
+    {
+      "from": "registry:gles",
+      "to": "runtime:timer-query-angle"
+    },
+    {
+      "from": "registry:gles",
+      "to": "runtime:robust-readback-mesa"
+    },
+    {
+      "from": "registry:gles",
+      "to": "runtime:robust-readback-angle"
+    },
+    {
+      "from": "registry:gles",
+      "to": "runtime:external-image-mesa"
+    },
+    {
+      "from": "registry:gles",
+      "to": "runtime:external-image-angle"
+    }
+  ],
+  "test_ids": [
+    "ledger-lifecycle",
+    "runtime-links"
+  ]
+}

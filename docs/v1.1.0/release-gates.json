@@ -158,9 +158,12 @@
         "tools/coverage/lifecycle.py",
         "docs/v1.1.0/source-ledger.json",
         "docs/v1.1.0/change-impact.json",
-        "docs/v1.1.0/knowledge-migration.md"
+        "docs/v1.1.0/knowledge-migration.md",
+        "tools/coverage/change_impact.py",
+        "references/coverage/impact-index.json",
+        "docs/v1.1.0/impact-analysis.json"
       ],
-      "remaining": "Review-only governance, no scheduling activation; original plan-window full review and independent acceptance remain incomplete."
+      "remaining": "Review-only governance, no scheduling activation; original plan-window full review and independent acceptance remain incomplete. The W8/W11 change-impact path now compares a pinned reviewed dependency baseline for four source candidates and eight finite runtime receipts. It detects catalog/source/evidence/collector/report drift, propagates affected targets and proposes closed regression test IDs without executing input commands. Independent review found catalog omission and automatic rebaseline bypass; both are now rejected by dependency coverage and a pinned canonical baseline digest. Four absent rule links remain UNLINKED and candidate adoption stays false. SNAPSHOT_UNCHANGED means only these tracked bytes match, not that no upstream substantive change exists or that human review is complete."
     },
     "W12": {
       "status": "ACCEPTANCE_BLOCKED",
