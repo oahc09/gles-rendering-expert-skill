@@ -1,0 +1,636 @@
+{
+  "schema_version": 1,
+  "status": "HOST_WORKFLOW_PASS",
+  "workload_fingerprint": {
+    "schema_version": "1.0",
+    "workload_id": "rgba8-three-pass-scale-v1",
+    "provenance": "synthetic",
+    "labels": [
+      "UNKNOWN"
+    ],
+    "hypotheses": [],
+    "missing_metrics": [
+      "bandwidth_pct_peak",
+      "blend_layers",
+      "clock_drop_pct",
+      "compute_ms",
+      "coverage_ratio",
+      "cpu_submit_ms",
+      "dispatch_count",
+      "draw_count",
+      "fragment_alu_pct",
+      "frame_p95_ms",
+      "gpu_ms",
+      "sync_wait_ms",
+      "temperature_c",
+      "upload_bytes",
+      "upload_ms",
+      "vertex_busy_pct",
+      "vertex_count"
+    ],
+    "next_collection": [
+      "bandwidth_pct_peak",
+      "blend_layers",
+      "clock_drop_pct",
+      "compute_ms",
+      "coverage_ratio",
+      "cpu_submit_ms",
+      "dispatch_count",
+      "draw_count",
+      "fragment_alu_pct",
+      "frame_p95_ms",
+      "gpu_ms",
+      "sync_wait_ms",
+      "temperature_c",
+      "upload_bytes",
+      "upload_ms",
+      "vertex_busy_pct",
+      "vertex_count"
+    ],
+    "cpu_gpu_overlap_ms": null,
+    "warnings": [],
+    "frame_time_distribution": {
+      "sample_count": 0,
+      "unit": "ms",
+      "method": "nearest-rank",
+      "min": null,
+      "max": null,
+      "p50": null,
+      "p95": null,
+      "p99": null,
+      "mean": null,
+      "measurement_scope": "supplied frame samples, not GPU duration"
+    },
+    "frame_source_validation": {
+      "status": "SYNTHETIC"
+    },
+    "performance_improvement": "NOT_MEASURED",
+    "input": {
+      "workload_id": "rgba8-three-pass-scale-v1",
+      "provenance": "synthetic",
+      "resolution": [
+        4,
+        4
+      ],
+      "sampling_formats": [
+        "RGBA8"
+      ],
+      "thermal_state": "UNKNOWN",
+      "trace_available": false
+    }
+  },
+  "cost_estimates": {
+    "baseline": {
+      "status": "ESTIMATE_ONLY",
+      "attachments": [
+        {
+          "id": "scene",
+          "logical_lower_bytes": 0,
+          "logical_upper_bytes": 128
+        },
+        {
+          "id": "intermediate",
+          "logical_lower_bytes": 0,
+          "logical_upper_bytes": 128
+        },
+        {
+          "id": "screen",
+          "logical_lower_bytes": 0,
+          "logical_upper_bytes": 128
+        }
+      ],
+      "logical_lower_bytes": 0,
+      "logical_upper_bytes": 512,
+      "texture_fetch_logical_upper_bytes": 128,
+      "dram_bytes": null,
+      "assumptions": [
+        "Uncompressed logical transfers; no fixed tile size assumed.",
+        "No MSAA compression/cache/transaction amplification model.",
+        "passes declares all load/store cycles including FBO switches.",
+        "Overdraw texture samples must be supplied, not inferred from draw count."
+      ],
+      "unknowns": [
+        "Actual tile residency, DRAM, blending and sampling cache behavior require device counters."
+      ]
+    },
+    "candidate": {
+      "status": "ESTIMATE_ONLY",
+      "attachments": [
+        {
+          "id": "scene",
+          "logical_lower_bytes": 0,
+          "logical_upper_bytes": 128
+        },
+        {
+          "id": "intermediate",
+          "logical_lower_bytes": 0,
+          "logical_upper_bytes": 32
+        },
+        {
+          "id": "screen",
+          "logical_lower_bytes": 0,
+          "logical_upper_bytes": 128
+        }
+      ],
+      "logical_lower_bytes": 0,
+      "logical_upper_bytes": 368,
+      "texture_fetch_logical_upper_bytes": 80,
+      "dram_bytes": null,
+      "assumptions": [
+        "Uncompressed logical transfers; no fixed tile size assumed.",
+        "No MSAA compression/cache/transaction amplification model.",
+        "passes declares all load/store cycles including FBO switches.",
+        "Overdraw texture samples must be supplied, not inferred from draw count."
+      ],
+      "unknowns": [
+        "Actual tile residency, DRAM, blending and sampling cache behavior require device counters."
+      ]
+    }
+  },
+  "hypothesis": "Smaller private intermediate may reduce logical work; not a measured bandwidth or speed gain",
+  "experiment_binding": {
+    "registered_advisor_experiment": {
+      "id": "rgba8-graph-scale-replay-v1",
+      "source": "benchmarks/pipeline/candidate_replay.py",
+      "source_sha256": "a580949bed65b0eda2ab71ab2490e3254b3132f38624dbf130219d1edc8b01f3",
+      "argv": [
+        "python3",
+        "benchmarks/pipeline/candidate_replay.py",
+        "--config",
+        "DRIVER_JSON",
+        "--output",
+        "REPORT_JSON"
+      ],
+      "scope": "finite three-pass RGBA8 graph scaling and quality fallback; no physical performance",
+      "execution": "NOT_RUN_BY_ADVISOR",
+      "report_policy": "Keep raw reports private; sanitize host metadata before publication",
+      "requires": [
+        "configured GLES driver",
+        "explicit operator execution"
+      ]
+    },
+    "id": "rgba8-graph-scale-replay-v1",
+    "entrypoint": "benchmarks/device_portability/scene_collector.py:collect",
+    "scene_source": "benchmarks/pipeline/candidate_replay.py",
+    "scene_source_sha256": "a580949bed65b0eda2ab71ab2490e3254b3132f38624dbf130219d1edc8b01f3",
+    "dispatch": "closed Python callable registry; no shell/exec/eval",
+    "scope": "constant and checkerboard three-pass 4x4 RGBA8 scene only"
+  },
+  "advisor_input_candidates": [
+    {
+      "id": "constant",
+      "workload_id": "rgba8-three-pass-scale-v1",
+      "experiment": "rgba8-graph-scale-replay-v1",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "labels": [],
+      "confidence": 0,
+      "estimated_gain_range": [
+        0,
+        0
+      ],
+      "quality": {
+        "pass": true,
+        "golden_id": "rgba8-three-pass-scale-v1-constant-cpu",
+        "thresholds": {
+          "max_rgba8_error": 1
+        }
+      },
+      "measurement": {
+        "provenance": "software",
+        "quality_artifact": {
+          "path": "mesa-software-scene.json",
+          "sha256": "d145b4ae8e9883b94c6686a659b3b13380fe2d02b215c05cd37f9dc89fd48628"
+        },
+        "timing": "NOT_COLLECTED"
+      }
+    },
+    {
+      "id": "checkerboard",
+      "workload_id": "rgba8-three-pass-scale-v1",
+      "experiment": "rgba8-graph-scale-replay-v1",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "labels": [],
+      "confidence": 0,
+      "estimated_gain_range": [
+        0,
+        0
+      ],
+      "quality": {
+        "pass": false,
+        "golden_id": "rgba8-three-pass-scale-v1-checkerboard-cpu",
+        "thresholds": {
+          "max_rgba8_error": 1
+        }
+      },
+      "measurement": {
+        "provenance": "software",
+        "quality_artifact": {
+          "path": "mesa-software-scene.json",
+          "sha256": "d145b4ae8e9883b94c6686a659b3b13380fe2d02b215c05cd37f9dc89fd48628"
+        },
+        "timing": "NOT_COLLECTED"
+      }
+    }
+  ],
+  "advisor_result": {
+    "schema_version": "1.0",
+    "workload": {
+      "schema_version": "1.0",
+      "workload_id": "rgba8-three-pass-scale-v1",
+      "provenance": "synthetic",
+      "labels": [
+        "UNKNOWN"
+      ],
+      "hypotheses": [],
+      "missing_metrics": [
+        "bandwidth_pct_peak",
+        "blend_layers",
+        "clock_drop_pct",
+        "compute_ms",
+        "coverage_ratio",
+        "cpu_submit_ms",
+        "dispatch_count",
+        "draw_count",
+        "fragment_alu_pct",
+        "frame_p95_ms",
+        "gpu_ms",
+        "sync_wait_ms",
+        "temperature_c",
+        "upload_bytes",
+        "upload_ms",
+        "vertex_busy_pct",
+        "vertex_count"
+      ],
+      "next_collection": [
+        "bandwidth_pct_peak",
+        "blend_layers",
+        "clock_drop_pct",
+        "compute_ms",
+        "coverage_ratio",
+        "cpu_submit_ms",
+        "dispatch_count",
+        "draw_count",
+        "fragment_alu_pct",
+        "frame_p95_ms",
+        "gpu_ms",
+        "sync_wait_ms",
+        "temperature_c",
+        "upload_bytes",
+        "upload_ms",
+        "vertex_busy_pct",
+        "vertex_count"
+      ],
+      "cpu_gpu_overlap_ms": null,
+      "warnings": [],
+      "frame_time_distribution": {
+        "sample_count": 0,
+        "unit": "ms",
+        "method": "nearest-rank",
+        "min": null,
+        "max": null,
+        "p50": null,
+        "p95": null,
+        "p99": null,
+        "mean": null,
+        "measurement_scope": "supplied frame samples, not GPU duration"
+      },
+      "frame_source_validation": {
+        "status": "SYNTHETIC"
+      },
+      "performance_improvement": "NOT_MEASURED",
+      "input": {
+        "workload_id": "rgba8-three-pass-scale-v1",
+        "provenance": "synthetic",
+        "resolution": [
+          4,
+          4
+        ],
+        "sampling_formats": [
+          "RGBA8"
+        ],
+        "thermal_state": "UNKNOWN",
+        "trace_available": false
+      }
+    },
+    "candidates": [
+      {
+        "id": "checkerboard",
+        "experiment": "rgba8-graph-scale-replay-v1",
+        "status": "REJECTED_BY_QUALITY",
+        "auto_accept": false,
+        "gain_fraction": null,
+        "reasons": [
+          "quality failed"
+        ],
+        "experiment_binding": {
+          "id": "rgba8-graph-scale-replay-v1",
+          "source": "benchmarks/pipeline/candidate_replay.py",
+          "source_sha256": "a580949bed65b0eda2ab71ab2490e3254b3132f38624dbf130219d1edc8b01f3",
+          "argv": [
+            "python3",
+            "benchmarks/pipeline/candidate_replay.py",
+            "--config",
+            "DRIVER_JSON",
+            "--output",
+            "REPORT_JSON"
+          ],
+          "scope": "finite three-pass RGBA8 graph scaling and quality fallback; no physical performance",
+          "execution": "NOT_RUN_BY_ADVISOR",
+          "report_policy": "Keep raw reports private; sanitize host metadata before publication",
+          "requires": [
+            "configured GLES driver",
+            "explicit operator execution"
+          ]
+        },
+        "priority_score": 0.0,
+        "ranking_basis": {
+          "hypothesis_only": true,
+          "estimated_gain_range": [
+            0,
+            0
+          ],
+          "range_kind": "SUPPLIED_HYPOTHESIS",
+          "confidence": 0,
+          "risk": 0,
+          "cost": 0,
+          "evidence_completeness": 0.8,
+          "completeness_checks": {
+            "runnable_experiment": true,
+            "supported_workload": false,
+            "capability": true,
+            "fallback": true,
+            "quality_contract": true
+          },
+          "formula": "lower_gain * confidence * (1-risk) * structural_completeness / (1+cost)",
+          "acceptance_effect": "NONE"
+        }
+      },
+      {
+        "id": "constant",
+        "experiment": "rgba8-graph-scale-replay-v1",
+        "status": "INSUFFICIENT_EVIDENCE",
+        "auto_accept": false,
+        "gain_fraction": null,
+        "reasons": [
+          "physical device provenance, scope, units or clock missing"
+        ],
+        "experiment_binding": {
+          "id": "rgba8-graph-scale-replay-v1",
+          "source": "benchmarks/pipeline/candidate_replay.py",
+          "source_sha256": "a580949bed65b0eda2ab71ab2490e3254b3132f38624dbf130219d1edc8b01f3",
+          "argv": [
+            "python3",
+            "benchmarks/pipeline/candidate_replay.py",
+            "--config",
+            "DRIVER_JSON",
+            "--output",
+            "REPORT_JSON"
+          ],
+          "scope": "finite three-pass RGBA8 graph scaling and quality fallback; no physical performance",
+          "execution": "NOT_RUN_BY_ADVISOR",
+          "report_policy": "Keep raw reports private; sanitize host metadata before publication",
+          "requires": [
+            "configured GLES driver",
+            "explicit operator execution"
+          ]
+        },
+        "priority_score": 0.0,
+        "ranking_basis": {
+          "hypothesis_only": true,
+          "estimated_gain_range": [
+            0,
+            0
+          ],
+          "range_kind": "SUPPLIED_HYPOTHESIS",
+          "confidence": 0,
+          "risk": 0,
+          "cost": 0,
+          "evidence_completeness": 0.8,
+          "completeness_checks": {
+            "runnable_experiment": true,
+            "supported_workload": false,
+            "capability": true,
+            "fallback": true,
+            "quality_contract": true
+          },
+          "formula": "lower_gain * confidence * (1-risk) * structural_completeness / (1+cost)",
+          "acceptance_effect": "NONE"
+        }
+      }
+    ],
+    "automatic_renderer_mutation": false
+  },
+  "executed_capture": {
+    "schema_version": 1,
+    "hardware_kind": "software",
+    "backend": "mesa-software",
+    "workload_id": "rgba8-three-pass-scale-v1",
+    "baseline_graph_sha256": "9a0f28b4521b94e9d740aa8d47ca6464d0fe6eed832aff5c0fe6f22e32865be1",
+    "candidate_graph_sha256": "387c30cc38ccf90115cf541ae40854a9a67f92f81a6d39e8f6a8ec88208bf17d",
+    "scene": {
+      "path": "mesa-software-scene.json",
+      "sha256": "d145b4ae8e9883b94c6686a659b3b13380fe2d02b215c05cd37f9dc89fd48628"
+    },
+    "quality": {
+      "status": "FINITE_QUALITY_CONTROLS_PASS",
+      "cases": [
+        {
+          "pattern": "constant",
+          "max_abs_error": 0,
+          "candidate_quality": "PASS",
+          "selected": "candidate"
+        },
+        {
+          "pattern": "checkerboard",
+          "max_abs_error": 255,
+          "candidate_quality": "REJECTED_BY_QUALITY",
+          "selected": "baseline"
+        }
+      ],
+      "general_quality_equivalence": false,
+      "physical_quality_evidence": false
+    },
+    "timing": "NOT_COLLECTED",
+    "physical_provider": "BLOCKED_BY_HARDWARE",
+    "release_acceptance": false,
+    "collector_scope": "host software correctness, no physical-device identity claim"
+  },
+  "grouped_quality": {
+    "status": "SOFTWARE_QUALITY_ONLY",
+    "groups": [
+      {
+        "backend": "mesa-software",
+        "workload_id": "rgba8-three-pass-scale-v1",
+        "baseline_graph_sha256": "9a0f28b4521b94e9d740aa8d47ca6464d0fe6eed832aff5c0fe6f22e32865be1",
+        "candidate_graph_sha256": "387c30cc38ccf90115cf541ae40854a9a67f92f81a6d39e8f6a8ec88208bf17d",
+        "capture_count": 1,
+        "quality": {
+          "status": "FINITE_QUALITY_CONTROLS_PASS",
+          "cases": [
+            {
+              "pattern": "constant",
+              "max_abs_error": 0,
+              "candidate_quality": "PASS",
+              "selected": "candidate"
+            },
+            {
+              "pattern": "checkerboard",
+              "max_abs_error": 255,
+              "candidate_quality": "REJECTED_BY_QUALITY",
+              "selected": "baseline"
+            }
+          ],
+          "general_quality_equivalence": false,
+          "physical_quality_evidence": false
+        }
+      }
+    ],
+    "physical_provider": "BLOCKED_BY_HARDWARE",
+    "performance": "NOT_MEASURED",
+    "release_acceptance": false,
+    "cross_group_comparison": "PROHIBITED",
+    "integrity_not_authenticity": true
+  },
+  "decisions": [
+    {
+      "pattern": "constant",
+      "max_abs_error": 0,
+      "candidate_quality": "PASS",
+      "selected": "candidate",
+      "experiment_selection": "candidate",
+      "production_selection": "baseline",
+      "performance_state": "INSUFFICIENT_EVIDENCE",
+      "advisor_decision": {
+        "id": "constant",
+        "experiment": "rgba8-graph-scale-replay-v1",
+        "status": "INSUFFICIENT_EVIDENCE",
+        "auto_accept": false,
+        "gain_fraction": null,
+        "reasons": [
+          "physical device provenance, scope, units or clock missing"
+        ],
+        "experiment_binding": {
+          "id": "rgba8-graph-scale-replay-v1",
+          "source": "benchmarks/pipeline/candidate_replay.py",
+          "source_sha256": "a580949bed65b0eda2ab71ab2490e3254b3132f38624dbf130219d1edc8b01f3",
+          "argv": [
+            "python3",
+            "benchmarks/pipeline/candidate_replay.py",
+            "--config",
+            "DRIVER_JSON",
+            "--output",
+            "REPORT_JSON"
+          ],
+          "scope": "finite three-pass RGBA8 graph scaling and quality fallback; no physical performance",
+          "execution": "NOT_RUN_BY_ADVISOR",
+          "report_policy": "Keep raw reports private; sanitize host metadata before publication",
+          "requires": [
+            "configured GLES driver",
+            "explicit operator execution"
+          ]
+        },
+        "priority_score": 0.0,
+        "ranking_basis": {
+          "hypothesis_only": true,
+          "estimated_gain_range": [
+            0,
+            0
+          ],
+          "range_kind": "SUPPLIED_HYPOTHESIS",
+          "confidence": 0,
+          "risk": 0,
+          "cost": 0,
+          "evidence_completeness": 0.8,
+          "completeness_checks": {
+            "runnable_experiment": true,
+            "supported_workload": false,
+            "capability": true,
+            "fallback": true,
+            "quality_contract": true
+          },
+          "formula": "lower_gain * confidence * (1-risk) * structural_completeness / (1+cost)",
+          "acceptance_effect": "NONE"
+        }
+      }
+    },
+    {
+      "pattern": "checkerboard",
+      "max_abs_error": 255,
+      "candidate_quality": "REJECTED_BY_QUALITY",
+      "selected": "baseline",
+      "experiment_selection": "baseline",
+      "production_selection": "baseline",
+      "performance_state": "REJECTED_BY_QUALITY",
+      "advisor_decision": {
+        "id": "checkerboard",
+        "experiment": "rgba8-graph-scale-replay-v1",
+        "status": "REJECTED_BY_QUALITY",
+        "auto_accept": false,
+        "gain_fraction": null,
+        "reasons": [
+          "quality failed"
+        ],
+        "experiment_binding": {
+          "id": "rgba8-graph-scale-replay-v1",
+          "source": "benchmarks/pipeline/candidate_replay.py",
+          "source_sha256": "a580949bed65b0eda2ab71ab2490e3254b3132f38624dbf130219d1edc8b01f3",
+          "argv": [
+            "python3",
+            "benchmarks/pipeline/candidate_replay.py",
+            "--config",
+            "DRIVER_JSON",
+            "--output",
+            "REPORT_JSON"
+          ],
+          "scope": "finite three-pass RGBA8 graph scaling and quality fallback; no physical performance",
+          "execution": "NOT_RUN_BY_ADVISOR",
+          "report_policy": "Keep raw reports private; sanitize host metadata before publication",
+          "requires": [
+            "configured GLES driver",
+            "explicit operator execution"
+          ]
+        },
+        "priority_score": 0.0,
+        "ranking_basis": {
+          "hypothesis_only": true,
+          "estimated_gain_range": [
+            0,
+            0
+          ],
+          "range_kind": "SUPPLIED_HYPOTHESIS",
+          "confidence": 0,
+          "risk": 0,
+          "cost": 0,
+          "evidence_completeness": 0.8,
+          "completeness_checks": {
+            "runnable_experiment": true,
+            "supported_workload": false,
+            "capability": true,
+            "fallback": true,
+            "quality_contract": true
+          },
+          "formula": "lower_gain * confidence * (1-risk) * structural_completeness / (1+cost)",
+          "acceptance_effect": "NONE"
+        }
+      }
+    }
+  ],
+  "production_renderer_mutated": false,
+  "release_acceptance": false,
+  "physical_performance": "BLOCKED_BY_HARDWARE",
+  "agent_provider": "NOT_RUN",
+  "performance_improvement": "NOT_VERIFIED",
+  "stages": [
+    "descriptor binding",
+    "fingerprint",
+    "logical cost estimate",
+    "closed registry dispatch",
+    "actual GLES replay",
+    "archived artifact revalidation",
+    "CPU quality gate",
+    "optimization_advisor.advise/decide",
+    "explicit baseline fallback"
+  ]
+}

@@ -1,0 +1,5385 @@
+{
+  "status": "HOST_PASS",
+  "scope": "Rain elliptical alpha billboards, eight Beer-Lambert radial density slices, rounded layered UI proxies; three translating cameras; no water refraction, ray marching or production UI system",
+  "performance_status": "NOT_MEASURED",
+  "readbacks": 27,
+  "rows": [
+    {
+      "scene": "rain-droplet-proxy",
+      "camera": -0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.00408935546875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 35.02720048899756,
+        "cpu_alpha_centroid_x": 35.02691131498471,
+        "centroid_error_pixels": 0.0002891740128490028
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0078125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0283203125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0068359375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0224609375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 11,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rain-droplet-proxy--0.3-baseline"
+    },
+    {
+      "scene": "rain-droplet-proxy",
+      "camera": -0.3,
+      "variant": "offscreen_culling",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.00408935546875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 35.02720048899756,
+        "cpu_alpha_centroid_x": 35.02691131498471,
+        "centroid_error_pixels": 0.0002891740128490028
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0078125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0283203125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0068359375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0224609375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 9,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rain-droplet-proxy--0.3-offscreen_culling"
+    },
+    {
+      "scene": "rain-droplet-proxy",
+      "camera": -0.3,
+      "variant": "bad_visible_drop",
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 55,
+        "mean_rgba8_error": 0.2454833984375,
+        "silhouette_disagree_pixels": 28,
+        "alpha_centroid_x": 35.1019801980198,
+        "cpu_alpha_centroid_x": 35.02691131498471,
+        "centroid_error_pixels": 0.07506888303509385
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 49,
+          "mean_rgba8_error": 0.51953125,
+          "silhouette_disagree": 4,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 49,
+          "mean_rgba8_error": 1.8681640625,
+          "silhouette_disagree": 16,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 42,
+          "mean_rgba8_error": 0.3408203125,
+          "silhouette_disagree": 2,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 55,
+          "mean_rgba8_error": 1.19921875,
+          "silhouette_disagree": 6,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 5,
+      "pixel_identical_to_baseline": false,
+      "status": "PASS",
+      "artifact_prefix": "rain-droplet-proxy--0.3-bad_visible_drop"
+    },
+    {
+      "scene": "rain-droplet-proxy",
+      "camera": 0,
+      "variant": "baseline",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.003662109375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.745603395997573,
+        "cpu_alpha_centroid_x": 31.751210653753027,
+        "centroid_error_pixels": 0.005607257755453787
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0166015625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0146484375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.015625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.01171875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 11,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rain-droplet-proxy-0-baseline"
+    },
+    {
+      "scene": "rain-droplet-proxy",
+      "camera": 0,
+      "variant": "offscreen_culling",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.003662109375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.745603395997573,
+        "cpu_alpha_centroid_x": 31.751210653753027,
+        "centroid_error_pixels": 0.005607257755453787
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0166015625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0146484375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.015625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.01171875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 9,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rain-droplet-proxy-0-offscreen_culling"
+    },
+    {
+      "scene": "rain-droplet-proxy",
+      "camera": 0,
+      "variant": "bad_visible_drop",
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 56,
+        "mean_rgba8_error": 0.25091552734375,
+        "silhouette_disagree_pixels": 30,
+        "alpha_centroid_x": 31.922310756972113,
+        "cpu_alpha_centroid_x": 31.751210653753027,
+        "centroid_error_pixels": 0.17110010321908575
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 52,
+          "mean_rgba8_error": 1.2412109375,
+          "silhouette_disagree": 11,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 56,
+          "mean_rgba8_error": 1.109375,
+          "silhouette_disagree": 10,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 44,
+          "mean_rgba8_error": 0.8837890625,
+          "silhouette_disagree": 5,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 51,
+          "mean_rgba8_error": 0.7802734375,
+          "silhouette_disagree": 4,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 5,
+      "pixel_identical_to_baseline": false,
+      "status": "PASS",
+      "artifact_prefix": "rain-droplet-proxy-0-bad_visible_drop"
+    },
+    {
+      "scene": "rain-droplet-proxy",
+      "camera": 0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.00323486328125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 28.425903794442785,
+        "cpu_alpha_centroid_x": 28.42712066905615,
+        "centroid_error_pixels": 0.001216874613366059
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0244140625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0029296875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0224609375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.001953125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 11,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rain-droplet-proxy-0.3-baseline"
+    },
+    {
+      "scene": "rain-droplet-proxy",
+      "camera": 0.3,
+      "variant": "offscreen_culling",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.00323486328125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 28.425903794442785,
+        "cpu_alpha_centroid_x": 28.42712066905615,
+        "centroid_error_pixels": 0.001216874613366059
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0244140625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0029296875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0224609375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.001953125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 9,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rain-droplet-proxy-0.3-offscreen_culling"
+    },
+    {
+      "scene": "rain-droplet-proxy",
+      "camera": 0.3,
+      "variant": "bad_visible_drop",
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 55,
+        "mean_rgba8_error": 0.258544921875,
+        "silhouette_disagree_pixels": 33,
+        "alpha_centroid_x": 28.576615589606927,
+        "cpu_alpha_centroid_x": 28.42712066905615,
+        "centroid_error_pixels": 0.14949492055077584
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 55,
+          "mean_rgba8_error": 1.953125,
+          "silhouette_disagree": 18,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 47,
+          "mean_rgba8_error": 0.4794921875,
+          "silhouette_disagree": 3,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 50,
+          "mean_rgba8_error": 1.38671875,
+          "silhouette_disagree": 10,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 40,
+          "mean_rgba8_error": 0.3173828125,
+          "silhouette_disagree": 2,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 5,
+      "pixel_identical_to_baseline": false,
+      "status": "PASS",
+      "artifact_prefix": "rain-droplet-proxy-0.3-bad_visible_drop"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "camera": -0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.01953125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 35.359422007475615,
+        "cpu_alpha_centroid_x": 35.35895331874544,
+        "centroid_error_pixels": 0.00046868873017302803
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.03125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.126953125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0341796875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.1201171875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 10,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "volume-slice-proxy--0.3-baseline"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "camera": -0.3,
+      "variant": "offscreen_culling",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.01953125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 35.359422007475615,
+        "cpu_alpha_centroid_x": 35.35895331874544,
+        "centroid_error_pixels": 0.00046868873017302803
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.03125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.126953125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0341796875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.1201171875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 8,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "volume-slice-proxy--0.3-offscreen_culling"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "camera": -0.3,
+      "variant": "bad_visible_drop",
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 71,
+        "mean_rgba8_error": 0.66357421875,
+        "silhouette_disagree_pixels": 25,
+        "alpha_centroid_x": 35.98846787479407,
+        "cpu_alpha_centroid_x": 35.35895331874544,
+        "centroid_error_pixels": 0.6295145560486262
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 71,
+          "mean_rgba8_error": 1.3408203125,
+          "silhouette_disagree": 7,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 67,
+          "mean_rgba8_error": 4.466796875,
+          "silhouette_disagree": 8,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 68,
+          "mean_rgba8_error": 1.064453125,
+          "silhouette_disagree": 7,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 65,
+          "mean_rgba8_error": 3.7451171875,
+          "silhouette_disagree": 3,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 5,
+      "pixel_identical_to_baseline": false,
+      "status": "PASS",
+      "artifact_prefix": "volume-slice-proxy--0.3-bad_visible_drop"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "camera": 0,
+      "variant": "baseline",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.0162353515625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.93924039076052,
+        "cpu_alpha_centroid_x": 31.936393502463954,
+        "centroid_error_pixels": 0.002846888296566874
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0654296875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.06640625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.060546875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.0673828125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 10,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "volume-slice-proxy-0-baseline"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "camera": 0,
+      "variant": "offscreen_culling",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.0162353515625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.93924039076052,
+        "cpu_alpha_centroid_x": 31.936393502463954,
+        "centroid_error_pixels": 0.002846888296566874
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0654296875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.06640625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.060546875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.0673828125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 8,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "volume-slice-proxy-0-offscreen_culling"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "camera": 0,
+      "variant": "bad_visible_drop",
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 72,
+        "mean_rgba8_error": 0.6668701171875,
+        "silhouette_disagree_pixels": 26,
+        "alpha_centroid_x": 32.65655899802241,
+        "cpu_alpha_centroid_x": 31.936393502463954,
+        "centroid_error_pixels": 0.720165495558458
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 72,
+          "mean_rgba8_error": 3.591796875,
+          "silhouette_disagree": 15,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 61,
+          "mean_rgba8_error": 2.23046875,
+          "silhouette_disagree": 2,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 68,
+          "mean_rgba8_error": 3.0234375,
+          "silhouette_disagree": 9,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 60,
+          "mean_rgba8_error": 1.82421875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 5,
+      "pixel_identical_to_baseline": false,
+      "status": "PASS",
+      "artifact_prefix": "volume-slice-proxy-0-bad_visible_drop"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "camera": 0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.01617431640625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 28.543398812243034,
+        "cpu_alpha_centroid_x": 28.540120636081156,
+        "centroid_error_pixels": 0.003278176161877866
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.10546875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.025390625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.1025390625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.025390625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 10,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "volume-slice-proxy-0.3-baseline"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "camera": 0.3,
+      "variant": "offscreen_culling",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.01617431640625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 28.543398812243034,
+        "cpu_alpha_centroid_x": 28.540120636081156,
+        "centroid_error_pixels": 0.003278176161877866
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.10546875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.025390625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.1025390625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.025390625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 8,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "volume-slice-proxy-0.3-offscreen_culling"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "camera": 0.3,
+      "variant": "bad_visible_drop",
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 73,
+        "mean_rgba8_error": 0.670654296875,
+        "silhouette_disagree_pixels": 29,
+        "alpha_centroid_x": 29.353136408894787,
+        "cpu_alpha_centroid_x": 28.540120636081156,
+        "centroid_error_pixels": 0.8130157728136318
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 73,
+          "mean_rgba8_error": 5.46484375,
+          "silhouette_disagree": 18,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 46,
+          "mean_rgba8_error": 0.3837890625,
+          "silhouette_disagree": 1,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 70,
+          "mean_rgba8_error": 4.5693359375,
+          "silhouette_disagree": 10,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 44,
+          "mean_rgba8_error": 0.3125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 5,
+      "pixel_identical_to_baseline": false,
+      "status": "PASS",
+      "artifact_prefix": "volume-slice-proxy-0.3-bad_visible_drop"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "camera": -0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0101318359375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 35.4400497911982,
+        "cpu_alpha_centroid_x": 35.4400497911982,
+        "centroid_error_pixels": 0.0
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0205078125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0654296875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.01953125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.056640625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 8,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rounded-layered-ui--0.3-baseline"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "camera": -0.3,
+      "variant": "offscreen_culling",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0101318359375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 35.4400497911982,
+        "cpu_alpha_centroid_x": 35.4400497911982,
+        "centroid_error_pixels": 0.0
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0205078125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0654296875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.01953125,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.056640625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 6,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rounded-layered-ui--0.3-offscreen_culling"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "camera": -0.3,
+      "variant": "bad_visible_drop",
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 134,
+        "mean_rgba8_error": 1.30810546875,
+        "silhouette_disagree_pixels": 33,
+        "alpha_centroid_x": 36.08612503297283,
+        "cpu_alpha_centroid_x": 35.4400497911982,
+        "centroid_error_pixels": 0.646075241774632
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 134,
+          "mean_rgba8_error": 3.62890625,
+          "silhouette_disagree": 13,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 82,
+          "mean_rgba8_error": 6.93359375,
+          "silhouette_disagree": 1,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 134,
+          "mean_rgba8_error": 3.392578125,
+          "silhouette_disagree": 11,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 82,
+          "mean_rgba8_error": 6.974609375,
+          "silhouette_disagree": 8,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 4,
+      "pixel_identical_to_baseline": false,
+      "status": "PASS",
+      "artifact_prefix": "rounded-layered-ui--0.3-bad_visible_drop"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "camera": 0,
+      "variant": "baseline",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.00958251953125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.917637821307547,
+        "cpu_alpha_centroid_x": 31.917637821307547,
+        "centroid_error_pixels": 0.0
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0419921875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0400390625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.037109375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0341796875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 8,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rounded-layered-ui-0-baseline"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "camera": 0,
+      "variant": "offscreen_culling",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.00958251953125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.917637821307547,
+        "cpu_alpha_centroid_x": 31.917637821307547,
+        "centroid_error_pixels": 0.0
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0419921875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0400390625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.037109375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0341796875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 6,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rounded-layered-ui-0-offscreen_culling"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "camera": 0,
+      "variant": "bad_visible_drop",
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 105,
+        "mean_rgba8_error": 1.26239013671875,
+        "silhouette_disagree_pixels": 26,
+        "alpha_centroid_x": 32.56427221172023,
+        "cpu_alpha_centroid_x": 31.917637821307547,
+        "centroid_error_pixels": 0.6466343904126823
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 105,
+          "mean_rgba8_error": 5.91015625,
+          "silhouette_disagree": 9,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 82,
+          "mean_rgba8_error": 4.08984375,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 105,
+          "mean_rgba8_error": 6.115234375,
+          "silhouette_disagree": 12,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 82,
+          "mean_rgba8_error": 4.0830078125,
+          "silhouette_disagree": 5,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 4,
+      "pixel_identical_to_baseline": false,
+      "status": "PASS",
+      "artifact_prefix": "rounded-layered-ui-0-bad_visible_drop"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "camera": 0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0096435546875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 28.41868741206654,
+        "cpu_alpha_centroid_x": 28.41868741206654,
+        "centroid_error_pixels": 0.0
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0634765625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0185546875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0556640625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0166015625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 8,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rounded-layered-ui-0.3-baseline"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "camera": 0.3,
+      "variant": "offscreen_culling",
+      "quality": "PASS",
+      "expected": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0096435546875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 28.41868741206654,
+        "cpu_alpha_centroid_x": 28.41868741206654,
+        "centroid_error_pixels": 0.0
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0634765625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0185546875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.0556640625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0166015625,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 6,
+      "pixel_identical_to_baseline": true,
+      "status": "PASS",
+      "artifact_prefix": "rounded-layered-ui-0.3-offscreen_culling"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "camera": 0.3,
+      "variant": "bad_visible_drop",
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 105,
+        "mean_rgba8_error": 1.2777099609375,
+        "silhouette_disagree_pixels": 33,
+        "alpha_centroid_x": 29.125954198473284,
+        "cpu_alpha_centroid_x": 28.41868741206654,
+        "centroid_error_pixels": 0.7072667864067448
+      },
+      "tile_error": [
+        {
+          "tile": [
+            0,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            0
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            1
+          ],
+          "max_rgba8_error": 100,
+          "mean_rgba8_error": 8.6533203125,
+          "silhouette_disagree": 13,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            1
+          ],
+          "max_rgba8_error": 64,
+          "mean_rgba8_error": 1.4013671875,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            1
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            2
+          ],
+          "max_rgba8_error": 105,
+          "mean_rgba8_error": 8.947265625,
+          "silhouette_disagree": 19,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            2
+          ],
+          "max_rgba8_error": 82,
+          "mean_rgba8_error": 1.44140625,
+          "silhouette_disagree": 1,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            2
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            0,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            1,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            2,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        },
+        {
+          "tile": [
+            3,
+            3
+          ],
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree": 0,
+          "interpretation": "numerical and silhouette proxies, not calibrated perceptual error"
+        }
+      ],
+      "draw_calls": 4,
+      "pixel_identical_to_baseline": false,
+      "status": "PASS",
+      "artifact_prefix": "rounded-layered-ui-0.3-bad_visible_drop"
+    }
+  ],
+  "parallax": [
+    {
+      "scene": "rain-droplet-proxy",
+      "observed_shift": -6.601296694554772,
+      "cpu_shift": -6.599790645928557,
+      "error": 0.0015060486262150619,
+      "status": "PASS"
+    },
+    {
+      "scene": "volume-slice-proxy",
+      "observed_shift": -6.816023195232582,
+      "cpu_shift": -6.818832682664286,
+      "error": 0.002809487431704838,
+      "status": "PASS"
+    },
+    {
+      "scene": "rounded-layered-ui",
+      "observed_shift": -7.021362379131659,
+      "cpu_shift": -7.021362379131659,
+      "error": 0.0,
+      "status": "PASS"
+    }
+  ],
+  "scene_inputs": [
+    {
+      "name": "rain-droplet-proxy",
+      "objects": [
+        {
+          "id": 8,
+          "x": 0.3,
+          "y": 0.28,
+          "z": 3.46,
+          "rx": 0.11,
+          "ry": 0.32,
+          "color": [
+            0.65,
+            0.3,
+            0.4,
+            0.22
+          ],
+          "mode": 4
+        },
+        {
+          "id": 7,
+          "x": 0.0,
+          "y": 0.28,
+          "z": 3.34,
+          "rx": 0.11,
+          "ry": 0.32,
+          "color": [
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.22
+          ],
+          "mode": 4
+        },
+        {
+          "id": 6,
+          "x": -0.3,
+          "y": 0.28,
+          "z": 3.2199999999999998,
+          "rx": 0.11,
+          "ry": 0.32,
+          "color": [
+            0.15,
+            0.3,
+            0.8,
+            0.22
+          ],
+          "mode": 4
+        },
+        {
+          "id": 5,
+          "x": 0.3,
+          "y": 0.0,
+          "z": 3.1,
+          "rx": 0.11,
+          "ry": 0.32,
+          "color": [
+            0.65,
+            0.5,
+            0.4,
+            0.22
+          ],
+          "mode": 4
+        },
+        {
+          "id": 4,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 2.98,
+          "rx": 0.11,
+          "ry": 0.32,
+          "color": [
+            0.4,
+            0.3,
+            0.6000000000000001,
+            0.22
+          ],
+          "mode": 4
+        },
+        {
+          "id": 3,
+          "x": -0.3,
+          "y": 0.0,
+          "z": 2.86,
+          "rx": 0.11,
+          "ry": 0.32,
+          "color": [
+            0.15,
+            0.5,
+            0.8,
+            0.22
+          ],
+          "mode": 4
+        },
+        {
+          "id": 2,
+          "x": 0.3,
+          "y": -0.28,
+          "z": 2.74,
+          "rx": 0.11,
+          "ry": 0.32,
+          "color": [
+            0.65,
+            0.3,
+            0.4,
+            0.22
+          ],
+          "mode": 4
+        },
+        {
+          "id": 1,
+          "x": 0.0,
+          "y": -0.28,
+          "z": 2.62,
+          "rx": 0.11,
+          "ry": 0.32,
+          "color": [
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.22
+          ],
+          "mode": 4
+        },
+        {
+          "id": 0,
+          "x": -0.3,
+          "y": -0.28,
+          "z": 2.5,
+          "rx": 0.11,
+          "ry": 0.32,
+          "color": [
+            0.15,
+            0.3,
+            0.8,
+            0.22
+          ],
+          "mode": 4
+        },
+        {
+          "id": 9,
+          "x": 12,
+          "y": 0,
+          "z": 2.5,
+          "rx": 0.1,
+          "ry": 0.2,
+          "color": [
+            1,
+            0,
+            0,
+            0.5
+          ],
+          "mode": 4
+        },
+        {
+          "id": 10,
+          "x": 13,
+          "y": 0,
+          "z": 2.5,
+          "rx": 0.1,
+          "ry": 0.2,
+          "color": [
+            1,
+            0,
+            0,
+            0.5
+          ],
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "volume-slice-proxy",
+      "objects": [
+        {
+          "id": 7,
+          "x": 0.06,
+          "y": 0.0,
+          "z": 3.34,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.55
+          ],
+          "mode": 5
+        },
+        {
+          "id": 6,
+          "x": -0.06,
+          "y": -0.1,
+          "z": 3.2199999999999998,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.15,
+            0.3,
+            0.8,
+            0.55
+          ],
+          "mode": 5
+        },
+        {
+          "id": 5,
+          "x": 0.06,
+          "y": 0.1,
+          "z": 3.1,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.65,
+            0.5,
+            0.4,
+            0.55
+          ],
+          "mode": 5
+        },
+        {
+          "id": 4,
+          "x": -0.06,
+          "y": 0.0,
+          "z": 2.98,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.4,
+            0.3,
+            0.6000000000000001,
+            0.55
+          ],
+          "mode": 5
+        },
+        {
+          "id": 3,
+          "x": 0.06,
+          "y": -0.1,
+          "z": 2.86,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.15,
+            0.5,
+            0.8,
+            0.55
+          ],
+          "mode": 5
+        },
+        {
+          "id": 2,
+          "x": -0.06,
+          "y": 0.1,
+          "z": 2.74,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.65,
+            0.3,
+            0.4,
+            0.55
+          ],
+          "mode": 5
+        },
+        {
+          "id": 1,
+          "x": 0.06,
+          "y": 0.0,
+          "z": 2.62,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.55
+          ],
+          "mode": 5
+        },
+        {
+          "id": 0,
+          "x": -0.06,
+          "y": -0.1,
+          "z": 2.5,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.15,
+            0.3,
+            0.8,
+            0.55
+          ],
+          "mode": 5
+        },
+        {
+          "id": 8,
+          "x": 12,
+          "y": 0,
+          "z": 2.5,
+          "rx": 0.1,
+          "ry": 0.2,
+          "color": [
+            1,
+            0,
+            0,
+            0.5
+          ],
+          "mode": 5
+        },
+        {
+          "id": 9,
+          "x": 13,
+          "y": 0,
+          "z": 2.5,
+          "rx": 0.1,
+          "ry": 0.2,
+          "color": [
+            1,
+            0,
+            0,
+            0.5
+          ],
+          "mode": 5
+        }
+      ]
+    },
+    {
+      "name": "rounded-layered-ui",
+      "objects": [
+        {
+          "id": 5,
+          "x": 0.06,
+          "y": 0.1,
+          "z": 3.1,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.65,
+            0.5,
+            0.4,
+            0.22
+          ],
+          "mode": 6
+        },
+        {
+          "id": 4,
+          "x": -0.06,
+          "y": 0.0,
+          "z": 2.98,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.4,
+            0.3,
+            0.6000000000000001,
+            0.22
+          ],
+          "mode": 6
+        },
+        {
+          "id": 3,
+          "x": 0.06,
+          "y": -0.1,
+          "z": 2.86,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.15,
+            0.5,
+            0.8,
+            0.22
+          ],
+          "mode": 6
+        },
+        {
+          "id": 2,
+          "x": -0.06,
+          "y": 0.1,
+          "z": 2.74,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.65,
+            0.3,
+            0.4,
+            0.22
+          ],
+          "mode": 6
+        },
+        {
+          "id": 1,
+          "x": 0.06,
+          "y": 0.0,
+          "z": 2.62,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.22
+          ],
+          "mode": 6
+        },
+        {
+          "id": 0,
+          "x": -0.06,
+          "y": -0.1,
+          "z": 2.5,
+          "rx": 0.52,
+          "ry": 0.4,
+          "color": [
+            0.15,
+            0.3,
+            0.8,
+            0.22
+          ],
+          "mode": 6
+        },
+        {
+          "id": 6,
+          "x": 12,
+          "y": 0,
+          "z": 2.5,
+          "rx": 0.1,
+          "ry": 0.2,
+          "color": [
+            1,
+            0,
+            0,
+            0.5
+          ],
+          "mode": 6
+        },
+        {
+          "id": 7,
+          "x": 13,
+          "y": 0,
+          "z": 2.5,
+          "rx": 0.1,
+          "ry": 0.2,
+          "color": [
+            1,
+            0,
+            0,
+            0.5
+          ],
+          "mode": 6
+        }
+      ]
+    }
+  ],
+  "thresholds": {
+    "max_rgba8_error": 4,
+    "silhouette_disagree_pixels": 2,
+    "centroid_error_pixels": 0.1
+  },
+  "source_sha256": "c81a20c3c311b58501a7689f81a21684eedbfe3b13145a6b5b228684ae46faf0",
+  "shader_sha256": {
+    "vertex": "3c00bbc64a8dbe73fb1e6efa6819873fc7a0f1bbdd437297c27ef411acac9078",
+    "fragment": "4f4ef08f950c049182394540bd8a79b5515f52ab47b5dd3f6c50f41983dcfad4"
+  },
+  "artifact_archive": {
+    "file": "coverage-scenes-mesa.zip",
+    "sha256": "d00be92da612d4cd7523e1d60994144cabfb4fa98ecce91db838339035caa39b",
+    "instructions": "Extract beside report; RGBA files 64x64 bottom-up, tiles JSON includes complete per-pixel layers/transmittance"
+  }
+}

@@ -1,0 +1,12 @@
+{
+ "schema_version": 1,
+ "experiment_id": "rgba8-graph-scale-replay-v1",
+ "workload": {
+  "workload_id": "rgba8-three-pass-scale-v1",
+  "provenance": "synthetic",
+  "resolution": [4,4],
+  "sampling_formats": ["RGBA8"],
+  "thermal_state": "UNKNOWN",
+  "trace_available": false
+ }
+}

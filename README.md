@@ -247,3 +247,11 @@ bounded software GLES shader/overlap/texture controls. See
 [validation and remaining scope](docs/v1.0.9/validation-report.md).
 All predecessor gates remain binding. Real GPU/provider acceptance and broader
 original-plan experiments remain incomplete; metadata stays unchanged.
+
+
+### v1.0.9 end-to-end host candidate
+
+- [Executable workload-to-Advisor workflow](benchmarks/workflow/README.md): actual GLES replay, artifact revalidation, quality rejection and baseline fallback; never software performance VERIFIED.
+- [Compressed streaming chain](benchmarks/compressed_streaming/README.md): pinned KTX preparation, cache/budget and actual upload/readback with original-pixel fallback.
+- [Remaining original-plan gates](docs/v1.0.9/completion-matrix.md) and [scope clarification](docs/v1.0.9/original-scope-audit.md). Original visual failures, physical-device/provider and independent review gates remain.
+- Read-only weekly/monthly radar workflow delivered, not active from this Draft branch. No release/tag/version metadata change.

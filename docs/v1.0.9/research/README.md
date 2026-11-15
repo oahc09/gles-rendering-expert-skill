@@ -48,3 +48,11 @@ rejects stale review/code hashes, missing coverage and any attempted promotion
 from these records to a verified performance rule or independent human sign-off.
 This checks integrity and declared linkage only; it neither re-fetches upstream
 nor counts the remaining metadata corpus as read. No new rules are promoted.
+
+## Read-only schedule delivery, not an active schedule claim
+.github/workflows/research-radar.yml reuses the existing collector for inclusive
+7-day weekly and90-day monthly windows. Repository permissions are read-only:
+no secret injection, commits or rule promotion; artifacts retained30days.
+Fetch failures retain INCOMPLETE and fail the job. Cron only becomes eligible
+on the default branch; no execution from this Draft branch is claimed.
+Window arithmetic is unit tested.

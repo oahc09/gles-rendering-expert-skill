@@ -150,6 +150,9 @@ jobs:
           for driver in mesa angle; do
             python3 benchmarks/shader_ab/optimization_pairs.py --config /tmp/v109-$driver.json --output reports/v109-optimization-pairs-$driver.json
             python3 benchmarks/texture_streaming/run.py --config /tmp/v109-$driver.json --output reports/v109-streaming-$driver.json
+            python3 benchmarks/compressed_streaming/run.py --config /tmp/v109-$driver.json --ktx-root /tmp/KTX-Software-4.4.2-Linux-x86_64 --ktx-archive /tmp/v109-ktx.tar.bz2 --output reports/v109-compressed-streaming-$driver.json
+            python3 benchmarks/workflow/run.py benchmarks/workflow/request.json --config /tmp/v109-$driver.json --backend $driver-software --output-dir reports/v109-workflow-$driver
+            python3 benchmarks/overlap_scenes/coverage_scenes.py --config /tmp/v109-$driver.json --output reports/v109-coverage-scenes-$driver.json
             python3 benchmarks/texture_access/oblique.py --config /tmp/v109-$driver.json --output reports/v109-oblique-$driver.json
             python3 benchmarks/texture_streaming/progressive.py --config /tmp/v109-$driver.json --output reports/v109-progressive-$driver.json
             python3 benchmarks/device_portability/scene_collector.py collect --config /tmp/v109-$driver.json --backend $driver-software --output-dir reports/v109-scene-captures

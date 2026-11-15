@@ -4,6 +4,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 REGISTRY={
+ 'rgba8-graph-scale-replay-v1':('benchmarks/pipeline/candidate_replay.py','finite three-pass RGBA8 graph scaling and quality fallback; no physical performance'),
  'shader-advanced-v1':('benchmarks/shader_ab/advanced.py','bounded UBO/SSBO/discard/depth correctness; no timing'),
  'texture-access-v1':('benchmarks/texture_access/run.py','finite texture mechanism/quality controls; no hardware gain'),
  'postfx-resolution-loss-v1':('benchmarks/pipeline/postfx_quality.py','finite texture-resolution quality oracle, not general PostFX equivalence'),

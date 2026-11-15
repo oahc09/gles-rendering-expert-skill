@@ -54,7 +54,7 @@
         "benchmarks/overlap_scenes/projected.py",
         "benchmarks/overlap_scenes/advanced.py"
       ],
-      "remaining": "Original RGBA8 Mesa24/48 CPU-golden failures retained. Quantization models support a precision explanation, not confirmed installed-driver root cause or bug. Capability-gated RGBA32F linear composition is a separate contract, not original UNORM equivalence. Larger scale, general background merge, volume/rain distributions and depth/background statistics remain incomplete. Format/target-specific quality, capability and logical budget admission plus actual selected redraw now implemented; no physical budget/performance acceptance. Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition.",
+      "remaining": "Original Mesa RGBA8 high-layer visual failures unresolved. Rain/volume/UI finite scenes and color/alpha/depth/background tile statistics now implemented. Larger-scale or general Gaussian merging/far-only layered compositing remain extensions beyond bounded prototypes, not claimed complete. Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition.",
       "host_delivery": "PARTIAL",
       "acceptance": "PARTIAL_HOST_SCOPE"
     },
@@ -74,7 +74,7 @@
         "benchmarks/texture_access/mechanisms.py",
         "benchmarks/texture_access/ktx2_experiment.py"
       ],
-      "remaining": "Synchronous mip refinement and finite affine oblique/locality controls implemented; high-frequency/general anisotropic quality, compressed/asynchronous streaming and isolated transcoder phase accounting remain incomplete. Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics.",
+      "remaining": "Actual compressed transcode/cache/budget/upload/readback chain and CPU phase accounting delivered. General assets/high-frequency filtering and asynchronous streaming remain bounded extensions; physical residency/upload stalls/timing absent. Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics.",
       "host_delivery": "PARTIAL",
       "acceptance": "PARTIAL_HOST_SCOPE"
     },
@@ -114,7 +114,7 @@
         "docs/v1.0.9/research/implementation-review.json",
         "tools/run_v109_regression.py"
       ],
-      "remaining": "Only ten selected full-content records inspected from 1319 metadata candidates; remaining coverage conclusions and vendor/X checks are incomplete. Weekly/monthly execution schedule is not established by a read-only radar script. Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding.",
+      "remaining": "Selected source reviews and experiment hash links delivered; vendor/X coverage conclusions remain incomplete. The entire1319-record corpus is not falsely labelled reviewed. Weekly/monthly read-only workflow code delivered but inactive on Draft branch; activation and observed successful scheduled execution await default-branch merge. Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding.",
       "host_delivery": "PARTIAL",
       "acceptance": "PARTIAL_HOST_SCOPE"
     }

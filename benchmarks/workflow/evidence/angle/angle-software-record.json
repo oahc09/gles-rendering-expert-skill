@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "hardware_kind": "software",
+  "backend": "angle-software",
+  "workload_id": "rgba8-three-pass-scale-v1",
+  "baseline_graph_sha256": "9a0f28b4521b94e9d740aa8d47ca6464d0fe6eed832aff5c0fe6f22e32865be1",
+  "candidate_graph_sha256": "387c30cc38ccf90115cf541ae40854a9a67f92f81a6d39e8f6a8ec88208bf17d",
+  "scene": {
+    "path": "angle-software-scene.json",
+    "sha256": "d145b4ae8e9883b94c6686a659b3b13380fe2d02b215c05cd37f9dc89fd48628"
+  },
+  "quality": {
+    "status": "FINITE_QUALITY_CONTROLS_PASS",
+    "cases": [
+      {
+        "pattern": "constant",
+        "max_abs_error": 0,
+        "candidate_quality": "PASS",
+        "selected": "candidate"
+      },
+      {
+        "pattern": "checkerboard",
+        "max_abs_error": 255,
+        "candidate_quality": "REJECTED_BY_QUALITY",
+        "selected": "baseline"
+      }
+    ],
+    "general_quality_equivalence": false,
+    "physical_quality_evidence": false
+  },
+  "timing": "NOT_COLLECTED",
+  "physical_provider": "BLOCKED_BY_HARDWARE",
+  "release_acceptance": false,
+  "collector_scope": "host software correctness, no physical-device identity claim"
+}

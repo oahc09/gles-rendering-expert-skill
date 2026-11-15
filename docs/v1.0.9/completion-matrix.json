@@ -78,10 +78,11 @@
         "benchmarks/overlap_scenes/blend_precision.py",
         "benchmarks/overlap_scenes/evidence/tiered-baseline-bias.json",
         "benchmarks/overlap_scenes/precision_policy.py",
-        "benchmarks/overlap_scenes/precision_replay.py"
+        "benchmarks/overlap_scenes/precision_replay.py",
+        "benchmarks/overlap_scenes/coverage_scenes.py"
       ],
       "remaining_host": [
-        "Original RGBA8 Mesa24/48 CPU-golden failures retained. Quantization models support a precision explanation, not confirmed installed-driver root cause or bug. Capability-gated RGBA32F linear composition is a separate contract, not original UNORM equivalence. Larger scale, general background merge, volume/rain distributions and depth/background statistics remain incomplete. Format/target-specific quality, capability and logical budget admission plus actual selected redraw now implemented; no physical budget/performance acceptance."
+        "Original Mesa RGBA8 high-layer visual failures unresolved. Rain/volume/UI finite scenes and color/alpha/depth/background tile statistics now implemented. Larger-scale or general Gaussian merging/far-only layered compositing remain extensions beyond bounded prototypes, not claimed complete."
       ],
       "external_requirements": [
         "Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition."
@@ -114,10 +115,11 @@
         "benchmarks/texture_access/ktx2_experiment.py",
         "benchmarks/texture_streaming/run.py",
         "benchmarks/texture_streaming/progressive.py",
-        "benchmarks/texture_access/oblique.py"
+        "benchmarks/texture_access/oblique.py",
+        "benchmarks/compressed_streaming/run.py"
       ],
       "remaining_host": [
-        "Synchronous mip refinement and finite affine oblique/locality controls implemented; high-frequency/general anisotropic quality, compressed/asynchronous streaming and isolated transcoder phase accounting remain incomplete."
+        "Actual compressed transcode/cache/budget/upload/readback chain and CPU phase accounting delivered. General assets/high-frequency filtering and asynchronous streaming remain bounded extensions; physical residency/upload stalls/timing absent."
       ],
       "external_requirements": [
         "Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics."
@@ -130,7 +132,8 @@
       "evidence": [
         "tools/optimization_advisor.py",
         "tools/optimization_experiments.py",
-        "benchmarks/rollback_controls/run.py"
+        "benchmarks/rollback_controls/run.py",
+        "benchmarks/workflow/run.py"
       ],
       "remaining_host": [],
       "external_requirements": [
@@ -179,15 +182,18 @@
         "docs/v1.0.9/research/implementation-review.json",
         ".github/workflows/validation.yml",
         "docs/v1.0.9/research/experiment-chain.json",
-        "tools/check_v109_research_chain.py"
+        "tools/check_v109_research_chain.py",
+        ".github/workflows/research-radar.yml",
+        "tools/v109_radar_window.py"
       ],
       "remaining_host": [
-        "Only ten selected full-content records inspected from 1319 metadata candidates; remaining coverage conclusions and vendor/X checks are incomplete.",
-        "Weekly/monthly execution schedule is not established by a read-only radar script."
+        "Selected source reviews and experiment hash links delivered; vendor/X coverage conclusions remain incomplete. The entire1319-record corpus is not falsely labelled reviewed.",
+        "Weekly/monthly read-only workflow code delivered but inactive on Draft branch; activation and observed successful scheduled execution await default-branch merge."
       ],
       "external_requirements": [
         "Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding."
       ]
     }
-  ]
+  ],
+  "scope_interpretation": "docs/v1.0.9/original-scope-audit.md"
 }

@@ -296,3 +296,28 @@ before scenario admission, explicitly not a zero-cost production switcher.
 Original Mesa UNORM failures are still unresolved; hardware/provider unchanged.
 
 Current complete regression: **967 tests, zero skips**, 36 directories. Final-source admission runners independently returned HOST_PASS; Mesa34/ANGLE28 of48 policy scenarios are explicitly UNAVAILABLE, not accepted scenes.
+
+## Integrated user-facing host chains
+The workflow CLI now binds a closed authored workload to fingerprint and graph
+cost estimates, executes registered actual GLES, rereads hash-bound captures,
+recalculates CPU quality and calls the existing optimization_advisor.advise/decide.
+Constant output is INSUFFICIENT_EVIDENCE for performance; checkerboard is
+REJECTED_BY_QUALITY. Both keep baseline in production, never software VERIFIED.
+
+Compressed streaming now connects pinned official UASTC/libktx preparation,
+independent CPU quality, content cache, logical LRU budgets and actual GLES
+compressed upload/eviction/readback in one run. A steep119-error compressed asset
+fails budget32 and uses original lossless RGBA with zero error, not lossy decode.
+CPU phase timings are separately recorded; physical stalls/residency remain null.
+
+Added real finite rain, Beer-Lambert slice volume and rounded UI scenes over
+three cameras, positive culling and negative visible-removal. Tile reports include
+coverage/layers, color/alpha, depth and background transmittance estimates.
+These are finite authored models, not true refractive drops/volume raymarch or
+physical GPU counters. Old high-layer UNORM failures remain unchanged.
+
+Original mandatory delivery is now separated from optional expansion in
+original-scope-audit.md. Weekly/monthly radar workflow code is read-only and
+artifact-only, but cannot run on this Draft branch: not an active schedule claim.
+
+Integrated regression: **996 tests, zero skips**, 38 directories; `evidence/host-regression-integrated.json`. All three new runtime chains independently rerun on both backends. This does not close original high-layer visual, physical device, provider or independent-review gates.
