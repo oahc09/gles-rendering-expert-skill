@@ -41,6 +41,7 @@ checker verifies citation metadata only, not the absent specification text.
 The structural catalog remains INDEXED_ONLY. Separate runtime evidence does not
 promote every related Registry entry to complete semantic acceptance.
 
+- [Timer query](timer-query.md): real finite 64-bit EXT lifecycle/disjoint checks; narrower-counter overflow proof, hardware timing and long-running wraparound remain unverified.
 - [Debug output](debug-output.md): real core/KHR callback, filtering, group/label and safe unregister checks; authored messages only, not arbitrary driver diagnostics.
 - [Multiview](multiview.md): two-layer draw and sequential fallback, not all multiview configurations.
 - [Robust readback](robust-readback.md): byte-size/canary checks, not actual reset recovery.
@@ -49,7 +50,7 @@ promote every related Registry entry to complete semantic acceptance.
 - [Texture buffer](texture-buffer.md): bounded range/update checks; ANGLE ignored-offset boundary mismatch remains FAIL.
 
 External native image/AHardwareBuffer ownership, MSRTT, VRS, protected resources,
-actual reset recovery, arbitrary ASTC/HDR and timer-query collection still need
+actual reset recovery, arbitrary ASTC/HDR and device timer-query calibration still need
 scope-specific runtime acceptance. Existing ASTC constant-block decode and EGL
 image/sync controls do not close those larger families. Use the candidate release
 matrix for current evidence; no GPU is assumed to implement every extension.

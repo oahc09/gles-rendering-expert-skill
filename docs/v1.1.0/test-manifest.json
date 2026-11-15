@@ -63,6 +63,7 @@
     "benchmarks/coverage/texture-buffer",
     "benchmarks/coverage/depth-peeling",
     "benchmarks/coverage/transparency-routing",
-    "benchmarks/coverage/debug-output"
+    "benchmarks/coverage/debug-output",
+    "benchmarks/coverage/timer-query"
   ]
 }

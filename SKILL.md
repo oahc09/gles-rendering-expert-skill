@@ -322,3 +322,5 @@ For crossing transparent layers that invalidate global sorting, the [bounded dep
 For end-to-end acceptance of the registered transparency controls, use [finite transparency routing](references/coverage/transparency-routing.md). It validates source, input, budget and actual pixels together; it deliberately rejects unregistered geometry and cannot certify arbitrary caller-supplied scene data.
 
 For core/KHR debug output, see [filtered callback lifecycle validation](references/coverage/debug-output.md). Select exact version/extension entrypoints, retain callback state until unregister, avoid calling GL from the callback, and collect only the task-approved diagnostic categories rather than indiscriminately publishing driver messages.
+
+For timer-query evidence, see [EXT timer lifecycle validation](references/coverage/timer-query.md). Check result availability, disjoint interval and counter-width/overflow limits before interpreting samples. Never treat software timer availability or absence of a disjoint flag as proof of a hardware performance gain.

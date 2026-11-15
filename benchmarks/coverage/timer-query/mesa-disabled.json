@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "source_sha256": "ca2426bd8877280ad35420b89c4f74e26a7ed8705200e8c94fd36eb57657286d",
+  "execution_class": "SOFTWARE_HOST",
+  "physical_device": "NOT_RUN",
+  "performance_improvement": "NOT_MEASURED",
+  "raw_timestamps_recorded": false,
+  "force_disabled": true,
+  "status": "SAFE_FALLBACK_PASS",
+  "extension_advertised": true,
+  "timer_entrypoint_calls": 0,
+  "reason": "POLICY_DISABLED",
+  "fallback": {
+    "pixel_match": true,
+    "gl_error": 0
+  }
+}

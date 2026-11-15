@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "total_tests": 1359,
+  "total_tests": 1367,
   "total_skipped": 0,
   "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
   "rows": [
@@ -441,6 +441,13 @@
     },
     {
       "directory": "benchmarks/coverage/debug-output",
+      "tests": 8,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/timer-query",
       "tests": 8,
       "skipped": 0,
       "returncode": 0,
