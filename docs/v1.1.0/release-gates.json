@@ -118,9 +118,12 @@
         "tools/coverage/check_coverage.py",
         "tools/coverage/verify_sources.py",
         "docs/v1.1.0/source-offline.json",
-        "docs/v1.1.0/source-online.json"
+        "docs/v1.1.0/source-online.json",
+        "tools/coverage/runtime_links.py",
+        "references/coverage/runtime-links.json",
+        "docs/v1.1.0/coverage-report.json"
       ],
-      "remaining": "Offline reconstruction, pinned online source verification and explicit positive/negative linkage; no assertion of universal semantic acceptance. Clean offline checkout is INCOMPLETE because public gl.xml is an explicit non-vendored dependency; CI fetches its pinned hash."
+      "remaining": "Offline reconstruction, pinned online source verification and explicit positive/negative linkage; no assertion of universal semantic acceptance. Clean offline checkout is INCOMPLETE because public gl.xml is an explicit non-vendored dependency; CI fetches its pinned hash. Four finite Python probe families now have eight typed archived runtime receipts for six distinct API names, with strict Registry routes, source/report integrity and actual error-case assertions. These are not fresh execution authentication, all-API acceptance, independent human review or completion of the missing offline source dependency."
     },
     "W9": {
       "status": "PARTIAL_HOST_CTS_TARGET_BLOCKED",
