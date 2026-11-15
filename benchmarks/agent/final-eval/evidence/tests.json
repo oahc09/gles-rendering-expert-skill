@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "command": "python3 -m unittest discover -s benchmarks/agent/final-eval -p 'test_*.py' -q",
+  "tests": 10,
+  "result": "PASS",
+  "scope": "Evaluator infrastructure tests only; no model/provider execution",
+  "test_source_sha256": "6f98037056abfade4da666f8c112f2764d9629e6272cec5dfbef9f1ce85a7b76"
+}

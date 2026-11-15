@@ -1,0 +1,861 @@
+{
+  "schema_version": 1,
+  "base_commit": "b1bf915e1f33404888b89174ad2857ffa78b6f2a",
+  "release_authorized": false,
+  "debts": [
+    {
+      "path": "docs/release-gates.json",
+      "sha256": "a1fec0cade0fa960361c3a78d7534c66e73113bcf8abdb2da879cedfa3035e19",
+      "source_version": "1.0.3",
+      "status": "BLOCKED",
+      "evidence": "docs/release-gates.json",
+      "owner": "project-maintainer",
+      "disposition": "PRESERVE_NO_WAIVER",
+      "gate": {
+        "target_version": "1.0.3",
+        "metadata_version": "1.0.2",
+        "release_ready": false,
+        "work_packages": {
+          "W0": {
+            "status": "PASS",
+            "implementation": [
+              "docs/baseline-audit.md",
+              "docs/baseline-files.txt"
+            ],
+            "acceptance": "Verified baseline, clean clone and write permission.",
+            "remaining": "None for baseline inventory."
+          },
+          "W1": {
+            "status": "PARTIAL",
+            "implementation": [
+              "SKILL.md",
+              "benchmarks/rules/catalog.json",
+              "references/research"
+            ],
+            "acceptance": "Known API/EGL fixes and structured contracts implemented; official source evidence archived.",
+            "remaining": "Independent annotation review; broad vendor rule audit is not exhaustive source proof."
+          },
+          "W2": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "references/matrices",
+              "examples/validation"
+            ],
+            "acceptance": "Host software EGL capability/lifecycle/shared-context smoke executed.",
+            "remaining": "Android lifecycle, ANGLE WindowsArm and embedded target-device matrix."
+          },
+          "W3": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "references/playbooks/gpu-bandwidth.md"
+            ],
+            "acceptance": "Conditional experiments and evidence contracts implemented.",
+            "remaining": "Physical Mali/Adreno/PowerVR A/B timing, thermal state and counters."
+          },
+          "W4": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "references/playbooks/modern-rendering.md",
+              "references/examples"
+            ],
+            "acceptance": "Six technology capability/fallback engineering paths and examples.",
+            "remaining": "HDR display, Android AHardwareBuffer fences/framepacing, target smoke and performance."
+          },
+          "W5": {
+            "status": "PARTIAL",
+            "implementation": [
+              "tools/validate_rules.py",
+              "tools/validate_shaders.py",
+              "examples/validation",
+              ".github/workflows/validation.yml"
+            ],
+            "acceptance": "112 normalized contract cases; actual host C++17/software EGL and ESSL compiler checks. Follow-up: actual Android API26 arm64 compile/link of the validation harness and six legacy examples.",
+            "remaining": "Android physical-device smoke and manual workflow execution remain absent."
+          },
+          "W6": {
+            "status": "BLOCKED_BY_PROVIDER",
+            "implementation": [
+              "benchmarks/agent"
+            ],
+            "acceptance": "64 annotated cases and paired runner; synthetic infrastructure tests only.",
+            "remaining": "Independent corpus adjudication and real no-skill/with-skill provider runs with judged metrics."
+          },
+          "W7": {
+            "status": "PARTIAL",
+            "implementation": [
+              "docs/acceptance-traceability.md",
+              "README.md",
+              "CHANGELOG.md"
+            ],
+            "acceptance": "Candidate docs/routing/manual CI and explicit release guard.",
+            "remaining": "All preceding work packages accepted; version bump/tag separately authorized only afterwards."
+          }
+        }
+      }
+    },
+    {
+      "path": "docs/v1.0.4/evidence/android-followup/release-gates.json",
+      "sha256": "d2e5e20e55267d95b750c4b0420305ffe60b33573e27bbfff612e8d8fd334a3f",
+      "source_version": "1.0.4",
+      "status": "BLOCKED",
+      "evidence": "docs/v1.0.4/evidence/android-followup/release-gates.json",
+      "owner": "project-maintainer",
+      "disposition": "PRESERVE_NO_WAIVER",
+      "gate": {
+        "candidate_bookkeeping": "PASS",
+        "release_ready": false,
+        "blocked_work_packages": {
+          "W1": "BLOCKED_BY_HARDWARE",
+          "W2": "PARTIAL",
+          "W3": "PARTIAL",
+          "W4": "PARTIAL",
+          "W5": "BLOCKED_BY_HARDWARE",
+          "W6": "BLOCKED_BY_PROVIDER",
+          "W7": "PARTIAL"
+        },
+        "note": "Bookkeeping PASS is NOT release acceptance."
+      }
+    },
+    {
+      "path": "docs/v1.0.4-release-gates.json",
+      "sha256": "7d2ff93d4e98741f25450f7dc7704c6332ca6412fa6707a22f4c5e5000666eb8",
+      "source_version": "1.0.4",
+      "status": "BLOCKED",
+      "evidence": "docs/v1.0.4-release-gates.json",
+      "owner": "project-maintainer",
+      "disposition": "PRESERVE_NO_WAIVER",
+      "gate": {
+        "target_version": "1.0.4",
+        "metadata_version": "1.0.2",
+        "release_ready": false,
+        "prior_release_gate": "docs/release-gates.json",
+        "accepted_limitations": [],
+        "work_packages": {
+          "W0": {
+            "status": "PASS",
+            "implementation": [
+              "docs/v1.0.3-closure.md",
+              "docs/v1.0.4-development-plan.md"
+            ],
+            "acceptance": "Baseline audited and old unresolved gates separately retained.",
+            "remaining": "No old release completion or risk acceptance inferred."
+          },
+          "W1": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "benchmarks/device_lab"
+            ],
+            "acceptance": "Actual extended software EGL snapshot and repeated fingerprint/correctness capture.",
+            "remaining": "Native vs ANGLE same physical device and Windows/GBM target reports absent."
+          },
+          "W2": {
+            "status": "PARTIAL",
+            "implementation": [
+              "references/vendor-adapters"
+            ],
+            "acceptance": "Four adapters / 44 explicitly conditioned hypotheses with counterexamples and null hardware evidence.",
+            "remaining": "Target-specific counter mapping and independent broad architecture review."
+          },
+          "W3": {
+            "status": "PARTIAL",
+            "implementation": [
+              "examples/scenes",
+              "benchmarks/scenes"
+            ],
+            "acceptance": "Eight real GLES scene sources, frozen visual goldens, baseline/control/degraded and sweep.",
+            "remaining": "Two physical device/driver performance reports and target visual tolerance calibration."
+          },
+          "W4": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/traces"
+            ],
+            "acceptance": "CSV/JSON manifest/hash parser and 12 authored labeled trace fixtures with conservative diagnoses.",
+            "remaining": "Real licensed target captures and independent ground-truth review; binary captures unsupported."
+          },
+          "W5": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "examples/android_cases",
+              "references/playbooks/v1.0.4-high-value.md"
+            ],
+            "acceptance": "Two Android app projects; explicit native AHardwareBuffer EGLImage import and capability-gated BT.2020/PQ output sources, with separate compiler and policy evidence.",
+            "remaining": "Android device lifecycle/import/HDR validation, physical color goldens and native/ANGLE comparison remain unverified; complete HDR10 mastering metadata and asynchronous external-producer fence import are outside the minimal diagnostic path."
+          },
+          "W6": {
+            "status": "BLOCKED_BY_PROVIDER",
+            "implementation": [
+              "benchmarks/agent/cases-v1.0.4.json",
+              "benchmarks/agent/REPAIR_WORKFLOW.md"
+            ],
+            "acceptance": "Original 64 unchanged plus 24 executed controlled failure/fix cases; scoring denominators extended.",
+            "remaining": "Zero live model calls; model-produced patch regression and independent corpus acceptance pending."
+          },
+          "W7": {
+            "status": "PARTIAL",
+            "implementation": [
+              "docs/v1.0.4-traceability.md",
+              ".github/workflows/validation.yml"
+            ],
+            "acceptance": "Candidate routing/manual workflow and explicit prior+new release guard.",
+            "remaining": "No PR-triggered required-check policy change authorized; no version/tag/release; preceding gates unresolved."
+          }
+        }
+      }
+    },
+    {
+      "path": "docs/v1.0.5/evidence/release-gates.json",
+      "sha256": "9f29da43f14e029ccf7fb1af457f4ce39d87f419a1a814435e97ad8dc7633e76",
+      "source_version": "1.0.5",
+      "status": "BLOCKED",
+      "evidence": "docs/v1.0.5/evidence/release-gates.json",
+      "owner": "project-maintainer",
+      "disposition": "PRESERVE_NO_WAIVER",
+      "gate": {
+        "candidate_bookkeeping": "PASS",
+        "release_ready": false,
+        "blocked_work_packages": {
+          "W1": "BLOCKED_BY_HARDWARE",
+          "W2": "PARTIAL",
+          "W3": "PARTIAL",
+          "W4": "BLOCKED_BY_HARDWARE",
+          "W5": "PARTIAL",
+          "W6": "PARTIAL",
+          "W7": "PARTIAL",
+          "W8": "BLOCKED_BY_PROVIDER"
+        },
+        "note": "Bookkeeping PASS is NOT release acceptance."
+      }
+    },
+    {
+      "path": "docs/v1.0.5/release-gates.json",
+      "sha256": "484eed90b1d11a98f17c9b8d7e1adb4235b821d69557792d8abc2f6dcfad6329",
+      "source_version": "1.0.5",
+      "status": "BLOCKED",
+      "evidence": "docs/v1.0.5/release-gates.json",
+      "owner": "project-maintainer",
+      "disposition": "PRESERVE_NO_WAIVER",
+      "gate": {
+        "target_version": "1.0.5",
+        "metadata_version": "1.0.2",
+        "release_ready": false,
+        "release_authorized": false,
+        "prior_release_gate": "docs/v1.0.4-release-gates.json",
+        "accepted_limitations": [],
+        "predecessor_blockers": [
+          "v1.0.3 and v1.0.4 physical-device/provider gates remain unresolved"
+        ],
+        "work_packages": {
+          "W0": {
+            "status": "PASS",
+            "implementation": [
+              "docs/v1.0.5/baseline-and-delta.md"
+            ],
+            "acceptance": "Actual merged main and predecessor evidence audited.",
+            "remaining": "Prior release blockers remain dependencies."
+          },
+          "W1": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "benchmarks/longrun",
+              "references/playbooks/thermal-and-power.md"
+            ],
+            "acceptance": "Capture/analyzer and synthetic 600/1800-second timelines; actual host iterations separately recorded.",
+            "remaining": "Physical cold/steady10/30min thermal/frequency/frame/power captures absent."
+          },
+          "W2": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/quality_policy",
+              "references/playbooks/adaptive-quality.md"
+            ],
+            "acceptance": "Deterministic hysteresis, floor, disabled/background/gap handling and capability/visual approval gates.",
+            "remaining": "Whole-preset per-scene device validation; scale-only visual acceptance is not full-preset approval."
+          },
+          "W3": {
+            "status": "PARTIAL",
+            "implementation": [
+              "examples/precision",
+              "references/playbooks/precision-and-color.md"
+            ],
+            "acceptance": "Actual numeric oracle and precision/color software GL experiments; target compilation separately recorded.",
+            "remaining": "Physical precision/performance validation across driver/backend families absent."
+          },
+          "W4": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "benchmarks/resource_pressure",
+              "examples/resource_pressure"
+            ],
+            "acceptance": "Real host100scene resource/fence/upload/context-generation stress; owned-object estimates not VRAM.",
+            "remaining": "RealAndroidloss/AHB/external/native-fence timing and physical delayed-completion validation absent."
+          },
+          "W5": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/traces/sql",
+              "references/playbooks/trace-sql.md"
+            ],
+            "acceptance": "Schema-probed SQL, fixtures and actual Perfetto processor synthetic trace execution.",
+            "remaining": "Real licensed device traces and ground-truth domain review pending."
+          },
+          "W6": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/visual_quality"
+            ],
+            "acceptance": "24frozen golden images over8scenes, region/multiscale/temporal regressions and scale rejection.",
+            "remaining": "Device color-calibration/art review and measurable physical performance/power Pareto evidence absent."
+          },
+          "W7": {
+            "status": "PARTIAL",
+            "implementation": [
+              "references/research/2026-11-01-v105"
+            ],
+            "acceptance": "Date-grounded official evidence ledger and audited pipeline.",
+            "remaining": "X unresolved evidence remainsUNVERIFIED; no automaticnormative promotion."
+          },
+          "W8": {
+            "status": "BLOCKED_BY_PROVIDER",
+            "implementation": [
+              "benchmarks/agent/cases-v1.0.5.json",
+              "tools/check_release_gates.py"
+            ],
+            "acceptance": "Original88 preserved+24new labeled tasks and explicit layered candidate gate.",
+            "remaining": "Realpaired model evaluation and physical layers absent; no releaseauthorization/CI dispatch."
+          }
+        }
+      }
+    },
+    {
+      "path": "docs/v1.0.6/release-gates.json",
+      "sha256": "7d93d876907491253a44afea7d32a126753e9341691f5f11338da866de822ab9",
+      "source_version": "1.0.6",
+      "status": "BLOCKED",
+      "evidence": "docs/v1.0.6/release-gates.json",
+      "owner": "project-maintainer",
+      "disposition": "PRESERVE_NO_WAIVER",
+      "gate": {
+        "target_version": "1.0.6",
+        "metadata_version": "1.0.2",
+        "release_ready": false,
+        "release_authorized": false,
+        "prior_release_gate": "docs/v1.0.5/release-gates.json",
+        "accepted_limitations": [],
+        "work_packages": {
+          "W0": {
+            "status": "PASS",
+            "implementation": [
+              "docs/v1.0.6/baseline-and-gap.md"
+            ],
+            "acceptance": "Live main/PR3/tag/permission verified; clean baseline captured.",
+            "remaining": "Predecessor candidates remain unreleased."
+          },
+          "W1": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "examples/system_android/interop_roundtrip.cpp"
+            ],
+            "acceptance": "Actual NDK API26 arm64 compile/link, independent ownership review.",
+            "remaining": "Physical same-device Vulkan/GLES/native-fence pixel roundtrip NOT_RUN."
+          },
+          "W2": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "examples/system_android/multi_surface.hpp",
+              "examples/system_android/app"
+            ],
+            "acceptance": "Actual software pbuffer shared-context lifecycle/thread scheduling; Java/JNI compile.",
+            "remaining": "APK assembly attempted but AGP8.7.3 dependency resolution failed; no APK. Physical SurfaceView lock/unlock/loss/Perfetto acceptance NOT_RUN."
+          },
+          "W3": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "examples/system_scenes",
+              "benchmarks/system_scenes"
+            ],
+            "acceptance": "Actual software compute versus CPU deterministic reference and capability fallback.",
+            "remaining": "Physical multi-driver reproducibility and workload performance NOT_RUN."
+          },
+          "W4": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/driver_compat"
+            ],
+            "acceptance": "Exact predicate/expiry matcher and software probe; unverified vendor slots retained.",
+            "remaining": "No confirmed physical-driver defects: no fabricated workaround records."
+          },
+          "W5": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "benchmarks/system_scenes"
+            ],
+            "acceptance": "Actual glass/sand/particle passes, controls and software goldens.",
+            "remaining": "Physical mobile visual/performance budgets not measured."
+          },
+          "W6": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "examples/system_scenes"
+            ],
+            "acceptance": "Actual Forward+ and shadow/water cases; attachment budgets are estimates.",
+            "remaining": "Physical interaction/performance acceptance and bandwidth counters NOT_RUN."
+          },
+          "W7": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "examples/texture_pipeline",
+              "benchmarks/texture_pipeline"
+            ],
+            "acceptance": "Actual runtime KTX transcode and software compressed upload/readback; Android source guard wired.",
+            "remaining": "Physical GPU/video/protected path acceptance NOT_RUN; protected input is rejected."
+          },
+          "W8": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "benchmarks/system_scenes"
+            ],
+            "acceptance": "Twelve authored numerical positive-negative groups with isolated evidence.",
+            "remaining": "Device/driver precision distributions not measured."
+          },
+          "W9": {
+            "status": "PASS",
+            "implementation": [
+              "benchmarks/reducer",
+              "examples/repro/state_fixture.cpp"
+            ],
+            "acceptance": "Ten authored compile failures minimized with repeated predicate and fixed-shader compilation; software FBO snapshot.",
+            "remaining": "Not ten driver bugs or global semantic minimization; target capture replay needs actual target."
+          },
+          "W10": {
+            "status": "BLOCKED_BY_PROVIDER",
+            "implementation": [
+              "benchmarks/agent/cases-v1.0.6.json",
+              "tools/check_release_gates.py"
+            ],
+            "acceptance": "Thirty authored cases appended to exact112 prefix; scorer/regression and recursive gates implemented.",
+            "remaining": "Live paired provider/device evaluation NOT_RUN; no release authorization."
+          }
+        }
+      }
+    },
+    {
+      "path": "docs/v1.0.7-release-gates.json",
+      "sha256": "a44d3609277a346230a74a75bebec5763ca54fc65d9e1505c14c1f6e884c766f",
+      "source_version": "1.0.7",
+      "status": "BLOCKED",
+      "evidence": "docs/v1.0.7-release-gates.json",
+      "owner": "project-maintainer",
+      "disposition": "PRESERVE_NO_WAIVER",
+      "gate": {
+        "target_version": "1.0.7",
+        "metadata_version": "1.0.2",
+        "release_ready": false,
+        "release_authorized": false,
+        "prior_release_gate": "docs/v1.0.6/release-gates.json",
+        "accepted_limitations": [],
+        "work_packages": {
+          "W0": {
+            "status": "PASS",
+            "implementation": [
+              "docs/v1.0.7-baseline-and-gap.md"
+            ],
+            "acceptance": "Exact main/permissions/tags/open PR inventory and preserved predecessor gates.",
+            "remaining": "Prior releases remain unaccepted; this is an incremental candidate."
+          },
+          "W1": {
+            "status": "PASS",
+            "implementation": [
+              "benchmarks/pipeline/variants.py",
+              "examples/pipeline/pipeline_lab.cpp"
+            ],
+            "acceptance": "Version/extension/mutual-exclusion/budget cases and actual ESSL 300/310/320 links; driver binary cache source fallback.",
+            "remaining": "Driver binaries remain implementation-specific; physical driver matrix NOT_RUN."
+          },
+          "W2": {
+            "status": "PASS",
+            "implementation": [
+              "benchmarks/pipeline/material.py",
+              "benchmarks/pipeline/manifests/pbr-material.json"
+            ],
+            "acceptance": "Layout, binding and variant ABI positive/negative cases; actual std140 reflection and transparent/PBR parameter binding.",
+            "remaining": "This bounded manifest is not arbitrary GLSL reflection or an engine ABI replacement."
+          },
+          "W3": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "benchmarks/pipeline/rendergraph.py",
+              "examples/pipeline/pipeline_lab.cpp"
+            ],
+            "acceptance": "Executable topology/lifetime/feedback/resolve checker and actual multipass bloom with analytic images.",
+            "remaining": "Logical alias/invalidate recommendations have no physical TBDR bandwidth measurements."
+          },
+          "W4": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/pipeline/hazards.py",
+              "examples/pipeline/pipeline_lab.cpp"
+            ],
+            "acceptance": "Consumer barrier analysis, feedback rejection, context contract and actual compute-to-vertex draw.",
+            "remaining": "Whole-resource model does not prove arbitrary WAR/intra-dispatch races; cross-driver and GLES extension-specific paths NOT_RUN."
+          },
+          "W5": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "benchmarks/pipeline/runtime.py",
+              "benchmarks/pipeline/goldens",
+              "references/pipeline/color-pipeline.md"
+            ],
+            "acceptance": "Six independent CPU-analytic reference images, sRGB/alpha/HDR/FP16/material and MSAA resolve positive-negative captures.",
+            "remaining": "Physical backend image distributions, MSAA polygon-edge coverage and calibrated HDR display acceptance NOT_RUN."
+          },
+          "W6": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "benchmarks/pipeline/shader_risks.py",
+              "benchmarks/pipeline/cases/shader-risk-experiments.json"
+            ],
+            "acceptance": "Source/stage/line advisory risks and eight A/B protocols including no-gain/regression controls.",
+            "remaining": "No hardware GPU time/bandwidth/thermal capture; static warnings are not speedups."
+          },
+          "W7": {
+            "status": "PASS",
+            "implementation": [
+              "benchmarks/pipeline/diagnose.py",
+              "references/pipeline/diagnostics.md"
+            ],
+            "acceptance": "Ten executable failure/fix diagnostic contracts with numeric/static CPU reproduction and linked runtime controls.",
+            "remaining": "Authored faults are not ten observed physical driver bugs; startup GPU conclusions need target capture."
+          },
+          "W8": {
+            "status": "BLOCKED_BY_PROVIDER",
+            "implementation": [
+              "benchmarks/agent/cases-v1.0.7.json",
+              "benchmarks/agent/V107_CASES.md"
+            ],
+            "acceptance": "Thirty independent pipeline tasks appended to unchanged142 prefix; evidence-gated first-run/numeric/visual metrics and tests.",
+            "remaining": "No live paired provider run or blinded model-quality evaluation; cost and gains unknown."
+          },
+          "W9": {
+            "status": "PARTIAL",
+            "implementation": [
+              "references/research/2026-11-02-v107",
+              "docs/v1.0.7-traceability.md",
+              "tools/check_release_gates.py"
+            ],
+            "acceptance": "90-day radar, source-diff review and decisions, local regression, manual CI additions and recursive candidate gates.",
+            "remaining": "No independent cloud execution, release authorization, physical/provider acceptance or new tag/release."
+          }
+        }
+      }
+    },
+    {
+      "path": "docs/v1.0.8/release-gates.json",
+      "sha256": "f8ef213941d85f3c31c12326e0ce616fc7e41ed8ae8f42748ff85bdfef8a64c9",
+      "source_version": "1.0.8",
+      "status": "BLOCKED",
+      "evidence": "docs/v1.0.8/release-gates.json",
+      "owner": "project-maintainer",
+      "disposition": "PRESERVE_NO_WAIVER",
+      "gate": {
+        "target_version": "1.0.8",
+        "metadata_version": "1.0.2",
+        "release_ready": false,
+        "release_authorized": false,
+        "accepted_limitations": [],
+        "prior_release_gate": "docs/v1.0.7-release-gates.json",
+        "work_packages": {
+          "W0": {
+            "status": "PARTIAL",
+            "implementation": [
+              "docs/v1.0.8/baseline.json"
+            ],
+            "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+            "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+          },
+          "W1": {
+            "status": "PARTIAL",
+            "implementation": [
+              "tools/shader_fuzz.py"
+            ],
+            "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+            "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+          },
+          "W2": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/state_machine/README.md"
+            ],
+            "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+            "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+          },
+          "W3": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/robustness/README.md"
+            ],
+            "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+            "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+          },
+          "W4": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/pipeline/adversarial/test_adversarial.py"
+            ],
+            "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+            "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+          },
+          "W5": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/differential/README.md"
+            ],
+            "acceptance": "47 fresh cases PASS on distinct Mesa llvmpipe and ANGLE SwiftShader processes; hash-locked official driver bundle",
+            "remaining": "Real physical GPU/Android driver differential acceptance remains BLOCKED_BY_HARDWARE"
+          },
+          "W6": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/material_upgrade/README.md"
+            ],
+            "acceptance": "CPU and real EGL/GLES thin-film chart highp/mediump golden, forced ES3.0 fallback, migration/rollback/cache contracts PASS",
+            "remaining": "Mobile device precision distributions and physically calibrated spectral/visual acceptance not established"
+          },
+          "W7": {
+            "status": "BLOCKED_BY_PROVIDER",
+            "implementation": [
+              "benchmarks/agent/v108/README.md"
+            ],
+            "acceptance": "36 structured fixtures; 4 arithmetic repairs, 7 real API source repairs, 4 image repairs with 8 compilable negative variants; evidence-bound paired review metrics; 572 total unit tests pass",
+            "remaining": "Real provider paired outputs and independent authenticated review; arbitrary unbounded source/scene/material coverage not claimed"
+          },
+          "W8": {
+            "status": "PARTIAL",
+            "implementation": [
+              "tools/check_v108_gates.py"
+            ],
+            "acceptance": "Hosted CI on fe88d6d passed including real W7 repair controls; latest review-metric increment needs own CI",
+            "remaining": "Latest-head hosted CI, remaining scope and all inherited hardware/provider gates; release not authorized"
+          }
+        }
+      }
+    },
+    {
+      "path": "docs/v1.0.9/release-gates.json",
+      "sha256": "a23fd99f8a5ba9c434f4f50690075d569cf62d26ff676faea773ebb938a5f2f0",
+      "source_version": "1.0.9",
+      "status": "BLOCKED",
+      "evidence": "docs/v1.0.9/release-gates.json",
+      "owner": "project-maintainer",
+      "disposition": "PRESERVE_NO_WAIVER",
+      "gate": {
+        "target_version": "1.0.9",
+        "release_ready": false,
+        "release_authorized": false,
+        "accepted_limitations": [],
+        "prior_release_gate": "docs/v1.0.8/release-gates.json",
+        "work_packages": {
+          "W0": {
+            "status": "PARTIAL",
+            "implementation": [
+              "docs/v1.0.9/baseline-gap.md",
+              "docs/v1.0.9/inherited-gates.json"
+            ],
+            "remaining": "Inherited release gates remain independently binding.",
+            "host_delivery": "MET",
+            "acceptance": "HOST_AUDIT_COMPLETE"
+          },
+          "W1": {
+            "status": "PARTIAL",
+            "implementation": [
+              "tools/workload_fingerprint.py",
+              "benchmarks/workloads/schema.json",
+              "benchmarks/workloads/test_binding_contracts.py"
+            ],
+            "remaining": "Physical capture authenticity is not established by a declared provenance label or file hash.",
+            "host_delivery": "MET",
+            "acceptance": "HOST_CONTRACT_COMPLETE"
+          },
+          "W2": {
+            "status": "PARTIAL",
+            "implementation": [
+              "tools/estimate_gpu_cost.py",
+              "benchmarks/gpu_cost/cases.json",
+              "tools/attachment_lifecycle.py",
+              "tools/test_attachment_lifecycle.py"
+            ],
+            "remaining": "Arbitrary aliased/subresource lifetimes and implicit driver passes are outside the explicitly bounded event model. Real comparable device-counter calibration and DRAM conversion are not measured. Device calibration is optional in the plan, not a fabricated requirement.",
+            "host_delivery": "MET_BOUNDED",
+            "acceptance": "BOUNDED_LIFECYCLE_MODEL"
+          },
+          "W3": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/shader_ab/run.py",
+              "benchmarks/shader_ab/advanced.py",
+              "benchmarks/hdr_controls/run.py",
+              "benchmarks/shader_ab/packing.py",
+              "benchmarks/attachment_controls/run.py",
+              "benchmarks/particle_controls/run.py",
+              "benchmarks/shader_ab/rebind.py",
+              "benchmarks/shader_ab/optimization_pairs.py",
+              "benchmarks/shader_ab/counterexamples.py",
+              "benchmarks/shader_ab/variant_trace.py",
+              "benchmarks/interleaved_capture/run.py",
+              "benchmarks/interleaved_capture/test_capture.py"
+            ],
+            "remaining": "Interleaved capture is software quality-only: two fixed workloads, per-observation setup, four AB pairs and three samples/run. It is not a steady-state timing harness or physical protocol; broader distributions are not claimed. Interleaved GPU timing, thermal/frequency/trace evidence and actual negative performance outcomes remain unmeasured.",
+            "host_delivery": "MET_BOUNDED",
+            "acceptance": "BOUNDED_SHADER_CONTRACT_DELIVERED"
+          },
+          "W4": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/overlap_scenes/README.md",
+              "benchmarks/overlap_scenes/projected.py",
+              "benchmarks/overlap_scenes/advanced.py",
+              "benchmarks/overlap_scenes/tiered.py",
+              "benchmarks/overlap_scenes/TIERED.md",
+              "benchmarks/overlap_scenes/blend_precision.py",
+              "benchmarks/overlap_scenes/evidence/tiered-baseline-bias.json",
+              "benchmarks/overlap_scenes/precision_policy.py",
+              "benchmarks/overlap_scenes/precision_replay.py",
+              "benchmarks/overlap_scenes/coverage_scenes.py",
+              "benchmarks/overlap_scenes/background_merge.py",
+              "benchmarks/overlap_scenes/test_background_merge.py",
+              "benchmarks/overlap_scenes/BACKGROUND_MERGE.md",
+              "benchmarks/overlap_scenes/evidence/background-merge-mesa.json",
+              "benchmarks/overlap_scenes/evidence/background-merge-angle.json",
+              "benchmarks/overlap_scenes/far_resolution.py",
+              "benchmarks/overlap_scenes/FAR_RESOLUTION.md",
+              "benchmarks/overlap_scenes/test_far_resolution.py",
+              "benchmarks/overlap_scenes/far_reconstruction.py",
+              "benchmarks/overlap_scenes/FAR_RECONSTRUCTION.md",
+              "benchmarks/overlap_scenes/far_analysis.py",
+              "benchmarks/overlap_scenes/evidence/far-analysis.json",
+              "benchmarks/overlap_scenes/far_stage_probe.py",
+              "benchmarks/overlap_scenes/FAR_STAGE_PROBE.md",
+              "benchmarks/overlap_scenes/far_adaptive_resolution.py",
+              "benchmarks/overlap_scenes/FAR_ADAPTIVE_RESOLUTION.md",
+              "benchmarks/overlap_scenes/far_rounding_analysis.py",
+              "benchmarks/overlap_scenes/far_precision.py",
+              "benchmarks/overlap_scenes/FAR_PRECISION.md"
+            ],
+            "remaining": "Original Mesa tiered RGBA8 baselines fail at 24 layers (max errors 5/6/5) and 48 layers (8/11/7), versus budget 4; background_merge baseline at camera -0.3 also fails (5 versus 4), so that route is UNAVAILABLE. These failures are not waived. General Gaussian merging, arbitrary scenes and unseen camera paths remain outside these bounded prototypes. W4 requires research and validation of simplifications, not success of every candidate. Rejected far-resolution/48-square/half-float candidates with valid baseline fallback are completed research outcomes, not additional invented mandatory optimizations. No mobile benefit is claimed. Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition.",
+            "host_delivery": "PARTIAL",
+            "acceptance": "PARTIAL_HOST_SCOPE"
+          },
+          "W5": {
+            "status": "PARTIAL",
+            "implementation": [
+              "tools/rendergraph_optimizer.py",
+              "tools/test_rendergraph_optimizer.py",
+              "benchmarks/pipeline/postfx_quality.py",
+              "tools/rendergraph_replay.py",
+              "benchmarks/pipeline/candidate_replay.py",
+              "benchmarks/system_scenes/v109_s03/run.py",
+              "benchmarks/system_scenes/v109_s03/README.md"
+            ],
+            "remaining": "General graph transforms, incoherent compute/image/SSBO barriers and other candidate categories remain outside the closed sequential framebuffer-to-texture replay vocabulary. Device gains cannot be claimed from advisory candidates.",
+            "host_delivery": "MET_BOUNDED",
+            "acceptance": "BOUNDED_REPLAY_AND_SYNC_CHECK"
+          },
+          "W6": {
+            "status": "PARTIAL",
+            "implementation": [
+              "benchmarks/texture_access/run.py",
+              "benchmarks/texture_access/mechanisms.py",
+              "benchmarks/texture_access/ktx2_experiment.py",
+              "benchmarks/texture_streaming/run.py",
+              "benchmarks/texture_streaming/progressive.py",
+              "benchmarks/texture_access/oblique.py",
+              "benchmarks/compressed_streaming/run.py"
+            ],
+            "remaining": "Arbitrary assets/high-frequency filtering and asynchronous streaming are not claimed. Async is not a separate mandatory W6 deliverable. CPU phase timing is not GPU upload-stall or residency evidence. Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics.",
+            "host_delivery": "MET_BOUNDED",
+            "acceptance": "BOUNDED_TEXTURE_CHAIN_DELIVERED"
+          },
+          "W7": {
+            "status": "PARTIAL",
+            "implementation": [
+              "tools/optimization_advisor.py",
+              "benchmarks/rollback_controls/run.py",
+              "tools/optimization_experiments.py",
+              "benchmarks/workflow/run.py",
+              "benchmarks/workflow/evidence/mesa/workflow-result.json",
+              "benchmarks/workflow/evidence/angle/workflow-result.json"
+            ],
+            "remaining": "Trusted physical capture/reviewer authentication remains external. Isolated finite rollback is not application-wide or context-loss recovery.",
+            "host_delivery": "MET",
+            "acceptance": "HOST_DECISION_CONTRACT_COMPLETE"
+          },
+          "W8": {
+            "status": "BLOCKED_BY_HARDWARE",
+            "implementation": [
+              "benchmarks/device_portability/protocol.py",
+              "benchmarks/device_portability/matrix.json",
+              "benchmarks/device_portability/scene_collector.py",
+              "benchmarks/device_portability/evidence/grouped.json",
+              "benchmarks/device_portability/test_scene_collector.py"
+            ],
+            "remaining": "Physical execution adapter and measured vendor-specific strategies are unavailable; do not convert software captures into physical protocol records. Original W8 permits unavailable devices as NOT_RUN. At least one physical device A/B is absent; Mali/Adreno/PowerVR comparisons and temperature/frequency traces are NOT_RUN.",
+            "host_delivery": "MET_PROTOCOL_AND_SOFTWARE_COLLECTION",
+            "acceptance": "BLOCKED_BY_HARDWARE"
+          },
+          "W9": {
+            "status": "BLOCKED_BY_PROVIDER",
+            "implementation": [
+              "benchmarks/agent/V109_CASES.md",
+              "benchmarks/agent/cases-v1.0.9.json",
+              "benchmarks/agent/score_v109.py",
+              "docs/v1.0.9/evidence/provider-score-blocked.json",
+              "benchmarks/agent/v109-adjudication-guide.json"
+            ],
+            "remaining": "No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence. Independent corpus-content review is incomplete; AI-authored case-specific guides do not satisfy it.",
+            "host_delivery": "MET_INFRASTRUCTURE",
+            "acceptance": "BLOCKED_BY_PROVIDER"
+          },
+          "W10": {
+            "status": "PARTIAL",
+            "implementation": [
+              "docs/v1.0.9/research/ledger.json",
+              "docs/v1.0.9/research/release-review.json",
+              "docs/v1.0.9/research/implementation-review.json",
+              "tools/run_v109_regression.py",
+              "docs/v1.0.9/research/rolling/2026-11-15/receipt.json",
+              ".github/workflows/validation.yml",
+              "docs/v1.0.9/research/experiment-chain.json",
+              "tools/check_v109_research_chain.py",
+              ".github/workflows/research-radar.yml",
+              "tools/v109_radar_window.py",
+              "tools/v109_research_index.py",
+              "docs/v1.0.9/research/index.json.receipt.json",
+              "docs/v1.0.9/research/index-validation.json",
+              "docs/v1.0.9/research/manual-coverage.json"
+            ],
+            "remaining": "Unreviewed metadata and incomplete vendor/X coverage remain UNKNOWN. Bounded lookup records and 1319-row twelve-field normalization are delivered; no exhaustive review or new measured rule is claimed. Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding. Weekly/monthly read-only workflow activation and observed scheduled execution await default-branch merge; no automatic merge is authorized.",
+            "host_delivery": "PARTIAL",
+            "acceptance": "PARTIAL_HOST_SCOPE"
+          }
+        },
+        "completion_matrix": "docs/v1.0.9/completion-matrix.json",
+        "status_interpretation": "status is release-gate disposition, not host implementation completeness; host_delivery and acceptance mirror the completion matrix. Git clean/mergeable only describes conflict state, not original-plan acceptance or release permission.",
+        "merge_assessment": {
+          "implementation_pr": "REVIEWABLE_WITH_DECLARED_FAILURES",
+          "automatic_merge_ready": false,
+          "requirements": [
+            "Current exact-head CI and repository review/branch protections must be checked externally.",
+            "Do not describe merged infrastructure as original W4 visual acceptance or a release."
+          ],
+          "release_blockers": [
+            "Original W4 Mesa high-layer RGBA8 image failures; alternate precision contract does not retroactively pass original reference.",
+            "Authentic paired Agent/provider execution and independent adjudication absent.",
+            "Inherited real-device/reviewer gates remain binding; no physical A/B gains verified.",
+            "Research coverage conclusions/independent acceptance and observed scheduled execution incomplete.",
+            "Explicit release authorization remains required."
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "scenes": [
+    {
+      "category": "2D UI / SDF",
+      "knowledge_route": "references/cards/29-text-rendering-sdf.md",
+      "implementation": "benchmarks/system_scenes/v109_s03/run.py",
+      "status": "PARTIAL",
+      "scope": "Finite alpha UI integrated pipeline; SDF/MSDF representative not executed",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "3D PBR / Forward+",
+      "knowledge_route": "references/cards/30-clustered-lighting.md",
+      "implementation": "examples/system_scenes/effects.cpp",
+      "status": "PARTIAL",
+      "scope": "Finite forwardplus engineering shader, not full production PBR",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Shadows / water",
+      "knowledge_route": "references/cards/21-shadow-mapping.md",
+      "implementation": "examples/system_scenes/effects.cpp",
+      "status": "PARTIAL",
+      "scope": "Bounded shadowwater reference; no full fluid simulation",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Postprocessing",
+      "knowledge_route": "references/cards/23-post-processing-chain.md",
+      "implementation": "benchmarks/system_scenes/v109_s03/run.py",
+      "status": "SOFTWARE_RUNTIME",
+      "scope": "Three-stage CPU image oracle",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "HDR",
+      "knowledge_route": "references/cards/20-hdr-and-display.md",
+      "implementation": "benchmarks/hdr_controls/run.py",
+      "status": "PARTIAL",
+      "scope": "Software transfer math only; physical WCG/HDR calibration blocked",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Transparency / OIT",
+      "knowledge_route": "references/cards/README.md",
+      "implementation": "benchmarks/overlap_scenes/tiered.py",
+      "status": "PARTIAL",
+      "scope": "Ordered alpha and failures preserved; full OIT representative absent",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Particles",
+      "knowledge_route": "references/cards/README.md",
+      "implementation": "benchmarks/particle_controls/run.py",
+      "status": "SOFTWARE_RUNTIME",
+      "scope": "Finite actual draw controls; no million-particle claim",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Fluid / sand",
+      "knowledge_route": "references/cards/README.md",
+      "implementation": "examples/system_scenes/simulation.cpp",
+      "status": "PARTIAL",
+      "scope": "Bounded simulation, not all fluid algorithms",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Glass / refraction",
+      "knowledge_route": "references/cards/README.md",
+      "implementation": "benchmarks/overlap_scenes/advanced.py",
+      "status": "PARTIAL",
+      "scope": "Layered Snell proxy, not recursive optical transport",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Compute",
+      "knowledge_route": "references/cards/28-gpu-culling.md",
+      "implementation": "benchmarks/shader_ab/advanced.py",
+      "status": "SOFTWARE_RUNTIME",
+      "scope": "Bounded SSBO/image controls; ES3.0 CPU alternative needed per workload",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Animation / skinning",
+      "knowledge_route": "references/cards/22-gpu-skinning.md",
+      "implementation": null,
+      "status": "DEPENDENCY",
+      "scope": "Knowledge route exists; actual skinned scene representative absent",
+      "es30_fallback": "CPU skinning and vertex attributes",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "3DGS high overlap",
+      "knowledge_route": "references/cards/README.md",
+      "implementation": "benchmarks/overlap_scenes/projected.py",
+      "status": "PARTIAL",
+      "scope": "Authored covariance splats; original high-layer failures inherited",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Texture streaming",
+      "knowledge_route": "references/cards/27-texture-streaming-lod.md",
+      "implementation": "benchmarks/compressed_streaming/run.py",
+      "status": "SOFTWARE_RUNTIME",
+      "scope": "Actual KTX transcode/cache/budget/upload readback",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Video fusion",
+      "knowledge_route": "references/cards/17-android-video-interoperability.md",
+      "implementation": "examples/android_cases/surfacevideo/src/main/cpp/ahb_texture.cpp",
+      "status": "BLOCKED_BY_HARDWARE",
+      "scope": "Android/AHB build/install and external media device evidence absent",
+      "es30_fallback": "Use validated ES3.0 path where available; otherwise explicit dependency, never invented core API",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    },
+    {
+      "category": "Multiview",
+      "knowledge_route": "references/cards/13-mali-pls-multiview.md",
+      "implementation": null,
+      "status": "DEPENDENCY",
+      "scope": "Extension knowledge route; no multiview device representative",
+      "es30_fallback": "Separate non-multiview draws",
+      "device": "BLOCKED_BY_HARDWARE",
+      "performance": null
+    }
+  ],
+  "note": "Inventory references previous compile/runtime evidence; this inventory itself is not a new execution report."
+}

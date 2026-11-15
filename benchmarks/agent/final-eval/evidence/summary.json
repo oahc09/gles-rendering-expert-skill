@@ -1,0 +1,208 @@
+{
+  "status": "BLOCKED_BY_PROVIDER",
+  "adjudicated_responses": 0,
+  "paired_cases": 0,
+  "metrics": {},
+  "limitations": "Human-adjudicated rubric; not automatic semantic truth. Compile, hardware runtime and performance are independent. Null means no evidence, not zero.",
+  "v109_metrics": {
+    "no_skill": {
+      "diagnosis_correct": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "false_positive": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "compile_pass": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "run_pass": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "quality_pass": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "measured_improvement": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "unsupported_gain_claim": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      }
+    },
+    "with_skill": {
+      "diagnosis_correct": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "false_positive": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "compile_pass": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "run_pass": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "quality_pass": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "measured_improvement": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      },
+      "unsupported_gain_claim": {
+        "positive": 0,
+        "reviewed": 0,
+        "ratio": null
+      }
+    }
+  },
+  "scope": {
+    "expected_tasks": 100,
+    "expected_responses": 200,
+    "category_denominators": {
+      "code_generation": 20,
+      "egl_driver": 20,
+      "performance_quality": 20,
+      "review": 20,
+      "version_extension": 20
+    },
+    "independent_review": "NOT_VERIFIED_BY_TOOL",
+    "contamination": "UNKNOWN",
+    "heldout_certification": false
+  },
+  "final_metrics": {
+    "no_skill": {
+      "finding_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "legal_control_false_positive": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "first_compile": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "correctness_numeric": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "first_run": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "diagnosis_reproduction": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "evidence_complete": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "p0_illegal_generation": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      }
+    },
+    "with_skill": {
+      "finding_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "legal_control_false_positive": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "first_compile": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "correctness_numeric": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "first_run": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "diagnosis_reproduction": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "evidence_complete": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      },
+      "p0_illegal_generation": {
+        "numerator": 0,
+        "denominator": 0,
+        "ratio": null,
+        "wilson95": null
+      }
+    }
+  },
+  "confidence_caveat": "Wilson marginal intervals, not proof of iid sampling or paired treatment significance; five classes are authored, not population random samples.",
+  "cost": {
+    "status": "UNKNOWN",
+    "currency": null,
+    "total": null,
+    "responses_accounted": 0
+  },
+  "release_acceptance": "NOT_EVALUATED",
+  "failure_analysis": "No provider responses: model failures unknown"
+}

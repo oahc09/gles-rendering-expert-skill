@@ -1,0 +1,3206 @@
+{
+  "schema_version": 1,
+  "authorship": "AI-authored; independent expert review NOT_RUN; contamination UNKNOWN; not certified heldout",
+  "cases": [
+    {
+      "case_id": "F110-version_extension-01",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES2 no VAO extension. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES2 no VAO extension",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "glBindVertexArray is not core ES2; maintain attribute state fallback"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "glBindVertexArray is not core ES2; maintain attribute state fallback",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-02",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.0 compute requested. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.0 compute requested",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "compute requires ES3.1 or verified extension route; fragment fallback"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "compute requires ES3.1 or verified extension route; fragment fallback",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-03",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.1 geometry shader requested. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.1 geometry shader requested",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "geometry is core ES3.2, not ES3.1; CPU tessellation fallback"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "geometry is core ES3.2, not ES3.1; CPU tessellation fallback",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-04",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.0 KHR_debug only KHR pointers. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.0 KHR_debug only KHR pointers",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "use advertised KHR suffix route, not absent unsuffixed entrypoints"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "use advertised KHR suffix route, not absent unsuffixed entrypoints",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-05",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.2 debug callback null loader pointer. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.2 debug callback null loader pointer",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "core version does not repair missing function loader"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "core version does not repair missing function loader",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-06",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES2 external texture ESSL100. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES2 external texture ESSL100",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "require OES_EGL_image_external and external sampler restrictions"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "require OES_EGL_image_external and external sampler restrictions",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-07",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3 external image ESSL300 without essl3 extension. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3 external image ESSL300 without essl3 extension",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "require OES_EGL_image_external_essl3 for shader route"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "require OES_EGL_image_external_essl3 for shader route",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-08",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: timer extension present disjoint set. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "timer extension present disjoint set",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "discard invalid timing sample; no speedup claim"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "discard invalid timing sample; no speedup claim",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-09",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ASTC unsupported texture upload. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ASTC unsupported texture upload",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "negotiate compressed format; decode or alternative supported asset"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "negotiate compressed format; decode or alternative supported asset",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-10",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.0 SSBO declaration. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.0 SSBO declaration",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "SSBO needs ES3.1 core; UBO limited alternative"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "SSBO needs ES3.1 core; UBO limited alternative",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-11",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.0 indirect drawing. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.0 indirect drawing",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "not core until ES3.1; direct draws fallback"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "not core until ES3.1; direct draws fallback",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-12",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.1 texture buffer. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.1 texture buffer",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "not core until ES3.2; 2D texture buffer emulation"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "not core until ES3.2; 2D texture buffer emulation",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-13",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.0 indexed independent blend. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.0 indexed independent blend",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "not ordinary ES3.0 core; split pass alternative"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "not ordinary ES3.0 core; split pass alternative",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-14",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: multiview string with view count below request. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "multiview string with view count below request",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "extension alone insufficient; check maximum views"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "extension alone insufficient; check maximum views",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-15",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: framebuffer fetch unsupported shader. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "framebuffer fetch unsupported shader",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "extension-specific semantics; ping-pong fallback"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "extension-specific semantics; ping-pong fallback",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-16",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES2 uint element index without extension. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES2 uint element index without extension",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "need OES_element_index_uint; split into ushort meshes"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "need OES_element_index_uint; split into ushort meshes",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-17",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.0 glMapBufferRange availability. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.0 glMapBufferRange availability",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "core available; verify exact flags and runtime mapping result"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "core available; verify exact flags and runtime mapping result",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-18",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES2 instancing EXT strings ANGLE pointers only. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES2 instancing EXT strings ANGLE pointers only",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "different extension aliases do not prove callable compatible route"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "different extension aliases do not prove callable compatible route",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-19",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: ES3.1 tessellation requested. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3.1 tessellation requested",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "ES3.2 core or separately supported extension; non-tessellated fallback"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "ES3.2 core or separately supported extension; non-tessellated fallback",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-version_extension-20",
+      "final_category": "version_extension",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: EGL1.4 core image functions requested. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "EGL1.4 core image functions requested",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "EGL1.5 core or KHR image route with matching suffixed pointers"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "EGL1.5 core or KHR image route with matching suffixed pointers",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-01",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: odd-width RGB upload with default alignment. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "odd-width RGB upload with default alignment",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "set unpack alignment1 and restore state"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "set unpack alignment1 and restore state",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-02",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: CPU readback odd RGB row stride. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "CPU readback odd RGB row stride",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "pack alignment and destination row size must match"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "pack alignment and destination row size must match",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-03",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: stream buffer partial update. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "stream buffer partial update",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "bounds offset plus bytes within allocated storage"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "bounds offset plus bytes within allocated storage",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-04",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: immutable texture second allocation. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "immutable texture second allocation",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "do not redefine immutable storage; create replacement object"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "do not redefine immutable storage; create replacement object",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-05",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: depth tested foreground drawn before background. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "depth tested foreground drawn before background",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "enable correct depth state and clear depth then preserve near result"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "enable correct depth state and clear depth then preserve near result",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-06",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: premultiplied UI over opaque target. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "premultiplied UI over opaque target",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "ONE and ONE_MINUS_SRC_ALPHA with premultiplied shader output"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "ONE and ONE_MINUS_SRC_ALPHA with premultiplied shader output",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-07",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: straight alpha separate alpha channel. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "straight alpha separate alpha channel",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "choose RGB and alpha factors independently; CPU oracle"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "choose RGB and alpha factors independently; CPU oracle",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-08",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: ping-pong blur two passes. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ping-pong blur two passes",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "no sample of currently written attachment"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "no sample of currently written attachment",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-09",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: compute image producer to texture fetch. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "compute image producer to texture fetch",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "consumer-specific texture-fetch barrier before sampling"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "consumer-specific texture-fetch barrier before sampling",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-10",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: SSBO producer to indirect command. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "SSBO producer to indirect command",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "command barrier for indirect consumer plus storage if read there"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "command barrier for indirect consumer plus storage if read there",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-11",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: ES3 VAO element index binding. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "ES3 VAO element index binding",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "element buffer captured by VAO; avoid accidental unbind"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "element buffer captured by VAO; avoid accidental unbind",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-12",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: integer vertex ID attribute. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "integer vertex ID attribute",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "use integer attribute pointer and matching integer shader input"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "use integer attribute pointer and matching integer shader input",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-13",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: UBO block offset packing. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "UBO block offset packing",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "query std140 alignment and correct offsets; bounds-safe binding"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "query std140 alignment and correct offsets; bounds-safe binding",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-14",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: sampler object binding two units. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "sampler object binding two units",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "sampler unit indices not texture enums; restore binding"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "sampler unit indices not texture enums; restore binding",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-15",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: RGBA8 MSAA resolve. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "RGBA8 MSAA resolve",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "compatible sample counts sizes formats and legal blit filter"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "compatible sample counts sizes formats and legal blit filter",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-16",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: scissored clear then full frame. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "scissored clear then full frame",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "clear respects scissor; restore full region intentionally"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "clear respects scissor; restore full region intentionally",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-17",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: sRGB UI composition. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "sRGB UI composition",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "identify encoding and linear blending; no double gamma"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "identify encoding and linear blending; no double gamma",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-18",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: fence polling without busy spin. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "fence polling without busy spin",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "finite timeout handling and sync cleanup"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "finite timeout handling and sync cleanup",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-19",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: program binary cache miss. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "program binary cache miss",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "validate formats/status and fall back to source compile"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "validate formats/status and fall back to source compile",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-code_generation-20",
+      "final_category": "code_generation",
+      "mode": "Generate",
+      "prompt": "Final evaluation scenario: context recreation asset upload. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "context recreation asset upload",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "recreate context-owned objects; invalidate old IDs"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "recreate context-owned objects; invalidate old IDs",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-01",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT) then vertex fetch. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT) then vertex fetch",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "vertex attribute barrier required for vertex consumer"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "vertex attribute barrier required for vertex consumer",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-02",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: negative glBufferSubData offset. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "negative glBufferSubData offset",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "invalid bounds, not performance optimization"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "invalid bounds, not performance optimization",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-03",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: glPixelStorei alignment3. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "glPixelStorei alignment3",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "only permitted alignment values"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "only permitted alignment values",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-04",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: read attachment with same texture sampled. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "read attachment with same texture sampled",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "feedback loop invalid; distinct storage"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "feedback loop invalid; distinct storage",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-05",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: delete program while cached renderer assumes active. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "delete program while cached renderer assumes active",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "track actual state and valid program lifetime"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "track actual state and valid program lifetime",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-06",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: glClear with depth write mask false. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "glClear with depth write mask false",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "depth clear affected by write mask"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "depth clear affected by write mask",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-07",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: GL_LINEAR on integer texture sampling. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "GL_LINEAR on integer texture sampling",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "integer format filtering restrictions"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "integer format filtering restrictions",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-08",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: invalidate depth before later depth test. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "invalidate depth before later depth test",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "live depth contents cannot be discarded"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "live depth contents cannot be discarded",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-09",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: uniform location from old linked program. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "uniform location from old linked program",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "locations are program-specific and invalidated by relink"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "locations are program-specific and invalidated by relink",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-10",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: persistent mapping assumed GLES3 core. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "persistent mapping assumed GLES3 core",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "not baseline GLES3 core; gate exact extension"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "not baseline GLES3 core; gate exact extension",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-11",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: client indices with wrong buffer offset. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "client indices with wrong buffer offset",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "distinguish offset when element buffer bound"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "distinguish offset when element buffer bound",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-12",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: glReadPixels buffer too small. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "glReadPixels buffer too small",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "format type pack stride must fit full destination"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "format type pack stride must fit full destination",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-13",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: non-power-of-two ES2 repeating mipmap texture. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "non-power-of-two ES2 repeating mipmap texture",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "NPOT restrictions unless supported extension"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "NPOT restrictions unless supported extension",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-14",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: mipmap filter with incomplete chain. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "mipmap filter with incomplete chain",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "texture completeness requires valid chain or nonmipmap filter"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "texture completeness requires valid chain or nonmipmap filter",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-15",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: glDrawBuffers nonmatching attachments. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "glDrawBuffers nonmatching attachments",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "validate framebuffer completeness and routing"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "validate framebuffer completeness and routing",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-16",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: blend disabled despite correct premultiplied factors. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "blend disabled despite correct premultiplied factors",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "factors have no effect until blend enabled"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "factors have no effect until blend enabled",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-17",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: SSBO atomic used as global dispatch barrier. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "SSBO atomic used as global dispatch barrier",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "atomic counter does not synchronize workgroups"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "atomic counter does not synchronize workgroups",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-18",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: discard branch claims guaranteed early-Z. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "discard branch claims guaranteed early-Z",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "shader semantics do not prove implementation performance"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "shader semantics do not prove implementation performance",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-19",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: glGetError once called proof of rendered image. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "glGetError once called proof of rendered image",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "error-free API is not pixel correctness"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "error-free API is not pixel correctness",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-review-20",
+      "final_category": "review",
+      "mode": "Review",
+      "prompt": "Final evaluation scenario: viewport changed but scissor left stale. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "viewport changed but scissor left stale",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "independent state requires intentional restoration"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "independent state requires intentional restoration",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-01",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: eglChooseConfig zero matches with success. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "eglChooseConfig zero matches with success",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "inspect config constraints, not eglGetError alone"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "inspect config constraints, not eglGetError alone",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-02",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: eglMakeCurrent EGL_BAD_MATCH. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "eglMakeCurrent EGL_BAD_MATCH",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "surface/context/config compatibility and API binding"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "surface/context/config compatibility and API binding",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-03",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: eglSwapBuffers EGL_CONTEXT_LOST. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "eglSwapBuffers EGL_CONTEXT_LOST",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "recover context and resources; do not reuse handles"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "recover context and resources; do not reuse handles",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-04",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: surfaceless context without advertised support. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "surfaceless context without advertised support",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "use valid pbuffer fallback or supported route"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "use valid pbuffer fallback or supported route",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-05",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: eglGetProcAddress returns pointer extension absent. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "eglGetProcAddress returns pointer extension absent",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "pointer presence is not advertised capability"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "pointer presence is not advertised capability",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-06",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: EGLImage dma-buf plane pitch mismatch. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "EGLImage dma-buf plane pitch mismatch",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "validate import descriptor pitches offsets formats and ownership"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "validate import descriptor pitches offsets formats and ownership",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-07",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: native fence fd imported twice. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "native fence fd imported twice",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "ownership transfer and duplication semantics must be checked"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "ownership transfer and duplication semantics must be checked",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-08",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: EGLSync wait timeout. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "EGLSync wait timeout",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "timeout is not signal success; preserve bounded retry"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "timeout is not signal success; preserve bounded retry",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-09",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: protected surface ordinary context. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "protected surface ordinary context",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "protected-content compatibility and access restrictions"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "protected-content compatibility and access restrictions",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-10",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: eglBindAPI wrong client API. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "eglBindAPI wrong client API",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "bind intended GLES before context creation"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "bind intended GLES before context creation",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-11",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: EGL_CONTEXT_CLIENT_VERSION3 yields3.0 compute fails. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "EGL_CONTEXT_CLIENT_VERSION3 yields3.0 compute fails",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "query actual GL version not requested major alone"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "query actual GL version not requested major alone",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-12",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: shared contexts producer texture not visible. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "shared contexts producer texture not visible",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "explicit cross-context synchronization and flush with correct ownership"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "explicit cross-context synchronization and flush with correct ownership",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-13",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: window resize stale default framebuffer size. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "window resize stale default framebuffer size",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "query actual surface size and reset viewport/scissor"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "query actual surface size and reset viewport/scissor",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-14",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: eglTerminate while objects in use. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "eglTerminate while objects in use",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "coordinate lifecycle teardown and thread unbinding"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "coordinate lifecycle teardown and thread unbinding",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-15",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: KHR_create_context flags rejected. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "KHR_create_context flags rejected",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "validate extension and supported flags; explicit fallback"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "validate extension and supported flags; explicit fallback",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-16",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: EGL buffer age0 with partial redraw. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "EGL buffer age0 with partial redraw",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "contents unknown; full redraw required"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "contents unknown; full redraw required",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-17",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: swap-with-damage rectangles inverted. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "swap-with-damage rectangles inverted",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "validate EGL coordinate origin and damage history"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "validate EGL coordinate origin and damage history",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-18",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: software renderer beats mobile in one trace. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "software renderer beats mobile in one trace",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "not physical mobile evidence; separate execution class"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "not physical mobile evidence; separate execution class",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-19",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: driver black screen no GL errors. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "driver black screen no GL errors",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "capture minimal reproducible case plus independent pixel oracle"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "capture minimal reproducible case plus independent pixel oracle",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-egl_driver-20",
+      "final_category": "egl_driver",
+      "mode": "Diagnose",
+      "prompt": "Final evaluation scenario: Android external image lifetime race. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "Android external image lifetime race",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "retain producer image until consumer completion; fence and lifecycle"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "retain producer image until consumer completion; fence and lifecycle",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-01",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: half-resolution bloom changes thin highlights. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "half-resolution bloom changes thin highlights",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "quality rejection overrides estimated bandwidth gain"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "quality rejection overrides estimated bandwidth gain",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-02",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: merge nonadjacent transparent layers. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "merge nonadjacent transparent layers",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "ordering changes; reject unless equivalence proved"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "ordering changes; reject unless equivalence proved",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-03",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: opaque depth prepass costs extra draw. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "opaque depth prepass costs extra draw",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "compare interleaved workload-specific GPU time not universal benefit"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "compare interleaved workload-specific GPU time not universal benefit",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-04",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: CPU submission time used GPU bottleneck. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "CPU submission time used GPU bottleneck",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "separate timing domains and require GPU evidence"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "separate timing domains and require GPU evidence",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-05",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: SSBO AoS to SoA benchmark. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "SSBO AoS to SoA benchmark",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "same data workload and outputs; no device gain without timing"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "same data workload and outputs; no device gain without timing",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-06",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: shader mediump substitution. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "shader mediump substitution",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "precision and range oracle before performance acceptance"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "precision and range oracle before performance acceptance",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-07",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: discard removal changes alpha silhouette. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "discard removal changes alpha silhouette",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "preserve visibility or reject candidate"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "preserve visibility or reject candidate",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-08",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: invalidate attachment after final use. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "invalidate attachment after final use",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "prove liveness and no later read; physical bandwidth unknown"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "prove liveness and no later read; physical bandwidth unknown",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-09",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: render target alias lifetimes overlap. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "render target alias lifetimes overlap",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "reject overlap, do not count theoretical memory saving"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "reject overlap, do not count theoretical memory saving",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-10",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: texture compression reduces quality. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "texture compression reduces quality",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "format support plus quality metric and representative samples"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "format support plus quality metric and representative samples",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-11",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: thermal throttled A then cold B. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "thermal throttled A then cold B",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "interleave randomized comparable thermal runs"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "interleave randomized comparable thermal runs",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-12",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: GPU query disjoint during B. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "GPU query disjoint during B",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "invalidate pair rather than average corrupted time"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "invalidate pair rather than average corrupted time",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-13",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: small sample p95 from3 frames. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "small sample p95 from3 frames",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "insufficient distribution and uncertainty; collect more"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "insufficient distribution and uncertainty; collect more",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-14",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: CPU upload batching stalls GPU. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "CPU upload batching stalls GPU",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "measure latency and correctness with same work, not draw count only"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "measure latency and correctness with same work, not draw count only",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-15",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: multiview loses unsupported fallback. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "multiview loses unsupported fallback",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "capability negotiation and mono fallback before gains"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "capability negotiation and mono fallback before gains",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-16",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: temporal reuse disocclusion artifacts. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "temporal reuse disocclusion artifacts",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "dynamic history invalidation and temporal quality checks"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "dynamic history invalidation and temporal quality checks",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-17",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: transparent sorting approximate buckets. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "transparent sorting approximate buckets",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "independent overlap oracle across views; reject failures"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "independent overlap oracle across views; reject failures",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-18",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: MSAA resolve reduced samples. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "MSAA resolve reduced samples",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "evaluate edges and format legality; quality constrained comparison"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "evaluate edges and format legality; quality constrained comparison",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-19",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: program cache first-frame benchmark. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "program cache first-frame benchmark",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "separate cold startup and warm steady state costs"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "separate cold startup and warm steady state costs",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    },
+    {
+      "case_id": "F110-performance_quality-20",
+      "final_category": "performance_quality",
+      "mode": "Optimize",
+      "prompt": "Final evaluation scenario: one vendor success promoted to all devices. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.",
+      "device_capabilities": {
+        "scenario": "one vendor success promoted to all devices",
+        "unprovided_capabilities": "UNKNOWN; do not infer"
+      },
+      "core_case": true,
+      "severity": "P0",
+      "expected_findings": [
+        "limit evidence scope and mark others NOT_RUN"
+      ],
+      "legal_controls": [
+        "A capability-gated conservative fallback without unmeasured speedup claims"
+      ],
+      "forbidden_advice": [
+        "Invented runtime evidence or unsupported universal performance claims"
+      ],
+      "fallback": "Preserve a legal baseline; unsupported features remain disabled",
+      "evidence_sources": [
+        "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+        "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf"
+      ],
+      "compile_evidence": "NOT_RUN",
+      "rubric": {
+        "boundary": "limit evidence scope and mark others NOT_RUN",
+        "correctness": "Require source-supported conditions and concrete validation, not keyword similarity"
+      },
+      "v107": true
+    }
+  ]
+}

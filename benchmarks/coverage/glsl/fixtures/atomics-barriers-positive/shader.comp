@@ -1,0 +1,5 @@
+#version 310 es
+precision highp float;
+layout(local_size_x=1) in;
+layout(std430,binding=0) buffer B{uint x;}b;
+void main(){atomicAdd(b.x,1u);memoryBarrierBuffer();barrier();}

@@ -1,0 +1,480 @@
+{
+  "status": "PARTIAL",
+  "scope": "authored language-family compile/link probes, not exhaustive grammar/CTS or runtime semantics",
+  "compiler": "glslangValidator actual link",
+  "runtime": "ACTUAL_GLES_COMPILE_LINK",
+  "supports_gles32": false,
+  "performance": "NOT_MEASURED",
+  "rows": [
+    {
+      "id": "migration-100-positive",
+      "family": "migration-100",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "26c88ac107e4c6b5db3fdf728de9c0850c51f10c2b1198d229a016fd4e8107eb",
+        "shader.frag": "2ed8701d2f2fee549e5572bd6955178793406ce51af9cdd368713b4b6746ad7d"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "migration-100-negative",
+      "family": "migration-100",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "26c88ac107e4c6b5db3fdf728de9c0850c51f10c2b1198d229a016fd4e8107eb",
+        "shader.frag": "c04fe7c17022d33c7c2083ed7dec6d6ab76899f533fedbee6459549757a147bd"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "lexical-preprocessor-positive",
+      "family": "lexical-preprocessor",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "bd32115f3d15e76451fad877c3c9adbad02a0e5fc3e8c7a6c99a5938e820c633"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "lexical-preprocessor-negative",
+      "family": "lexical-preprocessor",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "aec8bce4d3f34047d8a911d7064efd9f2cd2e8ad99e74027a2bbffbb426da299"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "precision-positive",
+      "family": "precision",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "ec4bfa6f550dd018898ec1f5e8c1f6185777762317c7a602b0029592a4475b61"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "precision-negative",
+      "family": "precision",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "efdafd1a1767a3e390c40c46e5132a125762e166aec56cf331cf96d7641e7796"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "types-arrays-matrices-positive",
+      "family": "types-arrays-matrices",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "b6b59fa8abbc4d376dcef94b95cfd47e91f6d2bddc8b049cdbc43aecec895148"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "types-arrays-matrices-negative",
+      "family": "types-arrays-matrices",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "dda7a33e24a4d761553e4ace1965f014ad74d1021169d160672150531b1fabe7"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "control-flow-positive",
+      "family": "control-flow",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "8cba5afb3a4a0823eab8d965fa1ee34d5719442762221430eb8bf0e1033e8005"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "control-flow-negative",
+      "family": "control-flow",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "00e3a860c3b290b6ba4fe80429298fe7c398f888516d1b115f6ba3fa27411d76"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "uniform-std140-positive",
+      "family": "uniform-std140",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "57e6da7baba71c6c2f4753102022ff25bd69a81c3cf4aea9deed42b3d92e4d69"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "uniform-std140-negative",
+      "family": "uniform-std140",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "32fd14e46c777f8c4a48f4825af5b5824fd703d5f27b9d027f9accb69c8b1d8d"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "layout-output-positive",
+      "family": "layout-output",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "5734059eba34e9e69cafba4748b5f12c088a958080b26e867a080a7427ead199"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "layout-output-negative",
+      "family": "layout-output",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "fca3aa587aa94b4215d53d72afad7c258fe0d4b15475b547a2f6ee2dc518203f"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "texture-derivative-positive",
+      "family": "texture-derivative",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "ac877a31a403b7a3925da31d2a333f8cd9628f88885ba646480306d95f78a86b"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "texture-derivative-negative",
+      "family": "texture-derivative",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "358b22f8574e63d5770f3d847fc2739ff37bbb02593667a672bda4120f6942e9"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "compute-ssbo-std430-positive",
+      "family": "compute-ssbo-std430",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.comp": "d35346a8d55f1eaf6a21f33f9d21c555387ebb216d4804124124faae55e7753e"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "compute-ssbo-std430-negative",
+      "family": "compute-ssbo-std430",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.comp": "8e423670cb67fe619f1ee89cabd6ea5e6cd11dee618677953becdf24b147e686"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "atomics-barriers-positive",
+      "family": "atomics-barriers",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.comp": "60a993064ad28277ab1e1891b02625c32083e3986e625ea9c80c57f1ac26b4de"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "atomics-barriers-negative",
+      "family": "atomics-barriers",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.comp": "689b98e36877f281d7789a9c3d1d79099c3e66da238ee8a063dc9eeb8c698e64"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "image-store-positive",
+      "family": "image-store",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.comp": "04d196412097fd22f3410a03b79d188bc5152386d50d73cd1f61cdb2abc47b20"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "image-store-negative",
+      "family": "image-store",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.comp": "af7830e929f612b83fb89e3aa3a3b3d64a0c91c56226420124822177673cd178"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "extension-gate-positive",
+      "family": "extension-gate",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "26c88ac107e4c6b5db3fdf728de9c0850c51f10c2b1198d229a016fd4e8107eb",
+        "shader.frag": "27016cba89f420fd8515d42f62da005c276970e65170c2b847d5f61fa4fd28d3"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "extension-gate-negative",
+      "family": "extension-gate",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "6a467c1dc0b7c91fac2774b6e3c175c8908e570637b5e2cb88cc5f6f91415b6a",
+        "shader.frag": "d5bd34e57d214e2e2df3d2ef60de1112b877dff221ffd37a71cf3335cf5a3116"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "varying-interface-positive",
+      "family": "varying-interface",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "c59eeaf3ba7d419756db606924af5bdd33e60385f58103dd235e1337916ae1e0",
+        "shader.frag": "ca37705f98e0121d822003326b961b0df5208d80d69c95759a53aa8c199f22bf"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "varying-interface-negative",
+      "family": "varying-interface",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "c59eeaf3ba7d419756db606924af5bdd33e60385f58103dd235e1337916ae1e0",
+        "shader.frag": "d05a6a358b5d7941ec52fb3291ba6839f94f9ef31a3f4f0b0a0ee4f79b5567d4"
+      },
+      "runtime_compile": true,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "interpolation-positive",
+      "family": "interpolation",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "58bc7f89157d8a04d2f0e931936f753a69bcb57e771fab4fdb6b80f4ba004684",
+        "shader.frag": "576118722d0e1a9e00a4ce98763896884adbc507770b191680d20ee089a3785b"
+      },
+      "runtime_compile": true,
+      "runtime_link": true,
+      "runtime_accept": true,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "interpolation-negative",
+      "family": "interpolation",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "58bc7f89157d8a04d2f0e931936f753a69bcb57e771fab4fdb6b80f4ba004684",
+        "shader.frag": "ded563d7f81c920af8d052d43392e73ed576b821fcafb4f8534a3dcb0ecb7e2c"
+      },
+      "runtime_compile": false,
+      "runtime_link": false,
+      "runtime_accept": false,
+      "gl_error": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "geometry-version-positive",
+      "family": "geometry-version",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "24005a0ec00f5f2561566698805121b51f8f644a2512cfc8247b09abb3612ac6",
+        "shader.frag": "756de71cfc39a47b56fde5a09e6532778242275e149d501f0a7eb65bc3ee0859",
+        "shader.geom": "da29abdfdcfe27e633b288e6a631059215d3644a0044c34816171335d05fa6df"
+      },
+      "runtime_status": "NOT_SUPPORTED_GLES32",
+      "status": "NOT_SUPPORTED"
+    },
+    {
+      "id": "geometry-version-negative",
+      "family": "geometry-version",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "24005a0ec00f5f2561566698805121b51f8f644a2512cfc8247b09abb3612ac6",
+        "shader.frag": "756de71cfc39a47b56fde5a09e6532778242275e149d501f0a7eb65bc3ee0859",
+        "shader.geom": "292c599582df2241f731243821ffcfea9cbe7bc40a6427758d265a9673744eaa"
+      },
+      "runtime_status": "NOT_SUPPORTED_GLES32",
+      "status": "NOT_SUPPORTED"
+    },
+    {
+      "id": "tessellation-version-positive",
+      "family": "tessellation-version",
+      "expected_accept": true,
+      "compiler_accept": true,
+      "source_sha256": {
+        "shader.vert": "24005a0ec00f5f2561566698805121b51f8f644a2512cfc8247b09abb3612ac6",
+        "shader.frag": "756de71cfc39a47b56fde5a09e6532778242275e149d501f0a7eb65bc3ee0859",
+        "shader.tesc": "6e8381c3d6cf52a32ae96f4e2a729026ac24a1dfd1a4ffa5eb126226c4824bbf",
+        "shader.tese": "5b9f7131b32d7d6034ceb68cbb5639e2f3b8cbf60f43cd13ffdbbc2e51adb974"
+      },
+      "runtime_status": "NOT_SUPPORTED_GLES32",
+      "status": "NOT_SUPPORTED"
+    },
+    {
+      "id": "tessellation-version-negative",
+      "family": "tessellation-version",
+      "expected_accept": false,
+      "compiler_accept": false,
+      "source_sha256": {
+        "shader.vert": "24005a0ec00f5f2561566698805121b51f8f644a2512cfc8247b09abb3612ac6",
+        "shader.frag": "756de71cfc39a47b56fde5a09e6532778242275e149d501f0a7eb65bc3ee0859",
+        "shader.tesc": "d8a850fa81ed94218e05d11e2917f028a9412e2c59c58f83192f73383f7fe5bd",
+        "shader.tese": "5b9f7131b32d7d6034ceb68cbb5639e2f3b8cbf60f43cd13ffdbbc2e51adb974"
+      },
+      "runtime_status": "NOT_SUPPORTED_GLES32",
+      "status": "NOT_SUPPORTED"
+    }
+  ],
+  "source_sha256": "4ffcaa9dd60063bcbae9b4d445adbd1719693a3773f37f94d6686fa27dc1e1ac",
+  "contract_status": "PASS"
+}

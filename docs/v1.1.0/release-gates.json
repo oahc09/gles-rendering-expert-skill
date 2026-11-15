@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "target_version": "1.1.0",
+  "overall_state": "reviewable_draft_candidate",
+  "implementation_status": "PARTIAL_CANDIDATE",
+  "release_ready": false,
+  "release_authorized": false,
+  "accepted_limitations": [],
+  "prior_release_gate": "docs/v1.0.9/release-gates.json",
+  "base_commit": "b1bf915e1f33404888b89174ad2857ffa78b6f2a",
+  "work_packages": {
+    "W0": {
+      "status": "HOST_AUDIT_COMPLETE",
+      "evidence": [
+        "docs/v1.1.0/baseline.md",
+        "docs/v1.1.0/debt-ledger.json",
+        "docs/v1.1.0/feature-inventory.json"
+      ],
+      "remaining": "Historical failures remain preserved; no release waiver."
+    },
+    "W1": {
+      "status": "INDEX_COMPLETE",
+      "evidence": [
+        "references/coverage/gles-api-catalog.json",
+        "references/coverage/egl-api-catalog.json",
+        "tools/coverage/build_gles_catalog.py"
+      ],
+      "remaining": "Structural index is complete for pinned snapshots, not complete semantic or runtime coverage."
+    },
+    "W2": {
+      "status": "HOST_BOUNDED",
+      "evidence": [
+        "tools/coverage/verify_glsl.py",
+        "benchmarks/coverage/glsl/evidence/mesa.json",
+        "benchmarks/coverage/glsl/evidence/angle.json"
+      ],
+      "remaining": "16 authored families: Mesa32 probes, ANGLE28 plus four actual GLES3.2 capability gaps; special extension/whole grammar coverage not claimed."
+    },
+    "W3": {
+      "status": "HOST_BOUNDED",
+      "evidence": [
+        "examples/closure/egl-lifecycle/run.py",
+        "references/coverage/egl-matrix.md"
+      ],
+      "remaining": "27 software checks per driver; native Windows/Android/GBM windows, reset and native image paths not executed."
+    },
+    "W4": {
+      "status": "PARTIAL",
+      "evidence": [
+        "references/coverage/extensions-catalog.json",
+        "tools/coverage/capability.py",
+        "references/coverage/extensions-priority.md",
+        "tools/coverage/priority_boundaries.py",
+        "references/coverage/priority-boundaries.json",
+        "benchmarks/coverage/extensions/evidence/priority-mesa.json",
+        "benchmarks/coverage/extensions/evidence/priority-angle.json"
+      ],
+      "remaining": "Three initial priority routes plus six narrow reviewed policies. Dual software probes pass Sync/EGLImage/reset-query/ASTC upload; MSRTT not advertised and protected secure path unverified. Multiview/Fetch-PLS/VRS/AHB remain NOT_REVIEWED. Not full extension semantic acceptance."
+    },
+    "W5": {
+      "status": "HOST_BOUNDED",
+      "evidence": [
+        "examples/closure/gles-runtime/state_interactions.cpp",
+        "benchmarks/coverage/state-machine/evidence.json",
+        "references/coverage/format-capability-matrix.md"
+      ],
+      "remaining": "48 actual software legal/error interactions; existing hazards/lifecycle tests preserved, not target GPU performance."
+    },
+    "W6": {
+      "status": "HOST_KNOWLEDGE_BOUNDED",
+      "evidence": [
+        "references/coverage/vendor-coverage.json",
+        "references/coverage/vendor-coverage.md"
+      ],
+      "remaining": "Counters/tool names and device workarounds require exact targets, trace, range and expiry; physical evidence absent."
+    },
+    "W7": {
+      "status": "PARTIAL",
+      "evidence": [
+        "references/coverage/scenario-matrix.json",
+        "references/coverage/scenario-matrix.md"
+      ],
+      "remaining": "15 categories indexed. Finite examples reused; animation/SDF/MSDF/OIT/multiview representatives not all executed and video target blocked."
+    },
+    "W8": {
+      "status": "HOST_INDEX_AND_LINK_CONTRACT",
+      "evidence": [
+        "tools/coverage/check_coverage.py",
+        "tools/coverage/verify_sources.py",
+        "docs/v1.1.0/source-offline.json",
+        "docs/v1.1.0/source-online.json"
+      ],
+      "remaining": "Offline reconstruction, pinned online source verification and explicit positive/negative linkage; no assertion of universal semantic acceptance. Clean offline checkout is INCOMPLETE because public gl.xml is an explicit non-vendored dependency; CI fetches its pinned hash."
+    },
+    "W9": {
+      "status": "BLOCKED_BY_TOOLCHAIN_AND_HARDWARE",
+      "evidence": [
+        "docs/v1.1.0/platform-preflight.json",
+        "docs/v1.1.0/platform-matrix.md",
+        "tools/coverage/cts_results.py",
+        "benchmarks/coverage/platforms/cts-config.json"
+      ],
+      "remaining": "No Android APK/install; SDK/NDK/Gradle dependencies missing. No actual CTS QPA, Windows native or mobile target run. Parser fixtures are not CTS evidence."
+    },
+    "W10": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "evidence": [
+        "benchmarks/agent/final-eval/cases.json",
+        "benchmarks/agent/final-eval/freeze.json",
+        "benchmarks/agent/final-eval/evaluate.py",
+        "benchmarks/agent/final-eval/evidence/summary.json"
+      ],
+      "remaining": "100 authored frozen tasks, evaluator integrity and null-score no-provider execution delivered. Semantic deduplication, independent blind review and real paired model outputs unavailable."
+    },
+    "W11": {
+      "status": "PARTIAL",
+      "evidence": [
+        "tools/coverage/lifecycle.py",
+        "docs/v1.1.0/source-ledger.json",
+        "docs/v1.1.0/change-impact.json",
+        "docs/v1.1.0/knowledge-migration.md"
+      ],
+      "remaining": "Review-only governance, no scheduling activation; original plan-window full review and independent acceptance remain incomplete."
+    },
+    "W12": {
+      "status": "ACCEPTANCE_BLOCKED",
+      "evidence": [
+        "docs/v1.1.0/acceptance-report.md",
+        "docs/v1.1.0/coverage-final.md"
+      ],
+      "remaining": "Original plan requires hardware/provider and inherited closure; no automatic release, version bump, tag or merge."
+    }
+  }
+}

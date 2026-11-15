@@ -1,0 +1,12 @@
+schema_version: 1
+target_version: 1.1.0
+modern_gles: ['2.0', '3.0', '3.1', '3.2']
+glsl_es: ['1.00', '3.00', '3.10', '3.20']
+egl_core: ['1.4', '1.5']
+gles_1x: migration_only
+desktop_gl: excluded
+registry_policy: frozen_source_manifest
+coverage_dimensions: [indexed, semantic, compiled, runtime, device, provider]
+release_ready: false
+release_authorized: false
+schedule_activation: not_authorized

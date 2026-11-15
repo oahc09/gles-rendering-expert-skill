@@ -1,0 +1,151 @@
+{
+  "status": "HOST_PASS",
+  "scope": "software EGL pbuffers only; not Android/window compositor/device-reset reproduction",
+  "rows": [
+    {
+      "id": "config-discovery",
+      "status": "PASS"
+    },
+    {
+      "id": "second-surface-shared-context-current",
+      "status": "PASS"
+    },
+    {
+      "id": "shared-texture-readback",
+      "status": "PASS",
+      "pixel": [
+        32,
+        64,
+        128,
+        255
+      ],
+      "gl_error": 0
+    },
+    {
+      "id": "isolated-context-current",
+      "status": "PASS"
+    },
+    {
+      "id": "nonshared-texture-invisible",
+      "status": "PASS"
+    },
+    {
+      "id": "cross-thread-current-conflict",
+      "status": "PASS",
+      "make": false,
+      "error": 12290
+    },
+    {
+      "id": "dual-thread-shared-readback",
+      "status": "PASS",
+      "make": true,
+      "pixel": [
+        32,
+        64,
+        128,
+        255
+      ],
+      "gl_error": 0,
+      "released": true
+    },
+    {
+      "id": "pause-release",
+      "status": "PASS"
+    },
+    {
+      "id": "resume-original-surface",
+      "status": "PASS"
+    },
+    {
+      "id": "pbuffer-swap-not-window-presentation",
+      "status": "PASS"
+    },
+    {
+      "id": "invalid-surface-fault",
+      "status": "PASS",
+      "egl_error": 12301
+    },
+    {
+      "id": "invalid-surface-attribute",
+      "status": "PASS",
+      "egl_error": 12292
+    },
+    {
+      "id": "recover-after-errors",
+      "status": "PASS"
+    },
+    {
+      "id": "destroy-unused-surface",
+      "status": "PASS"
+    },
+    {
+      "id": "recreated-surface-current",
+      "status": "PASS"
+    },
+    {
+      "id": "resize-via-recreation",
+      "status": "PASS",
+      "width": 16
+    },
+    {
+      "id": "recreated-surface-pixels",
+      "status": "PASS",
+      "pixel": [
+        64,
+        128,
+        191,
+        255
+      ]
+    },
+    {
+      "id": "surfaceless-current",
+      "status": "PASS"
+    },
+    {
+      "id": "egl-image-from-texture",
+      "status": "PASS"
+    },
+    {
+      "id": "egl-image-destroy",
+      "status": "PASS"
+    },
+    {
+      "id": "egl-image-invalid-target",
+      "status": "PASS",
+      "egl_error": 12300
+    },
+    {
+      "id": "egl-fence-sync",
+      "status": "PASS",
+      "result": 12534
+    },
+    {
+      "id": "egl-sync-destroy",
+      "status": "PASS"
+    },
+    {
+      "id": "restore-original-for-cleanup",
+      "status": "PASS"
+    },
+    {
+      "id": "context-destroy",
+      "status": "PASS"
+    },
+    {
+      "id": "context-destroy",
+      "status": "PASS"
+    },
+    {
+      "id": "surface-destroy",
+      "status": "PASS"
+    }
+  ],
+  "platform_gaps": [
+    "Android Java/NDK device lifecycle NOT_RUN",
+    "Windows x64/ARM64 native target NOT_RUN",
+    "GBM/Wayland/X11 windows NOT_RUN",
+    "EGLImage native import/export NOT_RUN; texture image creation/destroy tested",
+    "actual surface loss/context reset NOT_RUN"
+  ],
+  "source_sha256": "12e963c759f4257a0a44b306e558b8ca54040b08440af610b6381a31c9cd71ee"
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "cards": [
+    {
+      "vendor": "Mali",
+      "reuse": "references/vendor-adapters/mali-immortalis.json",
+      "source": "https://developer.arm.com/Tools%20and%20Software/Arm%20Performance%20Studio",
+      "level": "CONDITIONAL",
+      "diagnostic": "Tile/transaction elimination hypotheses depend on architecture and attachment lifetime; count external-memory traffic, fragment work and frequency, not just draw count.",
+      "raw_counter_names": null,
+      "measured_gain": null,
+      "required_evidence": [
+        "named target device",
+        "driver/backend",
+        "build SHA",
+        "raw trace",
+        "thermal/frequency conditions",
+        "interleaved A/B repeats",
+        "quality oracle"
+      ],
+      "fallback": "Preserve quality-validated baseline if evidence or capability is absent.",
+      "workaround_policy": {
+        "exact_driver_range_required": true,
+        "source_and_repro_required": true,
+        "expires_at_required": true,
+        "automatic_expiry_fallback": true
+      },
+      "device_status": "BLOCKED_BY_HARDWARE"
+    },
+    {
+      "vendor": "Adreno",
+      "reuse": "references/vendor-adapters/adreno.json",
+      "source": "https://docs.qualcomm.com/doc/80-54323-2",
+      "level": "CONDITIONAL",
+      "diagnostic": "GMEM/LRZ behavior is driver and pass dependent. Preserve attachment consumers; test spills, mixed MRT/MSAA and transparent ordering.",
+      "raw_counter_names": null,
+      "measured_gain": null,
+      "required_evidence": [
+        "named target device",
+        "driver/backend",
+        "build SHA",
+        "raw trace",
+        "thermal/frequency conditions",
+        "interleaved A/B repeats",
+        "quality oracle"
+      ],
+      "fallback": "Preserve quality-validated baseline if evidence or capability is absent.",
+      "workaround_policy": {
+        "exact_driver_range_required": true,
+        "source_and_repro_required": true,
+        "expires_at_required": true,
+        "automatic_expiry_fallback": true
+      },
+      "device_status": "BLOCKED_BY_HARDWARE"
+    },
+    {
+      "vendor": "PowerVR",
+      "reuse": "references/vendor-adapters/powervr.json",
+      "source": "https://docs.imgtec.com/tools-manuals/pvrvframe-manual/html/topics/introduction.html",
+      "level": "CONDITIONAL",
+      "diagnostic": "Desktop PVRVFrame is not physical PowerVR performance. Hidden-surface techniques do not eliminate all blended transparent work.",
+      "raw_counter_names": null,
+      "measured_gain": null,
+      "required_evidence": [
+        "named target device",
+        "driver/backend",
+        "build SHA",
+        "raw trace",
+        "thermal/frequency conditions",
+        "interleaved A/B repeats",
+        "quality oracle"
+      ],
+      "fallback": "Preserve quality-validated baseline if evidence or capability is absent.",
+      "workaround_policy": {
+        "exact_driver_range_required": true,
+        "source_and_repro_required": true,
+        "expires_at_required": true,
+        "automatic_expiry_fallback": true
+      },
+      "device_status": "BLOCKED_BY_HARDWARE"
+    },
+    {
+      "vendor": "Panfrost/Freedreno/etnaviv",
+      "reuse": "references/vendor-adapters/vivante-etnaviv.json",
+      "source": "https://docs.mesa3d.org/",
+      "level": "CONDITIONAL",
+      "diagnostic": "Do not generalize a Mesa component fix across GPU families. Pin affected commit/driver and verify exact reproduction.",
+      "raw_counter_names": null,
+      "measured_gain": null,
+      "required_evidence": [
+        "named target device",
+        "driver/backend",
+        "build SHA",
+        "raw trace",
+        "thermal/frequency conditions",
+        "interleaved A/B repeats",
+        "quality oracle"
+      ],
+      "fallback": "Preserve quality-validated baseline if evidence or capability is absent.",
+      "workaround_policy": {
+        "exact_driver_range_required": true,
+        "source_and_repro_required": true,
+        "expires_at_required": true,
+        "automatic_expiry_fallback": true
+      },
+      "device_status": "BLOCKED_BY_HARDWARE"
+    },
+    {
+      "vendor": "ANGLE",
+      "reuse": "references/cards/24-translation-layers.md",
+      "source": "https://github.com/google/angle",
+      "level": "CONDITIONAL",
+      "diagnostic": "Backend, translation and driver both matter; SwiftShader is software and cannot establish Windows hardware or mobile counter behavior.",
+      "raw_counter_names": null,
+      "measured_gain": null,
+      "required_evidence": [
+        "named target device",
+        "driver/backend",
+        "build SHA",
+        "raw trace",
+        "thermal/frequency conditions",
+        "interleaved A/B repeats",
+        "quality oracle"
+      ],
+      "fallback": "Preserve quality-validated baseline if evidence or capability is absent.",
+      "workaround_policy": {
+        "exact_driver_range_required": true,
+        "source_and_repro_required": true,
+        "expires_at_required": true,
+        "automatic_expiry_fallback": true
+      },
+      "device_status": "BLOCKED_BY_HARDWARE"
+    }
+  ],
+  "classification": {
+    "MUST": "Normative specification constraint with exact applicability",
+    "SHOULD": "Nonbinding engineering advice with tradeoffs",
+    "CONDITIONAL": "Device/driver/format/workload dependent; requires probes and measurements",
+    "EXPERIMENTAL": "Hypothesis only; no accepted improvement"
+  }
+}

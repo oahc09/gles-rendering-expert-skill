@@ -1,0 +1,12 @@
+{
+ "schema_version":1,
+ "source":"https://github.com/KhronosGroup/VK-GL-CTS",
+ "execution_status":"NOT_RUN",
+ "source_revision":null,
+ "requested_pattern":"dEQP-GLES3.functional.fbo.completeness.*",
+ "selection_policy":"Pin checkout revision and retain its license; enumerate actual matching case paths from that executable before running. Expected case list must be frozen, not inferred from passing QPA records.",
+ "command_template":["deqp-gles3","--deqp-case={requested_pattern}","--deqp-log-filename={local_qpa}"],
+ "raw_qpa":null,
+ "certification_claim":false,
+ "reason":"No pinned built CTS executable or authentic QPA run available; parser fixtures only test parser integrity."
+}

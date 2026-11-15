@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
+      - name: Restore packed data and explicitly fetch pinned public XML dependency
+        run: python3 tools/coverage/materialize.py --fetch-public
       - name: Install host-only validation toolchain
         run: sudo apt-get update && sudo apt-get install -y g++ libegl-dev libgles-dev libegl-mesa0 glslang-tools libvulkan1
       - name: Structured rule contracts (not source compilation)
@@ -191,6 +193,28 @@ jobs:
           python3 benchmarks/device_portability/scene_collector.py group reports/v109-scene-captures/mesa-software-record.json reports/v109-scene-captures/angle-software-record.json --artifact-root reports/v109-scene-captures --output reports/v109-scene-groups.json
       - name: v1.0.9 reproducible complete host unit manifest
         run: python3 tools/run_v109_regression.py --output reports/v109-unit-manifest.json
+      - name: v1.1.0 frozen Registry offline and explicit rule links
+        run: |
+          python3 tools/coverage/verify_sources.py --output reports/v110-sources-offline.json
+          python3 tools/coverage/check_coverage.py --root . --output reports/v110-coverage.json
+          python3 tools/coverage/check_gates.py
+      - name: v1.1.0 pinned upstream source verification (no baseline updates)
+        run: python3 tools/coverage/verify_sources.py --online --output reports/v110-sources-online.json
+      - name: v1.1.0 actual language and EGL lifecycle checks
+        run: |
+          python3 tools/coverage/verify_glsl.py --config /tmp/v109-mesa.json --output reports/v110-glsl-mesa.json
+          python3 tools/coverage/verify_glsl.py --config /tmp/v109-angle.json --output reports/v110-glsl-angle.json --require-contract-only
+          for driver in mesa angle; do
+            python3 examples/closure/egl-lifecycle/run.py --config /tmp/v109-$driver.json --output reports/v110-egl-$driver.json
+            python3 benchmarks/coverage/extensions/run_priority.py --config /tmp/v109-$driver.json --output reports/v110-priority-$driver.json
+          done
+          python3 benchmarks/coverage/state-machine/run.py --output reports/v110-state-interactions.json
+      - name: v1.1.0 frozen evaluation and review-only governance
+        run: |
+          python3 benchmarks/agent/final-eval/evaluate.py validate
+          python3 tools/coverage/lifecycle.py --ledger docs/v1.1.0/source-ledger.json --date 2026-11-15 --output reports/v110-lifecycle.json
+          python3 tools/coverage/platform_preflight.py --output reports/v110-platform-preflight.json
+          python3 tools/coverage/run_regression.py --output reports/v110-unit-manifest.json
       - name: Preserve v108 results and failure evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

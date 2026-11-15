@@ -307,3 +307,10 @@ This SKILL.md is the entry point. Load additional files **only when relevant**:
 | Example code (few-shot) | `references/examples/` → specific file |
 
 **Do NOT load all rules simultaneously.** Select only those matching the current user query to minimize context cost and prevent rule drift.
+
+
+## v1.1.0 frozen coverage routing (candidate, not released)
+
+For exact GLES 2.0-3.2 or EGL 1.4/1.5 API/extension membership, use `references/coverage/source-manifest.json` and the generated catalogs. INDEXED_ONLY is not semantic legality, compiler success, runtime support or device validation. Resolve the exact version/extension, callable entrypoint, dependencies and parameter probe before enabling a path; aliases do not imply interchangeable entrypoints.
+
+For shader-language and EGL lifecycle boundaries, read `references/coverage/glsl-es-matrix.md` and `references/coverage/egl-matrix.md`. For format/interaction, vendor and scenario limits, select only the relevant coverage matrix. Consult `docs/v1.1.0/release-gates.json` before describing acceptance; inherited failures, physical targets and model evaluation cannot be waived by index completeness.

@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "scope": "48 distinct software GL legal/error interactions; not performance or physical-device validation",
+  "source_sha256": {
+    "examples/closure/gles-runtime/state_interactions.cpp": "6376bc7414af4c9b50a026b6ec5c4342b7a7ddb7e57e95ce6f2496be3ef96fc9",
+    "examples/validation/egl_smoke.cpp": "03ffdc74c8eac6179e2867b624c70cf54437e4f4e0464cb4efd1834d00169fb1",
+    "references/examples/pbo_streaming_upload.cpp": "a3b8b9d95554d38b7df34b3117f7c696c44193a88a2437c6b91fc03a8204daed"
+  },
+  "compile": "PASS",
+  "execution_class": "SOFTWARE_GLES",
+  "device": null,
+  "provider": null,
+  "rows": [
+    {
+      "case": "pack_alignment_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "pack_alignment_invalid",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "unpack_alignment_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "unpack_alignment_invalid",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "pack_row_length_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "pack_row_length_negative",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "unpack_skip_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "unpack_skip_negative",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "buffer_size_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "buffer_size_negative",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "subdata_boundary_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "subdata_boundary_overflow",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "map_access_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "map_no_access",
+      "expected": 1282,
+      "observed": 1282,
+      "status": "PASS"
+    },
+    {
+      "case": "map_range_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "map_range_overflow",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "buffer_usage_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "buffer_usage_invalid",
+      "expected": 1280,
+      "observed": 1280,
+      "status": "PASS"
+    },
+    {
+      "case": "immutable_storage_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "immutable_redefinition_invalid",
+      "expected": 1282,
+      "observed": 1282,
+      "status": "PASS"
+    },
+    {
+      "case": "wrap_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "wrap_invalid",
+      "expected": 1280,
+      "observed": 1280,
+      "status": "PASS"
+    },
+    {
+      "case": "mag_filter_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "mag_filter_mipmap_invalid",
+      "expected": 1280,
+      "observed": 1280,
+      "status": "PASS"
+    },
+    {
+      "case": "sampler_min_filter_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "sampler_filter_invalid",
+      "expected": 1280,
+      "observed": 1280,
+      "status": "PASS"
+    },
+    {
+      "case": "named_readbuffer_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "named_readbuffer_back_invalid",
+      "expected": 1282,
+      "observed": 1282,
+      "status": "PASS"
+    },
+    {
+      "case": "named_drawbuffer_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "named_drawbuffer_back_invalid",
+      "expected": 1282,
+      "observed": 1282,
+      "status": "PASS"
+    },
+    {
+      "case": "renderbuffer_format_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "renderbuffer_format_invalid",
+      "expected": 1280,
+      "observed": 1280,
+      "status": "PASS"
+    },
+    {
+      "case": "multisample_zero_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "multisample_negative",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "scissor_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "scissor_negative",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "viewport_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "viewport_negative",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    },
+    {
+      "case": "depth_func_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "depth_func_invalid",
+      "expected": 1280,
+      "observed": 1280,
+      "status": "PASS"
+    },
+    {
+      "case": "stencil_op_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "stencil_op_invalid",
+      "expected": 1280,
+      "observed": 1280,
+      "status": "PASS"
+    },
+    {
+      "case": "blend_factor_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "blend_factor_invalid",
+      "expected": 1280,
+      "observed": 1280,
+      "status": "PASS"
+    },
+    {
+      "case": "fence_condition_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "fence_condition_invalid",
+      "expected": 1280,
+      "observed": 1280,
+      "status": "PASS"
+    },
+    {
+      "case": "client_wait_flags_legal",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "client_wait_flags_invalid",
+      "expected": 1281,
+      "observed": 1281,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

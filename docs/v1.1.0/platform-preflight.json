@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "requirements": {
+    "java": true,
+    "gradle": false,
+    "android_35": false,
+    "ndk_27": false,
+    "cmake_3_22_1": false,
+    "adb": false
+  },
+  "android_build": "BLOCKED_BY_TOOLCHAIN",
+  "android_install": "NOT_RUN",
+  "physical_mali": "BLOCKED_BY_HARDWARE",
+  "physical_adreno": "BLOCKED_BY_HARDWARE",
+  "physical_powervr": "BLOCKED_BY_HARDWARE",
+  "windows_angle_x64": "BLOCKED_BY_HARDWARE",
+  "windows_angle_arm64": "BLOCKED_BY_HARDWARE",
+  "embedded_gbm_wayland_x11": "BLOCKED_BY_HARDWARE",
+  "software_egl": "SEPARATE_HOST_RUNS",
+  "device_acceptance": false,
+  "apk_artifact": null
+}

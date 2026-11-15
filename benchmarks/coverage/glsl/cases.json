@@ -1,0 +1,290 @@
+[
+  {
+    "id": "migration-100-positive",
+    "family": "migration-100",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 100\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 100\nprecision highp float;\n\nvoid main(){gl_FragColor=vec4(1);}"
+    }
+  },
+  {
+    "id": "migration-100-negative",
+    "family": "migration-100",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 100\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 100\nprecision highp float;\n\nvoid main(){color=vec4(1);}"
+    }
+  },
+  {
+    "id": "lexical-preprocessor-positive",
+    "family": "lexical-preprocessor",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\n#define VALUE 0.5\nout vec4 color;\nvoid main(){color=vec4(VALUE);}"
+    }
+  },
+  {
+    "id": "lexical-preprocessor-negative",
+    "family": "lexical-preprocessor",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){color=vec4(VALUE);}"
+    }
+  },
+  {
+    "id": "precision-positive",
+    "family": "precision",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){mediump float x=.5;color=vec4(x);}"
+    }
+  },
+  {
+    "id": "precision-negative",
+    "family": "precision",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){precision bogus float;color=vec4(1);}"
+    }
+  },
+  {
+    "id": "types-arrays-matrices-positive",
+    "family": "types-arrays-matrices",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){mat2 m=mat2(1);float a[2]=float[2](.2,.3);color=vec4(m*vec2(a[0]),0,1);}"
+    }
+  },
+  {
+    "id": "types-arrays-matrices-negative",
+    "family": "types-arrays-matrices",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){mat2 m=mat2(1);vec3 x=m*vec3(1);color=vec4(x,1);}"
+    }
+  },
+  {
+    "id": "control-flow-positive",
+    "family": "control-flow",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){float x=0.;for(int i=0;i<3;i++){if(i==1)continue;x+=.1;}color=vec4(x);}"
+    }
+  },
+  {
+    "id": "control-flow-negative",
+    "family": "control-flow",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){break;color=vec4(1);}"
+    }
+  },
+  {
+    "id": "uniform-std140-positive",
+    "family": "uniform-std140",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\nlayout(std140) uniform Block{vec4 c;}u;\nout vec4 color;\nvoid main(){color=u.c;}"
+    }
+  },
+  {
+    "id": "uniform-std140-negative",
+    "family": "uniform-std140",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\nlayout(std430) uniform Block{vec4 c;}u;\nout vec4 color;\nvoid main(){color=u.c;}"
+    }
+  },
+  {
+    "id": "layout-output-positive",
+    "family": "layout-output",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){color=vec4(1);}"
+    }
+  },
+  {
+    "id": "layout-output-negative",
+    "family": "layout-output",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\nlayout(location=-1) out vec4 invalid;\nout vec4 color;\nvoid main(){color=vec4(1);}"
+    }
+  },
+  {
+    "id": "texture-derivative-positive",
+    "family": "texture-derivative",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\nuniform sampler2D tex;\nout vec4 color;\nvoid main(){color=texture(tex,vec2(.5))+vec4(dFdx(gl_FragCoord.x));}"
+    }
+  },
+  {
+    "id": "texture-derivative-negative",
+    "family": "texture-derivative",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\nuniform sampler2D tex;\nout vec4 color;\nvoid main(){color=texture(tex,vec3(.5));}"
+    }
+  },
+  {
+    "id": "compute-ssbo-std430-positive",
+    "family": "compute-ssbo-std430",
+    "expected": true,
+    "sources": {
+      "shader.comp": "#version 310 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(std430,binding=0) buffer B{uint x[];}b;\nvoid main(){b.x[0]=1u;}"
+    }
+  },
+  {
+    "id": "compute-ssbo-std430-negative",
+    "family": "compute-ssbo-std430",
+    "expected": false,
+    "sources": {
+      "shader.comp": "#version 300 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(std430,binding=0) buffer B{uint x[];}b;\nvoid main(){b.x[0]=1u;}"
+    }
+  },
+  {
+    "id": "atomics-barriers-positive",
+    "family": "atomics-barriers",
+    "expected": true,
+    "sources": {
+      "shader.comp": "#version 310 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(std430,binding=0) buffer B{uint x;}b;\nvoid main(){atomicAdd(b.x,1u);memoryBarrierBuffer();barrier();}"
+    }
+  },
+  {
+    "id": "atomics-barriers-negative",
+    "family": "atomics-barriers",
+    "expected": false,
+    "sources": {
+      "shader.comp": "#version 310 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(std430,binding=0) buffer B{float x;}b;\nvoid main(){atomicAdd(b.x,1.0);}"
+    }
+  },
+  {
+    "id": "image-store-positive",
+    "family": "image-store",
+    "expected": true,
+    "sources": {
+      "shader.comp": "#version 310 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(rgba8,binding=0) writeonly uniform highp image2D img;\nvoid main(){imageStore(img,ivec2(0),vec4(1));}"
+    }
+  },
+  {
+    "id": "image-store-negative",
+    "family": "image-store",
+    "expected": false,
+    "sources": {
+      "shader.comp": "#version 310 es\nprecision highp float;\nlayout(local_size_x=1) in;\nlayout(rgba8,binding=0) readonly uniform highp image2D img;\nvoid main(){imageStore(img,ivec2(0),vec4(1));}"
+    }
+  },
+  {
+    "id": "extension-gate-positive",
+    "family": "extension-gate",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 100\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 100\n#extension GL_OES_standard_derivatives : require\nprecision highp float;\nvoid main(){gl_FragColor=vec4(dFdx(gl_FragCoord.x));}"
+    }
+  },
+  {
+    "id": "extension-gate-negative",
+    "family": "extension-gate",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 300 es\n#extension GL_FAKE_coverage_unavailable : require\nprecision highp float;\nout vec4 color;\nvoid main(){color=vec4(1);}"
+    }
+  },
+  {
+    "id": "varying-interface-positive",
+    "family": "varying-interface",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 300 es\nout mediump vec3 value;void main(){value=vec3(1);gl_Position=vec4(0);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\nin mediump vec3 value;\nout vec4 color;\nvoid main(){color=vec4(value,1);}"
+    }
+  },
+  {
+    "id": "varying-interface-negative",
+    "family": "varying-interface",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nout mediump vec3 value;void main(){value=vec3(1);gl_Position=vec4(0);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\nin mediump vec4 value;\nout vec4 color;\nvoid main(){color=value;}"
+    }
+  },
+  {
+    "id": "interpolation-positive",
+    "family": "interpolation",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 300 es\nflat out highp int value;void main(){value=1;gl_Position=vec4(0);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\nflat in highp int value;\nout vec4 color;\nvoid main(){color=vec4(float(value));}"
+    }
+  },
+  {
+    "id": "interpolation-negative",
+    "family": "interpolation",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 300 es\nflat out highp int value;void main(){value=1;gl_Position=vec4(0);}",
+      "shader.frag": "#version 300 es\nprecision highp float;\nin highp int value;\nout vec4 color;\nvoid main(){color=vec4(float(value));}"
+    }
+  },
+  {
+    "id": "geometry-version-positive",
+    "family": "geometry-version",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 320 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 320 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){color=vec4(1);}",
+      "shader.geom": "#version 320 es\nlayout(points) in;layout(points,max_vertices=1) out;void main(){gl_Position=gl_in[0].gl_Position;EmitVertex();EndPrimitive();}"
+    }
+  },
+  {
+    "id": "geometry-version-negative",
+    "family": "geometry-version",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 320 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 320 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){color=vec4(1);}",
+      "shader.geom": "#version 300 es\nlayout(points) in;layout(points,max_vertices=1) out;void main(){gl_Position=gl_in[0].gl_Position;EmitVertex();EndPrimitive();}"
+    }
+  },
+  {
+    "id": "tessellation-version-positive",
+    "family": "tessellation-version",
+    "expected": true,
+    "sources": {
+      "shader.vert": "#version 320 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 320 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){color=vec4(1);}",
+      "shader.tesc": "#version 320 es\nlayout(vertices=3) out;void main(){gl_out[gl_InvocationID].gl_Position=gl_in[gl_InvocationID].gl_Position;gl_TessLevelOuter[0]=1.;gl_TessLevelOuter[1]=1.;gl_TessLevelOuter[2]=1.;gl_TessLevelInner[0]=1.;}",
+      "shader.tese": "#version 320 es\nlayout(triangles,equal_spacing,cw) in;void main(){gl_Position=gl_in[0].gl_Position;}"
+    }
+  },
+  {
+    "id": "tessellation-version-negative",
+    "family": "tessellation-version",
+    "expected": false,
+    "sources": {
+      "shader.vert": "#version 320 es\nvoid main(){gl_Position=vec4(0,0,0,1);}",
+      "shader.frag": "#version 320 es\nprecision highp float;\n\nout vec4 color;\nvoid main(){color=vec4(1);}",
+      "shader.tesc": "#version 310 es\nlayout(vertices=3) out;void main(){gl_out[gl_InvocationID].gl_Position=gl_in[gl_InvocationID].gl_Position;gl_TessLevelOuter[0]=1.;gl_TessLevelOuter[1]=1.;gl_TessLevelOuter[2]=1.;gl_TessLevelInner[0]=1.;}",
+      "shader.tese": "#version 320 es\nlayout(triangles,equal_spacing,cw) in;void main(){gl_Position=gl_in[0].gl_Position;}"
+    }
+  }
+]

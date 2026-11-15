@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "encoding": "gzip lossless; exact original bytes; no source mutation",
+  "artifacts": [
+    {
+      "path": "references/coverage/egl-api-catalog.json",
+      "packed_path": "references/coverage/egl-api-catalog.json.gz",
+      "sha256": "b90e86d4b6142bcb5504649cc2c53164286ad8e876eec06058531a60051018d2",
+      "bytes": 664293,
+      "packed_sha256": "fbe6e3425b0ed674594eb094a66bc0136458c48b991a0cb7c85e8229cf7454b7",
+      "packed_bytes": 33714
+    },
+    {
+      "path": "references/coverage/extensions-catalog.json",
+      "packed_path": "references/coverage/extensions-catalog.json.gz",
+      "sha256": "e59dc39048f17ed9cdd57f42d90055b353b104581886f1d1ee7bbb262d0d497f",
+      "bytes": 388715,
+      "packed_sha256": "8d9c235dec796201b854e5ffed8cb85f08fb8a99afaf326572569b4ea581aba8",
+      "packed_bytes": 35232
+    },
+    {
+      "path": "references/coverage/gles-api-catalog.json",
+      "packed_path": "references/coverage/gles-api-catalog.json.gz",
+      "sha256": "c7258ccbae285650ba34fb6c3db35aaf378c1a371bf546f01e4ce5d971553580",
+      "bytes": 3112833,
+      "packed_sha256": "ceda9aa7c17f5953471d932f5099611aa0d4e48f22319bfbe9564fa9cef98db5",
+      "packed_bytes": 151455
+    },
+    {
+      "path": "references/coverage/registry/egl.xml",
+      "packed_path": "references/coverage/registry/egl.xml.gz",
+      "sha256": "3a0f13e1b6309c8662bdb47046a4515c092b91b53e6774b46cd702b67ec53626",
+      "bytes": 195641,
+      "packed_sha256": "1eca39b92477f5a8709640090a5457b7af493027517c26adb6c66c325240b9c9",
+      "packed_bytes": 22636
+    },
+    {
+      "path": "references/coverage/registry/gl.xml",
+      "sha256": "b9ca2cfa5c676e901c20d34af3407f1687cde0f1336a5ff7a8974d04c7494ad3",
+      "bytes": 2774722,
+      "distribution": "EXTERNAL_PUBLIC_DEPENDENCY_NOT_VENDORED",
+      "source_url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/xml/gl.xml",
+      "source_commit": "1cdd228e34966dd6b95bd203e9f84faba0f371a1"
+    }
+  ],
+  "offline_clean_checkout": "INCOMPLETE until exact public gl.xml dependency has been supplied"
+}

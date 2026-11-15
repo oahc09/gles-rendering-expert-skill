@@ -1,0 +1,36 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "records": [
+    {
+      "id": "ANGLE_STORAGE_REBINDS",
+      "state": "new",
+      "effective_state": "new",
+      "expiry": "NOT_APPLICABLE",
+      "required_action": "REVIEW"
+    },
+    {
+      "id": "ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+      "state": "new",
+      "effective_state": "new",
+      "expiry": "NOT_APPLICABLE",
+      "required_action": "REVIEW"
+    },
+    {
+      "id": "FILAMENT_GL_FREE_ASYNC_FLUSH",
+      "state": "new",
+      "effective_state": "new",
+      "expiry": "NOT_APPLICABLE",
+      "required_action": "REVIEW"
+    },
+    {
+      "id": "FILAMENT_PACKING_PRECISION",
+      "state": "new",
+      "effective_state": "new",
+      "expiry": "NOT_APPLICABLE",
+      "required_action": "REVIEW"
+    }
+  ],
+  "conflicts": [],
+  "schedule_activated": false,
+  "release_acceptance": false
+}
