@@ -160,3 +160,40 @@ checks. This remains correctness evidence, not physical performance.
 Fourth-increment local regression: **778 tests passed, zero failures/skips**,
 33 directories. Evidence: `evidence/unit-tests-fourth.json`. Hosted CI for the
 new commit must be verified separately; prior successful runs are not substituted.
+
+
+## Fifth increment — finite particle pipeline and real rollback
+
+Preceding exact head `41abfd7ccd27915ce73386392153493bdf78724d` passed
+[CI 43670584989](https://github.com/oahc09/gles-rendering-expert-skill/actions/runs/43670584989).
+It does not cover later source changes.
+
+- S04 now performs compute writes to a four-record SSBO, then proper barriers and
+  vertex-stage SSBO consumption. Three frames × correct/wrong-frame/wrong-index
+  arms run on each software driver: 18 total image readbacks plus 18 buffer maps.
+  Positive images match independent CPU golden exactly; deterministic negatives
+  fail. No barrier is intentionally omitted and no invalid index is submitted.
+- S08 retains actual baseline objects while trying four candidates per driver.
+  Quality failures are rejected; missing evidence and correct-but-unmeasured PBO
+  candidates stay unaccepted. Restore rebinds program/texture/FBO/VAO, queries GL
+  bindings, clears before redraw to prevent stale-image false positives, and obtains
+  byte-identical baseline pixels. Eighteen image readbacks total, not app-wide or
+  context-loss recovery. The shared decision API now accepts one observation;
+  no fake duplicate compression branches are manufactured to reuse a gate.
+- Multi-SSBO rebind controls add 36 compute dispatches and 20 host maps including
+  prime reads across both drivers. Correct bindings match CPU values; the wrong
+  final binding deterministically changes two resources. All dependencies retain
+  consumer-specific barriers. Internal Vulkan event tracking is not verified.
+- A fixed, source-controlled full-unit manifest and one-command runner now emit
+  sanitized count/status summaries. Zero tests, unrecognized results, skips or
+  failed subprocesses cannot be summarized as PASS. Runtime GPU controls remain
+  separate from unit tests and hardware/provider gates.
+
+Fifth increment adds **36 finite image readbacks and 38 buffer maps** across two
+software implementations. No physical speedup, complete simulation, arbitrary
+application rollback or exact upstream bug reproduction is claimed.
+
+Fifth-increment full local unit regression: **811 tests passed, zero skipped**, 35
+directories. Reproduce with `python3 tools/run_v109_regression.py --output REPORT_JSON`.
+Safe summary: `evidence/unit-tests-fifth.json`. Exact new-head hosted CI must still
+be checked independently; software results do not close real-device/provider gates.

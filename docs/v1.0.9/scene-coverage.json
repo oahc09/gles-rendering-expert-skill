@@ -66,11 +66,12 @@
     },
     {
       "id": "S04",
-      "scope": "Finite compute storage barrier to fragment readback; not a particle workload",
+      "scope": "Finite actual compute-updated four-particle SSBO consumed by vertex shader across three frames",
       "implementation": [
-        "benchmarks/shader_ab/advanced.py"
+        "benchmarks/shader_ab/advanced.py",
+        "benchmarks/particle_controls/run.py"
       ],
-      "remaining": "Particle scale, synchronization duration and frame distribution remain missing.",
+      "remaining": "Particle workload scale, asynchronous sync duration, frame-time distribution and physical performance remain missing.",
       "correctness": {
         "status": "PARTIAL",
         "reason": "Bounded host infrastructure only; see implementation."
@@ -147,18 +148,19 @@
     },
     {
       "id": "S08",
-      "scope": "Rule-level negative-gain rejection, not deployed renderer rollback",
+      "scope": "Actual isolated GLES candidate rejection and retained baseline program/texture/FBO/VAO restore, clear, redraw and byte-equal readback",
       "implementation": [
-        "tools/optimization_advisor.py"
+        "tools/optimization_advisor.py",
+        "benchmarks/rollback_controls/run.py"
       ],
-      "remaining": "End-to-end renderer state rollback and physical performance trace remain missing.",
+      "remaining": "Application-wide resources, concurrency/context loss and physical performance trace remain unverified.",
       "correctness": {
         "status": "PARTIAL",
         "reason": "Bounded host infrastructure only; see implementation."
       },
       "quality": {
-        "status": "NOT_RUN",
-        "reason": "Finite controls are not full scene acceptance."
+        "status": "PARTIAL",
+        "reason": "Four finite transactions tested against restored image and queried GL bindings; not app-wide/context-loss rollback."
       },
       "performance": {
         "status": "BLOCKED_BY_HARDWARE",

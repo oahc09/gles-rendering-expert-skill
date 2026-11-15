@@ -33,7 +33,9 @@
         "benchmarks/shader_ab/advanced.py",
         "benchmarks/hdr_controls/run.py",
         "benchmarks/shader_ab/packing.py",
-        "benchmarks/attachment_controls/run.py"
+        "benchmarks/attachment_controls/run.py",
+        "benchmarks/particle_controls/run.py",
+        "benchmarks/shader_ab/rebind.py"
       ],
       "remaining": "Expanded dual-software-driver correctness controls pass; actual GPU A/B performance, broader scene/material/format distributions and original inherited gates remain incomplete. See validation-report.md."
     },
@@ -65,7 +67,8 @@
     "W7": {
       "status": "PARTIAL",
       "implementation": [
-        "tools/optimization_advisor.py"
+        "tools/optimization_advisor.py",
+        "benchmarks/rollback_controls/run.py"
       ],
       "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
     },
@@ -88,7 +91,8 @@
       "implementation": [
         "docs/v1.0.9/research/ledger.json",
         "docs/v1.0.9/research/release-review.json",
-        "docs/v1.0.9/research/implementation-review.json"
+        "docs/v1.0.9/research/implementation-review.json",
+        "tools/run_v109_regression.py"
       ],
       "remaining": "Ten selected source-content inspections are AI analysis, not full 1319-candidate or vendor/X review; no independent human acceptance or upstream-fix performance proof."
     }

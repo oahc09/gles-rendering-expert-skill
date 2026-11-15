@@ -45,7 +45,15 @@
       "gap": "Our single SSBO compute-to-fragment positive control covers only a simpler ordering edge. Mixed event/pipeline resource histories and sequential image rebinds are NOT_REPRODUCED locally.",
       "decision": "Add a candidate multi-resource rebind regression; preserve API consumer-specific barrier semantics. Do not promote a new mandatory global-barrier rule or infer a speedup.",
       "rule_promotion": "NONE",
-      "performance_claim": null
+      "performance_claim": null,
+      "bounded_local_control": {
+        "files": [
+          "benchmarks/shader_ab/rebind.py",
+          "benchmarks/shader_ab/test_rebind.py"
+        ],
+        "result": "DUAL_SOFTWARE_HOST_PASS",
+        "scope": "Four SSBOs with different API read history; internal ANGLE VkEvent history and exact upstream regression not established."
+      }
     },
     {
       "review_id": "ANGLE_BLEND_ATTACHMENT_TRANSITIONS",

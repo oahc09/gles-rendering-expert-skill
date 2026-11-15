@@ -98,3 +98,14 @@ drivers, with independent CPU pixels and deliberate blend/value failures. Each
 executes seven draws/eight readbacks. This narrows the local coverage gap; it does
 not recreate all upstream states, regress the upstream revision or prove the
 particular ANGLE fix. Read its README for exact API feature selection.
+
+
+### Storage-rebind follow-up
+
+`benchmarks/shader_ab/rebind.py` adds four SSBOs, a distinct prior API read on one,
+two sequential compute-write rounds and CPU mapping. Each driver performs 18
+dispatches and ten host maps across correct/wrong-binding arms (including prime
+reads). Consumer-specific storage and buffer-update barriers are retained, including
+the negative arm's repeated write. No missing-barrier undefined behavior is used.
+This is bounded source-informed API coverage, not proof of internal VkEvent history
+or exact reproduction of the reviewed ANGLE defect.

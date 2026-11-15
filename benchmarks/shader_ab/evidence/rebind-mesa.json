@@ -1,0 +1,194 @@
+{
+  "status": "HOST_PASS",
+  "cases": [
+    {
+      "status": "EXECUTED",
+      "variant": "correct_binding",
+      "compile": {
+        "compile": true,
+        "link": true,
+        "compile_logs": [
+          ""
+        ],
+        "link_log": ""
+      },
+      "prime_compile": {
+        "compile": true,
+        "link": true,
+        "compile_logs": [
+          ""
+        ],
+        "link_log": ""
+      },
+      "prime_readback": [
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      "readback": [
+        [
+          16.0,
+          32.0,
+          64.0,
+          128.0
+        ],
+        [
+          17.0,
+          33.0,
+          65.0,
+          129.0
+        ],
+        [
+          18.0,
+          34.0,
+          66.0,
+          130.0
+        ],
+        [
+          19.0,
+          35.0,
+          67.0,
+          131.0
+        ]
+      ],
+      "expected": [
+        [
+          16.0,
+          32.0,
+          64.0,
+          128.0
+        ],
+        [
+          17.0,
+          33.0,
+          65.0,
+          129.0
+        ],
+        [
+          18.0,
+          34.0,
+          66.0,
+          130.0
+        ],
+        [
+          19.0,
+          35.0,
+          67.0,
+          131.0
+        ]
+      ],
+      "binding_order": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "numeric_quality": "PASS",
+      "harness_gl_error": 0,
+      "barriers": [
+        "GL_SHADER_STORAGE_BARRIER_BIT before storage overwrite",
+        "GL_BUFFER_UPDATE_BARRIER_BIT before map readback"
+      ]
+    },
+    {
+      "status": "EXECUTED",
+      "variant": "wrong_binding",
+      "compile": {
+        "compile": true,
+        "link": true,
+        "compile_logs": [
+          ""
+        ],
+        "link_log": ""
+      },
+      "prime_compile": {
+        "compile": true,
+        "link": true,
+        "compile_logs": [
+          ""
+        ],
+        "link_log": ""
+      },
+      "prime_readback": [
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      "readback": [
+        [
+          19.0,
+          35.0,
+          67.0,
+          131.0
+        ],
+        [
+          17.0,
+          33.0,
+          65.0,
+          129.0
+        ],
+        [
+          18.0,
+          34.0,
+          66.0,
+          130.0
+        ],
+        [
+          4.5,
+          6.75,
+          8.0,
+          15.125
+        ]
+      ],
+      "expected": [
+        [
+          16.0,
+          32.0,
+          64.0,
+          128.0
+        ],
+        [
+          17.0,
+          33.0,
+          65.0,
+          129.0
+        ],
+        [
+          18.0,
+          34.0,
+          66.0,
+          130.0
+        ],
+        [
+          19.0,
+          35.0,
+          67.0,
+          131.0
+        ]
+      ],
+      "binding_order": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "numeric_quality": "FAIL",
+      "harness_gl_error": 0,
+      "barriers": [
+        "GL_SHADER_STORAGE_BARRIER_BIT before storage overwrite",
+        "GL_BUFFER_UPDATE_BARRIER_BIT before map readback"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "compute": "b2eec78067709572845600ac3ca2c99c2d419e993c562e7d5f52659d95f60a0d",
+    "prime": "0cb67c2d6ddd30b32651ef0507ff4aeb51dac48f7b789e32b155e62bfaad2a69"
+  },
+  "scope": "Four SSBOs, prior read on buffer zero, two write rounds and host map readback",
+  "mixed_history": "API-level prior read differs; internal VkEvent/pipeline history NOT_VERIFIED",
+  "upstream_bug_reproduced": false,
+  "missing_barrier": "NOT_EXECUTED_UNDEFINED_BEHAVIOR",
+  "performance": "NOT_MEASURED"
+}

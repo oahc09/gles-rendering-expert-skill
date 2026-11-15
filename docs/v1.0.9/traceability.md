@@ -40,3 +40,11 @@ oracles without asserting exact upstream reproduction. Texture KTX tests now inc
 an official pinned independent CPU ETC2 block decoder and a separate quality-decision
 gate. Selected release/implementation review files are AI analysis, not independent
 human approval, complete corpus review or performance evidence.
+
+
+Fifth increment: `particle_controls/run.py` realizes finite S04 compute→SSBO→vertex
+rendering; `rollback_controls/run.py` realizes finite S08 program/texture/FBO/VAO
+rebind with clear/redraw/readback; `shader_ab/rebind.py` follows the reviewed storage
+barrier source with bounded multi-resource controls. `tools/run_v109_regression.py`
+uses `test-manifest.json` for a reproducible full host-unit summary; missing/zero
+tests or skips fail and raw machine logs are not included in the summary artifact.
