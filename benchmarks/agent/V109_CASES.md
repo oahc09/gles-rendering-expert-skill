@@ -32,3 +32,12 @@ This validates captured corpus/response hashes and old/new execution evidence pa
 before scoring. The no-provider empty run returns exit 2, `BLOCKED_BY_PROVIDER`,
 zero reviewed pairs and null rates, never invented model-quality scores. Raw review
 identities still require trusted independent authentication outside this CLI.
+
+## Case-specific adjudication guide
+`v109-adjudication-guide.json` adds two distinct reasoning checks for each of the
+30 new prompts, bound to the exact prompt hash and expected finding. This is
+AI-authored review guidance, not captured provider output, an independent review,
+or keyword-based automatic correctness scoring. Every verdict remains null and
+independent review NOT_RUN. It does not change the original corpus or paired
+capture hashes. The separate independent adjudicator must inspect actual response
+and execution evidence; unsupported gain claims remain separately scored.

@@ -72,11 +72,12 @@
       "acceptance": "PARTIAL_HOST_SCOPE",
       "evidence": [
         "benchmarks/overlap_scenes/projected.py",
-        "benchmarks/overlap_scenes/advanced.py"
+        "benchmarks/overlap_scenes/advanced.py",
+        "benchmarks/overlap_scenes/tiered.py",
+        "benchmarks/overlap_scenes/TIERED.md"
       ],
       "remaining_host": [
-        "Separate rain/volume cases, background-Gaussian merge, transparency grouping and distant-resolution optimization are missing.",
-        "Unified tile color/alpha/depth/background/perceptual-error statistics and explicit scale tiers remain incomplete."
+        "Tiered 8/24/48 screen-disjoint grouping and half-resolution actual replay implemented, but Mesa 24/48 baseline CPU-golden errors exceed unchanged thresholds; root cause unresolved. Larger scale, general background merge, volume/rain distributions and depth/background-specific statistics remain incomplete."
       ],
       "external_requirements": [
         "Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition."
@@ -107,10 +108,11 @@
       "evidence": [
         "benchmarks/texture_access/mechanisms.py",
         "benchmarks/texture_access/ktx2_experiment.py",
-        "benchmarks/texture_streaming/run.py"
+        "benchmarks/texture_streaming/run.py",
+        "benchmarks/texture_streaming/progressive.py"
       ],
       "remaining_host": [
-        "Compressed/asynchronous progressive-mip streaming, representative oblique anisotropy/locality distributions and isolated transcoder phase accounting remain incomplete."
+        "Synchronous explicit RGBA mip refinement with budget/quality/restore now implemented; compressed/asynchronous streaming, representative oblique anisotropy/locality distributions and isolated transcoder phase accounting remain incomplete."
       ],
       "external_requirements": [
         "Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics."
@@ -136,10 +138,11 @@
       "acceptance": "BLOCKED_BY_HARDWARE",
       "evidence": [
         "benchmarks/device_portability/protocol.py",
-        "benchmarks/device_portability/matrix.json"
+        "benchmarks/device_portability/matrix.json",
+        "benchmarks/device_portability/scene_collector.py"
       ],
       "remaining_host": [
-        "Protocol is not a fully wired same-scene device collector or validated vendor-strategy implementation."
+        "Actual software scene collector and hash-bound grouped quality ingestion now implemented; real device collector and validated vendor strategies not implemented."
       ],
       "external_requirements": [
         "At least one physical device A/B is absent; Mali/Adreno/PowerVR comparisons and temperature/frequency traces are NOT_RUN."
@@ -152,10 +155,11 @@
       "evidence": [
         "benchmarks/agent/cases-v1.0.9.json",
         "benchmarks/agent/score_v109.py",
-        "docs/v1.0.9/evidence/provider-score-blocked.json"
+        "docs/v1.0.9/evidence/provider-score-blocked.json",
+        "benchmarks/agent/v109-adjudication-guide.json"
       ],
       "remaining_host": [
-        "Independent corpus-content review remains incomplete."
+        "30 case-specific AI-authored prompt-bound adjudication guides delivered; independent corpus-content review remains incomplete."
       ],
       "external_requirements": [
         "No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence."
@@ -168,7 +172,9 @@
       "evidence": [
         "docs/v1.0.9/research/rolling/2026-11-15/receipt.json",
         "docs/v1.0.9/research/implementation-review.json",
-        ".github/workflows/validation.yml"
+        ".github/workflows/validation.yml",
+        "docs/v1.0.9/research/experiment-chain.json",
+        "tools/check_v109_research_chain.py"
       ],
       "remaining_host": [
         "Only ten selected full-content records inspected from 1319 metadata candidates; remaining coverage conclusions and vendor/X checks are incomplete.",

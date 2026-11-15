@@ -74,3 +74,22 @@ coherent synchronization, are now executable. These replace the previously
 listed missing implementations, not hardware/provider acceptance. Other matrix
 rows retain their unresolved host items. Candidate replay accepts constant input
 and rejects checkerboard degradation without relaxing quality budgets.
+
+## Scene collection, mip refinement and tier quality follow-up
+
+- W4 now executes 8/24/48 proxies over three cameras, conservative disjoint
+  material grouping and actual half-resolution rendering/upsampling. Grouping
+  preserves pixels and reduces tint updates, not draw count/coverage. Mesa 24/48
+  baseline fails the unchanged 4-code CPU-golden threshold; only tier8 is
+  acceptable there. ANGLE passes all three. Cause is undetermined. Half-resolution
+  candidates reject at the original quality budget. A fallback to a failed
+  baseline is explicitly not acceptable. Harness-contract success is not
+  full-tier visual acceptance.
+- W6 now has synchronous explicit mip refinement, budget gating and actual
+  rejected-candidate restore. Compressed/asynchronous streaming remains missing.
+- W8 captures the actual three-stage scene, rechecks CPU quality from pixels and
+  groups hash-bound software records. It does not enter the physical protocol.
+- W9 adds prompt-bound case-specific reasoning guidance for all 30 tasks;
+  independent reviewer/provider verdicts remain absent.
+- W10 binds the four inspected source reviews to bounded experiment/test hashes.
+  Integrity checks do not create independent review or promote performance rules.

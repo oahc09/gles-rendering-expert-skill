@@ -39,3 +39,12 @@ contain four actual implementation-patch reviews. This is AI source inspection,
 not independent human approval. Source-confirmed engineering cautions are linked
 to existing controls and explicit reproduction gaps; metadata titles alone are
 not counted as source review. No source patch proves a local performance gain.
+
+## Executable source-to-experiment linkage
+`experiment-chain.json` binds the four previously inspected implementation
+reviews to their exact local experiment/test file hashes. The GL-free async flush
+review explicitly has no exact local experiment. `tools/check_v109_research_chain.py`
+rejects stale review/code hashes, missing coverage and any attempted promotion
+from these records to a verified performance rule or independent human sign-off.
+This checks integrity and declared linkage only; it neither re-fetches upstream
+nor counts the remaining metadata corpus as read. No new rules are promoted.

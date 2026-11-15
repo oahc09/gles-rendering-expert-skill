@@ -1,0 +1,625 @@
+{
+  "status": "FAIL",
+  "scope": "8/24/48 authored Gaussian-alpha billboards; screen-disjoint material grouping; 64->32 render then actual GLES nearest framebuffer upsample and quality-gated baseline fallback",
+  "physical_performance": "NOT_MEASURED",
+  "million_scale": "NOT_RUN",
+  "readbacks": 36,
+  "thresholds": {
+    "max_rgba8_error": 4,
+    "silhouette_disagree_pixels": 2,
+    "centroid_error_pixels": 0.1
+  },
+  "source_sha256": "b48265992191401d632983cb279ebceabce651c3fadbd49f2de9d1a9cb9aeb7f",
+  "artifact_archive": {
+    "file": "tiered-mesa.zip",
+    "sha256": "115d95af559cca2868598cd3aca3b941757953412f4431036d6f85f6f5747647",
+    "instructions": "Extract beside report; prefix-name.rgba files are 64x64 bottom-up RGBA8"
+  },
+  "rows": [
+    {
+      "tier_object_count": 8,
+      "camera_x": -0.3,
+      "metrics": {
+        "baseline": {
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.02825927734375,
+          "silhouette_disagree_pixels": 1,
+          "alpha_centroid_x": 35.180539157811886,
+          "cpu_alpha_centroid_x": 35.18500443655723,
+          "centroid_error_pixels": 0.004465278745342971
+        },
+        "grouped": {
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.02825927734375,
+          "silhouette_disagree_pixels": 1,
+          "alpha_centroid_x": 35.180539157811886,
+          "cpu_alpha_centroid_x": 35.18500443655723,
+          "centroid_error_pixels": 0.004465278745342971
+        },
+        "half_resolution": {
+          "max_rgba8_error": 9,
+          "mean_rgba8_error": 0.2752685546875,
+          "silhouette_disagree_pixels": 65,
+          "alpha_centroid_x": 34.96327345309381,
+          "cpu_alpha_centroid_x": 35.18500443655723,
+          "centroid_error_pixels": 0.22173098346341646
+        },
+        "bad_drop": {
+          "max_rgba8_error": 44,
+          "mean_rgba8_error": 0.69427490234375,
+          "silhouette_disagree_pixels": 150,
+          "alpha_centroid_x": 35.092592592592595,
+          "cpu_alpha_centroid_x": 35.18500443655723,
+          "centroid_error_pixels": 0.09241184396463353
+        }
+      },
+      "grouping_proven_disjoint": true,
+      "grouping_pixel_identical": true,
+      "tint_uniform_updates": {
+        "baseline": 8,
+        "grouped": 2
+      },
+      "draws_per_arm": {
+        "baseline": 8,
+        "grouped": 8,
+        "half_resolution": 8,
+        "bad_drop": 4
+      },
+      "baseline_quality": "PASS",
+      "fallback_acceptable": true,
+      "tier_acceptance": "PASS",
+      "resolution_candidate": "REJECTED_FALLBACK",
+      "selected_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02825927734375,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 35.180539157811886,
+        "cpu_alpha_centroid_x": 35.18500443655723,
+        "centroid_error_pixels": 0.004465278745342971
+      },
+      "status": "PASS",
+      "artifact_prefix": "tier8-camera-0.3"
+    },
+    {
+      "tier_object_count": 8,
+      "camera_x": 0,
+      "metrics": {
+        "baseline": {
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.031005859375,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        },
+        "grouped": {
+          "max_rgba8_error": 2,
+          "mean_rgba8_error": 0.031005859375,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        },
+        "half_resolution": {
+          "max_rgba8_error": 7,
+          "mean_rgba8_error": 0.2659912109375,
+          "silhouette_disagree_pixels": 28,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        },
+        "bad_drop": {
+          "max_rgba8_error": 44,
+          "mean_rgba8_error": 0.696533203125,
+          "silhouette_disagree_pixels": 152,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "grouping_proven_disjoint": true,
+      "grouping_pixel_identical": true,
+      "tint_uniform_updates": {
+        "baseline": 8,
+        "grouped": 2
+      },
+      "draws_per_arm": {
+        "baseline": 8,
+        "grouped": 8,
+        "half_resolution": 8,
+        "bad_drop": 4
+      },
+      "baseline_quality": "PASS",
+      "fallback_acceptable": true,
+      "tier_acceptance": "PASS",
+      "resolution_candidate": "REJECTED_FALLBACK",
+      "selected_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.031005859375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 32.0,
+        "cpu_alpha_centroid_x": 32.0,
+        "centroid_error_pixels": 0.0
+      },
+      "status": "PASS",
+      "artifact_prefix": "tier8-camera0"
+    },
+    {
+      "tier_object_count": 8,
+      "camera_x": 0.3,
+      "metrics": {
+        "baseline": {
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.0277099609375,
+          "silhouette_disagree_pixels": 1,
+          "alpha_centroid_x": 28.82374667585935,
+          "cpu_alpha_centroid_x": 28.817684189762304,
+          "centroid_error_pixels": 0.006062486097047071
+        },
+        "grouped": {
+          "max_rgba8_error": 3,
+          "mean_rgba8_error": 0.0277099609375,
+          "silhouette_disagree_pixels": 1,
+          "alpha_centroid_x": 28.82374667585935,
+          "cpu_alpha_centroid_x": 28.817684189762304,
+          "centroid_error_pixels": 0.006062486097047071
+        },
+        "half_resolution": {
+          "max_rgba8_error": 9,
+          "mean_rgba8_error": 0.2744140625,
+          "silhouette_disagree_pixels": 68,
+          "alpha_centroid_x": 28.99920063948841,
+          "cpu_alpha_centroid_x": 28.817684189762304,
+          "centroid_error_pixels": 0.18151644972610725
+        },
+        "bad_drop": {
+          "max_rgba8_error": 44,
+          "mean_rgba8_error": 0.69464111328125,
+          "silhouette_disagree_pixels": 148,
+          "alpha_centroid_x": 28.916943197345304,
+          "cpu_alpha_centroid_x": 28.817684189762304,
+          "centroid_error_pixels": 0.09925900758300088
+        }
+      },
+      "grouping_proven_disjoint": true,
+      "grouping_pixel_identical": true,
+      "tint_uniform_updates": {
+        "baseline": 8,
+        "grouped": 2
+      },
+      "draws_per_arm": {
+        "baseline": 8,
+        "grouped": 8,
+        "half_resolution": 8,
+        "bad_drop": 4
+      },
+      "baseline_quality": "PASS",
+      "fallback_acceptable": true,
+      "tier_acceptance": "PASS",
+      "resolution_candidate": "REJECTED_FALLBACK",
+      "selected_metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.0277099609375,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 28.82374667585935,
+        "cpu_alpha_centroid_x": 28.817684189762304,
+        "centroid_error_pixels": 0.006062486097047071
+      },
+      "status": "PASS",
+      "artifact_prefix": "tier8-camera0.3"
+    },
+    {
+      "tier_object_count": 24,
+      "camera_x": -0.3,
+      "metrics": {
+        "baseline": {
+          "max_rgba8_error": 5,
+          "mean_rgba8_error": 0.08935546875,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 34.90058747934643,
+          "cpu_alpha_centroid_x": 34.89167127326331,
+          "centroid_error_pixels": 0.008916206083114275
+        },
+        "grouped": {
+          "max_rgba8_error": 5,
+          "mean_rgba8_error": 0.08935546875,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 34.90058747934643,
+          "cpu_alpha_centroid_x": 34.89167127326331,
+          "centroid_error_pixels": 0.008916206083114275
+        },
+        "half_resolution": {
+          "max_rgba8_error": 21,
+          "mean_rgba8_error": 0.7030029296875,
+          "silhouette_disagree_pixels": 18,
+          "alpha_centroid_x": 34.92714243057629,
+          "cpu_alpha_centroid_x": 34.89167127326331,
+          "centroid_error_pixels": 0.03547115731297623
+        },
+        "bad_drop": {
+          "max_rgba8_error": 68,
+          "mean_rgba8_error": 1.68505859375,
+          "silhouette_disagree_pixels": 95,
+          "alpha_centroid_x": 34.7105084053631,
+          "cpu_alpha_centroid_x": 34.89167127326331,
+          "centroid_error_pixels": 0.18116286790021263
+        }
+      },
+      "grouping_proven_disjoint": true,
+      "grouping_pixel_identical": true,
+      "tint_uniform_updates": {
+        "baseline": 24,
+        "grouped": 2
+      },
+      "draws_per_arm": {
+        "baseline": 24,
+        "grouped": 24,
+        "half_resolution": 24,
+        "bad_drop": 12
+      },
+      "baseline_quality": "FAIL",
+      "fallback_acceptable": false,
+      "tier_acceptance": "REJECTED_CPU_GOLDEN",
+      "resolution_candidate": "REJECTED_FALLBACK",
+      "selected_metrics": {
+        "max_rgba8_error": 5,
+        "mean_rgba8_error": 0.08935546875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 34.90058747934643,
+        "cpu_alpha_centroid_x": 34.89167127326331,
+        "centroid_error_pixels": 0.008916206083114275
+      },
+      "status": "FAIL",
+      "artifact_prefix": "tier24-camera-0.3"
+    },
+    {
+      "tier_object_count": 24,
+      "camera_x": 0,
+      "metrics": {
+        "baseline": {
+          "max_rgba8_error": 6,
+          "mean_rgba8_error": 0.109619140625,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        },
+        "grouped": {
+          "max_rgba8_error": 6,
+          "mean_rgba8_error": 0.109619140625,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        },
+        "half_resolution": {
+          "max_rgba8_error": 19,
+          "mean_rgba8_error": 0.68243408203125,
+          "silhouette_disagree_pixels": 84,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        },
+        "bad_drop": {
+          "max_rgba8_error": 67,
+          "mean_rgba8_error": 1.680419921875,
+          "silhouette_disagree_pixels": 84,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "grouping_proven_disjoint": true,
+      "grouping_pixel_identical": true,
+      "tint_uniform_updates": {
+        "baseline": 24,
+        "grouped": 2
+      },
+      "draws_per_arm": {
+        "baseline": 24,
+        "grouped": 24,
+        "half_resolution": 24,
+        "bad_drop": 12
+      },
+      "baseline_quality": "FAIL",
+      "fallback_acceptable": false,
+      "tier_acceptance": "REJECTED_CPU_GOLDEN",
+      "resolution_candidate": "REJECTED_FALLBACK",
+      "selected_metrics": {
+        "max_rgba8_error": 6,
+        "mean_rgba8_error": 0.109619140625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 32.0,
+        "cpu_alpha_centroid_x": 32.0,
+        "centroid_error_pixels": 0.0
+      },
+      "status": "FAIL",
+      "artifact_prefix": "tier24-camera0"
+    },
+    {
+      "tier_object_count": 24,
+      "camera_x": 0.3,
+      "metrics": {
+        "baseline": {
+          "max_rgba8_error": 5,
+          "mean_rgba8_error": 0.08966064453125,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 29.09539546155541,
+          "cpu_alpha_centroid_x": 29.11401311427098,
+          "centroid_error_pixels": 0.018617652715569477
+        },
+        "grouped": {
+          "max_rgba8_error": 5,
+          "mean_rgba8_error": 0.08966064453125,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 29.09539546155541,
+          "cpu_alpha_centroid_x": 29.11401311427098,
+          "centroid_error_pixels": 0.018617652715569477
+        },
+        "half_resolution": {
+          "max_rgba8_error": 19,
+          "mean_rgba8_error": 0.70660400390625,
+          "silhouette_disagree_pixels": 18,
+          "alpha_centroid_x": 29.0555223880597,
+          "cpu_alpha_centroid_x": 29.11401311427098,
+          "centroid_error_pixels": 0.0584907262112786
+        },
+        "bad_drop": {
+          "max_rgba8_error": 67,
+          "mean_rgba8_error": 1.6817626953125,
+          "silhouette_disagree_pixels": 95,
+          "alpha_centroid_x": 29.274601878317682,
+          "cpu_alpha_centroid_x": 29.11401311427098,
+          "centroid_error_pixels": 0.16058876404670386
+        }
+      },
+      "grouping_proven_disjoint": true,
+      "grouping_pixel_identical": true,
+      "tint_uniform_updates": {
+        "baseline": 24,
+        "grouped": 2
+      },
+      "draws_per_arm": {
+        "baseline": 24,
+        "grouped": 24,
+        "half_resolution": 24,
+        "bad_drop": 12
+      },
+      "baseline_quality": "FAIL",
+      "fallback_acceptable": false,
+      "tier_acceptance": "REJECTED_CPU_GOLDEN",
+      "resolution_candidate": "REJECTED_FALLBACK",
+      "selected_metrics": {
+        "max_rgba8_error": 5,
+        "mean_rgba8_error": 0.08966064453125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 29.09539546155541,
+        "cpu_alpha_centroid_x": 29.11401311427098,
+        "centroid_error_pixels": 0.018617652715569477
+      },
+      "status": "FAIL",
+      "artifact_prefix": "tier24-camera0.3"
+    },
+    {
+      "tier_object_count": 48,
+      "camera_x": -0.3,
+      "metrics": {
+        "baseline": {
+          "max_rgba8_error": 8,
+          "mean_rgba8_error": 0.16082763671875,
+          "silhouette_disagree_pixels": 3,
+          "alpha_centroid_x": 34.69617101648352,
+          "cpu_alpha_centroid_x": 34.69656443304524,
+          "centroid_error_pixels": 0.0003934165617209828
+        },
+        "grouped": {
+          "max_rgba8_error": 8,
+          "mean_rgba8_error": 0.16082763671875,
+          "silhouette_disagree_pixels": 3,
+          "alpha_centroid_x": 34.69617101648352,
+          "cpu_alpha_centroid_x": 34.69656443304524,
+          "centroid_error_pixels": 0.0003934165617209828
+        },
+        "half_resolution": {
+          "max_rgba8_error": 28,
+          "mean_rgba8_error": 1.13836669921875,
+          "silhouette_disagree_pixels": 64,
+          "alpha_centroid_x": 34.75994441549418,
+          "cpu_alpha_centroid_x": 34.69656443304524,
+          "centroid_error_pixels": 0.06337998244894294
+        },
+        "bad_drop": {
+          "max_rgba8_error": 67,
+          "mean_rgba8_error": 2.5943603515625,
+          "silhouette_disagree_pixels": 68,
+          "alpha_centroid_x": 34.47515482158655,
+          "cpu_alpha_centroid_x": 34.69656443304524,
+          "centroid_error_pixels": 0.22140961145868943
+        }
+      },
+      "grouping_proven_disjoint": true,
+      "grouping_pixel_identical": true,
+      "tint_uniform_updates": {
+        "baseline": 48,
+        "grouped": 2
+      },
+      "draws_per_arm": {
+        "baseline": 48,
+        "grouped": 48,
+        "half_resolution": 48,
+        "bad_drop": 24
+      },
+      "baseline_quality": "FAIL",
+      "fallback_acceptable": false,
+      "tier_acceptance": "REJECTED_CPU_GOLDEN",
+      "resolution_candidate": "REJECTED_FALLBACK",
+      "selected_metrics": {
+        "max_rgba8_error": 8,
+        "mean_rgba8_error": 0.16082763671875,
+        "silhouette_disagree_pixels": 3,
+        "alpha_centroid_x": 34.69617101648352,
+        "cpu_alpha_centroid_x": 34.69656443304524,
+        "centroid_error_pixels": 0.0003934165617209828
+      },
+      "status": "FAIL",
+      "artifact_prefix": "tier48-camera-0.3"
+    },
+    {
+      "tier_object_count": 48,
+      "camera_x": 0,
+      "metrics": {
+        "baseline": {
+          "max_rgba8_error": 11,
+          "mean_rgba8_error": 0.22283935546875,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        },
+        "grouped": {
+          "max_rgba8_error": 11,
+          "mean_rgba8_error": 0.22283935546875,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        },
+        "half_resolution": {
+          "max_rgba8_error": 29,
+          "mean_rgba8_error": 1.1002197265625,
+          "silhouette_disagree_pixels": 52,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        },
+        "bad_drop": {
+          "max_rgba8_error": 65,
+          "mean_rgba8_error": 2.57879638671875,
+          "silhouette_disagree_pixels": 88,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "grouping_proven_disjoint": true,
+      "grouping_pixel_identical": true,
+      "tint_uniform_updates": {
+        "baseline": 48,
+        "grouped": 2
+      },
+      "draws_per_arm": {
+        "baseline": 48,
+        "grouped": 48,
+        "half_resolution": 48,
+        "bad_drop": 24
+      },
+      "baseline_quality": "FAIL",
+      "fallback_acceptable": false,
+      "tier_acceptance": "REJECTED_CPU_GOLDEN",
+      "resolution_candidate": "REJECTED_FALLBACK",
+      "selected_metrics": {
+        "max_rgba8_error": 11,
+        "mean_rgba8_error": 0.22283935546875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 32.0,
+        "cpu_alpha_centroid_x": 32.0,
+        "centroid_error_pixels": 0.0
+      },
+      "status": "FAIL",
+      "artifact_prefix": "tier48-camera0"
+    },
+    {
+      "tier_object_count": 48,
+      "camera_x": 0.3,
+      "metrics": {
+        "baseline": {
+          "max_rgba8_error": 7,
+          "mean_rgba8_error": 0.1590576171875,
+          "silhouette_disagree_pixels": 3,
+          "alpha_centroid_x": 29.311258775790627,
+          "cpu_alpha_centroid_x": 29.30367846823925,
+          "centroid_error_pixels": 0.007580307551375398
+        },
+        "grouped": {
+          "max_rgba8_error": 7,
+          "mean_rgba8_error": 0.1590576171875,
+          "silhouette_disagree_pixels": 3,
+          "alpha_centroid_x": 29.311258775790627,
+          "cpu_alpha_centroid_x": 29.30367846823925,
+          "centroid_error_pixels": 0.007580307551375398
+        },
+        "half_resolution": {
+          "max_rgba8_error": 29,
+          "mean_rgba8_error": 1.14154052734375,
+          "silhouette_disagree_pixels": 62,
+          "alpha_centroid_x": 29.217859624739404,
+          "cpu_alpha_centroid_x": 29.30367846823925,
+          "centroid_error_pixels": 0.08581884349984747
+        },
+        "bad_drop": {
+          "max_rgba8_error": 66,
+          "mean_rgba8_error": 2.59332275390625,
+          "silhouette_disagree_pixels": 64,
+          "alpha_centroid_x": 29.543696301486044,
+          "cpu_alpha_centroid_x": 29.30367846823925,
+          "centroid_error_pixels": 0.24001783324679238
+        }
+      },
+      "grouping_proven_disjoint": true,
+      "grouping_pixel_identical": true,
+      "tint_uniform_updates": {
+        "baseline": 48,
+        "grouped": 2
+      },
+      "draws_per_arm": {
+        "baseline": 48,
+        "grouped": 48,
+        "half_resolution": 48,
+        "bad_drop": 24
+      },
+      "baseline_quality": "FAIL",
+      "fallback_acceptable": false,
+      "tier_acceptance": "REJECTED_CPU_GOLDEN",
+      "resolution_candidate": "REJECTED_FALLBACK",
+      "selected_metrics": {
+        "max_rgba8_error": 7,
+        "mean_rgba8_error": 0.1590576171875,
+        "silhouette_disagree_pixels": 3,
+        "alpha_centroid_x": 29.311258775790627,
+        "cpu_alpha_centroid_x": 29.30367846823925,
+        "centroid_error_pixels": 0.007580307551375398
+      },
+      "status": "FAIL",
+      "artifact_prefix": "tier48-camera0.3"
+    }
+  ],
+  "shader_source_sha256": {
+    "32": {
+      "vertex": "46ee24c2cae2c1b566906d34139a030e75fdec7abbe8dc373d74c00fdc0254a1",
+      "fragment": "397e07a79dd1405b09e604f562d19d7690102af524be7cefe0dc93dadf21abce"
+    },
+    "64": {
+      "vertex": "3c00bbc64a8dbe73fb1e6efa6819873fc7a0f1bbdd437297c27ef411acac9078",
+      "fragment": "6918e4c7f555a1147d311c03a6308c9f4beebad473727c1b9945e508e33357d8"
+    }
+  },
+  "harness_contract": "PASS",
+  "acceptable_tiers": [
+    8
+  ],
+  "baseline_failure_cause": "UNDETERMINED; accumulated blend/oracle differences suspected, not established; threshold unchanged",
+  "parallax": [
+    {
+      "tier_object_count": 8,
+      "error_pixels": 0.010527764842390042
+    },
+    {
+      "tier_object_count": 24,
+      "error_pixels": 0.027533858798683752
+    },
+    {
+      "tier_object_count": 48,
+      "error_pixels": 0.007973724113096381
+    }
+  ]
+}

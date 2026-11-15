@@ -31,3 +31,27 @@ Logical bookkeeping and actual object lifecycle are covered; physical residency,
 GPU stall/frame time, bandwidth and performance acceptance remain unmeasured.
 CPU transcode phase decomposition is not implemented in this runner; the separate
 KTX experiment still measures total subprocess load/transcode/decode/I/O time.
+
+## Progressive mip quality gate
+
+`progressive.py --config DRIVER.json --output REPORT.json` adds reusable
+`Refinement` budget/quality state plus a real GLES finite runner. It uploads
+explicit mip2 (1×1), mip1 (2×2), mip0 (4×4), then reuses mip1/mip0 without upload.
+Base/max texture level both select the candidate mip, so each remains complete
+without pretending unuploaded levels exist. Fixed channel-error limit32 gives
+errors 90 (reject), 30 (quality pass), 0 (exact), 30, 0 on both drivers.
+Logical upload costs are 4/16/64/0/0 bytes; total loaded payload is84 bytes.
+
+Each candidate is evaluated offscreen. Before any quality pass, there is no active
+mip (caller must use its own placeholder); rejected mip2 is never selected for
+presentation. A pass may select a coarser mip within this fixed budget; this is
+not a mandatory monotonic-resolution policy. Finally corrupted mip2 produces a
+quality rejection while active mip0 remains selected. The runner rebinds mip0,
+clears, draws and confirms exact original pixels. This is synchronous explicit
+mip refinement, not compressed or asynchronous streaming, a perceptual metric,
+a physical resident-memory measure, or a performance gain. Successful quality
+still yields INSUFFICIENT_EVIDENCE for optimization acceptance.
+
+The earlier scope sentence excluding mip-tier refinement describes `run.py` only;
+this new finite runner covers explicit mip refinement. CPU transcode phase timing,
+async prefetch/fences, general resource recovery and physical metrics remain open.

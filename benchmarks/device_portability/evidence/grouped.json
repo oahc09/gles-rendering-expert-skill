@@ -1,0 +1,62 @@
+{
+  "status": "SOFTWARE_QUALITY_ONLY",
+  "groups": [
+    {
+      "backend": "angle-software",
+      "workload_id": "rgba8-three-pass-scale-v1",
+      "baseline_graph_sha256": "9a0f28b4521b94e9d740aa8d47ca6464d0fe6eed832aff5c0fe6f22e32865be1",
+      "candidate_graph_sha256": "387c30cc38ccf90115cf541ae40854a9a67f92f81a6d39e8f6a8ec88208bf17d",
+      "capture_count": 1,
+      "quality": {
+        "status": "FINITE_QUALITY_CONTROLS_PASS",
+        "cases": [
+          {
+            "pattern": "constant",
+            "max_abs_error": 0,
+            "candidate_quality": "PASS",
+            "selected": "candidate"
+          },
+          {
+            "pattern": "checkerboard",
+            "max_abs_error": 255,
+            "candidate_quality": "REJECTED_BY_QUALITY",
+            "selected": "baseline"
+          }
+        ],
+        "general_quality_equivalence": false,
+        "physical_quality_evidence": false
+      }
+    },
+    {
+      "backend": "mesa-software",
+      "workload_id": "rgba8-three-pass-scale-v1",
+      "baseline_graph_sha256": "9a0f28b4521b94e9d740aa8d47ca6464d0fe6eed832aff5c0fe6f22e32865be1",
+      "candidate_graph_sha256": "387c30cc38ccf90115cf541ae40854a9a67f92f81a6d39e8f6a8ec88208bf17d",
+      "capture_count": 1,
+      "quality": {
+        "status": "FINITE_QUALITY_CONTROLS_PASS",
+        "cases": [
+          {
+            "pattern": "constant",
+            "max_abs_error": 0,
+            "candidate_quality": "PASS",
+            "selected": "candidate"
+          },
+          {
+            "pattern": "checkerboard",
+            "max_abs_error": 255,
+            "candidate_quality": "REJECTED_BY_QUALITY",
+            "selected": "baseline"
+          }
+        ],
+        "general_quality_equivalence": false,
+        "physical_quality_evidence": false
+      }
+    }
+  ],
+  "physical_provider": "BLOCKED_BY_HARDWARE",
+  "performance": "NOT_MEASURED",
+  "release_acceptance": false,
+  "cross_group_comparison": "PROHIBITED",
+  "integrity_not_authenticity": true
+}

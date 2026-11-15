@@ -237,3 +237,26 @@ Incoherent shader writes and general graph transformations remain out of scope.
 Both updated runtime paths were rerun independently on Mesa and ANGLE: HOST_PASS.
 Complete regression: **895 tests, zero skips**, 36 directories. Evidence summary:
 `evidence/host-regression-lifecycle-replay.json`. Hardware/provider gates unchanged.
+
+## Scene collector, mip refinement and tier admission
+W8 now executes an actual finite scene and ingests hash-bound software records,
+recalculating CPU/quality gates instead of trusting saved PASS flags. Grouping
+keeps backend/workload/graph identities distinct. It remains SOFTWARE_QUALITY_ONLY;
+the physical protocol still rejects these records. W6 explicitly uploads mip
+levels with logical budgets, fixed max-channel32 gate, and actual restore after
+rejection. It is synchronous RGBA, not compressed asynchronous streaming.
+
+W4 adds 8/24/48 proxies across three cameras: grouping is pixel-identical and
+changes tint uniform updates N to2, not draw count. Both drivers reject all
+half-resolution candidates at unchanged thresholds. **Mesa baseline tiers24/48
+FAIL CPU-golden tolerance** (maximum errors5–11 versus budget4), so fallback at
+those tiers is not acceptable. Root cause undetermined; no threshold increase.
+ANGLE passes all baseline tiers. CI explicitly tests the rejection/admission
+contract, not all-tier visual acceptance; reports preserve FAIL. Evidence includes
+raw pixel ZIPs and independent CPU geometric heatmaps, not physical counters.
+
+W9 case-specific prompt-bound guidance remains AI-authored, not adjudicated model
+results. W10 source-review/experiment/test hash links reject stale bindings and
+unauthorized rule promotion; full corpus/vendor/X and independent review remain.
+
+Complete host regression for this increment: **934 tests, zero skips**, 36 directories; summary `evidence/host-regression-scene-collector.json`. This does not override the explicitly failed Mesa high-tier images.

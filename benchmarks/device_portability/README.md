@@ -14,3 +14,39 @@ image-quality review. CPU time and GPU time may overlap and cannot be summed.
 Compare only within identical groups; a good result on one GPU never licenses a
 vendor-wide rule. Use baseline if quality fails or measured confidence is absent.
 The host adapter/device snapshot infrastructure remains benchmarks/device_lab/.
+
+## Executable scene collection and grouped quality gate
+
+`scene_collector.py` connects the actual three-pass candidate-graph replay to
+hash-bound capture records. It does not wrap a static fixture as an executed scene.
+Run one collector process per software implementation:
+
+```
+python3 benchmarks/device_portability/scene_collector.py collect --config MESA_JSON --backend mesa-software --output-dir captures
+python3 benchmarks/device_portability/scene_collector.py collect --config ANGLE_JSON --backend angle-software --output-dir captures
+python3 benchmarks/device_portability/scene_collector.py group captures/mesa-software-record.json captures/angle-software-record.json --artifact-root captures --output captures/grouped.json
+```
+
+The collector runs actual GLES shader compilation, texture-FBO rendering and pixel
+readback. Each backend runs 12 draws and 4 final readbacks. Both the constant-image
+positive and checkerboard resolution-loss negative are required. Ingestion checks
+the scene file hash and exact graph/source/pass/synchronization bindings, then
+recalculates CPU goldens and A/B pixel quality instead of trusting pass flags.
+The failed checkerboard candidate selects baseline fallback; this is intentional
+quality rejection, not a successful optimization.
+
+Groups are separated by software backend, workload and both graph hashes. Group
+summaries do not average different drivers or infer a GPU-family rule. No timing,
+thermal, power or physical-device identity is manufactured. Safe evidence from two
+actual software runs is in `evidence/`; `grouped.json` is SOFTWARE_QUALITY_ONLY.
+Raw environment metadata is never serialized by this collector. Hash checking
+establishes integrity, not independent capture authenticity.
+
+The existing `protocol.py` remains the physical paired-timing gate and rejects
+software records. Conversely, this collector rejects physical records rather than
+relabeling software as a device. Physical scenario execution, physical image oracle,
+GPU timer/thermal collection and authenticated provider integration remain
+BLOCKED_BY_HARDWARE. These records cannot satisfy physical W8/release gates, and
+the existing `matrix.json` physical NOT_RUN entries are deliberately unchanged.
+
+Tests: `python3 -m unittest discover -s benchmarks/device_portability -v`.

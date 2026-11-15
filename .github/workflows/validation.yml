@@ -150,6 +150,8 @@ jobs:
           for driver in mesa angle; do
             python3 benchmarks/shader_ab/optimization_pairs.py --config /tmp/v109-$driver.json --output reports/v109-optimization-pairs-$driver.json
             python3 benchmarks/texture_streaming/run.py --config /tmp/v109-$driver.json --output reports/v109-streaming-$driver.json
+            python3 benchmarks/texture_streaming/progressive.py --config /tmp/v109-$driver.json --output reports/v109-progressive-$driver.json
+            python3 benchmarks/device_portability/scene_collector.py collect --config /tmp/v109-$driver.json --backend $driver-software --output-dir reports/v109-scene-captures
             python3 benchmarks/pipeline/candidate_replay.py --config /tmp/v109-$driver.json --output reports/v109-graph-replay-$driver.json
             python3 benchmarks/shader_ab/rebind.py --config /tmp/v109-$driver.json --output reports/v109-rebind-$driver.json
             python3 benchmarks/particle_controls/run.py --config /tmp/v109-$driver.json --output reports/v109-particles-$driver.json
@@ -163,6 +165,15 @@ jobs:
               python3 benchmarks/texture_access/ktx2_experiment.py --config /tmp/v109-$driver.json --ktx-root /tmp/KTX-Software-4.4.2-Linux-x86_64 --pattern $pattern --output reports/v109-ktx-$driver-$pattern.json
             done
           done
+      - name: v1.0.9 tier quality gate contract (not all-tier visual acceptance)
+        run: |
+          for driver in mesa angle; do
+            python3 benchmarks/overlap_scenes/tiered.py --config /tmp/v109-$driver.json --output reports/v109-tiered-$driver.json --require-harness-only
+          done
+      - name: v1.0.9 source chain and software scene grouping
+        run: |
+          python3 tools/check_v109_research_chain.py --output reports/v109-research-chain.json
+          python3 benchmarks/device_portability/scene_collector.py group reports/v109-scene-captures/mesa-software-record.json reports/v109-scene-captures/angle-software-record.json --artifact-root reports/v109-scene-captures --output reports/v109-scene-groups.json
       - name: v1.0.9 reproducible complete host unit manifest
         run: python3 tools/run_v109_regression.py --output reports/v109-unit-manifest.json
       - name: Preserve v108 results and failure evidence
