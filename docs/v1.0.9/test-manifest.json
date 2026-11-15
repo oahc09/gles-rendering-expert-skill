@@ -28,6 +28,7 @@
     "benchmarks/shader_ab",
     "benchmarks/state_machine",
     "benchmarks/system_scenes",
+    "benchmarks/system_scenes/v109_s03",
     "benchmarks/texture_access",
     "benchmarks/texture_pipeline",
     "benchmarks/texture_streaming",

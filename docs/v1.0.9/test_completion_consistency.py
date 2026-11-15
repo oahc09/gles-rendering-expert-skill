@@ -32,7 +32,9 @@ class CompletionConsistency(unittest.TestCase):
    for dimension in ('correctness','quality','performance'):self.assertTrue(scene[dimension]['status'])
   s03=coverage['scenes'][2]
   self.assertEqual(s03['correctness']['status'],'PARTIAL');self.assertEqual(s03['quality']['status'],'PARTIAL')
-  self.assertIn('not unified UI+3D+PostFX',s03['scope'])
+  self.assertIn('Finite integrated UI+3D+PostFX',s03['scope'])
+  self.assertIn('benchmarks/system_scenes/v109_s03/run.py',s03['implementation'])
+  self.assertEqual(s03['performance']['status'],'BLOCKED_BY_HARDWARE')
  def test_release_stays_blocked(self):
   self.assertFalse(self.data['release_ready']);self.assertFalse(self.data['merge_assessment']['automatic_merge_ready']);self.assertGreaterEqual(len(self.data['merge_assessment']['release_blockers']),4)
  def test_w8_actual_collection_not_claimed_physical(self):

@@ -38,6 +38,7 @@ reviewable infrastructure PR from release readiness; no remote current-head CI
 claim is made by this audit.
 
 S01–S08 must each carry correctness/quality/performance evidence or explicit
-NOT_RUN/blockage under the original DoD. S03 remains PARTIAL: the executed
-constant/checkerboard graph is a PostFX subchain only, not unified UI + 3D + PostFX.
-The authored finite Advisor workflow must not be renamed full S03 acceptance.
+NOT_RUN/blockage under the original DoD. S03 has a finite integrated 8x8 depth
+geometry/UI/PostFX implementation and stage-by-stage CPU checks. PARTIAL retains
+its finite-scene scope and absent physical metrics. This is separate from the
+constant/checkerboard Advisor subchain; neither is production-wide acceptance.

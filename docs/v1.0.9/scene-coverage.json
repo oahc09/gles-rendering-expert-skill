@@ -46,18 +46,20 @@
     },
     {
       "id": "S03",
-      "scope": "Graph semantic candidates and finite pipeline controls, not unified UI+3D+PostFX capture",
+      "scope": "Finite integrated UI+3D+PostFX: 8x8 depth-tested orthographic planes, alpha UI strip, separate channel-transform PostFX and screen FBOs; not a complex production perspective scene",
       "implementation": [
-        "tools/rendergraph_optimizer.py"
+        "tools/rendergraph_optimizer.py",
+        "benchmarks/system_scenes/v109_s03/run.py",
+        "benchmarks/system_scenes/v109_s03/README.md"
       ],
-      "remaining": "End-to-end combined scene and attachment/load-store capture remain missing.",
+      "remaining": "Physical tile load/store, GPU timing and complex production scene coverage unmeasured.",
       "correctness": {
         "status": "PARTIAL",
-        "reason": "Bounded host infrastructure only; see implementation."
+        "reason": "Actual finite integrated host pipeline passes independent three-stage CPU oracle on Mesa and ANGLE; broader scene acceptance not claimed."
       },
       "quality": {
         "status": "PARTIAL",
-        "reason": "Finite controls are not full scene acceptance."
+        "reason": "Three-camera baseline/equivalent pass fixed one-code budget; half-resolution, depth-disabled and incorrect-UI-alpha negatives rejected globally."
       },
       "performance": {
         "status": "BLOCKED_BY_HARDWARE",

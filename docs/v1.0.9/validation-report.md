@@ -347,3 +347,21 @@ records; an archived-report/source-hash regression prevents this false local-pas
 assumption. Both exact CLI commands subsequently returned exit 0 with visual FAIL
 and contract PASS, and the complete host suite passed 1,025 tests with zero skips.
 No image threshold, negative control or baseline-admission rule was relaxed.
+
+## Independent far-resolution and integrated S03
+
+Far-only scaling now renders a separate 32x32 background FBO, nearest-copies to a
+64x64 target and composites the unchanged full-resolution foreground. Across three
+cameras, the low-resolution candidate exceeds the original fixed color/silhouette
+budgets; both software backends retain one full-resolution baseline strategy.
+Its own CPU mechanism oracle passes and negative foreground deletion is rejected.
+Default CLI returns failure for visual acceptance; contract-only mode verifies the
+rejection machinery without rewriting that failure.
+
+S03 now actually combines DEPTH24 orthographic geometry, alpha UI, independent
+PostFX and screen targets. Each software backend executes 75 draws/45 readbacks
+across three cameras and five variants. Independent per-stage CPU reference has a
+fixed one-code budget. Equivalent shader passes; half-resolution, disabled depth
+and wrong UI alpha are rejected. API-derived attachment preservation and overwrite
+records are not physical tile traffic. This finite 8x8 integration does not claim
+production scene coverage or physical GPU performance.

@@ -92,15 +92,21 @@
         "benchmarks/overlap_scenes/test_background_merge.py",
         "benchmarks/overlap_scenes/BACKGROUND_MERGE.md",
         "benchmarks/overlap_scenes/evidence/background-merge-mesa.json",
-        "benchmarks/overlap_scenes/evidence/background-merge-angle.json"
+        "benchmarks/overlap_scenes/evidence/background-merge-angle.json",
+        "benchmarks/overlap_scenes/far_resolution.py",
+        "benchmarks/overlap_scenes/FAR_RESOLUTION.md",
+        "benchmarks/overlap_scenes/test_far_resolution.py"
       ],
       "remaining_host": [
-        "Original Mesa RGBA8 high-layer visual failures unresolved. Duplicate-background merge runs on both software backends (9 readbacks each) but candidates reject across the three-camera gate: Mesa has an invalid baseline view and selects UNAVAILABLE; ANGLE keeps baseline. Harness contract PASS is not visual acceptance (visual FAIL). General Gaussian merge and independently scaled far layers are not implemented."
+        "Original Mesa high-layer UNORM and duplicate-background merge visual failures remain. Independent far-resolution candidate also exceeds original color/silhouette budgets and is rejected; no accepted simplification is claimed."
       ],
       "external_requirements": [
         "Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition."
       ],
-      "verified_summary": "Gaussian/glass plus actual rain/volume/UI proxies, dynamic cameras, A/B, tile coverage/layers/RGBA/depth/background stats; precision budget gate; actual bounded duplicate-background alpha merge research (draws 11 to 7), three cameras and explicit quality rejection/fallback"
+      "verified_summary": "Gaussian/glass plus actual rain/volume/UI proxies, dynamic cameras, A/B, tile coverage/layers/RGBA/depth/background stats; precision budget gate; actual bounded duplicate-background alpha merge research (draws 11 to 7), three cameras and explicit quality rejection/fallback; independent far-resolution FBO and full-resolution foreground, three-camera CPU-oracle A/B, candidate rejected globally and baseline retained on both software backends",
+      "scope_exclusions": [
+        "General Gaussian merging, arbitrary scenes and unseen camera paths remain outside these bounded prototypes."
+      ]
     },
     {
       "id": "W5",
@@ -111,13 +117,15 @@
         "tools/test_rendergraph_optimizer.py",
         "benchmarks/pipeline/postfx_quality.py",
         "tools/rendergraph_replay.py",
-        "benchmarks/pipeline/candidate_replay.py"
+        "benchmarks/pipeline/candidate_replay.py",
+        "benchmarks/system_scenes/v109_s03/run.py",
+        "benchmarks/system_scenes/v109_s03/README.md"
       ],
       "remaining_host": [],
       "external_requirements": [
         "Device gains cannot be claimed from advisory candidates."
       ],
-      "verified_summary": "Copied candidate 4\u00d74\u21922\u00d72 intermediate graph; actual three-pass replay; constant passes/checkerboard rejects; closed synchronization vocabulary rejects unsafe graphs before GL",
+      "verified_summary": "Copied candidate 4\u00d74\u21922\u00d72 intermediate graph; actual three-pass replay; constant passes/checkerboard rejects; closed synchronization vocabulary rejects unsafe graphs before GL; actual finite S03 depth geometry + alpha UI + separate PostFX/screen pipeline, three-stage CPU oracle and three-camera negative controls",
       "scope_exclusions": [
         "General graph transforms, incoherent compute/image/SSBO barriers and other candidate categories remain outside the closed sequential framebuffer-to-texture replay vocabulary."
       ]

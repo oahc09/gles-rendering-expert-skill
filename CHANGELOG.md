@@ -341,3 +341,7 @@ original-plan experiments remain incomplete; metadata stays unchanged.
   duplicate-background alpha merge A/B with global camera rejection, and checked
   original-plan completion/release bookkeeping. Failed pixels and external gates
   remain open; no metadata version or release change.
+
+- v1.0.9 candidate: separate far-resolution/foreground GLES replay with strict
+  camera-global quality rejection, plus finite integrated S03 depth/UI/PostFX
+  stage-oracle controls. Real mobile and provider gates remain blocked.
