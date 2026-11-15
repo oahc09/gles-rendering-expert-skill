@@ -1,0 +1,434 @@
+{
+  "status": "HOST_PASS",
+  "contract_status": "PASS",
+  "global_policy": {
+    "selected": "far_bilinear",
+    "status": "ACCEPTED_FOR_TESTED_CAMERAS"
+  },
+  "scope": "actual separate far RGBA8 FBO -> four-fetch bilinear texelFetch copy -> full-resolution foreground source-over; four-fetch bilinear reconstruction; finite Gaussian/UI proxies",
+  "performance_status": "NOT_MEASURED",
+  "readbacks": 9,
+  "thresholds": {
+    "max_rgba8_error": 4,
+    "silhouette_disagree_pixels": 2,
+    "centroid_error_pixels": 0.1,
+    "parallax_error_pixels": 0.1
+  },
+  "logical_work_comparison": {
+    "baseline": {
+      "far_target_pixels": 4096,
+      "far_layer_pixel_upper_bound": 16384,
+      "foreground_target_pixels": 4096,
+      "foreground_layer_pixel_upper_bound": 12288,
+      "copy_output_pixels": 4096,
+      "far_attachment_bytes": 16384,
+      "final_attachment_bytes": 16384,
+      "combined_attachment_bytes": 32768,
+      "draw_calls": 8,
+      "copy_texel_fetch_upper_bound": 16384,
+      "copy_logical_read_write_upper_bytes": 81920,
+      "interpretation": "Logical single-sample RGBA8 attachment storage and full-target invocation bounds; copy fetches bilinear far texels, cache/tiling/compression/residency and actual DRAM traffic are unknown"
+    },
+    "far_bilinear": {
+      "far_target_pixels": 1024,
+      "far_layer_pixel_upper_bound": 4096,
+      "foreground_target_pixels": 4096,
+      "foreground_layer_pixel_upper_bound": 12288,
+      "copy_output_pixels": 4096,
+      "far_attachment_bytes": 4096,
+      "final_attachment_bytes": 16384,
+      "combined_attachment_bytes": 20480,
+      "draw_calls": 8,
+      "copy_texel_fetch_upper_bound": 16384,
+      "copy_logical_read_write_upper_bytes": 81920,
+      "interpretation": "Logical single-sample RGBA8 attachment storage and full-target invocation bounds; copy fetches bilinear far texels, cache/tiling/compression/residency and actual DRAM traffic are unknown"
+    },
+    "performance_interpretation": "No measured GPU time or bandwidth gain; both baseline and candidate include a 4096-pixel copy pass and eight draws"
+  },
+  "scene": {
+    "far": [
+      {
+        "id": 3,
+        "x": 0.65,
+        "y": 0.45,
+        "z": 5.6,
+        "radius": 1.3,
+        "color": [
+          0.6,
+          0.35,
+          0.7,
+          0.12
+        ],
+        "mode": 0
+      },
+      {
+        "id": 2,
+        "x": -0.65,
+        "y": 0.45,
+        "z": 5.4,
+        "radius": 1.3,
+        "color": [
+          0.44999999999999996,
+          0.35,
+          0.7,
+          0.12
+        ],
+        "mode": 0
+      },
+      {
+        "id": 1,
+        "x": 0.65,
+        "y": -0.45,
+        "z": 5.2,
+        "radius": 1.3,
+        "color": [
+          0.3,
+          0.35,
+          0.7,
+          0.12
+        ],
+        "mode": 0
+      },
+      {
+        "id": 0,
+        "x": -0.65,
+        "y": -0.45,
+        "z": 5.0,
+        "radius": 1.3,
+        "color": [
+          0.15,
+          0.35,
+          0.7,
+          0.12
+        ],
+        "mode": 0
+      }
+    ],
+    "foreground": [
+      {
+        "id": 6,
+        "x": 0.3,
+        "y": -0.1,
+        "z": 1.7,
+        "radius": 0.19,
+        "color": [
+          0.85,
+          0.5,
+          0.15,
+          0.65
+        ],
+        "mode": 3
+      },
+      {
+        "id": 5,
+        "x": 0.0,
+        "y": 0.1,
+        "z": 1.6,
+        "radius": 0.19,
+        "color": [
+          0.85,
+          0.35,
+          0.15,
+          0.65
+        ],
+        "mode": 3
+      },
+      {
+        "id": 4,
+        "x": -0.3,
+        "y": -0.1,
+        "z": 1.5,
+        "radius": 0.19,
+        "color": [
+          0.85,
+          0.2,
+          0.15,
+          0.65
+        ],
+        "mode": 3
+      }
+    ]
+  },
+  "rows": [
+    {
+      "camera": -0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 6.103515625e-05,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 36.63333539527403,
+        "cpu_alpha_centroid_x": 36.6333931277642,
+        "centroid_error_pixels": 5.773249016982618e-05
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 6.103515625e-05,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 36.63333539527403,
+        "cpu_alpha_centroid_x": 36.6333931277642,
+        "centroid_error_pixels": 5.773249016982618e-05
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam-0.3-baseline"
+    },
+    {
+      "camera": -0.3,
+      "variant": "far_bilinear",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.03790283203125,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 36.624065030599,
+        "cpu_alpha_centroid_x": 36.6333931277642,
+        "centroid_error_pixels": 0.00932809716520211
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.00286865234375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 36.624065030599,
+        "cpu_alpha_centroid_x": 36.623095936968944,
+        "centroid_error_pixels": 0.000969093630054374
+      },
+      "complete_readback": true,
+      "far_resolution": 32,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam-0.3-far_bilinear"
+    },
+    {
+      "camera": -0.3,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 191,
+        "mean_rgba8_error": 2.362060546875,
+        "silhouette_disagree_pixels": 4,
+        "alpha_centroid_x": 38.660600130463145,
+        "cpu_alpha_centroid_x": 36.6333931277642,
+        "centroid_error_pixels": 2.027207002698944
+      },
+      "foreground_roi_max_error": 191,
+      "mechanism_metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.00311279296875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 38.660600130463145,
+        "cpu_alpha_centroid_x": 38.656879358665186,
+        "centroid_error_pixels": 0.0037207717979583776
+      },
+      "complete_readback": true,
+      "far_resolution": 32,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam-0.3-bad_foreground_drop"
+    },
+    {
+      "camera": 0,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.0001220703125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.389735151230216,
+        "cpu_alpha_centroid_x": 31.389992791550444,
+        "centroid_error_pixels": 0.00025764032022834726
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.0001220703125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.389735151230216,
+        "cpu_alpha_centroid_x": 31.389992791550444,
+        "centroid_error_pixels": 0.00025764032022834726
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0-baseline"
+    },
+    {
+      "camera": 0,
+      "variant": "far_bilinear",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.03863525390625,
+        "silhouette_disagree_pixels": 2,
+        "alpha_centroid_x": 31.398199662436706,
+        "cpu_alpha_centroid_x": 31.389992791550444,
+        "centroid_error_pixels": 0.008206870886262152
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.00311279296875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.398199662436706,
+        "cpu_alpha_centroid_x": 31.3980095616036,
+        "centroid_error_pixels": 0.00019010083310533332
+      },
+      "complete_readback": true,
+      "far_resolution": 32,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0-far_bilinear"
+    },
+    {
+      "camera": 0,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 190,
+        "mean_rgba8_error": 2.39678955078125,
+        "silhouette_disagree_pixels": 11,
+        "alpha_centroid_x": 34.622043775835195,
+        "cpu_alpha_centroid_x": 31.389992791550444,
+        "centroid_error_pixels": 3.2320509842847507
+      },
+      "foreground_roi_max_error": 190,
+      "mechanism_metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.00360107421875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 34.622043775835195,
+        "cpu_alpha_centroid_x": 34.618356015979415,
+        "centroid_error_pixels": 0.0036877598557794045
+      },
+      "complete_readback": true,
+      "far_resolution": 32,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam0-bad_foreground_drop"
+    },
+    {
+      "camera": 0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.000732421875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 26.091825933548957,
+        "cpu_alpha_centroid_x": 26.091825933548957,
+        "centroid_error_pixels": 0.0
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.000732421875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 26.091825933548957,
+        "cpu_alpha_centroid_x": 26.091825933548957,
+        "centroid_error_pixels": 0.0
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0.3-baseline"
+    },
+    {
+      "camera": 0.3,
+      "variant": "far_bilinear",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.04254150390625,
+        "silhouette_disagree_pixels": 2,
+        "alpha_centroid_x": 26.10486732150711,
+        "cpu_alpha_centroid_x": 26.091825933548957,
+        "centroid_error_pixels": 0.013041387958153905
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.00445556640625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 26.10486732150711,
+        "cpu_alpha_centroid_x": 26.105522335561027,
+        "centroid_error_pixels": 0.000655014053915437
+      },
+      "complete_readback": true,
+      "far_resolution": 32,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0.3-far_bilinear"
+    },
+    {
+      "camera": 0.3,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 205,
+        "mean_rgba8_error": 2.59283447265625,
+        "silhouette_disagree_pixels": 53,
+        "alpha_centroid_x": 31.003020177355097,
+        "cpu_alpha_centroid_x": 26.091825933548957,
+        "centroid_error_pixels": 4.91119424380614
+      },
+      "foreground_roi_max_error": 205,
+      "mechanism_metrics": {
+        "max_rgba8_error": 1,
+        "mean_rgba8_error": 0.003662109375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.003020177355097,
+        "cpu_alpha_centroid_x": 31.001477010017982,
+        "centroid_error_pixels": 0.0015431673371146815
+      },
+      "complete_readback": true,
+      "far_resolution": 32,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam0.3-bad_foreground_drop"
+    }
+  ],
+  "parallax": [
+    {
+      "variant": "baseline",
+      "error": 5.773249016982618e-05,
+      "status": "PASS"
+    },
+    {
+      "variant": "far_bilinear",
+      "error": 0.022369485123356014,
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": "96f32874282e817466e58aebed3828798cfc69faf83df6aec88a7900bb3f34e9",
+  "artifact_archive": {
+    "file": "far-reconstruction-angle.zip",
+    "sha256": "c8f02120df06b321504cd9c1842f39ef67b654e3ca61135f202d2a53ed428c88",
+    "instructions": "Extract complete 64x64 bottom-up RGBA8 images beside report"
+  },
+  "shader_source_sha256": {
+    "32": {
+      "vertex": "46ee24c2cae2c1b566906d34139a030e75fdec7abbe8dc373d74c00fdc0254a1",
+      "fragment": "397e07a79dd1405b09e604f562d19d7690102af524be7cefe0dc93dadf21abce",
+      "copy": "bacbbec092b56d881114ae56860d0ce467a931794493c8da129231b98325fce9"
+    },
+    "64": {
+      "vertex": "3c00bbc64a8dbe73fb1e6efa6819873fc7a0f1bbdd437297c27ef411acac9078",
+      "fragment": "6918e4c7f555a1147d311c03a6308c9f4beebad473727c1b9945e508e33357d8",
+      "copy": "9d884071c2787899e066d1230ca26faebdabd0b83927948611ea6e02168f8495"
+    }
+  },
+  "cpu_dependency_sha256": "560de958f932669ce53fc5d2938c9dd88fd5da8f1fdd2f3cbcb897845b55d0a8",
+  "selected_camera_artifacts": {
+    "-0.3": "cam-0.3-far_bilinear.rgba",
+    "0": "cam0-far_bilinear.rgba",
+    "0.3": "cam0.3-far_bilinear.rgba"
+  },
+  "copy_vertex_sha256": "d143f86ed2676ff140baeeea1754bec120b548606890805d6e5307e8ad047fbc"
+}

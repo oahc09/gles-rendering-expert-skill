@@ -1,0 +1,1165 @@
+{
+  "status": "ANALYZED",
+  "thresholds_unchanged": {
+    "max_channel_error": 4,
+    "silhouette_alpha_threshold": 12
+  },
+  "reports": [
+    {
+      "input_report": "far-resolution-mesa.json",
+      "input_sha256": "a2ef5f79ab9296e94e7235a890746f372372fbf04b26b065ca2afaeb9b8bdbd3",
+      "archive_sha256": "9ceb203b94af5825f23b60e3ade795ea4102bf8ef154ce2f9894e195a45915ba",
+      "views": [
+        {
+          "camera": -0.3,
+          "actual_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 5,
+            "max_alpha": 6,
+            "mean_rgb": 0.08707682291666667,
+            "mean_alpha": 0.179931640625,
+            "over_budget_pixels": 14,
+            "silhouette_disagree": 32
+          },
+          "mechanism_cpu_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.0859375,
+            "mean_alpha": 0.178955078125,
+            "over_budget_pixels": 14,
+            "silhouette_disagree": 32
+          },
+          "actual_vs_mechanism_cpu": {
+            "pixels": 4096,
+            "max_rgb": 2,
+            "max_alpha": 1,
+            "mean_rgb": 0.022786458333333332,
+            "mean_alpha": 0.01416015625,
+            "over_budget_pixels": 0,
+            "silhouette_disagree": 0
+          },
+          "regions": {
+            "foreground_roi": {
+              "actual": {
+                "pixels": 161,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.37267080745341613,
+                "mean_alpha": 0.7515527950310559,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 161,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.37681159420289856,
+                "mean_alpha": 0.7267080745341615,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            },
+            "outside_foreground": {
+              "actual": {
+                "pixels": 3935,
+                "max_rgb": 5,
+                "max_alpha": 6,
+                "mean_rgb": 0.07539178314273613,
+                "mean_alpha": 0.1565438373570521,
+                "over_budget_pixels": 14,
+                "silhouette_disagree": 32
+              },
+              "cpu_resampling": {
+                "pixels": 3935,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.07403642524354087,
+                "mean_alpha": 0.1565438373570521,
+                "over_budget_pixels": 14,
+                "silhouette_disagree": 32
+              }
+            },
+            "far_boundary_membership_changed": {
+              "actual": {
+                "pixels": 116,
+                "max_rgb": 5,
+                "max_alpha": 6,
+                "mean_rgb": 0.6264367816091954,
+                "mean_alpha": 1.396551724137931,
+                "over_budget_pixels": 8,
+                "silhouette_disagree": 1
+              },
+              "cpu_resampling": {
+                "pixels": 116,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6120689655172413,
+                "mean_alpha": 1.4224137931034482,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 1
+              }
+            },
+            "far_membership_same": {
+              "actual": {
+                "pixels": 3980,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.07135678391959799,
+                "mean_alpha": 0.1444723618090452,
+                "over_budget_pixels": 6,
+                "silhouette_disagree": 31
+              },
+              "cpu_resampling": {
+                "pixels": 3980,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.07060301507537689,
+                "mean_alpha": 0.14271356783919598,
+                "over_budget_pixels": 5,
+                "silhouette_disagree": 31
+              }
+            },
+            "inside_far_full_support": {
+              "actual": {
+                "pixels": 515,
+                "max_rgb": 5,
+                "max_alpha": 6,
+                "mean_rgb": 0.6822006472491909,
+                "mean_alpha": 1.4,
+                "over_budget_pixels": 14,
+                "silhouette_disagree": 32
+              },
+              "cpu_resampling": {
+                "pixels": 515,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6757281553398058,
+                "mean_alpha": 1.3922330097087379,
+                "over_budget_pixels": 14,
+                "silhouette_disagree": 32
+              }
+            },
+            "outside_far_full_support": {
+              "actual": {
+                "pixels": 3581,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.0014893418970492415,
+                "mean_alpha": 0.004468025691147724,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 3581,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.001117006422786931,
+                "mean_alpha": 0.004468025691147724,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            }
+          },
+          "nearest_phase": {
+            "(0, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.08626302083333333,
+              "mean_alpha": 0.1728515625,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 12
+            },
+            "(1, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.0830078125,
+              "mean_alpha": 0.177734375,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 11
+            },
+            "(0, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.08756510416666667,
+              "mean_alpha": 0.18359375,
+              "over_budget_pixels": 6,
+              "silhouette_disagree": 5
+            },
+            "(1, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.0869140625,
+              "mean_alpha": 0.181640625,
+              "over_budget_pixels": 4,
+              "silhouette_disagree": 4
+            }
+          }
+        },
+        {
+          "camera": 0,
+          "actual_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.08382161458333333,
+            "mean_alpha": 0.1669921875,
+            "over_budget_pixels": 9,
+            "silhouette_disagree": 28
+          },
+          "mechanism_cpu_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.08064778645833333,
+            "mean_alpha": 0.16552734375,
+            "over_budget_pixels": 9,
+            "silhouette_disagree": 28
+          },
+          "actual_vs_mechanism_cpu": {
+            "pixels": 4096,
+            "max_rgb": 2,
+            "max_alpha": 1,
+            "mean_rgb": 0.020263671875,
+            "mean_alpha": 0.0126953125,
+            "over_budget_pixels": 0,
+            "silhouette_disagree": 0
+          },
+          "regions": {
+            "foreground_roi": {
+              "actual": {
+                "pixels": 161,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.4782608695652174,
+                "mean_alpha": 0.8633540372670807,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 161,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.42857142857142855,
+                "mean_alpha": 0.8385093167701864,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            },
+            "outside_foreground": {
+              "actual": {
+                "pixels": 3935,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.06768318509106311,
+                "mean_alpha": 0.13850063532401524,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 28
+              },
+              "cpu_resampling": {
+                "pixels": 3935,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.06641253706056756,
+                "mean_alpha": 0.13799237611181703,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 28
+              }
+            },
+            "far_boundary_membership_changed": {
+              "actual": {
+                "pixels": 100,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.71,
+                "mean_alpha": 1.62,
+                "over_budget_pixels": 4,
+                "silhouette_disagree": 2
+              },
+              "cpu_resampling": {
+                "pixels": 100,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6833333333333333,
+                "mean_alpha": 1.58,
+                "over_budget_pixels": 4,
+                "silhouette_disagree": 2
+              }
+            },
+            "far_membership_same": {
+              "actual": {
+                "pixels": 3996,
+                "max_rgb": 4,
+                "max_alpha": 5,
+                "mean_rgb": 0.06815148481815149,
+                "mean_alpha": 0.13063063063063063,
+                "over_budget_pixels": 5,
+                "silhouette_disagree": 26
+              },
+              "cpu_resampling": {
+                "pixels": 3996,
+                "max_rgb": 4,
+                "max_alpha": 5,
+                "mean_rgb": 0.06556556556556556,
+                "mean_alpha": 0.13013013013013014,
+                "over_budget_pixels": 5,
+                "silhouette_disagree": 26
+              }
+            },
+            "inside_far_full_support": {
+              "actual": {
+                "pixels": 499,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6733466933867736,
+                "mean_alpha": 1.3326653306613228,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 28
+              },
+              "cpu_resampling": {
+                "pixels": 499,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6526386105544422,
+                "mean_alpha": 1.3206412825651304,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 28
+              }
+            },
+            "outside_far_full_support": {
+              "actual": {
+                "pixels": 3597,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.0020387359836901123,
+                "mean_alpha": 0.0052821795941062,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 3597,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.001297377444166435,
+                "mean_alpha": 0.0052821795941062,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            }
+          },
+          "nearest_phase": {
+            "(0, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.07942708333333333,
+              "mean_alpha": 0.15625,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 11
+            },
+            "(1, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.0859375,
+              "mean_alpha": 0.177734375,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 14
+            },
+            "(0, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.076171875,
+              "mean_alpha": 0.1533203125,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 1
+            },
+            "(1, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.0810546875,
+              "mean_alpha": 0.1748046875,
+              "over_budget_pixels": 3,
+              "silhouette_disagree": 2
+            }
+          }
+        },
+        {
+          "camera": 0.3,
+          "actual_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 5,
+            "max_alpha": 6,
+            "mean_rgb": 0.09244791666666667,
+            "mean_alpha": 0.18212890625,
+            "over_budget_pixels": 13,
+            "silhouette_disagree": 31
+          },
+          "mechanism_cpu_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.087890625,
+            "mean_alpha": 0.18017578125,
+            "over_budget_pixels": 13,
+            "silhouette_disagree": 31
+          },
+          "actual_vs_mechanism_cpu": {
+            "pixels": 4096,
+            "max_rgb": 2,
+            "max_alpha": 1,
+            "mean_rgb": 0.02490234375,
+            "mean_alpha": 0.01513671875,
+            "over_budget_pixels": 0,
+            "silhouette_disagree": 0
+          },
+          "regions": {
+            "foreground_roi": {
+              "actual": {
+                "pixels": 172,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.37209302325581395,
+                "mean_alpha": 0.6918604651162791,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 172,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.313953488372093,
+                "mean_alpha": 0.622093023255814,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            },
+            "outside_foreground": {
+              "actual": {
+                "pixels": 3924,
+                "max_rgb": 5,
+                "max_alpha": 6,
+                "mean_rgb": 0.08019028202514442,
+                "mean_alpha": 0.15978593272171254,
+                "over_budget_pixels": 13,
+                "silhouette_disagree": 31
+              },
+              "cpu_resampling": {
+                "pixels": 3924,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.0779816513761468,
+                "mean_alpha": 0.1608053007135576,
+                "over_budget_pixels": 13,
+                "silhouette_disagree": 31
+              }
+            },
+            "far_boundary_membership_changed": {
+              "actual": {
+                "pixels": 126,
+                "max_rgb": 5,
+                "max_alpha": 6,
+                "mean_rgb": 0.7671957671957672,
+                "mean_alpha": 1.5793650793650793,
+                "over_budget_pixels": 8,
+                "silhouette_disagree": 2
+              },
+              "cpu_resampling": {
+                "pixels": 126,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6825396825396826,
+                "mean_alpha": 1.5317460317460319,
+                "over_budget_pixels": 7,
+                "silhouette_disagree": 2
+              }
+            },
+            "far_membership_same": {
+              "actual": {
+                "pixels": 3970,
+                "max_rgb": 4,
+                "max_alpha": 5,
+                "mean_rgb": 0.07103274559193955,
+                "mean_alpha": 0.13778337531486146,
+                "over_budget_pixels": 5,
+                "silhouette_disagree": 29
+              },
+              "cpu_resampling": {
+                "pixels": 3970,
+                "max_rgb": 4,
+                "max_alpha": 5,
+                "mean_rgb": 0.0690176322418136,
+                "mean_alpha": 0.13727959697732997,
+                "over_budget_pixels": 6,
+                "silhouette_disagree": 29
+              }
+            },
+            "inside_far_full_support": {
+              "actual": {
+                "pixels": 494,
+                "max_rgb": 5,
+                "max_alpha": 6,
+                "mean_rgb": 0.7489878542510121,
+                "mean_alpha": 1.4635627530364372,
+                "over_budget_pixels": 13,
+                "silhouette_disagree": 31
+              },
+              "cpu_resampling": {
+                "pixels": 494,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.7139001349527665,
+                "mean_alpha": 1.4473684210526316,
+                "over_budget_pixels": 13,
+                "silhouette_disagree": 31
+              }
+            },
+            "outside_far_full_support": {
+              "actual": {
+                "pixels": 3602,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.0024060707014621507,
+                "mean_alpha": 0.006385341476957246,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 3602,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.0020359059781602813,
+                "mean_alpha": 0.006385341476957246,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            }
+          },
+          "nearest_phase": {
+            "(0, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.0849609375,
+              "mean_alpha": 0.171875,
+              "over_budget_pixels": 3,
+              "silhouette_disagree": 12
+            },
+            "(1, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.08854166666666667,
+              "mean_alpha": 0.17578125,
+              "over_budget_pixels": 1,
+              "silhouette_disagree": 12
+            },
+            "(0, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.087890625,
+              "mean_alpha": 0.185546875,
+              "over_budget_pixels": 3,
+              "silhouette_disagree": 3
+            },
+            "(1, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.09016927083333333,
+              "mean_alpha": 0.1875,
+              "over_budget_pixels": 6,
+              "silhouette_disagree": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input_report": "far-resolution-angle.json",
+      "input_sha256": "ad7e145106cb519138635f8b86b9acae1a1753c7483d40f7a2178579cc1faa12",
+      "archive_sha256": "98202362745ef8970cb424491a222bf8699e15e7c14c8550c3bac6f1bdab12ab",
+      "views": [
+        {
+          "camera": -0.3,
+          "actual_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.0859375,
+            "mean_alpha": 0.178955078125,
+            "over_budget_pixels": 14,
+            "silhouette_disagree": 32
+          },
+          "mechanism_cpu_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.0859375,
+            "mean_alpha": 0.178955078125,
+            "over_budget_pixels": 14,
+            "silhouette_disagree": 32
+          },
+          "actual_vs_mechanism_cpu": {
+            "pixels": 4096,
+            "max_rgb": 0,
+            "max_alpha": 0,
+            "mean_rgb": 0.0,
+            "mean_alpha": 0.0,
+            "over_budget_pixels": 0,
+            "silhouette_disagree": 0
+          },
+          "regions": {
+            "foreground_roi": {
+              "actual": {
+                "pixels": 161,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.37681159420289856,
+                "mean_alpha": 0.7267080745341615,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 161,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.37681159420289856,
+                "mean_alpha": 0.7267080745341615,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            },
+            "outside_foreground": {
+              "actual": {
+                "pixels": 3935,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.07403642524354087,
+                "mean_alpha": 0.1565438373570521,
+                "over_budget_pixels": 14,
+                "silhouette_disagree": 32
+              },
+              "cpu_resampling": {
+                "pixels": 3935,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.07403642524354087,
+                "mean_alpha": 0.1565438373570521,
+                "over_budget_pixels": 14,
+                "silhouette_disagree": 32
+              }
+            },
+            "far_boundary_membership_changed": {
+              "actual": {
+                "pixels": 116,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6120689655172413,
+                "mean_alpha": 1.4224137931034482,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 1
+              },
+              "cpu_resampling": {
+                "pixels": 116,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6120689655172413,
+                "mean_alpha": 1.4224137931034482,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 1
+              }
+            },
+            "far_membership_same": {
+              "actual": {
+                "pixels": 3980,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.07060301507537689,
+                "mean_alpha": 0.14271356783919598,
+                "over_budget_pixels": 5,
+                "silhouette_disagree": 31
+              },
+              "cpu_resampling": {
+                "pixels": 3980,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.07060301507537689,
+                "mean_alpha": 0.14271356783919598,
+                "over_budget_pixels": 5,
+                "silhouette_disagree": 31
+              }
+            },
+            "inside_far_full_support": {
+              "actual": {
+                "pixels": 515,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6757281553398058,
+                "mean_alpha": 1.3922330097087379,
+                "over_budget_pixels": 14,
+                "silhouette_disagree": 32
+              },
+              "cpu_resampling": {
+                "pixels": 515,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6757281553398058,
+                "mean_alpha": 1.3922330097087379,
+                "over_budget_pixels": 14,
+                "silhouette_disagree": 32
+              }
+            },
+            "outside_far_full_support": {
+              "actual": {
+                "pixels": 3581,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.001117006422786931,
+                "mean_alpha": 0.004468025691147724,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 3581,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.001117006422786931,
+                "mean_alpha": 0.004468025691147724,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            }
+          },
+          "nearest_phase": {
+            "(0, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.08626302083333333,
+              "mean_alpha": 0.1728515625,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 12
+            },
+            "(1, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.0830078125,
+              "mean_alpha": 0.177734375,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 11
+            },
+            "(0, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.08756510416666667,
+              "mean_alpha": 0.18359375,
+              "over_budget_pixels": 6,
+              "silhouette_disagree": 5
+            },
+            "(1, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.0869140625,
+              "mean_alpha": 0.181640625,
+              "over_budget_pixels": 4,
+              "silhouette_disagree": 4
+            }
+          }
+        },
+        {
+          "camera": 0,
+          "actual_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.08064778645833333,
+            "mean_alpha": 0.166015625,
+            "over_budget_pixels": 9,
+            "silhouette_disagree": 28
+          },
+          "mechanism_cpu_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.08064778645833333,
+            "mean_alpha": 0.16552734375,
+            "over_budget_pixels": 9,
+            "silhouette_disagree": 28
+          },
+          "actual_vs_mechanism_cpu": {
+            "pixels": 4096,
+            "max_rgb": 0,
+            "max_alpha": 1,
+            "mean_rgb": 0.0,
+            "mean_alpha": 0.00341796875,
+            "over_budget_pixels": 0,
+            "silhouette_disagree": 0
+          },
+          "regions": {
+            "foreground_roi": {
+              "actual": {
+                "pixels": 161,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.42857142857142855,
+                "mean_alpha": 0.8509316770186336,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 161,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.42857142857142855,
+                "mean_alpha": 0.8385093167701864,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            },
+            "outside_foreground": {
+              "actual": {
+                "pixels": 3935,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.06641253706056756,
+                "mean_alpha": 0.13799237611181703,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 28
+              },
+              "cpu_resampling": {
+                "pixels": 3935,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.06641253706056756,
+                "mean_alpha": 0.13799237611181703,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 28
+              }
+            },
+            "far_boundary_membership_changed": {
+              "actual": {
+                "pixels": 100,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6833333333333333,
+                "mean_alpha": 1.58,
+                "over_budget_pixels": 4,
+                "silhouette_disagree": 2
+              },
+              "cpu_resampling": {
+                "pixels": 100,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6833333333333333,
+                "mean_alpha": 1.58,
+                "over_budget_pixels": 4,
+                "silhouette_disagree": 2
+              }
+            },
+            "far_membership_same": {
+              "actual": {
+                "pixels": 3996,
+                "max_rgb": 4,
+                "max_alpha": 5,
+                "mean_rgb": 0.06556556556556556,
+                "mean_alpha": 0.13063063063063063,
+                "over_budget_pixels": 5,
+                "silhouette_disagree": 26
+              },
+              "cpu_resampling": {
+                "pixels": 3996,
+                "max_rgb": 4,
+                "max_alpha": 5,
+                "mean_rgb": 0.06556556556556556,
+                "mean_alpha": 0.13013013013013014,
+                "over_budget_pixels": 5,
+                "silhouette_disagree": 26
+              }
+            },
+            "inside_far_full_support": {
+              "actual": {
+                "pixels": 499,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6526386105544422,
+                "mean_alpha": 1.3246492985971945,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 28
+              },
+              "cpu_resampling": {
+                "pixels": 499,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6526386105544422,
+                "mean_alpha": 1.3206412825651304,
+                "over_budget_pixels": 9,
+                "silhouette_disagree": 28
+              }
+            },
+            "outside_far_full_support": {
+              "actual": {
+                "pixels": 3597,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.001297377444166435,
+                "mean_alpha": 0.0052821795941062,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 3597,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.001297377444166435,
+                "mean_alpha": 0.0052821795941062,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            }
+          },
+          "nearest_phase": {
+            "(0, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.07942708333333333,
+              "mean_alpha": 0.15625,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 11
+            },
+            "(1, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.0859375,
+              "mean_alpha": 0.177734375,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 14
+            },
+            "(0, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.076171875,
+              "mean_alpha": 0.1533203125,
+              "over_budget_pixels": 2,
+              "silhouette_disagree": 1
+            },
+            "(1, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.0810546875,
+              "mean_alpha": 0.1748046875,
+              "over_budget_pixels": 3,
+              "silhouette_disagree": 2
+            }
+          }
+        },
+        {
+          "camera": 0.3,
+          "actual_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.08919270833333333,
+            "mean_alpha": 0.1806640625,
+            "over_budget_pixels": 13,
+            "silhouette_disagree": 31
+          },
+          "mechanism_cpu_vs_original": {
+            "pixels": 4096,
+            "max_rgb": 4,
+            "max_alpha": 6,
+            "mean_rgb": 0.087890625,
+            "mean_alpha": 0.18017578125,
+            "over_budget_pixels": 13,
+            "silhouette_disagree": 31
+          },
+          "actual_vs_mechanism_cpu": {
+            "pixels": 4096,
+            "max_rgb": 1,
+            "max_alpha": 1,
+            "mean_rgb": 0.0013020833333333333,
+            "mean_alpha": 0.00048828125,
+            "over_budget_pixels": 0,
+            "silhouette_disagree": 0
+          },
+          "regions": {
+            "foreground_roi": {
+              "actual": {
+                "pixels": 172,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.3449612403100775,
+                "mean_alpha": 0.6337209302325582,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 172,
+                "max_rgb": 2,
+                "max_alpha": 2,
+                "mean_rgb": 0.313953488372093,
+                "mean_alpha": 0.622093023255814,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            },
+            "outside_foreground": {
+              "actual": {
+                "pixels": 3924,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.0779816513761468,
+                "mean_alpha": 0.1608053007135576,
+                "over_budget_pixels": 13,
+                "silhouette_disagree": 31
+              },
+              "cpu_resampling": {
+                "pixels": 3924,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.0779816513761468,
+                "mean_alpha": 0.1608053007135576,
+                "over_budget_pixels": 13,
+                "silhouette_disagree": 31
+              }
+            },
+            "far_boundary_membership_changed": {
+              "actual": {
+                "pixels": 126,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.701058201058201,
+                "mean_alpha": 1.5317460317460319,
+                "over_budget_pixels": 7,
+                "silhouette_disagree": 2
+              },
+              "cpu_resampling": {
+                "pixels": 126,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.6825396825396826,
+                "mean_alpha": 1.5317460317460319,
+                "over_budget_pixels": 7,
+                "silhouette_disagree": 2
+              }
+            },
+            "far_membership_same": {
+              "actual": {
+                "pixels": 3970,
+                "max_rgb": 4,
+                "max_alpha": 5,
+                "mean_rgb": 0.06977329974811083,
+                "mean_alpha": 0.13778337531486146,
+                "over_budget_pixels": 6,
+                "silhouette_disagree": 29
+              },
+              "cpu_resampling": {
+                "pixels": 3970,
+                "max_rgb": 4,
+                "max_alpha": 5,
+                "mean_rgb": 0.0690176322418136,
+                "mean_alpha": 0.13727959697732997,
+                "over_budget_pixels": 6,
+                "silhouette_disagree": 29
+              }
+            },
+            "inside_far_full_support": {
+              "actual": {
+                "pixels": 494,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.7246963562753036,
+                "mean_alpha": 1.451417004048583,
+                "over_budget_pixels": 13,
+                "silhouette_disagree": 31
+              },
+              "cpu_resampling": {
+                "pixels": 494,
+                "max_rgb": 4,
+                "max_alpha": 6,
+                "mean_rgb": 0.7139001349527665,
+                "mean_alpha": 1.4473684210526316,
+                "over_budget_pixels": 13,
+                "silhouette_disagree": 31
+              }
+            },
+            "outside_far_full_support": {
+              "actual": {
+                "pixels": 3602,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.0020359059781602813,
+                "mean_alpha": 0.006385341476957246,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              },
+              "cpu_resampling": {
+                "pixels": 3602,
+                "max_rgb": 1,
+                "max_alpha": 2,
+                "mean_rgb": 0.0020359059781602813,
+                "mean_alpha": 0.006385341476957246,
+                "over_budget_pixels": 0,
+                "silhouette_disagree": 0
+              }
+            }
+          },
+          "nearest_phase": {
+            "(0, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.0849609375,
+              "mean_alpha": 0.171875,
+              "over_budget_pixels": 3,
+              "silhouette_disagree": 12
+            },
+            "(1, 0)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.08854166666666667,
+              "mean_alpha": 0.17578125,
+              "over_budget_pixels": 1,
+              "silhouette_disagree": 12
+            },
+            "(0, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 5,
+              "mean_rgb": 0.087890625,
+              "mean_alpha": 0.185546875,
+              "over_budget_pixels": 3,
+              "silhouette_disagree": 3
+            },
+            "(1, 1)": {
+              "pixels": 1024,
+              "max_rgb": 4,
+              "max_alpha": 6,
+              "mean_rgb": 0.09016927083333333,
+              "mean_alpha": 0.1875,
+              "over_budget_pixels": 6,
+              "silhouette_disagree": 4
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation": "Nearest 32->64 maps each 2x2 block to one low-grid center, offset \u00b10.5 full-resolution pixels per axis. CPU32-vs-CPU64 measures joint resampling, quantization, bounding truncation and subsequent foreground compositing; it is not an additive/unique causal attribution. Changed-membership regions flag hard Gaussian rectangle truncation opportunities, not proof of dominant causation. Same-membership errors can arise from nonlinear Gaussian sampling, nearest reconstruction and RGBA8 blend quantization. Driver residual is separately retained.",
+  "scope": "Analysis only: no changed oracle/budget, new optimization acceptance, GL execution or performance claim."
+}

@@ -365,3 +365,18 @@ fixed one-code budget. Equivalent shader passes; half-resolution, disabled depth
 and wrong UI alpha are rejected. API-derived attachment preservation and overwrite
 records are not physical tile traffic. This finite 8x8 integration does not claim
 production scene coverage or physical GPU performance.
+
+## Bilinear far reconstruction and retained-error analysis
+
+Archived nearest-output analysis finds silhouette mismatches 32/28/31 entirely
+outside foreground, while rectangle support changes explain only 1/2/2. The
+residual is already present in the independent CPU nearest mechanism; sampling
+phase, nonlinear Gaussian profile and quantization jointly matter. This is a
+spatial decomposition, not proof of one unique driver cause.
+
+Actual four-fetch bilinear reconstruction uses the real 32x32 far target and
+unchanged 64x64 foreground, without hidden full-resolution far rerendering. ANGLE
+passes all three original views (color max3/2/2; silhouette1/2/2). Mesa middle view
+still has3 silhouette disagreements against unchanged budget2, so its global
+strategy retains baseline; all other original budgets and negatives are preserved.
+Extra four-fetch copy costs are explicit logical bounds, not a speedup claim.

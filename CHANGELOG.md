@@ -345,3 +345,7 @@ original-plan experiments remain incomplete; metadata stays unchanged.
 - v1.0.9 candidate: separate far-resolution/foreground GLES replay with strict
   camera-global quality rejection, plus finite integrated S03 depth/UI/PostFX
   stage-oracle controls. Real mobile and provider gates remain blocked.
+
+- v1.0.9 candidate: quantified retained nearest-sampling failures and added real
+  bilinear far reconstruction. ANGLE passes the finite original camera set; Mesa
+  remains rejected by unchanged silhouette budget and retains baseline.

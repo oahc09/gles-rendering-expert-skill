@@ -95,15 +95,19 @@
         "benchmarks/overlap_scenes/evidence/background-merge-angle.json",
         "benchmarks/overlap_scenes/far_resolution.py",
         "benchmarks/overlap_scenes/FAR_RESOLUTION.md",
-        "benchmarks/overlap_scenes/test_far_resolution.py"
+        "benchmarks/overlap_scenes/test_far_resolution.py",
+        "benchmarks/overlap_scenes/far_reconstruction.py",
+        "benchmarks/overlap_scenes/FAR_RECONSTRUCTION.md",
+        "benchmarks/overlap_scenes/far_analysis.py",
+        "benchmarks/overlap_scenes/evidence/far-analysis.json"
       ],
       "remaining_host": [
-        "Original Mesa high-layer UNORM and duplicate-background merge visual failures remain. Independent far-resolution candidate also exceeds original color/silhouette budgets and is rejected; no accepted simplification is claimed."
+        "Original Mesa high-layer UNORM and duplicate-background merge visual failures remain. Nearest far-resolution candidate fails both drivers; bilinear improves ANGLE to finite-camera PASS but Mesa center remains rejected at three silhouette pixels versus budget two. General or cross-device accepted simplification is not claimed."
       ],
       "external_requirements": [
         "Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition."
       ],
-      "verified_summary": "Gaussian/glass plus actual rain/volume/UI proxies, dynamic cameras, A/B, tile coverage/layers/RGBA/depth/background stats; precision budget gate; actual bounded duplicate-background alpha merge research (draws 11 to 7), three cameras and explicit quality rejection/fallback; independent far-resolution FBO and full-resolution foreground, three-camera CPU-oracle A/B, candidate rejected globally and baseline retained on both software backends",
+      "verified_summary": "Gaussian/glass plus actual rain/volume/UI proxies, dynamic cameras, A/B, tile coverage/layers/RGBA/depth/background stats; precision budget gate; actual bounded duplicate-background alpha merge research (draws 11 to 7), three cameras and explicit quality rejection/fallback; independent far-resolution FBO and full-resolution foreground, three-camera CPU-oracle A/B, candidate rejected globally and baseline retained on both software backends; four-fetch bilinear far reconstruction passes fixed three-view quality on ANGLE, while Mesa center silhouette3 exceeds budget2 and retains baseline",
       "scope_exclusions": [
         "General Gaussian merging, arbitrary scenes and unseen camera paths remain outside these bounded prototypes."
       ]
