@@ -33,14 +33,16 @@
     },
     {
       "id": "W2",
-      "host_delivery": "PARTIAL",
-      "acceptance": "PARTIAL_HOST_SCOPE",
+      "host_delivery": "MET_BOUNDED",
+      "acceptance": "BOUNDED_LIFECYCLE_MODEL",
       "evidence": [
         "tools/estimate_gpu_cost.py",
-        "benchmarks/gpu_cost/cases.json"
+        "benchmarks/gpu_cost/cases.json",
+        "tools/attachment_lifecycle.py",
+        "tools/test_attachment_lifecycle.py"
       ],
       "remaining_host": [
-        "No explicit attachment lifecycle event-sequence or driver-condition model; pass count remains a supplied assumption."
+        "Arbitrary aliased/subresource lifetimes and implicit driver passes are outside the explicitly bounded event model."
       ],
       "external_requirements": [
         "Real comparable device-counter calibration and DRAM conversion are not measured. Device calibration is optional in the plan, not a fabricated requirement."
@@ -53,11 +55,12 @@
       "evidence": [
         "benchmarks/shader_ab/run.py",
         "benchmarks/shader_ab/optimization_pairs.py",
-        "benchmarks/shader_ab/advanced.py"
+        "benchmarks/shader_ab/advanced.py",
+        "benchmarks/shader_ab/counterexamples.py",
+        "benchmarks/shader_ab/variant_trace.py"
       ],
       "remaining_host": [
-        "Initial sixteen pairs do not each have a dedicated executable wrong-candidate arm.",
-        "Unified old Shader Variant/Trace capture adapter and broader input/material distributions remain incomplete."
+        "Wider shader/input distributions and automatic interleaved capture orchestration are not implemented; finite initial 16 pairs now each have independent CPU goldens and negative arms; existing Variant validator and optional Trace analyzer are reused."
       ],
       "external_requirements": [
         "Interleaved GPU timing, thermal/frequency/trace evidence and actual negative performance outcomes remain unmeasured."
@@ -82,14 +85,16 @@
     {
       "id": "W5",
       "host_delivery": "MET_BOUNDED",
-      "acceptance": "ADVISOR_DELIVERED_NOT_SEMANTIC_PROOF",
+      "acceptance": "BOUNDED_REPLAY_AND_SYNC_CHECK",
       "evidence": [
         "tools/rendergraph_optimizer.py",
         "tools/test_rendergraph_optimizer.py",
-        "benchmarks/pipeline/postfx_quality.py"
+        "benchmarks/pipeline/postfx_quality.py",
+        "tools/rendergraph_replay.py",
+        "benchmarks/pipeline/candidate_replay.py"
       ],
       "remaining_host": [
-        "Actual candidate graph rescaling/replay and machine-verifiable synchronization/lifetime evidence are not implemented; caller assertions are explicitly not proof."
+        "General graph transforms, incoherent compute/image/SSBO barriers and other candidate categories remain outside the closed sequential framebuffer-to-texture replay vocabulary."
       ],
       "external_requirements": [
         "Device gains cannot be claimed from advisory candidates."

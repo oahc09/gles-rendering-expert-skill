@@ -11,6 +11,11 @@ class CompletionMatrix(unittest.TestCase):
    for p in row['evidence']:self.assertTrue((ROOT/p).is_file(),p)
  def test_no_host_gap_hidden_as_hardware(self):
   rows={r['id']:r for r in json.loads((ROOT/'docs/v1.0.9/completion-matrix.json').read_text())['rows']}
-  for k in ('W2','W3','W4','W6','W10'):
+  for k in ('W3','W4','W6','W10'):
    self.assertEqual(rows[k]['acceptance'],'PARTIAL_HOST_SCOPE');self.assertTrue(rows[k]['remaining_host'])
   self.assertEqual(rows['W8']['acceptance'],'BLOCKED_BY_HARDWARE');self.assertEqual(rows['W9']['acceptance'],'BLOCKED_BY_PROVIDER')
+
+ def test_bounded_models_not_general_proof(self):
+  rows={r['id']:r for r in json.loads((ROOT/'docs/v1.0.9/completion-matrix.json').read_text())['rows']}
+  self.assertEqual(rows['W2']['acceptance'],'BOUNDED_LIFECYCLE_MODEL')
+  self.assertEqual(rows['W5']['acceptance'],'BOUNDED_REPLAY_AND_SYNC_CHECK')

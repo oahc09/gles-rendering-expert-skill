@@ -2,17 +2,17 @@
 
 | Plan | Implementation / test command | Scope |
 |---|---|---|
-| W0 | baseline-gap.md, inherited-gates.json; tools/check_v109_gates.py | Exact unchanged predecessor gates |
-| W1 | tools/workload_fingerprint.py; unittest discover -s benchmarks/workloads | 12 synthetic labelled inputs; hypotheses not bottleneck proof |
-| W2 | tools/estimate_gpu_cost.py; benchmarks/gpu_cost | 13 estimated boundary cases; not DRAM measurements |
-| W3 | benchmarks/shader_ab/run.py | 16 finite fragment pairs; broader experiment families incomplete |
-| W4 | benchmarks/shader_ab/run.py; benchmarks/overlap_scenes/README.md | 4 full-screen blend proxies; not dynamic 3DGS geometry |
-| W5 | tools/rendergraph_optimizer.py; tools/test_rendergraph_optimizer.py | 14 cases; no automatic rewrites; PostFX deferred |
-| W6 | benchmarks/texture_access/run.py | 8 RGBA8 coordinate controls; compression/mip/PBO incomplete |
-| W7 | tools/optimization_advisor.py; benchmarks/workloads/test_workload_tools.py | 27 cases and independent-review binding controls; trusted caller authentication remains external |
-| W8 | benchmarks/device_portability/protocol.py | 6 test methods; no physical device captures |
-| W9 | benchmarks/agent/cases-v1.0.9.json; score_v109.py | 30 unique tasks; no provider outputs |
-| W10 | validation.yml; research/ledger.json | Additive CI; two primary-source receipts, full radar review incomplete |
+| W0 | baseline-gap.md, inherited-gates.json; tools/check_v109_gates.py | Baseline/source CI/tag audit, unchanged predecessor gates |
+| W1 | tools/workload_fingerprint.py; benchmarks/workloads/test_binding_contracts.py | Metadata and source-bound exports; no authenticity inference |
+| W2 | tools/estimate_gpu_cost.py; tools/test_attachment_lifecycle.py | Legacy bounds plus explicit event lifecycle/conditional FBO model; not DRAM |
+| W3 | benchmarks/shader_ab/ | Finite actual shader/packing/rebind/sampling/fusion controls; see completion matrix |
+| W4 | benchmarks/overlap_scenes/projected.py and advanced.py | Projected proxies, covariance, LOD and finite refraction with CPU goldens |
+| W5 | tools/rendergraph_optimizer.py; benchmarks/pipeline | Bounded advice and finite quality oracle; see matrix for semantic scope |
+| W6 | benchmarks/texture_access and benchmarks/texture_streaming | Actual KTX/texture controls and synchronous budgeted eviction/reload |
+| W7 | tools/optimization_advisor.py; tools/optimization_experiments.py | Evidence-bound decisions, executable registry and ranking; authenticity external |
+| W8 | benchmarks/device_portability/protocol.py | Grouped validation protocol; physical device captures missing |
+| W9 | benchmarks/agent/cases-v1.0.9.json; score_v109.py | 30 unique paired tasks, executable scoring CLI; no provider outputs |
+| W10 | validation.yml; research/rolling and review files | 1319 metadata candidates; ten selected full-content AI reviews, not corpus acceptance |
 
 No source release is evidence of a GLES optimization benefit. No synthetic label,
 software timer, pair agreement or raw-file hash authenticates physical GPU data.

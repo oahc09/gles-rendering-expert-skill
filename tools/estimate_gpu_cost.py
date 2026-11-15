@@ -7,6 +7,14 @@ from workload_fingerprint import number
 FORMATS={'RGBA8':4,'RGB8':3,'RG8':2,'R8':1,'RGBA16F':8,'RG16F':4,'R16F':2,'DEPTH24_STENCIL8':4,'DEPTH16':2,'RGBA32F':16}
 
 def estimate(data):
+    if 'lifecycle' in data:
+        from attachment_lifecycle import lifecycle
+        result=lifecycle(data)
+        texture=estimate({'attachments':[], 'texture_samples':data.get('texture_samples',0), 'bytes_per_sample':data.get('bytes_per_sample')})
+        result['texture_fetch_logical_upper_bytes']=texture['texture_fetch_logical_upper_bytes']
+        if result['logical_upper_bytes'] is None or texture['logical_upper_bytes'] is None:result['logical_upper_bytes']=None
+        else:result['logical_upper_bytes']+=texture['logical_upper_bytes']
+        return result
     output=[]; total=0; unknown=False
     for a in data.get('attachments',[]):
         for key in ('width','height','samples','passes'):

@@ -6,6 +6,8 @@ HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
 sys.path.insert(0,str(HERE))
 from build_cases import corpus,VERTEX
+from counterexamples import wrong,golden as cpu_golden
+from variant_trace import variant,connect
 spec=importlib.util.spec_from_file_location('v109_differential',ROOT/'benchmarks/differential/run.py')
 diff=importlib.util.module_from_spec(spec);spec.loader.exec_module(diff)
 U=diff.U;I=diff.I;P=diff.P;F=diff.F
@@ -71,25 +73,32 @@ def blend_golden(layers):
   pixel=[math.floor(min(1,max(0,x))*255+.5) for x in vals]
  return pixel*16
 
-def run(config,output):
+def run(config,output,trace_bundle=None):
  h=ExperimentHost(config)
- report=dict(schema_version=1,status='FAIL',scope='finite host software correctness controls',performance_status='NOT_MEASURED',physical_gpu='BLOCKED_BY_HARDWARE',metadata=h.metadata,experiments=[],overlap_scenes=[])
+ report=dict(schema_version=1,status='FAIL',scope='finite host software correctness controls',performance_status='NOT_MEASURED',physical_gpu='BLOCKED_BY_HARDWARE',experiments=[],overlap_scenes=[])
  try:
   for c in corpus():
-   draws=[h.draw(c['id'],c['sources'][a]) for a in ('a','b')]
-   report['experiments'].append(dict(id=c['id'],observed=quality(*draws),expected=c['expected_quality'],draws=draws,performance_status='NOT_MEASURED'))
+   negative,reason=wrong(c['id'])
+   sources=dict(c['sources'],negative=negative)
+   validated=[variant(src,arm) for arm,src in sources.items()]
+   if any(v['errors'] for v in validated):raise ValueError('Invalid shader variant')
+   draws=[h.draw(c['id'],sources[arm]) for arm in ('a','b','negative')]
+   reference=dict(status='EXECUTED',compile=True,link=True,harness_gl_error=0,pixels=cpu_golden(c['id']))
+   checks=[quality(d,reference) for d in draws]
+   report['experiments'].append(dict(id=c['id'],observed=quality(*draws[:2]),expected=c['expected_quality'],draws=draws,variants=validated,cpu_golden=reference['pixels'],cpu_checks=checks,negative_reason=reason,negative_control=quality(draws[0],draws[2]),performance_status='NOT_MEASURED'))
+  report['variant_trace']=connect(report['experiments'],trace_bundle)
   source='#version 300 es\nprecision highp float;\nuniform vec4 layer;\nlayout(location=0) out vec4 color;\nvoid main(){color=layer;}'
   for s in scenes():
    a=h.draw(s['id'],source,s['layers']);b=h.draw(s['id'],source,list(reversed(s['layers'])))
    golden=blend_golden(s['layers']);error=max(abs(x-y) for x,y in zip(a['pixels'],golden)) if len(a['pixels'])==64 else None
    report['overlap_scenes'].append(dict(id=s['id'],scope=s['scope'],draw_count=len(s['layers']),covered_fragments=16*len(s['layers']),coverage_estimate=True,cpu_rgba8_max_error=error,quality='PASS' if error is not None and error<=2 and not a['harness_gl_error'] else 'FAIL',sorting_negative_control=quality(a,b),draws=[a,b],performance_status='NOT_MEASURED',dynamic_camera='NOT_RUN',silhouette='NOT_RUN',parallax='NOT_RUN'))
-  report['status']='HOST_PASS' if all(x['observed']==x['expected'] for x in report['experiments']) and all(x['quality']=='PASS' and x['sorting_negative_control']=='FAIL' for x in report['overlap_scenes']) else 'FAIL'
+  report['status']='HOST_PASS' if all(x['observed']==x['expected'] and x['cpu_checks']==['PASS',x['expected'],'FAIL'] and x['negative_control']=='FAIL' for x in report['experiments']) and all(x['quality']=='PASS' and x['sorting_negative_control']=='FAIL' for x in report['overlap_scenes']) else 'FAIL'
  finally:h.close()
  Path(output).parent.mkdir(parents=True,exist_ok=True);Path(output).write_text(json.dumps(report,indent=2)+'\n');return report
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--config',required=True);p.add_argument('--output',required=True);args=p.parse_args()
- try:r=run(json.loads(Path(args.config).read_text()),args.output)
+ p=argparse.ArgumentParser();p.add_argument('--config',required=True);p.add_argument('--output',required=True);p.add_argument('--trace-bundle');args=p.parse_args()
+ try:r=run(json.loads(Path(args.config).read_text()),args.output,args.trace_bundle)
  except Exception as e:
   r=dict(status='BLOCKED_BY_DRIVER',reason=str(e),performance_status='NOT_MEASURED');Path(args.output).write_text(json.dumps(r))
  print(json.dumps({'status':r['status']}));raise SystemExit(r['status']!='HOST_PASS')

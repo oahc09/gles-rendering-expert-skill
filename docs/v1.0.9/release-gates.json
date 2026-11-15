@@ -28,9 +28,9 @@
       "implementation": [
         "tools/estimate_gpu_cost.py"
       ],
-      "remaining": "No explicit attachment lifecycle event-sequence or driver-condition model; pass count remains a supplied assumption. Real comparable device-counter calibration and DRAM conversion are not measured. Device calibration is optional in the plan, not a fabricated requirement.",
-      "host_delivery": "PARTIAL",
-      "acceptance": "PARTIAL_HOST_SCOPE"
+      "remaining": "Arbitrary aliased/subresource lifetimes and implicit driver passes are outside the explicitly bounded event model. Real comparable device-counter calibration and DRAM conversion are not measured. Device calibration is optional in the plan, not a fabricated requirement.",
+      "host_delivery": "MET_BOUNDED",
+      "acceptance": "BOUNDED_LIFECYCLE_MODEL"
     },
     "W3": {
       "status": "PARTIAL",
@@ -43,7 +43,7 @@
         "benchmarks/particle_controls/run.py",
         "benchmarks/shader_ab/rebind.py"
       ],
-      "remaining": "Initial sixteen pairs do not each have a dedicated executable wrong-candidate arm. Unified old Shader Variant/Trace capture adapter and broader input/material distributions remain incomplete. Interleaved GPU timing, thermal/frequency/trace evidence and actual negative performance outcomes remain unmeasured.",
+      "remaining": "Wider shader/input distributions and automatic interleaved capture orchestration are not implemented; finite initial 16 pairs now each have independent CPU goldens and negative arms; existing Variant validator and optional Trace analyzer are reused. Interleaved GPU timing, thermal/frequency/trace evidence and actual negative performance outcomes remain unmeasured.",
       "host_delivery": "PARTIAL",
       "acceptance": "PARTIAL_HOST_SCOPE"
     },
@@ -63,9 +63,9 @@
       "implementation": [
         "tools/rendergraph_optimizer.py"
       ],
-      "remaining": "Actual candidate graph rescaling/replay and machine-verifiable synchronization/lifetime evidence are not implemented; caller assertions are explicitly not proof. Device gains cannot be claimed from advisory candidates.",
+      "remaining": "General graph transforms, incoherent compute/image/SSBO barriers and other candidate categories remain outside the closed sequential framebuffer-to-texture replay vocabulary. Device gains cannot be claimed from advisory candidates.",
       "host_delivery": "MET_BOUNDED",
-      "acceptance": "ADVISOR_DELIVERED_NOT_SEMANTIC_PROOF"
+      "acceptance": "BOUNDED_REPLAY_AND_SYNC_CHECK"
     },
     "W6": {
       "status": "PARTIAL",

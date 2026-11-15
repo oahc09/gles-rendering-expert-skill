@@ -41,3 +41,42 @@ own captures, quality thresholds and matched device A/B before acceptance.
 
 Current advisor tests: 37 positive/negative cases. Finite quality oracle ran
 HOST_PASS on Mesa (four actual draws), zero GL errors; not hardware evidence.
+
+## Executable bounded candidate graph replay
+
+`tools/rendergraph_replay.py` now produces an independent copied candidate graph
+and preserved fallback, not a mutation of a business renderer. The only executable
+transformation is RGBA8 intermediate extent **4x4 → 2x2** in a three-pass
+source → nearest sample → present graph. Original source/output remain 4x4.
+Graph SHA256 binds each replay, the proposed change and selected fallback.
+
+```
+python3 benchmarks/pipeline/candidate_replay.py --config DRIVER_JSON --output REPORT_JSON
+python3 -m unittest discover -s benchmarks/pipeline -v
+```
+
+The inherited checker runs first. The executable vocabulary then requires exact
+producer dependencies, one private whole-resource allocation per texture, distinct
+sampled input and framebuffer output, and sequential submission in one context.
+Only coherent framebuffer-write → texture-fetch edges exist here: **no explicit
+glMemoryBarrier is required**. Arbitrary barrier declarations, compute/imageStore,
+SSBO, imported resources, MSAA, aliasing, discard and hidden operations are rejected,
+not falsely certified. Incorrect or missing dependency/feedback cases are refused
+before calling GLES. Missing barriers for incoherent shader accesses are never run
+as undefined-behavior negative controls. This is machine-checkable synchronization
+for the closed replay grammar, not proof about caller-supplied arbitrary passes.
+
+Actual GLES replay allocates texture-backed FBOs, compiles shaders and executes all
+three passes for each arm. The constant-image case remains within one RGBA8 unit;
+the checkerboard case deliberately loses alternating pixels, fails the same image
+budget, and selects the baseline graph as fallback. Independent CPU goldens verify
+both baseline and transformed output. Each driver executes **12 draws and 4 final
+readbacks**. Both software Mesa and pinned ANGLE runs passed; sanitized reports:
+`benchmarks/pipeline/evidence/candidate-replay-{mesa,angle}.json`.
+No driver/environment fingerprints are serialized.
+
+This closes the absence of *any* executable graph candidate transformation and
+replay. It does **not** prove arbitrary blur scaling, temporal/HDR equivalence,
+pass fusion, MSAA resolve or alias reuse. Existing generic advice still requires
+caller synchronization review. No physical-device time/bandwidth/power gain was
+measured, and a passing static image does not authorize renderer replacement.

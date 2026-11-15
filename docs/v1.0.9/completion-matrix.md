@@ -11,10 +11,10 @@ it does not waive inherited releases or imply mobile/provider acceptance.
 |---|---|---|---|
 | W0 audit | **MET** | Original plan/baseline, write access, eight reuse paths, unchanged predecessor hashes; current test mapping, explicit tag and baseline/source-head CI audit | No local audit gap identified. Earlier release gates remain independent. |
 | W1 fingerprint | **MET, bounded contract** | 12 labelled synthetic samples, UNKNOWN/missing evidence, overlap/clock domains, frame quantiles; strict metadata and hash-bound real-export samples | File hash is not physical-source authenticity. No measured causal bottleneck claim. |
-| W2 cost model | **PARTIAL** | 13 boundaries; explicit logical lower/upper model, clear/invalidate/resolve/samples, unknowns; calibration comparison function | Host: lifecycle event sequences and driver-condition model missing; supplied pass assumptions remain. Device counters/DRAM conversion unmeasured. Plan marks device calibration optional. |
-| W3 shader experiments | **PARTIAL** | 16 original pairs plus real mechanisms, packing, rebind; now actual repeated-sampling coalescing and compute-intermediate→direct-fragment A/B with CPU goldens/negative controls | Host: each initial pair needs its own executable wrong candidate; old Variant/Trace unified adapter and broader material/precision inputs incomplete. Device: actual gains/regressions, thermal/timing/trace. |
+| W2 cost model | **MET as bounded lifecycle model** | Legacy bounds plus explicit load/clear/discard/draw/switch/resolve/store/consume state machine; scoped driver condition, unknown propagation; 18 boundary/negative tests | Scope excludes alias/subresources and implicit driver passes. Conditions are not authenticated; physical counters unmeasured. Calibration optional in plan. |
+| W3 shader experiments | **PARTIAL** | Initial 16 pairs now each have CPU goldens and executable negative arms; Variant validator and optional source-bound Trace analyzer integrated; other actual mechanisms retained | Broader input distributions and automatic interleaved capture orchestration remain. No physical timing/thermal/gain acceptance. |
 | W4 overlap | **PARTIAL** | At least four runnable proxy scenes, Gaussian and layered glass, cameras, silhouettes/alpha/heatmaps, covariance/LOD and finite refraction | Host: rain/volume cases, Gaussian merge, transparent grouping, far-resolution A/B; tile color/alpha/depth/background statistics and scale tiers incomplete. Device counters absent. |
-| W5 graph advice | **MET as bounded advice** | Five candidate classes, checker reuse, 37 positive/negative tests, explicit PostFX sidecar and runnable finite oracle | No candidate graph rescale/replay or automatic synchronization/semantic proof. Caller assertions remain assertions. This is advice, never automatic business-renderer modification. |
+| W5 graph advice | **MET as bounded advice/replay** | Copied candidate 4×4→2×2 intermediate graph; actual three-pass replay; constant passes/checkerboard rejects; closed synchronization vocabulary rejects unsafe graphs before GL | General transforms and incoherent compute/image/SSBO synchronization excluded; no universal equivalence or performance proof. |
 | W6 texture | **PARTIAL** | More than eight actual mechanisms, KTX conversion/CPU decoder checks, quality refusal; now reusable logical LRU/upload-budget planner and actual multi-frame reload execution | Host: compressed/asynchronous progressive mip streaming, oblique aniso/locality distributions and isolated transcode phase accounting. Device: physical residency, GPU stalls/DRAM/frame-time benefit. |
 | W7 decision | **MET, bounded contract** | All states/quality refusal/hash-bound review; executable registry, gain range and structural completeness ranking; real isolated rollback | Structural completeness is not authenticated evidence. No autonomous acceptance or app-wide/context-loss rollback. Real reviewed measurements remain external. |
 | W8 portability | **Protocol delivered; HARDWARE BLOCKED** | Exact device grouping, interleaved A/B/thermal/sample/trace constraints, truthful matrix | Host: complete same-scene device-collector wiring and validated strategy variants not finished. External: no physical A/B; no Mali/Adreno/PowerVR comparison. |
@@ -55,7 +55,7 @@ it does not waive inherited releases or imply mobile/provider acceptance.
 1. Integrate a real S03 UI+3D+PostFX scene and actual candidate PostFX replay, then
    connect legacy Variant/Trace records across the representative scenes.
 2. Finish W4 listed optimization/scene/statistics coverage and W6 mip/locality and
-   resource-lifecycle distributions; improve W2 lifecycle/driver assumptions.
+   resource-lifecycle distributions; extend beyond the bounded W2 lifecycle/driver assumptions only with explicit contracts.
 3. Triage the remaining research corpus and vendor/X sources with explicit defer /
    reject / applicability decisions. Ten reviews are not full source coverage.
 4. With separately available real devices and an authorized provider, run physical
@@ -65,3 +65,12 @@ it does not waive inherited releases or imply mobile/provider acceptance.
 Current exact-head CI is reported in PR #7; historical runs in validation-report.md
 are explicitly bound to their own commits. The repository itself contains no
 self-referential claim that an as-yet-unpushed commit has already passed CI.
+
+## Follow-up W2/W3/W5 closure
+
+The explicit lifecycle model, all initial per-pair negatives and existing
+Variant/Trace reuse, plus finite candidate graph rewrite/replay with checked
+coherent synchronization, are now executable. These replace the previously
+listed missing implementations, not hardware/provider acceptance. Other matrix
+rows retain their unresolved host items. Candidate replay accepts constant input
+and rejects checkerboard degradation without relaxing quality budgets.

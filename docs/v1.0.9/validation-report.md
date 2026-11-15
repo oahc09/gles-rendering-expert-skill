@@ -220,3 +220,20 @@ compressed async streaming, physical residency or transactional GPU rollback.
 Host regression summary: `evidence/host-regression-matrix.json`. Original inherited
 gates and release metadata are unchanged. Final exact-head CI is recorded in PR #7,
 not inferred from any earlier successful head.
+
+## Lifecycle, per-pair negatives, and executable graph replay
+W2 now models explicit attachment event sequences and scoped FBO switch conditions,
+with 18 state/boundary tests; it remains a logical conditional model, not DRAM or
+authenticated driver knowledge. W3 initial 16 pairs each have CPU goldens and a
+wrong shader, reuse the existing Variant validator, and optionally connect
+source-bound exported Trace analysis. Actual no-capture runs say NOT_MEASURED.
+
+W5 now copies a finite graph to a resized intermediate, verifies its closed
+coherent dependency vocabulary, and executes three GLES stages. Constant input
+passes; checkerboard degradation is rejected and the baseline graph selected.
+Unsafe dependencies/feedback/unknown barrier declarations reject before GL.
+Incoherent shader writes and general graph transformations remain out of scope.
+
+Both updated runtime paths were rerun independently on Mesa and ANGLE: HOST_PASS.
+Complete regression: **895 tests, zero skips**, 36 directories. Evidence summary:
+`evidence/host-regression-lifecycle-replay.json`. Hardware/provider gates unchanged.
