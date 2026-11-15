@@ -16,7 +16,7 @@ def check(value,path='$'):
  return errors
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('files',nargs='*',type=Path);a=p.parse_args()
- paths=a.files or [p for folder in ('shader_ab','overlap_scenes','texture_access','hdr_controls','attachment_controls','particle_controls','rollback_controls') for p in (ROOT/'benchmarks'/folder/'evidence').glob('*.json')]
+ paths=a.files or [p for folder in ('shader_ab','overlap_scenes','texture_access','hdr_controls','attachment_controls','particle_controls','rollback_controls','texture_streaming') for p in (ROOT/'benchmarks'/folder/'evidence').glob('*.json')]
  errors=[]
  for f in paths:
   try:errors.extend(f.name+': '+x for x in check(json.loads(f.read_text())))

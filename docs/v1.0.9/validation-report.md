@@ -197,3 +197,26 @@ Fifth-increment full local unit regression: **811 tests passed, zero skipped**, 
 directories. Reproduce with `python3 tools/run_v109_regression.py --output REPORT_JSON`.
 Safe summary: `evidence/unit-tests-fifth.json`. Exact new-head hosted CI must still
 be checked independently; software results do not close real-device/provider gates.
+
+## Original-plan completion audit and concrete gap closure
+
+See `completion-matrix.md` and its machine-readable JSON for W0–W10, separating
+host delivery from acceptance and external evidence. This is not an all-complete
+release declaration. W2/W3/W4/W6/W10 still contain specific feasible host work.
+
+This consolidation closes missing real-export file/hash/sample binding, workload
+metadata validation, executable experiment registry binding, conservative gain
+interval/completeness ranking, actual sampling/fusion A/B controls, a reusable
+multi-frame logical-budget LRU streaming planner with real GL eviction/reload,
+and a fail-closed provider scoring CLI. The provider run remains blocked with
+zero responses and null rates, not successful synthetic provider evaluation.
+
+Both new GPU runners were independently rerun against Mesa and ANGLE and returned
+HOST_PASS. Shader optimization pairs preserve finite CPU oracle equality and
+reject negative arms; no compiler work reduction or physical speedup is inferred.
+Streaming uses synchronous whole RGBA assets and does not claim progressive mip,
+compressed async streaming, physical residency or transactional GPU rollback.
+
+Host regression summary: `evidence/host-regression-matrix.json`. Original inherited
+gates and release metadata are unchanged. Final exact-head CI is recorded in PR #7,
+not inferred from any earlier successful head.

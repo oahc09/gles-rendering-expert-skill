@@ -30,9 +30,11 @@ Anisotropy uses a complete mip chain, finite screen-space gradients, and a legal
 parameter capped at the queried maximum; the constant-red image is a correctness
 control, not a filtering quality benchmark. Both current software contexts expose
 these extensions; absence retains the documented fallback, never forces support.
-KTX2 transcoding, varied compressed-block modes, ASTC hardware quality, anisotropy
-quality under oblique views, long-running
-streaming/eviction and physical-GPU timing/power remain NOT_RUN or hardware-blocked.
+Historical first-batch boundary (KTX2 transcoding and varied compressed blocks
+were subsequently implemented in the sections below): ASTC hardware quality, anisotropy
+quality under oblique views, and physical-GPU timing/power remain NOT_RUN or hardware-blocked. Bounded synchronous
+streaming/eviction is now covered separately in `../texture_streaming/`; full
+production streaming and physical residency remain unverified.
 Use existing `benchmarks/texture_pipeline/` for the broader asset selection path.
 
 `run.py` retains the earlier eight simple coordinate-regression controls for

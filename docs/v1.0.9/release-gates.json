@@ -10,21 +10,27 @@
       "implementation": [
         "docs/v1.0.9/baseline-gap.md"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "Inherited release gates remain independently binding.",
+      "host_delivery": "MET",
+      "acceptance": "HOST_AUDIT_COMPLETE"
     },
     "W1": {
       "status": "PARTIAL",
       "implementation": [
         "tools/workload_fingerprint.py"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "Physical capture authenticity is not established by a declared provenance label or file hash.",
+      "host_delivery": "MET",
+      "acceptance": "HOST_CONTRACT_COMPLETE"
     },
     "W2": {
       "status": "PARTIAL",
       "implementation": [
         "tools/estimate_gpu_cost.py"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "No explicit attachment lifecycle event-sequence or driver-condition model; pass count remains a supplied assumption. Real comparable device-counter calibration and DRAM conversion are not measured. Device calibration is optional in the plan, not a fabricated requirement.",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE"
     },
     "W3": {
       "status": "PARTIAL",
@@ -37,7 +43,9 @@
         "benchmarks/particle_controls/run.py",
         "benchmarks/shader_ab/rebind.py"
       ],
-      "remaining": "Expanded dual-software-driver correctness controls pass; actual GPU A/B performance, broader scene/material/format distributions and original inherited gates remain incomplete. See validation-report.md."
+      "remaining": "Initial sixteen pairs do not each have a dedicated executable wrong-candidate arm. Unified old Shader Variant/Trace capture adapter and broader input/material distributions remain incomplete. Interleaved GPU timing, thermal/frequency/trace evidence and actual negative performance outcomes remain unmeasured.",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE"
     },
     "W4": {
       "status": "PARTIAL",
@@ -46,14 +54,18 @@
         "benchmarks/overlap_scenes/projected.py",
         "benchmarks/overlap_scenes/advanced.py"
       ],
-      "remaining": "Expanded dual-software-driver correctness controls pass; actual GPU A/B performance, broader scene/material/format distributions and original inherited gates remain incomplete. See validation-report.md."
+      "remaining": "Separate rain/volume cases, background-Gaussian merge, transparency grouping and distant-resolution optimization are missing. Unified tile color/alpha/depth/background/perceptual-error statistics and explicit scale tiers remain incomplete. Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition.",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE"
     },
     "W5": {
       "status": "PARTIAL",
       "implementation": [
         "tools/rendergraph_optimizer.py"
       ],
-      "remaining": "PostFX suggestions and finite runnable quality oracle implemented; arbitrary renderer semantic equivalence, actual scaled PostFX and real-device benefit remain unverified."
+      "remaining": "Actual candidate graph rescaling/replay and machine-verifiable synchronization/lifetime evidence are not implemented; caller assertions are explicitly not proof. Device gains cannot be claimed from advisory candidates.",
+      "host_delivery": "MET_BOUNDED",
+      "acceptance": "ADVISOR_DELIVERED_NOT_SEMANTIC_PROOF"
     },
     "W6": {
       "status": "PARTIAL",
@@ -62,7 +74,9 @@
         "benchmarks/texture_access/mechanisms.py",
         "benchmarks/texture_access/ktx2_experiment.py"
       ],
-      "remaining": "Expanded dual-software-driver correctness controls pass; actual GPU A/B performance, broader scene/material/format distributions and original inherited gates remain incomplete. See validation-report.md."
+      "remaining": "Compressed/asynchronous progressive-mip streaming, representative oblique anisotropy/locality distributions and isolated transcoder phase accounting remain incomplete. Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics.",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE"
     },
     "W7": {
       "status": "PARTIAL",
@@ -70,21 +84,27 @@
         "tools/optimization_advisor.py",
         "benchmarks/rollback_controls/run.py"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "Trusted physical capture/reviewer authentication remains external. Isolated finite rollback is not application-wide or context-loss recovery.",
+      "host_delivery": "MET",
+      "acceptance": "HOST_DECISION_CONTRACT_COMPLETE"
     },
     "W8": {
       "status": "BLOCKED_BY_HARDWARE",
       "implementation": [
         "benchmarks/device_portability/protocol.py"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "Protocol is not a fully wired same-scene device collector or validated vendor-strategy implementation. At least one physical device A/B is absent; Mali/Adreno/PowerVR comparisons and temperature/frequency traces are NOT_RUN.",
+      "host_delivery": "MET_PROTOCOL",
+      "acceptance": "BLOCKED_BY_HARDWARE"
     },
     "W9": {
       "status": "BLOCKED_BY_PROVIDER",
       "implementation": [
         "benchmarks/agent/V109_CASES.md"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "Independent corpus-content review remains incomplete. No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence.",
+      "host_delivery": "MET_INFRASTRUCTURE",
+      "acceptance": "BLOCKED_BY_PROVIDER"
     },
     "W10": {
       "status": "PARTIAL",
@@ -94,7 +114,10 @@
         "docs/v1.0.9/research/implementation-review.json",
         "tools/run_v109_regression.py"
       ],
-      "remaining": "Ten selected source-content inspections are AI analysis, not full 1319-candidate or vendor/X review; no independent human acceptance or upstream-fix performance proof."
+      "remaining": "Only ten selected full-content records inspected from 1319 metadata candidates; remaining coverage conclusions and vendor/X checks are incomplete. Weekly/monthly execution schedule is not established by a read-only radar script. Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding.",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE"
     }
-  }
+  },
+  "completion_matrix": "docs/v1.0.9/completion-matrix.json"
 }

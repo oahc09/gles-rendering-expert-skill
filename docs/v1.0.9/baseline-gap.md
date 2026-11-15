@@ -21,3 +21,20 @@ results are recorded separately rather than rewriting historical evidence.
 Inherited gate snapshots and hashes are in inherited-gates.json. Physical Android,
 GPU timing/bandwidth/HDR/fault/lifecycle and authenticated provider acceptance remain
 separate, blocked gates. Legacy metadata remains 1.0.2 by original release contract.
+
+## Current audit closure (2026-11-15; separate from the initial snapshot)
+
+The table above intentionally preserves the initial `EXISTS_UNVERIFIED` state.
+The eight reused host infrastructures have since executed through the full test
+manifest and hosted workflow. See `test-manifest.json`, `evidence/unit-tests-fifth.json`
+(811 tests, zero skips) and exact-head CI run 43671500617 at commit
+87f6756d3541b5dc4e9aa4e0913ba935a4f65722. This establishes host infrastructure execution,
+not device/model acceptance, and is not claimed as CI for later commits.
+
+Read-only tag audit (`git ls-remote --tags origin`) returned only tag `1.0.0` at
+02942f16a86bf04077ca116c8c77aa85a5251a0f; no v1.0.9 tag was created.
+The merged v1.0.8 PR source head af9d818078d057801d6914daf0f1fcab8aff637d
+has successful run 43610518989. A direct Actions query for the baseline merge head
+427225b3a4cbb498e9112c79ec7857e22421d9dd returned no workflow runs; the source-head
+result is not falsely relabeled as merge-head validation. Current branch tests
+exercise the inherited code and unchanged gate hashes separately.

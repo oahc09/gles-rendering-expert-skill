@@ -6,6 +6,7 @@ import json
 import statistics
 from pathlib import Path
 from workload_fingerprint import number, fingerprint
+from optimization_experiments import resolve
 
 
 def verify_artifacts(artifacts, root, measurement):
@@ -87,7 +88,7 @@ def decide(candidate, root):
 
 
 def advise(data, root=Path('.')):
-    fp=fingerprint(data['workload']); reports=[]
+    fp=fingerprint(data['workload'],root); reports=[]
     for candidate in data.get('candidates',[]):
         score=[]
         for k in ('estimated_gain','implementation_cost','regression_risk','confidence'):
@@ -95,12 +96,37 @@ def advise(data, root=Path('.')):
             if value>1:raise ValueError(k+' must be within [0,1]')
             score.append(value)
         if candidate.get('workload_id') not in (None,fp['workload_id']): raise ValueError('candidate workload mismatch')
+        gain_range=candidate.get('estimated_gain_range')
+        if gain_range is not None:
+            if not isinstance(gain_range,list) or len(gain_range)!=2:
+                raise ValueError('estimated_gain_range must be [lower,upper]')
+            lower,upper=[number(x,'estimated_gain_range') for x in gain_range]
+            if not lower<=upper<=1:raise ValueError('estimated_gain_range must be ordered within [0,1]')
+        else:
+            # Backward-compatible point input does not invent a confidence interval.
+            lower=upper=score[0]
+        binding=resolve(candidate.get('experiment'))
         report=decide(candidate,root)
+        report['experiment_binding']=binding
+        if binding is None and report['status']!='REJECTED_BY_QUALITY':
+            report['status']='INSUFFICIENT_EVIDENCE'
+            report['reasons'].append('unknown/unavailable experiment; register a bounded runnable entry first')
         relevant=bool(set(candidate.get('labels',[])) & set(fp['labels']) - {'UNKNOWN'})
         if report['status']=='RECOMMENDED_FOR_EXPERIMENT' and not relevant:
             report['status']='INSUFFICIENT_EVIDENCE';report['reasons'].append('no supporting workload hypothesis')
-        report['priority_score']=round(score[0]*score[3]*(1-score[2])/(1+score[1]),6)
-        report['ranking_basis']={'hypothesis_only':True,'estimated_gain':score[0],'confidence':score[3],'risk':score[2],'cost':score[1]}
+        # Structural completeness, not authenticity or a substitute for measurement gates.
+        completeness_items={'runnable_experiment':binding is not None,
+            'supported_workload':relevant,'capability':candidate.get('capability_supported') is True,
+            'fallback':isinstance(candidate.get('fallback'),str) and bool(candidate['fallback'].strip()),
+            'quality_contract':bool(candidate.get('quality',{}).get('golden_id')) and bool(candidate.get('quality',{}).get('thresholds'))}
+        completeness=sum(completeness_items.values())/len(completeness_items)
+        report['priority_score']=round(lower*score[3]*(1-score[2])*completeness/(1+score[1]),6) if binding else 0
+        report['ranking_basis']={'hypothesis_only':True,'estimated_gain_range':[lower,upper],
+            'range_kind':'SUPPLIED_HYPOTHESIS' if gain_range is not None else 'LEGACY_POINT_NOT_INTERVAL',
+            'confidence':score[3],'risk':score[2],'cost':score[1],
+            'evidence_completeness':completeness,'completeness_checks':completeness_items,
+            'formula':'lower_gain * confidence * (1-risk) * structural_completeness / (1+cost)',
+            'acceptance_effect':'NONE'}
         reports.append(report)
     reports.sort(key=lambda x:(-x['priority_score'],str(x['id'])))
     return {'schema_version':'1.0','workload':fp,'candidates':reports,'automatic_renderer_mutation':False}

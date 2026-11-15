@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "plan": "docs/v1.0.9/development-plan.md",
+  "release_ready": false,
+  "assessment_rule": "MET is the declared host deliverable only; no percentage, device or release completion inferred.",
+  "rows": [
+    {
+      "id": "W0",
+      "host_delivery": "MET",
+      "acceptance": "HOST_AUDIT_COMPLETE",
+      "evidence": [
+        "docs/v1.0.9/baseline-gap.md",
+        "docs/v1.0.9/inherited-gates.json"
+      ],
+      "remaining_host": [],
+      "external_requirements": [
+        "Inherited release gates remain independently binding."
+      ]
+    },
+    {
+      "id": "W1",
+      "host_delivery": "MET",
+      "acceptance": "HOST_CONTRACT_COMPLETE",
+      "evidence": [
+        "tools/workload_fingerprint.py",
+        "benchmarks/workloads/schema.json",
+        "benchmarks/workloads/test_binding_contracts.py"
+      ],
+      "remaining_host": [],
+      "external_requirements": [
+        "Physical capture authenticity is not established by a declared provenance label or file hash."
+      ]
+    },
+    {
+      "id": "W2",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE",
+      "evidence": [
+        "tools/estimate_gpu_cost.py",
+        "benchmarks/gpu_cost/cases.json"
+      ],
+      "remaining_host": [
+        "No explicit attachment lifecycle event-sequence or driver-condition model; pass count remains a supplied assumption."
+      ],
+      "external_requirements": [
+        "Real comparable device-counter calibration and DRAM conversion are not measured. Device calibration is optional in the plan, not a fabricated requirement."
+      ]
+    },
+    {
+      "id": "W3",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE",
+      "evidence": [
+        "benchmarks/shader_ab/run.py",
+        "benchmarks/shader_ab/optimization_pairs.py",
+        "benchmarks/shader_ab/advanced.py"
+      ],
+      "remaining_host": [
+        "Initial sixteen pairs do not each have a dedicated executable wrong-candidate arm.",
+        "Unified old Shader Variant/Trace capture adapter and broader input/material distributions remain incomplete."
+      ],
+      "external_requirements": [
+        "Interleaved GPU timing, thermal/frequency/trace evidence and actual negative performance outcomes remain unmeasured."
+      ]
+    },
+    {
+      "id": "W4",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE",
+      "evidence": [
+        "benchmarks/overlap_scenes/projected.py",
+        "benchmarks/overlap_scenes/advanced.py"
+      ],
+      "remaining_host": [
+        "Separate rain/volume cases, background-Gaussian merge, transparency grouping and distant-resolution optimization are missing.",
+        "Unified tile color/alpha/depth/background/perceptual-error statistics and explicit scale tiers remain incomplete."
+      ],
+      "external_requirements": [
+        "Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition."
+      ]
+    },
+    {
+      "id": "W5",
+      "host_delivery": "MET_BOUNDED",
+      "acceptance": "ADVISOR_DELIVERED_NOT_SEMANTIC_PROOF",
+      "evidence": [
+        "tools/rendergraph_optimizer.py",
+        "tools/test_rendergraph_optimizer.py",
+        "benchmarks/pipeline/postfx_quality.py"
+      ],
+      "remaining_host": [
+        "Actual candidate graph rescaling/replay and machine-verifiable synchronization/lifetime evidence are not implemented; caller assertions are explicitly not proof."
+      ],
+      "external_requirements": [
+        "Device gains cannot be claimed from advisory candidates."
+      ]
+    },
+    {
+      "id": "W6",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE",
+      "evidence": [
+        "benchmarks/texture_access/mechanisms.py",
+        "benchmarks/texture_access/ktx2_experiment.py",
+        "benchmarks/texture_streaming/run.py"
+      ],
+      "remaining_host": [
+        "Compressed/asynchronous progressive-mip streaming, representative oblique anisotropy/locality distributions and isolated transcoder phase accounting remain incomplete."
+      ],
+      "external_requirements": [
+        "Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics."
+      ]
+    },
+    {
+      "id": "W7",
+      "host_delivery": "MET",
+      "acceptance": "HOST_DECISION_CONTRACT_COMPLETE",
+      "evidence": [
+        "tools/optimization_advisor.py",
+        "tools/optimization_experiments.py",
+        "benchmarks/rollback_controls/run.py"
+      ],
+      "remaining_host": [],
+      "external_requirements": [
+        "Trusted physical capture/reviewer authentication remains external. Isolated finite rollback is not application-wide or context-loss recovery."
+      ]
+    },
+    {
+      "id": "W8",
+      "host_delivery": "MET_PROTOCOL",
+      "acceptance": "BLOCKED_BY_HARDWARE",
+      "evidence": [
+        "benchmarks/device_portability/protocol.py",
+        "benchmarks/device_portability/matrix.json"
+      ],
+      "remaining_host": [
+        "Protocol is not a fully wired same-scene device collector or validated vendor-strategy implementation."
+      ],
+      "external_requirements": [
+        "At least one physical device A/B is absent; Mali/Adreno/PowerVR comparisons and temperature/frequency traces are NOT_RUN."
+      ]
+    },
+    {
+      "id": "W9",
+      "host_delivery": "MET_INFRASTRUCTURE",
+      "acceptance": "BLOCKED_BY_PROVIDER",
+      "evidence": [
+        "benchmarks/agent/cases-v1.0.9.json",
+        "benchmarks/agent/score_v109.py",
+        "docs/v1.0.9/evidence/provider-score-blocked.json"
+      ],
+      "remaining_host": [
+        "Independent corpus-content review remains incomplete."
+      ],
+      "external_requirements": [
+        "No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence."
+      ]
+    },
+    {
+      "id": "W10",
+      "host_delivery": "PARTIAL",
+      "acceptance": "PARTIAL_HOST_SCOPE",
+      "evidence": [
+        "docs/v1.0.9/research/rolling/2026-11-15/receipt.json",
+        "docs/v1.0.9/research/implementation-review.json",
+        ".github/workflows/validation.yml"
+      ],
+      "remaining_host": [
+        "Only ten selected full-content records inspected from 1319 metadata candidates; remaining coverage conclusions and vendor/X checks are incomplete.",
+        "Weekly/monthly execution schedule is not established by a read-only radar script."
+      ],
+      "external_requirements": [
+        "Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding."
+      ]
+    }
+  ]
+}

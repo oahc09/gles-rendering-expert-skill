@@ -14,4 +14,17 @@ The config is a single `{"kind":"mesa","egl":"/path/to/libEGL.so.1","gles":"/pat
 
 The same runtime executes four overlap proxy scenes. `evidence/mesa.json` records local software execution, not timing or a physical device benchmark. 22 structural/negative unit tests are independent of the actual execution report. Test fixtures are never provider/model scores.
 
-**Incomplete W3:** UBO/SSBO access comparisons, texture format changes, discard/depth and compute/draw fusion are not yet implemented here. Precision testing covers exact binary pixel-centre inputs, not the high dynamic range distribution. No GPU speedup is claimed. Do not mark W3 complete merely because sixteen authored pairs exist. Hardware performance, temperature, counters, cross-driver reruns and dynamic scene image validation remain NOT_RUN.
+## Current coverage and remaining scope
+
+The paragraph formerly stating UBO/SSBO, formats, discard/depth and dual-driver
+execution were absent described the first increment only. `advanced.py`, packing,
+rebind, texture_access, particle_controls and hdr_controls now provide actual
+software execution of those mechanisms on Mesa and ANGLE.
+
+See `docs/v1.0.9/completion-matrix.md` for the current original-plan assessment.
+Mechanism correctness is not automatically an optimization A/B: compute→draw
+production/consumption alone is not fusion, and coordinate rewriting alone is not
+sample coalescing. Finite pairs do not prove general shader equivalence. Broader
+material/precision distributions, per-pair executable counterexamples and unified
+legacy Variant/Trace experiment adaptation remain incomplete. No GPU speedup,
+physical timing/counters or temperature validation is claimed.

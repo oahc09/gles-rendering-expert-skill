@@ -19,3 +19,16 @@ With no adapter this deliberately exits 2, records `BLOCKED_BY_PROVIDER`, and ne
 - Mobile physical GPU performance/power/thermal evidence: `BLOCKED_BY_HARDWARE`.
 - The corpus requires independent content review before release.
 - Preserved inherited score semantics; the new scorer does not change old corpus files or scoring code.
+
+## v1.0.9 scoring CLI
+
+Use the v1.0.9 entrypoint, not the older scorer CLI, to obtain all seven new metrics:
+
+```sh
+python3 benchmarks/agent/score_v109.py --run RUN_DIRECTORY --cases benchmarks/agent/cases-v1.0.9.json --adjudications REVIEW_JSON --evidence-root EVIDENCE_DIRECTORY --output SCORE_JSON
+```
+
+This validates captured corpus/response hashes and old/new execution evidence paths
+before scoring. The no-provider empty run returns exit 2, `BLOCKED_BY_PROVIDER`,
+zero reviewed pairs and null rates, never invented model-quality scores. Raw review
+identities still require trusted independent authentication outside this CLI.

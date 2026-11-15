@@ -28,6 +28,7 @@
     "benchmarks/system_scenes",
     "benchmarks/texture_access",
     "benchmarks/texture_pipeline",
+    "benchmarks/texture_streaming",
     "benchmarks/traces",
     "benchmarks/traces/sql",
     "benchmarks/visual_quality",

@@ -148,6 +148,8 @@ jobs:
       - name: v1.0.9 covariance refraction and actual KTX transcode controls
         run: |
           for driver in mesa angle; do
+            python3 benchmarks/shader_ab/optimization_pairs.py --config /tmp/v109-$driver.json --output reports/v109-optimization-pairs-$driver.json
+            python3 benchmarks/texture_streaming/run.py --config /tmp/v109-$driver.json --output reports/v109-streaming-$driver.json
             python3 benchmarks/shader_ab/rebind.py --config /tmp/v109-$driver.json --output reports/v109-rebind-$driver.json
             python3 benchmarks/particle_controls/run.py --config /tmp/v109-$driver.json --output reports/v109-particles-$driver.json
             python3 benchmarks/rollback_controls/run.py --config /tmp/v109-$driver.json --output reports/v109-rollback-$driver.json

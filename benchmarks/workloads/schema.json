@@ -802,14 +802,70 @@
     "sampling_formats": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       }
     },
     "thermal_state": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "trace_available": {
       "type": "boolean"
+    },
+    "frame_source": {
+      "type": "object",
+      "required": [
+        "tool",
+        "clock_domain",
+        "raw_trace",
+        "sha256",
+        "sample_count"
+      ],
+      "properties": {
+        "tool": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clock_domain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_trace": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sample_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "provenance": {
+            "const": "real-export"
+          },
+          "frame_times_ms": {
+            "minItems": 1
+          }
+        },
+        "required": [
+          "frame_times_ms"
+        ]
+      },
+      "then": {
+        "required": [
+          "frame_source"
+        ]
+      }
+    }
+  ]
 }
