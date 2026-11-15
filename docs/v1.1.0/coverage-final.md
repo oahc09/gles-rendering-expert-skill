@@ -14,3 +14,5 @@ Read the acceptance matrix before describing completeness. Public evidence omits
 Offline distribution is PARTIAL: four packed artifacts restore exactly; gl.xml is an explicit non-vendored public dependency. A prior supplied-source successful check is not proof that clean offline checkout is complete.
 
 Bounded extension increment: multiview two-layer draw/fallback and robust readback/canary boundaries pass on both software backends. ANGLE ordered framebuffer fetch passes. Mesa fetch draw crashes remain FAIL; separate-attachment ping-pong passes. Advertisement is not route acceptance, and archived-failure contract tests are not feature-pass results.
+
+Bounded follow-up: explicit highp four-tap SDF sampling meets the unchanged 3-byte gate on both software backends (all four size/kind outputs exact); highp hardware sampling alone does not fix Mesa SDF32. This is a costed alternative, not a waived original failure or a driver-conformance diagnosis. Sorted transparency is now gated by a finite per-sample strict-order proof; crossing/tied layers are rejected, not silently called exact OIT. General geometry/contours and physical performance remain unverified.

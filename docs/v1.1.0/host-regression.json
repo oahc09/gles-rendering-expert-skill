@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "total_tests": 1307,
+  "total_tests": 1323,
   "total_skipped": 0,
   "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
   "rows": [
@@ -406,14 +406,14 @@
     },
     {
       "directory": "benchmarks/coverage/distance-text",
-      "tests": 8,
+      "tests": 14,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"
     },
     {
       "directory": "benchmarks/coverage/weighted-oit",
-      "tests": 7,
+      "tests": 17,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"

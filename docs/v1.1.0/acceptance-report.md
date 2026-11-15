@@ -21,3 +21,5 @@
 No fixed quality budget was lowered, original failed images retained, no physical/provider score invented. A metadata index or parsed configuration is not a measured execution.
 
 Distribution gap: clean offline checkout is INCOMPLETE because public gl.xml is intentionally not vendored after the large-object upload was rejected. Explicit pinned/hash-verified fetch is required; this gap is not waived.
+
+Bounded follow-up: explicit highp four-tap SDF sampling meets the unchanged 3-byte gate on both software backends (all four size/kind outputs exact); highp hardware sampling alone does not fix Mesa SDF32. This is a costed alternative, not a waived original failure or a driver-conformance diagnosis. Sorted transparency is now gated by a finite per-sample strict-order proof; crossing/tied layers are rejected, not silently called exact OIT. General geometry/contours and physical performance remain unverified.

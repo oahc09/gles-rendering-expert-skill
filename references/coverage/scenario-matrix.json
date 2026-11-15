@@ -6,7 +6,7 @@
       "knowledge_route": "references/cards/29-text-rendering-sdf.md",
       "implementation": "benchmarks/coverage/distance-text/run.py",
       "status": "SOFTWARE_RUNTIME_WITH_FALLBACK",
-      "scope": "Authored rectangle SDF/MSDF decoder at two sizes; Mesa SDF32 exceeds fixed budget and uses actually sampled alpha fallback. Not full glyph generation/layout.",
+      "scope": "Authored rectangle SDF/MSDF decoder at two sizes; Mesa SDF32 exceeds fixed budget and uses actually sampled alpha fallback. Not full glyph generation/layout. Independent precision_probe demonstrates explicit highp four-tap exact finite outputs; hardware highp alone remains insufficient. Four-fetch budget must be allowed before selection.",
       "es30_fallback": "Independently generated per-size alpha mask uploaded and sampled with nearest; extra storage cost, no free scaling claim.",
       "device": "BLOCKED_BY_HARDWARE",
       "performance": null
@@ -56,7 +56,7 @@
       "knowledge_route": "references/cards/README.md",
       "implementation": "benchmarks/coverage/weighted-oit/run.py",
       "status": "SOFTWARE_RUNTIME_WITH_REJECTED_CANDIDATE",
-      "scope": "Weighted two-pass accum/reveal + resolve matches half-float CPU oracle, but both scenes exceed sorted-alpha quality budget; approximation rejected, sorted baseline selected.",
+      "scope": "Weighted two-pass accum/reveal + resolve matches half-float CPU oracle, but both scenes exceed sorted-alpha quality budget; approximation rejected, sorted baseline selected. exact_replay gates sorted baseline on finite strict global order; crossing/tie inputs remain unavailable.",
       "es30_fallback": "Actual sorted alpha baseline for the measured scenes; lack of float format support remains explicit UNSUPPORTED, not a forged tested fallback.",
       "device": "BLOCKED_BY_HARDWARE",
       "performance": null
