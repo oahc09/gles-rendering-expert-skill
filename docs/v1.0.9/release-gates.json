@@ -29,16 +29,18 @@
     "W3": {
       "status": "PARTIAL",
       "implementation": [
-        "benchmarks/shader_ab/run.py"
+        "benchmarks/shader_ab/run.py",
+        "benchmarks/shader_ab/advanced.py"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "Expanded dual-software-driver correctness controls pass; actual GPU A/B performance, broader scene/material/format distributions and original inherited gates remain incomplete. See validation-report.md."
     },
     "W4": {
       "status": "PARTIAL",
       "implementation": [
-        "benchmarks/overlap_scenes/README.md"
+        "benchmarks/overlap_scenes/README.md",
+        "benchmarks/overlap_scenes/projected.py"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "Expanded dual-software-driver correctness controls pass; actual GPU A/B performance, broader scene/material/format distributions and original inherited gates remain incomplete. See validation-report.md."
     },
     "W5": {
       "status": "PARTIAL",
@@ -50,9 +52,10 @@
     "W6": {
       "status": "PARTIAL",
       "implementation": [
-        "benchmarks/texture_access/run.py"
+        "benchmarks/texture_access/run.py",
+        "benchmarks/texture_access/mechanisms.py"
       ],
-      "remaining": "Complete original-plan scope, final-head CI, independent review and inherited release gates; no physical/provider evidence substituted."
+      "remaining": "Expanded dual-software-driver correctness controls pass; actual GPU A/B performance, broader scene/material/format distributions and original inherited gates remain incomplete. See validation-report.md."
     },
     "W7": {
       "status": "PARTIAL",

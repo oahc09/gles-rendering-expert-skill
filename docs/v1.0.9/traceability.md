@@ -17,3 +17,10 @@
 No source release is evidence of a GLES optimization benefit. No synthetic label,
 software timer, pair agreement or raw-file hash authenticates physical GPU data.
 All performance claims require independently reviewed real capture provenance.
+
+Second increment: W3 `benchmarks/shader_ab/advanced.py` (dual-driver CPU-golden
+UBO/SSBO/compute/depth/discard); W4 `benchmarks/overlap_scenes/projected.py`
+(64×64, 4 scenes, 3 camera views, 3 arms, pixel/heatmap ZIPs); W6
+`benchmarks/texture_access/mechanisms.py` (14 actual texture mechanism controls).
+`tools/check_v109_evidence.py` guards public evidence. These supersede the initial
+4×4-only scope descriptions above, not the real hardware/provider release gates.

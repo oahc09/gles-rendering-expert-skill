@@ -126,6 +126,17 @@ jobs:
           echo '{"kind":"mesa","egl":"/usr/lib/x86_64-linux-gnu/libEGL.so.1","gles":"/usr/lib/x86_64-linux-gnu/libGLESv2.so.2"}' > /tmp/v109-mesa.json
           python3 benchmarks/shader_ab/run.py --config /tmp/v109-mesa.json --output reports/v109-shader-ab.json
           python3 benchmarks/texture_access/run.py --config /tmp/v109-mesa.json --output reports/v109-textures.json
+      - name: v1.0.9 expanded actual dual-driver controls
+        run: |
+          python3 -m unittest discover -s benchmarks/overlap_scenes -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/texture_access -p 'test_*.py' -v
+          python3 tools/check_v109_evidence.py
+          echo '{"kind":"angle","egl":"/tmp/gles-angle/libEGL.so","gles":"/tmp/gles-angle/libGLESv2.so","icd":"/tmp/gles-angle/vk_swiftshader_icd.json"}' > /tmp/v109-angle.json
+          for driver in mesa angle; do
+            python3 benchmarks/shader_ab/advanced.py --config /tmp/v109-$driver.json --output reports/v109-advanced-$driver.json
+            python3 benchmarks/overlap_scenes/projected.py --config /tmp/v109-$driver.json --output reports/v109-projected-$driver.json
+            python3 benchmarks/texture_access/mechanisms.py --config /tmp/v109-$driver.json --output reports/v109-texture-mechanisms-$driver.json
+          done
       - name: Preserve v108 results and failure evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
