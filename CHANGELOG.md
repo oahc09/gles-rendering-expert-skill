@@ -349,3 +349,10 @@ original-plan experiments remain incomplete; metadata stays unchanged.
 - v1.0.9 candidate: quantified retained nearest-sampling failures and added real
   bilinear far reconstruction. ANGLE passes the finite original camera set; Mesa
   remains rejected by unchanged silhouette budget and retains baseline.
+
+- v1.0.9 candidate: actual far-stage readback localization and held-out 48x48
+  reconstruction test. Original views alone do not establish camera generalization;
+  both backends retain baseline on held-out quality failure.
+
+- v1.0.9 candidate: capability/budget-gated half-float far intermediate tested
+  against original UNORM targets; center improves but held-out views still reject.

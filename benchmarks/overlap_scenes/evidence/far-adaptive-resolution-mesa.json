@@ -1,0 +1,776 @@
+{
+  "status": "FAIL",
+  "contract_status": "PASS",
+  "global_policy": {
+    "selected": "baseline",
+    "status": "ACCEPTED_FOR_TESTED_CAMERAS"
+  },
+  "scope": "actual separate far RGBA8 FBO -> four-fetch bilinear texelFetch copy -> full-resolution foreground source-over; four-fetch bilinear reconstruction; finite Gaussian/UI proxies",
+  "performance_status": "NOT_MEASURED",
+  "readbacks": 21,
+  "camera_protocol": {
+    "original": [
+      -0.3,
+      0,
+      0.3
+    ],
+    "holdout": [
+      -0.45,
+      -0.15,
+      0.15,
+      0.45
+    ],
+    "selection": "One strategy must satisfy the union; never select on original cameras alone"
+  },
+  "thresholds": {
+    "max_rgba8_error": 4,
+    "silhouette_disagree_pixels": 2,
+    "centroid_error_pixels": 0.1,
+    "parallax_error_pixels": 0.1
+  },
+  "logical_work_comparison": {
+    "baseline": {
+      "far_target_pixels": 4096,
+      "far_layer_pixel_upper_bound": 16384,
+      "foreground_target_pixels": 4096,
+      "foreground_layer_pixel_upper_bound": 12288,
+      "copy_output_pixels": 4096,
+      "far_attachment_bytes": 16384,
+      "final_attachment_bytes": 16384,
+      "combined_attachment_bytes": 32768,
+      "draw_calls": 8,
+      "copy_texel_fetch_upper_bound": 16384,
+      "copy_logical_read_write_upper_bytes": 81920,
+      "interpretation": "Logical single-sample RGBA8 attachment storage and full-target invocation bounds; copy fetches bilinear far texels, cache/tiling/compression/residency and actual DRAM traffic are unknown"
+    },
+    "far_48_bilinear": {
+      "far_target_pixels": 2304,
+      "far_layer_pixel_upper_bound": 9216,
+      "foreground_target_pixels": 4096,
+      "foreground_layer_pixel_upper_bound": 12288,
+      "copy_output_pixels": 4096,
+      "far_attachment_bytes": 9216,
+      "final_attachment_bytes": 16384,
+      "combined_attachment_bytes": 25600,
+      "draw_calls": 8,
+      "copy_texel_fetch_upper_bound": 16384,
+      "copy_logical_read_write_upper_bytes": 81920,
+      "interpretation": "Logical single-sample RGBA8 attachment storage and full-target invocation bounds; copy fetches bilinear far texels, cache/tiling/compression/residency and actual DRAM traffic are unknown"
+    },
+    "performance_interpretation": "No measured GPU time or bandwidth gain; both baseline and candidate include a 4096-pixel copy pass and eight draws"
+  },
+  "scene": {
+    "far": [
+      {
+        "id": 3,
+        "x": 0.65,
+        "y": 0.45,
+        "z": 5.6,
+        "radius": 1.3,
+        "color": [
+          0.6,
+          0.35,
+          0.7,
+          0.12
+        ],
+        "mode": 0
+      },
+      {
+        "id": 2,
+        "x": -0.65,
+        "y": 0.45,
+        "z": 5.4,
+        "radius": 1.3,
+        "color": [
+          0.44999999999999996,
+          0.35,
+          0.7,
+          0.12
+        ],
+        "mode": 0
+      },
+      {
+        "id": 1,
+        "x": 0.65,
+        "y": -0.45,
+        "z": 5.2,
+        "radius": 1.3,
+        "color": [
+          0.3,
+          0.35,
+          0.7,
+          0.12
+        ],
+        "mode": 0
+      },
+      {
+        "id": 0,
+        "x": -0.65,
+        "y": -0.45,
+        "z": 5.0,
+        "radius": 1.3,
+        "color": [
+          0.15,
+          0.35,
+          0.7,
+          0.12
+        ],
+        "mode": 0
+      }
+    ],
+    "foreground": [
+      {
+        "id": 6,
+        "x": 0.3,
+        "y": -0.1,
+        "z": 1.7,
+        "radius": 0.19,
+        "color": [
+          0.85,
+          0.5,
+          0.15,
+          0.65
+        ],
+        "mode": 3
+      },
+      {
+        "id": 5,
+        "x": 0.0,
+        "y": 0.1,
+        "z": 1.6,
+        "radius": 0.19,
+        "color": [
+          0.85,
+          0.35,
+          0.15,
+          0.65
+        ],
+        "mode": 3
+      },
+      {
+        "id": 4,
+        "x": -0.3,
+        "y": -0.1,
+        "z": 1.5,
+        "radius": 0.19,
+        "color": [
+          0.85,
+          0.2,
+          0.15,
+          0.65
+        ],
+        "mode": 3
+      }
+    ]
+  },
+  "rows": [
+    {
+      "camera": -0.45,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02105712890625,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 39.21226113193746,
+        "cpu_alpha_centroid_x": 39.21755259060239,
+        "centroid_error_pixels": 0.005291458664927973
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02105712890625,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 39.21226113193746,
+        "cpu_alpha_centroid_x": 39.21755259060239,
+        "centroid_error_pixels": 0.005291458664927973
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam-0.45-baseline"
+    },
+    {
+      "camera": -0.45,
+      "variant": "far_48_bilinear",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.03497314453125,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 39.20354117145121,
+        "cpu_alpha_centroid_x": 39.21755259060239,
+        "centroid_error_pixels": 0.014011419151181315
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02227783203125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 39.20354117145121,
+        "cpu_alpha_centroid_x": 39.20736020489054,
+        "centroid_error_pixels": 0.0038190334393348735
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam-0.45-far_48_bilinear"
+    },
+    {
+      "camera": -0.45,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 189,
+        "mean_rgba8_error": 2.3836669921875,
+        "silhouette_disagree_pixels": 12,
+        "alpha_centroid_x": 40.69157137350636,
+        "cpu_alpha_centroid_x": 39.21755259060239,
+        "centroid_error_pixels": 1.4740187829039755
+      },
+      "foreground_roi_max_error": 189,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02545166015625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 40.69157137350636,
+        "cpu_alpha_centroid_x": 40.69401643554186,
+        "centroid_error_pixels": 0.0024450620354983243
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam-0.45-bad_foreground_drop"
+    },
+    {
+      "camera": -0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.0196533203125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 36.63206731511502,
+        "cpu_alpha_centroid_x": 36.6333931277642,
+        "centroid_error_pixels": 0.0013258126491777489
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.0196533203125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 36.63206731511502,
+        "cpu_alpha_centroid_x": 36.6333931277642,
+        "centroid_error_pixels": 0.0013258126491777489
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam-0.3-baseline"
+    },
+    {
+      "camera": -0.3,
+      "variant": "far_48_bilinear",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0333251953125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 36.63301618682812,
+        "cpu_alpha_centroid_x": 36.6333931277642,
+        "centroid_error_pixels": 0.0003769409360785403
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0247802734375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 36.63301618682812,
+        "cpu_alpha_centroid_x": 36.63231748779131,
+        "centroid_error_pixels": 0.0006986990368105239
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam-0.3-far_48_bilinear"
+    },
+    {
+      "camera": -0.3,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 190,
+        "mean_rgba8_error": 2.3502197265625,
+        "silhouette_disagree_pixels": 3,
+        "alpha_centroid_x": 38.6797277050355,
+        "cpu_alpha_centroid_x": 36.6333931277642,
+        "centroid_error_pixels": 2.0463345772713026
+      },
+      "foreground_roi_max_error": 190,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.03009033203125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 38.6797277050355,
+        "cpu_alpha_centroid_x": 38.673853569567484,
+        "centroid_error_pixels": 0.0058741354680194036
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam-0.3-bad_foreground_drop"
+    },
+    {
+      "camera": -0.15,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.01934814453125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 34.01886498285002,
+        "cpu_alpha_centroid_x": 34.020034979231085,
+        "centroid_error_pixels": 0.00116999638106563
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.01934814453125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 34.01886498285002,
+        "cpu_alpha_centroid_x": 34.020034979231085,
+        "centroid_error_pixels": 0.00116999638106563
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam-0.15-baseline"
+    },
+    {
+      "camera": -0.15,
+      "variant": "far_48_bilinear",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0318603515625,
+        "silhouette_disagree_pixels": 4,
+        "alpha_centroid_x": 34.02023679700888,
+        "cpu_alpha_centroid_x": 34.020034979231085,
+        "centroid_error_pixels": 0.00020181777779271215
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0189208984375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 34.02023679700888,
+        "cpu_alpha_centroid_x": 34.02172422391223,
+        "centroid_error_pixels": 0.0014874269033526843
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam-0.15-far_48_bilinear"
+    },
+    {
+      "camera": -0.15,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 191,
+        "mean_rgba8_error": 2.3485107421875,
+        "silhouette_disagree_pixels": 4,
+        "alpha_centroid_x": 36.62885469858744,
+        "cpu_alpha_centroid_x": 34.020034979231085,
+        "centroid_error_pixels": 2.6088197193563545
+      },
+      "foreground_roi_max_error": 191,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02264404296875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 36.62885469858744,
+        "cpu_alpha_centroid_x": 36.62764265358871,
+        "centroid_error_pixels": 0.0012120449987307325
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam-0.15-bad_foreground_drop"
+    },
+    {
+      "camera": 0,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0198974609375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.390265652867736,
+        "cpu_alpha_centroid_x": 31.389992791550444,
+        "centroid_error_pixels": 0.0002728613172919836
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0198974609375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.390265652867736,
+        "cpu_alpha_centroid_x": 31.389992791550444,
+        "centroid_error_pixels": 0.0002728613172919836
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0-baseline"
+    },
+    {
+      "camera": 0,
+      "variant": "far_48_bilinear",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.03057861328125,
+        "silhouette_disagree_pixels": 2,
+        "alpha_centroid_x": 31.386018142008133,
+        "cpu_alpha_centroid_x": 31.389992791550444,
+        "centroid_error_pixels": 0.003974649542310971
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0203857421875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.386018142008133,
+        "cpu_alpha_centroid_x": 31.389372222569943,
+        "centroid_error_pixels": 0.003354080561809525
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0-far_48_bilinear"
+    },
+    {
+      "camera": 0,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 189,
+        "mean_rgba8_error": 2.38360595703125,
+        "silhouette_disagree_pixels": 11,
+        "alpha_centroid_x": 34.603319530242345,
+        "cpu_alpha_centroid_x": 31.389992791550444,
+        "centroid_error_pixels": 3.213326738691901
+      },
+      "foreground_roi_max_error": 189,
+      "mechanism_metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.02423095703125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 34.603319530242345,
+        "cpu_alpha_centroid_x": 34.60699253224711,
+        "centroid_error_pixels": 0.0036730020047670564
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam0-bad_foreground_drop"
+    },
+    {
+      "camera": 0.15,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0220947265625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 28.406147678937543,
+        "cpu_alpha_centroid_x": 28.40202029492014,
+        "centroid_error_pixels": 0.004127384017404978
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0220947265625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 28.406147678937543,
+        "cpu_alpha_centroid_x": 28.40202029492014,
+        "centroid_error_pixels": 0.004127384017404978
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0.15-baseline"
+    },
+    {
+      "camera": 0.15,
+      "variant": "far_48_bilinear",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0341796875,
+        "silhouette_disagree_pixels": 3,
+        "alpha_centroid_x": 28.410984674681107,
+        "cpu_alpha_centroid_x": 28.40202029492014,
+        "centroid_error_pixels": 0.0089643797609682
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0255126953125,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 28.410984674681107,
+        "cpu_alpha_centroid_x": 28.412280701754387,
+        "centroid_error_pixels": 0.0012960270732804702
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0.15-far_48_bilinear"
+    },
+    {
+      "camera": 0.15,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 193,
+        "mean_rgba8_error": 2.5185546875,
+        "silhouette_disagree_pixels": 37,
+        "alpha_centroid_x": 32.63553264604811,
+        "cpu_alpha_centroid_x": 28.40202029492014,
+        "centroid_error_pixels": 4.233512351127974
+      },
+      "foreground_roi_max_error": 193,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02783203125,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 32.63553264604811,
+        "cpu_alpha_centroid_x": 32.63897488820089,
+        "centroid_error_pixels": 0.003442242152779329
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam0.15-bad_foreground_drop"
+    },
+    {
+      "camera": 0.3,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.0224609375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 26.096148765667653,
+        "cpu_alpha_centroid_x": 26.091825933548957,
+        "centroid_error_pixels": 0.004322832118695885
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.0224609375,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 26.096148765667653,
+        "cpu_alpha_centroid_x": 26.091825933548957,
+        "centroid_error_pixels": 0.004322832118695885
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0.3-baseline"
+    },
+    {
+      "camera": 0.3,
+      "variant": "far_48_bilinear",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.03564453125,
+        "silhouette_disagree_pixels": 2,
+        "alpha_centroid_x": 26.105898044733678,
+        "cpu_alpha_centroid_x": 26.091825933548957,
+        "centroid_error_pixels": 0.014072111184720626
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02325439453125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 26.105898044733678,
+        "cpu_alpha_centroid_x": 26.10724135907517,
+        "centroid_error_pixels": 0.0013433143414935955
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0.3-far_48_bilinear"
+    },
+    {
+      "camera": 0.3,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 205,
+        "mean_rgba8_error": 2.580810546875,
+        "silhouette_disagree_pixels": 52,
+        "alpha_centroid_x": 31.006844033159823,
+        "cpu_alpha_centroid_x": 26.091825933548957,
+        "centroid_error_pixels": 4.915018099610865
+      },
+      "foreground_roi_max_error": 205,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.0233154296875,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.006844033159823,
+        "cpu_alpha_centroid_x": 31.011511254019293,
+        "centroid_error_pixels": 0.004667220859470689
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam0.3-bad_foreground_drop"
+    },
+    {
+      "camera": 0.45,
+      "variant": "baseline",
+      "quality": "PASS",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02313232421875,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 23.477229769639692,
+        "cpu_alpha_centroid_x": 23.470803999290066,
+        "centroid_error_pixels": 0.006425770349625992
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02313232421875,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 23.477229769639692,
+        "cpu_alpha_centroid_x": 23.470803999290066,
+        "centroid_error_pixels": 0.006425770349625992
+      },
+      "complete_readback": true,
+      "far_resolution": 64,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0.45-baseline"
+    },
+    {
+      "camera": 0.45,
+      "variant": "far_48_bilinear",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.04052734375,
+        "silhouette_disagree_pixels": 5,
+        "alpha_centroid_x": 23.46406531431777,
+        "cpu_alpha_centroid_x": 23.470803999290066,
+        "centroid_error_pixels": 0.006738684972294351
+      },
+      "foreground_roi_max_error": 1,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02276611328125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 23.46406531431777,
+        "cpu_alpha_centroid_x": 23.47035287169644,
+        "centroid_error_pixels": 0.006287557378669817
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 8,
+      "artifact_prefix": "cam0.45-far_48_bilinear"
+    },
+    {
+      "camera": 0.45,
+      "variant": "bad_foreground_drop",
+      "quality": "FAIL",
+      "metrics": {
+        "max_rgba8_error": 217,
+        "mean_rgba8_error": 2.70416259765625,
+        "silhouette_disagree_pixels": 78,
+        "alpha_centroid_x": 29.226283904722568,
+        "cpu_alpha_centroid_x": 23.470803999290066,
+        "centroid_error_pixels": 5.755479905432502
+      },
+      "foreground_roi_max_error": 217,
+      "mechanism_metrics": {
+        "max_rgba8_error": 2,
+        "mean_rgba8_error": 0.02252197265625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 29.226283904722568,
+        "cpu_alpha_centroid_x": 29.231636863823933,
+        "centroid_error_pixels": 0.005352959101365684
+      },
+      "complete_readback": true,
+      "far_resolution": 48,
+      "foreground_resolution": 64,
+      "draw_calls": 6,
+      "artifact_prefix": "cam0.45-bad_foreground_drop"
+    }
+  ],
+  "parallax": [
+    {
+      "variant": "baseline",
+      "error": 0.011717229014553965,
+      "status": "PASS"
+    },
+    {
+      "variant": "far_48_bilinear",
+      "error": 0.007272734178886964,
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": "54bc6189fd0718be81f66cbe87400806327ecd181b7014537f3aef13b056773d",
+  "artifact_archive": {
+    "file": "far-adaptive-resolution-mesa.zip",
+    "sha256": "9a16ba5602492b85a824ecca3c4b87532fcc8b771b03d0ef44256f6320105973",
+    "instructions": "Extract complete 64x64 bottom-up RGBA8 images beside report"
+  },
+  "shader_source_sha256": {
+    "48": {
+      "vertex": "007f56977986cc29c943e8c64d00a9a0ad5cfe2e8bb03f442284293fc570ca5b",
+      "fragment": "67bc23fba2ba087c41af3b269e7eb2bb0f4bbad31e57dcf2861d68be57b33ee4",
+      "copy": "d5c86fc81fff6b964bff42a0c2dcdc6765aba40c6431ddf8e0d1df398b4ebf18"
+    },
+    "64": {
+      "vertex": "3c00bbc64a8dbe73fb1e6efa6819873fc7a0f1bbdd437297c27ef411acac9078",
+      "fragment": "6918e4c7f555a1147d311c03a6308c9f4beebad473727c1b9945e508e33357d8",
+      "copy": "59e7a93dcbf0e770a5f0120a249f1a3252586733bc2724e77498cefeb65d19ca"
+    }
+  },
+  "cpu_dependency_sha256": "560de958f932669ce53fc5d2938c9dd88fd5da8f1fdd2f3cbcb897845b55d0a8",
+  "selected_camera_artifacts": {
+    "-0.45": "cam-0.45-baseline.rgba",
+    "-0.3": "cam-0.3-baseline.rgba",
+    "-0.15": "cam-0.15-baseline.rgba",
+    "0": "cam0-baseline.rgba",
+    "0.15": "cam0.15-baseline.rgba",
+    "0.3": "cam0.3-baseline.rgba",
+    "0.45": "cam0.45-baseline.rgba"
+  },
+  "copy_vertex_sha256": "d143f86ed2676ff140baeeea1754bec120b548606890805d6e5307e8ad047fbc"
+}

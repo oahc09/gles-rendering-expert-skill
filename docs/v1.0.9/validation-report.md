@@ -380,3 +380,34 @@ passes all three original views (color max3/2/2; silhouette1/2/2). Mesa middle v
 still has3 silhouette disagreements against unchanged budget2, so its global
 strategy retains baseline; all other original budgets and negatives are preserved.
 Extra four-fetch copy costs are explicit logical bounds, not a speedup claim.
+
+## Actual stage localization and held-out resolution experiment
+
+Mesa center extra silhouette pixel(29,24), bottom-up zero-based, is alpha13 versus
+full reference/ANGLE alpha12. Actual intermediate readbacks locate a differing
+low32 tap(15,12): Mesa alpha14, CPU/ANGLE13. Its3/16 weight raises the resolve
+input from12.375 to12.5625; actual resolve becomes13 and foreground leaves it
+unchanged. This is observed stage localization, not proof of a specific blend
+instruction or specification violation. Probe final pixels equal retained outputs.
+
+A physically ordinary48x48 far target with noninteger pixel-center reconstruction
+passes the original three cameras but fails held-out cameras: both drivers have
+silhouette4 at-.15 and5 at+.45; Mesa also3 at+.15. Both globally retain baseline.
+Seven-camera admission preserves4-code/2-silhouette/.1-pixel limits; no alpha bias,
+threshold change or hidden full-resolution rerender. Logical target/storage/copy
+costs remain separate from physical GPU timing and memory traffic.
+
+## Capability-gated half-float far intermediate
+
+32x32 RGBA16F removes the extra original center silhouette mismatch in this
+experiment: Mesa3 becomes2, without changing the original64x64 per-layer UNORM
+golden. However held-out-.15/+.15/+.45 remain3/3/4 on both backends, so the
+seven-view global policy selects valid baseline. Precision alone does not solve
+the sampling/generalization issue. No alpha bias or quality budget change.
+
+Half/float color renderability, actual FBO/compile/blend/GL checks and fixed
+logical verification budgets gate this path. Candidate attachment bytes24576 and
+copy logical read/write upper147456 are recorded; they are not physical DRAM,
+residency or timing. Half intermediate differs from the original format contract;
+its separate CPU mechanism oracle is diagnostic, never a replacement for original
+quality acceptance. No raw-half intermediate equivalence is claimed.
