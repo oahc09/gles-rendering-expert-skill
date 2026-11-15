@@ -41,6 +41,7 @@ checker verifies citation metadata only, not the absent specification text.
 The structural catalog remains INDEXED_ONLY. Separate runtime evidence does not
 promote every related Registry entry to complete semantic acceptance.
 
+- [External image](external-image.md): preserved same-context RGBA8 image import, external sampling and sibling lifetime; native buffers/YUV/protected/cross-context paths remain unverified.
 - [Timer query](timer-query.md): real finite 64-bit EXT lifecycle/disjoint checks; narrower-counter overflow proof, hardware timing and long-running wraparound remain unverified.
 - [Debug output](debug-output.md): real core/KHR callback, filtering, group/label and safe unregister checks; authored messages only, not arbitrary driver diagnostics.
 - [Multiview](multiview.md): two-layer draw and sequential fallback, not all multiview configurations.

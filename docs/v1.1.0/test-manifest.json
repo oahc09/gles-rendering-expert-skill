@@ -64,6 +64,7 @@
     "benchmarks/coverage/depth-peeling",
     "benchmarks/coverage/transparency-routing",
     "benchmarks/coverage/debug-output",
-    "benchmarks/coverage/timer-query"
+    "benchmarks/coverage/timer-query",
+    "benchmarks/coverage/external-image"
   ]
 }

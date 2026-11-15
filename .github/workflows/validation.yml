@@ -222,6 +222,8 @@ jobs:
             python3 benchmarks/coverage/debug-output/run.py --disable-debug --config /tmp/v109-$driver.json --output reports/v110-debug-disabled-$driver.json
             python3 benchmarks/coverage/timer-query/run.py --config /tmp/v109-$driver.json --output reports/v110-timer-query-$driver.json
             python3 benchmarks/coverage/timer-query/run.py --disable-timer --config /tmp/v109-$driver.json --output reports/v110-timer-disabled-$driver.json
+            python3 benchmarks/coverage/external-image/run.py --config /tmp/v109-$driver.json --output reports/v110-external-image-$driver.json
+            python3 benchmarks/coverage/external-image/run.py --disable-external --config /tmp/v109-$driver.json --output reports/v110-external-disabled-$driver.json
           done
           # ANGLE texture-buffer boundary mismatch stays archived FAIL.
           python3 benchmarks/coverage/texture-buffer/run.py --config /tmp/v109-mesa.json --output reports/v110-texture-buffer-mesa.json
