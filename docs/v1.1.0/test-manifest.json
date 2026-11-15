@@ -57,6 +57,9 @@
     "benchmarks/coverage/framebuffer-fetch",
     "benchmarks/coverage/fetch-diagnosis",
     "benchmarks/coverage/pixel-local-storage",
-    "benchmarks/coverage/skinning"
+    "benchmarks/coverage/skinning",
+    "benchmarks/coverage/distance-text",
+    "benchmarks/coverage/weighted-oit",
+    "benchmarks/coverage/texture-buffer"
   ]
 }

@@ -1,0 +1,3 @@
+# Original raw captures remain locally; gzip archives preserve every byte.
+/evidence/mesa.json
+/evidence/angle.json

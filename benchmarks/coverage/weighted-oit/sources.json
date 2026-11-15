@@ -1,0 +1,17 @@
+{
+  "sources": [
+    {
+      "url": "https://jcgt.org/published/0002/02/09/paper.pdf",
+      "retrieved_sha256": "3472477725e1f84e604f0c91e53c03e20b7158a07576aa26f38668189f858c32",
+      "scope_read": "McGuire and Bavoil 2013, Weighted Blended Order-Independent Transparency, Listing3/4 and limitations; weighted color/revealage are approximate",
+      "distribution": "not_vendored"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/EXT/EXT_color_buffer_float.txt",
+      "retrieved_sha256": "a0248913842c02babda2d79c0821accf13bc6ed6b63944630c017dec417aa075",
+      "scope_read": "RGBA16F color-renderable capability; real FBO and blending probe still required",
+      "distribution": "not_vendored"
+    }
+  ],
+  "review": "AI primary-source review; not independent expert acceptance"
+}

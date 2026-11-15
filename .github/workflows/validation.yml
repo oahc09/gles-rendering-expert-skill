@@ -212,7 +212,11 @@ jobs:
             python3 benchmarks/coverage/robust-readback/run.py --config /tmp/v109-$driver.json --output reports/v110-robust-readback-$driver.json
             python3 benchmarks/coverage/pixel-local-storage/run.py --config /tmp/v109-$driver.json --output reports/v110-pls-$driver.json
             python3 benchmarks/coverage/skinning/run.py --config /tmp/v109-$driver.json --output reports/v110-skinning-$driver.json
+            python3 benchmarks/coverage/distance-text/run.py --config /tmp/v109-$driver.json --output reports/v110-distance-text-$driver.json
+            python3 benchmarks/coverage/weighted-oit/run.py --config /tmp/v109-$driver.json --output reports/v110-weighted-oit-$driver.json
           done
+          # ANGLE texture-buffer boundary mismatch stays archived FAIL.
+          python3 benchmarks/coverage/texture-buffer/run.py --config /tmp/v109-mesa.json --output reports/v110-texture-buffer-mesa.json
           # Mesa fetch runtime crashes remain archived FAIL, not a waived runtime pass.
           python3 benchmarks/coverage/framebuffer-fetch/suite.py --config /tmp/v109-angle.json --output reports/v110-fetch-angle.json
           python3 benchmarks/coverage/state-machine/run.py --output reports/v110-state-interactions.json

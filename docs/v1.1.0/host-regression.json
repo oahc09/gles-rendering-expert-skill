@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "total_tests": 1288,
+  "total_tests": 1307,
   "total_skipped": 0,
   "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
   "rows": [
@@ -400,6 +400,27 @@
     {
       "directory": "benchmarks/coverage/skinning",
       "tests": 6,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/distance-text",
+      "tests": 8,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/weighted-oit",
+      "tests": 7,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/texture-buffer",
+      "tests": 4,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"

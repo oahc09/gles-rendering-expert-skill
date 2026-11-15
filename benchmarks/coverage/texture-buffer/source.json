@@ -1,0 +1,7 @@
+{
+  "url": "https://github.com/KhronosGroup/OpenGL-Registry/blob/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/EXT/EXT_texture_buffer.txt",
+  "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+  "sha256": "3be6732d748185b5761836073b9d6d7ac92d4be263b6e72ff36418a6fcf0bbbf",
+  "distribution": "NOT_VENDORED",
+  "license": "Khronos/NVIDIA copyright notices at source; original summary/code only"
+}

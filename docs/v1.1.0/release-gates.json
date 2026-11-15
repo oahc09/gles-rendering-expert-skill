@@ -64,9 +64,11 @@
         "benchmarks/coverage/framebuffer-fetch/evidence/angle.json",
         "benchmarks/coverage/pixel-local-storage/angle.json",
         "benchmarks/coverage/pixel-local-storage/mesa.json",
-        "benchmarks/coverage/fetch-diagnosis/evidence.json"
+        "benchmarks/coverage/fetch-diagnosis/evidence.json",
+        "benchmarks/coverage/texture-buffer/mesa.json",
+        "benchmarks/coverage/texture-buffer/angle.json"
       ],
-      "remaining": "Bounded two-layer multiview+sequential fallback and robust readback/canary boundaries pass on both software backends. ANGLE ordered coherent/noncoherent framebuffer fetch passes; Mesa fetch draw crashes despite advertisement, retained FAIL with working ping-pong fallback. Full multiview/Fetch semantics, PLS/VRS/AHB/native import and protected resources remain incomplete; reset query/readback are not reset recovery or device acceptance. ANGLE-specific PLS clear/store/load scopes and one explicit barrier pass with runtime-matched official ABI; Mesa only verifies fallback, not PLS. Minimal fetch diagnosis excludes several application-specific factors but has no proven root cause or native fix."
+      "remaining": "Bounded two-layer multiview+sequential fallback and robust readback/canary boundaries pass on both software backends. ANGLE ordered coherent/noncoherent framebuffer fetch passes; Mesa fetch draw crashes despite advertisement, retained FAIL with working ping-pong fallback. Full multiview/Fetch semantics, PLS/VRS/AHB/native import and protected resources remain incomplete; reset query/readback are not reset recovery or device acceptance. ANGLE-specific PLS clear/store/load scopes and one explicit barrier pass with runtime-matched official ABI; Mesa only verifies fallback, not PLS. Minimal fetch diagnosis excludes several application-specific factors but has no proven root cause or native fix. EXT texture-buffer range/update/readback and 2D fallback pass, but ANGLE buffer-zero ignored-offset boundary returns unexpected INVALID_VALUE; full EXT report remains FAIL and selects 2D."
     },
     "W5": {
       "status": "HOST_BOUNDED",
@@ -91,9 +93,12 @@
         "references/coverage/scenario-matrix.json",
         "references/coverage/scenario-matrix.md",
         "benchmarks/coverage/skinning/evidence/mesa.json",
-        "benchmarks/coverage/skinning/evidence/angle.json"
+        "benchmarks/coverage/skinning/evidence/angle.json",
+        "benchmarks/coverage/distance-text/evidence/manifest.json",
+        "benchmarks/coverage/weighted-oit/mesa.json",
+        "benchmarks/coverage/weighted-oit/angle.json"
       ],
-      "remaining": "15 categories indexed. Two-pose translation-only GPU skinning/CPU fallback and two-layer multiview now executed; SDF/MSDF and full OIT representatives remain absent, other finite scenarios retain original bounds. Video/target devices blocked; normals/DQ/rotation/asset rigs and performance not established."
+      "remaining": "15 categories indexed with finite representatives or explicit device dependency. SDF/MSDF rectangle decoder and weighted OIT now actually run; Mesa SDF32 budget failure selects alpha fallback, both OIT scenes fail sorted-alpha quality budget and retain sorted baseline. These do not establish general glyphs/full OIT quality, normals/DQ/rigs, physical devices or performance."
     },
     "W8": {
       "status": "HOST_INDEX_AND_LINK_CONTRACT",
