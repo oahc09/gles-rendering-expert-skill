@@ -1,0 +1,11 @@
+test_case_oracles (test_state_machine.StateMachine.test_case_oracles) ... ok
+test_fault_is_not_real_reset (test_state_machine.StateMachine.test_fault_is_not_real_reset) ... ok
+test_faults_reduced_replayed_and_fixed (test_state_machine.StateMachine.test_faults_reduced_replayed_and_fixed) ... ok
+test_replay_budget (test_state_machine.StateMachine.test_replay_budget) ... ok
+test_reset_invalidation (test_state_machine.StateMachine.test_reset_invalidation) ... ok
+test_unknown_operation_rejected (test_state_machine.StateMachine.test_unknown_operation_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK

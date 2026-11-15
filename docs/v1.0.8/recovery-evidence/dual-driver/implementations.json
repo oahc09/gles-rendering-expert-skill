@@ -1,0 +1,13 @@
+[
+  {
+    "kind": "mesa",
+    "egl": "libEGL.so.1",
+    "gles": "/workspace/scratch/62d43a81bbde/browser-runtime/local-deps/usr/lib/x86_64-linux-gnu/libGLESv2.so.2"
+  },
+  {
+    "kind": "angle",
+    "egl": "/tmp/gles108-toolchain/angle-locked/libEGL.so",
+    "gles": "/tmp/gles108-toolchain/angle-locked/libGLESv2.so",
+    "icd": "/tmp/gles108-toolchain/angle-locked/vk_swiftshader_icd.json"
+  }
+]

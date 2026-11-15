@@ -1,0 +1,82 @@
+{
+  "target_version": "1.0.8",
+  "metadata_version": "1.0.2",
+  "release_ready": false,
+  "release_authorized": false,
+  "accepted_limitations": [],
+  "prior_release_gate": "docs/v1.0.7-release-gates.json",
+  "work_packages": {
+    "W0": {
+      "status": "PARTIAL",
+      "implementation": [
+        "docs/v1.0.8/baseline.json"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W1": {
+      "status": "PARTIAL",
+      "implementation": [
+        "tools/shader_fuzz.py"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W2": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/state_machine/README.md"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W3": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/robustness/README.md"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W4": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/pipeline/adversarial/test_adversarial.py"
+      ],
+      "acceptance": "Recovery candidate; see validation-report.md for current measurements",
+      "remaining": "Final complete regression, independent acceptance and predecessor gates remain mandatory"
+    },
+    "W5": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/differential/README.md"
+      ],
+      "acceptance": "47 fresh cases PASS on distinct Mesa llvmpipe and ANGLE SwiftShader processes; hash-locked official driver bundle",
+      "remaining": "Real physical GPU/Android driver differential acceptance remains BLOCKED_BY_HARDWARE"
+    },
+    "W6": {
+      "status": "PARTIAL",
+      "implementation": [
+        "benchmarks/material_upgrade/README.md"
+      ],
+      "acceptance": "CPU and real EGL/GLES thin-film chart highp/mediump golden, forced ES3.0 fallback, migration/rollback/cache contracts PASS",
+      "remaining": "Mobile device precision distributions and physically calibrated spectral/visual acceptance not established"
+    },
+    "W7": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "implementation": [
+        "benchmarks/agent/v108/README.md"
+      ],
+      "acceptance": "36 structured fixtures; 4 arithmetic repairs, 7 real API source repairs, 4 image repairs with 8 compilable negative variants; evidence-bound paired review metrics; 572 total unit tests pass",
+      "remaining": "Real provider paired outputs and independent authenticated review; arbitrary unbounded source/scene/material coverage not claimed"
+    },
+    "W8": {
+      "status": "PARTIAL",
+      "implementation": [
+        "tools/check_v108_gates.py"
+      ],
+      "acceptance": "Hosted CI on fe88d6d passed including real W7 repair controls; latest review-metric increment needs own CI",
+      "remaining": "Latest-head hosted CI, remaining scope and all inherited hardware/provider gates; release not authorized"
+    }
+  }
+}

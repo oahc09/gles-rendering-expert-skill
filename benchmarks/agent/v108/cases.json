@@ -1,0 +1,2888 @@
+{
+  "schema_version": 1,
+  "model_quality": "NOT_EVALUATED",
+  "provider_status": "BLOCKED_BY_PROVIDER",
+  "cases": [
+    {
+      "case_id": "V108-R01",
+      "domain": "graph",
+      "name": "independent passes cannot prove alias",
+      "input": {
+        "graph": {
+          "resources": {
+            "a": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            },
+            "b": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            }
+          },
+          "passes": [
+            {
+              "id": "make_a",
+              "writes": [
+                "a"
+              ]
+            },
+            {
+              "id": "read_a",
+              "depends_on": [
+                "make_a"
+              ],
+              "reads": [
+                "a"
+              ]
+            },
+            {
+              "id": "make_b",
+              "depends_on": [],
+              "writes": [
+                "b"
+              ]
+            },
+            {
+              "id": "read_b",
+              "depends_on": [
+                "make_b"
+              ],
+              "reads": [
+                "b"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "aliases": []
+        },
+        "failure": "RG_ALIAS_UNORDERED_OR_OVERLAPPING",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R02",
+      "domain": "graph",
+      "name": "late reuse overlaps",
+      "input": {
+        "graph": {
+          "resources": {
+            "a": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            },
+            "b": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            }
+          },
+          "passes": [
+            {
+              "id": "make_a",
+              "writes": [
+                "a"
+              ]
+            },
+            {
+              "id": "read_a",
+              "depends_on": [
+                "make_a"
+              ],
+              "reads": [
+                "a"
+              ]
+            },
+            {
+              "id": "make_b",
+              "depends_on": [
+                "read_a"
+              ],
+              "writes": [
+                "b"
+              ]
+            },
+            {
+              "id": "read_b",
+              "depends_on": [
+                "make_b"
+              ],
+              "reads": [
+                "b",
+                "a"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "aliases": []
+        },
+        "failure": "RG_ALIAS_UNORDERED_OR_OVERLAPPING",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R03",
+      "domain": "graph",
+      "name": "imported resource must not alias",
+      "input": {
+        "graph": {
+          "resources": {
+            "a": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true,
+              "imported": true
+            },
+            "b": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            }
+          },
+          "passes": [
+            {
+              "id": "make_a",
+              "writes": [
+                "a"
+              ]
+            },
+            {
+              "id": "read_a",
+              "depends_on": [
+                "make_a"
+              ],
+              "reads": [
+                "a"
+              ]
+            },
+            {
+              "id": "make_b",
+              "depends_on": [
+                "read_a"
+              ],
+              "writes": [
+                "b"
+              ]
+            },
+            {
+              "id": "read_b",
+              "depends_on": [
+                "make_b"
+              ],
+              "reads": [
+                "b"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "aliases": []
+        },
+        "failure": "RG_ALIAS_OWNERSHIP",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R04",
+      "domain": "graph",
+      "name": "persistent resource must not alias",
+      "input": {
+        "graph": {
+          "resources": {
+            "a": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": false
+            },
+            "b": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            }
+          },
+          "passes": [
+            {
+              "id": "make_a",
+              "writes": [
+                "a"
+              ]
+            },
+            {
+              "id": "read_a",
+              "depends_on": [
+                "make_a"
+              ],
+              "reads": [
+                "a"
+              ]
+            },
+            {
+              "id": "make_b",
+              "depends_on": [
+                "read_a"
+              ],
+              "writes": [
+                "b"
+              ]
+            },
+            {
+              "id": "read_b",
+              "depends_on": [
+                "make_b"
+              ],
+              "reads": [
+                "b"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "aliases": []
+        },
+        "failure": "RG_ALIAS_OWNERSHIP",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R05",
+      "domain": "graph",
+      "name": "alias formats differ",
+      "input": {
+        "graph": {
+          "resources": {
+            "a": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            },
+            "b": {
+              "format": "RGBA16F",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            }
+          },
+          "passes": [
+            {
+              "id": "make_a",
+              "writes": [
+                "a"
+              ]
+            },
+            {
+              "id": "read_a",
+              "depends_on": [
+                "make_a"
+              ],
+              "reads": [
+                "a"
+              ]
+            },
+            {
+              "id": "make_b",
+              "depends_on": [
+                "read_a"
+              ],
+              "writes": [
+                "b"
+              ]
+            },
+            {
+              "id": "read_b",
+              "depends_on": [
+                "make_b"
+              ],
+              "reads": [
+                "b"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "aliases": []
+        },
+        "failure": "RG_ALIAS_SHAPE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R06",
+      "domain": "graph",
+      "name": "alias dimensions differ",
+      "input": {
+        "graph": {
+          "resources": {
+            "a": {
+              "format": "RGBA8",
+              "size": [
+                16,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            },
+            "b": {
+              "format": "RGBA8",
+              "size": [
+                8,
+                16
+              ],
+              "samples": 1,
+              "transient": true
+            }
+          },
+          "passes": [
+            {
+              "id": "make_a",
+              "writes": [
+                "a"
+              ]
+            },
+            {
+              "id": "read_a",
+              "depends_on": [
+                "make_a"
+              ],
+              "reads": [
+                "a"
+              ]
+            },
+            {
+              "id": "make_b",
+              "depends_on": [
+                "read_a"
+              ],
+              "writes": [
+                "b"
+              ]
+            },
+            {
+              "id": "read_b",
+              "depends_on": [
+                "make_b"
+              ],
+              "reads": [
+                "b"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "aliases": []
+        },
+        "failure": "RG_ALIAS_SHAPE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R07",
+      "domain": "abi",
+      "name": "wrong member offset",
+      "input": {
+        "manifest": {
+          "gles": "3.0",
+          "blocks": [
+            {
+              "name": "Material",
+              "kind": "ubo",
+              "layout": "std140",
+              "binding": 0,
+              "size": 32,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 12
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0,
+              "format": "RGBA8"
+            }
+          ]
+        },
+        "reflection": {
+          "blocks": [
+            {
+              "name": "Material",
+              "size": 32,
+              "binding": 0,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 16,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0
+            }
+          ]
+        },
+        "capability": {
+          "gles": "3.0",
+          "extensions": []
+        },
+        "active_uniforms": [
+          "baseColorTex"
+        ],
+        "required_uniforms": [
+          "baseColorTex"
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_cached_program_and_recompile"
+        },
+        "failure": "OFFSET",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R08",
+      "domain": "abi",
+      "name": "wrong block size",
+      "input": {
+        "manifest": {
+          "gles": "3.0",
+          "blocks": [
+            {
+              "name": "Material",
+              "kind": "ubo",
+              "layout": "std140",
+              "binding": 0,
+              "size": 24,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 16
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0,
+              "format": "RGBA8"
+            }
+          ]
+        },
+        "reflection": {
+          "blocks": [
+            {
+              "name": "Material",
+              "size": 32,
+              "binding": 0,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 16,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0
+            }
+          ]
+        },
+        "capability": {
+          "gles": "3.0",
+          "extensions": []
+        },
+        "active_uniforms": [
+          "baseColorTex"
+        ],
+        "required_uniforms": [
+          "baseColorTex"
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_cached_program_and_recompile"
+        },
+        "failure": "BLOCK_SIZE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R09",
+      "domain": "abi",
+      "name": "reflected binding mismatch",
+      "input": {
+        "manifest": {
+          "gles": "3.0",
+          "blocks": [
+            {
+              "name": "Material",
+              "kind": "ubo",
+              "layout": "std140",
+              "binding": 0,
+              "size": 32,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 16
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0,
+              "format": "RGBA8"
+            }
+          ]
+        },
+        "reflection": {
+          "blocks": [
+            {
+              "name": "Material",
+              "size": 32,
+              "binding": 1,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 16,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0
+            }
+          ]
+        },
+        "capability": {
+          "gles": "3.0",
+          "extensions": []
+        },
+        "active_uniforms": [
+          "baseColorTex"
+        ],
+        "required_uniforms": [
+          "baseColorTex"
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_cached_program_and_recompile"
+        },
+        "failure": "REFLECTION_BINDING",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R10",
+      "domain": "abi",
+      "name": "reflected block missing",
+      "input": {
+        "manifest": {
+          "gles": "3.0",
+          "blocks": [
+            {
+              "name": "Material",
+              "kind": "ubo",
+              "layout": "std140",
+              "binding": 0,
+              "size": 32,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 16
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0,
+              "format": "RGBA8"
+            }
+          ]
+        },
+        "reflection": {
+          "blocks": [],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0
+            }
+          ]
+        },
+        "capability": {
+          "gles": "3.0",
+          "extensions": []
+        },
+        "active_uniforms": [
+          "baseColorTex"
+        ],
+        "required_uniforms": [
+          "baseColorTex"
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_cached_program_and_recompile"
+        },
+        "failure": "REFLECTION_BLOCK_MISSING",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R11",
+      "domain": "abi",
+      "name": "required member missing",
+      "input": {
+        "manifest": {
+          "gles": "3.0",
+          "blocks": [
+            {
+              "name": "Material",
+              "kind": "ubo",
+              "layout": "std140",
+              "binding": 0,
+              "size": 32,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 16
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0,
+              "format": "RGBA8"
+            }
+          ]
+        },
+        "reflection": {
+          "blocks": [
+            {
+              "name": "Material",
+              "size": 32,
+              "binding": 0,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 16,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0
+            }
+          ]
+        },
+        "capability": {
+          "gles": "3.0",
+          "extensions": []
+        },
+        "active_uniforms": [
+          "baseColorTex"
+        ],
+        "required_uniforms": [
+          "baseColorTex"
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_cached_program_and_recompile"
+        },
+        "failure": "REFLECTION_TYPE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R12",
+      "domain": "abi",
+      "name": "same offset different type",
+      "input": {
+        "manifest": {
+          "gles": "3.0",
+          "blocks": [
+            {
+              "name": "Material",
+              "kind": "ubo",
+              "layout": "std140",
+              "binding": 0,
+              "size": 32,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "float",
+                  "offset": 16
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0,
+              "format": "RGBA8"
+            }
+          ]
+        },
+        "reflection": {
+          "blocks": [
+            {
+              "name": "Material",
+              "size": 32,
+              "binding": 0,
+              "members": [
+                {
+                  "name": "baseColor",
+                  "type": "vec4",
+                  "offset": 0,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                },
+                {
+                  "name": "roughness",
+                  "type": "uint",
+                  "offset": 16,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                },
+                {
+                  "name": "metallic",
+                  "type": "float",
+                  "offset": 20,
+                  "array_stride": 0,
+                  "matrix_stride": 0
+                }
+              ]
+            }
+          ],
+          "samplers": [
+            {
+              "name": "baseColorTex",
+              "type": "sampler2D",
+              "unit": 0
+            }
+          ]
+        },
+        "capability": {
+          "gles": "3.0",
+          "extensions": []
+        },
+        "active_uniforms": [
+          "baseColorTex"
+        ],
+        "required_uniforms": [
+          "baseColorTex"
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_cached_program_and_recompile"
+        },
+        "failure": "REFLECTION_TYPE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R13",
+      "domain": "lifecycle",
+      "name": "invalidate texture application cache",
+      "input": {
+        "sequence": [
+          "create:texture",
+          "bind:texture",
+          "delete:texture",
+          "audit:texture"
+        ],
+        "injected_fault": "texture"
+      },
+      "oracle": {
+        "expected": {
+          "cache_invalidation": "on_delete"
+        },
+        "failure": "HARNESS_FAILURE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R14",
+      "domain": "lifecycle",
+      "name": "invalidate renderbuffer application cache",
+      "input": {
+        "sequence": [
+          "create:renderbuffer",
+          "bind:renderbuffer",
+          "delete:renderbuffer",
+          "audit:renderbuffer"
+        ],
+        "injected_fault": "renderbuffer"
+      },
+      "oracle": {
+        "expected": {
+          "cache_invalidation": "on_delete"
+        },
+        "failure": "HARNESS_FAILURE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R15",
+      "domain": "lifecycle",
+      "name": "invalidate framebuffer application cache",
+      "input": {
+        "sequence": [
+          "create:framebuffer",
+          "bind:framebuffer",
+          "delete:framebuffer",
+          "audit:framebuffer"
+        ],
+        "injected_fault": "framebuffer"
+      },
+      "oracle": {
+        "expected": {
+          "cache_invalidation": "on_delete"
+        },
+        "failure": "HARNESS_FAILURE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R16",
+      "domain": "lifecycle",
+      "name": "invalidate vao application cache",
+      "input": {
+        "sequence": [
+          "create:vao",
+          "bind:vao",
+          "delete:vao",
+          "audit:vao"
+        ],
+        "injected_fault": "vao"
+      },
+      "oracle": {
+        "expected": {
+          "cache_invalidation": "on_delete"
+        },
+        "failure": "HARNESS_FAILURE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R17",
+      "domain": "lifecycle",
+      "name": "invalidate vbo application cache",
+      "input": {
+        "sequence": [
+          "create:vbo",
+          "bind:vbo",
+          "delete:vbo",
+          "audit:vbo"
+        ],
+        "injected_fault": "vbo"
+      },
+      "oracle": {
+        "expected": {
+          "cache_invalidation": "on_delete"
+        },
+        "failure": "HARNESS_FAILURE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R18",
+      "domain": "lifecycle",
+      "name": "invalidate ubo application cache",
+      "input": {
+        "sequence": [
+          "create:ubo",
+          "bind:ubo",
+          "delete:ubo",
+          "audit:ubo"
+        ],
+        "injected_fault": "ubo"
+      },
+      "oracle": {
+        "expected": {
+          "cache_invalidation": "on_delete"
+        },
+        "failure": "HARNESS_FAILURE",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R19",
+      "domain": "resource",
+      "name": "zero-width",
+      "input": {
+        "texture_args": [
+          0,
+          4,
+          4
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_before_allocation"
+        },
+        "failure": "EXPECTED_ERROR",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R20",
+      "domain": "resource",
+      "name": "negative-width",
+      "input": {
+        "texture_args": [
+          -1,
+          4,
+          4
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_before_allocation"
+        },
+        "failure": "EXPECTED_ERROR",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R21",
+      "domain": "resource",
+      "name": "channels",
+      "input": {
+        "texture_args": [
+          4,
+          4,
+          5
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_before_allocation"
+        },
+        "failure": "EXPECTED_ERROR",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R22",
+      "domain": "resource",
+      "name": "oversized-dimension",
+      "input": {
+        "texture_args": [
+          4097,
+          1,
+          4
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_before_allocation"
+        },
+        "failure": "EXPECTED_ERROR",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R23",
+      "domain": "resource",
+      "name": "byte-budget",
+      "input": {
+        "texture_args": [
+          1024,
+          1024,
+          4
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_before_allocation"
+        },
+        "failure": "EXPECTED_ERROR",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R24",
+      "domain": "resource",
+      "name": "boolean-width",
+      "input": {
+        "texture_args": [
+          true,
+          4,
+          4
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "action": "reject_before_allocation"
+        },
+        "failure": "EXPECTED_ERROR",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R25",
+      "domain": "shader",
+      "name": "300-invalid-type",
+      "input": {
+        "id": "300-invalid-type",
+        "version": 300,
+        "family": "type",
+        "mutation": "invalid",
+        "expected": "reject",
+        "rule": "Assignment types must match",
+        "sources": {
+          "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nlayout(location=0) out vec4 color; void main() { color = mat4(1.0); }\n"
+        }
+      },
+      "oracle": {
+        "expected": {
+          "action": "repair_source"
+        },
+        "failure": "compile_or_link_error",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 16384,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R26",
+      "domain": "shader",
+      "name": "300-invalid-precision",
+      "input": {
+        "id": "300-invalid-precision",
+        "version": 300,
+        "family": "precision",
+        "mutation": "invalid",
+        "expected": "reject",
+        "rule": "Fragment float requires a default or explicit precision",
+        "sources": {
+          "shader.frag": "#version 300 es\nlayout(location=0) out vec4 color; void main() { color=vec4(1.0); }\n"
+        }
+      },
+      "oracle": {
+        "expected": {
+          "action": "repair_source"
+        },
+        "failure": "compile_or_link_error",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 16384,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R27",
+      "domain": "shader",
+      "name": "300-invalid-sampler",
+      "input": {
+        "id": "300-invalid-sampler",
+        "version": 300,
+        "family": "sampler",
+        "mutation": "invalid",
+        "expected": "reject",
+        "rule": "sampler2D texture coordinates must be vec2",
+        "sources": {
+          "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nuniform sampler2D tex; layout(location=0) out vec4 color; void main() { color=texture(tex, vec3(0.0)); }\n"
+        }
+      },
+      "oracle": {
+        "expected": {
+          "action": "repair_source"
+        },
+        "failure": "compile_or_link_error",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 16384,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R28",
+      "domain": "shader",
+      "name": "300-invalid-extension",
+      "input": {
+        "id": "300-invalid-extension",
+        "version": 300,
+        "family": "extension",
+        "mutation": "invalid",
+        "expected": "reject",
+        "rule": "Unsupported required extension must be rejected",
+        "sources": {
+          "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\n#extension GL_NONEXISTENT_fuzz_extension : require\nvoid main() {}\n"
+        }
+      },
+      "oracle": {
+        "expected": {
+          "action": "repair_source"
+        },
+        "failure": "compile_or_link_error",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 16384,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R29",
+      "domain": "shader",
+      "name": "300-invalid-array_size",
+      "input": {
+        "id": "300-invalid-array_size",
+        "version": 300,
+        "family": "array_size",
+        "mutation": "invalid",
+        "expected": "reject",
+        "rule": "Array sizes must be positive integral constants",
+        "sources": {
+          "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nfloat values[-1]; void main() {}\n"
+        }
+      },
+      "oracle": {
+        "expected": {
+          "action": "repair_source"
+        },
+        "failure": "compile_or_link_error",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 16384,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R30",
+      "domain": "shader",
+      "name": "300-invalid-varying",
+      "input": {
+        "id": "300-invalid-varying",
+        "version": 300,
+        "family": "varying",
+        "mutation": "invalid",
+        "expected": "reject",
+        "rule": "Statically used linked varying types must agree",
+        "sources": {
+          "shader.vert": "#version 300 es\nprecision highp float;\nprecision highp int;\nout vec3 bridge; void main() { bridge=vec3(1.0); gl_Position=vec4(0.0,0.0,0.0,1.0); }\n",
+          "shader.frag": "#version 300 es\nprecision highp float;\nprecision highp int;\nin vec4 bridge; layout(location=0) out vec4 color; void main() { color=bridge; }\n"
+        }
+      },
+      "oracle": {
+        "expected": {
+          "action": "repair_source"
+        },
+        "failure": "compile_or_link_error",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 16384,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R31",
+      "domain": "differential",
+      "name": "fbo-black",
+      "input": {
+        "case": {
+          "id": "fbo-black",
+          "kind": "fbo_pixels",
+          "color": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "expected": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "tolerance": 1
+        },
+        "observations": [
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255
+            ],
+            "harness_gl_error": 0
+          },
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              17,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255,
+              0,
+              0,
+              0,
+              255
+            ],
+            "harness_gl_error": 0
+          }
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "classification": "FAIL",
+          "driver_bug_proven": false
+        },
+        "failure": "numeric_mismatch",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R32",
+      "domain": "differential",
+      "name": "fbo-white",
+      "input": {
+        "case": {
+          "id": "fbo-white",
+          "kind": "fbo_pixels",
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "expected": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "tolerance": 1
+        },
+        "observations": [
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255
+            ],
+            "harness_gl_error": 0
+          },
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              16,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255,
+              255
+            ],
+            "harness_gl_error": 0
+          }
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "classification": "FAIL",
+          "driver_bug_proven": false
+        },
+        "failure": "numeric_mismatch",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R33",
+      "domain": "differential",
+      "name": "fbo-primaries",
+      "input": {
+        "case": {
+          "id": "fbo-primaries",
+          "kind": "fbo_pixels",
+          "color": [
+            1,
+            0,
+            0.5,
+            1
+          ],
+          "expected": [
+            255,
+            0,
+            128,
+            255
+          ],
+          "tolerance": 1
+        },
+        "observations": [
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255
+            ],
+            "harness_gl_error": 0
+          },
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              16,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255,
+              255,
+              0,
+              128,
+              255
+            ],
+            "harness_gl_error": 0
+          }
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "classification": "FAIL",
+          "driver_bug_proven": false
+        },
+        "failure": "numeric_mismatch",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R34",
+      "domain": "differential",
+      "name": "fbo-fractions",
+      "input": {
+        "case": {
+          "id": "fbo-fractions",
+          "kind": "fbo_pixels",
+          "color": [
+            0.1,
+            0.2,
+            0.3,
+            0.4
+          ],
+          "expected": [
+            26,
+            51,
+            77,
+            102
+          ],
+          "tolerance": 1
+        },
+        "observations": [
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102
+            ],
+            "harness_gl_error": 0
+          },
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              43,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102,
+              26,
+              51,
+              77,
+              102
+            ],
+            "harness_gl_error": 0
+          }
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "classification": "FAIL",
+          "driver_bug_proven": false
+        },
+        "failure": "numeric_mismatch",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R35",
+      "domain": "differential",
+      "name": "fbo-clamp",
+      "input": {
+        "case": {
+          "id": "fbo-clamp",
+          "kind": "fbo_pixels",
+          "color": [
+            -1,
+            2,
+            0.25,
+            1
+          ],
+          "expected": [
+            0,
+            255,
+            64,
+            255
+          ],
+          "tolerance": 1
+        },
+        "observations": [
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255
+            ],
+            "harness_gl_error": 0
+          },
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              17,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255,
+              0,
+              255,
+              64,
+              255
+            ],
+            "harness_gl_error": 0
+          }
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "classification": "FAIL",
+          "driver_bug_proven": false
+        },
+        "failure": "numeric_mismatch",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    },
+    {
+      "case_id": "V108-R36",
+      "domain": "differential",
+      "name": "fbo-midpoint",
+      "input": {
+        "case": {
+          "id": "fbo-midpoint",
+          "kind": "fbo_pixels",
+          "color": [
+            0.5,
+            0.5,
+            0.5,
+            1
+          ],
+          "expected": [
+            128,
+            128,
+            128,
+            255
+          ],
+          "tolerance": 1
+        },
+        "observations": [
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255
+            ],
+            "harness_gl_error": 0
+          },
+          {
+            "status": "EXECUTED",
+            "pixels": [
+              145,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255,
+              128,
+              128,
+              128,
+              255
+            ],
+            "harness_gl_error": 0
+          }
+        ]
+      },
+      "oracle": {
+        "expected": {
+          "classification": "FAIL",
+          "driver_bug_proven": false
+        },
+        "failure": "numeric_mismatch",
+        "kind": "bounded structured repair fixture"
+      },
+      "patch_ceiling_bytes": 4096,
+      "scope": "HOST_FIXTURE_ONLY",
+      "provider_status": "BLOCKED_BY_PROVIDER",
+      "workflow": [
+        "Diagnose",
+        "Reproduce",
+        "Minimize",
+        "Patch",
+        "Compile/Run",
+        "Differential Verify",
+        "Report"
+      ]
+    }
+  ]
+}

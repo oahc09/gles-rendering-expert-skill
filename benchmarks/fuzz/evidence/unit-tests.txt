@@ -1,0 +1,16 @@
+test_checked_report_schema (test_shader_fuzz.CorpusTests.test_checked_report_schema) ... ok
+test_existing_reducer_reuse (test_shader_fuzz.CorpusTests.test_existing_reducer_reuse) ... ok
+test_expected_errors_are_not_crashes (test_shader_fuzz.CorpusTests.test_expected_errors_are_not_crashes) ... ok
+test_grandchildren_cleaned_on_all_exits (test_shader_fuzz.CorpusTests.test_grandchildren_cleaned_on_all_exits) ... ok
+test_missing_tool_is_not_pass (test_shader_fuzz.CorpusTests.test_missing_tool_is_not_pass) ... ok
+test_output_and_memory_bounded (test_shader_fuzz.CorpusTests.test_output_and_memory_bounded) ... ok
+test_real_compiler_corpus (test_shader_fuzz.CorpusTests.test_real_compiler_corpus) ... ok
+test_seed_and_proof_bounds (test_shader_fuzz.CorpusTests.test_seed_and_proof_bounds) ... ok
+test_source_quota (test_shader_fuzz.CorpusTests.test_source_quota) ... ok
+test_stable_unique_corpus (test_shader_fuzz.CorpusTests.test_stable_unique_corpus) ... ok
+test_timeout_and_isolation (test_shader_fuzz.CorpusTests.test_timeout_and_isolation) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 8.730s
+
+OK

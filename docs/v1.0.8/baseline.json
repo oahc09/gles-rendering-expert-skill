@@ -1,0 +1,77 @@
+{
+  "base_sha": "b0bb57f8148e7de38ec472ee8cb87e04a53c39b8",
+  "base_tree": "858bf8d33bd7286c4f67254aab568205b7dfaf3f",
+  "permissions": {
+    "push": true,
+    "admin": true
+  },
+  "open_prs_at_start": [],
+  "metadata_version": "1.0.2",
+  "original_plan": {
+    "library_file_id": "libfile_89e25537701081919c817d9ac8da1d3c",
+    "file_id": "file_000000007bf481fbb42d3dca751b87aa",
+    "bytes": 17045,
+    "sha256": "6393d04fe0f2e42b1b32563d3626a51e7db88b8b471e574ae6f48ac4bfc84cef"
+  },
+  "preserved_sha256": {
+    "docs/release-gates.json": "a1fec0cade0fa960361c3a78d7534c66e73113bcf8abdb2da879cedfa3035e19",
+    "docs/v1.0.4-release-gates.json": "7d2ff93d4e98741f25450f7dc7704c6332ca6412fa6707a22f4c5e5000666eb8",
+    "docs/v1.0.5/release-gates.json": "484eed90b1d11a98f17c9b8d7e1adb4235b821d69557792d8abc2f6dcfad6329",
+    "docs/v1.0.6/release-gates.json": "7d93d876907491253a44afea7d32a126753e9341691f5f11338da866de822ab9",
+    "docs/v1.0.7-release-gates.json": "a44d3609277a346230a74a75bebec5763ca54fc65d9e1505c14c1f6e884c766f",
+    "benchmarks/agent/cases-v1.0.7.json": "7422c5dd52180414bf77729d158ffd21a30641a9ca11961a72c5c43c3a55060c"
+  },
+  "toolchain": [
+    {
+      "Package": "glslang-tools",
+      "Version": "15.1.0+1.4.309.0-1",
+      "Filename": "pool/main/g/glslang/glslang-tools_15.1.0+1.4.309.0-1_amd64.deb",
+      "SHA256": "c3025c4af63244296bc9d466746763c809d3f3f126408fc2c7b07070886a7759"
+    },
+    {
+      "Package": "libegl-dev",
+      "Version": "1.7.0-1+b2",
+      "Filename": "pool/main/libg/libglvnd/libegl-dev_1.7.0-1+b2_amd64.deb",
+      "SHA256": "97fcfff08a5de0a510066d55260a30fbd3ccbd87da6c2f317e6efe17566b9f5a"
+    },
+    {
+      "Package": "libgl-dev",
+      "Version": "1.7.0-1+b2",
+      "Filename": "pool/main/libg/libglvnd/libgl-dev_1.7.0-1+b2_amd64.deb",
+      "SHA256": "2c5044a44bc7cd7a196d554ca6ff78ae0358fbb98b7d2cce49176bdc6a816fe4"
+    },
+    {
+      "Package": "libgles-dev",
+      "Version": "1.7.0-1+b2",
+      "Filename": "pool/main/libg/libglvnd/libgles-dev_1.7.0-1+b2_amd64.deb",
+      "SHA256": "87af52464cb40d54e78ecf2046db019bf1ab19a8bed7511ab282be623d1216de"
+    },
+    {
+      "Package": "libgles2",
+      "Version": "1.7.0-1+b2",
+      "Filename": "pool/main/libg/libglvnd/libgles2_1.7.0-1+b2_amd64.deb",
+      "SHA256": "e12c18aa77939d122ee1dea520ba0440b97dc19200b7396e03dff03a3ece74c1"
+    },
+    {
+      "Package": "libglx-dev",
+      "Version": "1.7.0-1+b2",
+      "Filename": "pool/main/libg/libglvnd/libglx-dev_1.7.0-1+b2_amd64.deb",
+      "SHA256": "93d456321c07009491b942783db8c57065b616db713ef5f6a0c629ca078c4ea0"
+    },
+    {
+      "Package": "spirv-tools",
+      "Version": "2025.1~rc1-1",
+      "Filename": "pool/main/s/spirv-tools/spirv-tools_2025.1~rc1-1_amd64.deb",
+      "SHA256": "2cc272ef1340cf0b47de6c5fcccaf91574d7a8f4061abb718d6c639463e85aab"
+    }
+  ],
+  "local_clean_start": true,
+  "remote_ci": "NOT_RUN manual-only; separate cloud execution not authorized",
+  "new_release_authorized": false,
+  "merge_authorized": false,
+  "system_egl_link": {
+    "path": "/lib/x86_64-linux-gnu/libEGL.so.1",
+    "sha256": "f4b60a4618fbf760f395f64dfd53320446ba1011151a80e411742b3232b194e6",
+    "reason": "Extracted development-package symlink targets the installed system libEGL runtime."
+  }
+}

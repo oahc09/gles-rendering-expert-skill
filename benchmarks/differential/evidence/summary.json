@@ -1,0 +1,1049 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-07T10:03:13.059636+00:00",
+  "status": "PASS",
+  "evidence": "HOST_REPRODUCED",
+  "implementations": [
+    {
+      "implementation": "mesa",
+      "config_sha256": "90ed64ab8bbf6c49394d97072223ba30987ad290b3a3cb12df1a7d78682bcc2f",
+      "icd_sha256": null,
+      "vendor": "Mesa",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "api": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "shading_language": "OpenGL ES GLSL ES 3.20",
+      "extensions": [
+        "GL_ANDROID_extension_pack_es31a",
+        "GL_ANGLE_pack_reverse_row_order",
+        "GL_ANGLE_texture_compression_dxt3",
+        "GL_ANGLE_texture_compression_dxt5",
+        "GL_APPLE_sync",
+        "GL_APPLE_texture_max_level",
+        "GL_ARM_shader_framebuffer_fetch_depth_stencil",
+        "GL_EXT_EGL_image_storage",
+        "GL_EXT_EGL_image_storage_compression",
+        "GL_EXT_base_instance",
+        "GL_EXT_blend_func_extended",
+        "GL_EXT_blend_minmax",
+        "GL_EXT_buffer_storage",
+        "GL_EXT_clear_texture",
+        "GL_EXT_clip_control",
+        "GL_EXT_clip_cull_distance",
+        "GL_EXT_color_buffer_float",
+        "GL_EXT_color_buffer_half_float",
+        "GL_EXT_compressed_ETC1_RGB8_sub_texture",
+        "GL_EXT_conservative_depth",
+        "GL_EXT_copy_image",
+        "GL_EXT_debug_label",
+        "GL_EXT_depth_clamp",
+        "GL_EXT_discard_framebuffer",
+        "GL_EXT_disjoint_timer_query",
+        "GL_EXT_draw_buffers",
+        "GL_EXT_draw_buffers_indexed",
+        "GL_EXT_draw_elements_base_vertex",
+        "GL_EXT_draw_instanced",
+        "GL_EXT_float_blend",
+        "GL_EXT_frag_depth",
+        "GL_EXT_geometry_point_size",
+        "GL_EXT_geometry_shader",
+        "GL_EXT_gpu_shader5",
+        "GL_EXT_instanced_arrays",
+        "GL_EXT_map_buffer_range",
+        "GL_EXT_memory_object",
+        "GL_EXT_memory_object_fd",
+        "GL_EXT_multi_draw_arrays",
+        "GL_EXT_multi_draw_indirect",
+        "GL_EXT_occlusion_query_boolean",
+        "GL_EXT_polygon_offset_clamp",
+        "GL_EXT_primitive_bounding_box",
+        "GL_EXT_read_format_bgra",
+        "GL_EXT_render_snorm",
+        "GL_EXT_robustness",
+        "GL_EXT_sRGB_write_control",
+        "GL_EXT_separate_shader_objects",
+        "GL_EXT_shader_framebuffer_fetch",
+        "GL_EXT_shader_framebuffer_fetch_non_coherent",
+        "GL_EXT_shader_group_vote",
+        "GL_EXT_shader_implicit_conversions",
+        "GL_EXT_shader_integer_mix",
+        "GL_EXT_shader_io_blocks",
+        "GL_EXT_shadow_samplers",
+        "GL_EXT_tessellation_point_size",
+        "GL_EXT_tessellation_shader",
+        "GL_EXT_texture_border_clamp",
+        "GL_EXT_texture_buffer",
+        "GL_EXT_texture_compression_bptc",
+        "GL_EXT_texture_compression_dxt1",
+        "GL_EXT_texture_compression_rgtc",
+        "GL_EXT_texture_compression_s3tc",
+        "GL_EXT_texture_compression_s3tc_srgb",
+        "GL_EXT_texture_cube_map_array",
+        "GL_EXT_texture_filter_anisotropic",
+        "GL_EXT_texture_filter_minmax",
+        "GL_EXT_texture_format_BGRA8888",
+        "GL_EXT_texture_mirror_clamp_to_edge",
+        "GL_EXT_texture_norm16",
+        "GL_EXT_texture_query_lod",
+        "GL_EXT_texture_rg",
+        "GL_EXT_texture_sRGB_R8",
+        "GL_EXT_texture_sRGB_RG8",
+        "GL_EXT_texture_sRGB_decode",
+        "GL_EXT_texture_shadow_lod",
+        "GL_EXT_texture_storage",
+        "GL_EXT_texture_storage_compression",
+        "GL_EXT_texture_type_2_10_10_10_REV",
+        "GL_EXT_texture_view",
+        "GL_EXT_unpack_subimage",
+        "GL_KHR_blend_equation_advanced",
+        "GL_KHR_blend_equation_advanced_coherent",
+        "GL_KHR_context_flush_control",
+        "GL_KHR_debug",
+        "GL_KHR_no_error",
+        "GL_KHR_parallel_shader_compile",
+        "GL_KHR_robust_buffer_access_behavior",
+        "GL_KHR_robustness",
+        "GL_KHR_texture_compression_astc_ldr",
+        "GL_KHR_texture_compression_astc_sliced_3d",
+        "GL_MESA_bgra",
+        "GL_MESA_framebuffer_flip_y",
+        "GL_MESA_sampler_objects",
+        "GL_MESA_shader_integer_functions",
+        "GL_NV_alpha_to_coverage_dither_control",
+        "GL_NV_conditional_render",
+        "GL_NV_draw_buffers",
+        "GL_NV_fbo_color_attachments",
+        "GL_NV_generate_mipmap_sRGB",
+        "GL_NV_image_formats",
+        "GL_NV_pack_subimage",
+        "GL_NV_pixel_buffer_object",
+        "GL_NV_read_buffer",
+        "GL_NV_read_depth",
+        "GL_NV_read_depth_stencil",
+        "GL_NV_read_stencil",
+        "GL_NV_shader_noperspective_interpolation",
+        "GL_NV_texture_barrier",
+        "GL_OES_EGL_image",
+        "GL_OES_EGL_image_external",
+        "GL_OES_EGL_image_external_essl3",
+        "GL_OES_EGL_sync",
+        "GL_OES_compressed_ETC1_RGB8_texture",
+        "GL_OES_copy_image",
+        "GL_OES_depth24",
+        "GL_OES_depth_texture",
+        "GL_OES_depth_texture_cube_map",
+        "GL_OES_draw_buffers_indexed",
+        "GL_OES_draw_elements_base_vertex",
+        "GL_OES_element_index_uint",
+        "GL_OES_fbo_render_mipmap",
+        "GL_OES_geometry_point_size",
+        "GL_OES_geometry_shader",
+        "GL_OES_get_program_binary",
+        "GL_OES_gpu_shader5",
+        "GL_OES_mapbuffer",
+        "GL_OES_packed_depth_stencil",
+        "GL_OES_primitive_bounding_box",
+        "GL_OES_required_internalformat",
+        "GL_OES_rgb8_rgba8",
+        "GL_OES_sample_shading",
+        "GL_OES_sample_variables",
+        "GL_OES_shader_image_atomic",
+        "GL_OES_shader_io_blocks",
+        "GL_OES_shader_multisample_interpolation",
+        "GL_OES_standard_derivatives",
+        "GL_OES_stencil8",
+        "GL_OES_surfaceless_context",
+        "GL_OES_tessellation_point_size",
+        "GL_OES_tessellation_shader",
+        "GL_OES_texture_3D",
+        "GL_OES_texture_border_clamp",
+        "GL_OES_texture_buffer",
+        "GL_OES_texture_cube_map_array",
+        "GL_OES_texture_float",
+        "GL_OES_texture_float_linear",
+        "GL_OES_texture_half_float",
+        "GL_OES_texture_half_float_linear",
+        "GL_OES_texture_npot",
+        "GL_OES_texture_stencil8",
+        "GL_OES_texture_storage_multisample_2d_array",
+        "GL_OES_texture_view",
+        "GL_OES_vertex_array_object",
+        "GL_OES_vertex_half_float",
+        "GL_OES_viewport_array",
+        "GL_OVR_multiview",
+        "GL_OVR_multiview2"
+      ],
+      "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "os_build": "#1 SMP Tue Oct 20 21:56:04 UTC 2026",
+      "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+      "libraries": {
+        "/usr/lib/x86_64-linux-gnu/libEGL.so.1.1.0": "f4b60a4618fbf760f395f64dfd53320446ba1011151a80e411742b3232b194e6",
+        "/usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0.0.0": "af1229604d80d73422ff3767f572849dce074a0ecdba8254e93a06a88cfec2e6",
+        "/usr/lib/x86_64-linux-gnu/libLLVM.so.19.1": "3523f50f635d2a1ea47518a392451f2854b92823ceaf1345fb806099dd1a3b8a",
+        "/workspace/scratch/62d43a81bbde/gles108-toolchain/root/usr/lib/x86_64-linux-gnu/libGLESv2.so.2.1.0": "a705c66de30ca4e883120c70acae0f1011d7c3f97605eef331e03493beae3812"
+      },
+      "source_sha256": "2fda297aeb63af6443863f0a742f7ed6869455731a9193ebce8ae2ab8b3cb0a4",
+      "egl_vendor": "Mesa Project"
+    },
+    {
+      "implementation": "angle",
+      "config_sha256": "0e1db0cae3e1515ed92a23bfe9b6ca770101cf3496a8adefa60062b82baf3afd",
+      "icd_sha256": "c9eef28b6b984fec220ef0abfecc40b502d46946706e47bfe97707027cb818bd",
+      "vendor": "Google Inc. (Google)",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver-5.0.0)",
+      "api": "OpenGL ES 3.1.0 (ANGLE 2.1.1 git hash: bb55ea10fcef)",
+      "shading_language": "OpenGL ES GLSL ES 3.10 (ANGLE 2.1.1 git hash: bb55ea10fcef)",
+      "extensions": [
+        "GL_AMD_performance_monitor",
+        "GL_ANGLE_base_vertex_base_instance_shader_builtin",
+        "GL_ANGLE_blob_cache",
+        "GL_ANGLE_client_arrays",
+        "GL_ANGLE_clip_cull_distance",
+        "GL_ANGLE_compressed_texture_etc",
+        "GL_ANGLE_copy_texture_3d",
+        "GL_ANGLE_depth_texture",
+        "GL_ANGLE_framebuffer_blit",
+        "GL_ANGLE_framebuffer_multisample",
+        "GL_ANGLE_get_image",
+        "GL_ANGLE_get_serialized_context_string",
+        "GL_ANGLE_get_tex_level_parameter",
+        "GL_ANGLE_instanced_arrays",
+        "GL_ANGLE_memory_object_flags",
+        "GL_ANGLE_memory_size",
+        "GL_ANGLE_multi_draw",
+        "GL_ANGLE_pack_reverse_row_order",
+        "GL_ANGLE_polygon_mode",
+        "GL_ANGLE_program_binary_readiness_query",
+        "GL_ANGLE_program_cache_control",
+        "GL_ANGLE_read_only_depth_stencil_feedback_loops",
+        "GL_ANGLE_relaxed_vertex_attribute_type",
+        "GL_ANGLE_renderability_validation",
+        "GL_ANGLE_request_extension",
+        "GL_ANGLE_rgbx_internal_format",
+        "GL_ANGLE_robust_client_memory",
+        "GL_ANGLE_robust_fragment_shader_output",
+        "GL_ANGLE_shader_pixel_local_storage",
+        "GL_ANGLE_shader_pixel_local_storage_coherent",
+        "GL_ANGLE_stencil_texturing",
+        "GL_ANGLE_texture_compression_dxt3",
+        "GL_ANGLE_texture_compression_dxt5",
+        "GL_ANGLE_texture_multisample",
+        "GL_ANGLE_texture_usage",
+        "GL_ANGLE_translated_shader_source",
+        "GL_ANGLE_vulkan_image",
+        "GL_ANGLE_yuv_internal_format",
+        "GL_APPLE_clip_distance",
+        "GL_ARM_rgba8",
+        "GL_ARM_shader_framebuffer_fetch",
+        "GL_ARM_shader_framebuffer_fetch_depth_stencil",
+        "GL_CHROMIUM_bind_generates_resource",
+        "GL_CHROMIUM_bind_uniform_location",
+        "GL_CHROMIUM_copy_compressed_texture",
+        "GL_CHROMIUM_copy_texture",
+        "GL_CHROMIUM_lose_context",
+        "GL_EXT_EGL_image_array",
+        "GL_EXT_EGL_image_external_wrap_modes",
+        "GL_EXT_EGL_image_storage",
+        "GL_EXT_base_instance",
+        "GL_EXT_blend_minmax",
+        "GL_EXT_buffer_storage",
+        "GL_EXT_clear_texture",
+        "GL_EXT_clip_control",
+        "GL_EXT_clip_cull_distance",
+        "GL_EXT_color_buffer_float",
+        "GL_EXT_color_buffer_half_float",
+        "GL_EXT_compressed_ETC1_RGB8_sub_texture",
+        "GL_EXT_conservative_depth",
+        "GL_EXT_copy_image",
+        "GL_EXT_debug_label",
+        "GL_EXT_debug_marker",
+        "GL_EXT_depth_clamp",
+        "GL_EXT_discard_framebuffer",
+        "GL_EXT_disjoint_timer_query",
+        "GL_EXT_draw_buffers",
+        "GL_EXT_draw_buffers_indexed",
+        "GL_EXT_draw_elements_base_vertex",
+        "GL_EXT_float_blend",
+        "GL_EXT_frag_depth",
+        "GL_EXT_instanced_arrays",
+        "GL_EXT_map_buffer_range",
+        "GL_EXT_memory_object",
+        "GL_EXT_memory_object_fd",
+        "GL_EXT_multi_draw_indirect",
+        "GL_EXT_occlusion_query_boolean",
+        "GL_EXT_polygon_offset_clamp",
+        "GL_EXT_primitive_bounding_box",
+        "GL_EXT_read_format_bgra",
+        "GL_EXT_robustness",
+        "GL_EXT_sRGB",
+        "GL_EXT_sRGB_write_control",
+        "GL_EXT_semaphore",
+        "GL_EXT_semaphore_fd",
+        "GL_EXT_separate_shader_objects",
+        "GL_EXT_shader_framebuffer_fetch",
+        "GL_EXT_shader_framebuffer_fetch_non_coherent",
+        "GL_EXT_shader_io_blocks",
+        "GL_EXT_shader_non_constant_global_initializers",
+        "GL_EXT_shader_texture_lod",
+        "GL_EXT_shadow_samplers",
+        "GL_EXT_texture_border_clamp",
+        "GL_EXT_texture_buffer",
+        "GL_EXT_texture_compression_bptc",
+        "GL_EXT_texture_compression_dxt1",
+        "GL_EXT_texture_compression_rgtc",
+        "GL_EXT_texture_compression_s3tc_srgb",
+        "GL_EXT_texture_cube_map_array",
+        "GL_EXT_texture_filter_anisotropic",
+        "GL_EXT_texture_format_BGRA8888",
+        "GL_EXT_texture_mirror_clamp_to_edge",
+        "GL_EXT_texture_rg",
+        "GL_EXT_texture_sRGB_R8",
+        "GL_EXT_texture_sRGB_RG8",
+        "GL_EXT_texture_sRGB_decode",
+        "GL_EXT_texture_shadow_lod",
+        "GL_EXT_texture_storage",
+        "GL_EXT_texture_type_2_10_10_10_REV",
+        "GL_EXT_unpack_subimage",
+        "GL_KHR_blend_equation_advanced",
+        "GL_KHR_debug",
+        "GL_KHR_robustness",
+        "GL_KHR_texture_compression_astc_ldr",
+        "GL_NV_depth_buffer_float2",
+        "GL_NV_fence",
+        "GL_NV_framebuffer_blit",
+        "GL_NV_pack_subimage",
+        "GL_NV_pixel_buffer_object",
+        "GL_NV_polygon_mode",
+        "GL_NV_read_depth",
+        "GL_NV_read_depth_stencil",
+        "GL_NV_read_stencil",
+        "GL_NV_shader_noperspective_interpolation",
+        "GL_OES_EGL_image",
+        "GL_OES_EGL_image_external",
+        "GL_OES_EGL_image_external_essl3",
+        "GL_OES_EGL_sync",
+        "GL_OES_compressed_EAC_R11_signed_texture",
+        "GL_OES_compressed_EAC_R11_unsigned_texture",
+        "GL_OES_compressed_EAC_RG11_signed_texture",
+        "GL_OES_compressed_EAC_RG11_unsigned_texture",
+        "GL_OES_compressed_ETC1_RGB8_texture",
+        "GL_OES_compressed_ETC2_RGB8_texture",
+        "GL_OES_compressed_ETC2_RGBA8_texture",
+        "GL_OES_compressed_ETC2_punchthroughA_RGBA8_texture",
+        "GL_OES_compressed_ETC2_punchthroughA_sRGB8_alpha_texture",
+        "GL_OES_compressed_ETC2_sRGB8_alpha8_texture",
+        "GL_OES_compressed_ETC2_sRGB8_texture",
+        "GL_OES_copy_image",
+        "GL_OES_depth24",
+        "GL_OES_depth32",
+        "GL_OES_depth_texture",
+        "GL_OES_depth_texture_cube_map",
+        "GL_OES_draw_buffers_indexed",
+        "GL_OES_draw_elements_base_vertex",
+        "GL_OES_element_index_uint",
+        "GL_OES_fbo_render_mipmap",
+        "GL_OES_get_program_binary",
+        "GL_OES_mapbuffer",
+        "GL_OES_packed_depth_stencil",
+        "GL_OES_primitive_bounding_box",
+        "GL_OES_required_internalformat",
+        "GL_OES_rgb8_rgba8",
+        "GL_OES_sample_shading",
+        "GL_OES_sample_variables",
+        "GL_OES_shader_image_atomic",
+        "GL_OES_shader_io_blocks",
+        "GL_OES_shader_multisample_interpolation",
+        "GL_OES_standard_derivatives",
+        "GL_OES_surfaceless_context",
+        "GL_OES_texture_3D",
+        "GL_OES_texture_border_clamp",
+        "GL_OES_texture_buffer",
+        "GL_OES_texture_cube_map_array",
+        "GL_OES_texture_float",
+        "GL_OES_texture_float_linear",
+        "GL_OES_texture_half_float",
+        "GL_OES_texture_half_float_linear",
+        "GL_OES_texture_npot",
+        "GL_OES_texture_stencil8",
+        "GL_OES_texture_storage_multisample_2d_array",
+        "GL_OES_vertex_array_object",
+        "GL_OES_vertex_half_float",
+        "GL_OES_vertex_type_10_10_10_2",
+        "GL_OVR_multiview",
+        "GL_OVR_multiview2"
+      ],
+      "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "os_build": "#1 SMP Tue Oct 20 21:56:04 UTC 2026",
+      "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+      "libraries": {
+        "/workspace/scratch/62d43a81bbde/browser-runtime/browsers/chromium_headless_shell-1194/chrome-linux/libEGL.so": "36bbedb16eef9425b702c4325362b63a2ed31735c342d68aa6ed1a57284dbbf8",
+        "/workspace/scratch/62d43a81bbde/browser-runtime/browsers/chromium_headless_shell-1194/chrome-linux/libGLESv2.so": "602e78cc86c71f68d7f78bae64b48d950492c2e4dbe100a5ab12f514b5e63504",
+        "/workspace/scratch/62d43a81bbde/browser-runtime/browsers/chromium_headless_shell-1194/chrome-linux/libvk_swiftshader.so": "ebd1de03529341b8298b24cb12daae94036bc1c145df6c7d8c61dc988aae0e5e",
+        "/workspace/scratch/62d43a81bbde/browser-runtime/browsers/chromium_headless_shell-1194/chrome-linux/libvulkan.so.1": "4196730a533313e1f93b6aade4269fa325f7ae98f41434ec4fb215f150cc75a6"
+      },
+      "source_sha256": "2fda297aeb63af6443863f0a742f7ed6869455731a9193ebce8ae2ab8b3cb0a4",
+      "egl_vendor": "Google Inc. (Google)"
+    }
+  ],
+  "cases": [
+    {
+      "id": "300-scalar-identity",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "f59c598a99693a6f3a4dbe65377503ab8bb49fc84fcf0bb26fcef9c9ec9e5d96",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-scalar-identity --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-scalar-exact_fold",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "345119d3aba962a0c9559db9d07abe74403e7887b6542ec12c9935ce5110bdae",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-scalar-exact_fold --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-scalar-local_binding",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "b228db9fb3a284a6269c561fbd7d1feceb114bca59f116a87a8627265ab49410",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-scalar-local_binding --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-scalar-dead_branch",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "3107e11905d10a652e27b18a9ebf3dba6a5e3405897e84b059a9ca7d4f2f47f8",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-scalar-dead_branch --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-vector-identity",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "dac6131a229be1e1681f18f9e72470e5b5cedf176d46925d5fc0e2bcbdbfcec5",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-vector-identity --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-vector-exact_fold",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "d96814295f64a524e52c8a60b715f284cc1351de923fc042e137b66134d93fe7",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-vector-exact_fold --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-vector-local_binding",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "533b528f4fdacf625b75eef7e6a6cdd8a5c745f8733c80378a8a238cb1c88c98",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-vector-local_binding --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-vector-dead_branch",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "71e6be8bb637c83e98f9ef10c24e4989dfce569f891fb01f110d0c28104f5233",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-vector-dead_branch --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-function-identity",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "1a4c3e75274750b9fe47bde4a8b786ebd45e392a0c00fda1f7ffea8be68d14ae",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-function-identity --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-function-exact_fold",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "09acda2f12306d9d67804ab451b9af95bff59bd8d93e5f436502ee324b3f6379",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-function-exact_fold --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-function-local_binding",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "9d0efaf2062c0ec4f45edd3b937d11dd60f37903b2649bda45c243d1d29b88be",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-function-local_binding --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-function-dead_branch",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "95e3ba6cf95294acfde652a8116d502ade8223f6580577ef52c6d619a554545a",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-function-dead_branch --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-ubo-identity",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "499ac02c48a4148ec29c0731e4e07317f855b207902976b9da0f9f5af87e7cbd",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-ubo-identity --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-ubo-exact_fold",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "472dd2b2dc2ffe4aab6d6deca24688496d436acd344a90a44be23bab0a5518c6",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-ubo-exact_fold --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-ubo-local_binding",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "b724a843ad9f4ef905c0f3b77720607f7d98fdbad58533d35df43fb3f22c68c9",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-ubo-local_binding --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-ubo-dead_branch",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "622d57390503212aaa12f8f2fc7f219c04d811d99c02e61c8a60bbcf9ab60395",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-ubo-dead_branch --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-sampler-identity",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "1533c34a5c8540a52fba0c742080189cc30233d1989ef34632834024d0cd2f12",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-sampler-identity --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-sampler-exact_fold",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "e854bda4b6c364af3899e2e4e72d6e942280881d787eb11ee28e8fc44da513bb",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-sampler-exact_fold --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-sampler-local_binding",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "40cc9d3b3e9a03f8ffe0a57e5be63ef63088b5d0d226796e70bac8c47b7aa08e",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-sampler-local_binding --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-sampler-dead_branch",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "ae5c3d1247929e3cb823447dbdf77e19282b7b72ac665486afc61fb25ce41621",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-sampler-dead_branch --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-invalid-type",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          false,
+          false
+        ],
+        "link": [
+          false,
+          false
+        ]
+      },
+      "source_sha256": "ea960aa7472886fbc6d53217b61ba6b03ca091f91abb6b227e2ecc07b8aec663",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-invalid-type --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-invalid-precision",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          false,
+          false
+        ],
+        "link": [
+          false,
+          false
+        ]
+      },
+      "source_sha256": "2fdae1af7efb566075be0e551a506e561d23543bdba8200c1611cf33b62a2d0b",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-invalid-precision --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-invalid-sampler",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          false,
+          false
+        ],
+        "link": [
+          false,
+          false
+        ]
+      },
+      "source_sha256": "0fe03d8e62b69a9a0325c3199018256c0c2f309ed2438fe240ec60fecf9ed2a7",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-invalid-sampler --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-invalid-extension",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          false,
+          false
+        ],
+        "link": [
+          false,
+          false
+        ]
+      },
+      "source_sha256": "4a0fccbc4aa34e1819737c9748fe2c6f5bfe2657b30ba3497d1ba70f713b8c0c",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-invalid-extension --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-invalid-array_size",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          false,
+          false
+        ],
+        "link": [
+          false,
+          false
+        ]
+      },
+      "source_sha256": "25ed2ff691f412f8346e2c3285b06a226a3697c49052b6b84e5ba2832ef0741e",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-invalid-array_size --output /tmp/differential-replay"
+    },
+    {
+      "id": "300-invalid-varying",
+      "kind": "shader",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          false,
+          false
+        ]
+      },
+      "source_sha256": "ae644f2ac413fb4a804e80fb37c3f5a5d598f1ae8224c7b722426779a61320a3",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case 300-invalid-varying --output /tmp/differential-replay"
+    },
+    {
+      "id": "viewport-valid",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "e1e91c3806d02bd81c58c25a80dba84673f42dd7fdaa86c1ee26676a3cda23e7",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case viewport-valid --output /tmp/differential-replay"
+    },
+    {
+      "id": "viewport-negative",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "d2e77ff54dd8325d139801f1e9e1920780780761f093ea704dc474948c6856ad",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case viewport-negative --output /tmp/differential-replay"
+    },
+    {
+      "id": "scissor-negative",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "fc28eb33f6044bd25d09222c5c43e3aeacca4f498f787884ecccf379331f5cb0",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case scissor-negative --output /tmp/differential-replay"
+    },
+    {
+      "id": "pack-valid",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "8f9328eaf5f941e528903c99a32c337d98ffe3f70ebd73c9c3482e7c90cbbdf1",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case pack-valid --output /tmp/differential-replay"
+    },
+    {
+      "id": "pack-invalid",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "c3b8cf0047d0f7ab6207d4dd606e81e6ae8659b2d1d6479db8a768c49f317c9d",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case pack-invalid --output /tmp/differential-replay"
+    },
+    {
+      "id": "enable-invalid",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "387a3d05d3824279492b4a88f55ca726b6df61b7f59d5e30d646c161f99f38d2",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case enable-invalid --output /tmp/differential-replay"
+    },
+    {
+      "id": "clear-valid",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "79c6e2c8d4688effcc4006bea370827045ff9eab063f84182641dbefd2072414",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case clear-valid --output /tmp/differential-replay"
+    },
+    {
+      "id": "clear-invalid",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "7eeb49aba0124d9770766e5207bca5224ce0bc35afd7c566cc171ef628086b69",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case clear-invalid --output /tmp/differential-replay"
+    },
+    {
+      "id": "buffer-target-invalid",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "61837ca8b2aa74109199db9d4608e6d82020e1da553853d3706ecea17a194b46",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case buffer-target-invalid --output /tmp/differential-replay"
+    },
+    {
+      "id": "texture-target-invalid",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "ec654adb2bc3fc1f0ee5ea9c0c36d486e520fe4dfbd7f6e3a3698d62f84c2cac",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case texture-target-invalid --output /tmp/differential-replay"
+    },
+    {
+      "id": "unbind-program",
+      "kind": "api_error",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "13fceb112c35d5a757e5508f81846380b8d4ce4d48a39c6ba7a32b4b1e49584b",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case unbind-program --output /tmp/differential-replay"
+    },
+    {
+      "id": "fbo-black",
+      "kind": "fbo_pixels",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "9173d924cfad0b3e8f9c2e9555dd4793c37981de8704a9ab75dbb43cb88dbf7d",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case fbo-black --output /tmp/differential-replay"
+    },
+    {
+      "id": "fbo-white",
+      "kind": "fbo_pixels",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "a928b0183962bcef2ee5cda5d172f7a13b68b84ca82ad6a46b667549cc01208e",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case fbo-white --output /tmp/differential-replay"
+    },
+    {
+      "id": "fbo-primaries",
+      "kind": "fbo_pixels",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "196559423c248f855c6e192b30f8015be535c26fe268c68010345deaa5646183",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case fbo-primaries --output /tmp/differential-replay"
+    },
+    {
+      "id": "fbo-fractions",
+      "kind": "fbo_pixels",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "f4a261f45404b46f894469c0fefa8a65a07b98d15d33cfdf61d64f5cca3bbfb7",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case fbo-fractions --output /tmp/differential-replay"
+    },
+    {
+      "id": "fbo-clamp",
+      "kind": "fbo_pixels",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "f23c023e4ebc3fc40f9ec6872d30360ea26cc6e05c7878d5114d390f08e69e26",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case fbo-clamp --output /tmp/differential-replay"
+    },
+    {
+      "id": "fbo-midpoint",
+      "kind": "fbo_pixels",
+      "status": "PASS",
+      "comparison_channels": {},
+      "source_sha256": "c8a696562e54d0fd348aca1d54fb06548a5c05a482edb7826e6eb3cb924a7d3e",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case fbo-midpoint --output /tmp/differential-replay"
+    },
+    {
+      "id": "ssbo-add",
+      "kind": "ssbo_numeric",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "392d5c476ac1858c80a1953f35adc141ece9594cecfcab10b85bcfdd23fd185d",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case ssbo-add --output /tmp/differential-replay"
+    },
+    {
+      "id": "ssbo-multiply",
+      "kind": "ssbo_numeric",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "354265d2e32c4070346280a7686e80474fc32f1cbf30e3ae248d0eec63f19bc7",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case ssbo-multiply --output /tmp/differential-replay"
+    },
+    {
+      "id": "ssbo-divide",
+      "kind": "ssbo_numeric",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "e302d3fb94e8e3b82a10eb48d227586aa36345af7cdb3e0a988dcaa3077f0337",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case ssbo-divide --output /tmp/differential-replay"
+    },
+    {
+      "id": "ssbo-sqrt",
+      "kind": "ssbo_numeric",
+      "status": "PASS",
+      "comparison_channels": {
+        "compile": [
+          true,
+          true
+        ],
+        "link": [
+          true,
+          true
+        ]
+      },
+      "source_sha256": "309cb6dc64e06a91e3f34823662a4d58e06157d21b5e10af75572f8923949862",
+      "replay": "python3 benchmarks/differential/run.py --config benchmarks/differential/evidence/implementations.json --cases benchmarks/differential/evidence/cases.json --case ssbo-sqrt --output /tmp/differential-replay"
+    }
+  ],
+  "executed_comparisons": 47,
+  "real_gpu_gate": "BLOCKED_BY_HARDWARE",
+  "android_native_gate": "BLOCKED_BY_HARDWARE",
+  "performance_comparison": "NOT_MEASURED",
+  "tolerances": {
+    "fbo": "linear RGBA8 UNORM, no texture filtering or sRGB: max absolute 1 code value against CPU golden and peer",
+    "ssbo": "highp finite float: absolute 1e-6 + relative 1e-6; simple well-conditioned arithmetic only"
+  },
+  "dependency_hashes": {
+    "tools/shader_fuzz.py": "a1697cdae0fcd8fa3d3240fbe2865a647de7d5b7ee6e92fe151ff321349200c3",
+    "benchmarks/state_machine/host.py": "b572a9e70894966ae314db61f88608f572af1ddf26ca7c9c94e8e606bc3d4a66",
+    "benchmarks/pipeline/runtime.py": "9ba6222551d437b8f27c61d7883e905916149be6a23a4dbed90d961f444e0d1f",
+    "benchmarks/reducer/reduce.py": "d4627e4e05697ae4659d02ab9cba2dd1559366da67e9a1750d1be7351774b11c"
+  }
+}

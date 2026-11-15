@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "scope": "software GLES only; no hardware or perceptual-equivalence claim",
+  "captures": [
+    {
+      "precision": "highp",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)\nOpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "max_absolute_code_error": 0,
+      "tolerance": 1,
+      "pass": true,
+      "sha256": "0a94b4ef8eb578879267c6d219cec3b6d354aeef7a88f2ebeccfcbd04be2ce16"
+    },
+    {
+      "precision": "mediump",
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)\nOpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+      "max_absolute_code_error": 1,
+      "tolerance": 3,
+      "pass": true,
+      "sha256": "9886f82cb923b96c8ffca9f5e8a0c3fb5d1f47e741ea4fb8fb061cf19f1d6a6e"
+    }
+  ],
+  "sources": {
+    "examples/material_upgrade/film.frag": "88865c92756cb43dc676f0e6681014f4ce7e1bf17d89a0499e50914405633b37",
+    "examples/material_upgrade/film.cpp": "749f1404f87de63fbf7a7f3ea7dedbc2e4d03bc74cb5cb50d3ed9f9ca11b0353",
+    "benchmarks/material_upgrade/model.py": "8345284e36d9269a401a4b30efb460900eb2fe0f79fc58476c7009a880d427ec",
+    "benchmarks/material_upgrade/run.py": "154347a293a98836722f2bbbff56af3fe292f8a2d4af31ea637fad80300d8352"
+  }
+}

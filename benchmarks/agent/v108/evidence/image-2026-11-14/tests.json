@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-14T15:23:31.064775+00:00",
+  "scope": "authored image pipeline tests, not model quality",
+  "exit_code": 0,
+  "tests": 12,
+  "source_sha256": {
+    "benchmarks/agent/v108/image_pipeline.py": "a0bbb8e7221589dc6a54427bf5a4f5b3441e0647ae89bba11a6f339677d4153a",
+    "benchmarks/agent/v108/test_image_pipeline.py": "855d38106b410bca677e60ffc95bd34212c9152e691829935ab0775adbfd0568"
+  },
+  "stdout": "",
+  "stderr": "test_compile_success_not_image_success (test_image_pipeline.ImageTests.test_compile_success_not_image_success) ... ok\ntest_driver_error_never_passes (test_image_pipeline.ImageTests.test_driver_error_never_passes) ... ok\ntest_four_cases_three_sources (test_image_pipeline.ImageTests.test_four_cases_three_sources) ... ok\ntest_golden_pixel_centers (test_image_pipeline.ImageTests.test_golden_pixel_centers) ... ok\ntest_malformed_pixels_fail (test_image_pipeline.ImageTests.test_malformed_pixels_fail) ... ok\ntest_missing_driver_closed (test_image_pipeline.ImageTests.test_missing_driver_closed) ... ok\ntest_peer_tolerance_and_cpu_tolerance (test_image_pipeline.ImageTests.test_peer_tolerance_and_cpu_tolerance) ... ok\ntest_premultiplied_alpha_independent (test_image_pipeline.ImageTests.test_premultiplied_alpha_independent) ... ok\ntest_reviewed_sources_only (test_image_pipeline.ImageTests.test_reviewed_sources_only) ... ok\ntest_source_quota (test_image_pipeline.ImageTests.test_source_quota) ... ok\ntest_successful_image_oracle (test_image_pipeline.ImageTests.test_successful_image_oracle) ... ok\ntest_two_equal_wrong_outputs_fail (test_image_pipeline.ImageTests.test_two_equal_wrong_outputs_fail) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n"
+}

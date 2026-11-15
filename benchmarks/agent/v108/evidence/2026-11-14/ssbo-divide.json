@@ -1,0 +1,419 @@
+{
+  "schema_version": 1,
+  "case_id": "ssbo-divide",
+  "host_status": "BLOCKED_BY_DRIVER",
+  "provider_status": "BLOCKED_BY_PROVIDER",
+  "model_quality": "NOT_EVALUATED",
+  "scope": "authored bounded arithmetic shader repair; real host readback, not physical GPU or agent performance",
+  "source_sha256": "96c7704ea849be2c979803313d07087729e3f9a2cdb0344c1009109a6a6b094b",
+  "patch_sha256": "42d53f59870f95a1d2e46d1e88e29c277da40e38db81cb10d41b5e95d78d51f7",
+  "stages": {
+    "compile": {
+      "status": "PASS",
+      "before": {
+        "id": "ssbo-divide",
+        "kind": "ssbo_numeric",
+        "version": 310,
+        "expected": "reject",
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-06,
+        "status": "EXPECTED_ERROR",
+        "exit_code": 2,
+        "log": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/shader.comp\nERROR: 0:5: 'undefined_input' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+        "sha256": {
+          "shader.comp": "b51617695f7127387f9ece0b8245038bbbfb943d7c52aa8bcc784b917aaafb5d"
+        },
+        "command": [
+          "/tmp/gles108-toolchain/root/usr/bin/glslangValidator",
+          "/tmp/gles108-recovery/w7-real/ssbo-divide/before/shader.comp"
+        ],
+        "artifacts": "/tmp/gles108-recovery/w7-real/ssbo-divide/before",
+        "output_image": null
+      },
+      "after": {
+        "id": "ssbo-divide",
+        "kind": "ssbo_numeric",
+        "version": 310,
+        "expected": "accept",
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-06,
+        "status": "PASS",
+        "exit_code": 0,
+        "log": "",
+        "sha256": {
+          "shader.comp": "42d53f59870f95a1d2e46d1e88e29c277da40e38db81cb10d41b5e95d78d51f7"
+        },
+        "command": [
+          "/tmp/gles108-toolchain/root/usr/bin/glslangValidator",
+          "/tmp/gles108-recovery/w7-real/ssbo-divide/patched/shader.comp"
+        ],
+        "artifacts": "/tmp/gles108-recovery/w7-real/ssbo-divide/patched",
+        "output_image": null
+      }
+    },
+    "minimize": {
+      "predicate": "'undefined_input' : undeclared identifier ",
+      "status": "REPRODUCED",
+      "trials": [
+        {
+          "source_sha256": "b51617695f7127387f9ece0b8245038bbbfb943d7c52aa8bcc784b917aaafb5d",
+          "matches": true,
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/candidate.comp\nERROR: 0:5: 'undefined_input' : undeclared identifier \nERROR: 0:5: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a0ec60b0a9b26c0005dc7a3eaf310f3a8726aaed3df8e0e744b943a4fd9c92d6",
+          "matches": false,
+          "error_type": "DomainOrBudgetLimit"
+        },
+        {
+          "source_sha256": "231f983d6ee6728bbdddfdd019ec9785ed017638dadd61483ec570e141568cc8",
+          "matches": false,
+          "exit_code": 0,
+          "diagnostic": "",
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "86d3396ca7a09dad771d896d7592dce4102843e5486879fe2176326d61b4758c",
+          "matches": false,
+          "error_type": "DomainOrBudgetLimit"
+        },
+        {
+          "source_sha256": "1dc27b6642e031eee45e8e9123fa5f40e8285381de09eccd9f467aac3d43066d",
+          "matches": false,
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/candidate.comp\nERROR: 0:3: 'value' : undeclared identifier \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "8c1976d7fd5f1ed7905af35baee1898966eb12be7afacb928ce5a999f2fe5af3",
+          "matches": false,
+          "exit_code": 0,
+          "diagnostic": "",
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "f8bc8e06fd0cae30b0d6f4ec7ae966130f91a806d1d345d01cbcc2de0551c982",
+          "matches": false,
+          "error_type": "DomainOrBudgetLimit"
+        },
+        {
+          "source_sha256": "da8853df1b612656f36c8a05e58c792bc4aafa2b7d9cdbbd4b38be81d096f939",
+          "matches": true,
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/candidate.comp\nERROR: 0:4: 'undefined_input' : undeclared identifier \nERROR: 0:4: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "86d3396ca7a09dad771d896d7592dce4102843e5486879fe2176326d61b4758c",
+          "matches": false,
+          "error_type": "DomainOrBudgetLimit"
+        },
+        {
+          "source_sha256": "ed06ec5a59a5e05bae5478b76c0568ac6ceb2cf0f1aada022fd91109d87ea890",
+          "matches": true,
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/candidate.comp\nERROR: 0:3: 'undefined_input' : undeclared identifier \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a0ec60b0a9b26c0005dc7a3eaf310f3a8726aaed3df8e0e744b943a4fd9c92d6",
+          "matches": false,
+          "error_type": "DomainOrBudgetLimit"
+        },
+        {
+          "source_sha256": "6fbaba0324aab5607d6773252f06da36ba49c1c8bad1916e042390e0a10807d8",
+          "matches": false,
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/candidate.comp\nERROR: 0:2: 'value' : undeclared identifier \nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7b67fff5d32e61fa24f19e60343496f13cbdf08ef1fcef3b9931121e81c0486e",
+          "matches": false,
+          "exit_code": 0,
+          "diagnostic": "",
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "a0ec60b0a9b26c0005dc7a3eaf310f3a8726aaed3df8e0e744b943a4fd9c92d6",
+          "matches": false,
+          "error_type": "DomainOrBudgetLimit"
+        },
+        {
+          "source_sha256": "6fbaba0324aab5607d6773252f06da36ba49c1c8bad1916e042390e0a10807d8",
+          "matches": false,
+          "exit_code": 2,
+          "diagnostic": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/candidate.comp\nERROR: 0:2: 'value' : undeclared identifier \nERROR: 0:2: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n",
+          "compiler_crash": false
+        },
+        {
+          "source_sha256": "7b67fff5d32e61fa24f19e60343496f13cbdf08ef1fcef3b9931121e81c0486e",
+          "matches": false,
+          "exit_code": 0,
+          "diagnostic": "",
+          "compiler_crash": false
+        }
+      ],
+      "one_minimal": false
+    },
+    "repeat": {
+      "status": "PASS",
+      "observations": [
+        {
+          "matches": true,
+          "status": "EXITED",
+          "exit_code": 2,
+          "log": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/reduced.comp\nERROR: 0:3: 'undefined_input' : undeclared identifier \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n"
+        },
+        {
+          "matches": true,
+          "status": "EXITED",
+          "exit_code": 2,
+          "log": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/reduced.comp\nERROR: 0:3: 'undefined_input' : undeclared identifier \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n"
+        },
+        {
+          "matches": true,
+          "status": "EXITED",
+          "exit_code": 2,
+          "log": "/tmp/gles108-recovery/w7-real/ssbo-divide/before/reduced.comp\nERROR: 0:3: 'undefined_input' : undeclared identifier \nERROR: 0:3: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated.\n\n\n"
+        }
+      ]
+    },
+    "differential": {
+      "status": "INCOMPLETE",
+      "runs": [
+        {
+          "status": "EXECUTED",
+          "metadata": {
+            "implementation": "mesa",
+            "config_sha256": "c2397d2058b7b2eaed6e79b326b409aaea3181c5c47b3e7b291a90440ada8fe2",
+            "icd_sha256": null,
+            "vendor": "Mesa",
+            "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+            "api": "OpenGL ES 3.2 Mesa 25.0.7-2+deb13u1",
+            "shading_language": "OpenGL ES GLSL ES 3.20",
+            "extensions": [
+              "GL_ANDROID_extension_pack_es31a",
+              "GL_ANGLE_pack_reverse_row_order",
+              "GL_ANGLE_texture_compression_dxt3",
+              "GL_ANGLE_texture_compression_dxt5",
+              "GL_APPLE_sync",
+              "GL_APPLE_texture_max_level",
+              "GL_ARM_shader_framebuffer_fetch_depth_stencil",
+              "GL_EXT_EGL_image_storage",
+              "GL_EXT_EGL_image_storage_compression",
+              "GL_EXT_base_instance",
+              "GL_EXT_blend_func_extended",
+              "GL_EXT_blend_minmax",
+              "GL_EXT_buffer_storage",
+              "GL_EXT_clear_texture",
+              "GL_EXT_clip_control",
+              "GL_EXT_clip_cull_distance",
+              "GL_EXT_color_buffer_float",
+              "GL_EXT_color_buffer_half_float",
+              "GL_EXT_compressed_ETC1_RGB8_sub_texture",
+              "GL_EXT_conservative_depth",
+              "GL_EXT_copy_image",
+              "GL_EXT_debug_label",
+              "GL_EXT_depth_clamp",
+              "GL_EXT_discard_framebuffer",
+              "GL_EXT_disjoint_timer_query",
+              "GL_EXT_draw_buffers",
+              "GL_EXT_draw_buffers_indexed",
+              "GL_EXT_draw_elements_base_vertex",
+              "GL_EXT_draw_instanced",
+              "GL_EXT_float_blend",
+              "GL_EXT_frag_depth",
+              "GL_EXT_geometry_point_size",
+              "GL_EXT_geometry_shader",
+              "GL_EXT_gpu_shader5",
+              "GL_EXT_instanced_arrays",
+              "GL_EXT_map_buffer_range",
+              "GL_EXT_memory_object",
+              "GL_EXT_memory_object_fd",
+              "GL_EXT_multi_draw_arrays",
+              "GL_EXT_multi_draw_indirect",
+              "GL_EXT_occlusion_query_boolean",
+              "GL_EXT_polygon_offset_clamp",
+              "GL_EXT_primitive_bounding_box",
+              "GL_EXT_read_format_bgra",
+              "GL_EXT_render_snorm",
+              "GL_EXT_robustness",
+              "GL_EXT_sRGB_write_control",
+              "GL_EXT_separate_shader_objects",
+              "GL_EXT_shader_framebuffer_fetch",
+              "GL_EXT_shader_framebuffer_fetch_non_coherent",
+              "GL_EXT_shader_group_vote",
+              "GL_EXT_shader_implicit_conversions",
+              "GL_EXT_shader_integer_mix",
+              "GL_EXT_shader_io_blocks",
+              "GL_EXT_shadow_samplers",
+              "GL_EXT_tessellation_point_size",
+              "GL_EXT_tessellation_shader",
+              "GL_EXT_texture_border_clamp",
+              "GL_EXT_texture_buffer",
+              "GL_EXT_texture_compression_bptc",
+              "GL_EXT_texture_compression_dxt1",
+              "GL_EXT_texture_compression_rgtc",
+              "GL_EXT_texture_compression_s3tc",
+              "GL_EXT_texture_compression_s3tc_srgb",
+              "GL_EXT_texture_cube_map_array",
+              "GL_EXT_texture_filter_anisotropic",
+              "GL_EXT_texture_filter_minmax",
+              "GL_EXT_texture_format_BGRA8888",
+              "GL_EXT_texture_mirror_clamp_to_edge",
+              "GL_EXT_texture_norm16",
+              "GL_EXT_texture_query_lod",
+              "GL_EXT_texture_rg",
+              "GL_EXT_texture_sRGB_R8",
+              "GL_EXT_texture_sRGB_RG8",
+              "GL_EXT_texture_sRGB_decode",
+              "GL_EXT_texture_shadow_lod",
+              "GL_EXT_texture_storage",
+              "GL_EXT_texture_storage_compression",
+              "GL_EXT_texture_type_2_10_10_10_REV",
+              "GL_EXT_texture_view",
+              "GL_EXT_unpack_subimage",
+              "GL_KHR_blend_equation_advanced",
+              "GL_KHR_blend_equation_advanced_coherent",
+              "GL_KHR_context_flush_control",
+              "GL_KHR_debug",
+              "GL_KHR_no_error",
+              "GL_KHR_parallel_shader_compile",
+              "GL_KHR_robust_buffer_access_behavior",
+              "GL_KHR_robustness",
+              "GL_KHR_texture_compression_astc_ldr",
+              "GL_KHR_texture_compression_astc_sliced_3d",
+              "GL_MESA_bgra",
+              "GL_MESA_framebuffer_flip_y",
+              "GL_MESA_sampler_objects",
+              "GL_MESA_shader_integer_functions",
+              "GL_NV_alpha_to_coverage_dither_control",
+              "GL_NV_conditional_render",
+              "GL_NV_draw_buffers",
+              "GL_NV_fbo_color_attachments",
+              "GL_NV_generate_mipmap_sRGB",
+              "GL_NV_image_formats",
+              "GL_NV_pack_subimage",
+              "GL_NV_pixel_buffer_object",
+              "GL_NV_read_buffer",
+              "GL_NV_read_depth",
+              "GL_NV_read_depth_stencil",
+              "GL_NV_read_stencil",
+              "GL_NV_shader_noperspective_interpolation",
+              "GL_NV_texture_barrier",
+              "GL_OES_EGL_image",
+              "GL_OES_EGL_image_external",
+              "GL_OES_EGL_image_external_essl3",
+              "GL_OES_EGL_sync",
+              "GL_OES_compressed_ETC1_RGB8_texture",
+              "GL_OES_copy_image",
+              "GL_OES_depth24",
+              "GL_OES_depth_texture",
+              "GL_OES_depth_texture_cube_map",
+              "GL_OES_draw_buffers_indexed",
+              "GL_OES_draw_elements_base_vertex",
+              "GL_OES_element_index_uint",
+              "GL_OES_fbo_render_mipmap",
+              "GL_OES_geometry_point_size",
+              "GL_OES_geometry_shader",
+              "GL_OES_get_program_binary",
+              "GL_OES_gpu_shader5",
+              "GL_OES_mapbuffer",
+              "GL_OES_packed_depth_stencil",
+              "GL_OES_primitive_bounding_box",
+              "GL_OES_required_internalformat",
+              "GL_OES_rgb8_rgba8",
+              "GL_OES_sample_shading",
+              "GL_OES_sample_variables",
+              "GL_OES_shader_image_atomic",
+              "GL_OES_shader_io_blocks",
+              "GL_OES_shader_multisample_interpolation",
+              "GL_OES_standard_derivatives",
+              "GL_OES_stencil8",
+              "GL_OES_surfaceless_context",
+              "GL_OES_tessellation_point_size",
+              "GL_OES_tessellation_shader",
+              "GL_OES_texture_3D",
+              "GL_OES_texture_border_clamp",
+              "GL_OES_texture_buffer",
+              "GL_OES_texture_cube_map_array",
+              "GL_OES_texture_float",
+              "GL_OES_texture_float_linear",
+              "GL_OES_texture_half_float",
+              "GL_OES_texture_half_float_linear",
+              "GL_OES_texture_npot",
+              "GL_OES_texture_stencil8",
+              "GL_OES_texture_storage_multisample_2d_array",
+              "GL_OES_texture_view",
+              "GL_OES_vertex_array_object",
+              "GL_OES_vertex_half_float",
+              "GL_OES_viewport_array",
+              "GL_OVR_multiview",
+              "GL_OVR_multiview2"
+            ],
+            "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+            "os_build": "#1 SMP Tue Oct 20 21:56:04 UTC 2026",
+            "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+            "libraries": {
+              "/usr/lib/x86_64-linux-gnu/libEGL.so.1.1.0": "f4b60a4618fbf760f395f64dfd53320446ba1011151a80e411742b3232b194e6",
+              "/usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0.0.0": "af1229604d80d73422ff3767f572849dce074a0ecdba8254e93a06a88cfec2e6",
+              "/usr/lib/x86_64-linux-gnu/libLLVM.so.19.1": "3523f50f635d2a1ea47518a392451f2854b92823ceaf1345fb806099dd1a3b8a",
+              "/workspace/scratch/62d43a81bbde/browser-runtime/local-deps/usr/lib/x86_64-linux-gnu/libGLESv2.so.2.1.0": "a705c66de30ca4e883120c70acae0f1011d7c3f97605eef331e03493beae3812"
+            },
+            "source_sha256": "2fda297aeb63af6443863f0a742f7ed6869455731a9193ebce8ae2ab8b3cb0a4",
+            "egl_vendor": "Mesa Project"
+          },
+          "cases": [
+            {
+              "id": "ssbo-divide-control",
+              "status": "EXECUTED",
+              "kind": "ssbo_numeric",
+              "compile": true,
+              "link": true,
+              "compile_logs": [
+                ""
+              ],
+              "link_log": "",
+              "numeric": 0.25,
+              "harness_gl_error": 0
+            },
+            {
+              "id": "ssbo-divide-broken",
+              "status": "EXECUTED",
+              "kind": "shader",
+              "compile": false,
+              "link": false,
+              "compile_logs": [
+                "0:5(21): error: `undefined_input' undeclared\n0:5(21): error: operands to arithmetic operators must be numeric\n"
+              ],
+              "link_log": "error: linking with uncompiled/unspecialized shader",
+              "harness_gl_error": 0
+            },
+            {
+              "id": "ssbo-divide-patch",
+              "status": "EXECUTED",
+              "kind": "ssbo_numeric",
+              "compile": true,
+              "link": true,
+              "compile_logs": [
+                ""
+              ],
+              "link_log": "",
+              "numeric": 0.25,
+              "harness_gl_error": 0
+            }
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "error": "eglInitialize failed",
+          "cases": []
+        }
+      ]
+    }
+  },
+  "compiler_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb"
+}
