@@ -336,3 +336,8 @@ original-plan experiments remain incomplete; metadata stays unchanged.
 - [Compressed streaming chain](benchmarks/compressed_streaming/README.md): pinned KTX preparation, cache/budget and actual upload/readback with original-pixel fallback.
 - [Remaining original-plan gates](docs/v1.0.9/completion-matrix.md) and [scope clarification](docs/v1.0.9/original-scope-audit.md). Original visual failures, physical-device/provider and independent review gates remain.
 - Read-only weekly/monthly radar workflow delivered, not active from this Draft branch. No release/tag/version metadata change.
+
+- v1.0.9 candidate follow-up: actual fixed interleaved software captures, strict
+  duplicate-background alpha merge A/B with global camera rejection, and checked
+  original-plan completion/release bookkeeping. Failed pixels and external gates
+  remain open; no metadata version or release change.

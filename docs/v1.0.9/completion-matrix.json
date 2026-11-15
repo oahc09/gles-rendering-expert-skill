@@ -15,7 +15,8 @@
       "remaining_host": [],
       "external_requirements": [
         "Inherited release gates remain independently binding."
-      ]
+      ],
+      "verified_summary": "Original plan/baseline, write access, eight reuse paths, unchanged predecessor hashes; current test mapping, explicit tag and baseline/source-head CI audit"
     },
     {
       "id": "W1",
@@ -29,7 +30,8 @@
       "remaining_host": [],
       "external_requirements": [
         "Physical capture authenticity is not established by a declared provenance label or file hash."
-      ]
+      ],
+      "verified_summary": "12 labelled synthetic samples, UNKNOWN/missing evidence, overlap/clock domains, frame quantiles; strict metadata and hash-bound real-export samples"
     },
     {
       "id": "W2",
@@ -41,29 +43,35 @@
         "tools/attachment_lifecycle.py",
         "tools/test_attachment_lifecycle.py"
       ],
-      "remaining_host": [
-        "Arbitrary aliased/subresource lifetimes and implicit driver passes are outside the explicitly bounded event model."
-      ],
+      "remaining_host": [],
       "external_requirements": [
         "Real comparable device-counter calibration and DRAM conversion are not measured. Device calibration is optional in the plan, not a fabricated requirement."
+      ],
+      "verified_summary": "Legacy bounds plus explicit load/clear/discard/draw/switch/resolve/store/consume state machine; scoped driver condition, unknown propagation; 18 boundary/negative tests",
+      "scope_exclusions": [
+        "Arbitrary aliased/subresource lifetimes and implicit driver passes are outside the explicitly bounded event model."
       ]
     },
     {
       "id": "W3",
-      "host_delivery": "PARTIAL",
-      "acceptance": "PARTIAL_HOST_SCOPE",
+      "host_delivery": "MET_BOUNDED",
+      "acceptance": "BOUNDED_SHADER_CONTRACT_DELIVERED",
       "evidence": [
         "benchmarks/shader_ab/run.py",
         "benchmarks/shader_ab/optimization_pairs.py",
         "benchmarks/shader_ab/advanced.py",
         "benchmarks/shader_ab/counterexamples.py",
-        "benchmarks/shader_ab/variant_trace.py"
+        "benchmarks/shader_ab/variant_trace.py",
+        "benchmarks/interleaved_capture/run.py",
+        "benchmarks/interleaved_capture/test_capture.py"
       ],
-      "remaining_host": [
-        "Wider shader/input distributions and automatic interleaved capture orchestration are not implemented; finite initial 16 pairs now each have independent CPU goldens and negative arms; existing Variant validator and optional Trace analyzer are reused."
-      ],
+      "remaining_host": [],
       "external_requirements": [
         "Interleaved GPU timing, thermal/frequency/trace evidence and actual negative performance outcomes remain unmeasured."
+      ],
+      "verified_summary": "Initial 16 pairs now each have CPU goldens and executable negative arms; Variant validator and optional source-bound Trace analyzer integrated; other actual mechanisms retained; fixed-function ABAB software collector executes 104 actual draws/readbacks per driver with source-bound CPU quality controls",
+      "scope_exclusions": [
+        "Interleaved capture is software quality-only: two fixed workloads, per-observation setup, four AB pairs and three samples/run. It is not a steady-state timing harness or physical protocol; broader distributions are not claimed."
       ]
     },
     {
@@ -79,14 +87,20 @@
         "benchmarks/overlap_scenes/evidence/tiered-baseline-bias.json",
         "benchmarks/overlap_scenes/precision_policy.py",
         "benchmarks/overlap_scenes/precision_replay.py",
-        "benchmarks/overlap_scenes/coverage_scenes.py"
+        "benchmarks/overlap_scenes/coverage_scenes.py",
+        "benchmarks/overlap_scenes/background_merge.py",
+        "benchmarks/overlap_scenes/test_background_merge.py",
+        "benchmarks/overlap_scenes/BACKGROUND_MERGE.md",
+        "benchmarks/overlap_scenes/evidence/background-merge-mesa.json",
+        "benchmarks/overlap_scenes/evidence/background-merge-angle.json"
       ],
       "remaining_host": [
-        "Original Mesa RGBA8 high-layer visual failures unresolved. Rain/volume/UI finite scenes and color/alpha/depth/background tile statistics now implemented. Larger-scale or general Gaussian merging/far-only layered compositing remain extensions beyond bounded prototypes, not claimed complete."
+        "Original Mesa RGBA8 high-layer visual failures unresolved. Duplicate-background merge runs on both software backends (9 readbacks each) but candidates reject across the three-camera gate: Mesa has an invalid baseline view and selects UNAVAILABLE; ANGLE keeps baseline. Harness contract PASS is not visual acceptance (visual FAIL). General Gaussian merge and independently scaled far layers are not implemented."
       ],
       "external_requirements": [
         "Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition."
-      ]
+      ],
+      "verified_summary": "Gaussian/glass plus actual rain/volume/UI proxies, dynamic cameras, A/B, tile coverage/layers/RGBA/depth/background stats; precision budget gate; actual bounded duplicate-background alpha merge research (draws 11 to 7), three cameras and explicit quality rejection/fallback"
     },
     {
       "id": "W5",
@@ -99,17 +113,19 @@
         "tools/rendergraph_replay.py",
         "benchmarks/pipeline/candidate_replay.py"
       ],
-      "remaining_host": [
-        "General graph transforms, incoherent compute/image/SSBO barriers and other candidate categories remain outside the closed sequential framebuffer-to-texture replay vocabulary."
-      ],
+      "remaining_host": [],
       "external_requirements": [
         "Device gains cannot be claimed from advisory candidates."
+      ],
+      "verified_summary": "Copied candidate 4\u00d74\u21922\u00d72 intermediate graph; actual three-pass replay; constant passes/checkerboard rejects; closed synchronization vocabulary rejects unsafe graphs before GL",
+      "scope_exclusions": [
+        "General graph transforms, incoherent compute/image/SSBO barriers and other candidate categories remain outside the closed sequential framebuffer-to-texture replay vocabulary."
       ]
     },
     {
       "id": "W6",
-      "host_delivery": "PARTIAL",
-      "acceptance": "PARTIAL_HOST_SCOPE",
+      "host_delivery": "MET_BOUNDED",
+      "acceptance": "BOUNDED_TEXTURE_CHAIN_DELIVERED",
       "evidence": [
         "benchmarks/texture_access/mechanisms.py",
         "benchmarks/texture_access/ktx2_experiment.py",
@@ -118,11 +134,13 @@
         "benchmarks/texture_access/oblique.py",
         "benchmarks/compressed_streaming/run.py"
       ],
-      "remaining_host": [
-        "Actual compressed transcode/cache/budget/upload/readback chain and CPU phase accounting delivered. General assets/high-frequency filtering and asynchronous streaming remain bounded extensions; physical residency/upload stalls/timing absent."
-      ],
+      "remaining_host": [],
       "external_requirements": [
         "Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics."
+      ],
+      "verified_summary": ">8 mechanisms, KTX/CPU quality, progressive mip, oblique locality, actual compressed transcode\u2192cache\u2192budget\u2192GL upload/readback chain",
+      "scope_exclusions": [
+        "Arbitrary assets/high-frequency filtering and asynchronous streaming are not claimed. Async is not a separate mandatory W6 deliverable. CPU phase timing is not GPU upload-stall or residency evidence."
       ]
     },
     {
@@ -133,27 +151,34 @@
         "tools/optimization_advisor.py",
         "tools/optimization_experiments.py",
         "benchmarks/rollback_controls/run.py",
-        "benchmarks/workflow/run.py"
+        "benchmarks/workflow/run.py",
+        "benchmarks/workflow/evidence/mesa/workflow-result.json",
+        "benchmarks/workflow/evidence/angle/workflow-result.json"
       ],
       "remaining_host": [],
       "external_requirements": [
         "Trusted physical capture/reviewer authentication remains external. Isolated finite rollback is not application-wide or context-loss recovery."
-      ]
+      ],
+      "verified_summary": "All states/quality refusal/hash-bound review; executable registry, gain range and structural completeness ranking; real isolated rollback; actual end-to-end workflow calls shared advise/decide, constant INSUFFICIENT_EVIDENCE and checkerboard REJECTED_BY_QUALITY"
     },
     {
       "id": "W8",
-      "host_delivery": "MET_PROTOCOL",
+      "host_delivery": "MET_PROTOCOL_AND_SOFTWARE_COLLECTION",
       "acceptance": "BLOCKED_BY_HARDWARE",
       "evidence": [
         "benchmarks/device_portability/protocol.py",
         "benchmarks/device_portability/matrix.json",
-        "benchmarks/device_portability/scene_collector.py"
+        "benchmarks/device_portability/scene_collector.py",
+        "benchmarks/device_portability/evidence/grouped.json",
+        "benchmarks/device_portability/test_scene_collector.py"
       ],
-      "remaining_host": [
-        "Actual software scene collector and hash-bound grouped quality ingestion now implemented; real device collector and validated vendor strategies not implemented."
-      ],
+      "remaining_host": [],
       "external_requirements": [
         "At least one physical device A/B is absent; Mali/Adreno/PowerVR comparisons and temperature/frequency traces are NOT_RUN."
+      ],
+      "verified_summary": "Physical protocol/matrix plus executed three-stage software scene collector, CPU quality rejection/fallback, hash-bound software grouping; physical and software records remain separate",
+      "scope_exclusions": [
+        "Physical execution adapter and measured vendor-specific strategies are unavailable; do not convert software captures into physical protocol records. Original W8 permits unavailable devices as NOT_RUN."
       ]
     },
     {
@@ -171,7 +196,8 @@
       ],
       "external_requirements": [
         "No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence."
-      ]
+      ],
+      "verified_summary": "30 new tasks/172 preserved, paired runner, seven metrics; now an actual v1.0.9 scoring CLI with corpus/response/evidence checks"
     },
     {
       "id": "W10",
@@ -192,8 +218,24 @@
       ],
       "external_requirements": [
         "Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding."
-      ]
+      ],
+      "verified_summary": "90-day corpus/selected review, source-experiment-test links, complete CI, weekly/monthly read-only workflow code"
     }
   ],
-  "scope_interpretation": "docs/v1.0.9/original-scope-audit.md"
+  "scope_interpretation": "docs/v1.0.9/original-scope-audit.md",
+  "merge_assessment": {
+    "implementation_pr": "REVIEWABLE_WITH_DECLARED_FAILURES",
+    "automatic_merge_ready": false,
+    "requirements": [
+      "Current exact-head CI and repository review/branch protections must be checked externally.",
+      "Do not describe merged infrastructure as original W4 visual acceptance or a release."
+    ],
+    "release_blockers": [
+      "Original W4 Mesa high-layer RGBA8 image failures; alternate precision contract does not retroactively pass original reference.",
+      "Authentic paired Agent/provider execution and independent adjudication absent.",
+      "Inherited real-device/reviewer gates remain binding; no physical A/B gains verified.",
+      "Research coverage conclusions/independent acceptance and observed scheduled execution incomplete.",
+      "Explicit release authorization remains required."
+    ]
+  }
 }

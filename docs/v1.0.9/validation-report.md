@@ -321,3 +321,22 @@ original-scope-audit.md. Weekly/monthly radar workflow code is read-only and
 artifact-only, but cannot run on this Draft branch: not an active schedule claim.
 
 Integrated regression: **996 tests, zero skips**, 38 directories; `evidence/host-regression-integrated.json`. All three new runtime chains independently rerun on both backends. This does not close original high-layer visual, physical device, provider or independent-review gates.
+
+## Original-plan core closure: interleaved capture and background merge
+
+The bounded shader collector now performs real ABABABAB repetitions with fixed
+source bindings and independent CPU pixel checks, rather than only accepting a
+pre-filled sequence. Mesa and ANGLE each execute 104 draw/readbacks. No GPU timer,
+thermal stability or physical capture is invented; good pixels remain insufficient
+performance evidence and bad pixels are rejected.
+
+The new background merge experiment preserves foreground geometry and analytically
+combines only adjacent identical background alpha profiles. It reduces 11 draws to
+7, but normalized-target rounding causes quality rejection across the tested camera
+set. Both drivers reject the candidate globally; Mesa also has a failing baseline
+view, so fallback is UNAVAILABLE, while ANGLE retains baseline. These are retained
+failures, not an accepted optimization. See `BACKGROUND_MERGE.md` for exact scope.
+
+The completion matrix, readable table and release gate now have executable
+consistency checks. GitHub mergeability is a Git property, not acceptance of the
+original plan. Physical/provider/independent-review and inherited gates remain.

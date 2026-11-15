@@ -148,6 +148,7 @@ jobs:
       - name: v1.0.9 covariance refraction and actual KTX transcode controls
         run: |
           for driver in mesa angle; do
+            python3 benchmarks/interleaved_capture/run.py --config /tmp/v109-$driver.json --output reports/v109-interleaved-$driver.json
             python3 benchmarks/shader_ab/optimization_pairs.py --config /tmp/v109-$driver.json --output reports/v109-optimization-pairs-$driver.json
             python3 benchmarks/texture_streaming/run.py --config /tmp/v109-$driver.json --output reports/v109-streaming-$driver.json
             python3 benchmarks/compressed_streaming/run.py --config /tmp/v109-$driver.json --ktx-root /tmp/KTX-Software-4.4.2-Linux-x86_64 --ktx-archive /tmp/v109-ktx.tar.bz2 --output reports/v109-compressed-streaming-$driver.json
@@ -172,6 +173,7 @@ jobs:
       - name: v1.0.9 tier quality gate contract (not all-tier visual acceptance)
         run: |
           for driver in mesa angle; do
+            python3 benchmarks/overlap_scenes/background_merge.py --config /tmp/v109-$driver.json --output reports/v109-background-merge-$driver.json --require-contract-only
             python3 benchmarks/overlap_scenes/precision_replay.py --config /tmp/v109-$driver.json --output reports/v109-precision-admission-$driver.json
             python3 benchmarks/overlap_scenes/blend_precision.py --config /tmp/v109-$driver.json --output reports/v109-blend-precision-$driver.json --require-contract-only
             python3 benchmarks/overlap_scenes/tiered.py --config /tmp/v109-$driver.json --output reports/v109-tiered-$driver.json --require-harness-only

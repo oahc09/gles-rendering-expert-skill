@@ -11,8 +11,17 @@ class CompletionMatrix(unittest.TestCase):
    for p in row['evidence']:self.assertTrue((ROOT/p).is_file(),p)
  def test_no_host_gap_hidden_as_hardware(self):
   rows={r['id']:r for r in json.loads((ROOT/'docs/v1.0.9/completion-matrix.json').read_text())['rows']}
-  for k in ('W3','W4','W6','W10'):
+  for k in ('W4','W10'):
    self.assertEqual(rows[k]['acceptance'],'PARTIAL_HOST_SCOPE');self.assertTrue(rows[k]['remaining_host'])
+  # Closed local gaps must carry executable evidence, bounded scope and separate
+  # external requirements, not disappear into a generic hardware status.
+  for k,acceptance,required in (
+   ('W3','BOUNDED_SHADER_CONTRACT_DELIVERED',['benchmarks/shader_ab/counterexamples.py','benchmarks/shader_ab/variant_trace.py','benchmarks/interleaved_capture/run.py']),
+   ('W6','BOUNDED_TEXTURE_CHAIN_DELIVERED',['benchmarks/compressed_streaming/run.py','benchmarks/texture_streaming/progressive.py'])):
+   self.assertEqual(rows[k]['acceptance'],acceptance)
+   self.assertEqual(rows[k]['host_delivery'],'MET_BOUNDED')
+   self.assertTrue(rows[k]['scope_exclusions']);self.assertTrue(rows[k]['external_requirements'])
+   for evidence in required:self.assertIn(evidence,rows[k]['evidence']);self.assertTrue((ROOT/evidence).is_file())
   self.assertEqual(rows['W8']['acceptance'],'BLOCKED_BY_HARDWARE');self.assertEqual(rows['W9']['acceptance'],'BLOCKED_BY_PROVIDER')
 
  def test_bounded_models_not_general_proof(self):

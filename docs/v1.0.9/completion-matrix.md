@@ -7,24 +7,28 @@ it does not waive inherited releases or imply mobile/provider acceptance.
 
 ## W0–W10
 
-| Package | Host delivery | Verified deliverable | Exact remaining work |
+| Package | Host delivery | Verified deliverable | Exact remaining work / limits |
 |---|---|---|---|
-| W0 audit | **MET** | Original plan/baseline, write access, eight reuse paths, unchanged predecessor hashes; current test mapping, explicit tag and baseline/source-head CI audit | No local audit gap identified. Earlier release gates remain independent. |
-| W1 fingerprint | **MET, bounded contract** | 12 labelled synthetic samples, UNKNOWN/missing evidence, overlap/clock domains, frame quantiles; strict metadata and hash-bound real-export samples | File hash is not physical-source authenticity. No measured causal bottleneck claim. |
-| W2 cost model | **MET as bounded lifecycle model** | Legacy bounds plus explicit load/clear/discard/draw/switch/resolve/store/consume state machine; scoped driver condition, unknown propagation; 18 boundary/negative tests | Scope excludes alias/subresources and implicit driver passes. Conditions are not authenticated; physical counters unmeasured. Calibration optional in plan. |
-| W3 shader experiments | **PARTIAL** | Initial 16 pairs now each have CPU goldens and executable negative arms; Variant validator and optional source-bound Trace analyzer integrated; other actual mechanisms retained | Broader input distributions and automatic interleaved capture orchestration remain. No physical timing/thermal/gain acceptance. |
-| W4 overlap | **PARTIAL visual acceptance** | Gaussian/glass plus actual rain/volume/UI proxies, dynamic cameras, A/B, tile coverage/layers/RGBA/depth/background stats; precision budget gate | Original Mesa high-layer UNORM still fails. General Gaussian merge/far-only composites and larger-scale coverage not claimed. |
-| W5 graph advice | **MET as bounded advice/replay** | Copied candidate 4×4→2×2 intermediate graph; actual three-pass replay; constant passes/checkerboard rejects; closed synchronization vocabulary rejects unsafe graphs before GL | General transforms and incoherent compute/image/SSBO synchronization excluded; no universal equivalence or performance proof. |
-| W6 texture | **Host mechanisms and bounded chain delivered; physical metrics unmeasured** | >8 mechanisms, KTX/CPU quality, progressive mip, oblique locality, actual compressed transcode→cache→budget→GL upload/readback chain | Real residency/stalls/bandwidth/time absent; arbitrary assets/high-frequency filters/async pipeline not claimed. Async is not separately mandated by original W6. |
-| W7 decision | **MET, bounded contract** | All states/quality refusal/hash-bound review; executable registry, gain range and structural completeness ranking; real isolated rollback | Structural completeness is not authenticated evidence. No autonomous acceptance or app-wide/context-loss rollback. Real reviewed measurements remain external. |
-| W8 portability | **Protocol delivered; HARDWARE BLOCKED** | Exact device grouping, interleaved A/B/thermal/sample/trace constraints, truthful matrix | Host: complete same-scene device-collector wiring and validated strategy variants not finished. External: no physical A/B; no Mali/Adreno/PowerVR comparison. |
-| W9 Agent | **Infrastructure delivered; PROVIDER BLOCKED** | 30 new tasks/172 preserved, paired runner, seven metrics; now an actual v1.0.9 scoring CLI with corpus/response/evidence checks | Corpus independent content review remains. No authenticated model pair, independent adjudication or physical measured-gain evidence. Empty provider run gives null metrics and exit 2. |
-| W10 radar/CI | **PARTIAL operational acceptance** | 90-day corpus/selected review, source-experiment-test links, complete CI, weekly/monthly read-only workflow code | Cron inactive until default-branch merge and observed execution; vendor/X coverage and independent acceptance still incomplete. |
+| W0 | **MET** | Original plan/baseline, write access, eight reuse paths, unchanged predecessor hashes; current test mapping, explicit tag and baseline/source-head CI audit | Inherited release gates remain independently binding. |
+| W1 | **MET** | 12 labelled synthetic samples, UNKNOWN/missing evidence, overlap/clock domains, frame quantiles; strict metadata and hash-bound real-export samples | Physical capture authenticity is not established by a declared provenance label or file hash. |
+| W2 | **MET_BOUNDED** | Legacy bounds plus explicit load/clear/discard/draw/switch/resolve/store/consume state machine; scoped driver condition, unknown propagation; 18 boundary/negative tests | Arbitrary aliased/subresource lifetimes and implicit driver passes are outside the explicitly bounded event model. Real comparable device-counter calibration and DRAM conversion are not measured. Device calibration is optional in the plan, not a fabricated requirement. |
+| W3 | **MET_BOUNDED** | Initial 16 pairs now each have CPU goldens and executable negative arms; Variant validator and optional source-bound Trace analyzer integrated; other actual mechanisms retained; fixed-function ABAB software collector executes 104 actual draws/readbacks per driver with source-bound CPU quality controls | Interleaved capture is software quality-only: two fixed workloads, per-observation setup, four AB pairs and three samples/run. It is not a steady-state timing harness or physical protocol; broader distributions are not claimed. Interleaved GPU timing, thermal/frequency/trace evidence and actual negative performance outcomes remain unmeasured. |
+| W4 | **PARTIAL** | Gaussian/glass plus actual rain/volume/UI proxies, dynamic cameras, A/B, tile coverage/layers/RGBA/depth/background stats; precision budget gate; actual bounded duplicate-background alpha merge research (draws 11 to 7), three cameras and explicit quality rejection/fallback | Original Mesa RGBA8 high-layer visual failures unresolved. Duplicate-background merge runs on both software backends (9 readbacks each) but candidates reject across the three-camera gate: Mesa has an invalid baseline view and selects UNAVAILABLE; ANGLE keeps baseline. Harness contract PASS is not visual acceptance (visual FAIL). General Gaussian merge and independently scaled far layers are not implemented. Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition. |
+| W5 | **MET_BOUNDED** | Copied candidate 4×4→2×2 intermediate graph; actual three-pass replay; constant passes/checkerboard rejects; closed synchronization vocabulary rejects unsafe graphs before GL | General graph transforms, incoherent compute/image/SSBO barriers and other candidate categories remain outside the closed sequential framebuffer-to-texture replay vocabulary. Device gains cannot be claimed from advisory candidates. |
+| W6 | **MET_BOUNDED** | >8 mechanisms, KTX/CPU quality, progressive mip, oblique locality, actual compressed transcode→cache→budget→GL upload/readback chain | Arbitrary assets/high-frequency filtering and asynchronous streaming are not claimed. Async is not a separate mandatory W6 deliverable. CPU phase timing is not GPU upload-stall or residency evidence. Physical residency, GPU upload stalls, DRAM and frame-time/power benefit require real device capture. Logical bytes are not these metrics. |
+| W7 | **MET** | All states/quality refusal/hash-bound review; executable registry, gain range and structural completeness ranking; real isolated rollback; actual end-to-end workflow calls shared advise/decide, constant INSUFFICIENT_EVIDENCE and checkerboard REJECTED_BY_QUALITY | Trusted physical capture/reviewer authentication remains external. Isolated finite rollback is not application-wide or context-loss recovery. |
+| W8 | **MET_PROTOCOL_AND_SOFTWARE_COLLECTION** | Physical protocol/matrix plus executed three-stage software scene collector, CPU quality rejection/fallback, hash-bound software grouping; physical and software records remain separate | Physical execution adapter and measured vendor-specific strategies are unavailable; do not convert software captures into physical protocol records. Original W8 permits unavailable devices as NOT_RUN. At least one physical device A/B is absent; Mali/Adreno/PowerVR comparisons and temperature/frequency traces are NOT_RUN. |
+| W9 | **MET_INFRASTRUCTURE** | 30 new tasks/172 preserved, paired runner, seven metrics; now an actual v1.0.9 scoring CLI with corpus/response/evidence checks | 30 case-specific AI-authored prompt-bound adjudication guides delivered; independent corpus-content review remains incomplete. No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence. |
+| W10 | **PARTIAL** | 90-day corpus/selected review, source-experiment-test links, complete CI, weekly/monthly read-only workflow code | Selected source reviews and experiment hash links delivered; vendor/X coverage conclusions remain incomplete. The entire1319-record corpus is not falsely labelled reviewed. Weekly/monthly read-only workflow code delivered but inactive on Draft branch; activation and observed successful scheduled execution await default-branch merge. Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding. |
 
 ## Important original-scope distinctions
 
-- S01–S08 are **recommended acceptance scenes**. Record their gaps, but do not invent
-  an unconditional requirement for one million instances on every environment.
+- The DoD requires S01–S08 correctness/quality/performance evidence **or explicit
+  NOT_RUN/blockage**. `scene-coverage.json` records all eight. Capability tiers do
+  not impose one million instances on every host; they do not waive reporting.
+- S03 remains PARTIAL: constant/checkerboard three-pass replay is only a bounded
+  PostFX subchain, not a unified UI + 3D + PostFX scene or measured load/store capture.
+  The finite end-to-end Advisor workflow does not close that full scene gap.
 - W4 explicitly permits Gaussian/sprite proxies. A trained complete 3DGS engine is
   **not added here as a new mandatory DoD**. Existing proxy minimum is met; the
   actual listed scene/optimization/statistics gaps above still matter.
@@ -52,10 +56,12 @@ it does not waive inherited releases or imply mobile/provider acceptance.
 
 ## Recommended next work, not an assertion of completion
 
-1. Integrate a real S03 UI+3D+PostFX scene and actual candidate PostFX replay, then
-   connect legacy Variant/Trace records across the representative scenes.
-2. Finish W4 listed optimization/scene/statistics coverage and W6 mip/locality and
-   resource-lifecycle distributions; extend beyond the bounded W2 lifecycle/driver assumptions only with explicit contracts.
+1. Candidate PostFX graph replay and a bounded end-to-end workflow are delivered.
+   The workflow actually calls the shared Advisor after image validation; broader
+   representative-scene integration remains outside this finite chain.
+2. Resolve W4 original-reference visual failures without changing the target.
+   W6 mip/locality and compressed lifecycle controls are now delivered in bounded
+   form; do not silently turn arbitrary asset/async expansion into a new DoD.
 3. Triage the remaining research corpus and vendor/X sources with explicit defer /
    reject / applicability decisions. Ten reviews are not full source coverage.
 4. With separately available real devices and an authorized provider, run physical
@@ -71,8 +77,7 @@ self-referential claim that an as-yet-unpushed commit has already passed CI.
 The explicit lifecycle model, all initial per-pair negatives and existing
 Variant/Trace reuse, plus finite candidate graph rewrite/replay with checked
 coherent synchronization, are now executable. These replace the previously
-listed missing implementations, not hardware/provider acceptance. Other matrix
-rows retain their unresolved host items. Candidate replay accepts constant input
+listed missing implementations, not hardware/provider acceptance. The current table above supersedes historical missing-implementation notes. Candidate replay accepts constant input
 and rejects checkerboard degradation without relaxing quality budgets.
 
 ## Scene collection, mip refinement and tier quality follow-up
@@ -86,7 +91,8 @@ and rejects checkerboard degradation without relaxing quality budgets.
   baseline is explicitly not acceptable. Harness-contract success is not
   full-tier visual acceptance.
 - W6 now has synchronous explicit mip refinement, budget gating and actual
-  rejected-candidate restore. Compressed/asynchronous streaming remains missing.
+  rejected-candidate restore. Compressed transcode/cache/upload/readback is also
+  delivered; asynchronous streaming remains outside the bounded implementation.
 - W8 captures the actual three-stage scene, rechecks CPU quality from pixels and
   groups hash-bound software records. It does not enter the physical protocol.
 - W9 adds prompt-bound case-specific reasoning guidance for all 30 tasks;
@@ -122,3 +128,29 @@ routes are redrawn and rechecked; rejected routes cause no admission replay.
 Independent quality probes have separately declared finite overhead, not
 production zero-cost switching. RGBA32F+conversion allocation is 5× RGBA8 here,
 with >4× modeled logical transfers; no physical bandwidth/timing claim.
+
+## Merge versus release
+
+The implementation PR is reviewable with explicitly recorded failures, **not an
+automatic merge-ready or release-ready assertion**. Check current exact-head CI,
+review and branch protections externally. The release blockers are original W4
+visual acceptance, authenticated provider/independent adjudication, inherited
+real-device/reviewer gates, incomplete research/observed scheduled execution and
+explicit release authorization. Do not require optional generalization merely to
+merge honest bounded infrastructure, and do not treat a merge as passing those gates.
+
+Consistency check: `python3 -m unittest discover -s docs/v1.0.9 -p 'test_completion_consistency.py' -v`.
+The table is checked against the machine-readable rows and evidence paths; this
+check does not authenticate measurements or certify remote CI.
+
+## Bounded background-merge follow-up
+
+The actual W4 experiment merges only adjacent duplicate background proxies with
+identical color/projection/depth, using analytic alpha composition and retaining
+foreground. Draws fall 11→7, not a measured performance gain. Both software
+backends execute nine readbacks; UNORM blending/rounding causes candidate quality
+rejection over the three-camera gate. Mesa's baseline also fails one view, so its
+result is UNAVAILABLE rather than a failed fallback; ANGLE retains baseline.
+The saved visual result remains FAIL while the rejection-protocol contract passes.
+W4 therefore stays PARTIAL. General merging and independently scaled far layers
+are not claimed, and existing image thresholds are unchanged.
