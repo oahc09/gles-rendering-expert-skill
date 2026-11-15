@@ -1,0 +1,45 @@
+name: GLES read-only research radar
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [weekly, monthly]
+        default: weekly
+        description: Inclusive source window (7 or 90 days)
+  schedule:
+    - cron: '17 3 * * 1'
+    - cron: '41 3 1 * *'
+permissions:
+  contents: read
+concurrency:
+  group: gles-read-only-radar
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Choose bounded window
+        env:
+          REQUESTED_MODE: ${{ inputs.mode }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          mode=weekly
+          if [ "$REQUESTED_MODE" = monthly ] || [ "$EVENT_SCHEDULE" = '41 3 1 * *' ]; then mode=monthly; fi
+          mkdir -p reports
+          python3 tools/v109_radar_window.py --mode "$mode" > reports/window.json
+      - name: Reuse existing read-only metadata collector
+        run: |
+          start=$(python3 -c "import json; print(json.load(open('reports/window.json'))['start'])")
+          end=$(python3 -c "import json; print(json.load(open('reports/window.json'))['end'])")
+          python3 references/research/update_radar.py --start "$start" --end "$end" --archive reports/radar
+      - name: Preserve candidates and incomplete retrieval
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: gles-research-candidates
+          path: reports/
+          retention-days: 30
+          if-no-files-found: error

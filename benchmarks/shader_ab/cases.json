@@ -1,0 +1,258 @@
+[
+  {
+    "id": "branch-select",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.x<0.5?0.25:0.75,uv.y,0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(mix(0.25,0.75,step(0.5,uv.x)),uv.y,0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "a8698f442de3de6aeece7f32f24f0dad9ec5bab5b059e3b8963d744c5ab6d232",
+      "b": "8e7d93cb4ba0e81416cf894d83e4e2e565a0a4b9d60589bbd71f7d8a12030505"
+    }
+  },
+  {
+    "id": "multiply-divide",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv/2.0,0.25,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv*0.5,0.25,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "db4ec6e549284286caa1fe37473cbba2ebf254ea76746c534ebe816f9545fec8",
+      "b": "47ddfc6e724813ca27d6d5c807be14cabfa914bd97c8e41fa7b8dbc5168f5286"
+    }
+  },
+  {
+    "id": "square-pow",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(pow(uv.x,2.0),uv.y,0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.x*uv.x,uv.y,0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "8642c0e0867d4c8543e18aebe7567b2adad8ba9b037c50986c59c9a2d5b8915d",
+      "b": "9233ab67dd8ece190bb465dfd0a33292931deca078452ae42dbc3a9ddb5dcca3"
+    }
+  },
+  {
+    "id": "clamp-minmax",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(clamp(uv,0.25,0.75),0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(min(max(uv,vec2(0.25)),vec2(0.75)),0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "a1308dfc0c755e71b72d0bb5016bcd9576a5fffbe09824641913a96db8fd891d",
+      "b": "e5ec7559deeace8a1ab67325917aa87bd12b6f12b59c0015decc2a0d0161a81b"
+    }
+  },
+  {
+    "id": "mix-linear",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(mix(uv.x,uv.y,0.5),0.0,0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4((uv.x+uv.y)*0.5,0.0,0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "218cee9108a75182ce985d04b647f28c96f6416c17843ac6535a196036771b16",
+      "b": "d534e1a5c60359a0581e93ed6dc4896c19d5635a1ff95365caaafb96d24779c9"
+    }
+  },
+  {
+    "id": "constant-fold",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv,0.125+0.375,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv,0.5,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "4c7195fad2e7cd291068596a98e73e526ca62f23afc6b6e429ef8118a78e9358",
+      "b": "54fbfc621f148015c1efba27fa8ac683e364bd7d0cbc9835573d98f18a285e53"
+    }
+  },
+  {
+    "id": "vector-scalar",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv*vec2(0.5),0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv*0.5,0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "4340070ee2e88e403d0988b1387e90a6d1d0e3bf756ddf359ba7e76358af655d",
+      "b": "3cc5e399e076490d958fe441867b86ca66143d7d7227df8baec57d6e36bb29f5"
+    }
+  },
+  {
+    "id": "dot-expand",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(dot(uv,vec2(0.25)),0.0,0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.x*0.25+uv.y*0.25,0.0,0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "240bdbf361ac32ab39ed8d136c3a27081d44ade6c0ba675c55b434e5f5c60ff4",
+      "b": "4d223ef5df8a9e1b61928fab335902e3715e79d5f0516d513f33b777d22b61a7"
+    }
+  },
+  {
+    "id": "factor-common",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.x*0.25+uv.x*0.5,uv.y,0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.x*0.75,uv.y,0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "bcc29386e41b4dba6b7376c02574bd1d34e7903e00b7ffee37e0e3377ff3f895",
+      "b": "9d8375b80a88405f7e39e80fe474d06739dc683690a284acd4deee7ba8c9069c"
+    }
+  },
+  {
+    "id": "abs-branch",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(abs(uv.x-0.5),uv.y,0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.x<0.5?0.5-uv.x:uv.x-0.5,uv.y,0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "74075ed4675f8b41bf62ccfb373872ce39664027c3698d620b0a24e6b9ee1609",
+      "b": "5d635735fada0b7683316fbf777b9a73218e138803f738f325a5b619c2ce8aa0"
+    }
+  },
+  {
+    "id": "precision-safe",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv,0.25,1.0);}\n",
+      "b": "#version 300 es\nprecision mediump float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv,0.25,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "5c84a64552c8c06364eb835ccfaf1ecb2e63435117613784490afb036e0d01d6",
+      "b": "fa7b33dff442f0b29a04700e607cba5ee2d673c08961955d38baf1cc52f8dfab"
+    }
+  },
+  {
+    "id": "premultiply",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(vec3(uv,0.5)*0.5,0.5);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv*0.5,0.25,0.5);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "eb5bf4c7bf22cc75f3224c77f391494032fd287c89e286f6862d881796e7f4f1",
+      "b": "776c776c661883cb3afce89f8f1ba7c25ef890f4082393cd7233866ec1fcfb3e"
+    }
+  },
+  {
+    "id": "swizzle",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.y,uv.x,0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.yx,0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "2144920125f46cd17bce0d3051a977a8426d303a7b1eb082def937e5838d6ed2",
+      "b": "0769162b99500f2a4fc60f8ea2814f9e45cd26fee9542f97730a319ff9dc5814"
+    }
+  },
+  {
+    "id": "reciprocal-divide",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.x/2.0,uv.y/4.0,0.0,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv*vec2(0.5,0.25),0.0,1.0);}\n"
+    },
+    "expected_quality": "PASS",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "52d3499f8ddd4d62b6fe8b3ceca3cff81aff6d78bfbac37f664d072c442e89a1",
+      "b": "6d262732a4a9ba308c3d851939d4032f01ff28af69ede2216f8a569fdc869567"
+    }
+  },
+  {
+    "id": "negative-alpha",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv,0.25,0.5);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv,0.25,1.0);}\n"
+    },
+    "expected_quality": "FAIL",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "aa64c481288ce51f34a76614a32b76ab34993bd1353a448e86d388da5318e2e4",
+      "b": "5c84a64552c8c06364eb835ccfaf1ecb2e63435117613784490afb036e0d01d6"
+    }
+  },
+  {
+    "id": "negative-color",
+    "category": "shader_ab",
+    "sources": {
+      "a": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv,0.25,1.0);}\n",
+      "b": "#version 300 es\nprecision highp float;\nlayout(location=0) out vec4 color;\nvoid main(){vec2 uv=gl_FragCoord.xy/4.0; color=vec4(uv.yx,0.25,1.0);}\n"
+    },
+    "expected_quality": "FAIL",
+    "performance_status": "NOT_MEASURED",
+    "scope": "4x4 authored arithmetic/precision control; no general equivalence",
+    "counterexample": "Any changed alpha/color or out-of-domain precision input must be revalidated",
+    "source_sha256": {
+      "a": "5c84a64552c8c06364eb835ccfaf1ecb2e63435117613784490afb036e0d01d6",
+      "b": "7b7c6e5b5885247d9752e80119758537630f8de43de52efb710b559e22f9b7b0"
+    }
+  }
+]

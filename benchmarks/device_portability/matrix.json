@@ -1,0 +1,35 @@
+{
+  "devices": [
+    {
+      "family": "Mali",
+      "status": "NOT_RUN",
+      "captures": [],
+      "performance_claim": null
+    },
+    {
+      "family": "Adreno",
+      "status": "NOT_RUN",
+      "captures": [],
+      "performance_claim": null
+    },
+    {
+      "family": "PowerVR",
+      "status": "NOT_RUN",
+      "captures": [],
+      "performance_claim": null
+    },
+    {
+      "family": "ANGLE",
+      "status": "NOT_RUN",
+      "captures": [],
+      "performance_claim": null
+    },
+    {
+      "family": "Mesa",
+      "status": "NOT_RUN",
+      "captures": [],
+      "performance_claim": null
+    }
+  ],
+  "note": "Software correctness does not replace physical GPU performance. No cross-vendor generalization."
+}

@@ -1,0 +1,546 @@
+{
+  "status": "FAIL",
+  "readbacks": 9,
+  "performance_status": "NOT_MEASURED",
+  "scope": "Only adjacent duplicate background Gaussian-alpha billboards; analytically combined nonlinear alpha profile, not arbitrary Gaussian moment merge or learned 3DGS",
+  "source_sha256": "a2bcc9f10f01e889fa33d062e23517541f8558958f6939a494495139f6e1f0f6",
+  "shader_sha256": {
+    "vertex": "3c00bbc64a8dbe73fb1e6efa6819873fc7a0f1bbdd437297c27ef411acac9078",
+    "fragment": "65d28737e0d6f038b3344245e38756f234a64baf996bc4f8d3a07acc6acdc3ff"
+  },
+  "selections": [
+    {
+      "camera": -0.3,
+      "scope": "DIAGNOSTIC_ONLY_NO_PER_FRAME_SWITCH",
+      "qualities": {
+        "baseline": "FAIL",
+        "merged_background": "FAIL",
+        "bad_single_alpha": "FAIL"
+      }
+    },
+    {
+      "camera": 0,
+      "scope": "DIAGNOSTIC_ONLY_NO_PER_FRAME_SWITCH",
+      "qualities": {
+        "baseline": "PASS",
+        "merged_background": "FAIL",
+        "bad_single_alpha": "FAIL"
+      }
+    },
+    {
+      "camera": 0.3,
+      "scope": "DIAGNOSTIC_ONLY_NO_PER_FRAME_SWITCH",
+      "qualities": {
+        "baseline": "PASS",
+        "merged_background": "PASS",
+        "bad_single_alpha": "FAIL"
+      }
+    }
+  ],
+  "baseline_objects": [
+    {
+      "id": 6,
+      "x": 0.3,
+      "y": 0.225,
+      "z": 4.6,
+      "radius": 1.1,
+      "color": [
+        0.51,
+        0.35,
+        0.44999999999999996,
+        0.3
+      ],
+      "mode": 0,
+      "role": "background"
+    },
+    {
+      "id": 7,
+      "x": 0.3,
+      "y": 0.225,
+      "z": 4.6,
+      "radius": 1.1,
+      "color": [
+        0.51,
+        0.35,
+        0.44999999999999996,
+        0.3
+      ],
+      "mode": 0,
+      "role": "background"
+    },
+    {
+      "id": 4,
+      "x": -0.3,
+      "y": 0.225,
+      "z": 4.4,
+      "radius": 1.1,
+      "color": [
+        0.39,
+        0.35,
+        0.55,
+        0.3
+      ],
+      "mode": 0,
+      "role": "background"
+    },
+    {
+      "id": 5,
+      "x": -0.3,
+      "y": 0.225,
+      "z": 4.4,
+      "radius": 1.1,
+      "color": [
+        0.39,
+        0.35,
+        0.55,
+        0.3
+      ],
+      "mode": 0,
+      "role": "background"
+    },
+    {
+      "id": 2,
+      "x": 0.3,
+      "y": -0.225,
+      "z": 4.2,
+      "radius": 1.1,
+      "color": [
+        0.27,
+        0.35,
+        0.65,
+        0.3
+      ],
+      "mode": 0,
+      "role": "background"
+    },
+    {
+      "id": 3,
+      "x": 0.3,
+      "y": -0.225,
+      "z": 4.2,
+      "radius": 1.1,
+      "color": [
+        0.27,
+        0.35,
+        0.65,
+        0.3
+      ],
+      "mode": 0,
+      "role": "background"
+    },
+    {
+      "id": 0,
+      "x": -0.3,
+      "y": -0.225,
+      "z": 4.0,
+      "radius": 1.1,
+      "color": [
+        0.15,
+        0.35,
+        0.75,
+        0.3
+      ],
+      "mode": 0,
+      "role": "background"
+    },
+    {
+      "id": 1,
+      "x": -0.3,
+      "y": -0.225,
+      "z": 4.0,
+      "radius": 1.1,
+      "color": [
+        0.15,
+        0.35,
+        0.75,
+        0.3
+      ],
+      "mode": 0,
+      "role": "background"
+    },
+    {
+      "id": 10,
+      "x": 0.28,
+      "y": -0.15,
+      "z": 1.7,
+      "radius": 0.2,
+      "color": [
+        0.85,
+        0.44999999999999996,
+        0.1,
+        0.6
+      ],
+      "mode": 3,
+      "role": "foreground"
+    },
+    {
+      "id": 9,
+      "x": 0.0,
+      "y": 0.15,
+      "z": 1.6,
+      "radius": 0.2,
+      "color": [
+        0.85,
+        0.3,
+        0.1,
+        0.6
+      ],
+      "mode": 3,
+      "role": "foreground"
+    },
+    {
+      "id": 8,
+      "x": -0.28,
+      "y": -0.15,
+      "z": 1.5,
+      "radius": 0.2,
+      "color": [
+        0.85,
+        0.15,
+        0.1,
+        0.6
+      ],
+      "mode": 3,
+      "role": "foreground"
+    }
+  ],
+  "merged_objects": [
+    {
+      "id": 6,
+      "x": 0.3,
+      "y": 0.225,
+      "z": 4.6,
+      "radius": 1.1,
+      "color": [
+        0.51,
+        0.35,
+        0.44999999999999996,
+        0.3
+      ],
+      "mode": 7,
+      "role": "background",
+      "merged_ids": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": 4,
+      "x": -0.3,
+      "y": 0.225,
+      "z": 4.4,
+      "radius": 1.1,
+      "color": [
+        0.39,
+        0.35,
+        0.55,
+        0.3
+      ],
+      "mode": 7,
+      "role": "background",
+      "merged_ids": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "x": 0.3,
+      "y": -0.225,
+      "z": 4.2,
+      "radius": 1.1,
+      "color": [
+        0.27,
+        0.35,
+        0.65,
+        0.3
+      ],
+      "mode": 7,
+      "role": "background",
+      "merged_ids": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 0,
+      "x": -0.3,
+      "y": -0.225,
+      "z": 4.0,
+      "radius": 1.1,
+      "color": [
+        0.15,
+        0.35,
+        0.75,
+        0.3
+      ],
+      "mode": 7,
+      "role": "background",
+      "merged_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 10,
+      "x": 0.28,
+      "y": -0.15,
+      "z": 1.7,
+      "radius": 0.2,
+      "color": [
+        0.85,
+        0.44999999999999996,
+        0.1,
+        0.6
+      ],
+      "mode": 3,
+      "role": "foreground"
+    },
+    {
+      "id": 9,
+      "x": 0.0,
+      "y": 0.15,
+      "z": 1.6,
+      "radius": 0.2,
+      "color": [
+        0.85,
+        0.3,
+        0.1,
+        0.6
+      ],
+      "mode": 3,
+      "role": "foreground"
+    },
+    {
+      "id": 8,
+      "x": -0.28,
+      "y": -0.15,
+      "z": 1.5,
+      "radius": 0.2,
+      "color": [
+        0.85,
+        0.15,
+        0.1,
+        0.6
+      ],
+      "mode": 3,
+      "role": "foreground"
+    }
+  ],
+  "rows": [
+    {
+      "camera": -0.3,
+      "variant": "baseline",
+      "metrics": {
+        "max_rgba8_error": 5,
+        "mean_rgba8_error": 0.04766845703125,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 35.95245411685469,
+        "cpu_alpha_centroid_x": 35.955401533664784,
+        "centroid_error_pixels": 0.002947416810094694
+      },
+      "readback_complete": true,
+      "estimated_covered_fragment_samples": 2388,
+      "foreground_roi_max_error": 2,
+      "draw_count": 11,
+      "quality": "FAIL",
+      "expected": "PASS",
+      "status": "FAIL",
+      "artifact_prefix": "camera-0.3-baseline"
+    },
+    {
+      "camera": -0.3,
+      "variant": "merged_background",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.0562744140625,
+        "silhouette_disagree_pixels": 3,
+        "alpha_centroid_x": 35.95901293884604,
+        "cpu_alpha_centroid_x": 35.955401533664784,
+        "centroid_error_pixels": 0.0036114051812532466
+      },
+      "readback_complete": true,
+      "estimated_covered_fragment_samples": 1294,
+      "foreground_roi_max_error": 2,
+      "draw_count": 7,
+      "quality": "FAIL",
+      "expected": "PASS",
+      "status": "FAIL",
+      "artifact_prefix": "camera-0.3-merged_background"
+    },
+    {
+      "camera": -0.3,
+      "variant": "bad_single_alpha",
+      "metrics": {
+        "max_rgba8_error": 64,
+        "mean_rgba8_error": 1.0035400390625,
+        "silhouette_disagree_pixels": 49,
+        "alpha_centroid_x": 36.46398078311304,
+        "cpu_alpha_centroid_x": 35.955401533664784,
+        "centroid_error_pixels": 0.5085792494482533
+      },
+      "readback_complete": true,
+      "estimated_covered_fragment_samples": 1294,
+      "foreground_roi_max_error": 26,
+      "draw_count": 7,
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "status": "PASS",
+      "artifact_prefix": "camera-0.3-bad_single_alpha"
+    },
+    {
+      "camera": 0,
+      "variant": "baseline",
+      "metrics": {
+        "max_rgba8_error": 4,
+        "mean_rgba8_error": 0.04449462890625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 31.671718289901918,
+        "cpu_alpha_centroid_x": 31.67082087072117,
+        "centroid_error_pixels": 0.0008974191807489262
+      },
+      "readback_complete": true,
+      "estimated_covered_fragment_samples": 2366,
+      "foreground_roi_max_error": 2,
+      "draw_count": 11,
+      "quality": "PASS",
+      "expected": "PASS",
+      "status": "PASS",
+      "artifact_prefix": "camera0-baseline"
+    },
+    {
+      "camera": 0,
+      "variant": "merged_background",
+      "metrics": {
+        "max_rgba8_error": 3,
+        "mean_rgba8_error": 0.053955078125,
+        "silhouette_disagree_pixels": 3,
+        "alpha_centroid_x": 31.67162410577839,
+        "cpu_alpha_centroid_x": 31.67082087072117,
+        "centroid_error_pixels": 0.0008032350572193536
+      },
+      "readback_complete": true,
+      "estimated_covered_fragment_samples": 1275,
+      "foreground_roi_max_error": 2,
+      "draw_count": 7,
+      "quality": "FAIL",
+      "expected": "PASS",
+      "status": "FAIL",
+      "artifact_prefix": "camera0-merged_background"
+    },
+    {
+      "camera": 0,
+      "variant": "bad_single_alpha",
+      "metrics": {
+        "max_rgba8_error": 64,
+        "mean_rgba8_error": 0.98553466796875,
+        "silhouette_disagree_pixels": 46,
+        "alpha_centroid_x": 31.645769676535664,
+        "cpu_alpha_centroid_x": 31.67082087072117,
+        "centroid_error_pixels": 0.0250511941855045
+      },
+      "readback_complete": true,
+      "estimated_covered_fragment_samples": 1275,
+      "foreground_roi_max_error": 26,
+      "draw_count": 7,
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "status": "PASS",
+      "artifact_prefix": "camera0-bad_single_alpha"
+    },
+    {
+      "camera": 0.3,
+      "variant": "baseline",
+      "metrics": {
+        "max_rgba8_error": 4,
+        "mean_rgba8_error": 0.05133056640625,
+        "silhouette_disagree_pixels": 0,
+        "alpha_centroid_x": 27.172297789905638,
+        "cpu_alpha_centroid_x": 27.17032119557288,
+        "centroid_error_pixels": 0.0019765943327598734
+      },
+      "readback_complete": true,
+      "estimated_covered_fragment_samples": 2376,
+      "foreground_roi_max_error": 2,
+      "draw_count": 11,
+      "quality": "PASS",
+      "expected": "PASS",
+      "status": "PASS",
+      "artifact_prefix": "camera0.3-baseline"
+    },
+    {
+      "camera": 0.3,
+      "variant": "merged_background",
+      "metrics": {
+        "max_rgba8_error": 4,
+        "mean_rgba8_error": 0.05609130859375,
+        "silhouette_disagree_pixels": 1,
+        "alpha_centroid_x": 27.171189195948482,
+        "cpu_alpha_centroid_x": 27.17032119557288,
+        "centroid_error_pixels": 0.0008680003756040833
+      },
+      "readback_complete": true,
+      "estimated_covered_fragment_samples": 1284,
+      "foreground_roi_max_error": 2,
+      "draw_count": 7,
+      "quality": "PASS",
+      "expected": "PASS",
+      "status": "PASS",
+      "artifact_prefix": "camera0.3-merged_background"
+    },
+    {
+      "camera": 0.3,
+      "variant": "bad_single_alpha",
+      "metrics": {
+        "max_rgba8_error": 65,
+        "mean_rgba8_error": 1.08099365234375,
+        "silhouette_disagree_pixels": 48,
+        "alpha_centroid_x": 26.575388026607538,
+        "cpu_alpha_centroid_x": 27.17032119557288,
+        "centroid_error_pixels": 0.5949331689653405
+      },
+      "readback_complete": true,
+      "estimated_covered_fragment_samples": 1284,
+      "foreground_roi_max_error": 26,
+      "draw_count": 7,
+      "quality": "FAIL",
+      "expected": "FAIL",
+      "status": "PASS",
+      "artifact_prefix": "camera0.3-bad_single_alpha"
+    }
+  ],
+  "parallax": [
+    {
+      "variant": "baseline",
+      "observed_shift": -8.78015632694905,
+      "cpu_shift": -8.785080338091905,
+      "error": 0.004924011142854567,
+      "status": "PASS"
+    },
+    {
+      "variant": "merged_background",
+      "observed_shift": -8.787823742897555,
+      "cpu_shift": -8.785080338091905,
+      "error": 0.0027434048056491633,
+      "status": "PASS"
+    }
+  ],
+  "thresholds": {
+    "max_rgba8_error": 4,
+    "silhouette_disagree_pixels": 2,
+    "centroid_error_pixels": 0.1,
+    "foreground_roi_max_error": 4
+  },
+  "artifact_archive": {
+    "file": "background-merge-mesa.zip",
+    "sha256": "3a96813bc6dc40c779c76c755d47ad0e14b5089b8a91749eb84a76584d9a5c82",
+    "instructions": "Extract beside report; complete 64x64 bottom-up RGBA8 and baseline coverage arrays"
+  },
+  "global_policy": {
+    "selected": null,
+    "status": "UNAVAILABLE",
+    "candidate_rejected": true,
+    "scope": "One fixed strategy across all tested cameras, never per-frame optimization switching; unseen cameras still require validation"
+  },
+  "contract_status": "PASS"
+}

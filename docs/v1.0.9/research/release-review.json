@@ -1,0 +1,149 @@
+{
+  "scope": "Six selected primary release notes; not complete corpus review or independent human approval",
+  "rows": [
+    {
+      "repo": "KhronosGroup/glslang",
+      "source_url": "https://github.com/KhronosGroup/glslang/releases/tag/16.6.0",
+      "event_at": "2026-09-11T17:45:50Z",
+      "tag": "16.6.0",
+      "decision": "REVIEW_COMPILER_ROBUSTNESS",
+      "claim": "Release describes malformed-input and constant-folding correctness repairs. Compiler acceptance must not be confused with runtime GLES validity or shader equivalence.",
+      "experiment": "tools/validate_shaders.py",
+      "test": "tools/test_shader_runner.py",
+      "source_body_sha256": "cb60d05434c0f4285fec8ae950b9ad4bb83fe2d59efd39929c3d8255e97ba7e0",
+      "source_body_present": true,
+      "reviewer_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": "NOT_RUN",
+      "evidence_class": "SOURCE_CONFIRMED",
+      "performance_status": "NOT_MEASURED",
+      "rule_promotion": "NONE",
+      "reproduction": "NOT_RUN_FOR_UPSTREAM_CHANGE",
+      "reviewed_at": "2026-11-15",
+      "affected_work_packages": [
+        "W3",
+        "W10"
+      ],
+      "test_reference_exists": true
+    },
+    {
+      "repo": "google/filament",
+      "source_url": "https://github.com/google/filament/releases/tag/v1.80.1",
+      "event_at": "2026-11-11T21:17:06Z",
+      "tag": "v1.80.1",
+      "decision": "REVIEW_RESOURCE_LIFETIME",
+      "claim": "Release describes a shader-program leak with shadow program caching disabled; retain resource-lifetime checks, but this repository has not reproduced that Filament code path.",
+      "experiment": "benchmarks/resource_pressure/run.py",
+      "test": "benchmarks/resource_pressure/test_pressure.py",
+      "source_body_sha256": "12c5744d42452a3542ff34a7a09b769ace1627657ac0ae3d437a71057f3baa7a",
+      "source_body_present": true,
+      "reviewer_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": "NOT_RUN",
+      "evidence_class": "SOURCE_CONFIRMED",
+      "performance_status": "NOT_MEASURED",
+      "rule_promotion": "NONE",
+      "reproduction": "NOT_RUN_FOR_UPSTREAM_CHANGE",
+      "reviewed_at": "2026-11-15",
+      "affected_work_packages": [
+        "W8",
+        "W10"
+      ],
+      "test_reference_exists": true
+    },
+    {
+      "repo": "baldurk/renderdoc",
+      "source_url": "https://github.com/baldurk/renderdoc/releases/tag/v1.47",
+      "event_at": "2026-10-31T15:49:28Z",
+      "tag": "v1.47",
+      "decision": "REVIEW_CAPTURE_TRUST",
+      "claim": "Release includes OpenGL shader-debugging corrections. A debugger display alone is not an independent image oracle; keep raw numerical readbacks alongside captures.",
+      "experiment": "benchmarks/shader_ab/advanced.py",
+      "test": "benchmarks/shader_ab/test_advanced.py",
+      "source_body_sha256": "e1c7110eca790e5c2482db2ec1f762d6a7b2a1767b4e62d9e22372512fa41358",
+      "source_body_present": true,
+      "reviewer_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": "NOT_RUN",
+      "evidence_class": "SOURCE_CONFIRMED",
+      "performance_status": "NOT_MEASURED",
+      "rule_promotion": "NONE",
+      "reproduction": "NOT_RUN_FOR_UPSTREAM_CHANGE",
+      "reviewed_at": "2026-11-15",
+      "affected_work_packages": [
+        "W3",
+        "W10"
+      ],
+      "test_reference_exists": true
+    },
+    {
+      "repo": "google/perfetto",
+      "source_url": "https://github.com/google/perfetto/releases/tag/v59.1",
+      "event_at": "2026-10-27T02:09:05Z",
+      "tag": "v59.1",
+      "decision": "REVIEW_TRACE_CAPABILITY",
+      "claim": "Release adds optional per-draw render-stage slices and CLI behavior changes. Collectors must probe schema/tool behavior and keep CPU, GPU and wall-clock scopes separate; no device support is inferred.",
+      "experiment": "benchmarks/device_portability/protocol.py",
+      "test": "benchmarks/device_portability/test_protocol.py",
+      "source_body_sha256": "7708149467e0639a0bb4f0a654f10fe02cc935b2e4cb25ecac50b689a0a284ea",
+      "source_body_present": true,
+      "reviewer_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": "NOT_RUN",
+      "evidence_class": "SOURCE_CONFIRMED",
+      "performance_status": "NOT_MEASURED",
+      "rule_promotion": "NONE",
+      "reproduction": "NOT_RUN_FOR_UPSTREAM_CHANGE",
+      "reviewed_at": "2026-11-15",
+      "affected_work_packages": [
+        "W8",
+        "W10"
+      ],
+      "test_reference_exists": true
+    },
+    {
+      "repo": "KhronosGroup/SPIRV-Tools",
+      "source_url": "https://github.com/KhronosGroup/SPIRV-Tools/releases/tag/v2026.4",
+      "event_at": "2026-10-06T15:28:28Z",
+      "tag": "v2026.4",
+      "decision": "REVIEW_BACKEND_BOUNDARY",
+      "claim": "Release describes optimizer and validator corrections. SPIR-V validity is an additional backend check, not a replacement for native GLES compilation or image validation.",
+      "experiment": "tools/validate_shaders.py",
+      "test": "benchmarks/shader_ab/test_advanced.py",
+      "source_body_sha256": "abc2a58467a51db93176f0cf7de58cbf29e2062c42232b68c57fac05d81907cb",
+      "source_body_present": true,
+      "reviewer_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": "NOT_RUN",
+      "evidence_class": "SOURCE_CONFIRMED",
+      "performance_status": "NOT_MEASURED",
+      "rule_promotion": "NONE",
+      "reproduction": "NOT_RUN_FOR_UPSTREAM_CHANGE",
+      "reviewed_at": "2026-11-15",
+      "affected_work_packages": [
+        "W3",
+        "W10"
+      ],
+      "test_reference_exists": true
+    },
+    {
+      "repo": "KhronosGroup/VK-GL-CTS",
+      "source_url": "https://github.com/KhronosGroup/VK-GL-CTS/releases/tag/vulkan-cts-1.4.7.1",
+      "event_at": "2026-10-29T16:36:51Z",
+      "tag": "vulkan-cts-1.4.7.1",
+      "decision": "DEFER_GLES_APPLICABILITY",
+      "claim": "The selected Vulkan-tag release has no release-note body. Its tag alone does not establish a GLES test change; inspect a relevant GL CTS source revision before adopting a requirement.",
+      "experiment": "benchmarks/differential/run.py",
+      "test": "benchmarks/differential/test_differential.py",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_body_present": false,
+      "reviewer_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": "NOT_RUN",
+      "evidence_class": "UNVERIFIED",
+      "performance_status": "NOT_MEASURED",
+      "rule_promotion": "NONE",
+      "reproduction": "NOT_RUN_FOR_UPSTREAM_CHANGE",
+      "reviewed_at": "2026-11-15",
+      "affected_work_packages": [
+        "W8",
+        "W10"
+      ],
+      "test_reference_exists": true
+    }
+  ]
+}

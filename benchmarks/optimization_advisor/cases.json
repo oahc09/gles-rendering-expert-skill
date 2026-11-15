@@ -1,0 +1,1866 @@
+[
+  {
+    "id": "improvement-needs-review",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "regression",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 12
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 12
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 12
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 12
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 12
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 12
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "no-gain",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 10
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 10
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 10
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 10
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 10
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 10
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "noise",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 12
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "quality-fail",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": false
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "REJECTED_BY_QUALITY"
+  },
+  {
+    "id": "unmeasured",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      }
+    },
+    "expected": "RECOMMENDED_FOR_EXPERIMENT"
+  },
+  {
+    "id": "missing-device",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-gpu",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-driver",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-backend",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-build_sha",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-baseline_sha",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-thermal_state",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-frequency_state",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-tool",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-clock_domain",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-artifacts",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "software",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "software",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "unstable",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": false,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "cold",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 0,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "single-pair",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "unbalanced",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "wrong-hash",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-experiment",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "missing-fallback",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "capability_supported": true,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "unknown-capability",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": null,
+      "quality": {
+        "pass": true,
+        "golden_id": "fixture",
+        "thresholds": {
+          "max_error": 1
+        }
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "id": "unknown-quality",
+    "provenance": "synthetic-contract-test",
+    "candidate": {
+      "id": "candidate",
+      "experiment": "shader_ab/synthetic",
+      "fallback": "baseline",
+      "capability_supported": true,
+      "quality": {
+        "pass": null
+      },
+      "measurement": {
+        "device": "FIXTURE_NOT_HARDWARE",
+        "gpu": "FIXTURE",
+        "driver": "FIXTURE",
+        "backend": "GLES3",
+        "build_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "baseline_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "thermal_state": "stable",
+        "frequency_state": "fixed",
+        "tool": "fixture",
+        "clock_domain": "mono",
+        "provenance": "physical-device",
+        "unit": "ms",
+        "thermal_stable": true,
+        "warmup_frames": 60,
+        "artifacts": [
+          {
+            "path": "trace.json",
+            "kind": "paired-timing-json",
+            "sha256": "FIXTURE_HASH"
+          }
+        ],
+        "pairs": [
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "AB",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          },
+          {
+            "order": "BA",
+            "baseline_ms": 10,
+            "candidate_ms": 8
+          }
+        ]
+      }
+    },
+    "expected": "INSUFFICIENT_EVIDENCE"
+  }
+]

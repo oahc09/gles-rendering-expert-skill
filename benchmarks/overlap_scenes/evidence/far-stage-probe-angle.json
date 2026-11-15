@@ -1,0 +1,148 @@
+{
+  "status": "HOST_PASS",
+  "diagnostic_only": true,
+  "original_visual_acceptance": "UNCHANGED_NOT_EVALUATED",
+  "actual_low_to_resolve_cpu_max_error": 1,
+  "camera": 0,
+  "diagnostic_readbacks": 3,
+  "complete_stage_bytes": {
+    "far32": 4096,
+    "resolve64": 16384,
+    "foreground64": 16384
+  },
+  "cpu_max_errors": {
+    "far32": 0,
+    "resolve64": 1,
+    "foreground64": 1
+  },
+  "point": {
+    "x": 29,
+    "y": 24,
+    "taps": [
+      {
+        "x": 14,
+        "y": 11,
+        "weight": 0.1875,
+        "cpu": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "actual": [
+          1,
+          2,
+          4,
+          6
+        ]
+      },
+      {
+        "x": 15,
+        "y": 11,
+        "weight": 0.0625,
+        "cpu": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "actual": [
+          1,
+          2,
+          4,
+          6
+        ]
+      },
+      {
+        "x": 14,
+        "y": 12,
+        "weight": 0.5625,
+        "cpu": [
+          2,
+          5,
+          11,
+          15
+        ],
+        "actual": [
+          2,
+          5,
+          11,
+          15
+        ]
+      },
+      {
+        "x": 15,
+        "y": 12,
+        "weight": 0.1875,
+        "cpu": [
+          2,
+          4,
+          10,
+          13
+        ],
+        "actual": [
+          2,
+          4,
+          10,
+          13
+        ]
+      }
+    ],
+    "cpu_weighted_rgba": [
+      1.75,
+      4.0625,
+      9.0625,
+      12.375
+    ],
+    "actual_low32_weighted_rgba": [
+      1.75,
+      4.0625,
+      9.0625,
+      12.375
+    ],
+    "actual_low32_half_up_prediction": [
+      2,
+      4,
+      9,
+      12
+    ],
+    "stages": {
+      "resolve64": {
+        "actual": [
+          2,
+          4,
+          9,
+          12
+        ],
+        "cpu": [
+          2,
+          4,
+          9,
+          12
+        ]
+      },
+      "foreground64": {
+        "actual": [
+          2,
+          4,
+          9,
+          12
+        ],
+        "cpu": [
+          2,
+          4,
+          9,
+          12
+        ]
+      }
+    }
+  },
+  "source_sha256": "736307e4ad86654defd24cd8c4c20c89cd814c6f564c2a68c55ccf085bd2495b",
+  "reused_source_sha256": "96f32874282e817466e58aebed3828798cfc69faf83df6aec88a7900bb3f34e9",
+  "archive": {
+    "file": "far-stage-probe-angle.zip",
+    "sha256": "f5875c93eee19c0fcea32aecc394ab41b712a9d7e68c148d5a27156d10273454"
+  },
+  "performance_status": "NOT_MEASURED",
+  "scope": "Adds blocking readbacks after far32 blending and resolve64 to existing final readback, unchanged draw/shader inputs. These observations localize this diagnostic execution, not an exclusive cause or specification violation. CPU half-up normalized rounding is an independent finite oracle, not the only valid implementation. No image budget changed."
+}

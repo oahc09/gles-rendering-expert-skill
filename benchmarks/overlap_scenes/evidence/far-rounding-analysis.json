@@ -1,0 +1,371 @@
+{
+  "status": "ANALYZED",
+  "camera": 0,
+  "threshold_alpha_gt": 12,
+  "silhouette_budget_unchanged": 2,
+  "mismatch_counts": {
+    "mesa": 3,
+    "angle": 2
+  },
+  "points": [
+    {
+      "x": 29,
+      "y": 24,
+      "coordinate_convention": "zero-based bottom-up",
+      "cpu_full64": [
+        2,
+        5,
+        8,
+        12
+      ],
+      "cpu_bilinear_own": [
+        2,
+        4,
+        9,
+        12
+      ],
+      "actual": {
+        "mesa": [
+          2,
+          4,
+          9,
+          13
+        ],
+        "angle": [
+          2,
+          4,
+          9,
+          12
+        ]
+      },
+      "actual_baseline": {
+        "mesa": [
+          2,
+          4,
+          9,
+          12
+        ],
+        "angle": [
+          2,
+          5,
+          8,
+          12
+        ]
+      },
+      "silhouette_mismatch": {
+        "mesa": true,
+        "angle": false
+      },
+      "alpha_gt12": {
+        "mesa": true,
+        "angle": false,
+        "cpu_full64": false,
+        "cpu_own": false
+      },
+      "cpu_low32_samples": [
+        {
+          "x": 14,
+          "y": 11,
+          "weight": 0.1875,
+          "cpu_rgba": [
+            1,
+            2,
+            4,
+            6
+          ]
+        },
+        {
+          "x": 15,
+          "y": 11,
+          "weight": 0.0625,
+          "cpu_rgba": [
+            1,
+            2,
+            4,
+            6
+          ]
+        },
+        {
+          "x": 14,
+          "y": 12,
+          "weight": 0.5625,
+          "cpu_rgba": [
+            2,
+            5,
+            11,
+            15
+          ]
+        },
+        {
+          "x": 15,
+          "y": 12,
+          "weight": 0.1875,
+          "cpu_rgba": [
+            2,
+            4,
+            10,
+            13
+          ]
+        }
+      ],
+      "cpu_weighted_rgba": [
+        1.75,
+        4.0625,
+        9.0625,
+        12.375
+      ],
+      "cpu_round_half_up": [
+        2,
+        4,
+        9,
+        12
+      ],
+      "alpha_distance_to_round_boundary12_5": -0.125,
+      "foreground_coverage": false,
+      "mesa_extra": true
+    },
+    {
+      "x": 40,
+      "y": 34,
+      "coordinate_convention": "zero-based bottom-up",
+      "cpu_full64": [
+        6,
+        4,
+        8,
+        12
+      ],
+      "cpu_bilinear_own": [
+        7,
+        4,
+        9,
+        13
+      ],
+      "actual": {
+        "mesa": [
+          7,
+          4,
+          9,
+          13
+        ],
+        "angle": [
+          7,
+          4,
+          9,
+          13
+        ]
+      },
+      "actual_baseline": {
+        "mesa": [
+          6,
+          4,
+          8,
+          12
+        ],
+        "angle": [
+          6,
+          4,
+          8,
+          12
+        ]
+      },
+      "silhouette_mismatch": {
+        "mesa": true,
+        "angle": true
+      },
+      "alpha_gt12": {
+        "mesa": true,
+        "angle": true,
+        "cpu_full64": false,
+        "cpu_own": true
+      },
+      "cpu_low32_samples": [
+        {
+          "x": 19,
+          "y": 16,
+          "weight": 0.0625,
+          "cpu_rgba": [
+            12,
+            8,
+            17,
+            25
+          ]
+        },
+        {
+          "x": 20,
+          "y": 16,
+          "weight": 0.1875,
+          "cpu_rgba": [
+            5,
+            4,
+            7,
+            11
+          ]
+        },
+        {
+          "x": 19,
+          "y": 17,
+          "weight": 0.1875,
+          "cpu_rgba": [
+            11,
+            7,
+            15,
+            21
+          ]
+        },
+        {
+          "x": 20,
+          "y": 17,
+          "weight": 0.5625,
+          "cpu_rgba": [
+            5,
+            3,
+            6,
+            9
+          ]
+        }
+      ],
+      "cpu_weighted_rgba": [
+        6.5625,
+        4.25,
+        8.5625,
+        12.625
+      ],
+      "cpu_round_half_up": [
+        7,
+        4,
+        9,
+        13
+      ],
+      "alpha_distance_to_round_boundary12_5": 0.125,
+      "foreground_coverage": false,
+      "mesa_extra": false
+    },
+    {
+      "x": 39,
+      "y": 36,
+      "coordinate_convention": "zero-based bottom-up",
+      "cpu_full64": [
+        7,
+        4,
+        9,
+        12
+      ],
+      "cpu_bilinear_own": [
+        7,
+        4,
+        9,
+        13
+      ],
+      "actual": {
+        "mesa": [
+          7,
+          4,
+          9,
+          13
+        ],
+        "angle": [
+          7,
+          4,
+          9,
+          13
+        ]
+      },
+      "actual_baseline": {
+        "mesa": [
+          7,
+          4,
+          9,
+          12
+        ],
+        "angle": [
+          7,
+          4,
+          9,
+          12
+        ]
+      },
+      "silhouette_mismatch": {
+        "mesa": true,
+        "angle": true
+      },
+      "alpha_gt12": {
+        "mesa": true,
+        "angle": true,
+        "cpu_full64": false,
+        "cpu_own": true
+      },
+      "cpu_low32_samples": [
+        {
+          "x": 19,
+          "y": 17,
+          "weight": 0.1875,
+          "cpu_rgba": [
+            11,
+            7,
+            15,
+            21
+          ]
+        },
+        {
+          "x": 20,
+          "y": 17,
+          "weight": 0.0625,
+          "cpu_rgba": [
+            5,
+            3,
+            6,
+            9
+          ]
+        },
+        {
+          "x": 19,
+          "y": 18,
+          "weight": 0.5625,
+          "cpu_rgba": [
+            7,
+            4,
+            10,
+            13
+          ]
+        },
+        {
+          "x": 20,
+          "y": 18,
+          "weight": 0.1875,
+          "cpu_rgba": [
+            3,
+            2,
+            3,
+            6
+          ]
+        }
+      ],
+      "cpu_weighted_rgba": [
+        6.875,
+        4.125,
+        9.375,
+        12.9375
+      ],
+      "cpu_round_half_up": [
+        7,
+        4,
+        9,
+        13
+      ],
+      "alpha_distance_to_round_boundary12_5": 0.4375,
+      "foreground_coverage": false,
+      "mesa_extra": false
+    }
+  ],
+  "inputs": {
+    "mesa": {
+      "report_sha256": "7ffad0888212f9db22d4002d797038cb2a9ca7de17ad9bc52581d0bcc3456099",
+      "archive_sha256": "7227b2a8959bf08ed680693dd2cc0e236595078e4f47c5f0c3cc40a209f215ee"
+    },
+    "angle": {
+      "report_sha256": "1c2728d7504d5bd9bc6750d79c13539c198b19a6b5749e3813164b9cf0dbdc92",
+      "archive_sha256": "c8f02120df06b321504cd9c1842f39ef67b654e3ca61135f202d2a53ed428c88"
+    }
+  },
+  "interpretation": "CPU low32 samples are analytical and independently quantized, not actual intermediate framebuffer captures. Final pixels alone cannot distinguish low32 blend rounding from resolve arithmetic/conversion or combined effects. Normalized fixed-point conversion/blending precision is not uniquely represented by this half-up CPU oracle; a one-code driver difference is not sufficient proof of a spec violation. No threshold/budget change or unique causal attribution is made."
+}

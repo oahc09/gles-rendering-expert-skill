@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "total_tests": 1085,
+  "total_skipped": 0,
+  "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
+  "rows": [
+    {
+      "directory": "benchmarks/agent",
+      "tests": 78,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/agent/v108",
+      "tests": 58,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/attachment_controls",
+      "tests": 12,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/compressed_streaming",
+      "tests": 5,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/device_lab",
+      "tests": 10,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/device_portability",
+      "tests": 19,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/differential",
+      "tests": 13,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/driver_compat",
+      "tests": 9,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/fuzz",
+      "tests": 11,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/gpu",
+      "tests": 15,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/hdr_controls",
+      "tests": 16,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/interleaved_capture",
+      "tests": 6,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/longrun",
+      "tests": 26,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/material_upgrade",
+      "tests": 11,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/overlap_scenes",
+      "tests": 145,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/particle_controls",
+      "tests": 15,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/pipeline",
+      "tests": 74,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/pipeline/adversarial",
+      "tests": 18,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/quality_policy",
+      "tests": 25,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/reducer",
+      "tests": 13,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/resource_pressure",
+      "tests": 12,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/robustness",
+      "tests": 35,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/rollback_controls",
+      "tests": 4,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/scenes",
+      "tests": 12,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/shader_ab",
+      "tests": 79,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/state_machine",
+      "tests": 6,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/system_scenes",
+      "tests": 24,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/system_scenes/v109_s03",
+      "tests": 9,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/texture_access",
+      "tests": 18,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/texture_pipeline",
+      "tests": 9,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/texture_streaming",
+      "tests": 12,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/traces",
+      "tests": 10,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/traces/sql",
+      "tests": 6,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/visual_quality",
+      "tests": 16,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/workflow",
+      "tests": 10,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/workloads",
+      "tests": 24,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "docs/v1.0.9",
+      "tests": 8,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "examples/android_cases",
+      "tests": 21,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "examples/android_cases/wallpaper/tests",
+      "tests": 6,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "references/research",
+      "tests": 31,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "tools",
+      "tests": 154,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    }
+  ]
+}

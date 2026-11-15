@@ -1,0 +1,3400 @@
+{
+  "status": "HOST_PASS",
+  "scope": "finite original_unorm vs linear target-specific capability/estimated logical-budget gate and actual selected-format redraw; unavailable is rejection, not quality success",
+  "performance_status": "NOT_MEASURED",
+  "logical_cost_warning": "allocation/logical transfer upper bounds are not actual DRAM bandwidth or GPU time",
+  "readbacks": 32,
+  "probe_readbacks": 12,
+  "replay_readbacks": 20,
+  "probe_draw_calls": 336,
+  "replay_draw_calls": 480,
+  "probe_budget_scope": "Independent bounded verification overhead: probes precede scenario admission and are not subject to simulated scenario budgets; not a production zero-overhead switcher",
+  "unavailable_extra_draws": 0,
+  "policy_calls": 48,
+  "observations": [
+    {
+      "count": 8,
+      "camera": 0,
+      "quality_by_target": {
+        "original_unorm": {
+          "RGBA8": true,
+          "RGBA16F": true,
+          "RGBA32F": true
+        },
+        "linear": {
+          "RGBA8": true,
+          "RGBA16F": true,
+          "RGBA32F": true
+        }
+      },
+      "unsupported": [],
+      "metrics_by_target": {
+        "original_unorm": {
+          "RGBA8": {
+            "max_rgba8_error": 0,
+            "mean_rgba8_error": 0.0,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA16F": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.02691650390625,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA32F": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.0262451171875,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          }
+        },
+        "linear": {
+          "RGBA8": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.0262451171875,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA16F": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.00103759765625,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA32F": {
+            "max_rgba8_error": 0,
+            "mean_rgba8_error": 0.0,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          }
+        }
+      }
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "quality_by_target": {
+        "original_unorm": {
+          "RGBA8": true,
+          "RGBA16F": true,
+          "RGBA32F": true
+        },
+        "linear": {
+          "RGBA8": true,
+          "RGBA16F": true,
+          "RGBA32F": true
+        }
+      },
+      "unsupported": [],
+      "metrics_by_target": {
+        "original_unorm": {
+          "RGBA8": {
+            "max_rgba8_error": 0,
+            "mean_rgba8_error": 0.0,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 28.817684189762304,
+            "cpu_alpha_centroid_x": 28.817684189762304,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA16F": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.026611328125,
+            "silhouette_disagree_pixels": 1,
+            "alpha_centroid_x": 28.836420969649193,
+            "cpu_alpha_centroid_x": 28.817684189762304,
+            "centroid_error_pixels": 0.01873677988688982
+          },
+          "RGBA32F": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.0267333984375,
+            "silhouette_disagree_pixels": 1,
+            "alpha_centroid_x": 28.834187444564897,
+            "cpu_alpha_centroid_x": 28.817684189762304,
+            "centroid_error_pixels": 0.016503254802593403
+          }
+        },
+        "linear": {
+          "RGBA8": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.0267333984375,
+            "silhouette_disagree_pixels": 1,
+            "alpha_centroid_x": 28.817684189762304,
+            "cpu_alpha_centroid_x": 28.834187444564897,
+            "centroid_error_pixels": 0.016503254802593403
+          },
+          "RGBA16F": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.00048828125,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 28.836420969649193,
+            "cpu_alpha_centroid_x": 28.834187444564897,
+            "centroid_error_pixels": 0.002233525084296417
+          },
+          "RGBA32F": {
+            "max_rgba8_error": 0,
+            "mean_rgba8_error": 0.0,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 28.834187444564897,
+            "cpu_alpha_centroid_x": 28.834187444564897,
+            "centroid_error_pixels": 0.0
+          }
+        }
+      }
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "quality_by_target": {
+        "original_unorm": {
+          "RGBA8": true,
+          "RGBA16F": false,
+          "RGBA32F": false
+        },
+        "linear": {
+          "RGBA8": false,
+          "RGBA16F": true,
+          "RGBA32F": true
+        }
+      },
+      "unsupported": [],
+      "metrics_by_target": {
+        "original_unorm": {
+          "RGBA8": {
+            "max_rgba8_error": 0,
+            "mean_rgba8_error": 0.0,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA16F": {
+            "max_rgba8_error": 5,
+            "mean_rgba8_error": 0.15631103515625,
+            "silhouette_disagree_pixels": 28,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA32F": {
+            "max_rgba8_error": 5,
+            "mean_rgba8_error": 0.156494140625,
+            "silhouette_disagree_pixels": 28,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          }
+        },
+        "linear": {
+          "RGBA8": {
+            "max_rgba8_error": 5,
+            "mean_rgba8_error": 0.156494140625,
+            "silhouette_disagree_pixels": 28,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA16F": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.00225830078125,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA32F": {
+            "max_rgba8_error": 0,
+            "mean_rgba8_error": 0.0,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 32.0,
+            "cpu_alpha_centroid_x": 32.0,
+            "centroid_error_pixels": 0.0
+          }
+        }
+      }
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "quality_by_target": {
+        "original_unorm": {
+          "RGBA8": true,
+          "RGBA16F": false,
+          "RGBA32F": false
+        },
+        "linear": {
+          "RGBA8": false,
+          "RGBA16F": true,
+          "RGBA32F": true
+        }
+      },
+      "unsupported": [],
+      "metrics_by_target": {
+        "original_unorm": {
+          "RGBA8": {
+            "max_rgba8_error": 0,
+            "mean_rgba8_error": 0.0,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 29.30367846823925,
+            "cpu_alpha_centroid_x": 29.30367846823925,
+            "centroid_error_pixels": 0.0
+          },
+          "RGBA16F": {
+            "max_rgba8_error": 4,
+            "mean_rgba8_error": 0.11376953125,
+            "silhouette_disagree_pixels": 5,
+            "alpha_centroid_x": 29.307698109954526,
+            "cpu_alpha_centroid_x": 29.30367846823925,
+            "centroid_error_pixels": 0.004019641715274247
+          },
+          "RGBA32F": {
+            "max_rgba8_error": 4,
+            "mean_rgba8_error": 0.11376953125,
+            "silhouette_disagree_pixels": 5,
+            "alpha_centroid_x": 29.308430852783346,
+            "cpu_alpha_centroid_x": 29.30367846823925,
+            "centroid_error_pixels": 0.0047523845440942125
+          }
+        },
+        "linear": {
+          "RGBA8": {
+            "max_rgba8_error": 4,
+            "mean_rgba8_error": 0.11376953125,
+            "silhouette_disagree_pixels": 5,
+            "alpha_centroid_x": 29.30367846823925,
+            "cpu_alpha_centroid_x": 29.308430852783346,
+            "centroid_error_pixels": 0.0047523845440942125
+          },
+          "RGBA16F": {
+            "max_rgba8_error": 1,
+            "mean_rgba8_error": 0.0018310546875,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 29.307698109954526,
+            "cpu_alpha_centroid_x": 29.308430852783346,
+            "centroid_error_pixels": 0.0007327428288199656
+          },
+          "RGBA32F": {
+            "max_rgba8_error": 0,
+            "mean_rgba8_error": 0.0,
+            "silhouette_disagree_pixels": 0,
+            "alpha_centroid_x": 29.308430852783346,
+            "cpu_alpha_centroid_x": 29.308430852783346,
+            "centroid_error_pixels": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "full_budget",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n8-cam0-original_unorm-full_budget"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "rgba8_allocation_only",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n8-cam0-original_unorm-rgba8_allocation_only"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "masked_float_capabilities",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "FLOAT32_BLEND_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n8-cam0-original_unorm-masked_float_capabilities"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "no_transfer",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0-original_unorm-no_transfer"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "no_storage",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0-original_unorm-no_storage"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "undersized_limit",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0-original_unorm-undersized_limit"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "full_budget",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0262451171875,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n8-cam0-linear-full_budget"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "rgba8_allocation_only",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0262451171875,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n8-cam0-linear-rgba8_allocation_only"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "masked_float_capabilities",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "FLOAT32_BLEND_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0262451171875,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n8-cam0-linear-masked_float_capabilities"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "no_transfer",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0-linear-no_transfer"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "no_storage",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0-linear-no_storage"
+    },
+    {
+      "count": 8,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "undersized_limit",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0-linear-undersized_limit"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "full_budget",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 28.817684189762304,
+          "cpu_alpha_centroid_x": 28.817684189762304,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n8-cam0.3-original_unorm-full_budget"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "rgba8_allocation_only",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 28.817684189762304,
+          "cpu_alpha_centroid_x": 28.817684189762304,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n8-cam0.3-original_unorm-rgba8_allocation_only"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "masked_float_capabilities",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "FLOAT32_BLEND_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 28.817684189762304,
+          "cpu_alpha_centroid_x": 28.817684189762304,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n8-cam0.3-original_unorm-masked_float_capabilities"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "no_transfer",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0.3-original_unorm-no_transfer"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "no_storage",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0.3-original_unorm-no_storage"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "undersized_limit",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0.3-original_unorm-undersized_limit"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "full_budget",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0267333984375,
+          "silhouette_disagree_pixels": 1,
+          "alpha_centroid_x": 28.817684189762304,
+          "cpu_alpha_centroid_x": 28.834187444564897,
+          "centroid_error_pixels": 0.016503254802593403
+        }
+      },
+      "artifact_prefix": "n8-cam0.3-linear-full_budget"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "rgba8_allocation_only",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0267333984375,
+          "silhouette_disagree_pixels": 1,
+          "alpha_centroid_x": 28.817684189762304,
+          "cpu_alpha_centroid_x": 28.834187444564897,
+          "centroid_error_pixels": 0.016503254802593403
+        }
+      },
+      "artifact_prefix": "n8-cam0.3-linear-rgba8_allocation_only"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "masked_float_capabilities",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "FLOAT32_BLEND_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0267333984375,
+          "silhouette_disagree_pixels": 1,
+          "alpha_centroid_x": 28.817684189762304,
+          "cpu_alpha_centroid_x": 28.834187444564897,
+          "centroid_error_pixels": 0.016503254802593403
+        }
+      },
+      "artifact_prefix": "n8-cam0.3-linear-masked_float_capabilities"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "no_transfer",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0.3-linear-no_transfer"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "no_storage",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0.3-linear-no_storage"
+    },
+    {
+      "count": 8,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "undersized_limit",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 262144,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 573440,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 1130496,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n8-cam0.3-linear-undersized_limit"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "full_budget",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n48-cam0-original_unorm-full_budget"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "rgba8_allocation_only",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n48-cam0-original_unorm-rgba8_allocation_only"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "masked_float_capabilities",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "FLOAT32_BLEND_NOT_ADVERTISED",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n48-cam0-original_unorm-masked_float_capabilities"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "no_transfer",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0-original_unorm-no_transfer"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "no_storage",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0-original_unorm-no_storage"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "original_unorm",
+      "scenario": "undersized_limit",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0-original_unorm-undersized_limit"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "full_budget",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA16F",
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA16F",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.00225830078125,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 32.0,
+          "cpu_alpha_centroid_x": 32.0,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n48-cam0-linear-full_budget"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "rgba8_allocation_only",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0-linear-rgba8_allocation_only"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "masked_float_capabilities",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "FLOAT32_BLEND_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0-linear-masked_float_capabilities"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "no_transfer",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0-linear-no_transfer"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "no_storage",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0-linear-no_storage"
+    },
+    {
+      "count": 48,
+      "camera": 0,
+      "target_contract": "linear",
+      "scenario": "undersized_limit",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0-linear-undersized_limit"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "full_budget",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 29.30367846823925,
+          "cpu_alpha_centroid_x": 29.30367846823925,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n48-cam0.3-original_unorm-full_budget"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "rgba8_allocation_only",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 29.30367846823925,
+          "cpu_alpha_centroid_x": 29.30367846823925,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n48-cam0.3-original_unorm-rgba8_allocation_only"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "masked_float_capabilities",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA8",
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "FLOAT32_BLEND_NOT_ADVERTISED",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA8",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 0,
+          "mean_rgba8_error": 0.0,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 29.30367846823925,
+          "cpu_alpha_centroid_x": 29.30367846823925,
+          "centroid_error_pixels": 0.0
+        }
+      },
+      "artifact_prefix": "n48-cam0.3-original_unorm-masked_float_capabilities"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "no_transfer",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0.3-original_unorm-no_transfer"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "no_storage",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0.3-original_unorm-no_storage"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "original_unorm",
+      "scenario": "undersized_limit",
+      "quality": {
+        "RGBA8": true,
+        "RGBA16F": false,
+        "RGBA32F": false
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "original_unorm",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "original_unorm",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0.3-original_unorm-undersized_limit"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "full_budget",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "ADMITTED_FOR_CORRECTNESS_NOT_PERFORMANCE",
+        "selected": "RGBA16F",
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [],
+            "eligible": true
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "PASS",
+        "selected": "RGBA16F",
+        "executed": true,
+        "metrics": {
+          "max_rgba8_error": 1,
+          "mean_rgba8_error": 0.0018310546875,
+          "silhouette_disagree_pixels": 0,
+          "alpha_centroid_x": 29.307698109954526,
+          "cpu_alpha_centroid_x": 29.308430852783346,
+          "centroid_error_pixels": 0.0007327428288199656
+        }
+      },
+      "artifact_prefix": "n48-cam0.3-linear-full_budget"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "rgba8_allocation_only",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0.3-linear-rgba8_allocation_only"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "masked_float_capabilities",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "COLOR_RENDERABILITY_NOT_ADVERTISED",
+              "FLOAT32_BLEND_NOT_ADVERTISED"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0.3-linear-masked_float_capabilities"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "no_transfer",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0.3-linear-no_transfer"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "no_storage",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "LOGICAL_ALLOCATION_BUDGET",
+              "LOGICAL_TRANSFER_BUDGET"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0.3-linear-no_storage"
+    },
+    {
+      "count": 48,
+      "camera": 0.3,
+      "target_contract": "linear",
+      "scenario": "undersized_limit",
+      "quality": {
+        "RGBA8": false,
+        "RGBA16F": true,
+        "RGBA32F": true
+      },
+      "decision": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "target_contract": "linear",
+        "candidates": [
+          {
+            "format": "RGBA8",
+            "bytes_per_pixel": 4,
+            "logical_allocation_bytes": 16384,
+            "logical_transfer_upper_bytes": 1572864,
+            "allocation_ratio_to_rgba8": 1.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT",
+              "TARGET_QUALITY_REJECTED"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA16F",
+            "bytes_per_pixel": 8,
+            "logical_allocation_bytes": 49152,
+            "logical_transfer_upper_bytes": 3194880,
+            "allocation_ratio_to_rgba8": 3.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          },
+          {
+            "format": "RGBA32F",
+            "bytes_per_pixel": 16,
+            "logical_allocation_bytes": 81920,
+            "logical_transfer_upper_bytes": 6373376,
+            "allocation_ratio_to_rgba8": 5.0,
+            "quality_target": "linear",
+            "rejections": [
+              "RENDERBUFFER_DIMENSION_LIMIT"
+            ],
+            "eligible": false
+          }
+        ],
+        "performance_acceptance": "NOT_MEASURED"
+      },
+      "replay": {
+        "status": "UNAVAILABLE",
+        "selected": null,
+        "executed": false
+      },
+      "artifact_prefix": "n48-cam0.3-linear-undersized_limit"
+    }
+  ],
+  "source_sha256": "9666104bfad2118562c04206356bfe27b4ea9539b6deca8eba1ac48d623f68d7",
+  "artifact_archive": {
+    "file": "precision-replay-angle.zip",
+    "sha256": "703cc6699477bfe9049e6541019178eb4e0cd2957d0e55b2cf3d4e7685410705",
+    "instructions": "Extract beside report; all .rgba are 64x64 bottom-up RGBA8"
+  },
+  "dependency_source_sha256": {
+    "precision_policy.py": "50e17222930630c17695919c6670efec3e7de80e1a2cc7e767aa4d68cdc16c49",
+    "tiered.py": "b48265992191401d632983cb279ebceabce651c3fadbd49f2de9d1a9cb9aeb7f",
+    "blend_precision.py": "9ace11f71d3c825930e65e1af855abca24480827913b6030c6a83ea6aa5dc7e3",
+    "projected.py": "560de958f932669ce53fc5d2938c9dd88fd5da8f1fdd2f3cbcb897845b55d0a8"
+  }
+}

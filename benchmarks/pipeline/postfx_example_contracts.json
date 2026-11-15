@@ -1,0 +1,18 @@
+[
+  {
+    "pass_id": "postfx",
+    "scale": 0.5,
+    "experiment_id": "postfx-resolution-loss-v1",
+    "normalized_uv": true,
+    "kernel_rescaling": true,
+    "downstream_resampling": true,
+    "external_output": false,
+    "temporal_history": false,
+    "quality_budget": {
+      "max_abs_rgba_error": 0.01,
+      "max_silhouette_error": 0.01,
+      "max_temporal_error": 0.01,
+      "golden_id": "example-scene-golden-NOT_CAPTURED"
+    }
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "archive": "index.json.gz",
+  "archive_sha256": "67631220b4378a2230d4612f559f47109af2a0f1e0e900a367526a0e95f04396",
+  "candidate_count": 1319,
+  "decoded_sha256": "73df49e2d1ddf16a160be93a3626a9c895cd56096cf4234c1b795ba1ca639767",
+  "discovered_at": "2026-11-15T02:37:58.234611+00:00",
+  "independent_review": "NOT_RUN",
+  "normalization": "PASS",
+  "performance_claim": null,
+  "required_fields": [
+    "source_url",
+    "event_date",
+    "discovered_at",
+    "platform",
+    "gpu",
+    "driver",
+    "gles_version",
+    "evidence_class",
+    "affected_rules",
+    "repro",
+    "decision",
+    "test_id"
+  ],
+  "review_policy": "UNVERIFIED is this metadata-index evidence class, not a revocation of the ten selected separate AI reviews; no auto-promotion or new full-content review performed",
+  "rule_promotion": "NONE",
+  "schema_version": 1,
+  "source_archive_sha256": "8f702d7532b0284d71fd388b341b40a7b143951cd8196bcc552e00af7264de8c",
+  "source_decoded_sha256": "6ae884b48df90271c7ffc2b1bb24d874e558e0d215b5cfeb95a50ed64ac22c27",
+  "source_window": {
+    "end": "2026-11-15",
+    "start": "2026-08-18"
+  }
+}

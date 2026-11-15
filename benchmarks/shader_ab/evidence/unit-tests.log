@@ -1,0 +1,27 @@
+test_bool (test_experiments.Controls.test_bool) ... ok
+test_compile_failure (test_experiments.Controls.test_compile_failure) ... ok
+test_count (test_experiments.Controls.test_count) ... ok
+test_difference (test_experiments.Controls.test_difference) ... ok
+test_equal (test_experiments.Controls.test_equal) ... ok
+test_four_scenes (test_experiments.Controls.test_four_scenes) ... ok
+test_glerror (test_experiments.Controls.test_glerror) ... ok
+test_missing_status (test_experiments.Controls.test_missing_status) ... ok
+test_nan (test_experiments.Controls.test_nan) ... ok
+test_negative_count (test_experiments.Controls.test_negative_count) ... ok
+test_no_timing (test_experiments.Controls.test_no_timing) ... ok
+test_opaque_blend (test_experiments.Controls.test_opaque_blend) ... ok
+test_out_of_range (test_experiments.Controls.test_out_of_range) ... ok
+test_shader_versions (test_experiments.Controls.test_shader_versions) ... ok
+test_short (test_experiments.Controls.test_short) ... ok
+test_sorting_matters (test_experiments.Controls.test_sorting_matters) ... ok
+test_texture_count (test_experiments.Controls.test_texture_count) ... ok
+test_texture_inputs (test_experiments.Controls.test_texture_inputs) ... ok
+test_texture_negative (test_experiments.Controls.test_texture_negative) ... ok
+test_tolerance (test_experiments.Controls.test_tolerance) ... ok
+test_transparent_blend (test_experiments.Controls.test_transparent_blend) ... ok
+test_unique (test_experiments.Controls.test_unique) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.001s
+
+OK

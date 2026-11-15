@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "release_ready": false,
+  "scenes": [
+    {
+      "id": "S01",
+      "scope": "Bounded authored covariance Gaussian scenes and error-budget LOD, not million-splat trained 3DGS",
+      "implementation": [
+        "benchmarks/overlap_scenes/projected.py",
+        "benchmarks/overlap_scenes/advanced.py"
+      ],
+      "remaining": "Million-proxy scale and physical GPU coverage/time remain unmeasured.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S02",
+      "scope": "Finite layered Snell refractive plates sampling a background, not recursive multi-interface optics",
+      "implementation": [
+        "benchmarks/overlap_scenes/projected.py",
+        "benchmarks/overlap_scenes/advanced.py"
+      ],
+      "remaining": "Refraction, order-dependent content and mobile bandwidth need further coverage.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S03",
+      "scope": "Finite integrated UI+3D+PostFX: 8x8 depth-tested orthographic planes, alpha UI strip, separate channel-transform PostFX and screen FBOs; not a complex production perspective scene",
+      "implementation": [
+        "tools/rendergraph_optimizer.py",
+        "benchmarks/system_scenes/v109_s03/run.py",
+        "benchmarks/system_scenes/v109_s03/README.md"
+      ],
+      "remaining": "Physical tile load/store, GPU timing and complex production scene coverage unmeasured.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Actual finite integrated host pipeline passes independent three-stage CPU oracle on Mesa and ANGLE; broader scene acceptance not claimed."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Three-camera baseline/equivalent pass fixed one-code budget; half-resolution, depth-disabled and incorrect-UI-alpha negatives rejected globally."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S04",
+      "scope": "Finite actual compute-updated four-particle SSBO consumed by vertex shader across three frames",
+      "implementation": [
+        "benchmarks/shader_ab/advanced.py",
+        "benchmarks/particle_controls/run.py"
+      ],
+      "remaining": "Particle workload scale, asynchronous sync duration, frame-time distribution and physical performance remain missing.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S05",
+      "scope": "Actual finite software RGBA16F HDR to Reinhard/sRGB RGBA8 pipeline, not display acceptance",
+      "implementation": [
+        "benchmarks/hdr_controls/run.py"
+      ],
+      "remaining": "HDR display/PQ/HLG/wide-gamut and physical GPU performance remain unverified.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Binary-representable HDR values and numerical software readback verified; broader half-float and display behavior not covered."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Fixed CPU SDR golden and deliberate ordering/gamma negatives; not perceptual/HDR display fidelity."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S06",
+      "scope": "Actual KTX UASTC conversion and multicolor compressed upload controls; finite two-gradient quality distribution",
+      "implementation": [
+        "benchmarks/texture_access/mechanisms.py",
+        "benchmarks/texture_access/ktx2_experiment.py"
+      ],
+      "remaining": "Streaming residency, stalls, realistic codec distributions and physical metrics remain missing.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S07",
+      "scope": "Protocol and device matrix only, no physical GPU strategy result",
+      "implementation": [
+        "benchmarks/device_portability/protocol.py"
+      ],
+      "remaining": "Physical Mali/Adreno paired captures and independent review required.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "NOT_RUN",
+        "reason": "Finite controls are not full scene acceptance."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    },
+    {
+      "id": "S08",
+      "scope": "Actual isolated GLES candidate rejection and retained baseline program/texture/FBO/VAO restore, clear, redraw and byte-equal readback",
+      "implementation": [
+        "tools/optimization_advisor.py",
+        "benchmarks/rollback_controls/run.py"
+      ],
+      "remaining": "Application-wide resources, concurrency/context loss and physical performance trace remain unverified.",
+      "correctness": {
+        "status": "PARTIAL",
+        "reason": "Bounded host infrastructure only; see implementation."
+      },
+      "quality": {
+        "status": "PARTIAL",
+        "reason": "Four finite transactions tested against restored image and queried GL bindings; not app-wide/context-loss rollback."
+      },
+      "performance": {
+        "status": "BLOCKED_BY_HARDWARE",
+        "reason": "No independently reviewed physical GPU trace."
+      }
+    }
+  ]
+}

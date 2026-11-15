@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "scope": "AI-authored case-specific adjudication guidance; not provider responses or independent acceptance",
+  "provider_results": 0,
+  "rows": [
+    {
+      "case_id": "A173",
+      "prompt_sha256": "49521978192acf50255106550c03661f5a363bd50861620987dd06e5b9c7ea96",
+      "finding": "overlap-not-additive",
+      "required_reasoning": [
+        "Use interval union or calibrated critical path",
+        "Do not sum overlapped CPU and GPU durations"
+      ],
+      "evidence_category": "timing",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A174",
+      "prompt_sha256": "70066b1ac0ae66711c099c76e8101d66e5f25073a8f597765d505303d6adf28b",
+      "finding": "utilization-not-root-cause",
+      "required_reasoning": [
+        "Utilization alone does not identify ALU or bandwidth",
+        "Request stage/counter evidence before root-cause label"
+      ],
+      "evidence_category": "timing",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A175",
+      "prompt_sha256": "a6dacc8659e504a472a17e8e69cd8df106f2915672a60cceca3cfef514ac2929",
+      "finding": "clock-domain-calibration",
+      "required_reasoning": [
+        "Refuse cross-clock correlation without calibration",
+        "Preserve original timestamps and clock domains"
+      ],
+      "evidence_category": "timing",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A176",
+      "prompt_sha256": "abd99abd172b0c990c5f2d4af7b6736ad05a25d7be3c660c681c2bd78e3c8a4b",
+      "finding": "thermal-confounder",
+      "required_reasoning": [
+        "Control temperature and frequency in interleaved rounds",
+        "Constant draw count does not rule out throttling"
+      ],
+      "evidence_category": "timing",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A177",
+      "prompt_sha256": "b1b13c13ffb6bf315626fa711e89ade5a9d19cbf798287049c5981dd2ec671d8",
+      "finding": "upload-attribution",
+      "required_reasoning": [
+        "Separate CPU copying, driver upload and GPU work",
+        "A timer excluding upload cannot attribute its cost"
+      ],
+      "evidence_category": "timing",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A178",
+      "prompt_sha256": "31d5f47a87fe2b21ea4c964ab8cb2fa465518f96f9e4a0a59a3c94e658caa4d7",
+      "finding": "controlled-ab",
+      "required_reasoning": [
+        "Warm up then interleave A/B and retain raw samples",
+        "Reject disjoint queries; report tails and stable thermal scope"
+      ],
+      "evidence_category": "timing",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A179",
+      "prompt_sha256": "f83dccfd4d6501ce3e04e71845beb693289b2eeeb747d6f5d38dc6e9116df37b",
+      "finding": "precision-quality-gate",
+      "required_reasoning": [
+        "Use large-coordinate/overflow inputs and output oracle",
+        "Lower precision is conditional on quality, not universally faster"
+      ],
+      "evidence_category": "shader",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A180",
+      "prompt_sha256": "a6638bfd3b003ddf0c274385963e990c866f15f0a9eb265f23b42ef2927a764c",
+      "finding": "branchless-negative-control",
+      "required_reasoning": [
+        "Measure both paths and include expensive unused branch inputs",
+        "Branchless source does not imply less executed GPU work"
+      ],
+      "evidence_category": "shader",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A181",
+      "prompt_sha256": "8f1b316170490cdc8ce2bebd90c8bf82b414514ebf0d6e6729ad765e6bded5da",
+      "finding": "ssbo-version-boundary",
+      "required_reasoning": [
+        "Require GLES 3.1 or applicable extension for SSBO",
+        "Retain legal GLES 3.0 UBO baseline on unsupported targets"
+      ],
+      "evidence_category": "shader",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A182",
+      "prompt_sha256": "1b868ef5866dbc2832417f7e1a9edddbf999ce5d1fb487bf8ab1d67c03b5a33f",
+      "finding": "derivative-equivalence",
+      "required_reasoning": [
+        "Preserve implicit derivatives and texture LOD semantics",
+        "Equal UV text alone does not establish sampling equivalence"
+      ],
+      "evidence_category": "shader",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A183",
+      "prompt_sha256": "1cda2bc7612b284027121d89df4b5c7f96fed167f1375d590f28b949934c0066",
+      "finding": "estimate-not-dram",
+      "required_reasoning": [
+        "Express declared logical bounds and unknown conditions",
+        "No universal tile size or conversion of bytes to measured DRAM"
+      ],
+      "evidence_category": "model",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A184",
+      "prompt_sha256": "7895832aafa18b77c4790c897c5f33e2f9b5832a570d67fd592f27f72dedc216",
+      "finding": "discard-after-last-use",
+      "required_reasoning": [
+        "Invalidate only after all needed contents have last use",
+        "Restore storage or move invalidation after postprocess"
+      ],
+      "evidence_category": "graph",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A185",
+      "prompt_sha256": "a1a453a89fd643457b88557ab7abdf4148009e56120c388792ce0c13bae9a086",
+      "finding": "reject-feedback",
+      "required_reasoning": [
+        "Reject same-image sampling/render target feedback",
+        "Preserve distinct ping-pong resources and dependencies"
+      ],
+      "evidence_category": "graph",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A186",
+      "prompt_sha256": "d0233645a9c6edf9942fe5bd7e71382f5e2c7163913bc4bd92b0059cf66514e5",
+      "finding": "resolve-legality",
+      "required_reasoning": [
+        "Check multisample blit sample/extent/filter legality first",
+        "GLES multisample resolve requires matching extents and NEAREST"
+      ],
+      "evidence_category": "graph",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A187",
+      "prompt_sha256": "d73c45537a21a799261a9f2db7fe80e2f580632d0e5336097812f4d63c4a33fc",
+      "finding": "external-lifetime",
+      "required_reasoning": [
+        "Keep allocation alive until asynchronous consumer fence completes",
+        "Graph pass completion alone is not external lifetime completion"
+      ],
+      "evidence_category": "graph",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A188",
+      "prompt_sha256": "52568f8c7f89b9e932f0315a8c4e24f9f28437f71ea99cf87daa1b018e77e626",
+      "finding": "dynamic-silhouette",
+      "required_reasoning": [
+        "Test multiple cameras, foreground silhouettes and alpha",
+        "Reject current quality failure even if work count decreases"
+      ],
+      "evidence_category": "image",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A189",
+      "prompt_sha256": "29a324a866c305a02b8533b64b83f61595350b7fbf59d98b684a3e1cd5e53c2e",
+      "finding": "transparent-order",
+      "required_reasoning": [
+        "Preserve order-dependent transparent compositing",
+        "Material batching is not an equivalence proof"
+      ],
+      "evidence_category": "image",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A190",
+      "prompt_sha256": "2c9ab3a623736c2b88cc323cd32644ff62d08e9fa42f2ca7c176c4de1c88ed50",
+      "finding": "draw-not-coverage",
+      "required_reasoning": [
+        "Report CPU submission separately from projected fragment coverage",
+        "Fewer draws alone does not prove less overdraw or GPU time"
+      ],
+      "evidence_category": "image",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A191",
+      "prompt_sha256": "e9030ee2ddd3d1215ef2db764414d5ec88943fea9030c3f1f4aedebe04f3c9ae",
+      "finding": "volume-edge-temporal",
+      "required_reasoning": [
+        "Test depth edges and motion/disocclusion over frame sequence",
+        "Static average image error alone cannot rule out ghosting"
+      ],
+      "evidence_category": "image",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A192",
+      "prompt_sha256": "8a9c8914e412da16c2e05cd57989d9c23160d3e6431544f2f45d108430e5465b",
+      "finding": "premultiplied-alpha",
+      "required_reasoning": [
+        "Match premultiplied color representation and blend factors",
+        "Use an edge regression and preserve original valid fallback"
+      ],
+      "evidence_category": "image",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A193",
+      "prompt_sha256": "a5801b48d54767363ae42908e8bfb36157ae842208ecb44b2f9a68a95ef074d2",
+      "finding": "compression-not-runtime-gain",
+      "required_reasoning": [
+        "Measure end-to-end decode/transcode/upload/frame behavior",
+        "Disk compression ratio does not prove runtime benefit"
+      ],
+      "evidence_category": "texture",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A194",
+      "prompt_sha256": "67aab308e400ce3ad4ad5e01a585d16bc29343db0e0243cbabbcd977472434bf",
+      "finding": "atlas-border-controls",
+      "required_reasoning": [
+        "Include gutters, mip borders and texture-array capabilities",
+        "Compare legal baseline at matched image quality"
+      ],
+      "evidence_category": "texture",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A195",
+      "prompt_sha256": "f38f18749e68722bec60025f85c51811006a72a56715da9587ea4f0732f8b21c",
+      "finding": "pbo-lifetime",
+      "required_reasoning": [
+        "Do not overwrite in-flight PBO ranges before completion",
+        "Use fence/ring ownership and legal synchronous fallback"
+      ],
+      "evidence_category": "texture",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A196",
+      "prompt_sha256": "4804c9e486bb5850b863a33d92a350057d79ba5d5bc9212578072acb0384be74",
+      "finding": "normal-quality-budget",
+      "required_reasoning": [
+        "Check thin specular/normal features at relevant viewpoints",
+        "Resident logical bytes alone do not justify quality regression"
+      ],
+      "evidence_category": "texture",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A197",
+      "prompt_sha256": "9b33f3dcb74c1696d870a14746be326708db1b2b60176fc2056632d1fb7b9e8a",
+      "finding": "extension-probe",
+      "required_reasoning": [
+        "Probe extension and limits before anisotropy setup",
+        "Use legal mip/filter fallback without unsupported entrypoints"
+      ],
+      "evidence_category": "texture",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A198",
+      "prompt_sha256": "7b1acb024e0be95b54ff49a0b0e43fb1f046ce838f95d95e9c74ec89010d051a",
+      "finding": "no-family-generalization",
+      "required_reasoning": [
+        "Scope evidence to exact device/GPU/driver/backend",
+        "One device result does not authorize family-wide policy"
+      ],
+      "evidence_category": "decision",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A199",
+      "prompt_sha256": "7f1f63a6ca3d646759b2d675309c6b64ce1fa374ae39325c6ee3af2800aef556",
+      "finding": "negative-gain-rollback",
+      "required_reasoning": [
+        "Evaluate p95 and energy as explicit acceptance objectives",
+        "Rollback or reject when required objectives regress"
+      ],
+      "evidence_category": "decision",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A200",
+      "prompt_sha256": "2abf948cf3803c64bb0726023cf3c1e7ae66ae5ac73d6d2245fd57be777e98e2",
+      "finding": "evidence-binding",
+      "required_reasoning": [
+        "Bind scene/build/source/image thresholds to retained capture",
+        "Hashes bind bytes but do not authenticate physical provenance"
+      ],
+      "evidence_category": "decision",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A201",
+      "prompt_sha256": "4e2da6f294e03030fdcdfef06e2379ce3ac0796ac311011e9b244d6f0dd19deb",
+      "finding": "fixtures-not-provider",
+      "required_reasoning": [
+        "Keep fixture provenance explicit and unknown power null",
+        "Do not score fixtures as provider output or missing as zero"
+      ],
+      "evidence_category": "provider",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    },
+    {
+      "case_id": "A202",
+      "prompt_sha256": "7dca73dc036221c75eb85f90c027de5c6d96b3818c14fba5e300ea1d9cf8948e",
+      "finding": "compile-not-acceptance",
+      "required_reasoning": [
+        "Compilation is only one gate; require execution/output evidence",
+        "No verified improvement without quality and matched capture"
+      ],
+      "evidence_category": "provider",
+      "automated_verdict": null,
+      "independent_review": "NOT_RUN"
+    }
+  ]
+}

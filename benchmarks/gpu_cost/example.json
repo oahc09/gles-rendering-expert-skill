@@ -1,0 +1,16 @@
+{
+  "attachments": [
+    {
+      "id": "a",
+      "format": "RGBA8",
+      "width": 10,
+      "height": 10,
+      "samples": 1,
+      "passes": 1,
+      "clear": false,
+      "invalidate": false,
+      "resolve": false,
+      "external_consumer": false
+    }
+  ]
+}

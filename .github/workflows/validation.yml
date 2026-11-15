@@ -115,6 +115,82 @@ jobs:
         run: python3 benchmarks/agent/v108/api_pipeline.py --config reports/v108-differential/config.json --output reports/v108-api-repairs
       - name: v1.0.8 actual fragment-image repair controls
         run: python3 benchmarks/agent/v108/image_pipeline.py --config reports/v108-repairs/implementations.json --output reports/v108-image-repairs
+      - name: v1.0.9 workload optimization candidate contracts
+        run: |
+          python3 -m unittest discover -s benchmarks/workloads -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/device_portability -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/shader_ab -p 'test_*.py' -v
+          python3 tools/check_v109_gates.py
+          python3 tools/check_v109_scene_coverage.py
+      - name: v1.0.9 actual software image controls (not device speedup)
+        run: |
+          echo '{"kind":"mesa","egl":"/usr/lib/x86_64-linux-gnu/libEGL.so.1","gles":"/usr/lib/x86_64-linux-gnu/libGLESv2.so.2"}' > /tmp/v109-mesa.json
+          python3 benchmarks/shader_ab/run.py --config /tmp/v109-mesa.json --output reports/v109-shader-ab.json
+          python3 benchmarks/texture_access/run.py --config /tmp/v109-mesa.json --output reports/v109-textures.json
+      - name: v1.0.9 expanded actual dual-driver controls
+        run: |
+          python3 -m unittest discover -s benchmarks/attachment_controls -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/hdr_controls -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/overlap_scenes -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/texture_access -p 'test_*.py' -v
+          python3 tools/check_v109_evidence.py
+          echo '{"kind":"angle","egl":"/tmp/gles-angle/libEGL.so","gles":"/tmp/gles-angle/libGLESv2.so","icd":"/tmp/gles-angle/vk_swiftshader_icd.json"}' > /tmp/v109-angle.json
+          for driver in mesa angle; do
+            python3 benchmarks/shader_ab/advanced.py --config /tmp/v109-$driver.json --output reports/v109-advanced-$driver.json
+            python3 benchmarks/overlap_scenes/projected.py --config /tmp/v109-$driver.json --output reports/v109-projected-$driver.json
+            python3 benchmarks/texture_access/mechanisms.py --config /tmp/v109-$driver.json --output reports/v109-texture-mechanisms-$driver.json
+          done
+      - name: Provision pinned official KTX tools for v1.0.9
+        run: |
+          curl --fail --location --max-time 150 https://github.com/KhronosGroup/KTX-Software/releases/download/v4.4.2/KTX-Software-4.4.2-Linux-x86_64.tar.bz2 -o /tmp/v109-ktx.tar.bz2
+          echo 'a8781bad05f9624edbf910b7f258cd0a4ba7d3e63b49ecc0a0ab440bf6a0a245  /tmp/v109-ktx.tar.bz2' | sha256sum -c
+          tar -xjf /tmp/v109-ktx.tar.bz2 -C /tmp
+      - name: v1.0.9 covariance refraction and actual KTX transcode controls
+        run: |
+          for driver in mesa angle; do
+            python3 benchmarks/system_scenes/v109_s03/run.py --config /tmp/v109-$driver.json --output reports/v109-s03-$driver.json
+            python3 benchmarks/interleaved_capture/run.py --config /tmp/v109-$driver.json --output reports/v109-interleaved-$driver.json
+            python3 benchmarks/shader_ab/optimization_pairs.py --config /tmp/v109-$driver.json --output reports/v109-optimization-pairs-$driver.json
+            python3 benchmarks/texture_streaming/run.py --config /tmp/v109-$driver.json --output reports/v109-streaming-$driver.json
+            python3 benchmarks/compressed_streaming/run.py --config /tmp/v109-$driver.json --ktx-root /tmp/KTX-Software-4.4.2-Linux-x86_64 --ktx-archive /tmp/v109-ktx.tar.bz2 --output reports/v109-compressed-streaming-$driver.json
+            python3 benchmarks/workflow/run.py benchmarks/workflow/request.json --config /tmp/v109-$driver.json --backend $driver-software --output-dir reports/v109-workflow-$driver
+            python3 benchmarks/overlap_scenes/coverage_scenes.py --config /tmp/v109-$driver.json --output reports/v109-coverage-scenes-$driver.json
+            python3 benchmarks/texture_access/oblique.py --config /tmp/v109-$driver.json --output reports/v109-oblique-$driver.json
+            python3 benchmarks/texture_streaming/progressive.py --config /tmp/v109-$driver.json --output reports/v109-progressive-$driver.json
+            python3 benchmarks/device_portability/scene_collector.py collect --config /tmp/v109-$driver.json --backend $driver-software --output-dir reports/v109-scene-captures
+            python3 benchmarks/pipeline/candidate_replay.py --config /tmp/v109-$driver.json --output reports/v109-graph-replay-$driver.json
+            python3 benchmarks/shader_ab/rebind.py --config /tmp/v109-$driver.json --output reports/v109-rebind-$driver.json
+            python3 benchmarks/particle_controls/run.py --config /tmp/v109-$driver.json --output reports/v109-particles-$driver.json
+            python3 benchmarks/rollback_controls/run.py --config /tmp/v109-$driver.json --output reports/v109-rollback-$driver.json
+            python3 benchmarks/shader_ab/packing.py --config /tmp/v109-$driver.json --output reports/v109-packing-$driver.json
+            python3 benchmarks/attachment_controls/run.py --config /tmp/v109-$driver.json --output reports/v109-attachments-$driver.json
+            python3 benchmarks/hdr_controls/run.py --config /tmp/v109-$driver.json --output reports/v109-hdr-$driver.json
+            python3 benchmarks/overlap_scenes/advanced.py --config /tmp/v109-$driver.json --output reports/v109-overlap-advanced-$driver.json
+            python3 benchmarks/pipeline/postfx_quality.py --config /tmp/v109-$driver.json --output reports/v109-postfx-$driver.json
+            for pattern in smooth steep; do
+              python3 benchmarks/texture_access/ktx2_experiment.py --config /tmp/v109-$driver.json --ktx-root /tmp/KTX-Software-4.4.2-Linux-x86_64 --pattern $pattern --output reports/v109-ktx-$driver-$pattern.json
+            done
+          done
+      - name: v1.0.9 tier quality gate contract (not all-tier visual acceptance)
+        run: |
+          for driver in mesa angle; do
+            python3 benchmarks/overlap_scenes/far_precision.py --config /tmp/v109-$driver.json --output reports/v109-far-precision-$driver.json --require-contract-only
+            python3 benchmarks/overlap_scenes/far_adaptive_resolution.py --config /tmp/v109-$driver.json --output reports/v109-far-adaptive-$driver.json --require-contract-only
+            python3 benchmarks/overlap_scenes/far_stage_probe.py --config /tmp/v109-$driver.json --output reports/v109-far-stage-$driver.json
+            python3 benchmarks/overlap_scenes/far_reconstruction.py --config /tmp/v109-$driver.json --output reports/v109-far-reconstruction-$driver.json --require-contract-only
+            python3 benchmarks/overlap_scenes/far_resolution.py --config /tmp/v109-$driver.json --output reports/v109-far-resolution-$driver.json --require-contract-only
+            python3 benchmarks/overlap_scenes/background_merge.py --config /tmp/v109-$driver.json --output reports/v109-background-merge-$driver.json --require-contract-only
+            python3 benchmarks/overlap_scenes/precision_replay.py --config /tmp/v109-$driver.json --output reports/v109-precision-admission-$driver.json
+            python3 benchmarks/overlap_scenes/blend_precision.py --config /tmp/v109-$driver.json --output reports/v109-blend-precision-$driver.json --require-contract-only
+            python3 benchmarks/overlap_scenes/tiered.py --config /tmp/v109-$driver.json --output reports/v109-tiered-$driver.json --require-harness-only
+          done
+      - name: v1.0.9 source chain and software scene grouping
+        run: |
+          python3 tools/check_v109_research_chain.py --output reports/v109-research-chain.json
+          python3 tools/v109_research_index.py validate --source docs/v1.0.9/research/rolling/2026-11-15/radar.json.gz --source-receipt docs/v1.0.9/research/rolling/2026-11-15/receipt.json --index docs/v1.0.9/research/index.json.gz --report reports/v109-research-index.json
+          python3 benchmarks/device_portability/scene_collector.py group reports/v109-scene-captures/mesa-software-record.json reports/v109-scene-captures/angle-software-record.json --artifact-root reports/v109-scene-captures --output reports/v109-scene-groups.json
+      - name: v1.0.9 reproducible complete host unit manifest
+        run: python3 tools/run_v109_regression.py --output reports/v109-unit-manifest.json
       - name: Preserve v108 results and failure evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

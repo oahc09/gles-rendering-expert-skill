@@ -318,3 +318,47 @@ and production-grade C++17 / GLSL ES code patterns into AI coding assistants
 ## Unreleased — v1.0.6 candidate (2026-11-01)
 
 Cross-API AHB/native-fence source, multi-Surface lifecycle, deterministic compute, five advanced effects, twelve precision groups, runtime KTX transcode/video guards, conditional driver records, ten authored compiler reducers and thirty new Agent cases. See [acceptance and limitations](docs/v1.0.6/acceptance.md). Actual software/compile evidence is separated from blocked physical-device/provider acceptance. Metadata remains 1.0.2; no release is claimed.
+
+## v1.0.9 development candidate (not a release)
+
+Incremental workload fingerprints, estimated attachment cost, evidence-constrained
+optimization advice, read-only RenderGraph suggestions, 30 new Agent tasks, and
+bounded software GLES shader/overlap/texture controls. See
+[original plan](docs/v1.0.9/development-plan.md) and
+[validation and remaining scope](docs/v1.0.9/validation-report.md).
+All predecessor gates remain binding. Real GPU/provider acceptance and broader
+original-plan experiments remain incomplete; metadata stays unchanged.
+
+
+### v1.0.9 end-to-end host candidate
+
+- [Executable workload-to-Advisor workflow](benchmarks/workflow/README.md): actual GLES replay, artifact revalidation, quality rejection and baseline fallback; never software performance VERIFIED.
+- [Compressed streaming chain](benchmarks/compressed_streaming/README.md): pinned KTX preparation, cache/budget and actual upload/readback with original-pixel fallback.
+- [Remaining original-plan gates](docs/v1.0.9/completion-matrix.md) and [scope clarification](docs/v1.0.9/original-scope-audit.md). Original visual failures, physical-device/provider and independent review gates remain.
+- Read-only weekly/monthly radar workflow delivered, not active from this Draft branch. No release/tag/version metadata change.
+
+- v1.0.9 candidate follow-up: actual fixed interleaved software captures, strict
+  duplicate-background alpha merge A/B with global camera rejection, and checked
+  original-plan completion/release bookkeeping. Failed pixels and external gates
+  remain open; no metadata version or release change.
+
+- v1.0.9 candidate: separate far-resolution/foreground GLES replay with strict
+  camera-global quality rejection, plus finite integrated S03 depth/UI/PostFX
+  stage-oracle controls. Real mobile and provider gates remain blocked.
+
+- v1.0.9 candidate: quantified retained nearest-sampling failures and added real
+  bilinear far reconstruction. ANGLE passes the finite original camera set; Mesa
+  remains rejected by unchanged silhouette budget and retains baseline.
+
+- v1.0.9 candidate: actual far-stage readback localization and held-out 48x48
+  reconstruction test. Original views alone do not establish camera generalization;
+  both backends retain baseline on held-out quality failure.
+
+- v1.0.9 candidate: capability/budget-gated half-float far intermediate tested
+  against original UNORM targets; center improves but held-out views still reject.
+
+### v1.0.9 original-scope closure (unreleased)
+
+- Normalize all 1319 research metadata candidates to the original twelve-field contract without promotion.
+- Record bounded manual-source lookup limits and distinguish rejected candidates from original baseline failures.
+- Keep Draft/release gates, physical/provider evidence and independent review outstanding.

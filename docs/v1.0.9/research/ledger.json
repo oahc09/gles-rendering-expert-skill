@@ -1,0 +1,32 @@
+[
+  {
+    "source_url": "https://github.com/google/perfetto/releases/tag/v59.1",
+    "event_date": "2026-10-27T02:09:05Z",
+    "discovered_at": "2026-11-15T02:02:52.031562+00:00",
+    "sha256": "e18b317b8c73509d2c9bb23fe2c5f4ccc90426e7500136cb40477436e3240f55",
+    "evidence_class": "SOURCE_CONFIRMED",
+    "platform": null,
+    "gpu": null,
+    "driver": null,
+    "gles_version": null,
+    "affected_rules": [],
+    "repro": null,
+    "decision": "engineering reference only; no performance promotion",
+    "test_id": null
+  },
+  {
+    "source_url": "https://github.com/google/filament/releases/tag/v1.78.0",
+    "event_date": "2026-10-13T17:33:42Z",
+    "discovered_at": "2026-11-15T02:02:54.435857+00:00",
+    "sha256": "10da20ac01afd99324fa68e1eb9384ddd45d3d8fe0242a6a46f4f2176b3edfcc",
+    "evidence_class": "SOURCE_CONFIRMED",
+    "platform": null,
+    "gpu": null,
+    "driver": null,
+    "gles_version": null,
+    "affected_rules": [],
+    "repro": null,
+    "decision": "engineering reference only; no performance promotion",
+    "test_id": null
+  }
+]

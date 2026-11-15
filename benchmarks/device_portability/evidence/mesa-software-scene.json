@@ -1,0 +1,753 @@
+{
+  "status": "HOST_PASS",
+  "transformation": {
+    "baseline_sha256": "9a0f28b4521b94e9d740aa8d47ca6464d0fe6eed832aff5c0fe6f22e32865be1",
+    "candidate_sha256": "387c30cc38ccf90115cf541ae40854a9a67f92f81a6d39e8f6a8ec88208bf17d",
+    "candidate": {
+      "resources": {
+        "scene": {
+          "format": "RGBA8",
+          "size": [
+            4,
+            4
+          ]
+        },
+        "intermediate": {
+          "format": "RGBA8",
+          "size": [
+            2,
+            2
+          ]
+        },
+        "screen": {
+          "format": "RGBA8",
+          "size": [
+            4,
+            4
+          ]
+        }
+      },
+      "passes": [
+        {
+          "id": "source",
+          "writes": [
+            "scene"
+          ]
+        },
+        {
+          "id": "sample",
+          "reads": [
+            "scene"
+          ],
+          "writes": [
+            "intermediate"
+          ],
+          "depends_on": [
+            "source"
+          ]
+        },
+        {
+          "id": "present",
+          "reads": [
+            "intermediate"
+          ],
+          "writes": [
+            "screen"
+          ],
+          "depends_on": [
+            "sample"
+          ]
+        }
+      ]
+    },
+    "fallback": {
+      "resources": {
+        "scene": {
+          "format": "RGBA8",
+          "size": [
+            4,
+            4
+          ]
+        },
+        "intermediate": {
+          "format": "RGBA8",
+          "size": [
+            4,
+            4
+          ]
+        },
+        "screen": {
+          "format": "RGBA8",
+          "size": [
+            4,
+            4
+          ]
+        }
+      },
+      "passes": [
+        {
+          "id": "source",
+          "writes": [
+            "scene"
+          ]
+        },
+        {
+          "id": "sample",
+          "reads": [
+            "scene"
+          ],
+          "writes": [
+            "intermediate"
+          ],
+          "depends_on": [
+            "source"
+          ]
+        },
+        {
+          "id": "present",
+          "reads": [
+            "intermediate"
+          ],
+          "writes": [
+            "screen"
+          ],
+          "depends_on": [
+            "sample"
+          ]
+        }
+      ]
+    },
+    "transformation": "intermediate_extent_4_to_2",
+    "synchronization": {
+      "status": "PASS",
+      "order": [
+        "source",
+        "sample",
+        "present"
+      ],
+      "invariants": [
+        "one context, sequential draw submission",
+        "producer dependency before each consumer",
+        "each sampled texture differs from active framebuffer attachment",
+        "private whole-resource storage; no alias/subrange/external consumers",
+        "framebuffer writes followed by texture fetch use GLES coherent command ordering"
+      ],
+      "memory_barrier_bits": 0,
+      "barrier_reason": "No incoherent shader writes in this closed vocabulary; glMemoryBarrier is not required",
+      "excluded": [
+        "SSBO",
+        "imageStore",
+        "compute",
+        "cross-context",
+        "async external access",
+        "depth",
+        "blending",
+        "MSAA"
+      ]
+    },
+    "quality": "REQUIRES_ACTUAL_REPLAY",
+    "performance": "NOT_MEASURED",
+    "general_equivalence": "NOT_PROVEN"
+  },
+  "rejected_controls": [
+    {
+      "id": "missing-producer-dependency",
+      "status": "REJECTED_BEFORE_GL",
+      "reason": "unsupported commands or missing explicit producer dependency"
+    },
+    {
+      "id": "unsupported-barrier-declaration",
+      "status": "REJECTED_BEFORE_GL",
+      "reason": "Inherited graph checker rejected graph"
+    },
+    {
+      "id": "attachment-sampling-feedback",
+      "status": "REJECTED_BEFORE_GL",
+      "reason": "Inherited graph checker rejected graph"
+    }
+  ],
+  "cases": [
+    {
+      "pattern": "constant",
+      "baseline": {
+        "graph_sha256": "9a0f28b4521b94e9d740aa8d47ca6464d0fe6eed832aff5c0fe6f22e32865be1",
+        "passes": [
+          {
+            "pass": "source",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "ad4429642a45f42c0e5bbcc9d957e0a8ffdef709783c3b23d4ae67b760d2fa4c"
+            }
+          },
+          {
+            "pass": "sample",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "a0ca99eb6e30cc1cc09fb2c14e630666f34e039eb26af882e7c2fb1868af1a90"
+            }
+          },
+          {
+            "pass": "present",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "a0ca99eb6e30cc1cc09fb2c14e630666f34e039eb26af882e7c2fb1868af1a90"
+            }
+          }
+        ],
+        "pixels": [
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255
+        ],
+        "gl_error": 0,
+        "synchronization": {
+          "status": "PASS",
+          "order": [
+            "source",
+            "sample",
+            "present"
+          ],
+          "invariants": [
+            "one context, sequential draw submission",
+            "producer dependency before each consumer",
+            "each sampled texture differs from active framebuffer attachment",
+            "private whole-resource storage; no alias/subrange/external consumers",
+            "framebuffer writes followed by texture fetch use GLES coherent command ordering"
+          ],
+          "memory_barrier_bits": 0,
+          "barrier_reason": "No incoherent shader writes in this closed vocabulary; glMemoryBarrier is not required",
+          "excluded": [
+            "SSBO",
+            "imageStore",
+            "compute",
+            "cross-context",
+            "async external access",
+            "depth",
+            "blending",
+            "MSAA"
+          ]
+        }
+      },
+      "candidate": {
+        "graph_sha256": "387c30cc38ccf90115cf541ae40854a9a67f92f81a6d39e8f6a8ec88208bf17d",
+        "passes": [
+          {
+            "pass": "source",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "ad4429642a45f42c0e5bbcc9d957e0a8ffdef709783c3b23d4ae67b760d2fa4c"
+            }
+          },
+          {
+            "pass": "sample",
+            "extent": [
+              2,
+              2
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "a0ca99eb6e30cc1cc09fb2c14e630666f34e039eb26af882e7c2fb1868af1a90"
+            }
+          },
+          {
+            "pass": "present",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "a0ca99eb6e30cc1cc09fb2c14e630666f34e039eb26af882e7c2fb1868af1a90"
+            }
+          }
+        ],
+        "pixels": [
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255,
+          64,
+          128,
+          191,
+          255
+        ],
+        "gl_error": 0,
+        "synchronization": {
+          "status": "PASS",
+          "order": [
+            "source",
+            "sample",
+            "present"
+          ],
+          "invariants": [
+            "one context, sequential draw submission",
+            "producer dependency before each consumer",
+            "each sampled texture differs from active framebuffer attachment",
+            "private whole-resource storage; no alias/subrange/external consumers",
+            "framebuffer writes followed by texture fetch use GLES coherent command ordering"
+          ],
+          "memory_barrier_bits": 0,
+          "barrier_reason": "No incoherent shader writes in this closed vocabulary; glMemoryBarrier is not required",
+          "excluded": [
+            "SSBO",
+            "imageStore",
+            "compute",
+            "cross-context",
+            "async external access",
+            "depth",
+            "blending",
+            "MSAA"
+          ]
+        }
+      },
+      "cpu_max_errors": [
+        0,
+        0
+      ],
+      "baseline_candidate_max_error": 0,
+      "expected": "PASS",
+      "observed": "PASS",
+      "pass": true,
+      "selected_graph_sha256": "387c30cc38ccf90115cf541ae40854a9a67f92f81a6d39e8f6a8ec88208bf17d"
+    },
+    {
+      "pattern": "checkerboard",
+      "baseline": {
+        "graph_sha256": "9a0f28b4521b94e9d740aa8d47ca6464d0fe6eed832aff5c0fe6f22e32865be1",
+        "passes": [
+          {
+            "pass": "source",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "2ef67b3e3a68daa89ac4a67e7fc0f1f069a1aa49b9d8f10cf940030532f9572c"
+            }
+          },
+          {
+            "pass": "sample",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "a0ca99eb6e30cc1cc09fb2c14e630666f34e039eb26af882e7c2fb1868af1a90"
+            }
+          },
+          {
+            "pass": "present",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "a0ca99eb6e30cc1cc09fb2c14e630666f34e039eb26af882e7c2fb1868af1a90"
+            }
+          }
+        ],
+        "pixels": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          0,
+          0,
+          0,
+          255
+        ],
+        "gl_error": 0,
+        "synchronization": {
+          "status": "PASS",
+          "order": [
+            "source",
+            "sample",
+            "present"
+          ],
+          "invariants": [
+            "one context, sequential draw submission",
+            "producer dependency before each consumer",
+            "each sampled texture differs from active framebuffer attachment",
+            "private whole-resource storage; no alias/subrange/external consumers",
+            "framebuffer writes followed by texture fetch use GLES coherent command ordering"
+          ],
+          "memory_barrier_bits": 0,
+          "barrier_reason": "No incoherent shader writes in this closed vocabulary; glMemoryBarrier is not required",
+          "excluded": [
+            "SSBO",
+            "imageStore",
+            "compute",
+            "cross-context",
+            "async external access",
+            "depth",
+            "blending",
+            "MSAA"
+          ]
+        }
+      },
+      "candidate": {
+        "graph_sha256": "387c30cc38ccf90115cf541ae40854a9a67f92f81a6d39e8f6a8ec88208bf17d",
+        "passes": [
+          {
+            "pass": "source",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "2ef67b3e3a68daa89ac4a67e7fc0f1f069a1aa49b9d8f10cf940030532f9572c"
+            }
+          },
+          {
+            "pass": "sample",
+            "extent": [
+              2,
+              2
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "a0ca99eb6e30cc1cc09fb2c14e630666f34e039eb26af882e7c2fb1868af1a90"
+            }
+          },
+          {
+            "pass": "present",
+            "extent": [
+              4,
+              4
+            ],
+            "compile": true,
+            "link": true,
+            "source_sha256": {
+              "shader.vert": "85b87e92dc2194bb2c6e07e093513fd1bc0b14831ab4d7dea75ecd511f724174",
+              "shader.frag": "a0ca99eb6e30cc1cc09fb2c14e630666f34e039eb26af882e7c2fb1868af1a90"
+            }
+          }
+        ],
+        "pixels": [
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255,
+          0,
+          0,
+          0,
+          255
+        ],
+        "gl_error": 0,
+        "synchronization": {
+          "status": "PASS",
+          "order": [
+            "source",
+            "sample",
+            "present"
+          ],
+          "invariants": [
+            "one context, sequential draw submission",
+            "producer dependency before each consumer",
+            "each sampled texture differs from active framebuffer attachment",
+            "private whole-resource storage; no alias/subrange/external consumers",
+            "framebuffer writes followed by texture fetch use GLES coherent command ordering"
+          ],
+          "memory_barrier_bits": 0,
+          "barrier_reason": "No incoherent shader writes in this closed vocabulary; glMemoryBarrier is not required",
+          "excluded": [
+            "SSBO",
+            "imageStore",
+            "compute",
+            "cross-context",
+            "async external access",
+            "depth",
+            "blending",
+            "MSAA"
+          ]
+        }
+      },
+      "cpu_max_errors": [
+        0,
+        0
+      ],
+      "baseline_candidate_max_error": 255,
+      "expected": "REJECTED_BY_QUALITY",
+      "observed": "REJECTED_BY_QUALITY",
+      "pass": true,
+      "selected_graph_sha256": "9a0f28b4521b94e9d740aa8d47ca6464d0fe6eed832aff5c0fe6f22e32865be1"
+    }
+  ],
+  "draw_count": 12,
+  "readback_count": 4,
+  "quality_scope": "two static 4x4 RGBA8 patterns only",
+  "performance": "NOT_MEASURED",
+  "general_equivalence": "NOT_PROVEN",
+  "business_renderer_mutated": false
+}

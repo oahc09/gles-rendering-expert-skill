@@ -1,0 +1,32 @@
+import importlib.util,sys,unittest
+from pathlib import Path
+HERE=Path(__file__).resolve().parent
+sys.path.insert(0,str(HERE))
+import build_cases
+spec=importlib.util.spec_from_file_location('v109_experiments',HERE/'run.py');ab=importlib.util.module_from_spec(spec);spec.loader.exec_module(ab)
+spec=importlib.util.spec_from_file_location('v109_texture',HERE.parent/'texture_access/run.py');tex=importlib.util.module_from_spec(spec);spec.loader.exec_module(tex)
+class Controls(unittest.TestCase):
+ def row(self,p=None):return dict(status='EXECUTED',compile=True,link=True,harness_gl_error=0,pixels=[0]*64 if p is None else p)
+ def test_count(self):self.assertEqual(len(build_cases.corpus()),16)
+ def test_unique(self):self.assertEqual(len({x['id'] for x in build_cases.corpus()}),16)
+ def test_shader_versions(self):self.assertTrue(all(s.startswith('#version 300 es') for c in build_cases.corpus() for s in c['sources'].values()))
+ def test_no_timing(self):self.assertTrue(all(x['performance_status']=='NOT_MEASURED' for x in build_cases.corpus()))
+ def test_negative_count(self):self.assertEqual(sum(c['expected_quality']=='FAIL' for c in build_cases.corpus()),2)
+ def test_equal(self):self.assertEqual(ab.quality(self.row(),self.row()),'PASS')
+ def test_tolerance(self):self.assertEqual(ab.quality(self.row(),self.row([1]*64)),'PASS')
+ def test_difference(self):self.assertEqual(ab.quality(self.row(),self.row([2]*64)),'FAIL')
+ def test_nan(self):self.assertEqual(ab.quality(self.row(),self.row([float('nan')]*64)),'UNKNOWN')
+ def test_bool(self):self.assertEqual(ab.quality(self.row(),self.row([False]*64)),'UNKNOWN')
+ def test_short(self):self.assertEqual(ab.quality(self.row(),self.row([0]*63)),'UNKNOWN')
+ def test_glerror(self):r=self.row();r['harness_gl_error']=1280;self.assertEqual(ab.quality(r,self.row()),'UNKNOWN')
+ def test_compile_failure(self):r=self.row();r['compile']=False;self.assertEqual(ab.quality(r,self.row()),'UNKNOWN')
+ def test_missing_status(self):self.assertEqual(ab.quality({},self.row()),'UNKNOWN')
+ def test_out_of_range(self):self.assertEqual(ab.quality(self.row(),self.row([256]*64)),'UNKNOWN')
+ def test_four_scenes(self):self.assertEqual(len(ab.scenes()),4)
+ def test_transparent_blend(self):self.assertEqual(ab.blend_golden([[1,0,0,0]]),[0]*64)
+ def test_opaque_blend(self):self.assertEqual(ab.blend_golden([[1,0,0,1]]),[255,0,0,255]*16)
+ def test_sorting_matters(self):self.assertNotEqual(ab.blend_golden([[1,0,0,.5],[0,1,0,.5]]),ab.blend_golden([[0,1,0,.5],[1,0,0,.5]]))
+ def test_texture_count(self):self.assertEqual(len(tex.cases()),8)
+ def test_texture_negative(self):self.assertEqual(sum(c['expected']=='FAIL' for c in tex.cases()),4)
+ def test_texture_inputs(self):self.assertTrue(all(len(c['texture']['pixels'])==16 for c in tex.cases()))
+if __name__=='__main__':unittest.main()
