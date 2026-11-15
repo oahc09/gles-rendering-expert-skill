@@ -216,6 +216,7 @@ jobs:
             python3 benchmarks/coverage/weighted-oit/run.py --config /tmp/v109-$driver.json --output reports/v110-weighted-oit-$driver.json
             python3 benchmarks/coverage/distance-text/precision_probe.py --max-explicit-fetches 4 --config /tmp/v109-$driver.json --output reports/v110-distance-precision-$driver.json
             python3 benchmarks/coverage/weighted-oit/exact_replay.py --config /tmp/v109-$driver.json --output reports/v110-exact-order-$driver.json
+            python3 benchmarks/coverage/depth-peeling/run.py --config /tmp/v109-$driver.json --output reports/v110-depth-peeling-$driver.json
           done
           # ANGLE texture-buffer boundary mismatch stays archived FAIL.
           python3 benchmarks/coverage/texture-buffer/run.py --config /tmp/v109-mesa.json --output reports/v110-texture-buffer-mesa.json

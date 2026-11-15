@@ -41,3 +41,5 @@ python3 -m unittest discover -s benchmarks/coverage/weighted-oit -p 'test_*.py' 
 Public artifacts exclude local paths and OS/library fingerprints. `mesa.json` and `angle.json` retain complete final pixel arrays, sorted baselines, permutations, negatives, capability probe and separate quality decisions. Seven tests check independent CPU properties, real evidence, scope, cost and hashes; they are not substitutes for the archived real execution.
 
 For the algebraic limitation of fixed depth-only weights and the finite strict-order guard, see [exact-policy analysis](../../benchmarks/coverage/weighted-oit/exact-policy-analysis.md). It rejects crossing/tied inputs instead of presenting sorted alpha as a universal exact fallback.
+
+For a separately validated finite crossing-layer alternative, see [bounded GLES3 depth peeling](../../benchmarks/coverage/depth-peeling/README.md). Its K+1 overflow proof and depth-domain rejection are mandatory; the original weighted-OIT approximation has not been changed or reclassified.

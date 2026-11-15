@@ -56,7 +56,7 @@
       "knowledge_route": "references/cards/README.md",
       "implementation": "benchmarks/coverage/weighted-oit/run.py",
       "status": "SOFTWARE_RUNTIME_WITH_REJECTED_CANDIDATE",
-      "scope": "Weighted two-pass accum/reveal + resolve matches half-float CPU oracle, but both scenes exceed sorted-alpha quality budget; approximation rejected, sorted baseline selected. exact_replay gates sorted baseline on finite strict global order; crossing/tie inputs remain unavailable.",
+      "scope": "Weighted two-pass accum/reveal + resolve matches half-float CPU oracle, but both scenes exceed sorted-alpha quality budget; approximation rejected, sorted baseline selected. exact_replay gates sorted baseline on finite strict global order; crossing/tie inputs remain unavailable. Separate depth-peeling representative handles finite two/three crossing layers with K+1 overflow rejection; no unbounded-layer claim.",
       "es30_fallback": "Actual sorted alpha baseline for the measured scenes; lack of float format support remains explicit UNSUPPORTED, not a forged tested fallback.",
       "device": "BLOCKED_BY_HARDWARE",
       "performance": null
