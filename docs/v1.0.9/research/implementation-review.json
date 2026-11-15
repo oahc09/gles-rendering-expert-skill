@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-15",
+  "reviewer_kind": "AI assistant source inspection; not independent human review",
+  "corpus_total": 1319,
+  "reviewed_count": 4,
+  "unreviewed_count": 1315,
+  "source_counts": {
+    "angle": {
+      "total": 856,
+      "reviewed": 2,
+      "unreviewed": 854
+    },
+    "filament-commits": {
+      "total": 442,
+      "reviewed": 2,
+      "unreviewed": 440
+    }
+  },
+  "records": [
+    {
+      "review_id": "ANGLE_STORAGE_REBINDS",
+      "source_url": "https://github.com/google/angle/commit/2f5d7a4dbcad89f1b228ff264f365aa9a56523b5",
+      "event_date": "2026-10-28T16:40:36Z",
+      "revision": "2f5d7a4dbcad89f1b228ff264f365aa9a56523b5",
+      "metadata_record_sha256": "8cd347229e423e2be2b398951200b5e52fea265de460f51d69dfa4866aab1922",
+      "commit_api_url": "https://api.github.com/repos/google/angle/commits/2f5d7a4dbcad89f1b228ff264f365aa9a56523b5",
+      "retrieved_commit_api_sha256": "1e0aa2b73d01e7ee8db5a02b2645cd7acdcc1fc1d6527322ad460aaf026c1a08",
+      "reviewed_patch_sha256": {
+        "src/libANGLE/renderer/vulkan/ContextVk.cpp": "ceae59279bb65877c1b424bad9ba84e28c79ae8fec8ae62d4216edf8bd2d1db6",
+        "src/libANGLE/renderer/vulkan/vk_cache_utils.cpp": "d778aedd112ac85c5180680530dea700d4f2ba81b6bd21cd0c5adab0ccf0fe9c",
+        "src/libANGLE/renderer/vulkan/vk_helpers.cpp": "562eada1d06e3d98a7ef402c68b26f87c42fdc780a3e8e20a549d0be726ebb01",
+        "src/tests/gl_tests/MemoryBarrierTest.cpp": "72e32c826f44d6854995ade39636711dca5a965572f91fb53401c8d503aa9448"
+      },
+      "evidence_class": "SOURCE_CONFIRMED",
+      "review_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": false,
+      "claim": "ANGLE Vulkan now propagates explicit deferred memory-barrier bits through storage buffer/image access helpers. Buffer read/write tracking bypasses event-only shortcuts when an explicit barrier requires a pipeline dependency; image writes select Pipeline instead of Event for relevant bits.",
+      "inspection": "The added StorageBarrierAcrossSequentialRebinds and ImageBarrierAcrossSequentialRebinds tests prime the first resource differently, write four rebound resources, issue one barrier, then overwrite and verify all four. This is a mixed-history ordering bug, not evidence that every draw needs a global barrier.",
+      "test_refs": [
+        "benchmarks/shader_ab/advanced.py",
+        "benchmarks/shader_ab/test_advanced.py"
+      ],
+      "reproduction_status": "NOT_REPRODUCED_EXACT_UPSTREAM_REGRESSION",
+      "gap": "Our single SSBO compute-to-fragment positive control covers only a simpler ordering edge. Mixed event/pipeline resource histories and sequential image rebinds are NOT_REPRODUCED locally.",
+      "decision": "Add a candidate multi-resource rebind regression; preserve API consumer-specific barrier semantics. Do not promote a new mandatory global-barrier rule or infer a speedup.",
+      "rule_promotion": "NONE",
+      "performance_claim": null
+    },
+    {
+      "review_id": "ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+      "source_url": "https://github.com/google/angle/commit/035f8885dea7122f51ef9cd0a07db1568a974573",
+      "event_date": "2026-11-09T21:06:27Z",
+      "revision": "035f8885dea7122f51ef9cd0a07db1568a974573",
+      "metadata_record_sha256": "e06cd7ad6431d75fa40d319b92039758c6b32a1375416c2beef47d29732fe549",
+      "commit_api_url": "https://api.github.com/repos/google/angle/commits/035f8885dea7122f51ef9cd0a07db1568a974573",
+      "retrieved_commit_api_sha256": "d6617d90bdc628a1eb5320405fbc1a0db591c04b5888e5a46576c09cd364fd91",
+      "reviewed_patch_sha256": {
+        "src/libANGLE/renderer/vulkan/ContextVk.cpp": "95f46763492e4a69415e09cce7774c35124ebbb6eec1338d5b78958aecf31176",
+        "src/libANGLE/renderer/vulkan/FramebufferVk.cpp": "214bf415b7e9f2787de23b889590e040cdf1500a81aa1d58de4fd42742ddadff",
+        "src/tests/gl_tests/StateChangeTest.cpp": "6a137cb4932cabb4b076646b576ce5996bfc4938d620858e0f11051c88d055b5",
+        "src/tests/angle_end2end_tests_expectations.txt": "9351754736a6da98b92ecafd7cbd3eb1dc13ac4188dee5f53d594642b30373ac"
+      },
+      "evidence_class": "SOURCE_CONFIRMED",
+      "review_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": false,
+      "claim": "ANGLE Vulkan consolidates framebuffer-change blend function/equation updates around previous/new color attachment masks and resetBlendFuncsAndEquations; FramebufferVk invokes the new transition-specific helper.",
+      "inspection": "The new AttachmentFormatWithEnabledBlend test uses sparse draw buffers at attachment 1 and 3, changes one attachment from RGBA8 to RGBA32UI and back while blending stays enabled, and verifies float accumulation separately from integer output. It explicitly probes GL_OES_draw_buffers_indexed; an Intel OpenGL expectation is skipped, not a passing portability result.",
+      "test_refs": [
+        "benchmarks/overlap_scenes/advanced.py",
+        "tools/rendergraph_optimizer.py",
+        "tools/test_rendergraph_optimizer.py"
+      ],
+      "reproduction_status": "NOT_REPRODUCED_EXACT_UPSTREAM_REGRESSION",
+      "gap": "Current transparency controls exercise compositing but not this sparse-MRT integer/normalized attachment transition. The exact upstream regression remains NOT_REPRODUCED.",
+      "decision": "Require attachment format/state transition coverage when considering FBO reuse. Do not assume blend-state omission is legal or claim reduced CPU/GPU time from this patch.",
+      "rule_promotion": "NONE",
+      "performance_claim": null,
+      "bounded_local_control": {
+        "files": [
+          "benchmarks/attachment_controls/run.py",
+          "benchmarks/attachment_controls/test_attachment.py"
+        ],
+        "result": "DUAL_SOFTWARE_HOST_PASS",
+        "scope": "single attachment format transitions and optional sparse indexed MRT; not exact upstream regression"
+      }
+    },
+    {
+      "review_id": "FILAMENT_GL_FREE_ASYNC_FLUSH",
+      "source_url": "https://github.com/google/filament/commit/95c94d089ab2c4cc630c4d238c1e5ba2d8edd127",
+      "event_date": "2026-10-22T01:53:40Z",
+      "revision": "95c94d089ab2c4cc630c4d238c1e5ba2d8edd127",
+      "metadata_record_sha256": "f8fe335f4db5aa9ec3b212f437ba66c4361f842a6a9e37ea8f8dfa941ab24a71",
+      "commit_api_url": "https://api.github.com/repos/google/filament/commits/95c94d089ab2c4cc630c4d238c1e5ba2d8edd127",
+      "retrieved_commit_api_sha256": "85e617fb3b4693ca0b8549bd4f56436d96c9f1c36e84c73f5e4c8b9c389b4ce5",
+      "reviewed_patch_sha256": {
+        "filament/backend/src/opengl/OpenGLDriver.cpp": "427f4aca262ec0d10f958d0e7e5b257fba2ccf676574236a7aca8519826fab16"
+      },
+      "evidence_class": "SOURCE_CONFIRMED",
+      "review_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": false,
+      "claim": "Filament removes flushIfSharedContext only from two queued worker jobs: createTextureViewSwizzleAsyncR and importTextureAsyncR. Both queue push and scheduled completion callback remain; code comments state these jobs issue no GL commands on the worker.",
+      "inspection": "The source distinguishes unnecessary GL flushing from necessary job ordering: swizzle views rely on an earlier async texture-create job filling src->gl. Removing the queue itself would change the dependency even though these two flush calls disappear.",
+      "test_refs": [
+        "tools/rendergraph_optimizer.py",
+        "tools/test_rendergraph_optimizer.py",
+        "benchmarks/agent/cases-v1.0.9.json"
+      ],
+      "reproduction_status": "NOT_REPRODUCED_EXACT_UPSTREAM_REGRESSION",
+      "gap": "The graph advisor refuses unreviewed synchronization and only proposes candidates; no shared-context asynchronous Filament job/callback harness exists here. No before/after timing is established.",
+      "decision": "Keep as a bounded optimization hypothesis for demonstrably GL-free jobs. Reject any universal remove-glFlush advice or callback reordering; exact job ordering and shared-context visibility need a new runtime experiment.",
+      "rule_promotion": "NONE",
+      "performance_claim": null
+    },
+    {
+      "review_id": "FILAMENT_PACKING_PRECISION",
+      "source_url": "https://github.com/google/filament/commit/e8669b688a9381beb4f7470df828e1932d78efa6",
+      "event_date": "2026-11-07T00:01:42Z",
+      "revision": "e8669b688a9381beb4f7470df828e1932d78efa6",
+      "metadata_record_sha256": "30f10567d43c3992bffbfaaa03a95ee234eb7844b8d535a3695d72ac81db014f",
+      "commit_api_url": "https://api.github.com/repos/google/filament/commits/e8669b688a9381beb4f7470df828e1932d78efa6",
+      "retrieved_commit_api_sha256": "4e8c37b7b10932955acf41b0891d185597bc58a8d30d6b7d918c9e71ad9d9d62",
+      "reviewed_patch_sha256": {
+        "filament/backend/src/opengl/ShaderCompilerService.cpp": "8bfef9e81cd7ee6a86544f6d15a676e7cb5d491215ef3b6b4ae33b5f348119fd"
+      },
+      "evidence_class": "SOURCE_CONFIRMED",
+      "review_type": "AI_SOURCE_REVIEW",
+      "independent_human_review": false,
+      "claim": "Filament packing polyfills now first assign each converted channel to a highp uint before shifting in packUnorm4x8/packSnorm4x8; unpackSnorm4x8 sign-extension intermediates become explicit highp int in both code blocks.",
+      "inspection": "The patch moves shifts out of initializer expressions and onto highp operands, and fixes unpack temporary precision. A highp destination alone did not express high precision for every intermediate operation in the old source.",
+      "test_refs": [
+        "benchmarks/shader_ab/run.py",
+        "benchmarks/shader_ab/build_cases.py",
+        "benchmarks/agent/cases-v1.0.9.json",
+        "benchmarks/shader_ab/packing.py",
+        "benchmarks/shader_ab/test_packing.py"
+      ],
+      "reproduction_status": "NOT_REPRODUCED_EXACT_UPSTREAM_REGRESSION",
+      "gap": "Current precision/quality controls do not reproduce every UNORM/SNORM byte-packing edge on an implementation with actual 16-bit mediump integers. Physical precision distribution remains BLOCKED_BY_HARDWARE.",
+      "decision": "Add bounded signed/unsigned pack/unpack boundary tests and inspect intermediate precision. Do not change all shaders to highp, infer universal mediump width, or report an unmeasured performance effect.",
+      "rule_promotion": "NONE",
+      "performance_claim": null,
+      "source_informed_experiment": "Eight finite signed/unsigned pack/unpack cases, fixed/negative/legacy variants, actual draw/readback and CPU oracle on two software implementations. Not the upstream application/compiler build or a physical 16-bit-driver regression reproduction.",
+      "bounded_local_control": {
+        "files": [
+          "benchmarks/shader_ab/packing.py",
+          "benchmarks/shader_ab/test_packing.py"
+        ],
+        "result": "DUAL_SOFTWARE_HOST_PASS",
+        "scope": "finite signed/unsigned packing fixed/negative/legacy controls; not device-specific upstream regression"
+      }
+    }
+  ],
+  "boundary": "Title matching was only candidate triage. Listed implementation patches and upstream tests were actually read. No upstream code was built and no new performance rule is accepted. Existing tests are related controls, not reproduction of these exact commits.",
+  "count_scope": "Only four commit implementation reviews in this file; six release records are reviewed separately, ten distinct sources combined. unreviewed_count means not covered by THIS file, not globally unreviewed.",
+  "combined_reviewed_sources_reported_by_coordinator": 10
+}

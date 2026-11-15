@@ -4,6 +4,8 @@ import argparse,ctypes as C,hashlib,json,subprocess,tempfile,time
 from pathlib import Path
 import mechanisms as m
 from ktx2_container import parse
+from quality_gate import evaluate
+from etc2_cpu_oracle import decode_block
 ROOT=Path(__file__).resolve().parents[2]
 class PayloadHost(m.TextureHost):
  def fn(self,name,restype,args,*extra):
@@ -18,6 +20,7 @@ class PayloadHost(m.TextureHost):
 def run(config,ktx,output,pattern="smooth"):
  rows=[];host=PayloadHost(config)
  try:
+  if decode_block(bytes([255]+[0]*15),ktx)!=[2,2,2,255]*16:raise RuntimeError('ETC2 constant-block CPU oracle failed')
   with tempfile.TemporaryDirectory(prefix='gles-ktx109-') as tmp:
    tmp=Path(tmp);binary=tmp/'transcode'
    subprocess.run(['c++','-std=c++17','-I'+str(ktx/'include'),str(ROOT/'examples/texture_pipeline/transcode.cpp'),'-L'+str(ktx/'lib'),'-Wl,-rpath,'+str(ktx/'lib'),'-lktx','-o',str(binary)],check=True,capture_output=True)
@@ -35,8 +38,8 @@ def run(config,ktx,output,pattern="smooth"):
     row=host.execute(c);row['expected']='PASS' if pattern=='smooth' else 'FAIL';row['payload_bytes']=len(host.payload['payload']);row.pop('logical_texture_bytes',None)
     row.update(container_sha256=hashlib.sha256(data).hexdigest(),source_pixels_sha256=hashlib.sha256(rgb).hexdigest(),cpu_process_load_and_transcode_ms=elapsed,quality_budget=32,quality_scope='4x4 original gradient only, lossy tolerance fixed before test',status='EXECUTED',decoded_unique_colors=len({tuple(row['pixels'][i:i+4]) for i in range(0,64,4)}))
     decoded=tmp/(mode+'.rgba')
-    if decoded.exists():
-     cpu=list(decoded.read_bytes())
+    if decoded.exists() or mode=='etc2':
+     cpu=decode_block(host.payload['payload'],ktx) if mode=='etc2' else list(decoded.read_bytes())
      if len(cpu)!=64:raise RuntimeError('CPU decoded payload size mismatch')
      flipped=[v for y in reversed(range(4)) for v in golden[y*16:y*16+16]]
      row['cpu_decoded_pixels']=cpu
@@ -52,7 +55,8 @@ def run(config,ktx,output,pattern="smooth"):
     try:parse(bytes(b));rejected=False
     except ValueError:rejected=True
     mutations.append({'case':name,'rejected':rejected})
-   result={'status':'HOST_PASS' if all(r.get('quality')==('PASS' if pattern=='smooth' else 'FAIL') and r.get('gl_error')==0 for r in rows if r['status']=='EXECUTED') and all(x['rejected'] for x in mutations) else 'FAIL','experiments':rows,'negative_containers':mutations,'source_pattern':pattern,'expected_quality':'PASS' if pattern=='smooth' else 'FAIL','source_golden_rgba':golden,'performance_status':'NOT_MEASURED','hardware':'BLOCKED_BY_HARDWARE','scope':'Original 4x4 gradient encoded by official UASTC, actual libktx conversion, compressed multicolor GLES readback. CPU process elapsed includes startup and output I/O, not isolated transcoder or GPU performance.'}
+   decision_gate=evaluate(rows,golden,pattern)
+   result={'decision_gate':decision_gate,'etc2_cpu_constant_oracle':'PASS','status':'HOST_PASS' if decision_gate['harness_status']=='HOST_PASS' and all(x['rejected'] for x in mutations) else 'FAIL','experiments':rows,'negative_containers':mutations,'source_pattern':pattern,'expected_quality':'PASS' if pattern=='smooth' else 'FAIL','source_golden_rgba':golden,'performance_status':'NOT_MEASURED','hardware':'BLOCKED_BY_HARDWARE','scope':'Original 4x4 gradient encoded by official UASTC, actual libktx conversion, compressed multicolor GLES readback. CPU process elapsed includes startup and output I/O, not isolated transcoder or GPU performance.'}
  finally:host.close()
  Path(output).write_text(json.dumps(result,indent=2)+'\n');return result
 if __name__=='__main__':

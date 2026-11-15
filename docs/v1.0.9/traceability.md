@@ -31,3 +31,12 @@ LOD and finite refraction; W5 registered `pipeline/postfx_quality.py` and explic
 sidecar (recommendation only); W6 `texture_access/ktx2_experiment.py` actual KTX
 conversion and strict bounded `ktx2_container.py`. `scene-coverage.json` separates
 all eight scene dimensions and `check_v109_scene_coverage.py` rejects false acceptance.
+
+
+Fourth increment closes finite software gaps: S05 `hdr_controls/run.py` performs
+float HDR attachment and sampled SDR conversion; source-informed `shader_ab/packing.py`
+and `attachment_controls/run.py` link actual reviewed patches to bounded local
+oracles without asserting exact upstream reproduction. Texture KTX tests now include
+an official pinned independent CPU ETC2 block decoder and a separate quality-decision
+gate. Selected release/implementation review files are AI analysis, not independent
+human approval, complete corpus review or performance evidence.

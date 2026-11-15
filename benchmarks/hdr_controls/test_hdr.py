@@ -1,0 +1,21 @@
+import importlib.util,math,unittest
+from pathlib import Path
+spec=importlib.util.spec_from_file_location('hdr_controls',Path(__file__).with_name('run.py'));h=importlib.util.module_from_spec(spec);spec.loader.exec_module(h)
+class HDR(unittest.TestCase):
+ def test_linear_count(self):self.assertEqual(len(h.linear_pixels(1)),16*8*4)
+ def test_hdr_above_one(self):self.assertEqual(max(h.linear_pixels(4)),64)
+ def test_alpha(self):self.assertEqual(set(h.linear_pixels(4)[3::4]),{1.})
+ def test_exposure(self):self.assertEqual(h.linear_pixels(4)[28],64)
+ def test_srgb_black(self):self.assertEqual(h.encode_srgb(0),0)
+ def test_srgb_white(self):self.assertAlmostEqual(h.encode_srgb(1),1)
+ def test_toe(self):self.assertAlmostEqual(h.encode_srgb(.001),.01292)
+ def test_knee_continuous(self):self.assertLess(abs(12.92*.0031308-(1.055*.0031308**(1/2.4)-.055)),1e-6)
+ def test_golden_opaque(self):self.assertEqual(set(h.golden(1)[3::4]),{255})
+ def test_golden_range(self):self.assertTrue(all(0<=x<=255 for x in h.golden(4)))
+ def test_expected(self):self.assertEqual(h.compare(h.golden(1),h.golden(1))['status'],'PASS')
+ def test_wrong(self):self.assertEqual(h.compare([0]*512,h.golden(1))['status'],'FAIL')
+ def test_invalid_size(self):self.assertEqual(h.compare([],[])['status'],'INVALID')
+ def test_nan(self):self.assertEqual(h.compare([float('nan')]*512,h.golden(1))['status'],'INVALID')
+ def test_bool(self):self.assertEqual(h.compare([False]*512,h.golden(1))['status'],'INVALID')
+ def test_three_counterexamples(self):self.assertEqual(len(h.EXPRESSIONS),4)
+if __name__=='__main__':unittest.main()

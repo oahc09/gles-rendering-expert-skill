@@ -29,3 +29,13 @@ archive and decompressed hashes. To reproduce or feed the existing radar, decomp
 first (`gzip -dc radar.json.gz > radar.json`). Metadata retrieval is complete,
 **manual vendor/X review and promotion are NOT_RUN**, and no new performance rule
 is accepted. This supersedes only the earlier NOT_RUN collection status, not review.
+
+
+## Fourth increment: selected full-content analysis
+
+`release-review.json` / `.md` contain six selected release-note reviews, including
+one empty Vulkan CTS note explicitly deferred. `implementation-review.json` / `.md`
+contain four actual implementation-patch reviews. This is AI source inspection,
+not independent human approval. Source-confirmed engineering cautions are linked
+to existing controls and explicit reproduction gaps; metadata titles alone are
+not counted as source review. No source patch proves a local performance gain.

@@ -122,3 +122,41 @@ Third-increment full local regression: **725 unittest tests passed, no failures 
 skips**, 31 directories; `evidence/unit-tests-third.json`. Rolling research metadata
 collection now has ten sources and 1,319 deduplicated candidates for the inclusive
 90-day window ending 2026-11-15. Manual review and rule promotion remain incomplete.
+
+
+## Fourth increment — selected source analysis and finite coverage
+
+Prior exact head `01fa6970a0429746e67fd5d88d508b446ab297d2` passed CI
+[43669422853](https://github.com/oahc09/gles-rendering-expert-skill/actions/runs/43669422853).
+That historical run does not cover subsequent changes.
+
+- Read six selected official release-note records and four actual ANGLE/Filament
+  commit patches. These ten analyses are AI source inspection, not independent
+  human approval. Empty Vulkan CTS notes are deferred; remaining corpus/vendor/X
+  review remains incomplete. No performance rule promoted.
+- S05 now has actual RGBA16F HDR→Reinhard→explicit sRGB→RGBA8 two-pass software
+  validation. Each driver has three HDR and twelve SDR readbacks. Correct float
+  and SDR results exactly match CPU golden; nine negative outputs per driver are
+  rejected. HDR display/PQ/HLG/wide-gamut/device acceptance remain untested.
+- Source-informed packing controls add eight cases × three variants × two drivers
+  (48 actual readbacks). Fixed variants pass and deliberate negatives fail. Legacy
+  expressions differ between the two implementations: diagnostic only, not exact
+  upstream-bug reproduction or physical integer-width proof.
+- Attachment controls add eight readbacks per driver, including real normalized→
+  integer→normalized FBO replacement and sparse indexed mixed-format MRT. Five
+  positive comparisons pass and three deliberate negatives fail per driver;
+  normalized transition outputs remain byte-identical. Not exhaustive MRT coverage.
+- KTX tests now compare ETC2 against the pinned official 4.4.2 CPU unpacker. Both
+  drivers match CPU exactly for the two generated blocks; steep original-image
+  error119 already exists in CPU decode. The internal ABI is narrowly pinned,
+  not a portable public API or all-mode validation. Stronger DFD/KVD/truncation/range
+  checks and a separate decision gate ensure rejected quality never becomes a
+  verified improvement, even when the regression harness itself passes.
+
+Fourth increment adds **94 new software readbacks** (30 HDR +48 packing +16
+attachment), and reruns the previous twelve KTX outputs with independent ETC2
+checks. This remains correctness evidence, not physical performance.
+
+Fourth-increment local regression: **778 tests passed, zero failures/skips**,
+33 directories. Evidence: `evidence/unit-tests-fourth.json`. Hosted CI for the
+new commit must be verified separately; prior successful runs are not substituted.

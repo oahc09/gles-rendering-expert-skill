@@ -129,6 +129,8 @@ jobs:
           python3 benchmarks/texture_access/run.py --config /tmp/v109-mesa.json --output reports/v109-textures.json
       - name: v1.0.9 expanded actual dual-driver controls
         run: |
+          python3 -m unittest discover -s benchmarks/attachment_controls -p 'test_*.py' -v
+          python3 -m unittest discover -s benchmarks/hdr_controls -p 'test_*.py' -v
           python3 -m unittest discover -s benchmarks/overlap_scenes -p 'test_*.py' -v
           python3 -m unittest discover -s benchmarks/texture_access -p 'test_*.py' -v
           python3 tools/check_v109_evidence.py
@@ -146,6 +148,9 @@ jobs:
       - name: v1.0.9 covariance refraction and actual KTX transcode controls
         run: |
           for driver in mesa angle; do
+            python3 benchmarks/shader_ab/packing.py --config /tmp/v109-$driver.json --output reports/v109-packing-$driver.json
+            python3 benchmarks/attachment_controls/run.py --config /tmp/v109-$driver.json --output reports/v109-attachments-$driver.json
+            python3 benchmarks/hdr_controls/run.py --config /tmp/v109-$driver.json --output reports/v109-hdr-$driver.json
             python3 benchmarks/overlap_scenes/advanced.py --config /tmp/v109-$driver.json --output reports/v109-overlap-advanced-$driver.json
             python3 benchmarks/pipeline/postfx_quality.py --config /tmp/v109-$driver.json --output reports/v109-postfx-$driver.json
             for pattern in smooth steep; do

@@ -86,16 +86,18 @@
     },
     {
       "id": "S05",
-      "scope": "No v1.0.9 end-to-end HDR/SDR paired capture",
-      "implementation": [],
-      "remaining": "HDR target/display and complete tone-map/quantization validation remain NOT_RUN.",
+      "scope": "Actual finite software RGBA16F HDR to Reinhard/sRGB RGBA8 pipeline, not display acceptance",
+      "implementation": [
+        "benchmarks/hdr_controls/run.py"
+      ],
+      "remaining": "HDR display/PQ/HLG/wide-gamut and physical GPU performance remain unverified.",
       "correctness": {
-        "status": "NOT_RUN",
-        "reason": "No complete capture."
+        "status": "PARTIAL",
+        "reason": "Binary-representable HDR values and numerical software readback verified; broader half-float and display behavior not covered."
       },
       "quality": {
-        "status": "NOT_RUN",
-        "reason": "Finite controls are not full scene acceptance."
+        "status": "PARTIAL",
+        "reason": "Fixed CPU SDR golden and deliberate ordering/gamma negatives; not perceptual/HDR display fidelity."
       },
       "performance": {
         "status": "BLOCKED_BY_HARDWARE",
