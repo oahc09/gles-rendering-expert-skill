@@ -36,11 +36,20 @@ redistribution permission was not confirmed. Earlier reading of dependencies and
 interactions, not extension-name guesses, informed these adapters. The offline
 checker verifies citation metadata only, not the absent specification text.
 
-## Remaining priority cards: INDEXED_ONLY, not semantically closed
+## Actual bounded probes and remaining boundaries
 
-EGLImage/AHardwareBuffer and native Sync, Robustness, Multiview,
-Framebuffer Fetch/PLS, MSRTT, ASTC, VRS and Protected Content still require
-spec-specific dependency, image/format/ownership/parameter probes and fallback
-cards. The complete index makes these discoverable but does not claim they are
-implemented on all GPUs or that the priority-card DoD is finished. A request for
-an unimplemented family returns implementation-dependent/not usable.
+The structural catalog remains INDEXED_ONLY. Separate runtime evidence does not
+promote every related Registry entry to complete semantic acceptance.
+
+- [Debug output](debug-output.md): real core/KHR callback, filtering, group/label and safe unregister checks; authored messages only, not arbitrary driver diagnostics.
+- [Multiview](multiview.md): two-layer draw and sequential fallback, not all multiview configurations.
+- [Robust readback](robust-readback.md): byte-size/canary checks, not actual reset recovery.
+- [Framebuffer fetch](framebuffer-fetch.md): ANGLE finite ordered cases pass; Mesa crash remains FAIL with ping-pong fallback.
+- [PLS](pixel-local-storage.md): runtime-matched ANGLE-specific finite scopes; Mesa fallback only.
+- [Texture buffer](texture-buffer.md): bounded range/update checks; ANGLE ignored-offset boundary mismatch remains FAIL.
+
+External native image/AHardwareBuffer ownership, MSRTT, VRS, protected resources,
+actual reset recovery, arbitrary ASTC/HDR and timer-query collection still need
+scope-specific runtime acceptance. Existing ASTC constant-block decode and EGL
+image/sync controls do not close those larger families. Use the candidate release
+matrix for current evidence; no GPU is assumed to implement every extension.

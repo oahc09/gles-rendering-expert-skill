@@ -1,0 +1,15 @@
+{
+  "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/KHR/KHR_debug.txt",
+  "retrieved_sha256": "cbf267a4d88fd18b71b9adcd94ba4a92101a73d28579a85ee78d2940ead70383",
+  "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+  "scope_read": [
+    "ES KHR suffix rule",
+    "callback lifetime and no GL calls inside callback",
+    "message control IDs/severity",
+    "application insertion",
+    "push/pop inheritance/errors",
+    "label truncation and query errors"
+  ],
+  "distribution": "not_vendored",
+  "review": "AI source review; not independent expert certification"
+}

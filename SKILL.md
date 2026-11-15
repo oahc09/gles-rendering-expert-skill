@@ -320,3 +320,5 @@ For distance-field edge errors, compare sampler precision and filtering separate
 For crossing transparent layers that invalidate global sorting, the [bounded depth-peeling lab](references/coverage/depth-peeling.md) demonstrates a GLES3 alternative with explicit depth-domain and layer-count limits. Require the extra overflow pass; never silently truncate layers or advertise its multipass/query cost as a speed improvement.
 
 For end-to-end acceptance of the registered transparency controls, use [finite transparency routing](references/coverage/transparency-routing.md). It validates source, input, budget and actual pixels together; it deliberately rejects unregistered geometry and cannot certify arbitrary caller-supplied scene data.
+
+For core/KHR debug output, see [filtered callback lifecycle validation](references/coverage/debug-output.md). Select exact version/extension entrypoints, retain callback state until unregister, avoid calling GL from the callback, and collect only the task-approved diagnostic categories rather than indiscriminately publishing driver messages.
