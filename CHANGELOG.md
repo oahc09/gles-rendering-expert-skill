@@ -356,3 +356,9 @@ original-plan experiments remain incomplete; metadata stays unchanged.
 
 - v1.0.9 candidate: capability/budget-gated half-float far intermediate tested
   against original UNORM targets; center improves but held-out views still reject.
+
+### v1.0.9 original-scope closure (unreleased)
+
+- Normalize all 1319 research metadata candidates to the original twelve-field contract without promotion.
+- Record bounded manual-source lookup limits and distinguish rejected candidates from original baseline failures.
+- Keep Draft/release gates, physical/provider evidence and independent review outstanding.

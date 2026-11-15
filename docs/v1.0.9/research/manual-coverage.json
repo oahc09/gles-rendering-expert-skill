@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-15T05:57:15Z",
+  "method": "bounded public web search and official page opens; not authenticated platform crawling",
+  "coverage": "UNKNOWN",
+  "independent_review": "NOT_RUN",
+  "rule_promotion": "NONE",
+  "records": [
+    {
+      "source": "Mesa",
+      "query": "site:docs.mesa3d.org relnotes Freedreno Panfrost etnaviv 2026",
+      "source_url": "https://docs.mesa3d.org/relnotes/26.2.6.html",
+      "event_date": "2026-10-28",
+      "status": "SELECTED_CONTENT_READ",
+      "observation": "Release contains driver-specific fixes; this does not identify the cause of our alpha differences.",
+      "coverage": "UNKNOWN",
+      "decision": "NO_RULE_PROMOTION"
+    },
+    {
+      "source": "Khronos",
+      "query": "site:registry.khronos.org OpenGL ES EGL registry",
+      "source_url": "https://registry.khronos.org/OpenGL/index_es.php",
+      "event_date": null,
+      "status": "ENTRYPOINT_CHECKED",
+      "observation": "Registry located; no dated change or exhaustive extension review claimed.",
+      "coverage": "UNKNOWN",
+      "decision": "NO_RULE_PROMOTION"
+    },
+    {
+      "source": "Android",
+      "query": "site:developer.android.com graphics ADPF GPU performance",
+      "source_url": "https://developer.android.com/games/optimize/adpf/best-practices-adpf",
+      "event_date": null,
+      "status": "SELECTED_CONTENT_READ",
+      "observation": "ADPF guidance concerns device thermal/performance management; no physical measurement obtained.",
+      "coverage": "UNKNOWN",
+      "decision": "NO_RULE_PROMOTION"
+    },
+    {
+      "source": "Arm",
+      "query": "site:developer.arm.com Mali Mobile Studio performance analysis",
+      "source_url": "https://developer.arm.com/tools-and-software/arm-performance-studio",
+      "event_date": null,
+      "status": "CONTENT_RETRIEVAL_LIMITED",
+      "observation": "Page reported an entitlement-service error; no substantive full-content review claimed.",
+      "coverage": "UNKNOWN",
+      "decision": "NO_RULE_PROMOTION"
+    },
+    {
+      "source": "Qualcomm",
+      "query": "site:docs.qualcomm.com Adreno OpenGL ES performance profiling",
+      "source_url": "https://docs.qualcomm.com/doc/80-54323-2",
+      "event_date": null,
+      "status": "CONTENT_RETRIEVAL_LIMITED",
+      "observation": "Official profiler documentation surfaced in search but opening returned no readable lines.",
+      "coverage": "UNKNOWN",
+      "decision": "NO_RULE_PROMOTION"
+    },
+    {
+      "source": "Imagination",
+      "query": "site:docs.imgtec.com PowerVR OpenGL ES profiling performance",
+      "source_url": "https://docs.imgtec.com/tools-manuals/pvrvframe-manual/html/topics/introduction.html",
+      "event_date": null,
+      "status": "SELECTED_CONTENT_READ",
+      "observation": "PVRVFrame redirects ES calls through desktop OpenGL; this is not a physical PowerVR capture.",
+      "coverage": "UNKNOWN",
+      "decision": "NO_RULE_PROMOTION"
+    },
+    {
+      "source": "X",
+      "query": "site:x.com (Mali OR Adreno OR PowerVR) GLES GPU performance after:2026-08-18 before:2026-11-16",
+      "source_url": null,
+      "event_date": null,
+      "status": "NO_VERIFIABLE_RESULT",
+      "observation": "No verifiable original post surfaced in this bounded web query. This does not establish absence of posts or updates.",
+      "coverage": "UNKNOWN",
+      "decision": "NO_RULE_PROMOTION"
+    }
+  ]
+}

@@ -91,7 +91,7 @@
         "benchmarks/overlap_scenes/far_precision.py",
         "benchmarks/overlap_scenes/FAR_PRECISION.md"
       ],
-      "remaining": "Original Mesa high-layer UNORM/background merge failures remain. Stage probes locate a low-resolution alpha difference without proving a specific driver defect. 48x48 and capability-gated32x32 RGBA16F improve original views but fail held-out cameras; both globally retain baseline. No cross-camera or cross-device accepted simplification is claimed. General Gaussian merging, arbitrary scenes and unseen camera paths remain outside these bounded prototypes. Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition.",
+      "remaining": "Original Mesa tiered RGBA8 baselines fail at 24 layers (max errors 5/6/5) and 48 layers (8/11/7), versus budget 4; background_merge baseline at camera -0.3 also fails (5 versus 4), so that route is UNAVAILABLE. These failures are not waived. General Gaussian merging, arbitrary scenes and unseen camera paths remain outside these bounded prototypes. W4 requires research and validation of simplifications, not success of every candidate. Rejected far-resolution/48-square/half-float candidates with valid baseline fallback are completed research outcomes, not additional invented mandatory optimizations. No mobile benefit is claimed. Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition.",
       "host_delivery": "PARTIAL",
       "acceptance": "PARTIAL_HOST_SCOPE"
     },
@@ -161,7 +161,7 @@
         "docs/v1.0.9/evidence/provider-score-blocked.json",
         "benchmarks/agent/v109-adjudication-guide.json"
       ],
-      "remaining": "30 case-specific AI-authored prompt-bound adjudication guides delivered; independent corpus-content review remains incomplete. No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence.",
+      "remaining": "No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence. Independent corpus-content review is incomplete; AI-authored case-specific guides do not satisfy it.",
       "host_delivery": "MET_INFRASTRUCTURE",
       "acceptance": "BLOCKED_BY_PROVIDER"
     },
@@ -177,9 +177,13 @@
         "docs/v1.0.9/research/experiment-chain.json",
         "tools/check_v109_research_chain.py",
         ".github/workflows/research-radar.yml",
-        "tools/v109_radar_window.py"
+        "tools/v109_radar_window.py",
+        "tools/v109_research_index.py",
+        "docs/v1.0.9/research/index.json.receipt.json",
+        "docs/v1.0.9/research/index-validation.json",
+        "docs/v1.0.9/research/manual-coverage.json"
       ],
-      "remaining": "Selected source reviews and experiment hash links delivered; vendor/X coverage conclusions remain incomplete. The entire1319-record corpus is not falsely labelled reviewed. Weekly/monthly read-only workflow code delivered but inactive on Draft branch; activation and observed successful scheduled execution await default-branch merge. Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding.",
+      "remaining": "Unreviewed metadata and incomplete vendor/X coverage remain UNKNOWN. Bounded lookup records and 1319-row twelve-field normalization are delivered; no exhaustive review or new measured rule is claimed. Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding. Weekly/monthly read-only workflow activation and observed scheduled execution await default-branch merge; no automatic merge is authorized.",
       "host_delivery": "PARTIAL",
       "acceptance": "PARTIAL_HOST_SCOPE"
     }

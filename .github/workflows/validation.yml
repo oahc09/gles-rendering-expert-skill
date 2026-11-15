@@ -187,6 +187,7 @@ jobs:
       - name: v1.0.9 source chain and software scene grouping
         run: |
           python3 tools/check_v109_research_chain.py --output reports/v109-research-chain.json
+          python3 tools/v109_research_index.py validate --source docs/v1.0.9/research/rolling/2026-11-15/radar.json.gz --source-receipt docs/v1.0.9/research/rolling/2026-11-15/receipt.json --index docs/v1.0.9/research/index.json.gz --report reports/v109-research-index.json
           python3 benchmarks/device_portability/scene_collector.py group reports/v109-scene-captures/mesa-software-record.json reports/v109-scene-captures/angle-software-record.json --artifact-root reports/v109-scene-captures --output reports/v109-scene-groups.json
       - name: v1.0.9 reproducible complete host unit manifest
         run: python3 tools/run_v109_regression.py --output reports/v109-unit-manifest.json

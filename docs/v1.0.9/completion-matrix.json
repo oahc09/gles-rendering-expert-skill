@@ -109,14 +109,15 @@
         "benchmarks/overlap_scenes/FAR_PRECISION.md"
       ],
       "remaining_host": [
-        "Original Mesa high-layer UNORM/background merge failures remain. Stage probes locate a low-resolution alpha difference without proving a specific driver defect. 48x48 and capability-gated32x32 RGBA16F improve original views but fail held-out cameras; both globally retain baseline. No cross-camera or cross-device accepted simplification is claimed."
+        "Original Mesa tiered RGBA8 baselines fail at 24 layers (max errors 5/6/5) and 48 layers (8/11/7), versus budget 4; background_merge baseline at camera -0.3 also fails (5 versus 4), so that route is UNAVAILABLE. These failures are not waived."
       ],
       "external_requirements": [
         "Physical overdraw/bandwidth/GPU-time results are absent. The plan allows Gaussian/sprite proxies; learned full 3DGS is not imposed as a new mandatory condition."
       ],
       "verified_summary": "Gaussian/glass plus actual rain/volume/UI proxies, dynamic cameras, A/B, tile coverage/layers/RGBA/depth/background stats; precision budget gate; actual bounded duplicate-background alpha merge research (draws 11 to 7), three cameras and explicit quality rejection/fallback; independent far-resolution FBO and full-resolution foreground, three-camera CPU-oracle A/B, candidate rejected globally and baseline retained on both software backends; four-fetch bilinear far reconstruction passes fixed three-view quality on ANGLE, while Mesa center silhouette3 exceeds budget2 and retains baseline; stage readbacks localize the extra Mesa center pixel to a low-resolution blended alpha difference; 48x48 reconstruction passes original views but fails held-out views, so both drivers retain baseline; capability/budget-gated RGBA16F far intermediate reduces Mesa center silhouette3 to2 but seven-camera admission still rejects held-out3/3/4",
       "scope_exclusions": [
-        "General Gaussian merging, arbitrary scenes and unseen camera paths remain outside these bounded prototypes."
+        "General Gaussian merging, arbitrary scenes and unseen camera paths remain outside these bounded prototypes.",
+        "W4 requires research and validation of simplifications, not success of every candidate. Rejected far-resolution/48-square/half-float candidates with valid baseline fallback are completed research outcomes, not additional invented mandatory optimizations. No mobile benefit is claimed."
       ]
     },
     {
@@ -210,11 +211,10 @@
         "docs/v1.0.9/evidence/provider-score-blocked.json",
         "benchmarks/agent/v109-adjudication-guide.json"
       ],
-      "remaining_host": [
-        "30 case-specific AI-authored prompt-bound adjudication guides delivered; independent corpus-content review remains incomplete."
-      ],
+      "remaining_host": [],
       "external_requirements": [
-        "No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence."
+        "No authenticated provider paired responses or independent adjudications. Measured-gain metric additionally requires physical GPU evidence.",
+        "Independent corpus-content review is incomplete; AI-authored case-specific guides do not satisfy it."
       ],
       "verified_summary": "30 new tasks/172 preserved, paired runner, seven metrics; now an actual v1.0.9 scoring CLI with corpus/response/evidence checks"
     },
@@ -229,16 +229,20 @@
         "docs/v1.0.9/research/experiment-chain.json",
         "tools/check_v109_research_chain.py",
         ".github/workflows/research-radar.yml",
-        "tools/v109_radar_window.py"
+        "tools/v109_radar_window.py",
+        "tools/v109_research_index.py",
+        "docs/v1.0.9/research/index.json.receipt.json",
+        "docs/v1.0.9/research/index-validation.json",
+        "docs/v1.0.9/research/manual-coverage.json"
       ],
       "remaining_host": [
-        "Selected source reviews and experiment hash links delivered; vendor/X coverage conclusions remain incomplete. The entire1319-record corpus is not falsely labelled reviewed.",
-        "Weekly/monthly read-only workflow code delivered but inactive on Draft branch; activation and observed successful scheduled execution await default-branch merge."
+        "Unreviewed metadata and incomplete vendor/X coverage remain UNKNOWN. Bounded lookup records and 1319-row twelve-field normalization are delivered; no exhaustive review or new measured rule is claimed."
       ],
       "external_requirements": [
-        "Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding."
+        "Independent human sign-off, all inherited real-device/provider gates and explicit release authorization remain outstanding.",
+        "Weekly/monthly read-only workflow activation and observed scheduled execution await default-branch merge; no automatic merge is authorized."
       ],
-      "verified_summary": "90-day corpus/selected review, source-experiment-test links, complete CI, weekly/monthly read-only workflow code"
+      "verified_summary": "90-day corpus/selected review, source-experiment-test links, complete CI, weekly/monthly read-only workflow code; all 1319 metadata records normalized to original twelve-field contract, deterministic integrity validation and seven-source bounded lookup receipt"
     }
   ],
   "scope_interpretation": "docs/v1.0.9/original-scope-audit.md",
