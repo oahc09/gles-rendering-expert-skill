@@ -340,3 +340,10 @@ failures, not an accepted optimization. See `BACKGROUND_MERGE.md` for exact scop
 The completion matrix, readable table and release gate now have executable
 consistency checks. GitHub mergeability is a Git property, not acceptance of the
 original plan. Physical/provider/independent-review and inherited gates remain.
+
+CI run 43678855409 correctly failed the new background-merge contract because the
+camera diagnostic list was left empty. The producer now populates all three camera
+records; an archived-report/source-hash regression prevents this false local-pass
+assumption. Both exact CLI commands subsequently returned exit 0 with visual FAIL
+and contract PASS, and the complete host suite passed 1,025 tests with zero skips.
+No image threshold, negative control or baseline-admission rule was relaxed.

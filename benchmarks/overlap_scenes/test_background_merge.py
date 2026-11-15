@@ -1,6 +1,14 @@
-import unittest
+import unittest,json,hashlib
+from pathlib import Path
 import background_merge as m
 class BackgroundMergeTests(unittest.TestCase):
+ def test_archived_contract_and_source(self):
+  for driver in ("mesa","angle"):
+   r=json.loads((Path(__file__).parent/"evidence"/("background-merge-"+driver+".json")).read_text())
+   self.assertEqual(r["contract_status"],"PASS");self.assertEqual(len(r["selections"]),3)
+   self.assertTrue(m.contract_valid(r["rows"],r["parallax"],r["global_policy"]))
+   self.assertEqual(r["source_sha256"],hashlib.sha256(Path(m.__file__).read_bytes()).hexdigest())
+   self.assertEqual(r["status"],"FAIL")
  def test_invalid_baseline_never_accepted(self):
   self.assertIsNone(m.global_selection(False,True));self.assertIsNone(m.global_selection(False,False))
  def test_valid_baseline_fallback(self):self.assertEqual(m.global_selection(True,False),'baseline')

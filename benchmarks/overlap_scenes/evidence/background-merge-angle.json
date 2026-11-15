@@ -3,12 +3,40 @@
   "readbacks": 9,
   "performance_status": "NOT_MEASURED",
   "scope": "Only adjacent duplicate background Gaussian-alpha billboards; analytically combined nonlinear alpha profile, not arbitrary Gaussian moment merge or learned 3DGS",
-  "source_sha256": "4435878080c204e19ef92282ba674c3671a42892a9c7afa47900290f0deeaa2d",
+  "source_sha256": "a2bcc9f10f01e889fa33d062e23517541f8558958f6939a494495139f6e1f0f6",
   "shader_sha256": {
     "vertex": "3c00bbc64a8dbe73fb1e6efa6819873fc7a0f1bbdd437297c27ef411acac9078",
     "fragment": "65d28737e0d6f038b3344245e38756f234a64baf996bc4f8d3a07acc6acdc3ff"
   },
-  "selections": [],
+  "selections": [
+    {
+      "camera": -0.3,
+      "scope": "DIAGNOSTIC_ONLY_NO_PER_FRAME_SWITCH",
+      "qualities": {
+        "baseline": "PASS",
+        "merged_background": "FAIL",
+        "bad_single_alpha": "FAIL"
+      }
+    },
+    {
+      "camera": 0,
+      "scope": "DIAGNOSTIC_ONLY_NO_PER_FRAME_SWITCH",
+      "qualities": {
+        "baseline": "PASS",
+        "merged_background": "PASS",
+        "bad_single_alpha": "FAIL"
+      }
+    },
+    {
+      "camera": 0.3,
+      "scope": "DIAGNOSTIC_ONLY_NO_PER_FRAME_SWITCH",
+      "qualities": {
+        "baseline": "PASS",
+        "merged_background": "PASS",
+        "bad_single_alpha": "FAIL"
+      }
+    }
+  ],
   "baseline_objects": [
     {
       "id": 6,
@@ -514,5 +542,5 @@
     "candidate_rejected": true,
     "scope": "One fixed strategy across all tested cameras, never per-frame optimization switching; unseen cameras still require validation"
   },
-  "contract_status": "FAIL"
+  "contract_status": "PASS"
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "total_tests": 1024,
+  "total_tests": 1025,
   "total_skipped": 0,
   "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
   "rows": [
@@ -105,7 +105,7 @@
     },
     {
       "directory": "benchmarks/overlap_scenes",
-      "tests": 93,
+      "tests": 94,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"

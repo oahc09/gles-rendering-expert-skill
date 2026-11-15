@@ -82,6 +82,7 @@ def run(config,output):
     expected=name!='bad_single_alpha'
     rows.append(dict(camera=camera,variant=name,metrics=metrics,readback_complete=len(pixels)==16384 and all(type(v)is int and 0<=v<=255 for v in pixels),estimated_covered_fragment_samples=sum(p.cpu(obs,camera)[1]),foreground_roi_max_error=roi,draw_count=len(obs),quality='PASS' if good else 'FAIL',expected='PASS' if expected else 'FAIL',status='PASS' if good==expected else 'FAIL',artifact_prefix=prefix+'-'+name))
     artifacts[prefix+'-'+name+'.rgba']=bytes(pixels)
+   selections.append(dict(camera=camera,scope="DIAGNOSTIC_ONLY_NO_PER_FRAME_SWITCH",qualities={r["variant"]:r["quality"] for r in rows if r["camera"]==camera}))
  finally:h.close()
  parallax=[]
  for name in ('baseline','merged_background'):
