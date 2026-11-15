@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "total_tests": 1256,
+  "total_tests": 1274,
   "total_skipped": 0,
   "scope": "host unit regression, not GPU runtime or physical/provider acceptance",
   "rows": [
@@ -358,6 +358,27 @@
     {
       "directory": "benchmarks/coverage/cts-real",
       "tests": 6,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/multiview",
+      "tests": 7,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/robust-readback",
+      "tests": 9,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "directory": "benchmarks/coverage/framebuffer-fetch",
+      "tests": 2,
       "skipped": 0,
       "returncode": 0,
       "status": "PASS"

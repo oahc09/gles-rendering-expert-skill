@@ -51,6 +51,9 @@
     "benchmarks/coverage/platforms",
     "benchmarks/coverage/state-machine",
     "benchmarks/coverage/android-build",
-    "benchmarks/coverage/cts-real"
+    "benchmarks/coverage/cts-real",
+    "benchmarks/coverage/multiview",
+    "benchmarks/coverage/robust-readback",
+    "benchmarks/coverage/framebuffer-fetch"
   ]
 }

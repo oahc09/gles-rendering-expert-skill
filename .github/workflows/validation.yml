@@ -208,7 +208,11 @@ jobs:
             python3 examples/closure/egl-lifecycle/run.py --config /tmp/v109-$driver.json --output reports/v110-egl-$driver.json
             python3 benchmarks/coverage/extensions/run_priority.py --config /tmp/v109-$driver.json --output reports/v110-priority-$driver.json
             python3 benchmarks/coverage/extensions/astc_decode.py --config /tmp/v109-$driver.json --output reports/v110-astc-decode-$driver.json
+            python3 tools/coverage/multiview.py --config /tmp/v109-$driver.json --output reports/v110-multiview-$driver.json
+            python3 benchmarks/coverage/robust-readback/run.py --config /tmp/v109-$driver.json --output reports/v110-robust-readback-$driver.json
           done
+          # Mesa fetch runtime crashes remain archived FAIL, not a waived runtime pass.
+          python3 benchmarks/coverage/framebuffer-fetch/suite.py --config /tmp/v109-angle.json --output reports/v110-fetch-angle.json
           python3 benchmarks/coverage/state-machine/run.py --output reports/v110-state-interactions.json
       - name: v1.1.0 frozen evaluation and review-only governance
         run: |

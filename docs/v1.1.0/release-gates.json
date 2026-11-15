@@ -45,7 +45,7 @@
       "remaining": "27 software checks per driver; native Windows/Android/GBM windows, reset and native image paths not executed."
     },
     "W4": {
-      "status": "PARTIAL",
+      "status": "PARTIAL_WITH_DRIVER_FAILURE",
       "evidence": [
         "references/coverage/extensions-catalog.json",
         "tools/coverage/capability.py",
@@ -55,9 +55,15 @@
         "benchmarks/coverage/extensions/evidence/priority-mesa.json",
         "benchmarks/coverage/extensions/evidence/priority-angle.json",
         "benchmarks/coverage/extensions/evidence/astc-decode-mesa.json",
-        "benchmarks/coverage/extensions/evidence/astc-decode-angle.json"
+        "benchmarks/coverage/extensions/evidence/astc-decode-angle.json",
+        "benchmarks/coverage/multiview/evidence/mesa.json",
+        "benchmarks/coverage/multiview/evidence/angle.json",
+        "benchmarks/coverage/robust-readback/mesa.json",
+        "benchmarks/coverage/robust-readback/angle.json",
+        "benchmarks/coverage/framebuffer-fetch/evidence/mesa.json",
+        "benchmarks/coverage/framebuffer-fetch/evidence/angle.json"
       ],
-      "remaining": "Three initial priority routes plus six narrow reviewed policies. Dual software probes pass Sync/EGLImage/reset-query/ASTC upload and reused constant-block decode; MSRTT not advertised and protected secure path unverified. Multiview/Fetch-PLS/VRS/AHB remain NOT_REVIEWED. Not full extension semantic acceptance."
+      "remaining": "Bounded two-layer multiview+sequential fallback and robust readback/canary boundaries pass on both software backends. ANGLE ordered coherent/noncoherent framebuffer fetch passes; Mesa fetch draw crashes despite advertisement, retained FAIL with working ping-pong fallback. Full multiview/Fetch semantics, PLS/VRS/AHB/native import and protected resources remain incomplete; reset query/readback are not reset recovery or device acceptance."
     },
     "W5": {
       "status": "HOST_BOUNDED",

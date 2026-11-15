@@ -12,3 +12,5 @@ The structural report is `coverage-report.json`, rebuilt from fixed licensed Reg
 Read the acceptance matrix before describing completeness. Public evidence omits private machine fingerprints and does not substitute hashes for independently authenticated measurements.
 
 Offline distribution is PARTIAL: four packed artifacts restore exactly; gl.xml is an explicit non-vendored public dependency. A prior supplied-source successful check is not proof that clean offline checkout is complete.
+
+Bounded extension increment: multiview two-layer draw/fallback and robust readback/canary boundaries pass on both software backends. ANGLE ordered framebuffer fetch passes. Mesa fetch draw crashes remain FAIL; separate-attachment ping-pong passes. Advertisement is not route acceptance, and archived-failure contract tests are not feature-pass results.
