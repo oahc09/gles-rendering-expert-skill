@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "target_version": "1.1.1",
+  "status": "PARTIAL_CANDIDATE",
+  "release_ready": false,
+  "release_authorized": false,
+  "prior_release_gate": "docs/v1.1.0/release-gates.json",
+  "work_packages": {
+    "W0": {
+      "status": "BASELINE_RECORDED",
+      "note": "Baseline, gap matrix and predecessor gate inventory."
+    },
+    "W1": {
+      "status": "REUSED_INDEX_PARTIAL",
+      "note": "Existing frozen registry structural index; additional semantic high-risk checks still required."
+    },
+    "W2": {
+      "status": "NOT_RUN",
+      "note": "No new v1.1.1 acceptance evidence in this PR."
+    },
+    "W3": {
+      "status": "OFFLINE_DECISION_SLICE",
+      "note": "Six strategies, authored expectations; evidence capture and complete policy not delivered."
+    },
+    "W4": {
+      "status": "NOT_RUN",
+      "note": "No new v1.1.1 acceptance evidence in this PR."
+    },
+    "W5": {
+      "status": "SEED_LEDGER_PARTIAL",
+      "note": "Three source-linked cases; required corpus, ten conflict cases and evidence governance not complete."
+    },
+    "W6": {
+      "status": "BLOCKED_BY_HARDWARE",
+      "note": "No qualifying physical GPU class was measured."
+    },
+    "W7": {
+      "status": "NOT_RUN",
+      "note": "No new v1.1.1 acceptance evidence in this PR."
+    },
+    "W8": {
+      "status": "NOT_RUN",
+      "note": "No new v1.1.1 acceptance evidence in this PR."
+    },
+    "W9": {
+      "status": "NOT_RUN",
+      "note": "No new v1.1.1 acceptance evidence in this PR."
+    },
+    "W10": {
+      "status": "NOT_RUN",
+      "note": "No new v1.1.1 acceptance evidence in this PR."
+    },
+    "W11": {
+      "status": "NOT_RUN",
+      "note": "No new v1.1.1 acceptance evidence in this PR."
+    },
+    "W12": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "note": "No authorized real-provider benchmark was executed."
+    },
+    "W13": {
+      "status": "NOT_RUN",
+      "note": "No new v1.1.1 acceptance evidence in this PR."
+    },
+    "W14": {
+      "status": "NOT_RUN",
+      "note": "No new v1.1.1 acceptance evidence in this PR."
+    }
+  }
+}

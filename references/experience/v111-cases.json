@@ -1,0 +1,17 @@
+[
+  {"id":"fetch-mesa-crash","revision":1,"strategy":"coherent-framebuffer-fetch",
+   "labels":["framebuffer-fetch","alpha-overdraw"],"profile":"mesa-fetch-fixture",
+   "evidence_class":"REPRODUCED_SOFTWARE","effect":"counterexample","approved":true,
+   "valid_from":"2026-11-21","expires_at":null,
+   "source_refs":["benchmarks/coverage/fetch-diagnosis/evidence.json"]},
+  {"id":"fetch-angle-software","revision":1,"strategy":"coherent-framebuffer-fetch",
+   "labels":["framebuffer-fetch","alpha-overdraw"],"profile":"angle-fetch-fixture",
+   "evidence_class":"REPRODUCED_SOFTWARE","effect":"supports","approved":true,
+   "valid_from":"2026-11-21","expires_at":null,
+   "source_refs":["benchmarks/coverage/framebuffer-fetch/evidence/angle.json"]},
+  {"id":"core-attachment-discard","revision":1,"strategy":"discard-dead-attachment",
+   "labels":["attachment-store","bandwidth"],"profile":null,
+   "evidence_class":"SOURCE_VERIFIED","effect":"supports","approved":false,
+   "valid_from":"2026-11-21","expires_at":null,
+   "source_refs":["references/coverage/gles-api-catalog.json.gz"]}
+]
