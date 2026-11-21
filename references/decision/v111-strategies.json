@@ -1,0 +1,50 @@
+[
+  {
+    "id":"discard-dead-attachment","labels":["attachment-store","bandwidth"],
+    "core_entrypoints":["glInvalidateFramebuffer"],
+    "mechanism":"Avoid a store only when attachment contents are provably dead at pass end.",
+    "risk":"Later resolve, sampling, transfer or readback could depend on discarded contents.",
+    "experiment":"Replay identical passes; compare output/readback and attachment store counters when available.",
+    "fallback":"Keep the original store.", "relevance":{"bandwidth":1,"power":0.6,"frame_time":0.5}
+  },
+  {
+    "id":"resolve-msaa-once","labels":["msaa","bandwidth"],
+    "core_entrypoints":["glBlitFramebuffer","glRenderbufferStorageMultisample"],
+    "mechanism":"Compare one explicit multisample resolve against the baseline resolve schedule.",
+    "risk":"Sample counts, framebuffer compatibility and color encoding can invalidate equivalence.",
+    "experiment":"Compare framebuffer completeness, pixel goldens and interleaved device timing for one resolve.",
+    "fallback":"Keep baseline resolve order and path.", "relevance":{"bandwidth":0.8,"frame_time":0.6,"quality":0.5}
+  },
+  {
+    "id":"compute-to-fragment","labels":["compute","compute-fragment"],
+    "core_entrypoints":["glDispatchCompute","glMemoryBarrier"],
+    "mechanism":"Compare compute then sampled draw with fragment-only work for the same output.",
+    "risk":"Incorrect producer-to-consumer barriers or image formats can corrupt results.",
+    "experiment":"Compare numeric output and time with the required texture-fetch barrier and identical work.",
+    "fallback":"Retain the existing validated fragment route.", "relevance":{"frame_time":0.9,"power":0.4}
+  },
+  {
+    "id":"coherent-framebuffer-fetch","labels":["framebuffer-fetch","alpha-overdraw"],
+    "core_entrypoints":[], "extensions":["GL_EXT_shader_framebuffer_fetch"],
+    "mechanism":"Compare coherent EXT framebuffer fetch with an explicit ping-pong pass.",
+    "risk":"Advertisement does not prove shader support, observed correct draws or stability.",
+    "experiment":"Check exact shaders and content against ping-pong goldens before any timing run.",
+    "fallback":"Use tested ping-pong render targets.", "relevance":{"bandwidth":0.8,"memory":0.5,"frame_time":0.5}
+  },
+  {
+    "id":"fence-ring-reuse","labels":["synchronization","cpu-submit"],
+    "core_entrypoints":["glFenceSync","glClientWaitSync","glDeleteSync"],
+    "mechanism":"Test a bounded ring that reuses storage only after its previous consumer retires.",
+    "risk":"Unsatisfied or cross-context fences can cause corruption; extra slots increase residency.",
+    "experiment":"Check retirement and timeout controls, then compare frame latency and memory at fixed workload.",
+    "fallback":"Keep the existing synchronized ownership path.", "relevance":{"frame_time":0.8,"memory":0.3}
+  },
+  {
+    "id":"texture-mip-selection","labels":["texture","bandwidth"],
+    "core_entrypoints":["glTexParameteri"],
+    "mechanism":"Compare an explicitly complete mip chain and constrained LOD on distant geometry.",
+    "risk":"Missing mip levels or temporal aliasing can regress image correctness.",
+    "experiment":"Replay fixed cameras; compare temporal image goldens and measure texture traffic if supported.",
+    "fallback":"Keep the prior sampler and LOD settings.", "relevance":{"quality":0.8,"bandwidth":0.5,"memory":0.3}
+  }
+]

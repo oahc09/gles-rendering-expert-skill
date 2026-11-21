@@ -255,3 +255,7 @@ original-plan experiments remain incomplete; metadata stays unchanged.
 - [Compressed streaming chain](benchmarks/compressed_streaming/README.md): pinned KTX preparation, cache/budget and actual upload/readback with original-pixel fallback.
 - [Remaining original-plan gates](docs/v1.0.9/completion-matrix.md) and [scope clarification](docs/v1.0.9/original-scope-audit.md). Original visual failures, physical-device/provider and independent review gates remain.
 - Read-only weekly/monthly radar workflow delivered, not active from this Draft branch. No release/tag/version metadata change.
+
+## v1.1.1 Ultimate Engineering Expert (development candidate)
+
+The [offline GPU decision and experience preview](docs/v1.1.1/architecture.md) produces bounded experiment suggestions, not renderer changes or measured gains. See the [v1.1.1 status](docs/v1.1.1/release-gates.json); no release is implied.
