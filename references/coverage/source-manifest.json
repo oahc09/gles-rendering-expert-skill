@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "repository": "KhronosGroup/OpenGL-Registry",
+      "commit": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/xml/gl.xml",
+      "file": "registry/gl.xml",
+      "sha256": "b9ca2cfa5c676e901c20d34af3407f1687cde0f1336a5ff7a8974d04c7494ad3",
+      "bytes": 2774722,
+      "license_file": "registry/Apache-2.0.txt",
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "license_spdx": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "license_evidence": "SPDX-License-Identifier in frozen XML header; copyright notices retained verbatim",
+      "collected_date": "2026-11-15",
+      "verified_at": "2026-11-15T12:40:26.249918+00:00",
+      "spec_versions": [
+        "GLES2.0",
+        "GLES3.0",
+        "GLES3.1",
+        "GLES3.2"
+      ],
+      "scope": "registry API membership, not full normative prose"
+    },
+    {
+      "repository": "KhronosGroup/EGL-Registry",
+      "commit": "8e56e86e65687697ef54114cdb1afabdfac756bf",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/8e56e86e65687697ef54114cdb1afabdfac756bf/api/egl.xml",
+      "file": "registry/egl.xml",
+      "sha256": "3a0f13e1b6309c8662bdb47046a4515c092b91b53e6774b46cd702b67ec53626",
+      "bytes": 195641,
+      "license_file": "registry/Apache-2.0.txt",
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "license_spdx": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "license_evidence": "SPDX-License-Identifier in frozen XML header; copyright notices retained verbatim",
+      "collected_date": "2026-11-15",
+      "verified_at": "2026-11-15T12:40:26.249918+00:00",
+      "spec_versions": [
+        "EGL1.4",
+        "EGL1.5"
+      ],
+      "scope": "registry API membership, not full normative prose"
+    }
+  ],
+  "extension_specs": [
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/KHR/KHR_debug.txt",
+      "retrieved_sha256": "cbf267a4d88fd18b71b9adcd94ba4a92101a73d28579a85ee78d2940ead70383",
+      "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "distribution": "not_vendored",
+      "summary": "KHR_debug has distinct GLES suffixed entrypoints before core promotion; advertised capability and exact route are required.",
+      "license_status": "REDISTRIBUTION_NOT_CONFIRMED",
+      "verification_scope": "URL/revision/retrieval-hash metadata only; source text not validated offline"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/OES/OES_EGL_image_external.txt",
+      "retrieved_sha256": "c567737b7bbab1f9ec84baaa6dff5c6dd058c71ac846be1dd692a9cce4a9f4f9",
+      "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "distribution": "not_vendored",
+      "summary": "External image sampling needs matching image import and shader extension support; image ownership and native synchronization are separate requirements.",
+      "license_status": "REDISTRIBUTION_NOT_CONFIRMED",
+      "verification_scope": "URL/revision/retrieval-hash metadata only; source text not validated offline"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/EXT/EXT_disjoint_timer_query.txt",
+      "retrieved_sha256": "0f9629d3d6e623084cadfe095f72d4070b09836343b635930f22f1f49b2c8004",
+      "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "distribution": "not_vendored",
+      "summary": "Disjoint timer-query samples cannot establish valid timing; exact extension support and query function route must be checked.",
+      "license_status": "REDISTRIBUTION_NOT_CONFIRMED",
+      "verification_scope": "URL/revision/retrieval-hash metadata only; source text not validated offline"
+    }
+  ]
+}

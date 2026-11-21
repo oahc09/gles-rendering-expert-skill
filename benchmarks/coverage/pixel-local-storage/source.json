@@ -1,0 +1,11 @@
+{
+  "url": "https://raw.githubusercontent.com/google/angle/bb55ea10fcef3759e4db7ef8a473a9ceac2c6aa6/extensions/ANGLE_shader_pixel_local_storage.txt",
+  "revision": "bb55ea10fcef3759e4db7ef8a473a9ceac2c6aa6",
+  "retrieved_sha256": "54516ec6efffff081b82d42cc1ac40e523cea22f301d9f2d896dd3a9499acdcc",
+  "distribution": "not_vendored",
+  "review": "AI read API signatures, scope load/store, errors, GLSL layouts and noncoherent ordering; not independent expert signoff",
+  "spec_status": "Incomplete / vendor extension",
+  "runtime_revision_match": "Observed ANGLE version commit prefix matches pinned source revision",
+  "not_used_latest_revision": "cce5cf7476ef25ddd2c15ede6e4e9d1ce1d3c51a",
+  "reason": "Latest draft adds usage arguments absent in tested runtime; fixed runtime-revision four-argument FramebufferTexturePixelLocalStorageANGLE used."
+}

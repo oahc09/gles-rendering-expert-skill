@@ -362,3 +362,10 @@ original-plan experiments remain incomplete; metadata stays unchanged.
 - Normalize all 1319 research metadata candidates to the original twelve-field contract without promotion.
 - Record bounded manual-source lookup limits and distinguish rejected candidates from original baseline failures.
 - Keep Draft/release gates, physical/provider evidence and independent review outstanding.
+
+### v1.1.0 complete-coverage candidate (partial, unreleased)
+
+- Freeze licensed Registry sources and complete structural GLES/EGL catalogs, with distinct semantic/compile/runtime/device/provider dimensions.
+- Add real compiler/linker language families, EGL lifecycle and 48 GL interaction checks; preserve unsupported capabilities and original failed quality gates.
+- Add frozen 100-task final-evaluation infrastructure and review-only lifecycle governance; no provider scores or physical acceptance invented.
+- Local Android/CTS and remaining priority semantic adapters still incomplete; Draft PR is reviewable work, not full-plan completion.

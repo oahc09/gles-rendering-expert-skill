@@ -1,0 +1,10 @@
+{
+  "source_url": "https://github.com/KhronosGroup/OpenGL-Registry/blob/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/EXT/EXT_shader_framebuffer_fetch.txt",
+  "source_revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+  "spec_revision": 8,
+  "spec_modified": "2018-09-06",
+  "observed_date": "2026-11-15",
+  "source_sha256": "42e43ce1fbd5533c760244bd0b117e19cf4aa2735800da7746480ca94069f729",
+  "distribution": "NOT_VENDORED",
+  "scope": "original summary and authored code only; source copyright/IP notices retained at official URL"
+}

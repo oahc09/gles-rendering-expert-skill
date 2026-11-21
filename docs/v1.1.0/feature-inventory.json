@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "feature": "core API and extension catalog",
+      "status": "MISSING",
+      "evidence": "references/coverage/",
+      "disposition": "Freeze registry, generate separately indexed vs semantic coverage"
+    },
+    {
+      "feature": "shader compiler and runtime",
+      "status": "EXTEND",
+      "evidence": "benchmarks/shader_ab/",
+      "disposition": "Reuse actual compiler/software runtime; add language-family positives and negatives"
+    },
+    {
+      "feature": "EGL lifecycle and interop",
+      "status": "EXTEND",
+      "evidence": "examples/system_android/",
+      "disposition": "Extend actual context and surface cases; physical targets remain blocked"
+    },
+    {
+      "feature": "resource/state/format",
+      "status": "EXTEND",
+      "evidence": "examples/resource_pressure/",
+      "disposition": "Preserve old contracts and add distinguishable interactions"
+    },
+    {
+      "feature": "vendor advice",
+      "status": "EXTEND",
+      "evidence": "references/",
+      "disposition": "Bind conditional advice to source and evidence"
+    },
+    {
+      "feature": "representative scenes",
+      "status": "REUSE",
+      "evidence": "examples/system_scenes/",
+      "disposition": "Inventory tested representatives and label missing algorithms"
+    },
+    {
+      "feature": "agent external runner",
+      "status": "REUSE",
+      "evidence": "benchmarks/agent/run.py",
+      "disposition": "New frozen terminal evaluation; no synthetic provider claims"
+    },
+    {
+      "feature": "research radar",
+      "status": "REUSE",
+      "evidence": "tools/v109_radar_window.py",
+      "disposition": "Extend lifecycle governance, do not activate schedule"
+    },
+    {
+      "feature": "physical device/provider acceptance",
+      "status": "BLOCKED",
+      "evidence": "docs/v1.0.9/release-gates.json",
+      "disposition": "Carry forward all failed/unmeasured gates"
+    }
+  ]
+}

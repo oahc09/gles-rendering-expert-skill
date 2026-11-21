@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "SNAPSHOT_UNCHANGED",
+  "changed_nodes": [],
+  "affected_targets": [],
+  "unlinked_targets": [
+    "candidate:ANGLE_BLEND_ATTACHMENT_TRANSITIONS:rule",
+    "candidate:ANGLE_STORAGE_REBINDS:rule",
+    "candidate:FILAMENT_GL_FREE_ASYNC_FLUSH:rule",
+    "candidate:FILAMENT_PACKING_PRECISION:rule"
+  ],
+  "subject_count": 12,
+  "governance": {
+    "status": "REVIEW_REQUIRED",
+    "records": [
+      {
+        "id": "ANGLE_STORAGE_REBINDS",
+        "state": "new",
+        "effective_state": "new",
+        "expiry": "NOT_APPLICABLE",
+        "required_action": "REVIEW"
+      },
+      {
+        "id": "ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+        "state": "new",
+        "effective_state": "new",
+        "expiry": "NOT_APPLICABLE",
+        "required_action": "REVIEW"
+      },
+      {
+        "id": "FILAMENT_GL_FREE_ASYNC_FLUSH",
+        "state": "new",
+        "effective_state": "new",
+        "expiry": "NOT_APPLICABLE",
+        "required_action": "REVIEW"
+      },
+      {
+        "id": "FILAMENT_PACKING_PRECISION",
+        "state": "new",
+        "effective_state": "new",
+        "expiry": "NOT_APPLICABLE",
+        "required_action": "REVIEW"
+      }
+    ],
+    "conflicts": [],
+    "schedule_activated": false,
+    "release_acceptance": false
+  },
+  "review_required": true,
+  "closed_test_ids_to_validate": [],
+  "regression_plan": [],
+  "unresolved_regression_links": [],
+  "command_execution": false,
+  "adoption_allowed": false,
+  "release_ready": false,
+  "limitation": "Snapshot identity is not no substantive upstream change; candidates remain unadopted. Hash changes trigger review, not automatic baseline replacement."
+}

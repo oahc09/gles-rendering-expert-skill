@@ -1,0 +1,31 @@
+{
+  "review": "AI primary-source review; not independent human review",
+  "full_text": "not_vendored",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/8e56e86e65687697ef54114cdb1afabdfac756bf/extensions/KHR/EGL_KHR_image_base.txt",
+      "revision": "8e56e86e65687697ef54114cdb1afabdfac756bf",
+      "retrieved_sha256": "e28750a08b0b9c025127e7cabb38963ae2c86efdcf848a05d7bb1b370c30373f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/8e56e86e65687697ef54114cdb1afabdfac756bf/extensions/KHR/EGL_KHR_gl_image.txt",
+      "revision": "8e56e86e65687697ef54114cdb1afabdfac756bf",
+      "retrieved_sha256": "3b8bb1f639969f9bf2436b2c12ef6b2bbfd763c0ac9a3e9098885fd8d9f8f3ba"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/OES/OES_EGL_image_external.txt",
+      "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "retrieved_sha256": "c567737b7bbab1f9ec84baaa6dff5c6dd058c71ac846be1dd692a9cce4a9f4f9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/OES/OES_EGL_image_external_essl3.txt",
+      "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "retrieved_sha256": "5253add53230f9d39e136647dc95af6c31e35204459d454873710ea2f41695db"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/EXT/EXT_EGL_image_external_wrap_modes.txt",
+      "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "retrieved_sha256": "9c162d254cae0acf932fe5e98f4df9fb09fc59b3c2ca558aba306b999a60004b"
+    }
+  ]
+}

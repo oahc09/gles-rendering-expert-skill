@@ -1,0 +1,122 @@
+"""Author frozen evaluation tasks, never provider responses or skill improvements."""
+import json,hashlib
+from pathlib import Path
+HERE=Path(__file__).resolve().parent
+# Each row supplies a distinct decision boundary, not 100 paraphrases of one template.
+TOPICS={
+'version_extension':[
+('ES2 no VAO extension','glBindVertexArray is not core ES2; maintain attribute state fallback'),
+('ES3.0 compute requested','compute requires ES3.1 or verified extension route; fragment fallback'),
+('ES3.1 geometry shader requested','geometry is core ES3.2, not ES3.1; CPU tessellation fallback'),
+('ES3.0 KHR_debug only KHR pointers','use advertised KHR suffix route, not absent unsuffixed entrypoints'),
+('ES3.2 debug callback null loader pointer','core version does not repair missing function loader'),
+('ES2 external texture ESSL100','require OES_EGL_image_external and external sampler restrictions'),
+('ES3 external image ESSL300 without essl3 extension','require OES_EGL_image_external_essl3 for shader route'),
+('timer extension present disjoint set','discard invalid timing sample; no speedup claim'),
+('ASTC unsupported texture upload','negotiate compressed format; decode or alternative supported asset'),
+('ES3.0 SSBO declaration','SSBO needs ES3.1 core; UBO limited alternative'),
+('ES3.0 indirect drawing','not core until ES3.1; direct draws fallback'),
+('ES3.1 texture buffer','not core until ES3.2; 2D texture buffer emulation'),
+('ES3.0 indexed independent blend','not ordinary ES3.0 core; split pass alternative'),
+('multiview string with view count below request','extension alone insufficient; check maximum views'),
+('framebuffer fetch unsupported shader','extension-specific semantics; ping-pong fallback'),
+('ES2 uint element index without extension','need OES_element_index_uint; split into ushort meshes'),
+('ES3.0 glMapBufferRange availability','core available; verify exact flags and runtime mapping result'),
+('ES2 instancing EXT strings ANGLE pointers only','different extension aliases do not prove callable compatible route'),
+('ES3.1 tessellation requested','ES3.2 core or separately supported extension; non-tessellated fallback'),
+('EGL1.4 core image functions requested','EGL1.5 core or KHR image route with matching suffixed pointers')],
+'code_generation':[
+('odd-width RGB upload with default alignment','set unpack alignment1 and restore state'),
+('CPU readback odd RGB row stride','pack alignment and destination row size must match'),
+('stream buffer partial update','bounds offset plus bytes within allocated storage'),
+('immutable texture second allocation','do not redefine immutable storage; create replacement object'),
+('depth tested foreground drawn before background','enable correct depth state and clear depth then preserve near result'),
+('premultiplied UI over opaque target','ONE and ONE_MINUS_SRC_ALPHA with premultiplied shader output'),
+('straight alpha separate alpha channel','choose RGB and alpha factors independently; CPU oracle'),
+('ping-pong blur two passes','no sample of currently written attachment'),
+('compute image producer to texture fetch','consumer-specific texture-fetch barrier before sampling'),
+('SSBO producer to indirect command','command barrier for indirect consumer plus storage if read there'),
+('ES3 VAO element index binding','element buffer captured by VAO; avoid accidental unbind'),
+('integer vertex ID attribute','use integer attribute pointer and matching integer shader input'),
+('UBO block offset packing','query std140 alignment and correct offsets; bounds-safe binding'),
+('sampler object binding two units','sampler unit indices not texture enums; restore binding'),
+('RGBA8 MSAA resolve','compatible sample counts sizes formats and legal blit filter'),
+('scissored clear then full frame','clear respects scissor; restore full region intentionally'),
+('sRGB UI composition','identify encoding and linear blending; no double gamma'),
+('fence polling without busy spin','finite timeout handling and sync cleanup'),
+('program binary cache miss','validate formats/status and fall back to source compile'),
+('context recreation asset upload','recreate context-owned objects; invalidate old IDs')],
+'review':[
+('glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT) then vertex fetch','vertex attribute barrier required for vertex consumer'),
+('negative glBufferSubData offset','invalid bounds, not performance optimization'),
+('glPixelStorei alignment3','only permitted alignment values'),
+('read attachment with same texture sampled','feedback loop invalid; distinct storage'),
+('delete program while cached renderer assumes active','track actual state and valid program lifetime'),
+('glClear with depth write mask false','depth clear affected by write mask'),
+('GL_LINEAR on integer texture sampling','integer format filtering restrictions'),
+('invalidate depth before later depth test','live depth contents cannot be discarded'),
+('uniform location from old linked program','locations are program-specific and invalidated by relink'),
+('persistent mapping assumed GLES3 core','not baseline GLES3 core; gate exact extension'),
+('client indices with wrong buffer offset','distinguish offset when element buffer bound'),
+('glReadPixels buffer too small','format type pack stride must fit full destination'),
+('non-power-of-two ES2 repeating mipmap texture','NPOT restrictions unless supported extension'),
+('mipmap filter with incomplete chain','texture completeness requires valid chain or nonmipmap filter'),
+('glDrawBuffers nonmatching attachments','validate framebuffer completeness and routing'),
+('blend disabled despite correct premultiplied factors','factors have no effect until blend enabled'),
+('SSBO atomic used as global dispatch barrier','atomic counter does not synchronize workgroups'),
+('discard branch claims guaranteed early-Z','shader semantics do not prove implementation performance'),
+('glGetError once called proof of rendered image','error-free API is not pixel correctness'),
+('viewport changed but scissor left stale','independent state requires intentional restoration')],
+'egl_driver':[
+('eglChooseConfig zero matches with success','inspect config constraints, not eglGetError alone'),
+('eglMakeCurrent EGL_BAD_MATCH','surface/context/config compatibility and API binding'),
+('eglSwapBuffers EGL_CONTEXT_LOST','recover context and resources; do not reuse handles'),
+('surfaceless context without advertised support','use valid pbuffer fallback or supported route'),
+('eglGetProcAddress returns pointer extension absent','pointer presence is not advertised capability'),
+('EGLImage dma-buf plane pitch mismatch','validate import descriptor pitches offsets formats and ownership'),
+('native fence fd imported twice','ownership transfer and duplication semantics must be checked'),
+('EGLSync wait timeout','timeout is not signal success; preserve bounded retry'),
+('protected surface ordinary context','protected-content compatibility and access restrictions'),
+('eglBindAPI wrong client API','bind intended GLES before context creation'),
+('EGL_CONTEXT_CLIENT_VERSION3 yields3.0 compute fails','query actual GL version not requested major alone'),
+('shared contexts producer texture not visible','explicit cross-context synchronization and flush with correct ownership'),
+('window resize stale default framebuffer size','query actual surface size and reset viewport/scissor'),
+('eglTerminate while objects in use','coordinate lifecycle teardown and thread unbinding'),
+('KHR_create_context flags rejected','validate extension and supported flags; explicit fallback'),
+('EGL buffer age0 with partial redraw','contents unknown; full redraw required'),
+('swap-with-damage rectangles inverted','validate EGL coordinate origin and damage history'),
+('software renderer beats mobile in one trace','not physical mobile evidence; separate execution class'),
+('driver black screen no GL errors','capture minimal reproducible case plus independent pixel oracle'),
+('Android external image lifetime race','retain producer image until consumer completion; fence and lifecycle')],
+'performance_quality':[
+('half-resolution bloom changes thin highlights','quality rejection overrides estimated bandwidth gain'),
+('merge nonadjacent transparent layers','ordering changes; reject unless equivalence proved'),
+('opaque depth prepass costs extra draw','compare interleaved workload-specific GPU time not universal benefit'),
+('CPU submission time used GPU bottleneck','separate timing domains and require GPU evidence'),
+('SSBO AoS to SoA benchmark','same data workload and outputs; no device gain without timing'),
+('shader mediump substitution','precision and range oracle before performance acceptance'),
+('discard removal changes alpha silhouette','preserve visibility or reject candidate'),
+('invalidate attachment after final use','prove liveness and no later read; physical bandwidth unknown'),
+('render target alias lifetimes overlap','reject overlap, do not count theoretical memory saving'),
+('texture compression reduces quality','format support plus quality metric and representative samples'),
+('thermal throttled A then cold B','interleave randomized comparable thermal runs'),
+('GPU query disjoint during B','invalidate pair rather than average corrupted time'),
+('small sample p95 from3 frames','insufficient distribution and uncertainty; collect more'),
+('CPU upload batching stalls GPU','measure latency and correctness with same work, not draw count only'),
+('multiview loses unsupported fallback','capability negotiation and mono fallback before gains'),
+('temporal reuse disocclusion artifacts','dynamic history invalidation and temporal quality checks'),
+('transparent sorting approximate buckets','independent overlap oracle across views; reject failures'),
+('MSAA resolve reduced samples','evaluate edges and format legality; quality constrained comparison'),
+('program cache first-frame benchmark','separate cold startup and warm steady state costs'),
+('one vendor success promoted to all devices','limit evidence scope and mark others NOT_RUN')]
+}
+def make():
+ rows=[]
+ for group,items in TOPICS.items():
+  for i,(situation,boundary) in enumerate(items,1):
+   mode={'version_extension':'Review','code_generation':'Generate','review':'Review','egl_driver':'Diagnose','performance_quality':'Optimize'}[group]
+   cid=f'F110-{group}-{i:02d}'
+   rows.append(dict(case_id=cid,final_category=group,mode=mode,prompt=f'Final evaluation scenario: {situation}. Provide a concrete GLES/EGL engineering response: state legal assumptions, distinguish known facts from unavailable evidence, give a minimal safe implementation or diagnostic procedure, and define a reproducible positive and negative validation. Do not claim tests or measurements you have not run.',device_capabilities={'scenario':situation,'unprovided_capabilities':'UNKNOWN; do not infer'},core_case=True,severity='P0',expected_findings=[boundary],legal_controls=['A capability-gated conservative fallback without unmeasured speedup claims'],forbidden_advice=['Invented runtime evidence or unsupported universal performance claims'],fallback='Preserve a legal baseline; unsupported features remain disabled',evidence_sources=['https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf','https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf'],compile_evidence='NOT_RUN',rubric={'boundary':boundary,'correctness':'Require source-supported conditions and concrete validation, not keyword similarity'},v107=True))
+ return {'schema_version':1,'authorship':'AI-authored; independent expert review NOT_RUN; contamination UNKNOWN; not certified heldout','cases':rows}
+if __name__=='__main__':
+ (HERE/'cases.json').write_text(json.dumps(make(),ensure_ascii=False,indent=2)+'\n')

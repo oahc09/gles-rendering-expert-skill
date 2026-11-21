@@ -1,0 +1,28 @@
+{
+  "repository_revision": "6af574a14089ccfee87efe230ebcdd8742859813",
+  "sources": [
+    {
+      "name": "OVR_multiview",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/6af574a14089ccfee87efe230ebcdd8742859813/extensions/OVR/OVR_multiview.txt",
+      "sha256": "06555ba9aa7c91ad500083924b0d699c0246a2a118df1ddded47165d0078e4f9",
+      "revision": "6",
+      "date": "2018-10-19",
+      "status": "Complete"
+    },
+    {
+      "name": "OVR_multiview2",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/6af574a14089ccfee87efe230ebcdd8742859813/extensions/OVR/OVR_multiview2.txt",
+      "sha256": "10b143ec720411180eb77cd1eb52c89cc9d0a6a9aa4452e38f14f01a94f7e9c9",
+      "revision": "0.5",
+      "date": "2018-10-19",
+      "status": "Incomplete"
+    }
+  ],
+  "full_text_vendored": false,
+  "license_metadata": {
+    "readme_spdx": "CC-BY-4.0",
+    "readme_url": "https://github.com/KhronosGroup/OpenGL-Registry/blob/6af574a14089ccfee87efe230ebcdd8742859813/README.adoc",
+    "extension_file_spdx": "not specified in the two inspected extension texts",
+    "scope": "README license is not generalized to extension text or code; full source documents not redistributed"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "encoding": "gzip",
+  "lossless": true,
+  "entries": [
+    {
+      "file": "mesa.json.gz",
+      "uncompressed_file": "mesa.json",
+      "sha256": "dee275be3d3a9f6c65399f3f2bbf7a9242745abc55bd806e348b29ed5fa5a2fb",
+      "compressed_sha256": "433117c8588c3d656ca5b0f3d440827ec93c210ce0ed2f99bd12b81e3e0c67f9",
+      "bytes": 558839,
+      "compressed_bytes": 6478,
+      "status": "HOST_PASS",
+      "draws": 18,
+      "observations": 18,
+      "pixel_values": 46080
+    },
+    {
+      "file": "angle.json.gz",
+      "uncompressed_file": "angle.json",
+      "sha256": "403a6a38c6d61b71593c40d09072189f5157d20e20e5e176b7e070b8bc4ef54e",
+      "compressed_sha256": "078dc917f4e1b3b1eb9158bac9994269b9619b61001ce2842125b0ee7cf76d17",
+      "bytes": 558833,
+      "compressed_bytes": 6407,
+      "status": "HOST_PASS",
+      "draws": 18,
+      "observations": 18,
+      "pixel_values": 46080
+    }
+  ]
+}

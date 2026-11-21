@@ -10,3 +10,10 @@ __pycache__/
 *.pyo
 .pytest_cache/
 tests/
+# Restored exactly from SHA-verified frozen coverage archives
+/references/coverage/egl-api-catalog.json
+/references/coverage/extensions-catalog.json
+/references/coverage/gles-api-catalog.json
+/references/coverage/registry/egl.xml
+/references/coverage/registry/gl.xml
+/references/coverage/registry/gl.xml.gz

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "reviewed": [
+    {
+      "family": "sync",
+      "source_url": "https://registry.khronos.org/EGL/extensions/KHR/EGL_KHR_fence_sync.txt",
+      "source_revision": "24, January 31 2014",
+      "observed_date": "2026-11-15",
+      "spec_conditions": "EGL1.1; GLES sync association; core EGL1.5 has separate core entrypoints",
+      "source_binding": "Official extension revision metadata, not a vendored full-text hash",
+      "license": "Khronos specification copyright/IP notices at source; only original summaries stored",
+      "semantic_scope": "Narrow adapter; not full extension implementation",
+      "runtime_probe": "implemented except protected secure path"
+    },
+    {
+      "family": "eglimage",
+      "source_url": "https://registry.khronos.org/EGL/extensions/KHR/EGL_KHR_gl_image.txt",
+      "source_revision": "13, October 9 2013",
+      "observed_date": "2026-11-15",
+      "spec_conditions": "EGL1.2 + KHR_image for texture extension route; core EGL1.5 route independently probed",
+      "source_binding": "Official extension revision metadata, not a vendored full-text hash",
+      "license": "Khronos specification copyright/IP notices at source; only original summaries stored",
+      "semantic_scope": "Narrow adapter; not full extension implementation",
+      "runtime_probe": "implemented except protected secure path"
+    },
+    {
+      "family": "robustness",
+      "source_url": "https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt",
+      "source_revision": "11, August 21 2014",
+      "observed_date": "2026-11-15",
+      "spec_conditions": "ES2.0; some functions require3.0; context robustness properties are separate",
+      "source_binding": "Official extension revision metadata, not a vendored full-text hash",
+      "license": "Khronos specification copyright/IP notices at source; only original summaries stored",
+      "semantic_scope": "Narrow adapter; not full extension implementation",
+      "runtime_probe": "implemented except protected secure path"
+    },
+    {
+      "family": "msrtt",
+      "source_url": "https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multisampled_render_to_texture.txt",
+      "source_revision": "7, June 28 2016",
+      "observed_date": "2026-11-15",
+      "spec_conditions": "ES2.0 or OES_framebuffer_object; exact EXT entrypoints and queried sample counts",
+      "source_binding": "Official extension revision metadata, not a vendored full-text hash",
+      "license": "Khronos specification copyright/IP notices at source; only original summaries stored",
+      "semantic_scope": "Narrow adapter; not full extension implementation",
+      "runtime_probe": "implemented except protected secure path"
+    },
+    {
+      "family": "astc",
+      "source_url": "https://registry.khronos.org/OpenGL/extensions/KHR/KHR_texture_compression_astc_hdr.txt",
+      "source_revision": "8, June 8 2017",
+      "observed_date": "2026-11-15",
+      "spec_conditions": "LDR and HDR profile strings differ; narrow 4x4 LDR upload only",
+      "source_binding": "Official extension revision metadata, not a vendored full-text hash",
+      "license": "Khronos specification copyright/IP notices at source; only original summaries stored",
+      "semantic_scope": "Narrow adapter; not full extension implementation",
+      "runtime_probe": "implemented except protected secure path"
+    },
+    {
+      "family": "protected",
+      "source_url": "https://registry.khronos.org/EGL/extensions/EXT/EGL_EXT_protected_content.txt",
+      "source_revision": "13, December 6 2021",
+      "observed_date": "2026-11-15",
+      "spec_conditions": "EGL1.4; protected context/resources required; no unprotected downgrade",
+      "source_binding": "Official extension revision metadata, not a vendored full-text hash",
+      "license": "Khronos specification copyright/IP notices at source; only original summaries stored",
+      "semantic_scope": "Narrow adapter; not full extension implementation",
+      "runtime_probe": "implemented except protected secure path"
+    }
+  ],
+  "unreviewed": [
+    "Multiview",
+    "Framebuffer Fetch/PLS",
+    "VRS",
+    "AHardwareBuffer/native import"
+  ],
+  "performance": "NOT_MEASURED"
+}

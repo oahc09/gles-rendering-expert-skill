@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "requirements": {
+    "java": true,
+    "gradle": true,
+    "android_35": false,
+    "ndk_27": false,
+    "cmake_3_22_1": false,
+    "build_tools_35": false
+  },
+  "build": "BLOCKED_BY_TOOLCHAIN",
+  "apk": null,
+  "install": "NOT_RUN",
+  "physical_execution": "NOT_RUN",
+  "license_acceptance": "NOT_PERFORMED",
+  "sdk_download": "DISABLED",
+  "release_acceptance": false
+}

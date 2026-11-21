@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "metadata_url": "https://dl.google.com/android/repository/repository2-1.xml",
+  "metadata_sha256": "77fe1efa0850bc46a87a14e66dab802041277f2014a139a5c9df44608fd12b92",
+  "packages": [
+    {
+      "package": "platforms;android-35",
+      "url": "https://dl.google.com/android/repository/platform-35_r02.zip",
+      "archive_bytes": 64273788,
+      "published_sha1": "0bb560a90a7a2cbd0dd8348224d518b638fe7949",
+      "uses_license": "android-sdk-license",
+      "installed": false
+    },
+    {
+      "package": "ndk;27.0.12077973",
+      "url": "https://dl.google.com/android/repository/android-ndk-r27-linux.zip",
+      "archive_bytes": 663957918,
+      "published_sha1": "5e5cd517bdb98d7e0faf2c494a3041291e71bdcc",
+      "uses_license": "android-sdk-license",
+      "installed": false
+    },
+    {
+      "package": "build-tools;35.0.0",
+      "url": "https://dl.google.com/android/repository/build-tools_r35_linux.zip",
+      "archive_bytes": 61958799,
+      "published_sha1": "2cfaa0bbb2336e9ec18ed3ecea84fa2e2af607bc",
+      "uses_license": "android-sdk-license",
+      "installed": false
+    },
+    {
+      "package": "cmake;3.22.1",
+      "url": "https://dl.google.com/android/repository/cmake-3.22.1-linux.zip",
+      "archive_bytes": 22308647,
+      "published_sha1": "fd0a48b4a758310df8c7aa51f59840ed48fe7ed8",
+      "uses_license": "android-sdk-license",
+      "installed": false
+    },
+    {
+      "package": "platform-tools",
+      "url": "https://dl.google.com/android/repository/platform-tools_r37.0.1-linux.zip",
+      "archive_bytes": 9054187,
+      "published_sha1": "477254aa5f903c15cf51001717bdf347fb6b53e0",
+      "uses_license": "android-sdk-license",
+      "installed": false
+    }
+  ],
+  "license_url": "https://developer.android.com/studio/terms",
+  "license_status": "NOT_ACCEPTED_BY_AGENT",
+  "build": "BLOCKED_BY_LICENSE_AND_MISSING_SDK",
+  "apk": null,
+  "install": "NOT_RUN",
+  "note": "Official metadata and AGP POM reachable HTTP200. Package archives not downloaded or installed. Terms contain explicit SDK agreement; no permission inferred from XML Apache license or unrelated prior approvals."
+}

@@ -1,0 +1,463 @@
+{
+  "status": "FAIL",
+  "rows": [
+    {
+      "case": "mesa-texture-False",
+      "exit": 0,
+      "report": {
+        "attachment": "texture",
+        "fetch": false,
+        "checkpoints": [
+          {
+            "name": "attachment",
+            "gl_error": 0
+          },
+          {
+            "name": "compile_link",
+            "gl_error": 0
+          },
+          {
+            "name": "clear_before_draw",
+            "gl_error": 0
+          },
+          {
+            "name": "draw_returned",
+            "gl_error": 0
+          },
+          {
+            "name": "readback_returned",
+            "gl_error": 0
+          }
+        ],
+        "fbo_complete": true,
+        "compile": true,
+        "link": true,
+        "pixels": [
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255
+        ],
+        "max_error": 0,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "mesa-texture-True",
+      "exit": -11,
+      "report": {
+        "attachment": "texture",
+        "fetch": true,
+        "checkpoints": [
+          {
+            "name": "attachment",
+            "gl_error": 0
+          },
+          {
+            "name": "compile_link",
+            "gl_error": 0
+          },
+          {
+            "name": "clear_before_draw",
+            "gl_error": 0
+          }
+        ],
+        "fbo_complete": true,
+        "compile": true,
+        "link": true
+      }
+    },
+    {
+      "case": "mesa-renderbuffer-True",
+      "exit": -11,
+      "report": {
+        "attachment": "renderbuffer",
+        "fetch": true,
+        "checkpoints": [
+          {
+            "name": "attachment",
+            "gl_error": 0
+          },
+          {
+            "name": "compile_link",
+            "gl_error": 0
+          },
+          {
+            "name": "clear_before_draw",
+            "gl_error": 0
+          }
+        ],
+        "fbo_complete": true,
+        "compile": true,
+        "link": true
+      }
+    },
+    {
+      "case": "angle-texture-False",
+      "exit": 0,
+      "report": {
+        "attachment": "texture",
+        "fetch": false,
+        "checkpoints": [
+          {
+            "name": "attachment",
+            "gl_error": 0
+          },
+          {
+            "name": "compile_link",
+            "gl_error": 0
+          },
+          {
+            "name": "clear_before_draw",
+            "gl_error": 0
+          },
+          {
+            "name": "draw_returned",
+            "gl_error": 0
+          },
+          {
+            "name": "readback_returned",
+            "gl_error": 0
+          }
+        ],
+        "fbo_complete": true,
+        "compile": true,
+        "link": true,
+        "pixels": [
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255
+        ],
+        "max_error": 0,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "angle-texture-True",
+      "exit": 0,
+      "report": {
+        "attachment": "texture",
+        "fetch": true,
+        "checkpoints": [
+          {
+            "name": "attachment",
+            "gl_error": 0
+          },
+          {
+            "name": "compile_link",
+            "gl_error": 0
+          },
+          {
+            "name": "clear_before_draw",
+            "gl_error": 0
+          },
+          {
+            "name": "draw_returned",
+            "gl_error": 0
+          },
+          {
+            "name": "readback_returned",
+            "gl_error": 0
+          }
+        ],
+        "fbo_complete": true,
+        "compile": true,
+        "link": true,
+        "pixels": [
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255
+        ],
+        "max_error": 0,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "angle-renderbuffer-True",
+      "exit": 0,
+      "report": {
+        "attachment": "renderbuffer",
+        "fetch": true,
+        "checkpoints": [
+          {
+            "name": "attachment",
+            "gl_error": 0
+          },
+          {
+            "name": "compile_link",
+            "gl_error": 0
+          },
+          {
+            "name": "clear_before_draw",
+            "gl_error": 0
+          },
+          {
+            "name": "draw_returned",
+            "gl_error": 0
+          },
+          {
+            "name": "readback_returned",
+            "gl_error": 0
+          }
+        ],
+        "fbo_complete": true,
+        "compile": true,
+        "link": true,
+        "pixels": [
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255,
+          191,
+          64,
+          128,
+          255
+        ],
+        "max_error": 0,
+        "status": "PASS"
+      }
+    }
+  ],
+  "source_sha256": "c4ea4ffa267998256a74bc8b1ca9c162e3ea51909c92afc6c035fe1816bac751",
+  "performance_claim": false,
+  "root_cause_proven": false,
+  "collection": "Initial bounded launcher; suite.py reproduces the same six inputs but was not rerun to avoid unnecessary crashing probes."
+}

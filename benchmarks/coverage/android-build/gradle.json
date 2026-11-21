@@ -1,0 +1,12 @@
+{
+  "distribution_url": "https://downloads.gradle.org/distributions/gradle-8.9-bin.zip",
+  "checksum_url": "https://services.gradle.org/distributions/gradle-8.9-bin.zip.sha256",
+  "sha256": "d725d707bfabd4dfdc958c624003b3c80accc03f7037b5122c4b1d0ef15cecab",
+  "archive_verification": "PASS",
+  "extraction": "PASS",
+  "command": "gradle --version",
+  "exit_code": 0,
+  "version": "8.9",
+  "apk_build": "NOT_RUN_MISSING_LICENSED_SDK",
+  "note": "Installed within current workspace; no security/network/credential settings changed. Archive not vendored."
+}

@@ -1,0 +1,7 @@
+# W4 EGLImage + fence producer/consumer integration
+
+The existing lifecycle suite's shared texture and single-context fence checks did not cover this chain. `benchmarks/coverage/image-sync/run.py` adds real producer rendering, preserved EGLImage import, producer flush, shared-context server wait, external consumer sampling and CPU image oracle, with separately executed finite-timeout client-wait route.
+
+Primary sources: [KHR_fence_sync](https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/8e56e86e65687697ef54114cdb1afabdfac756bf/extensions/KHR/EGL_KHR_fence_sync.txt), [KHR_wait_sync](https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/8e56e86e65687697ef54114cdb1afabdfac756bf/extensions/KHR/EGL_KHR_wait_sync.txt), image/external specifications hashed in the experiment. Producer itself flushes its fence; client-wait flags0 avoid implying flushing a consumer context submits producer work. Server wait enqueues a dependency rather than blocking host. Wait is never skipped for a missing/failed fence. Each frame owns new storage so mutation/orphan semantics are not inferred. Final consumer readback precedes storage/fence destruction.
+
+Finite actual software tests do not establish hardware concurrent-queue behavior, AHB/protected import, native-buffer lifetime, or performance. An already-signaled fence can legitimately make waits immediate. Missing synchronization is rejected by policy only, not empirically tested via undefined access.

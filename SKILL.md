@@ -307,3 +307,20 @@ This SKILL.md is the entry point. Load additional files **only when relevant**:
 | Example code (few-shot) | `references/examples/` → specific file |
 
 **Do NOT load all rules simultaneously.** Select only those matching the current user query to minimize context cost and prevent rule drift.
+
+
+## v1.1.0 frozen coverage routing (candidate, not released)
+
+For exact GLES 2.0-3.2 or EGL 1.4/1.5 API/extension membership, use `references/coverage/source-manifest.json` and the generated catalogs. INDEXED_ONLY is not semantic legality, compiler success, runtime support or device validation. Resolve the exact version/extension, callable entrypoint, dependencies and parameter probe before enabling a path; aliases do not imply interchangeable entrypoints.
+
+For shader-language and EGL lifecycle boundaries, read `references/coverage/glsl-es-matrix.md` and `references/coverage/egl-matrix.md`. For format/interaction, vendor and scenario limits, select only the relevant coverage matrix. Consult `docs/v1.1.0/release-gates.json` before describing acceptance; inherited failures, physical targets and model evaluation cannot be waived by index completeness.
+
+For distance-field edge errors, compare sampler precision and filtering separately before widening tolerances; see `references/coverage/distance-text.md`. For exact transparency requests, weighted OIT is an approximation: require a validated per-sample ordering condition before selecting sorted alpha, and reject crossing or ambiguous order; see `benchmarks/coverage/weighted-oit/exact-policy-analysis.md`. Finite host probes do not establish arbitrary-scene correctness or free bandwidth.
+
+For crossing transparent layers that invalidate global sorting, the [bounded depth-peeling lab](references/coverage/depth-peeling.md) demonstrates a GLES3 alternative with explicit depth-domain and layer-count limits. Require the extra overflow pass; never silently truncate layers or advertise its multipass/query cost as a speed improvement.
+
+For end-to-end acceptance of the registered transparency controls, use [finite transparency routing](references/coverage/transparency-routing.md). It validates source, input, budget and actual pixels together; it deliberately rejects unregistered geometry and cannot certify arbitrary caller-supplied scene data.
+
+For core/KHR debug output, see [filtered callback lifecycle validation](references/coverage/debug-output.md). Select exact version/extension entrypoints, retain callback state until unregister, avoid calling GL from the callback, and collect only the task-approved diagnostic categories rather than indiscriminately publishing driver messages.
+
+For timer-query evidence, see [EXT timer lifecycle validation](references/coverage/timer-query.md). Check result availability, disjoint interval and counter-width/overflow limits before interpreting samples. Never treat software timer availability or absence of a disjoint flag as proof of a hardware performance gain.

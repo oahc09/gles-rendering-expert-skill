@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "status": "HOST_PASS",
+  "source_sha256": "259b1671a2210c85f80ae499eea4764d5bda52e5fce8bc9e24ff2cacb825350b",
+  "execution_class": "SOFTWARE_HOST",
+  "physical_device": "NOT_RUN",
+  "performance": "NOT_MEASURED",
+  "driver_messages_recorded": false,
+  "force_disabled": false,
+  "route": "core",
+  "api_version": [
+    3,
+    2
+  ],
+  "KHR_advertised": true,
+  "entrypoints": [
+    "glDebugMessageCallback",
+    "glDebugMessageControl",
+    "glDebugMessageInsert",
+    "glPushDebugGroup",
+    "glPopDebugGroup",
+    "glObjectLabel",
+    "glGetObjectLabel",
+    "glGetPointerv"
+  ],
+  "callback_registration_matches": true,
+  "synchronous_return_observed": true,
+  "group_depth": [
+    1,
+    2,
+    1
+  ],
+  "label": {
+    "full": "finite-owned-buffer",
+    "length": 19,
+    "truncated": "finit",
+    "truncated_length": 5,
+    "null_terminated": true
+  },
+  "negative_cases": [
+    {
+      "id": "control-id-wildcard-source",
+      "expected_error": 1282,
+      "gl_error": 1282
+    },
+    {
+      "id": "insert-api-source",
+      "expected_error": 1280,
+      "gl_error": 1280
+    },
+    {
+      "id": "pop-default-group",
+      "expected_error": 1284,
+      "gl_error": 1284
+    },
+    {
+      "id": "label-invalid-identifier",
+      "expected_error": 1280,
+      "gl_error": 1280
+    },
+    {
+      "id": "query-negative-buffer-size",
+      "expected_error": 1281,
+      "gl_error": 1281
+    }
+  ],
+  "callback_unregister": {
+    "pointer_null": true,
+    "user_null": true,
+    "no_callback_after_unregister": true
+  },
+  "application_messages": [
+    {
+      "source": 33354,
+      "type": 33361,
+      "id": 901,
+      "severity": 37192,
+      "message": "finite-start",
+      "user_matches": true
+    },
+    {
+      "source": 33354,
+      "type": 33361,
+      "id": 904,
+      "severity": 37192,
+      "message": "finite-low-allowed",
+      "user_matches": true
+    },
+    {
+      "source": 33354,
+      "type": 33385,
+      "id": 905,
+      "severity": 33387,
+      "message": "finite-group",
+      "user_matches": true
+    },
+    {
+      "source": 33354,
+      "type": 33386,
+      "id": 905,
+      "severity": 33387,
+      "message": "finite-group",
+      "user_matches": true
+    },
+    {
+      "source": 33354,
+      "type": 33361,
+      "id": 907,
+      "severity": 37192,
+      "message": "finite-low-restored",
+      "user_matches": true
+    }
+  ]
+}

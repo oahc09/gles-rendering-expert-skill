@@ -1,0 +1,8 @@
+{
+  "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/EXT/EXT_disjoint_timer_query.txt",
+  "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+  "spec_version": "9, November 20, 2020",
+  "retrieved_sha256": "0f9629d3d6e623084cadfe095f72d4070b09836343b635930f22f1f49b2c8004",
+  "review": "AI source review; not independent human review",
+  "distribution": "not_vendored; metadata and paraphrase only"
+}

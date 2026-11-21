@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "reuses": "docs/v1.0.9/research/rolling/2026-11-15/receipt.json",
+  "original_plan_window": [
+    "2026-08-11",
+    "2026-11-08"
+  ],
+  "rolling_corpus_window": [
+    "2026-08-18",
+    "2026-11-15"
+  ],
+  "independent_review": "NOT_RUN",
+  "rules": [
+    {
+      "id": "ANGLE_STORAGE_REBINDS",
+      "state": "new",
+      "level": "EXPERIMENTAL",
+      "source_class": "upstream_code_diff",
+      "source_url": "https://github.com/google/angle/commit/2f5d7a4dbcad89f1b228ff264f365aa9a56523b5",
+      "claim": "ANGLE Vulkan now propagates explicit deferred memory-barrier bits through storage buffer/image access helpers. Buffer read/write tracking bypasses event-only shortcuts when an explicit barrier requires a pipeline dependency; image writes select Pipeline instead of Event for relevant bits.",
+      "conditions": {
+        "upstream_revision": "2f5d7a4dbcad89f1b228ff264f365aa9a56523b5",
+        "scope": "selected source diff, no universal device inference"
+      },
+      "topic": "ANGLE_STORAGE_REBINDS",
+      "recommendation": "Add a candidate multi-resource rebind regression; preserve API consumer-specific barrier semantics. Do not promote a new mandatory global-barrier rule or infer a speedup.",
+      "evidence_class": "SOURCE_CONFIRMED",
+      "evidence": [
+        {
+          "path": "docs/v1.0.9/research/implementation-review.json",
+          "sha256": "3532c907c9a5c0991713c9113b8f5f05e2d502811e6c0394c179ed6ab7ac1760"
+        }
+      ],
+      "rule": null,
+      "example": "benchmarks/shader_ab/advanced.py",
+      "test": "benchmarks/shader_ab/test_advanced.py",
+      "measured_gain": null,
+      "reviewed_at": null,
+      "owner": "maintainer-independent-review",
+      "source_version": "1.0.9",
+      "disposition": "NO_AUTO_PROMOTION"
+    },
+    {
+      "id": "ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+      "state": "new",
+      "level": "EXPERIMENTAL",
+      "source_class": "upstream_code_diff",
+      "source_url": "https://github.com/google/angle/commit/035f8885dea7122f51ef9cd0a07db1568a974573",
+      "claim": "ANGLE Vulkan consolidates framebuffer-change blend function/equation updates around previous/new color attachment masks and resetBlendFuncsAndEquations; FramebufferVk invokes the new transition-specific helper.",
+      "conditions": {
+        "upstream_revision": "035f8885dea7122f51ef9cd0a07db1568a974573",
+        "scope": "selected source diff, no universal device inference"
+      },
+      "topic": "ANGLE_BLEND_ATTACHMENT_TRANSITIONS",
+      "recommendation": "Require attachment format/state transition coverage when considering FBO reuse. Do not assume blend-state omission is legal or claim reduced CPU/GPU time from this patch.",
+      "evidence_class": "SOURCE_CONFIRMED",
+      "evidence": [
+        {
+          "path": "docs/v1.0.9/research/implementation-review.json",
+          "sha256": "3532c907c9a5c0991713c9113b8f5f05e2d502811e6c0394c179ed6ab7ac1760"
+        }
+      ],
+      "rule": null,
+      "example": "benchmarks/overlap_scenes/advanced.py",
+      "test": "tools/rendergraph_optimizer.py",
+      "measured_gain": null,
+      "reviewed_at": null,
+      "owner": "maintainer-independent-review",
+      "source_version": "1.0.9",
+      "disposition": "NO_AUTO_PROMOTION"
+    },
+    {
+      "id": "FILAMENT_GL_FREE_ASYNC_FLUSH",
+      "state": "new",
+      "level": "EXPERIMENTAL",
+      "source_class": "upstream_code_diff",
+      "source_url": "https://github.com/google/filament/commit/95c94d089ab2c4cc630c4d238c1e5ba2d8edd127",
+      "claim": "Filament removes flushIfSharedContext only from two queued worker jobs: createTextureViewSwizzleAsyncR and importTextureAsyncR. Both queue push and scheduled completion callback remain; code comments state these jobs issue no GL commands on the worker.",
+      "conditions": {
+        "upstream_revision": "95c94d089ab2c4cc630c4d238c1e5ba2d8edd127",
+        "scope": "selected source diff, no universal device inference"
+      },
+      "topic": "FILAMENT_GL_FREE_ASYNC_FLUSH",
+      "recommendation": "Keep as a bounded optimization hypothesis for demonstrably GL-free jobs. Reject any universal remove-glFlush advice or callback reordering; exact job ordering and shared-context visibility need a new runtime experiment.",
+      "evidence_class": "SOURCE_CONFIRMED",
+      "evidence": [
+        {
+          "path": "docs/v1.0.9/research/implementation-review.json",
+          "sha256": "3532c907c9a5c0991713c9113b8f5f05e2d502811e6c0394c179ed6ab7ac1760"
+        }
+      ],
+      "rule": null,
+      "example": "tools/rendergraph_optimizer.py",
+      "test": "tools/test_rendergraph_optimizer.py",
+      "measured_gain": null,
+      "reviewed_at": null,
+      "owner": "maintainer-independent-review",
+      "source_version": "1.0.9",
+      "disposition": "NO_AUTO_PROMOTION"
+    },
+    {
+      "id": "FILAMENT_PACKING_PRECISION",
+      "state": "new",
+      "level": "EXPERIMENTAL",
+      "source_class": "upstream_code_diff",
+      "source_url": "https://github.com/google/filament/commit/e8669b688a9381beb4f7470df828e1932d78efa6",
+      "claim": "Filament packing polyfills now first assign each converted channel to a highp uint before shifting in packUnorm4x8/packSnorm4x8; unpackSnorm4x8 sign-extension intermediates become explicit highp int in both code blocks.",
+      "conditions": {
+        "upstream_revision": "e8669b688a9381beb4f7470df828e1932d78efa6",
+        "scope": "selected source diff, no universal device inference"
+      },
+      "topic": "FILAMENT_PACKING_PRECISION",
+      "recommendation": "Add bounded signed/unsigned pack/unpack boundary tests and inspect intermediate precision. Do not change all shaders to highp, infer universal mediump width, or report an unmeasured performance effect.",
+      "evidence_class": "SOURCE_CONFIRMED",
+      "evidence": [
+        {
+          "path": "docs/v1.0.9/research/implementation-review.json",
+          "sha256": "3532c907c9a5c0991713c9113b8f5f05e2d502811e6c0394c179ed6ab7ac1760"
+        }
+      ],
+      "rule": null,
+      "example": "benchmarks/shader_ab/run.py",
+      "test": "benchmarks/shader_ab/build_cases.py",
+      "measured_gain": null,
+      "reviewed_at": null,
+      "owner": "maintainer-independent-review",
+      "source_version": "1.0.9",
+      "disposition": "NO_AUTO_PROMOTION"
+    }
+  ]
+}

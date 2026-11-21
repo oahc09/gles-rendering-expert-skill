@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "provenance": "Recovered verbatim observation fields from successful urllib probe tool output after discovering empty archive; not a fresh network claim",
+  "observed_at": null,
+  "observations": [
+    {
+      "url": "https://dl.google.com/android/repository/repository2-1.xml",
+      "status": 200,
+      "bytes_read": 384394,
+      "content_length": "384394"
+    },
+    {
+      "url": "https://dl.google.com/android/repository/addon2-3.xml",
+      "status": 200,
+      "bytes_read": 111374,
+      "content_length": "111374"
+    },
+    {
+      "url": "https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/8.7.3/gradle-8.7.3.pom",
+      "status": 200,
+      "bytes_read": 12006,
+      "content_length": "12006"
+    },
+    {
+      "url": "https://services.gradle.org/distributions/gradle-8.9-bin.zip.sha256",
+      "status": 200,
+      "bytes_read": 64,
+      "content_length": "64",
+      "published_sha256": "d725d707bfabd4dfdc958c624003b3c80accc03f7037b5122c4b1d0ef15cecab"
+    },
+    {
+      "url": "https://downloads.gradle.org/distributions/gradle-8.9-bin.zip",
+      "status": 200,
+      "bytes_read": 0,
+      "content_length": "136114148"
+    }
+  ]
+}

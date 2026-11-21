@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "repository": "KhronosGroup/OpenGL-Registry",
+      "commit": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "mode": "OFFLINE",
+      "status": "PASS"
+    },
+    {
+      "repository": "KhronosGroup/EGL-Registry",
+      "commit": "8e56e86e65687697ef54114cdb1afabdfac756bf",
+      "mode": "OFFLINE",
+      "status": "PASS"
+    }
+  ],
+  "baseline_mutated": false
+}

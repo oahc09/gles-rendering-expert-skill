@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "authored_at": "2026-11-15",
+  "files": {
+    "cases.json": "d0a7dc4b08ea76f2f65d4b23b1d6591001cd86bd762635fd6d823281c37cf7c2",
+    "build_cases.py": "fa021e7e4f4aa3119856966b0b15cec4a35b3303819e3606a4a5f1bc50763c1f",
+    "evaluate.py": "5a08d1c840485f8eee8e111af6456fab049583a0312e37cbf255ee7ab5c4e9bf",
+    "README.md": "229015f8cabbcbfcfd7421c39a8fee3a51674c93fb555086d6562679f97547c6",
+    "../run.py": "cf601022ee36a4368168e9bf57c4ef491e8031b99b8051b68e76fc301e675a11",
+    "../score.py": "357211ec9d328784008a9dbce298317ab9a07481fd52377d2189a064a697fffb",
+    "../score_v109.py": "7ce7f267933d48a54cd5956112e7ba3dffd7e25a3ffd35807e225c1b3c6d2124",
+    "test_final_eval.py": "6f98037056abfade4da666f8c112f2764d9629e6272cec5dfbef9f1ce85a7b76"
+  },
+  "independent_review": "NOT_RUN",
+  "contamination": "UNKNOWN",
+  "semantic_deduplication": "NOT_INDEPENDENTLY_REVIEWED",
+  "heldout_certified": false
+}

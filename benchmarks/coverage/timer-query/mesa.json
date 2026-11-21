@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "source_sha256": "ca2426bd8877280ad35420b89c4f74e26a7ed8705200e8c94fd36eb57657286d",
+  "execution_class": "SOFTWARE_HOST",
+  "physical_device": "NOT_RUN",
+  "performance_improvement": "NOT_MEASURED",
+  "raw_timestamps_recorded": false,
+  "force_disabled": false,
+  "status": "HOST_PASS",
+  "extension_advertised": true,
+  "entrypoints": [
+    "glGenQueriesEXT",
+    "glDeleteQueriesEXT",
+    "glIsQueryEXT",
+    "glBeginQueryEXT",
+    "glEndQueryEXT",
+    "glQueryCounterEXT",
+    "glGetQueryivEXT",
+    "glGetQueryObjectuivEXT",
+    "glGetQueryObjectui64vEXT"
+  ],
+  "counter_bits": {
+    "elapsed": 64,
+    "timestamp": 64
+  },
+  "generated_not_yet_objects": true,
+  "active_query_matches": true,
+  "workload_pixel_match": true,
+  "disjoint_before": false,
+  "disjoint_after": false,
+  "availability": [
+    {
+      "available_first_probe": true,
+      "available_at_result_read": true,
+      "available_after_result": true
+    },
+    {
+      "available_first_probe": false,
+      "available_at_result_read": true,
+      "available_after_result": true
+    },
+    {
+      "available_first_probe": true,
+      "available_at_result_read": true,
+      "available_after_result": true
+    }
+  ],
+  "negatives": [
+    {
+      "case": "nested-active-target",
+      "error": 1282,
+      "expected": 1282
+    },
+    {
+      "case": "read-active-result",
+      "error": 1282,
+      "expected": 1282
+    },
+    {
+      "case": "counter-active-query",
+      "error": 1282,
+      "expected": 1282
+    },
+    {
+      "case": "end-inactive",
+      "error": 1282,
+      "expected": 1282
+    },
+    {
+      "case": "counter-wrong-target",
+      "error": 1280,
+      "expected": 1280
+    },
+    {
+      "case": "zero-begin-id",
+      "error": 1282,
+      "expected": 1282
+    }
+  ],
+  "objects_live": true,
+  "elapsed_is_uint64_and_non_saturated": true,
+  "timing_validity": "API_DISJOINT_CHECKS_PASS_OVERFLOW_NOT_PROVEN",
+  "timestamp_nondecreasing": true,
+  "policy_simulations": {
+    "injected_disjoint_rejected": true,
+    "unknown_disjoint_rejected": true
+  },
+  "deleted_not_objects": true
+}

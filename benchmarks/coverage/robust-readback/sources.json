@@ -1,0 +1,33 @@
+{
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/extensions/KHR/KHR_robustness.txt",
+      "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "retrieved_sha256": "83bd64e6ca1fc3daafbfb9b1cddfd3b65d25f7e446f603ed3eee49fd6dff7ded",
+      "sections_read": [
+        "New Procedures",
+        "GetnUniform changes",
+        "ReadPixels changes"
+      ],
+      "distribution": "not_vendored",
+      "review": "AI source reading, not independent expert review"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/1cdd228e34966dd6b95bd203e9f84faba0f371a1/specs/es/3.2/es_spec_3.2.pdf",
+      "revision": "1cdd228e34966dd6b95bd203e9f84faba0f371a1",
+      "retrieved_sha256": "5028bd55b9ed7072757944f117a682ff3a0d09ab7b7a9a09cd144b7928db661c",
+      "sections_read": [
+        "7.12 Shader/Program Queries",
+        "16.1.2 Reading Pixels"
+      ],
+      "distribution": "not_vendored",
+      "review": "AI source reading, not independent expert review"
+    }
+  ],
+  "claims": [
+    "GLES KHR route uses KHR suffix; core route admitted at GLES3.2",
+    "bufSize is bytes for both readback APIs",
+    "Insufficient buffer requires GL_INVALID_OPERATION",
+    "Pack row length/skips contribute to required pixel destination span"
+  ]
+}

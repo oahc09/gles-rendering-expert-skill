@@ -1,0 +1,100 @@
+{
+  "status": "HOST_PROBES_PASS_WITH_UNSUPPORTED",
+  "rows": [
+    {
+      "family": "sync",
+      "status": "PASS",
+      "decision": {
+        "family": "sync",
+        "classification": "core",
+        "usable": true,
+        "reasons": [
+          "reviewed narrow parameters and caller-supplied runtime probe passed"
+        ],
+        "fallback": "CPU completion only through a verified glFinish route, no asynchronous promise",
+        "probe_trust": "caller evidence, not authenticated device certification",
+        "performance": "NOT_MEASURED"
+      },
+      "evidence_source_sha256": "12e963c759f4257a0a44b306e558b8ca54040b08440af610b6381a31c9cd71ee"
+    },
+    {
+      "family": "eglimage",
+      "status": "PASS",
+      "decision": {
+        "family": "eglimage",
+        "classification": "core",
+        "usable": true,
+        "reasons": [
+          "reviewed narrow parameters and caller-supplied runtime probe passed"
+        ],
+        "fallback": "Keep verified owned 2D texture; no native/AHB zero-copy claim",
+        "probe_trust": "caller evidence, not authenticated device certification",
+        "performance": "NOT_MEASURED"
+      },
+      "evidence_source_sha256": "12e963c759f4257a0a44b306e558b8ca54040b08440af610b6381a31c9cd71ee"
+    },
+    {
+      "family": "robustness",
+      "status": "PASS",
+      "reset_status": 0,
+      "gl_error": 0,
+      "decision": {
+        "family": "robustness",
+        "classification": "core",
+        "usable": true,
+        "reasons": [
+          "reviewed narrow parameters and caller-supplied runtime probe passed"
+        ],
+        "fallback": "No reset-monitor guarantee; never intentionally access out of bounds",
+        "probe_trust": "caller evidence, not authenticated device certification",
+        "performance": "NOT_MEASURED"
+      }
+    },
+    {
+      "family": "astc",
+      "status": "PASS",
+      "decision": {
+        "family": "astc",
+        "classification": "extension",
+        "usable": true,
+        "reasons": [
+          "reviewed narrow parameters and caller-supplied runtime probe passed"
+        ],
+        "fallback": "Verified RGBA8/ETC2 asset path; no inferred compression bandwidth gain",
+        "probe_trust": "caller evidence, not authenticated device certification",
+        "performance": "NOT_MEASURED"
+      },
+      "upload_error": 0,
+      "negative_size_error": 1281,
+      "decode_pixels": "NOT_RUN"
+    },
+    {
+      "family": "msrtt",
+      "status": "NOT_SUPPORTED"
+    },
+    {
+      "family": "protected",
+      "status": "NOT_SUPPORTED",
+      "decision": {
+        "family": "protected",
+        "classification": "unsupported",
+        "usable": false,
+        "reasons": [
+          "protected-content extension absent",
+          "secure context/resource/platform path not independently verified"
+        ],
+        "fallback": "Reject protected playback/import; never downgrade protected data to an unprotected copy"
+      },
+      "scope": "No protected-resource transfer attempted; no downgrade to unprotected copy"
+    }
+  ],
+  "performance": "NOT_MEASURED",
+  "not_implemented": [
+    "Multiview",
+    "Framebuffer Fetch/PLS",
+    "VRS",
+    "AHardwareBuffer/native image import"
+  ],
+  "source_sha256": "0f0c2dd4a9c9f0c489359f944af068e022aedd828f17dce403d7ad4a05cd44c2",
+  "policy_sha256": "9556aaeecaf32214faab94ea2348e103542319a73819e3be466e7ac4390a61e0"
+}

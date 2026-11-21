@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "target_version": "1.1.0",
+  "overall_state": "reviewable_draft_candidate",
+  "implementation_status": "PARTIAL_CANDIDATE",
+  "release_ready": false,
+  "release_authorized": false,
+  "accepted_limitations": [],
+  "prior_release_gate": "docs/v1.0.9/release-gates.json",
+  "base_commit": "b1bf915e1f33404888b89174ad2857ffa78b6f2a",
+  "work_packages": {
+    "W0": {
+      "status": "HOST_AUDIT_COMPLETE",
+      "evidence": [
+        "docs/v1.1.0/baseline.md",
+        "docs/v1.1.0/debt-ledger.json",
+        "docs/v1.1.0/feature-inventory.json"
+      ],
+      "remaining": "Historical failures remain preserved; no release waiver."
+    },
+    "W1": {
+      "status": "INDEX_COMPLETE",
+      "evidence": [
+        "references/coverage/gles-api-catalog.json",
+        "references/coverage/egl-api-catalog.json",
+        "tools/coverage/build_gles_catalog.py"
+      ],
+      "remaining": "Structural index is complete for pinned snapshots, not complete semantic or runtime coverage."
+    },
+    "W2": {
+      "status": "HOST_BOUNDED",
+      "evidence": [
+        "tools/coverage/verify_glsl.py",
+        "benchmarks/coverage/glsl/evidence/mesa.json",
+        "benchmarks/coverage/glsl/evidence/angle.json"
+      ],
+      "remaining": "16 authored families: Mesa32 probes, ANGLE28 plus four actual GLES3.2 capability gaps; special extension/whole grammar coverage not claimed."
+    },
+    "W3": {
+      "status": "HOST_BOUNDED",
+      "evidence": [
+        "examples/closure/egl-lifecycle/run.py",
+        "references/coverage/egl-matrix.md"
+      ],
+      "remaining": "27 software checks per driver; native Windows/Android/GBM windows, reset and native image paths not executed."
+    },
+    "W4": {
+      "status": "PARTIAL_WITH_DRIVER_FAILURE",
+      "evidence": [
+        "references/coverage/extensions-catalog.json",
+        "tools/coverage/capability.py",
+        "references/coverage/extensions-priority.md",
+        "tools/coverage/priority_boundaries.py",
+        "references/coverage/priority-boundaries.json",
+        "benchmarks/coverage/extensions/evidence/priority-mesa.json",
+        "benchmarks/coverage/extensions/evidence/priority-angle.json",
+        "benchmarks/coverage/extensions/evidence/astc-decode-mesa.json",
+        "benchmarks/coverage/extensions/evidence/astc-decode-angle.json",
+        "benchmarks/coverage/multiview/evidence/mesa.json",
+        "benchmarks/coverage/multiview/evidence/angle.json",
+        "benchmarks/coverage/robust-readback/mesa.json",
+        "benchmarks/coverage/robust-readback/angle.json",
+        "benchmarks/coverage/framebuffer-fetch/evidence/mesa.json",
+        "benchmarks/coverage/framebuffer-fetch/evidence/angle.json",
+        "benchmarks/coverage/pixel-local-storage/angle.json",
+        "benchmarks/coverage/pixel-local-storage/mesa.json",
+        "benchmarks/coverage/fetch-diagnosis/evidence.json",
+        "benchmarks/coverage/texture-buffer/mesa.json",
+        "benchmarks/coverage/texture-buffer/angle.json",
+        "benchmarks/coverage/debug-output/run.py",
+        "benchmarks/coverage/timer-query/run.py",
+        "benchmarks/coverage/external-image/run.py",
+        "benchmarks/coverage/external-image/mesa.json",
+        "benchmarks/coverage/external-image/angle.json",
+        "benchmarks/coverage/image-sync/run.py",
+        "benchmarks/coverage/image-sync/mesa.json",
+        "benchmarks/coverage/image-sync/angle.json"
+      ],
+      "remaining": "Bounded two-layer multiview+sequential fallback and robust readback/canary boundaries pass on both software backends. ANGLE ordered coherent/noncoherent framebuffer fetch passes; Mesa fetch draw crashes despite advertisement, retained FAIL with working ping-pong fallback. Full multiview/Fetch semantics, PLS/VRS/AHB/native import and protected resources remain incomplete; reset query/readback are not reset recovery or device acceptance. ANGLE-specific PLS clear/store/load scopes and one explicit barrier pass with runtime-matched official ABI; Mesa only verifies fallback, not PLS. Minimal fetch diagnosis excludes several application-specific factors but has no proven root cause or native fix. EXT texture-buffer range/update/readback and 2D fallback pass, but ANGLE buffer-zero ignored-offset boundary returns unexpected INVALID_VALUE; full EXT report remains FAIL and selects 2D. Debug output is now a real bounded W4 semantic path: Mesa GLES3.2 core and ANGLE GLES3.1 KHR entrypoints independently execute callback registration, synchronous authored messages, ID/severity/group filtering, label retrieval/truncation, specified error controls and unregister-before-context-destruction. Explicitly disabled-debug fallback executes a real color readback with zero debug calls; this is not evidence of a physically extension-absent target. Only allowlisted application-authored messages and pointer-equality booleans are recorded; no driver/environment messages or addresses are published. Timer-query semantics now have actual EXT entrypoint/lifecycle/availability/result64/error controls on both software backends. Finite acceptance requires the tested 64-bit counter domain, available results, non-saturation and false disjoint observations around collection; legal narrower counters require additional overflow evidence. Explicit disabled fallback is rendered, while injected disjoint rejection is labeled policy simulation, not an observed GPU event. Raw timing values are not published, software timings are not device performance claims, and polling bounds do not bound arbitrary driver-call duration. Bounded EGLImage integration now creates a preserved RGBA8 texture image, imports it into an OES external ESSL3 sampler, compares exact authored pixels and verifies existing sibling sampling after destruction of the image handle. Both software backends pass; disabled routes actually draw the sampler2D fallback. External parameter errors account for the advertised wrap-modes extension. This is a same-context finite image path, not AHardwareBuffer/native ownership, YUV conversion, protected images, source mutation, cross-context synchronization or physical device validation. A separate finite producer/consumer integration now renders two distinct fresh RGBA8 images in a producer context and consumes them through external textures in a shared context. Exact KHR fence/flush/server-wait and bounded client-wait alternatives produce exact CPU-oracle pixels on both software backends, without glFinish. This single-thread sequential context-switch flow does not force concurrent GPU execution, prove unsignaled-wait blocking or validate reusable-buffer mutation/native-device performance. Missing or unsatisfied fences are refused by policy; no unsynchronized reads are used as negative tests."
+    },
+    "W5": {
+      "status": "HOST_BOUNDED",
+      "evidence": [
+        "examples/closure/gles-runtime/state_interactions.cpp",
+        "benchmarks/coverage/state-machine/evidence.json",
+        "references/coverage/format-capability-matrix.md"
+      ],
+      "remaining": "48 actual software legal/error interactions; existing hazards/lifecycle tests preserved, not target GPU performance."
+    },
+    "W6": {
+      "status": "HOST_KNOWLEDGE_BOUNDED",
+      "evidence": [
+        "references/coverage/vendor-coverage.json",
+        "references/coverage/vendor-coverage.md"
+      ],
+      "remaining": "Counters/tool names and device workarounds require exact targets, trace, range and expiry; physical evidence absent."
+    },
+    "W7": {
+      "status": "PARTIAL",
+      "evidence": [
+        "references/coverage/scenario-matrix.json",
+        "references/coverage/scenario-matrix.md",
+        "benchmarks/coverage/skinning/evidence/mesa.json",
+        "benchmarks/coverage/skinning/evidence/angle.json",
+        "benchmarks/coverage/distance-text/evidence/manifest.json",
+        "benchmarks/coverage/weighted-oit/mesa.json",
+        "benchmarks/coverage/weighted-oit/angle.json",
+        "benchmarks/coverage/distance-text/precision_probe.py",
+        "benchmarks/coverage/weighted-oit/exact_replay.py",
+        "benchmarks/coverage/depth-peeling/run.py",
+        "benchmarks/coverage/transparency-routing/run.py",
+        "benchmarks/coverage/video-fusion/run.py",
+        "benchmarks/coverage/video-fusion/mesa.json",
+        "benchmarks/coverage/video-fusion/angle.json"
+      ],
+      "remaining": "15 categories indexed with finite representatives or explicit device dependency. SDF/MSDF rectangle decoder and weighted OIT now actually run; Mesa SDF32 budget failure selects alpha fallback, both OIT scenes fail sorted-alpha quality budget and retain sorted baseline. These do not establish general glyphs/full OIT quality, normals/DQ/rigs, physical devices or performance. Bounded follow-up: explicit highp four-tap SDF sampling meets the unchanged 3-byte gate on both software backends (all four size/kind outputs exact); highp hardware sampling alone does not fix Mesa SDF32. This is a costed alternative, not a waived original failure or a driver-conformance diagnosis. Sorted transparency is now gated by a finite per-sample strict-order proof; crossing/tied layers are rejected, not silently called exact OIT. General geometry/contours and physical performance remain unverified. Finite crossing-transparency follow-up: real GLES3 depth-texture ping-pong peeling, front-to-back premultiplied composition and K+1 occlusion-query overflow rejection are provided for two/three authored layers. Independent per-pixel OVER error is at most 1 byte within the unchanged 2-byte budget, with six input permutations. This closes the specified finite crossing sample, not arbitrary geometry, near-coincident depth, unbounded layers, refraction or device performance; original weighted-OIT failures remain unchanged. Integrated finite transparency routing now executes the existing collectors and verifies frozen source/dependency hashes, registered geometry, actual capture, layer budget and independent pixel oracle before choosing sorted alpha or bounded depth peeling. Four positive routes and four refusal controls pass on both software backends. This is a closed diagnostic adapter, not a general renderer, cryptographic execution attestation or completion of broad semantic coverage; approximation is never silently substituted for exact requests. A bounded host video-fusion path now uploads authored NV12 planes with explicit layout and BT.709 limited-range metadata, converts and composites an encoded-domain UI layer, and executes a CPU-converted RGBA fallback. Both software backends meet the unchanged two-byte oracle budget, while actual wrong-range and swapped-UV draws are rejected. Nearest-block chroma reconstruction is not general chroma resampling; encoded-domain OVER is not linear-light blending. No decoder, native media/AHardwareBuffer, HDR or physical video device capability is established."
+    },
+    "W8": {
+      "status": "HOST_INDEX_AND_LINK_CONTRACT",
+      "evidence": [
+        "tools/coverage/check_coverage.py",
+        "tools/coverage/verify_sources.py",
+        "docs/v1.1.0/source-offline.json",
+        "docs/v1.1.0/source-online.json",
+        "tools/coverage/runtime_links.py",
+        "references/coverage/runtime-links.json",
+        "docs/v1.1.0/coverage-report.json"
+      ],
+      "remaining": "Offline reconstruction, pinned online source verification and explicit positive/negative linkage; no assertion of universal semantic acceptance. Clean offline checkout is INCOMPLETE because public gl.xml is an explicit non-vendored dependency; CI fetches its pinned hash. Four finite Python probe families now have eight typed archived runtime receipts for six distinct API names, with strict Registry routes, source/report integrity and actual error-case assertions. These are not fresh execution authentication, all-API acceptance, independent human review or completion of the missing offline source dependency."
+    },
+    "W9": {
+      "status": "PARTIAL_HOST_CTS_TARGET_BLOCKED",
+      "evidence": [
+        "docs/v1.1.0/platform-preflight.json",
+        "docs/v1.1.0/platform-matrix.md",
+        "tools/coverage/cts_results.py",
+        "benchmarks/coverage/platforms/cts-config.json",
+        "benchmarks/coverage/cts-real/build-receipt.json",
+        "benchmarks/coverage/cts-real/evidence/mesa/report.json",
+        "benchmarks/coverage/cts-real/evidence/angle/blocked.json",
+        "benchmarks/coverage/android-build/evidence/report.json"
+      ],
+      "remaining": "Official pinned software Mesa CTS FBO completeness subset: 578/578 Pass, not certification/full CTS/device coverage. ANGLE CTS initialization blocked before enumeration (0 cases). No Android APK/install; Gradle8.9 verified, SDK35/NDK27/CMake/build-tools and SDK agreement acceptance remain absent. Windows native and mobile target runs not performed."
+    },
+    "W10": {
+      "status": "BLOCKED_BY_PROVIDER",
+      "evidence": [
+        "benchmarks/agent/final-eval/cases.json",
+        "benchmarks/agent/final-eval/freeze.json",
+        "benchmarks/agent/final-eval/evaluate.py",
+        "benchmarks/agent/final-eval/evidence/summary.json"
+      ],
+      "remaining": "100 authored frozen tasks, evaluator integrity and null-score no-provider execution delivered. Semantic deduplication, independent blind review and real paired model outputs unavailable."
+    },
+    "W11": {
+      "status": "PARTIAL",
+      "evidence": [
+        "tools/coverage/lifecycle.py",
+        "docs/v1.1.0/source-ledger.json",
+        "docs/v1.1.0/change-impact.json",
+        "docs/v1.1.0/knowledge-migration.md",
+        "tools/coverage/change_impact.py",
+        "references/coverage/impact-index.json",
+        "docs/v1.1.0/impact-analysis.json"
+      ],
+      "remaining": "Review-only governance, no scheduling activation; original plan-window full review and independent acceptance remain incomplete. The W8/W11 change-impact path now compares a pinned reviewed dependency baseline for four source candidates and eight finite runtime receipts. It detects catalog/source/evidence/collector/report drift, propagates affected targets and proposes closed regression test IDs without executing input commands. Independent review found catalog omission and automatic rebaseline bypass; both are now rejected by dependency coverage and a pinned canonical baseline digest. Four absent rule links remain UNLINKED and candidate adoption stays false. SNAPSHOT_UNCHANGED means only these tracked bytes match, not that no upstream substantive change exists or that human review is complete."
+    },
+    "W12": {
+      "status": "ACCEPTANCE_BLOCKED",
+      "evidence": [
+        "docs/v1.1.0/acceptance-report.md",
+        "docs/v1.1.0/coverage-final.md"
+      ],
+      "remaining": "Original plan requires hardware/provider and inherited closure; no automatic release, version bump, tag or merge."
+    }
+  }
+}
