@@ -108,9 +108,17 @@ prove only their asserted correctness properties, not real mobile GPU performanc
 | Unsupported internalformat/format/type combinations | `GL_RGBA8` / `GL_RGBA` / `GL_UNSIGNED_BYTE` is legal with GLES 3.0 `glTexImage2D`; consult format tables |
 | `glTexImage2D` with mismatched format/type | GLES requires strict format-type pairing |
 
+### Verified cross-entry rule priorities
+- P112-ATTACHMENT: MUST preserve attachment contents if a later read, load, resolve, sample or readback needs them, or liveness is unknown. Invalidate only proven-dead contents; measure performance separately.
+- P112-DELETE: Delete only with a live compatible current context for that object and generation; queue cleanup if temporarily unavailable, and drop stale names after context loss. Do not assume context-local objects are shareable.
+- P112-PRECISION: Fragment floating-point declarations MUST have valid default or explicit precision. Select mediump or highp from required range, error bounds and target support; no universal mediump default.
+- P112-VIDEO: Do not upload pixels into GL_TEXTURE_EXTERNAL_OES with glTexImage2D. If CPU access to the source is permitted, copying into a normal GL_TEXTURE_2D with valid format/stride is a separate legal fallback.
+- P112-MSAA: Use a format-, sample- and region-valid core blit resolve as the baseline when available. Compare on-target extension alternatives only when the exact extension, entry point and configuration are supported.
+- P112-DEPTH: Depth pre-pass is a measured experiment, not a vendor mandate or ban. Keep single-pass when benefit or correctness is unproven; test depth equality, ordering, overdraw and geometry cost on the target.
+
 ### C++17 RAII Resource Management
 - **Always** manage GLES resource handles (Textures, Buffers, Framebuffers, Shaders, Programs, Samplers, Sync objects) using RAII wrappers.
-- Every owned GL object needs context-aware cleanup: destruct on its live owning/share-group context or enqueue deletion; discard stale names after context loss, never delete them in a replacement context.
+- Apply P112-DELETE to all cleanup paths.
 - Implement move semantics (`std::move`); delete copy constructors for GPU resource classes.
 - Use `std::unique_ptr` or custom RAII classes — never raw `GLuint` handles floating in application code.
 
@@ -129,9 +137,7 @@ prove only their asserted correctness properties, not real mobile GPU performanc
   - GLES 3.1 → `#version 310 es`
   - GLES 3.2 → `#version 320 es`
 - Fragment floating-point declarations **MUST** have precision, either explicitly per declaration or via a default such as `precision highp float;`. Choose precision from error bounds, not a universal mediump requirement.
-- Vertex shaders: position calculations **MUST** use `highp`.
-- Texture coordinates & colors: recommend `mediump` unless precision artifacts are observed.
-- Normal vectors: use `mediump` for mobile; upgrade to `highp` only if banding is visible.
+- Use high precision for position math when its range/error budget requires it; texture coordinates, colors and normals require their own error bounds (P112-PRECISION).
 
 ### Shader Best Practices
 - Use `layout(location = N)` qualifiers for all vertex attributes and fragment outputs.
@@ -150,7 +156,7 @@ Mobile GPUs (Mali, Adreno, PowerVR) use **Tile-Based Deferred Rendering**. Each 
 ### FBO Clear & Store Operations
 1. **RenderPass Start**: SHOULD call `glClear()` or `glClearBuffer*()` at the beginning of rendering to a framebuffer. This signals the driver that prior Tile content is invalid — avoiding an expensive DRAM → Tile Memory load. (Exception: full-screen post-process that overwrites every pixel, or passes that intentionally read prior contents.)
 2. **RenderPass End (Depth/Stencil)**: SHOULD call `glInvalidateFramebuffer()` for `GL_DEPTH_ATTACHMENT` and/or `GL_STENCIL_ATTACHMENT` when they are not needed by subsequent passes. This permits discarding contents; actual bandwidth savings depend on the implementation and must be measured.
-3. **Offscreen FBOs**: If only the color result is consumed later, invalidate depth/stencil immediately after the offscreen pass completes.
+3. **Offscreen FBOs**: Invalidate depth/stencil after the last consumer only when their contents are known to be dead (P112-ATTACHMENT).
 
 ### Bandwidth Control
 - **SHOULD** avoid synchronous `glReadPixels()` in latency-sensitive rendering; it is legal for correctness tests or intentional synchronous capture. If pixel readback is required, use **PBO (Pixel Buffer Object)** double-buffered transfer with fence synchronization (note: `glReadPixels` into a PBO is asynchronous with respect to the CPU *only if* you do not map the PBO until the GPU has finished writing — check a fence; merely waiting one frame is not proof of completion):
@@ -180,8 +186,8 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 | Vendor | Key invariants | Deep-dive |
 |:---|:---|:---|
 | **ARM Mali** (incl. Immortalis-G720/G925) | PLS for on-chip G-Buffer (~128-bit budget, packed formats; fallback: framebuffer fetch → MRT+invalidate); `GL_OVR_multiview2` stereo; compute: `memoryBarrierShared()` before `barrier()`; ASTC over ETC2; 4x MSAA on-tile is cheap (cost varies by gen) | `references/rules/mali-arm-best-practices.md` |
-| **Qualcomm Adreno** (incl. 8xx) | Eliminate GMEM loads/stores (clear at start, invalidate transient at end; exceptions for retained content); `EXT_multisampled_render_to_texture`, never blit resolve; `QCOM_shading_rate` VRS; never break LRZ (front-to-back, no `discard`/`gl_FragDepth`) | `references/rules/adreno/` |
-| **Imagination PowerVR** (incl. Series 12XE) | HSR removes hidden opaque fragments — **no depth pre-pass ever**; avoid `discard`/alpha test (defeats HSR); HSR+PLS deferred; `IMG_framebuffer_downsample`; bound geometry to avoid SPM partial renders | `references/rules/powervr/` |
+| **Qualcomm Adreno** (incl. 8xx) | Eliminate GMEM loads/stores (clear at start, invalidate transient at end; exceptions for retained content); compare supported `EXT_multisampled_render_to_texture` with legal core blit resolve; `QCOM_shading_rate` VRS; never break LRZ (front-to-back, no `discard`/`gl_FragDepth`) | `references/rules/adreno/` |
+| **Imagination PowerVR** (incl. Series 12XE) | HSR can remove hidden opaque fragments; start with single-pass and measure alternatives when justified; avoid `discard`/alpha test (defeats HSR); HSR+PLS deferred; `IMG_framebuffer_downsample`; bound geometry to avoid SPM partial renders | `references/rules/powervr/` |
 
 ## EGL & Platform Context Management
 

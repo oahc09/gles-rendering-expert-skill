@@ -135,11 +135,26 @@ def decide(value, strategies=None, cases=None):
     # The existing Khronos index is larger than the request cap and is trusted,
     # immutable package input. Callers cannot supply a catalog path.
     commands = {r["name"]: r["core_versions"] for r in json.loads(gzip.decompress(CAPS.read_bytes()))["commands"]}
+    # Positive-weight schema goals are accepted even if this catalog does not
+    # implement them. Catalog support and relevance to this workload differ.
+    active_goals = sorted(k for k in weights if weights[k] > 0)
+    supported_goals = sorted(k for k in active_goals if any(
+        strat["relevance"].get(k, 0) > 0 for strat in strategies))
+    unsupported_goals = sorted(set(active_goals) - set(supported_goals))
+    total_weight = math.fsum(weights[k] for k in active_goals)
     result = []
     for strat in strategies:
         hits = sorted(labels.intersection(strat["labels"]))
         if not hits:
             continue
+        relevance = strat["relevance"]
+        relevant_goals = [k for k in supported_goals if relevance.get(k, 0) > 0]
+        if not relevant_goals:
+            continue
+        # Keep a tiny positive policy score positive; rounding is not an
+        # eligibility test. This is not a speed estimate or a measured result.
+        raw_score = math.fsum((weights[k] / total_weight) * relevance[k] for k in relevant_goals)
+        score = round(raw_score, 6) or raw_score or math.nextafter(0., 1.)
         reasons = []
         for name in strat["core_entrypoints"]:
             if target["gles"] not in commands.get(name, []):
@@ -166,8 +181,6 @@ def decide(value, strategies=None, cases=None):
             status = "ANALYZE_ONLY"
         else:
             status = "EXPERIMENT_REQUIRED"
-        score = round(sum(weights[k] * strat["relevance"].get(k, 0) for k in sorted(weights))
-                      / sum(weights[k] for k in sorted(weights)), 6)
         result.append({"strategy":strat["id"],"status":status,"blocked_reasons":reasons,
                        "hypothesis_labels":hits,"expected_mechanism":strat["mechanism"],
                        "preconditions":{"core_entrypoints":strat["core_entrypoints"],
@@ -179,12 +192,21 @@ def decide(value, strategies=None, cases=None):
                        "policy_relevance":None if reasons else score,"experience":experience})
     order = {"EXPERIMENT_REQUIRED":0,"ANALYZE_ONLY":1,"PROBE_REQUIRED":2,"BLOCKED":3}
     result.sort(key=lambda row: (order[row["status"]], -(row["policy_relevance"] or 0), row["strategy"]))
-    evidence = hashlib.sha256(json.dumps([value, strategies, cases, sorted(commands.items())],
+    recommend = any(r["status"] == "EXPERIMENT_REQUIRED" for r in result)
+    evidence = hashlib.sha256(json.dumps(["objective-relevance-v1", value, strategies, cases, sorted(commands.items())],
                                         sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     return {"schema_version":1,"decision_id":evidence,
-            "status": "EXPERIMENT_REQUIRED" if any(r["status"] == "EXPERIMENT_REQUIRED" for r in result)
+            "status": "EXPERIMENT_REQUIRED" if recommend
             else "NO_EXPERIMENT_RECOMMENDED",
-            "candidates":result,"automatic_renderer_mutation":False,"performance_claim":False}
+            "candidates":result,"automatic_renderer_mutation":False,"performance_claim":False,
+            "objective_evaluation":{
+                "supported_goals":supported_goals,"unsupported_goals":unsupported_goals,
+                "status":("UNSUPPORTED_GOALS" if not supported_goals else
+                          "NO_RELEVANT_CANDIDATES" if not result else
+                          "CORRECTNESS_PROBE_REQUIRED" if not recommend and any(
+                              r["status"] == "PROBE_REQUIRED" for r in result) else
+                          "RELEVANT_CANDIDATES")
+            }}
 
 
 def main():

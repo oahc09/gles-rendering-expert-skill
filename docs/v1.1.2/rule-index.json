@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "entries": [
+    "SKILL.md",
+    ".cursorrules",
+    "agents/openai.yaml",
+    "agents/claude-code.yaml"
+  ],
+  "rules": [
+    {
+      "id": "P112-ATTACHMENT",
+      "instruction": "MUST preserve attachment contents if a later read, load, resolve, sample or readback needs them, or liveness is unknown. Invalidate only proven-dead contents; measure performance separately.",
+      "requirement": "PRESERVE_CORRECTNESS",
+      "scope": "GLES 3.x unless named extension or EGL applies",
+      "primary_sources": [
+        {
+          "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+          "clause": "Framebuffer invalidation: invalidated contents become undefined."
+        }
+      ],
+      "related_base_rule_ids": [
+        "R016",
+        "R017",
+        "R018",
+        "R027"
+      ]
+    },
+    {
+      "id": "P112-DELETE",
+      "instruction": "Delete only with a live compatible current context for that object and generation; queue cleanup if temporarily unavailable, and drop stale names after context loss. Do not assume context-local objects are shareable.",
+      "requirement": "PRESERVE_CORRECTNESS",
+      "scope": "GLES 3.x unless named extension or EGL applies",
+      "primary_sources": [
+        {
+          "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+          "clause": "Shared objects and multiple contexts."
+        },
+        {
+          "url": "https://registry.khronos.org/EGL/specs/eglspec.1.5.pdf",
+          "clause": "Current contexts, object sharing and context loss."
+        }
+      ],
+      "related_base_rule_ids": [
+        "R022"
+      ]
+    },
+    {
+      "id": "P112-PRECISION",
+      "instruction": "Fragment floating-point declarations MUST have valid default or explicit precision. Select mediump or highp from required range, error bounds and target support; no universal mediump default.",
+      "requirement": "PRESERVE_CORRECTNESS",
+      "scope": "GLES 3.x unless named extension or EGL applies",
+      "primary_sources": [
+        {
+          "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.pdf",
+          "clause": "Precision qualifiers and default precision in fragment shaders."
+        }
+      ],
+      "related_base_rule_ids": [
+        "R029"
+      ]
+    },
+    {
+      "id": "P112-VIDEO",
+      "instruction": "Do not upload pixels into GL_TEXTURE_EXTERNAL_OES with glTexImage2D. If CPU access to the source is permitted, copying into a normal GL_TEXTURE_2D with valid format/stride is a separate legal fallback.",
+      "requirement": "PRESERVE_CORRECTNESS",
+      "scope": "GLES 3.x unless named extension or EGL applies",
+      "primary_sources": [
+        {
+          "url": "https://registry.khronos.org/OpenGL/extensions/OES/OES_EGL_image_external.txt",
+          "clause": "External target command restrictions."
+        },
+        {
+          "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+          "clause": "Texture image specification and pixel storage."
+        }
+      ],
+      "related_base_rule_ids": [
+        "R014",
+        "R028"
+      ]
+    },
+    {
+      "id": "P112-MSAA",
+      "instruction": "Use a format-, sample- and region-valid core blit resolve as the baseline when available. Compare on-target extension alternatives only when the exact extension, entry point and configuration are supported.",
+      "requirement": "CONDITIONAL_OPTIMIZATION",
+      "scope": "GLES 3.x unless named extension or EGL applies",
+      "primary_sources": [
+        {
+          "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+          "clause": "Blitting and multisample framebuffer constraints."
+        },
+        {
+          "url": "https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multisampled_render_to_texture.txt",
+          "clause": "Extension-specific entry points and resolve semantics."
+        }
+      ],
+      "related_base_rule_ids": [
+        "R019",
+        "R020",
+        "R021"
+      ]
+    },
+    {
+      "id": "P112-DEPTH",
+      "instruction": "Depth pre-pass is a measured experiment, not a vendor mandate or ban. Keep single-pass when benefit or correctness is unproven; test depth equality, ordering, overdraw and geometry cost on the target.",
+      "requirement": "CONDITIONAL_OPTIMIZATION",
+      "scope": "GLES 3.x unless named extension or EGL applies",
+      "primary_sources": [
+        {
+          "url": "https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf",
+          "clause": "Depth test and per-fragment operations; performance advice is policy, not a specification requirement."
+        }
+      ],
+      "related_base_rule_ids": [
+        "R027"
+      ]
+    }
+  ]
+}

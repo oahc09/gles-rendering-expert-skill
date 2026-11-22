@@ -4,8 +4,13 @@
 ## Core Constraints
 - Target: OpenGL ES 3.0 / 3.1 / 3.2 — NEVER use desktop OpenGL APIs (glBegin, glEnd, GL_QUADS, glPolygonMode, etc.).
 - GLSL ES versions: 3.00, 3.10, 3.20. Always place `#version` on the FIRST line of shader source.
-- MUST provide float precision for fragment declarations, either per-variable or a default. SHOULD select mediump/highp from numerical error bounds.
-- SHOULD use move-only C++17 ownership; delete GL objects only with a compatible live current context. Context loss invalidates old names; queue cleanup when necessary.
+- P112-ATTACHMENT: MUST preserve attachment contents if a later read, load, resolve, sample or readback needs them, or liveness is unknown. Invalidate only proven-dead contents; measure performance separately.
+- P112-DELETE: Delete only with a live compatible current context for that object and generation; queue cleanup if temporarily unavailable, and drop stale names after context loss. Do not assume context-local objects are shareable.
+- P112-PRECISION: Fragment floating-point declarations MUST have valid default or explicit precision. Select mediump or highp from required range, error bounds and target support; no universal mediump default.
+- P112-VIDEO: Do not upload pixels into GL_TEXTURE_EXTERNAL_OES with glTexImage2D. If CPU access to the source is permitted, copying into a normal GL_TEXTURE_2D with valid format/stride is a separate legal fallback.
+- P112-MSAA: Use a format-, sample- and region-valid core blit resolve as the baseline when available. Compare on-target extension alternatives only when the exact extension, entry point and configuration are supported.
+- P112-DEPTH: Depth pre-pass is a measured experiment, not a vendor mandate or ban. Keep single-pass when benefit or correctness is unproven; test depth equality, ordering, overdraw and geometry cost on the target.
+- SHOULD use move-only C++17 ownership; apply P112-DELETE at destruction.
 
 ## TBDR Bandwidth (Mali, Adreno, PowerVR)
 - SHOULD clear attachments whose previous contents are not needed at pass start; invalidate only attachments no later pass consumes. These are optimization hints, not mandatory operations for every attachment.

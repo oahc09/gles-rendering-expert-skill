@@ -115,8 +115,7 @@ identically to the Adreno pattern:
 - Attach a single-sample texture to the FBO via
   `glFramebufferTexture2DMultisampleIMG(...)`.
 - MSAA samples live in tile memory and resolve on-chip when the tile is stored.
-- **Never use `glBlitFramebuffer` for MSAA resolve on PowerVR** — it forces a
-  full store + load cycle through DRAM.
+- Retain a legal core `glBlitFramebuffer` resolve when the extension path is unavailable; compare measured traffic on target (P112-MSAA).
 
 ---
 

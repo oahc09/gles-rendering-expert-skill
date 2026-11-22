@@ -102,18 +102,16 @@ system_prompt_addendum: |
 
   1. NEVER use desktop OpenGL APIs (glBegin, glEnd, GL_QUADS, glPolygonMode, etc.).
   2. ALWAYS place #version directive on the first line of GLSL ES shaders.
-  3. ALWAYS use RAII C++17 patterns for GPU resources (move-only, destructor calls glDelete*).
-  4. On TBDR GPUs (Mali, Adreno, PowerVR): clear or invalidate all FBO attachments
-     at render-pass boundaries to avoid unnecessary DRAM bandwidth.
+  3. Use move-only RAII C++17; follow P112-DELETE for cleanup.
+  4. Follow P112-ATTACHMENT at pass boundaries.
   5. Check extension availability at runtime before calling vendor-specific APIs.
   6. Use EGL_CONTEXT_CLIENT_VERSION (EGL 1.4) not EGL_CONTEXT_MAJOR_VERSION (EGL 1.5).
-  7. Fragment shaders MUST declare float precision. Default to mediump.
+  7. Follow P112-PRECISION for fragment floating-point declarations.
   8. Never call glReadPixels synchronously in the render loop; use PBO async readback.
   9. Compute shader barriers: use memoryBarrierBuffer()/memoryBarrierImage() after
      writes; host barriers (glMemoryBarrier) before dependent dispatches/draws.
-  10. Prefer EXT_multisampled_render_to_texture for MSAA on mobile (on-tile resolve).
-  11. Android video/camera frames only via GL_TEXTURE_EXTERNAL_OES + EGLImage; never
-      glTexImage2D; on API 26+ prefer AHardwareBuffer with native fence sync.
+  10. Follow P112-MSAA for core and extension resolves.
+  11. Follow P112-VIDEO; for supported zero-copy Android paths, prefer AHardwareBuffer and native fence sync when suitable.
   12. OpenGL ES has no ray tracing / mesh shaders / bindless textures - redirect to
       Vulkan or propose the GLES-legal alternative.
   13. Performance advice must cite profiler counters (Streamline/Snapdragon Profiler/
@@ -126,3 +124,10 @@ system_prompt_addendum: |
       prefer compute shaders on GLES 3.1+.
   16. Geometry shaders require GLES 3.2 (GLSL ES 3.20); gate behind a version
       check, keep max_vertices tight, and prefer instancing for repeated geometry.
+
+  - P112-ATTACHMENT: MUST preserve attachment contents if a later read, load, resolve, sample or readback needs them, or liveness is unknown. Invalidate only proven-dead contents; measure performance separately.
+  - P112-DELETE: Delete only with a live compatible current context for that object and generation; queue cleanup if temporarily unavailable, and drop stale names after context loss. Do not assume context-local objects are shareable.
+  - P112-PRECISION: Fragment floating-point declarations MUST have valid default or explicit precision. Select mediump or highp from required range, error bounds and target support; no universal mediump default.
+  - P112-VIDEO: Do not upload pixels into GL_TEXTURE_EXTERNAL_OES with glTexImage2D. If CPU access to the source is permitted, copying into a normal GL_TEXTURE_2D with valid format/stride is a separate legal fallback.
+  - P112-MSAA: Use a format-, sample- and region-valid core blit resolve as the baseline when available. Compare on-target extension alternatives only when the exact extension, entry point and configuration are supported.
+  - P112-DEPTH: Depth pre-pass is a measured experiment, not a vendor mandate or ban. Keep single-pass when benefit or correctness is unproven; test depth equality, ordering, overdraw and geometry cost on the target.

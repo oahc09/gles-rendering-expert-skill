@@ -71,12 +71,16 @@ def run():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('--v112', action='store_true', help='Also check the v1.1.2 entry contracts')
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     result = run()
+    if args.v112:
+        from rule_consistency_v112 import run as run_v112
+        result['v112'] = run_v112()
     text = json.dumps(result, indent=2)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(text+'\n')
     print(text)
-    raise SystemExit(bool(result['failed']))
+    raise SystemExit(bool(result['failed'] or result.get('v112', {}).get('failed')))

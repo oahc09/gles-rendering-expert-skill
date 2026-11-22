@@ -117,15 +117,21 @@ context_files:
 instructions:
   - Always enforce OpenGL ES API boundaries (never use desktop GL APIs).
   - Always place #version directive on the first line of GLSL ES shaders.
-  - Use RAII C++17 for all GPU resource management (move-only, no raw new/delete).
-  - On TBDR GPUs, always clear or invalidate FBO attachments at pass boundaries.
+  - Use move-only C++17 RAII; follow P112-DELETE for cleanup.
+  - Follow P112-ATTACHMENT at pass boundaries.
   - Check extension availability at runtime before using vendor extensions.
   - Use EGL_CONTEXT_CLIENT_VERSION (not EGL_CONTEXT_MAJOR_VERSION) for EGL 1.4 compatibility.
-  - Fragment shaders MUST declare precision. Use mediump by default, highp only where needed.
+  - Follow P112-PRECISION for fragment precision.
   - Never use glReadPixels synchronously in the render loop; prefer PBO async readback.
-  - Android video/camera frames only via GL_TEXTURE_EXTERNAL_OES + EGLImage; never glTexImage2D.
+  - Follow P112-VIDEO for external textures and legal fallbacks.
   - OpenGL ES has no ray tracing or mesh shaders; redirect such requests to Vulkan or GLES-legal alternatives.
   - Ground performance advice in profiler counters (Streamline / Snapdragon Profiler / AGI), never emulator numbers.
   - VRS: set combiners explicitly (KEEP for unused rate sources) and query supported rates per MSAA sample count.
   - Transform feedback: declare varyings before glLinkProgram; size feedback buffers for worst case; prefer compute on 3.1+.
   - Geometry shaders are GLES 3.2 only; gate behind a version check and prefer instancing for repeated geometry.
+  - 'P112-ATTACHMENT: MUST preserve attachment contents if a later read, load, resolve, sample or readback needs them, or liveness is unknown. Invalidate only proven-dead contents; measure performance separately.'
+  - 'P112-DELETE: Delete only with a live compatible current context for that object and generation; queue cleanup if temporarily unavailable, and drop stale names after context loss. Do not assume context-local objects are shareable.'
+  - 'P112-PRECISION: Fragment floating-point declarations MUST have valid default or explicit precision. Select mediump or highp from required range, error bounds and target support; no universal mediump default.'
+  - 'P112-VIDEO: Do not upload pixels into GL_TEXTURE_EXTERNAL_OES with glTexImage2D. If CPU access to the source is permitted, copying into a normal GL_TEXTURE_2D with valid format/stride is a separate legal fallback.'
+  - 'P112-MSAA: Use a format-, sample- and region-valid core blit resolve as the baseline when available. Compare on-target extension alternatives only when the exact extension, entry point and configuration are supported.'
+  - 'P112-DEPTH: Depth pre-pass is a measured experiment, not a vendor mandate or ban. Keep single-pass when benefit or correctness is unproven; test depth equality, ordering, overdraw and geometry cost on the target.'
