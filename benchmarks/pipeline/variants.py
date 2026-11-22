@@ -27,10 +27,12 @@ def validate(variant):
         elif version < FEATURES[feature]: errors.append('GLES_VERSION:' + feature + ':requires ' + FEATURES[feature])
     if {'pbr', 'unlit'} <= set(features): errors.append('MUTUALLY_EXCLUSIVE:pbr,unlit')
     if variant.get('quality') not in ('low', 'medium', 'high'): errors.append('QUALITY_TIER')
-    for extension in required:
+    if 'external_texture' in features:
+        # The ESSL3 extension is not a standalone import path.
+        # https://registry.khronos.org/OpenGL/extensions/OES/OES_EGL_image_external_essl3.txt
+        required = [*required, 'GL_OES_EGL_image_external', 'GL_OES_EGL_image_external_essl3']
+    for extension in dict.fromkeys(required):
         if extension not in extensions: errors.append('MISSING_EXTENSION:' + extension)
-    if 'external_texture' in features and 'GL_OES_EGL_image_external_essl3' not in extensions:
-        errors.append('MISSING_EXTENSION:GL_OES_EGL_image_external_essl3')
     macros = variant.get('macros', {})
     if not isinstance(macros, dict) or any(not isinstance(k, str) or not k.isidentifier() or not isinstance(v, str) for k, v in macros.items()):
         raise ValueError('macros must map identifiers to strings')
