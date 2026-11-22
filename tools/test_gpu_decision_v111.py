@@ -15,6 +15,14 @@ def sample(label, gles="3.2", entries=(), extensions=(), probes=None, **kw):
             "objective":{"frame_time":1,"bandwidth":1}, "as_of":"2026-11-21", **kw}
 
 
+def discard_scope(*later, complete=True):
+    return {"attachment":"wallpaper-depth","end_event":1,"complete":complete,
+            "attachments":[{"id":"wallpaper-depth","width":1080,"height":2400,
+                            "format":"DEPTH24_STENCIL8","samples":1}],
+            "lifecycle":[{"op":"begin","fbo":"wallpaper","loads":{"wallpaper-depth":"clear"}},
+                         {"op":"end","stores":{"wallpaper-depth":"store"}}, *later]}
+
+
 class DecisionTest(unittest.TestCase):
     def action(self, data, strategy, **kw):
         return next(a for a in gd.decide(data, **kw)["candidates"] if a["strategy"] == strategy)
@@ -39,9 +47,10 @@ class DecisionTest(unittest.TestCase):
             (comp, sample("compute","3.2",cc),"PROBE_REQUIRED",None),
             (comp, sample("compute","3.2",cc,probes={comp:False}),"BLOCKED","CORRECTNESS_PROBE_FAILED"),
             (disc, sample("attachment-store","2.0",dc,probes={disc:True}),"BLOCKED","NOT_CORE:glInvalidateFramebuffer"),
-            (disc, sample("attachment-store","3.0",dc,probes={disc:True}),"EXPERIMENT_REQUIRED",None),
+            (disc, sample("attachment-store","3.0",dc,probes={disc:True}),"PROBE_REQUIRED",None),
             (disc, sample("attachment-store","3.2",dc,probes={disc:True},blocked_strategies=[disc]),"BLOCKED","BLOCKED_BY_CALLER"),
-            (disc, sample("attachment-store","3.2",dc,probes={disc:True},allowed_actions=["analyze"]),"ANALYZE_ONLY",None),
+            (disc, sample("attachment-store","3.2",dc,probes={disc:True},allowed_actions=["analyze"],
+                          workload={"labels":["attachment-store"],"discard_scope":discard_scope()}),"ANALYZE_ONLY",None),
             (disc, sample("attachment-store","3.2",(),probes={disc:True}),"BLOCKED","MISSING_ENTRYPOINT:glInvalidateFramebuffer"),
             (fetch, sample("framebuffer-fetch",probes={fetch:True}),"BLOCKED","MISSING_EXTENSION:"+fc[0]),
             (fetch, sample("framebuffer-fetch",extensions=fc),"PROBE_REQUIRED",None),
@@ -68,6 +77,7 @@ class DecisionTest(unittest.TestCase):
         data = sample("bandwidth", entries=["glInvalidateFramebuffer","glTexParameteri"],
                       probes={"discard-dead-attachment":True,"texture-mip-selection":True})
         data["objective"] = {"bandwidth": 1}
+        data["workload"]["discard_scope"] = discard_scope()
         output = gd.decide(data)
         self.assertEqual(output,gd.decide(copy.deepcopy(data)))
         self.assertEqual(output["candidates"][0]["strategy"],"discard-dead-attachment")
@@ -152,6 +162,33 @@ class DecisionTest(unittest.TestCase):
         self.assertGreater(out["candidates"][0]["policy_relevance"], 0)
         data["target"]["probes"]["fence-ring-reuse"] = False
         self.assertEqual(gd.decide(data)["candidates"][0]["status"], "BLOCKED")
+
+    def test_wallpaper_depth_scope_controls_real_consumers_before_ranking(self):
+        disc = "discard-dead-attachment"
+        data = sample("attachment-store", entries=["glInvalidateFramebuffer"], probes={disc:True})
+        read = {"op":"consume","attachment":"wallpaper-depth"}
+        load = {"op":"begin","fbo":"subsequent-pass","loads":{"wallpaper-depth":"load"}}
+        clear = {"op":"begin","fbo":"subsequent-pass","loads":{"wallpaper-depth":"clear"}}
+        store = {"op":"end","stores":{"wallpaper-depth":"store"}}
+        for scope, status, liveness in [
+            (None, "PROBE_REQUIRED", "MISSING_SCOPE"),
+            (discard_scope(complete=False), "PROBE_REQUIRED", "INCOMPLETE_SCOPE"),
+            (discard_scope(read), "BLOCKED", "LATER_CONSUMER"),
+            (discard_scope(load,store), "BLOCKED", "LATER_CONSUMER"),
+            (discard_scope(clear,store,read), "EXPERIMENT_REQUIRED", "MODEL_NO_CONSUMER"),
+        ]:
+            with self.subTest(liveness=liveness):
+                data["workload"] = {"labels":["attachment-store"]}
+                if scope is not None:
+                    data["workload"]["discard_scope"] = scope
+                row = self.action(data, disc)
+                self.assertEqual(row["status"],status)
+                self.assertEqual(row["preconditions"]["attachment_liveness"],liveness)
+                if liveness == "LATER_CONSUMER":
+                    self.assertIn("ATTACHMENT_HAS_LATER_CONSUMER",row["blocked_reasons"])
+        data["workload"]["discard_scope"]["end_event"] = 0
+        with self.assertRaises(ValueError):
+            gd.decide(data)
 
     def test_invalid_request_and_cli_bounds(self):
         for raw in (b'{"target":1,"target":2}', b'{"x":NaN}', b' '*(gd.LIMIT+1)):

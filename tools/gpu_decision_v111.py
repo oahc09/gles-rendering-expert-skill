@@ -2,6 +2,7 @@
 """Offline v1.1.1 candidate. Never executes recommendations or attests device evidence."""
 
 import argparse
+from copy import deepcopy
 import gzip
 import hashlib
 import json
@@ -10,6 +11,8 @@ import re
 import sys
 from datetime import date
 from pathlib import Path
+
+from attachment_lifecycle import lifecycle
 
 ROOT = Path(__file__).resolve().parents[1]
 LIMIT = 128 * 1024
@@ -76,8 +79,10 @@ def request(value):
     require(isinstance(d["probes"], dict) and len(d["probes"]) <= 128
             and all(token(k) and type(v) is bool for k, v in d["probes"].items()), "invalid probes")
     require("profile" not in d or token(d["profile"]), "invalid profile")
-    check_keys(value["workload"], ("labels",))
+    check_keys(value["workload"], ("labels",), ("discard_scope",))
     require(tokens(value["workload"]["labels"]), "invalid workload labels")
+    if "discard_scope" in value["workload"]:
+        validate_discard_scope(value["workload"]["discard_scope"])
     w = value["objective"]
     require(isinstance(w, dict) and 0 < len(w) <= len(GOALS) and set(w) <= GOALS
             and all(unit(x) for x in w.values()) and any(w.values()), "invalid objective weights")
@@ -89,6 +94,47 @@ def request(value):
     require(isinstance(as_of, str) and bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", as_of)), "invalid as_of")
     return date.fromisoformat(as_of)
 
+
+def validate_discard_scope(scope):
+    check_keys(scope, ("attachment", "end_event", "complete", "attachments", "lifecycle"))
+    require(token(scope["attachment"]) and type(scope["end_event"]) is int
+            and type(scope["complete"]) is bool
+            and type(scope["attachments"]) is list and 1 <= len(scope["attachments"]) <= 32
+            and type(scope["lifecycle"]) is list and 1 <= len(scope["lifecycle"]) <= 256
+            and 0 <= scope["end_event"] < len(scope["lifecycle"]), "invalid discard scope")
+    for spec in scope["attachments"]:
+        check_keys(spec, ("id", "width", "height", "format", "samples"), ("initially_defined",))
+        require(token(spec["id"]) and token(spec["format"]), "invalid attachment spec")
+    keys = {
+        "begin": ("op", "fbo", "loads"), "draw": ("op", "writes", "coverage"),
+        "switch": ("op", "fbo"), "resolve": ("op", "attachment"),
+        "end": ("op", "stores"), "consume": ("op", "attachment"),
+    }
+    for event in scope["lifecycle"]:
+        require(type(event) is dict and isinstance(event.get("op"), str)
+                and event["op"] in keys, "invalid attachment event")
+        check_keys(event, keys[event["op"]])
+    # It must describe a valid baseline, not an already-discarded or unrelated slot.
+    lifecycle(scope)
+    end = scope["lifecycle"][scope["end_event"]]
+    require(end["op"] == "end" and end["stores"].get(scope["attachment"]) == "store",
+            "discard must replace an existing store")
+
+
+def discard_assessment(scope):
+    if scope is None:
+        return "MISSING_SCOPE"
+    candidate = deepcopy(scope)
+    candidate["lifecycle"][scope["end_event"]]["stores"][scope["attachment"]] = "discard"
+    try:
+        lifecycle(candidate)
+    except ValueError:
+        # The baseline was validated; its only changed event is one store action.
+        return "LATER_CONSUMER"
+    if not scope["complete"]:
+        return "INCOMPLETE_SCOPE"
+    # Declared complete by the caller; this is not an authenticated GPU trace.
+    return "MODEL_NO_CONSUMER"
 
 def find_cases(cases, action, target, labels, as_of):
     matches = []
@@ -130,6 +176,7 @@ def decide(value, strategies=None, cases=None):
     as_of = request(value)
     target, weights = value["target"], value["objective"]
     labels = set(value["workload"]["labels"])
+    discard = discard_assessment(value["workload"].get("discard_scope"))
     strategies = read(ACTIONS) if strategies is None else strategies
     cases = read(CASES) if cases is None else cases
     # The existing Khronos index is larger than the request cap and is trusted,
@@ -165,6 +212,9 @@ def decide(value, strategies=None, cases=None):
         for name in sorted(set(strat.get("extensions", [])) - set(target["extensions"])):
             reasons.append("MISSING_EXTENSION:" + name)
         probe = target["probes"].get(strat["id"])
+        is_discard = strat["id"] == "discard-dead-attachment"
+        if is_discard and discard == "LATER_CONSUMER":
+            reasons.append("ATTACHMENT_HAS_LATER_CONSUMER")
         if probe is False:
             reasons.append("CORRECTNESS_PROBE_FAILED")
         if strat["id"] in value.get("blocked_strategies", []):
@@ -175,25 +225,26 @@ def decide(value, strategies=None, cases=None):
             reasons.append("SCOPED_COUNTEREXAMPLE_REVIEW_REQUIRED")
         if reasons:
             status = "BLOCKED"
-        elif probe is None:
+        elif probe is None or (is_discard and discard != "MODEL_NO_CONSUMER"):
             status = "PROBE_REQUIRED"
         elif "propose" not in value.get("allowed_actions", ["analyze", "propose"]):
             status = "ANALYZE_ONLY"
         else:
             status = "EXPERIMENT_REQUIRED"
+        liveness = {"attachment_liveness":discard} if is_discard else {}
         result.append({"strategy":strat["id"],"status":status,"blocked_reasons":reasons,
                        "hypothesis_labels":hits,"expected_mechanism":strat["mechanism"],
                        "preconditions":{"core_entrypoints":strat["core_entrypoints"],
                                         "extension_entrypoints":strat.get("extension_entrypoints", []),
                                         "extensions":strat.get("extensions", []),
-                                        "correctness_probe":probe},
+                                        "correctness_probe":probe,**liveness},
                        "risk":strat["risk"],"required_experiment":strat["experiment"],
                        "fallback":strat["fallback"],"uncertainty":"PERFORMANCE_NOT_MEASURED",
                        "policy_relevance":None if reasons else score,"experience":experience})
     order = {"EXPERIMENT_REQUIRED":0,"ANALYZE_ONLY":1,"PROBE_REQUIRED":2,"BLOCKED":3}
     result.sort(key=lambda row: (order[row["status"]], -(row["policy_relevance"] or 0), row["strategy"]))
     recommend = any(r["status"] == "EXPERIMENT_REQUIRED" for r in result)
-    evidence = hashlib.sha256(json.dumps(["objective-relevance-v1", value, strategies, cases, sorted(commands.items())],
+    evidence = hashlib.sha256(json.dumps(["objective-relevance-v1+discard-scope-v1", value, strategies, cases, sorted(commands.items())],
                                         sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     return {"schema_version":1,"decision_id":evidence,
             "status": "EXPERIMENT_REQUIRED" if recommend
