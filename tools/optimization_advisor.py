@@ -7,6 +7,7 @@ import statistics
 from pathlib import Path
 from workload_fingerprint import number, fingerprint
 from optimization_experiments import resolve
+from gpu_decision_v111 import decide as assess_decision
 
 
 def verify_artifacts(artifacts, root, measurement):
@@ -24,13 +25,36 @@ def verify_artifacts(artifacts, root, measurement):
     return bound
 
 
+def valid_fallback(value):
+    return isinstance(value, str) and bool(value.strip())
+
+
+def decision_alignment(candidate, decision, labels):
+    """Match only a known variant. Legacy profiles are not proof of device capability."""
+    compute = candidate.get('experiment') == 'shader-advanced-v1' and 'COMPUTE' in labels
+    if decision is None:
+        return ('DECISION_CONTEXT_REQUIRED', None) if compute else ('LEGACY_HYPOTHESIS_ONLY', None)
+    evaluation = decision['objective_evaluation']
+    if evaluation['status'] in ('UNSUPPORTED_GOALS', 'NO_RELEVANT_CANDIDATES'):
+        return evaluation['status'], None
+    strategy = 'compute-to-fragment' if compute else None
+    if strategy is None:
+        # A registered runnable file and a relevant Decision are not enough:
+        # no maintained strategy-to-experiment mapping exists for this candidate.
+        return 'EXPERIMENT_MAPPING_UNAVAILABLE', None
+    match = next((row for row in decision['candidates'] if row['strategy'] == strategy), None)
+    if match is None:
+        return 'STRATEGY_NOT_RELEVANT_TO_DECISION', None
+    return match['status'], match
+
+
 def decide(candidate, root):
     """Fail closed. VERIFIED is scoped to declared device and archived experiment."""
     reasons=[]; result={'id':candidate.get('id'),'experiment':candidate.get('experiment'),
         'status':'INSUFFICIENT_EVIDENCE','auto_accept':False,'gain_fraction':None,'reasons':reasons}
     if candidate.get('quality',{}).get('pass') is False:
         result['status']='REJECTED_BY_QUALITY'; reasons.append('quality failed');return result
-    if not candidate.get('experiment') or not candidate.get('fallback'):
+    if not candidate.get('experiment') or not valid_fallback(candidate.get('fallback')):
         reasons.append('experiment and fallback required');return result
     if candidate.get('capability_supported') is not True:
         reasons.append('capability not verified');return result
@@ -89,6 +113,7 @@ def decide(candidate, root):
 
 def advise(data, root=Path('.')):
     fp=fingerprint(data['workload'],root); reports=[]
+    decision=assess_decision(data['decision_request']) if 'decision_request' in data else None
     for candidate in data.get('candidates',[]):
         score=[]
         for k in ('estimated_gain','implementation_cost','regression_risk','confidence'):
@@ -111,16 +136,35 @@ def advise(data, root=Path('.')):
         if binding is None and report['status']!='REJECTED_BY_QUALITY':
             report['status']='INSUFFICIENT_EVIDENCE'
             report['reasons'].append('unknown/unavailable experiment; register a bounded runnable entry first')
-        relevant=bool(set(candidate.get('labels',[])) & set(fp['labels']) - {'UNKNOWN'})
+        labels=set(candidate.get('labels',[]))
+        relevant=bool(labels & (set(fp['labels']) - {'UNKNOWN'}))
+        alignment, matched=decision_alignment(candidate, decision, labels)
+        if alignment != 'LEGACY_HYPOTHESIS_ONLY':
+            report['decision_alignment']={'status':alignment, 'decision_id':decision['decision_id'] if decision else None,
+                'strategy':matched['strategy'] if matched else None,
+                'blocked_reasons':matched['blocked_reasons'] if matched else [],
+                'evidence':'DECLARED_INPUTS_ONLY', 'execution_authorized':False}
+        if alignment not in ('LEGACY_HYPOTHESIS_ONLY','EXPERIMENT_REQUIRED') and report['status']!='REJECTED_BY_QUALITY':
+            report['status']='INSUFFICIENT_EVIDENCE'
+            report['gain_fraction']=None
+            report.pop('scope',None)
+            report['reasons'].append('not eligible under Decision alignment: '+alignment)
+        # The bridge binds eligibility only, not native or independent measured evidence.
+        # A cross-entry request must not turn an existing measurement into a verified claim.
+        if matched and report['status'] in ('VERIFIED_IMPROVEMENT','REGRESSION','NO_GAIN'):
+            report['status']='INSUFFICIENT_EVIDENCE'
+            report['gain_fraction']=None
+            report.pop('scope',None)
+            report['reasons'].append('Decision inputs are not bound to the physical measurement')
         if report['status']=='RECOMMENDED_FOR_EXPERIMENT' and not relevant:
             report['status']='INSUFFICIENT_EVIDENCE';report['reasons'].append('no supporting workload hypothesis')
         # Structural completeness, not authenticity or a substitute for measurement gates.
         completeness_items={'runnable_experiment':binding is not None,
             'supported_workload':relevant,'capability':candidate.get('capability_supported') is True,
-            'fallback':isinstance(candidate.get('fallback'),str) and bool(candidate['fallback'].strip()),
+            'fallback':valid_fallback(candidate.get('fallback')),
             'quality_contract':bool(candidate.get('quality',{}).get('golden_id')) and bool(candidate.get('quality',{}).get('thresholds'))}
         completeness=sum(completeness_items.values())/len(completeness_items)
-        report['priority_score']=round(lower*score[3]*(1-score[2])*completeness/(1+score[1]),6) if binding else 0
+        report['priority_score']=round(lower*score[3]*(1-score[2])*completeness/(1+score[1]),6) if binding and alignment in ('LEGACY_HYPOTHESIS_ONLY','EXPERIMENT_REQUIRED') else 0
         report['ranking_basis']={'hypothesis_only':True,'estimated_gain_range':[lower,upper],
             'range_kind':'SUPPLIED_HYPOTHESIS' if gain_range is not None else 'LEGACY_POINT_NOT_INTERVAL',
             'confidence':score[3],'risk':score[2],'cost':score[1],
@@ -129,7 +173,10 @@ def advise(data, root=Path('.')):
             'acceptance_effect':'NONE'}
         reports.append(report)
     reports.sort(key=lambda x:(-x['priority_score'],str(x['id'])))
-    return {'schema_version':'1.0','workload':fp,'candidates':reports,'automatic_renderer_mutation':False}
+    result={'schema_version':'1.0','workload':fp,'candidates':reports,'automatic_renderer_mutation':False}
+    if decision is not None:
+        result['objective_evaluation']=decision['objective_evaluation']
+    return result
 
 
 def main():
