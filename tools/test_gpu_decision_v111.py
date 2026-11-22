@@ -2,6 +2,8 @@ import copy
 import json
 import subprocess
 import sys
+import tempfile
+from pathlib import Path
 import unittest
 
 import gpu_decision_v111 as gd
@@ -10,7 +12,7 @@ import gpu_decision_v111 as gd
 def sample(label, gles="3.2", entries=(), extensions=(), probes=None, **kw):
     return {"schema_version":1, "target":{"gles":gles,"extensions":list(extensions),
             "entrypoints":list(entries),"probes":probes or {}}, "workload":{"labels":[label]},
-            "objective":{"bandwidth":1}, "as_of":"2026-11-21", **kw}
+            "objective":{"frame_time":1,"bandwidth":1}, "as_of":"2026-11-21", **kw}
 
 
 class DecisionTest(unittest.TestCase):
@@ -65,6 +67,7 @@ class DecisionTest(unittest.TestCase):
     def test_deterministic_order_and_no_claim(self):
         data = sample("bandwidth", entries=["glInvalidateFramebuffer","glTexParameteri"],
                       probes={"discard-dead-attachment":True,"texture-mip-selection":True})
+        data["objective"] = {"bandwidth": 1}
         output = gd.decide(data)
         self.assertEqual(output,gd.decide(copy.deepcopy(data)))
         self.assertEqual(output["candidates"][0]["strategy"],"discard-dead-attachment")
@@ -110,6 +113,45 @@ class DecisionTest(unittest.TestCase):
         for case in gd.read(gd.CASES):
             for ref in case["source_refs"]:
                 self.assertTrue((gd.ROOT/ref).is_file(),ref)
+
+    def test_f02_startup_only_has_no_experiment_and_cli_is_compatible(self):
+        data = sample("bandwidth", entries=["glInvalidateFramebuffer", "glTexParameteri"],
+                      probes={"discard-dead-attachment": True, "texture-mip-selection": True})
+        data["objective"] = {"startup": 1}
+        data["as_of"] = "2026-11-22"
+        expected = gd.decide(data)
+        self.assertEqual(expected["schema_version"], 1)
+        self.assertEqual(expected["status"], "NO_EXPERIMENT_RECOMMENDED")
+        self.assertEqual(expected["candidates"], [])
+        self.assertFalse(expected["performance_claim"])
+        self.assertFalse(expected["automatic_renderer_mutation"])
+        self.assertEqual(expected["objective_evaluation"],
+                         {"supported_goals": [], "unsupported_goals": ["startup"], "status": "UNSUPPORTED_GOALS"})
+        with tempfile.TemporaryDirectory() as temp:
+            file = Path(temp) / "legacy-request.json"
+            file.write_text(json.dumps(data), encoding="utf-8")
+            cmd = [sys.executable, str(gd.ROOT / "tools/gpu_decision_v111.py")]
+            stdin = subprocess.run(cmd, input=json.dumps(data), text=True, capture_output=True, timeout=5, check=True)
+            from_file = subprocess.run(cmd + [str(file)], text=True, capture_output=True, timeout=5, check=True)
+        self.assertEqual(stdin.stdout, from_file.stdout)
+        self.assertEqual(json.loads(stdin.stdout), expected)
+
+    def test_distinguishes_workload_and_probe_gaps_and_keeps_small_positive_weight(self):
+        data = sample("synchronization", entries=["glFenceSync", "glClientWaitSync", "glDeleteSync"])
+        data["objective"] = {"startup": 1, "quality": 0.5}
+        out = gd.decide(data)
+        self.assertEqual(out["objective_evaluation"],
+                         {"supported_goals": ["quality"], "unsupported_goals": ["startup"], "status": "NO_RELEVANT_CANDIDATES"})
+        self.assertEqual(out["candidates"], [])
+        data["objective"] = {"startup": 1, "frame_time": 1e-12, "quality": 0}
+        out = gd.decide(data)
+        self.assertEqual(out["status"], "NO_EXPERIMENT_RECOMMENDED")
+        self.assertEqual(out["objective_evaluation"]["status"], "CORRECTNESS_PROBE_REQUIRED")
+        self.assertEqual([r["strategy"] for r in out["candidates"]], ["fence-ring-reuse"])
+        self.assertEqual(out["candidates"][0]["status"], "PROBE_REQUIRED")
+        self.assertGreater(out["candidates"][0]["policy_relevance"], 0)
+        data["target"]["probes"]["fence-ring-reuse"] = False
+        self.assertEqual(gd.decide(data)["candidates"][0]["status"], "BLOCKED")
 
     def test_invalid_request_and_cli_bounds(self):
         for raw in (b'{"target":1,"target":2}', b'{"x":NaN}', b' '*(gd.LIMIT+1)):

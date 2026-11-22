@@ -1,0 +1,1478 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "cefb240d1793a4dc98174230aea15b6e0889905b",
+  "historical_sources": {
+    "docs/release-gates.json": {
+      "sha256": "a1fec0cade0fa960361c3a78d7534c66e73113bcf8abdb2da879cedfa3035e19",
+      "bytes": 3046,
+      "obligations": [
+        {
+          "id": "docs/release-gates.json#work_packages/W0",
+          "source_pointer": "/work_packages/W0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/release-gates.json#work_packages/W1",
+          "source_pointer": "/work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/release-gates.json#work_packages/W2",
+          "source_pointer": "/work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/release-gates.json#work_packages/W3",
+          "source_pointer": "/work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/release-gates.json#work_packages/W4",
+          "source_pointer": "/work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/release-gates.json#work_packages/W5",
+          "source_pointer": "/work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/release-gates.json#work_packages/W6",
+          "source_pointer": "/work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/release-gates.json#work_packages/W7",
+          "source_pointer": "/work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.3-development-plan.md": {
+      "sha256": "ad7eb14767e6837574b7f8c0580bd9b4b18b1a263dead2f6575f56504886560f",
+      "bytes": 22070
+    },
+    "docs/v1.0.4-development-plan.md": {
+      "sha256": "4c7a80cce3304d57c608cc3fe67079444acd741b83186af4e136d3efae57f96e",
+      "bytes": 15366
+    },
+    "docs/v1.0.4-release-gates.json": {
+      "sha256": "7d2ff93d4e98741f25450f7dc7704c6332ca6412fa6707a22f4c5e5000666eb8",
+      "bytes": 3330,
+      "obligations": [
+        {
+          "id": "docs/v1.0.4-release-gates.json#work_packages/W0",
+          "source_pointer": "/work_packages/W0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4-release-gates.json#work_packages/W1",
+          "source_pointer": "/work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4-release-gates.json#work_packages/W2",
+          "source_pointer": "/work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4-release-gates.json#work_packages/W3",
+          "source_pointer": "/work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4-release-gates.json#work_packages/W4",
+          "source_pointer": "/work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4-release-gates.json#work_packages/W5",
+          "source_pointer": "/work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4-release-gates.json#work_packages/W6",
+          "source_pointer": "/work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4-release-gates.json#work_packages/W7",
+          "source_pointer": "/work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.4/evidence/android-followup/release-gates.json": {
+      "sha256": "d2e5e20e55267d95b750c4b0420305ffe60b33573e27bbfff612e8d8fd334a3f",
+      "bytes": 337,
+      "obligations": [
+        {
+          "id": "docs/v1.0.4/evidence/android-followup/release-gates.json#blocked_work_packages/W1",
+          "source_pointer": "/blocked_work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/android-followup/release-gates.json#blocked_work_packages/W2",
+          "source_pointer": "/blocked_work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/android-followup/release-gates.json#blocked_work_packages/W3",
+          "source_pointer": "/blocked_work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/android-followup/release-gates.json#blocked_work_packages/W4",
+          "source_pointer": "/blocked_work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/android-followup/release-gates.json#blocked_work_packages/W5",
+          "source_pointer": "/blocked_work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/android-followup/release-gates.json#blocked_work_packages/W6",
+          "source_pointer": "/blocked_work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/android-followup/release-gates.json#blocked_work_packages/W7",
+          "source_pointer": "/blocked_work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.4/evidence/baseline-release-gate.json": {
+      "sha256": "deccb1bbc08fb8bc76152e7de5e9101f2d5a39f294b5da80e35764395d31d55a",
+      "bytes": 349,
+      "obligations": [
+        {
+          "id": "docs/v1.0.4/evidence/baseline-release-gate.json#blocked_work_packages/W1",
+          "source_pointer": "/blocked_work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/baseline-release-gate.json#blocked_work_packages/W2",
+          "source_pointer": "/blocked_work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/baseline-release-gate.json#blocked_work_packages/W3",
+          "source_pointer": "/blocked_work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/baseline-release-gate.json#blocked_work_packages/W4",
+          "source_pointer": "/blocked_work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/baseline-release-gate.json#blocked_work_packages/W5",
+          "source_pointer": "/blocked_work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/baseline-release-gate.json#blocked_work_packages/W6",
+          "source_pointer": "/blocked_work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/baseline-release-gate.json#blocked_work_packages/W7",
+          "source_pointer": "/blocked_work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.4/evidence/final-gates-optimized.json": {
+      "sha256": "d2e5e20e55267d95b750c4b0420305ffe60b33573e27bbfff612e8d8fd334a3f",
+      "bytes": 337,
+      "obligations": [
+        {
+          "id": "docs/v1.0.4/evidence/final-gates-optimized.json#blocked_work_packages/W1",
+          "source_pointer": "/blocked_work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates-optimized.json#blocked_work_packages/W2",
+          "source_pointer": "/blocked_work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates-optimized.json#blocked_work_packages/W3",
+          "source_pointer": "/blocked_work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates-optimized.json#blocked_work_packages/W4",
+          "source_pointer": "/blocked_work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates-optimized.json#blocked_work_packages/W5",
+          "source_pointer": "/blocked_work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates-optimized.json#blocked_work_packages/W6",
+          "source_pointer": "/blocked_work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates-optimized.json#blocked_work_packages/W7",
+          "source_pointer": "/blocked_work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.4/evidence/final-gates.json": {
+      "sha256": "d2e5e20e55267d95b750c4b0420305ffe60b33573e27bbfff612e8d8fd334a3f",
+      "bytes": 337,
+      "obligations": [
+        {
+          "id": "docs/v1.0.4/evidence/final-gates.json#blocked_work_packages/W1",
+          "source_pointer": "/blocked_work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates.json#blocked_work_packages/W2",
+          "source_pointer": "/blocked_work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates.json#blocked_work_packages/W3",
+          "source_pointer": "/blocked_work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates.json#blocked_work_packages/W4",
+          "source_pointer": "/blocked_work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates.json#blocked_work_packages/W5",
+          "source_pointer": "/blocked_work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates.json#blocked_work_packages/W6",
+          "source_pointer": "/blocked_work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.4/evidence/final-gates.json#blocked_work_packages/W7",
+          "source_pointer": "/blocked_work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.5/development-plan.md": {
+      "sha256": "49d294b08e0629b61646d37ffd0c6e9a19fe7eeeb2d60e32db7630418ba23661",
+      "bytes": 16435
+    },
+    "docs/v1.0.5/evidence/release-gates.json": {
+      "sha256": "9f29da43f14e029ccf7fb1af457f4ce39d87f419a1a814435e97ad8dc7633e76",
+      "bytes": 358,
+      "obligations": [
+        {
+          "id": "docs/v1.0.5/evidence/release-gates.json#blocked_work_packages/W1",
+          "source_pointer": "/blocked_work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/evidence/release-gates.json#blocked_work_packages/W2",
+          "source_pointer": "/blocked_work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/evidence/release-gates.json#blocked_work_packages/W3",
+          "source_pointer": "/blocked_work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/evidence/release-gates.json#blocked_work_packages/W4",
+          "source_pointer": "/blocked_work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/evidence/release-gates.json#blocked_work_packages/W5",
+          "source_pointer": "/blocked_work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/evidence/release-gates.json#blocked_work_packages/W6",
+          "source_pointer": "/blocked_work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/evidence/release-gates.json#blocked_work_packages/W7",
+          "source_pointer": "/blocked_work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/evidence/release-gates.json#blocked_work_packages/W8",
+          "source_pointer": "/blocked_work_packages/W8",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.5/release-gates.json": {
+      "sha256": "484eed90b1d11a98f17c9b8d7e1adb4235b821d69557792d8abc2f6dcfad6329",
+      "bytes": 3640,
+      "obligations": [
+        {
+          "id": "docs/v1.0.5/release-gates.json#work_packages/W0",
+          "source_pointer": "/work_packages/W0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/release-gates.json#work_packages/W1",
+          "source_pointer": "/work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/release-gates.json#work_packages/W2",
+          "source_pointer": "/work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/release-gates.json#work_packages/W3",
+          "source_pointer": "/work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/release-gates.json#work_packages/W4",
+          "source_pointer": "/work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/release-gates.json#work_packages/W5",
+          "source_pointer": "/work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/release-gates.json#work_packages/W6",
+          "source_pointer": "/work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/release-gates.json#work_packages/W7",
+          "source_pointer": "/work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/release-gates.json#work_packages/W8",
+          "source_pointer": "/work_packages/W8",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.5/release-gates.json#predecessor_blockers/0",
+          "source_pointer": "/predecessor_blockers/0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.6/development-plan.md": {
+      "sha256": "aa91f7cdbfdd49485a1dec7613f9b32664da49d50e55660434bc4540bc07e5a0",
+      "bytes": 10069
+    },
+    "docs/v1.0.6/release-gates.json": {
+      "sha256": "7d93d876907491253a44afea7d32a126753e9341691f5f11338da866de822ab9",
+      "bytes": 4082,
+      "obligations": [
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W0",
+          "source_pointer": "/work_packages/W0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W1",
+          "source_pointer": "/work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W10",
+          "source_pointer": "/work_packages/W10",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W2",
+          "source_pointer": "/work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W3",
+          "source_pointer": "/work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W4",
+          "source_pointer": "/work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W5",
+          "source_pointer": "/work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W6",
+          "source_pointer": "/work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W7",
+          "source_pointer": "/work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W8",
+          "source_pointer": "/work_packages/W8",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.6/release-gates.json#work_packages/W9",
+          "source_pointer": "/work_packages/W9",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.7-development-plan.md": {
+      "sha256": "197546ec4b92bcf89837f8a15d6d1c4129196d43213458d60691e0ee2af0d568",
+      "bytes": 14827
+    },
+    "docs/v1.0.7-release-gates.json": {
+      "sha256": "a44d3609277a346230a74a75bebec5763ca54fc65d9e1505c14c1f6e884c766f",
+      "bytes": 4504,
+      "obligations": [
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W0",
+          "source_pointer": "/work_packages/W0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W1",
+          "source_pointer": "/work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W2",
+          "source_pointer": "/work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W3",
+          "source_pointer": "/work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W4",
+          "source_pointer": "/work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W5",
+          "source_pointer": "/work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W6",
+          "source_pointer": "/work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W7",
+          "source_pointer": "/work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W8",
+          "source_pointer": "/work_packages/W8",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.7-release-gates.json#work_packages/W9",
+          "source_pointer": "/work_packages/W9",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.8/development-plan.md": {
+      "sha256": "6393d04fe0f2e42b1b32563d3626a51e7db88b8b471e574ae6f48ac4bfc84cef",
+      "bytes": 17045
+    },
+    "docs/v1.0.8/release-gates.json": {
+      "sha256": "f8ef213941d85f3c31c12326e0ce616fc7e41ed8ae8f42748ff85bdfef8a64c9",
+      "bytes": 3512,
+      "obligations": [
+        {
+          "id": "docs/v1.0.8/release-gates.json#work_packages/W0",
+          "source_pointer": "/work_packages/W0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.8/release-gates.json#work_packages/W1",
+          "source_pointer": "/work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.8/release-gates.json#work_packages/W2",
+          "source_pointer": "/work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.8/release-gates.json#work_packages/W3",
+          "source_pointer": "/work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.8/release-gates.json#work_packages/W4",
+          "source_pointer": "/work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.8/release-gates.json#work_packages/W5",
+          "source_pointer": "/work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.8/release-gates.json#work_packages/W6",
+          "source_pointer": "/work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.8/release-gates.json#work_packages/W7",
+          "source_pointer": "/work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.8/release-gates.json#work_packages/W8",
+          "source_pointer": "/work_packages/W8",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.9/development-plan.md": {
+      "sha256": "a4ed61b84225f83742b595a7c5f9300c072dea4c26798399930d46f30086a8ff",
+      "bytes": 15333
+    },
+    "docs/v1.0.9/inherited-gates.json": {
+      "sha256": "9921fd4e0de6912e2e49981b9fa186a3afccf9d4818c0f9f41397322d808fdd0",
+      "bytes": 26412,
+      "obligations": [
+        {
+          "id": "docs/v1.0.9/inherited-gates.json#gates/0",
+          "source_pointer": "/gates/0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/inherited-gates.json#gates/1",
+          "source_pointer": "/gates/1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/inherited-gates.json#gates/2",
+          "source_pointer": "/gates/2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/inherited-gates.json#gates/3",
+          "source_pointer": "/gates/3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/inherited-gates.json#gates/4",
+          "source_pointer": "/gates/4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/inherited-gates.json#gates/5",
+          "source_pointer": "/gates/5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.0.9/release-gates.json": {
+      "sha256": "a23fd99f8a5ba9c434f4f50690075d569cf62d26ff676faea773ebb938a5f2f0",
+      "bytes": 11631,
+      "obligations": [
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W0",
+          "source_pointer": "/work_packages/W0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W1",
+          "source_pointer": "/work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W10",
+          "source_pointer": "/work_packages/W10",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W2",
+          "source_pointer": "/work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W3",
+          "source_pointer": "/work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W4",
+          "source_pointer": "/work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W5",
+          "source_pointer": "/work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W6",
+          "source_pointer": "/work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W7",
+          "source_pointer": "/work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W8",
+          "source_pointer": "/work_packages/W8",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.0.9/release-gates.json#work_packages/W9",
+          "source_pointer": "/work_packages/W9",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.1.0/debt-ledger.json": {
+      "sha256": "392528f6989dbbc0f6a0350af478d50f1f04ac43f82a427fdf062ea02bbc7b8b",
+      "bytes": 42374,
+      "obligations": [
+        {
+          "id": "docs/v1.1.0/debt-ledger.json#debts/0",
+          "source_pointer": "/debts/0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/debt-ledger.json#debts/1",
+          "source_pointer": "/debts/1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/debt-ledger.json#debts/2",
+          "source_pointer": "/debts/2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/debt-ledger.json#debts/3",
+          "source_pointer": "/debts/3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/debt-ledger.json#debts/4",
+          "source_pointer": "/debts/4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/debt-ledger.json#debts/5",
+          "source_pointer": "/debts/5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/debt-ledger.json#debts/6",
+          "source_pointer": "/debts/6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/debt-ledger.json#debts/7",
+          "source_pointer": "/debts/7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/debt-ledger.json#debts/8",
+          "source_pointer": "/debts/8",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.1.0/development-plan.md": {
+      "sha256": "ddd0a3962c367df74e8e8684afd48399d09844a2029be0b0988efa1178bb8a7c",
+      "bytes": 23633
+    },
+    "docs/v1.1.0/release-gates.json": {
+      "sha256": "6d424324bbd145d824d71d0ef58c0d63ce830839e651295881cf7ff945dde658",
+      "bytes": 14881,
+      "obligations": [
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W0",
+          "source_pointer": "/work_packages/W0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W1",
+          "source_pointer": "/work_packages/W1",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W10",
+          "source_pointer": "/work_packages/W10",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W11",
+          "source_pointer": "/work_packages/W11",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W12",
+          "source_pointer": "/work_packages/W12",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W2",
+          "source_pointer": "/work_packages/W2",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W3",
+          "source_pointer": "/work_packages/W3",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W4",
+          "source_pointer": "/work_packages/W4",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W5",
+          "source_pointer": "/work_packages/W5",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W6",
+          "source_pointer": "/work_packages/W6",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W7",
+          "source_pointer": "/work_packages/W7",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W8",
+          "source_pointer": "/work_packages/W8",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.0/release-gates.json#work_packages/W9",
+          "source_pointer": "/work_packages/W9",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    },
+    "docs/v1.1.1/preceding-gates.md": {
+      "sha256": "698ec9d11575d9cf493bbd022cf111da1122fb3ba6afcc44e508ec760a568330",
+      "bytes": 2172
+    },
+    "docs/v1.1.1/release-gates.json": {
+      "sha256": "763a1d2b228b62966da6ee36efbf465233e3e71339b9e0917cd5d4f660190430",
+      "bytes": 2091,
+      "obligations": [
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W0",
+          "source_pointer": "/work_packages/W0",
+          "work_packages": [
+            "W0",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W1",
+          "source_pointer": "/work_packages/W1",
+          "work_packages": [
+            "W1",
+            "W4",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W10",
+          "source_pointer": "/work_packages/W10",
+          "work_packages": [
+            "W1",
+            "W2",
+            "W6"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W11",
+          "source_pointer": "/work_packages/W11",
+          "work_packages": [
+            "W4",
+            "W6"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W12",
+          "source_pointer": "/work_packages/W12",
+          "work_packages": [
+            "W7"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W13",
+          "source_pointer": "/work_packages/W13",
+          "work_packages": [
+            "W5",
+            "W9"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W14",
+          "source_pointer": "/work_packages/W14",
+          "work_packages": [
+            "W0",
+            "W7",
+            "W8"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W2",
+          "source_pointer": "/work_packages/W2",
+          "work_packages": [
+            "W2",
+            "W6"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W3",
+          "source_pointer": "/work_packages/W3",
+          "work_packages": [
+            "W3",
+            "W4"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W4",
+          "source_pointer": "/work_packages/W4",
+          "work_packages": [
+            "W2",
+            "W4"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W5",
+          "source_pointer": "/work_packages/W5",
+          "work_packages": [
+            "W5"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W6",
+          "source_pointer": "/work_packages/W6",
+          "work_packages": [
+            "W6"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W7",
+          "source_pointer": "/work_packages/W7",
+          "work_packages": [
+            "W4",
+            "W7"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W8",
+          "source_pointer": "/work_packages/W8",
+          "work_packages": [
+            "W1",
+            "W3",
+            "W4"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        },
+        {
+          "id": "docs/v1.1.1/release-gates.json#work_packages/W9",
+          "source_pointer": "/work_packages/W9",
+          "work_packages": [
+            "W3",
+            "W4",
+            "W6"
+          ],
+          "disposition": "PRESERVE_NO_WAIVER"
+        }
+      ]
+    }
+  },
+  "retained_minimum": {
+    "decision_scenarios": 20,
+    "ab_protocols": 30,
+    "ab_negative_controls": 10,
+    "experience_cases": 50,
+    "experience_conflicts_or_negatives": 10,
+    "physical_gpu_families": 2,
+    "project_tasks": 25,
+    "composite_reasoning_cases": 20,
+    "quality_tradeoffs": 12,
+    "end_to_end_workloads": 8,
+    "workload_negative_controls": 2,
+    "frozen_eval_tasks": 100,
+    "real_off_on_responses_per_frozen_round": 200,
+    "new_flagship_eval_tasks": 40
+  },
+  "state": {
+    "implementation": "PARTIAL",
+    "verification": "OFFLINE_RULES_ONLY",
+    "release": "BLOCKED"
+  },
+  "release_ready": false,
+  "release_authorized": false,
+  "closure_receipts": []
+}

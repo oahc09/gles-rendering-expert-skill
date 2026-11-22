@@ -1,0 +1,311 @@
+[
+  {
+    "id": "later-load-retained",
+    "rule": "P112-ATTACHMENT",
+    "scenario": {
+      "action": "preserve",
+      "live": "load"
+    },
+    "valid": true
+  },
+  {
+    "id": "later-load-invalidated",
+    "rule": "P112-ATTACHMENT",
+    "scenario": {
+      "action": "invalidate",
+      "live": "load"
+    },
+    "valid": false
+  },
+  {
+    "id": "later-sample-invalidated",
+    "rule": "P112-ATTACHMENT",
+    "scenario": {
+      "action": "invalidate",
+      "live": "sample"
+    },
+    "valid": false
+  },
+  {
+    "id": "later-resolve-invalidated",
+    "rule": "P112-ATTACHMENT",
+    "scenario": {
+      "action": "invalidate",
+      "live": "resolve"
+    },
+    "valid": false
+  },
+  {
+    "id": "later-readback-invalidated",
+    "rule": "P112-ATTACHMENT",
+    "scenario": {
+      "action": "invalidate",
+      "live": "readback"
+    },
+    "valid": false
+  },
+  {
+    "id": "unknown-invalidated",
+    "rule": "P112-ATTACHMENT",
+    "scenario": {
+      "action": "invalidate",
+      "live": "unknown"
+    },
+    "valid": false
+  },
+  {
+    "id": "dead-after-last-read",
+    "rule": "P112-ATTACHMENT",
+    "scenario": {
+      "action": "invalidate",
+      "live": "dead"
+    },
+    "valid": true
+  },
+  {
+    "id": "compatible-delete",
+    "rule": "P112-DELETE",
+    "scenario": {
+      "action": "delete",
+      "context": "compatible",
+      "generation": "same"
+    },
+    "valid": true
+  },
+  {
+    "id": "temporary-queue",
+    "rule": "P112-DELETE",
+    "scenario": {
+      "action": "queue",
+      "context": "unavailable",
+      "generation": "same"
+    },
+    "valid": true
+  },
+  {
+    "id": "lost-drop",
+    "rule": "P112-DELETE",
+    "scenario": {
+      "action": "drop",
+      "context": "compatible",
+      "generation": "lost"
+    },
+    "valid": true
+  },
+  {
+    "id": "lost-delete-in-replacement",
+    "rule": "P112-DELETE",
+    "scenario": {
+      "action": "delete",
+      "context": "compatible",
+      "generation": "lost"
+    },
+    "valid": false
+  },
+  {
+    "id": "other-context-delete",
+    "rule": "P112-DELETE",
+    "scenario": {
+      "action": "delete",
+      "context": "incompatible",
+      "generation": "same"
+    },
+    "valid": false
+  },
+  {
+    "id": "qualified-bound-result",
+    "rule": "P112-PRECISION",
+    "scenario": {
+      "declared": true,
+      "supported": true,
+      "range_fits": true,
+      "error_fits": true
+    },
+    "valid": true
+  },
+  {
+    "id": "float-default-missing",
+    "rule": "P112-PRECISION",
+    "scenario": {
+      "declared": false,
+      "supported": true,
+      "range_fits": true,
+      "error_fits": true
+    },
+    "valid": false
+  },
+  {
+    "id": "precision-range-miss",
+    "rule": "P112-PRECISION",
+    "scenario": {
+      "declared": true,
+      "supported": true,
+      "range_fits": false,
+      "error_fits": true
+    },
+    "valid": false
+  },
+  {
+    "id": "precision-error-miss",
+    "rule": "P112-PRECISION",
+    "scenario": {
+      "declared": true,
+      "supported": true,
+      "range_fits": true,
+      "error_fits": false
+    },
+    "valid": false
+  },
+  {
+    "id": "native-external-import",
+    "rule": "P112-VIDEO",
+    "scenario": {
+      "action": "import",
+      "target": "external",
+      "extension": true,
+      "cpu_access": false,
+      "layout_valid": false
+    },
+    "valid": true
+  },
+  {
+    "id": "ordinary-cpu-fallback",
+    "rule": "P112-VIDEO",
+    "scenario": {
+      "action": "upload",
+      "target": "2d",
+      "extension": false,
+      "cpu_access": true,
+      "layout_valid": true
+    },
+    "valid": true
+  },
+  {
+    "id": "external-cpu-upload",
+    "rule": "P112-VIDEO",
+    "scenario": {
+      "action": "upload",
+      "target": "external",
+      "extension": true,
+      "cpu_access": true,
+      "layout_valid": true
+    },
+    "valid": false
+  },
+  {
+    "id": "cpu-access-denied",
+    "rule": "P112-VIDEO",
+    "scenario": {
+      "action": "upload",
+      "target": "2d",
+      "extension": true,
+      "cpu_access": false,
+      "layout_valid": true
+    },
+    "valid": false
+  },
+  {
+    "id": "bad-stride-fallback",
+    "rule": "P112-VIDEO",
+    "scenario": {
+      "action": "upload",
+      "target": "2d",
+      "extension": true,
+      "cpu_access": true,
+      "layout_valid": false
+    },
+    "valid": false
+  },
+  {
+    "id": "core-blit-legal",
+    "rule": "P112-MSAA",
+    "scenario": {
+      "route": "core",
+      "configuration_valid": true,
+      "gles": 30,
+      "extension": false,
+      "entrypoint": false
+    },
+    "valid": true
+  },
+  {
+    "id": "core-blit-invalid",
+    "rule": "P112-MSAA",
+    "scenario": {
+      "route": "core",
+      "configuration_valid": false,
+      "gles": 32,
+      "extension": true,
+      "entrypoint": true
+    },
+    "valid": false
+  },
+  {
+    "id": "extension-candidate",
+    "rule": "P112-MSAA",
+    "scenario": {
+      "route": "extension",
+      "configuration_valid": true,
+      "gles": 30,
+      "extension": true,
+      "entrypoint": true
+    },
+    "valid": true
+  },
+  {
+    "id": "extension-no-entry",
+    "rule": "P112-MSAA",
+    "scenario": {
+      "route": "extension",
+      "configuration_valid": true,
+      "gles": 30,
+      "extension": true,
+      "entrypoint": false
+    },
+    "valid": false
+  },
+  {
+    "id": "single-pass-unmeasured",
+    "rule": "P112-DEPTH",
+    "scenario": {
+      "action": "keep-baseline",
+      "measured_on_target": false,
+      "quality_match": true,
+      "gain": false
+    },
+    "valid": true
+  },
+  {
+    "id": "target-winner-adopt",
+    "rule": "P112-DEPTH",
+    "scenario": {
+      "action": "adopt",
+      "measured_on_target": true,
+      "quality_match": true,
+      "gain": true
+    },
+    "valid": true
+  },
+  {
+    "id": "unmeasured-prepass-adopt",
+    "rule": "P112-DEPTH",
+    "scenario": {
+      "action": "adopt",
+      "measured_on_target": false,
+      "quality_match": true,
+      "gain": true
+    },
+    "valid": false
+  },
+  {
+    "id": "quality-failure-prepass",
+    "rule": "P112-DEPTH",
+    "scenario": {
+      "action": "adopt",
+      "measured_on_target": true,
+      "quality_match": false,
+      "gain": true
+    },
+    "valid": false
+  }
+]

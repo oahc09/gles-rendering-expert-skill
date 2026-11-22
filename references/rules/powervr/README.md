@@ -27,14 +27,14 @@
 
 | File | Topic | Maps to SDK example/doc |
 |:---|:---|:---|
-| [`hsr-and-rendering-order.md`](hsr-and-rendering-order.md) | HSR, no depth pre-pass, alpha test vs blend, draw order | Performance Recommendations §HSR, forum guidance |
+| [`hsr-and-rendering-order.md`](hsr-and-rendering-order.md) | HSR, measured depth pre-pass tradeoffs, alpha test vs blend, draw order | Performance Recommendations §HSR, forum guidance |
 | [`pixel-local-storage-and-deferred.md`](pixel-local-storage-and-deferred.md) | PLS for on-chip deferred rendering | `DeferredShading` example |
 | [`img-extensions.md`](img-extensions.md) | IMG_framebuffer_downsample, IMG_texture_filter_cubic, binary shaders | `IMGFramebufferDownsample`, `IMGTextureFilterCubic`, `BinaryShaders` |
 | [`bandwidth-and-tile-management.md`](bandwidth-and-tile-management.md) | Clear/invalidate, transient stores, parameter buffer, MSAA | `PostProcessing`, Performance Recommendations |
 
 ## Golden rules (one-line summary)
 
-1. **Do NOT use a depth pre-pass** — PowerVR HSR already eliminates 100% of hidden opaque fragments; a depth pre-pass doubles geometry cost with zero shading benefit.
+1. **Start with a single opaque pass** where HSR is effective. Use a depth pre-pass only after measuring a representative candidate that preserves correctness (P112-DEPTH).
 2. **Avoid `discard` / alpha test where possible** — it delays HSR, forcing the ISP to defer visibility decisions until after shading; prefer alpha blend for semi-transparent cutouts.
 3. **Clear or invalidate every attachment at render-pass start** — prevents tile memory load from DRAM.
 4. **Invalidate transient attachments (depth/stencil) at pass end** — prevents unnecessary tile memory store to DRAM.
@@ -47,7 +47,7 @@ Recent PowerVR designs (Series 12XE/DXE, and the C-series for automotive and
 embedded markets) keep the TBDR + HSR programming model — **all rules in this
 module still apply**. Generation-specific notes:
 
-- HSR remains full hidden-surface removal: still **no depth pre-pass**, still
+- Where HSR handles the workload well, start with single-pass; also
   avoid `discard`/alpha test on opaque paths.
 - Newer cores target efficiency tiers (automotive displays, set-top, MCU-attached
   GPUs); the bandwidth rules (clear/invalidate, minimal FBO switches) matter

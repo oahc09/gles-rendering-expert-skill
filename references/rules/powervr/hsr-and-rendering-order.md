@@ -29,17 +29,12 @@ overdraw can reappear for affected fragments.
 
 ## Rules
 
-### 1. Do NOT use a depth pre-pass
+### 1. Benchmark a depth pre-pass only when justified
 
-On every other GPU architecture, a depth pre-pass (render geometry with
-color-write off, then re-render with depth-equal test) avoids overdraw. **On
-PowerVR, HSR already achieves the same result automatically.** A depth pre-pass:
-- Doubles vertex processing load (geometry submitted twice).
-- Doubles parameter buffer usage (can trigger SPM partial renders).
-- Provides **zero** shading benefit — HSR already eliminated hidden fragments.
+A depth pre-pass can reduce overdraw, but adds geometry/parameter work and can interact with depth equality and ordering. Where HSR already removes most hidden opaque work, start with single-pass. Measure both corrected variants on the target before adopting (P112-DEPTH).
 
 ```cpp
-// ❌ WRONG on PowerVR: useless depth pre-pass
+// Candidate only when there is a measured overdraw bottleneck
 glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE);
 drawAllOpaqueGeometry();  // pass 1: depth only
 glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
@@ -47,8 +42,8 @@ glDepthFunc(GL_EQUAL);
 drawAllOpaqueGeometry();  // pass 2: shading with depth-equal
 glDepthFunc(GL_LESS);
 
-// ✅ CORRECT on PowerVR: submit once, let HSR do its job
-drawAllOpaqueGeometry();  // HSR ensures zero overdraw automatically
+// Baseline: submit once when eligible for HSR
+drawAllOpaqueGeometry();
 ```
 
 ### 2. Avoid `discard` / alpha test

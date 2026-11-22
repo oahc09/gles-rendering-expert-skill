@@ -34,7 +34,7 @@
 
 1. **Clear or invalidate every attachment at render-pass start** → kills GMEM loads.
 2. **Invalidate transient attachments (depth/stencil/MSAA) at render-pass end** → kills GMEM stores.
-3. **Resolve MSAA on-tile** via `EXT_multisampled_render_to_texture`, never a manual blit.
+3. **Compare resolve paths**: supported on-tile resolve is a candidate; keep a legal core blit fallback and measure (P112-MSAA).
 4. **Never break LRZ**: draw opaque front-to-back, avoid `discard` / fragment depth writes where possible.
 5. **Spend fewer fragment invocations**: use `QCOM_shading_rate` on low-detail draws and temporal upscaling (SGSR2) instead of shading every pixel every frame.
 

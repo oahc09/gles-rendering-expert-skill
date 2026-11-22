@@ -61,14 +61,13 @@ Both force an **immediate tile flush + resolve** to make data available on the
 CPU/other texture. Defer to end of frame, or use **PBO async readback**
 (`GL_PIXEL_PACK_BUFFER`) to overlap the readback with next frame's rendering.
 
-### 5. MSAA — on-tile resolve only
+### 5. MSAA — compare supported resolve paths
 
 Use `EXT_multisampled_render_to_texture` (or `IMG_multisampled_render_to_texture`)
 to keep MSAA samples in tile memory and resolve on-chip. The PowerVR SDK's
 `HelperGles.h` uses this approach for all antialiased offscreen targets.
 
-**Never** render to a separate multisample renderbuffer and `glBlitFramebuffer`
-to resolve — that's a store + load round-trip through DRAM.
+A valid core `glBlitFramebuffer` resolve is the fallback; its memory cost depends on implementation and must be measured (P112-MSAA).
 
 ### 6. Parameter Buffer awareness
 

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "scope": "PR-01 offline assertions only; not full v1.1.2 acceptance",
+  "cases": [
+    {
+      "plan_case": "V112-R01",
+      "rule_id": "P112-ATTACHMENT",
+      "check": "python tools/validate_rules.py --v112",
+      "verification_scope": "OFFLINE_NORMALIZED_ONLY"
+    },
+    {
+      "plan_case": "V112-R02",
+      "rule_id": "P112-DELETE",
+      "check": "python tools/validate_rules.py --v112",
+      "verification_scope": "OFFLINE_NORMALIZED_ONLY"
+    },
+    {
+      "plan_case": "V112-R03",
+      "rule_id": "P112-PRECISION",
+      "check": "python tools/validate_rules.py --v112",
+      "verification_scope": "OFFLINE_NORMALIZED_ONLY"
+    },
+    {
+      "plan_case": "V112-R04",
+      "rule_id": "P112-VIDEO",
+      "check": "python tools/validate_rules.py --v112",
+      "verification_scope": "OFFLINE_NORMALIZED_ONLY"
+    },
+    {
+      "plan_case": "V112-R05",
+      "rule_id": "P112-MSAA",
+      "check": "python tools/validate_rules.py --v112",
+      "verification_scope": "OFFLINE_NORMALIZED_ONLY"
+    },
+    {
+      "plan_case": "V112-R06",
+      "rule_id": "P112-DEPTH",
+      "check": "python tools/validate_rules.py --v112",
+      "verification_scope": "OFFLINE_NORMALIZED_ONLY"
+    },
+    {
+      "plan_case": "V112-G01",
+      "check": "python -m unittest discover -s tools -p test_check_v112_baseline.py",
+      "verification_scope": "OFFLINE_NEGATIVE_CONTROLS_ONLY"
+    }
+  ]
+}
