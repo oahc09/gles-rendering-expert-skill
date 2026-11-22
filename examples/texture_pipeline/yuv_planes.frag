@@ -5,10 +5,23 @@ uniform sampler2D uPlane;
 uniform sampler2D vPlane;
 uniform vec2 krKb; // BT.601 .299,.114; BT.709 .2126,.0722; BT.2020 .2627,.0593
 uniform bool limitedRange;
+// Explicit source-origin-aligned 2x2 chroma blocks in source-texel order. Enable
+// only when U/V each have ceil(luma/2) dimensions and this sampling policy
+// matches source metadata. Default false preserves normalized sampling.
+uniform bool blockAligned420;
 in vec2 uv;
 out vec4 color;
 void main() {
-    vec3 code=vec3(texture(yPlane,uv).r,texture(uPlane,uv).r,texture(vPlane,uv).r)*255.0;
+    vec3 code;
+    if (blockAligned420) {
+        ivec2 size=textureSize(yPlane,0);
+        ivec2 yTexel=clamp(ivec2(floor(uv*vec2(size))),ivec2(0),size-ivec2(1));
+        ivec2 uvTexel=yTexel/2;
+        code=vec3(texelFetch(yPlane,yTexel,0).r,texelFetch(uPlane,uvTexel,0).r,
+                  texelFetch(vPlane,uvTexel,0).r)*255.0;
+    } else {
+        code=vec3(texture(yPlane,uv).r,texture(uPlane,uv).r,texture(vPlane,uv).r)*255.0;
+    }
     float y=limitedRange?(code.x-16.0)/219.0:code.x/255.0;
     vec2 chroma=(code.yz-128.0)/(limitedRange?224.0:255.0);
     float r=y+2.0*(1.0-krKb.x)*chroma.y;

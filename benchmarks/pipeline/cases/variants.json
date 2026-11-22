@@ -156,6 +156,7 @@
         "external_texture"
       ],
       "extensions": [
+        "GL_OES_EGL_image_external",
         "GL_OES_EGL_image_external_essl3"
       ],
       "required_extensions": [],
