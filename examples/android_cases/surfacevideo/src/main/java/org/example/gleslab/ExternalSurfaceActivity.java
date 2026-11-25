@@ -14,7 +14,6 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.Choreographer;
 import android.view.Surface;
-import java.util.concurrent.atomic.AtomicBoolean;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -69,7 +68,7 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
     private final class ExternalRenderer implements GLSurfaceView.Renderer {
         private volatile Surface producer;
         private SurfaceTexture consumer;
-        private final AtomicBoolean frameAvailable=new AtomicBoolean();
+        private final FrameMailbox<SurfaceTexture> frames = new FrameMailbox<>();
         private final float[] transform=new float[16];
         private int texture,program;
         private final NativeHardwareBufferDisplay ahb=new NativeHardwareBufferDisplay();
@@ -77,7 +76,7 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
         private final Handler ui = new Handler(Looper.getMainLooper());
         @Override public void onSurfaceCreated(GL10 unused, EGLConfig config) {
             // A lost context owns no reusable names. Java Surface objects still need release.
-            stopProducer();if(consumer!=null){consumer.release();consumer=null;}texture=0;program=0;hasImage=false;
+            stopProducer(); releaseConsumer(); texture=0; program=0; hasImage=false;
             ahb.onContextRecreated();
             // No protected producer/context/output chain is implemented. Never create
             // a producer or offer CPU staging for a protected request, including AHB.
@@ -96,8 +95,7 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
             GLES30.glTexParameteri(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,GLES30.GL_TEXTURE_WRAP_S,GLES30.GL_CLAMP_TO_EDGE);
             GLES30.glTexParameteri(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,GLES30.GL_TEXTURE_WRAP_T,GLES30.GL_CLAMP_TO_EDGE);
             consumer=new SurfaceTexture(texture);consumer.setDefaultBufferSize(480,240);
-            consumer.setOnFrameAvailableListener(surfaceTexture->{frameAvailable.set(true);view.requestRender();},ui);
-            producer=new Surface(consumer);
+            startProducer();
             String vertex="#version 300 es\nout vec2 uv;uniform mat4 transform;void main(){vec2 p=vec2((gl_VertexID<<1)&2,gl_VertexID&2);uv=(transform*vec4(p,0,1)).xy;gl_Position=vec4(p*2.-1.,0,1);}";
             String fragment="#version 300 es\n#extension GL_OES_EGL_image_external_essl3 : require\nprecision mediump float;in vec2 uv;uniform samplerExternalOES image;out vec4 color;void main(){color=texture(image,uv);}";
             int vs=compile(GLES30.GL_VERTEX_SHADER,vertex),fs=compile(GLES30.GL_FRAGMENT_SHADER,fragment);
@@ -111,7 +109,7 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
             if(ahb.active()){ahb.draw();return;}
             if(!supported||consumer==null)return;
             // SurfaceTexture manages producer acquire synchronization; this must run on the owning GL thread.
-            if(frameAvailable.getAndSet(false)){VideoInputGuard.acquireFrame(consumer,transform,0,true);hasImage=true;}
+            if(frames.take(consumer)){VideoInputGuard.acquireFrame(consumer,transform,0,true);hasImage=true;}
             if(!hasImage)return;
             GLES30.glUseProgram(program);GLES30.glActiveTexture(GLES30.GL_TEXTURE0);
             GLES30.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,texture);
@@ -119,12 +117,32 @@ public final class ExternalSurfaceActivity extends Activity implements Choreogra
             GLES30.glUniformMatrix4fv(GLES30.glGetUniformLocation(program,"transform"),1,false,transform,0);
             GLES30.glDrawArrays(GLES30.GL_TRIANGLES,0,3);
         }
-        synchronized void stopProducer(){Surface old=producer;producer=null;if(old!=null)old.release();}
+        private synchronized void startProducer() {
+            FrameMailbox.Registration<SurfaceTexture> registration = frames.register(consumer);
+            consumer.setOnFrameAvailableListener(source -> {
+                if (frames.offer(registration, source)) view.requestRender();
+            }, ui);
+            producer = new Surface(consumer);
+        }
+
+        synchronized void stopProducer() {
+            frames.retire();
+            Surface old = producer;
+            producer = null;
+            if (old != null) old.release();
+        }
+
+        private void releaseConsumer() {
+            if (consumer == null) return;
+            consumer.setOnFrameAvailableListener(null);
+            consumer.release();
+            consumer = null;
+        }
         void releaseCurrentContextResources(){
             ahb.release();
-            stopProducer();if(consumer!=null){consumer.setOnFrameAvailableListener(null);consumer.release();consumer=null;}
+            stopProducer(); releaseConsumer();
             if(texture!=0){GLES30.glDeleteTextures(1,new int[]{texture},0);texture=0;}
-            if(program!=0){GLES30.glDeleteProgram(program);program=0;}frameAvailable.set(false);hasImage=false;
+            if(program!=0){GLES30.glDeleteProgram(program);program=0;}hasImage=false;
         }
         private int compile(int type,String source){int shader=GLES30.glCreateShader(type);GLES30.glShaderSource(shader,source);GLES30.glCompileShader(shader);int[] ok=new int[1];GLES30.glGetShaderiv(shader,GLES30.GL_COMPILE_STATUS,ok,0);if(ok[0]==0){String log=GLES30.glGetShaderInfoLog(shader);GLES30.glDeleteShader(shader);throw new IllegalStateException(log);}return shader;}
     }
