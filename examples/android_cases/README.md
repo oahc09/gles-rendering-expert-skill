@@ -60,8 +60,21 @@ matrix, and Android's SurfaceTexture synchronization is used rather than invente
 native fence ownership. This default mode remains separate from the explicit native AHardwareBuffer/EGLImage mode described below.
 
 Choreographer drives the UI producer; OnFrameAvailable schedules rendering on the GL
-thread. Pause stops production first and queues resource release before pausing the
-view. Context preservation is disabled to exercise recreation on resume. Display HDR
+thread. Each listener captures its own registration, so a queued callback from an
+old SurfaceTexture cannot mark its replacement ready or supply the signal for
+`updateTexImage`. Notifications coalesce within that registration. Pause retires the
+registration before releasing the producer and queues the consumer cleanup before
+pausing the view. Context recreation also detaches the old listener before releasing
+the consumer. A render request already accepted before retirement may still cause a
+redraw, but it does not carry the old frame flag across generations.
+
+Run the deterministic Java regression with a Java 17+ JDK on PATH:
+`python3 -m unittest discover -s examples/android_cases -p test_frame_mailbox.py -v`.
+The test runs the production mailbox on the host and gates the callback until the new
+consumer has been registered. It does not emulate Android's Handler, graphics queue
+or driver; real pause/recreate and frame acquisition still need Android hardware.
+
+Context preservation is disabled to exercise recreation on resume. Display HDR
 and wide-color capabilities are logged, but the chosen EGL output remains SDR RGBA8;
 capable hardware is not confused with an HDR-configured surface.
 
