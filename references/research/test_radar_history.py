@@ -85,3 +85,50 @@ class RadarHistoryTest(unittest.TestCase):
             path.write_text(json.dumps(payload))
             with self.assertRaisesRegex(ValueError, 'invalid history item id'):
                 radar.read_history(path, newest)
+
+    def test_legacy_archive_migrates_active_identity_to_fresh_archive(self):
+        with tempfile.TemporaryDirectory() as d:
+            base = Path(d)
+            legacy = base / 'old' / '2026-11-22'
+            legacy.mkdir(parents=True)
+            record = row('cocos-engine', '123', '2026-11-21')
+            (legacy / 'radar.json').write_text(json.dumps({'items': [
+                record, row('godot', 'expired', '2026-07-01'),
+            ]}))
+            fixture = base / 'input.json'
+            fixture.write_text(json.dumps([record]))
+            prior = None
+            for tag, date in [('old', '2026-11-23'), ('fresh', '2026-11-24')]:
+                archive, history = base / tag, base / (tag + '.json')
+                argv = ['update_radar.py', '--archive', str(archive), '--input', str(fixture),
+                        '--start', '2026-11-20', '--end', date, '--history-out', str(history)]
+                if prior:
+                    argv += ['--history-in', str(prior)]
+                with patch('sys.argv', argv):
+                    self.assertEqual(radar.main(), 0)
+                self.assertEqual(json.loads((archive / date / 'radar.json').read_text())['new_items'], [])
+                self.assertEqual([r['id'] for r in json.loads(history.read_text())['items']], ['123'])
+                prior = history
+
+    def test_same_day_rerun_keeps_full_records_and_review(self):
+        with tempfile.TemporaryDirectory() as d:
+            base = Path(d)
+            fixture = base / 'input.json'
+            review = base / 'review.json'
+            review_row = {'stage': 'candidate', 'note': 'human retained note'}
+            review.write_text(json.dumps([review_row]))
+            record = dict(row('cocos-engine', '123', '2026-11-21'), title='archived original details')
+            next_record = row('godot', '456', '2026-11-21')
+            common = ['update_radar.py', '--archive', str(base / 'radar'), '--input', str(fixture),
+                      '--start', '2026-11-20', '--end', '2026-11-22']
+            first = base / 'first.json'
+            fixture.write_text(json.dumps([record]))
+            with patch('sys.argv', common + ['--history-out', str(first), '--decisions', str(review)]):
+                self.assertEqual(radar.main(), 0)
+            fixture.write_text(json.dumps([dict(record, title='updated but not first discovery'), next_record]))
+            with patch('sys.argv', common + ['--history-in', str(first), '--history-out', str(base / 'next.json')]):
+                self.assertEqual(radar.main(), 0)
+            result = json.loads((base / 'radar' / '2026-11-22' / 'radar.json').read_text())
+            self.assertEqual(result['items'], [record, next_record])
+            self.assertEqual(result['new_items'], [next_record])
+            self.assertEqual(result['review_decisions'], [review_row])

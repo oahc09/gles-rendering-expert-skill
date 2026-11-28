@@ -67,3 +67,14 @@ The [host validation workflow](../../.github/workflows/validation.yml) executes
 these alongside UI resolve and odd-dimension YUV, archiving raw probe reports
 and readbacks. Results are software correctness, not hardware or font-layout
 certification.
+
+### GLES 3.0 shadow boundary
+
+Run with Mesa software GLES and Khronos GLES 3.0/3.1/3.2 development headers:
+
+```sh
+GALLIUM_DRIVER=llvmpipe MESA_GLES_VERSION_OVERRIDE=3.0 \
+  python3 benchmarks/product_smoke/shadow_core30.py --headers /usr/include --out /tmp/new-shadow.json
+```
+
+The test compiles the actual C++ snippets, executes the baseline setup in an EGL pbuffer, then reads eight pixels from the actual guide shader. The core 3.2 border option is compile-checked, not a device/runtime capability result.

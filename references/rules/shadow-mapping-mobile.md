@@ -32,7 +32,9 @@ Pass 2 (main pass):    sample the depth texture, compare, apply shadow factor
    peter-panning. Tune per light, never reuse one magic number.
 5. **PCF via `sampler2DShadow` + `GL_COMPARE_REF_TO_TEXTURE`** uses hardware
    filtering — cheaper than manual multi-tap PCF. For soft shadows start with
-   a 3×3 hardware-filtered PCF before reaching for expensive kernels.
+   a small kernel. The baseline below uses nearest hardware comparisons per tap
+   so the frustum edge remains explicit; use linear hardware PCF only with a
+   verified interior footprint or an appropriate lit border.
 6. **Tight light projection**: fit the light ortho matrix to the visible
    receiver range; a tight frustum raises effective shadow-map resolution.
 7. **Cull shadow casters**: only casters render into the shadow pass; skip
@@ -45,17 +47,17 @@ Pass 2 (main pass):    sample the depth texture, compare, apply shadow factor
    the shadow pass itself is a full FBO switch (Store + Load); order it adjacent
    to the pass that consumes it where possible.
 
-## Code pattern (depth texture + hardware compare)
+## GLES 3.0+ baseline (depth texture + nearest hardware compare)
 
 ```cpp
 // Shadow FBO setup
 glGenTextures(1, &shadowDepthTex);
 glBindTexture(GL_TEXTURE_2D, shadowDepthTex);
 glTexStorage2D(GL_TEXTURE_2D, 1, GL_DEPTH_COMPONENT24, 1024, 1024);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
 
@@ -72,19 +74,58 @@ glReadBuffer(GL_NONE);
 #version 300 es
 precision mediump float;
 uniform highp sampler2DShadow u_ShadowMap;
-uniform highp mat4 u_LightSpace;
 in highp vec4 v_LightSpacePos;
 
+// Returns visibility: 1.0 is lit. The map uses conventional (not reversed) Z.
 mediump float ShadowFactor() {
+    if (v_LightSpacePos.w <= 0.0) return 1.0;
     highp vec3 proj = v_LightSpacePos.xyz / v_LightSpacePos.w * 0.5 + 0.5;
-    if (proj.z > 1.0) return 1.0;             // outside light frustum
-    // 3x3 hardware-filtered PCF
-    mediump float s = 0.0;
-    float texel = 1.0 / 1024.0;
-    for (int x = -1; x <= 1; ++x)
-        for (int y = -1; y <= 1; ++y)
-            s += texture(u_ShadowMap, vec3(proj.xy + vec2(x, y) * texel, proj.z));
-    return s / 9.0;
+    if (proj.z < 0.0 || proj.z > 1.0 ||
+        any(lessThan(proj.xy, vec2(0.0))) || any(greaterThanEqual(proj.xy, vec2(1.0))))
+        return 1.0;
+
+    highp ivec2 size = textureSize(u_ShadowMap, 0);
+    highp ivec2 center = ivec2(floor(proj.xy * vec2(size)));
+    mediump float visibility = 0.0;
+    for (int y = -1; y <= 1; ++y) {
+        for (int x = -1; x <= 1; ++x) {
+            highp ivec2 tap = center + ivec2(x, y);
+            if (any(lessThan(tap, ivec2(0))) || any(greaterThanEqual(tap, size))) {
+                visibility += 1.0;
+            } else {
+                highp vec2 uv = (vec2(tap) + 0.5) / vec2(size);
+                visibility += texture(u_ShadowMap, vec3(uv, proj.z));
+            }
+        }
+    }
+    return visibility / 9.0;
+}
+```
+
+### Optional border clamp (separate capability path)
+
+For a bound depth texture, GLES 3.2 core permits a lit border with depth 1
+under the baseline's `GL_LEQUAL` compare and reference range [0,1]. The base
+path above works unchanged if the branch is unavailable. Reverse-Z uses its
+own compare convention and border depth (typically 0 with `GL_GEQUAL`).
+A GLES 3.0/3.1 runtime can only use the extension form after checking the
+advertised extension and its matching suffixed enums/functions; a header
+declaration alone does not establish runtime support.
+
+```cpp
+bool TryConfigureShadowBorder(GLint esMajor, GLint esMinor) {
+#if defined(GL_ES_VERSION_3_2)
+    if (esMajor > 3 || (esMajor == 3 && esMinor >= 2)) {
+        const GLfloat litBorder[4] = {1.0f, 1.0f, 1.0f, 1.0f};
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+        glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, litBorder);
+        return true;
+    }
+#endif
+    (void)esMajor;
+    (void)esMinor;
+    return false;
 }
 ```
 

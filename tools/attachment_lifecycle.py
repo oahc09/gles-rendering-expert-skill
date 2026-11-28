@@ -1,4 +1,21 @@
 """Finite explicit attachment event model. Logical transfers, never DRAM."""
+from decimal import Decimal
+import math
+
+
+def bounded_integer(value, low, high, name):
+    """Accept JSON mathematical integers, not bool, a fraction, or nonfinite input."""
+    if type(value) is Decimal:
+        valid = value.is_finite() and low <= value <= high and value == value.to_integral_value()
+    elif type(value) is float:
+        valid = math.isfinite(value) and value.is_integer() and low <= value <= high
+    else:
+        valid = type(value) is int and low <= value <= high
+    if not valid:
+        raise ValueError('invalid ' + name)
+    return int(value)
+
+
 FORMATS={'RGBA8':4,'RGB8':3,'RG8':2,'R8':1,'RGBA16F':8,'RG16F':4,'R16F':2,'DEPTH24_STENCIL8':4,'DEPTH16':2,'RGBA32F':16}
 def lifecycle(data):
     attachments=data.get('attachments')
@@ -7,8 +24,9 @@ def lifecycle(data):
     for a in attachments:
         name=a.get('id')
         if not isinstance(name,str) or not name or name in state: raise ValueError('unique attachment id required')
-        for k in ('width','height','samples'):
-            if type(a.get(k)) is not int or not 1<=a[k]<=65536: raise ValueError('invalid '+k)
+        a = dict(a)
+        for k in ('width', 'height', 'samples'):
+            a[k] = bounded_integer(a.get(k), 1, 65536, k)
         if a['samples'] not in (1,2,4,8,16):raise ValueError('invalid samples')
         if type(a.get('initially_defined',False)) is not bool:raise ValueError('initially_defined boolean')
         state[name]={'spec':a,'defined':a.get('initially_defined',False),'stored':a.get('initially_defined',False),'upper':0,'events':[]}
