@@ -206,5 +206,50 @@ class DecisionTest(unittest.TestCase):
         self.assertEqual(json.loads(good.stdout)["candidates"],[])
 
 
+class DiscardScopeSchemaTest(unittest.TestCase):
+    def test_schema_and_cli_validate_the_same_documented_request_and_shape_errors(self):
+        import jsonschema
+
+        schema = json.loads((gd.ROOT / 'references/decision/v111-request.schema.json').read_text())
+        jsonschema.Draft202012Validator.check_schema(schema)
+        validator = jsonschema.Draft202012Validator(schema)
+        doc = (gd.ROOT / 'docs/v1.1.1/architecture.md').read_text().split('### Optional attachment lifetime in request schema 1', 1)[1]
+        workload = json.loads(doc.split('```json\n', 1)[1].split('\n```', 1)[0])
+        positive = sample('attachment-store', entries=('glInvalidateFramebuffer',),
+                          probes={'discard-dead-attachment': True})
+        positive['workload'] = workload
+        negative = []
+        for key, value in [('end_event', -1), ('complete', 1), ('lifecycle', []),
+                           ('lifecycle', [{'op': 'end', 'stores': {'panel-depth': 'invalid'}}])]:
+            request = copy.deepcopy(positive)
+            request['workload']['discard_scope'][key] = value
+            negative.append(request)
+        request = copy.deepcopy(positive)
+        request['workload']['discard_scope']['attachments'][0]['samples'] = 3
+        negative.append(request)
+        request = copy.deepcopy(positive)
+        request['workload']['discard_scope']['lifecycle'][0]['extra'] = False
+        negative.append(request)
+        old = copy.deepcopy(positive)
+        old['workload'].pop('discard_scope')
+        self.assertTrue(validator.is_valid(old))
+        extra = copy.deepcopy(positive)
+        extra['workload']['discard_scope']['end_event'] = 12
+        self.assertTrue(validator.is_valid(extra))  # The CLI alone checks cross-field relationships.
+        with tempfile.TemporaryDirectory() as temporary:
+            storage = Path(temporary) / 'request.json'
+            for request, good in [(positive, True), (old, True)] + [(row, False) for row in negative]:
+                with self.subTest(request=request):
+                    storage.write_text(json.dumps(request))
+                    self.assertEqual(validator.is_valid(request), good)
+                    proc = subprocess.run([sys.executable, str(gd.ROOT / 'tools/gpu_decision_v111.py'),
+                                           str(storage)], capture_output=True, text=True)
+                    self.assertEqual(proc.returncode == 0, good, proc.stderr)
+            storage.write_text(json.dumps(extra))
+            proc = subprocess.run([sys.executable, str(gd.ROOT / 'tools/gpu_decision_v111.py'),
+                                   str(storage)], capture_output=True, text=True)
+            self.assertNotEqual(proc.returncode, 0)
+
+
 if __name__ == "__main__":
     unittest.main()

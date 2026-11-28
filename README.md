@@ -26,7 +26,7 @@ See the [exact development plan](docs/v1.0.7-development-plan.md),
 This is a reviewable source candidate, **not a released v1.0.7**. Metadata remains
 **1.0.2** and all v1.0.3–v1.0.6 gates are preserved. Physical-device, calibrated
 screen and live-model acceptance remain open. Local validation is not remote CI;
-[the workflow](.github/workflows/validation.yml) stays manual-only.
+[the host workflow](.github/workflows/validation.yml) runs for PRs targeting main or by manual dispatch.
 
 ## v1.0.4 device/scene/repair candidate
 
@@ -51,7 +51,7 @@ See [requirements and limits](docs/acceptance-traceability.md),
 - [Host validation](examples/validation/README.md): actual C++17, EGL pbuffer/shared contexts and ESSL 300/310/320 compilation. Software Mesa results are **not mobile GPU performance evidence**.
 - [Agent benchmark](benchmarks/agent/README.md): 64 annotated cases and paired adapter runner. Infrastructure tests use synthetic responses; live model comparison is **BLOCKED_BY_PROVIDER**.
 - [Capability/backend matrix](references/matrices/backend-device-matrix.md), [technology playbooks](references/playbooks/modern-rendering.md), [research radar](references/evolution/technology-radar.md).
-- [Manual-only validation workflow](.github/workflows/validation.yml): no push/PR/scheduled trigger. Local evidence does not mean remote CI ran.
+- [Host validation workflow](.github/workflows/validation.yml): PRs targeting main and manual dispatch. Local evidence does not mean remote CI ran.
 
 Physical-device acceptance is **BLOCKED_BY_HARDWARE**. Run `python3 tools/check_release_gates.py --require-release` to enforce the full gate (currently exits nonzero by design).
 
@@ -179,7 +179,7 @@ gles-rendering-expert-skill/
 
 | Capability | Description |
 |:---|:---|
-| **API Boundary Enforcement** | Strict GLES 3.0/3.1/3.2 only — zero desktop OpenGL contamination |
+| **API Boundary Enforcement** | Strict GLES 3.0/3.1/3.2 only — check versioned core APIs and explicitly admitted extension paths |
 | **TBDR Optimization** | Automatic `glInvalidateFramebuffer`, FBO clear patterns, bandwidth analysis |
 | **RAII C++17** | All GPU resources managed via move-only RAII classes with state caching |
 | **GLSL ES Precision** | Correct `precision` declarations, `highp`/`mediump` guidance per data type |
@@ -254,8 +254,15 @@ original-plan experiments remain incomplete; metadata stays unchanged.
 - [Executable workload-to-Advisor workflow](benchmarks/workflow/README.md): actual GLES replay, artifact revalidation, quality rejection and baseline fallback; never software performance VERIFIED.
 - [Compressed streaming chain](benchmarks/compressed_streaming/README.md): pinned KTX preparation, cache/budget and actual upload/readback with original-pixel fallback.
 - [Remaining original-plan gates](docs/v1.0.9/completion-matrix.md) and [scope clarification](docs/v1.0.9/original-scope-audit.md). Original visual failures, physical-device/provider and independent review gates remain.
-- Read-only weekly/monthly radar workflow delivered, not active from this Draft branch. No release/tag/version metadata change.
+- The read-only [research radar workflow](.github/workflows/research-radar.yml) supports scheduled and manual collection. Collector output is not adoption or device evidence.
 
 ## v1.1.1 Ultimate Engineering Expert (development candidate)
 
 The [offline GPU decision and experience preview](docs/v1.1.1/architecture.md) produces bounded experiment suggestions, not renderer changes or measured gains. See the [v1.1.1 status](docs/v1.1.1/release-gates.json); no release is implied.
+
+## v1.1.2 engineering candidate (not released)
+
+Host checks cover bounded contracts and software draw/readback, including
+[UI resolve, odd-size YUV, atlas formats and indirect culling](benchmarks/product_smoke/README.md).
+These do not certify Android lifecycle behavior, physical GPU performance,
+native engine integrations or live-model quality. Release metadata stays 1.0.2.

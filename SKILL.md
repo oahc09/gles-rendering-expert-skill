@@ -245,7 +245,7 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 - **MRT / G-buffers**: attachment consistency, packing discipline, TBDR store cost — `references/rules/gles-api-standards.md` §5.2.
 - **Texture streaming / LOD**: full-chain `glTexStorage2D` + per-mip PBO upload, base/max-level gating, no mid-frame `glGenerateMipmap` — `references/rules/texture-streaming-lod.md`.
 - **GPU-driven culling**: compute predication + indirect draw (3.1); occlusion queries defer 1 frame and flush tiles on TBDR — `references/rules/gpu-culling.md`.
-- **Text (SDF/MSDF)**: R8 distance atlas (never sRGB), `fwidth`-based AA, one batched draw per atlas — `references/rules/text-rendering-sdf.md`.
+- **Text (SDF/MSDF)**: linear R8 for single-channel SDF, RGB8/RGBA8 for 3-channel MSDF (never sRGB), `fwidth`-based AA, one batched draw per atlas — `references/rules/text-rendering-sdf.md`.
 - **Clustered Forward+ (3.1)**: frustum clusters, light lists in SSBOs, no G-Buffer DRAM — `references/rules/clustered-lighting.md`.
 - **Screen-space depth effects** (SSAO / soft particles / motion blur): never sample the bound depth attachment; side-write linear depth to an `R16F` color attachment; half-res + bilateral upsample — `references/rules/screen-space-effects.md`.
 

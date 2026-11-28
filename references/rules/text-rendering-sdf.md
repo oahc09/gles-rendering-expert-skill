@@ -13,14 +13,17 @@
 |:---|:---|:---|:---|:---|
 | Bitmap + mipmaps | `GL_RGBA8`/`GL_R8` | No (blur at 2x+) | Yes at 1x | Fixed-size HUD numerals |
 | **SDF** (single channel) | `GL_R8` | Yes | Rounds acute corners | Body text, any size range |
-| **MSDF** (3 edge channels) | `GL_R8` (rgb) | Yes | Preserved | Display/UI type, CJK |
+| **MSDF** (3 edge channels) | `GL_RGB8` or `GL_RGBA8` (RGB distances) | Yes | Preserved | Display/UI type, CJK |
 
 Rule: default to **MSDF at 1 px/em spread ~4–8**, fall back to SDF when atlas
 memory forces a smaller texture.
 
 ## 2. Rules
 
-1. **Atlas is a plain R8/R8 RG8 texture — never an sRGB internal format.** The
+1. **Use linear `GL_R8` with a `GL_RED` upload and `.r` for single-channel SDF;
+   use `GL_RGB8` / `GL_RGBA8` with matching `GL_RGB` / `GL_RGBA` uploads for
+   three-channel MSDF.** Default swizzle on R8 yields `(R, 0, 0, 1)`;
+   replicating R still cannot restore independent channels. Never use sRGB. The
    stored value is a *distance*, not color; hardware sRGB decode would corrupt
    the field math. Gamma-correct the final coverage yourself (rule 5).
 2. **Edge antialiasing from screen-space derivatives**, not mipmaps:
@@ -66,7 +69,7 @@ precision mediump float;
 // (GLSL ES default-precision statements only exist for float/int/samplers —
 //  enforce highp UV with explicit declarations like v_Uv below)
 
-uniform sampler2D u_Atlas;       // GL_R8 MSDF, CLAMP_TO_EDGE, LINEAR
+uniform sampler2D u_Atlas;       // linear GL_RGB8 or GL_RGBA8 MSDF, CLAMP_TO_EDGE, LINEAR
 in highp vec2 v_Uv;
 in vec4 v_Color;
 out vec4 fragColor;
@@ -89,7 +92,7 @@ void main() {
 
 | Pitfall | Symptom | Fix |
 |:---|:---|:---|
-| sRGB internal format for SDF atlas | Wrong gamma, thick/thin strokes at scale | Plain `GL_R8`; gamma after coverage |
+| sRGB internal format for SDF atlas | Wrong gamma, thick/thin strokes at scale | Linear `GL_R8` for SDF; `GL_RGB8`/`GL_RGBA8` for MSDF; apply the display transfer after coverage |
 | Mipmapping the distance field | Blur/shrink at grazing LODs | No mips; `GL_TEXTURE_MAX_LEVEL 0` + LINEAR |
 | `fwidth` inside `if` branch | Undefined/zero AA on some drivers | Compute AA unconditionally, `discard` after |
 | `mediump` atlas UV on 4096 atlas | Glyph jitter/offsets | `highp vec2` or smaller atlas (rule 3) |
