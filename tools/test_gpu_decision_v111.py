@@ -251,5 +251,33 @@ class DiscardScopeSchemaTest(unittest.TestCase):
             self.assertNotEqual(proc.returncode, 0)
 
 
+    def test_equivalent_json_integer_spellings_and_fraction_boundary(self):
+        import jsonschema
+
+        validator = jsonschema.Draft202012Validator(json.loads(
+            (gd.ROOT / 'references/decision/v111-request.schema.json').read_text()))
+        positive = sample('attachment-store')
+        positive['workload']['discard_scope'] = discard_scope()
+        raw = json.dumps(positive)
+        expected = gd.decide(positive)
+        cli = [sys.executable, str(gd.ROOT / 'tools/gpu_decision_v111.py')]
+        equivalent = raw.replace('"end_event": 1', '"end_event": 1.0').replace(
+            '"width": 1080', '"width": 1.08e3').replace('"samples": 1', '"samples": 1.0')
+        self.assertTrue(validator.is_valid(json.loads(equivalent)))
+        good = subprocess.run(cli, input=equivalent, text=True, capture_output=True, timeout=5)
+        self.assertEqual(good.returncode, 0, good.stderr)
+        self.assertEqual(json.loads(good.stdout), expected)
+        for bad in [
+            raw.replace('"end_event": 1', '"end_event": true'),
+            raw.replace('"end_event": 1', '"end_event": 256'),
+            raw.replace('"width": 1080', '"width": 65537.0'),
+            raw.replace('"width": 1080', '"width": 1079.9999999999999999999'),
+            raw.replace('"samples": 1', '"samples": 1.25'),
+        ]:
+            rejected = subprocess.run(cli, input=bad, text=True, capture_output=True, timeout=5)
+            self.assertEqual(rejected.returncode, 2, rejected.stdout)
+            self.assertEqual(json.loads(rejected.stderr)['status'], 'INVALID_INPUT')
+
+
 if __name__ == "__main__":
     unittest.main()

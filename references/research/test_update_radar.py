@@ -42,7 +42,9 @@ class RadarTest(unittest.TestCase):
                 self.assertEqual(len(json.loads((root/'2026-11-01/radar.json').read_text())['items']),1)
             (root/'2026-10-31').mkdir(); (root/'2026-10-31/radar.json').write_text(json.dumps({'items':[self.row()]}))
             subprocess.run(cmd,check=True,capture_output=True)
-            self.assertEqual(json.loads((root/'2026-11-01/radar.json').read_text())['items'],[])
+            report = json.loads((root/'2026-11-01/radar.json').read_text())
+            self.assertEqual(report['items'], [self.row()])
+            self.assertEqual(report['new_items'], [])
     def test_reject_reversed_dates(self):
         p=subprocess.run([sys.executable,radar.__file__,'--start','2026-11-01','--end','2026-10-02'],capture_output=True)
         self.assertNotEqual(p.returncode,0)

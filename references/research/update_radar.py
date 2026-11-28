@@ -221,6 +221,35 @@ def write_history(path, end, carried, selected):
         fh.write(data)
 
 
+def archive_state(base, archive, end):
+    """Load trusted local reports; only complete reports seed a new history."""
+    prior = {}
+    today = {}
+    reviewed = []
+    for path in sorted(base.glob("*/radar.json")):
+        try:
+            report_day = day(path.parent.name)
+        except ValueError:
+            continue
+        if not horizon(end) <= report_day <= end:
+            continue
+        report = json.loads(path.read_text())
+        if path.parent == archive:
+            reviewed = [validate_decision(row) for row in report.get("review_decisions", [])]
+        eligible = report.get("history_eligible_ids")
+        eligible = set(eligible) if eligible is not None else None
+        for row in report["items"]:
+            key = item_key(row["source"], row["id"])
+            event = event_utc_day(row.get("event_at"))
+            if path.parent == archive:
+                today.setdefault(key, row)
+            admitted = key in eligible if eligible is not None else report.get("retrieval_complete") is not False
+            if not admitted or not (event and horizon(end) <= event <= report_day):
+                continue
+            prior[key] = {"source": row["source"], "id": row["id"], "event_day": str(event)}
+    return prior, today, reviewed
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--start", required=True, type=day)
@@ -242,12 +271,14 @@ def main():
     if args.history_out and (args.end - args.start).days >= HISTORY_DAYS:
         parser.error("cross-run history supports at most 90 inclusive days")
     through, carried = read_history(args.history_in, args.end) if args.history_in else (None, {})
-    known = set(carried)
-    # Exclude this date so reruns refresh rather than incorrectly erase its discoveries.
-    for path in args.archive.glob("*/radar.json"):
-        if path.parent != archive:
-            for row in json.loads(path.read_text())["items"]:
-                known.add(row["source"] + ":" + row["id"])
+    prior, today, reviewed = archive_state(args.archive, archive, args.end)
+    # Recovered state wins over older local records; keep same-day candidate
+    # details even when the restored history already contains their identities.
+    carried = {**prior, **carried}
+    known = set(carried) | set(today)
+    for row in decisions:
+        if row not in reviewed:
+            reviewed.append(row)
     records, statuses = [], []
     if args.input:
         records = json.loads(args.input.read_text())
@@ -263,6 +294,14 @@ def main():
                                  "error": type(exc).__name__ + ": " + str(exc)})
     selected = select(records, args.start, args.end, known)
     complete = all(s["complete"] for s in statuses)
+    for row in selected:
+        today[item_key(row["source"], row["id"])] = row
+    archived = [today[key] for key in sorted(today)]
+    eligible = set(carried).intersection(today)
+    if complete:
+        eligible.update(item_key(row["source"], row["id"])
+                        for row in select(records, args.start, args.end, set())
+                        if item_key(row["source"], row["id"]) in today)
     report = {"schema_version": 1, "start": str(args.start), "end": str(args.end),
               "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "sources": statuses,
               "status": "INCOMPLETE" if not complete else ("REVIEW_REQUIRED" if selected else "NO_NEW_CANDIDATES"),
@@ -270,7 +309,8 @@ def main():
               "date_unknown_candidates": [r for r in records if event_utc_day(r.get("event_at")) is None],
               "manual_sources": [{"source": s, "status": "MANUAL_REVIEW_REQUIRED"} for s in ("X", "Khronos", "Android", "Arm", "Qualcomm", "Imagination", "Mesa")],
               "note": "Metadata candidates only; no verified material updates is a human review conclusion, not a fetch result.",
-              "review_decisions": decisions, "items": selected}
+              "review_decisions": reviewed, "items": archived, "new_items": selected,
+              "history_eligible_ids": sorted(eligible)}
     if args.history_out:
         report["history"] = {
             "mode": "RESTORED" if through else "NO_PRIOR_COMPLETE_HISTORY",
@@ -281,10 +321,10 @@ def main():
         }
     output = archive / "radar.json"
     output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
-    print(json.dumps({"output": str(output), "items": len(selected), "complete": complete,
+    print(json.dumps({"output": str(output), "items": len(selected), "archived_items": len(archived), "complete": complete,
                       "sha256": hashlib.sha256(output.read_bytes()).hexdigest()}))
     if complete and args.history_out:
-        write_history(args.history_out, args.end, carried, selected)
+        write_history(args.history_out, args.end, carried, [today[key] for key in sorted(eligible)])
     return 0 if complete else 2
 
 if __name__ == "__main__":

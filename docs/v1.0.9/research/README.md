@@ -76,3 +76,5 @@ The configured release sources include Cocos Engine, Unity Graphics and Godot;
 releases endpoints alone do not cover those projects' full commits or papers.
 Review, reproduction, promotion and withdrawal remain separate from metadata
 collection.
+
+Local archive migration uses active, previously complete identities from trusted reports. On same-day reruns, `items` retains full candidate records and `review_decisions` retains past human notes; `new_items` lists this invocation’s discoveries only. Incomplete retrieval never writes replacement history.

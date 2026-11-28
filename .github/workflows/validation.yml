@@ -41,6 +41,7 @@ jobs:
         run: |
           mkdir -p reports/v112-product-smoke
           python3 benchmarks/product_smoke/audit_formats_culling.py reports/v112-product-smoke/formats-culling.json
+          MESA_GLES_VERSION_OVERRIDE=3.0 python3 benchmarks/product_smoke/shadow_core30.py --headers /usr/include --out reports/v112-product-smoke/shadow-core30.json
           python3 benchmarks/product_smoke/mobile_ui_resolve.py reports/v112-product-smoke/ui | tee reports/v112-product-smoke/ui-result.json
           python3 benchmarks/product_smoke/odd_video.py examples/texture_pipeline/yuv_planes.frag reports/v112-product-smoke/video | tee reports/v112-product-smoke/video-result.json
       - name: Legacy C++ example compile and link

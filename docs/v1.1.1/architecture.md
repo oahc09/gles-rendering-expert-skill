@@ -37,6 +37,8 @@ The seed [experience ledger](../../references/experience/v111-cases.json) distin
 
 ### Optional attachment lifetime in request schema 1
 
+The CLI treats integral JSON spellings (for example `1`, `1.0`, and `1e0`) as the same bounded integer for `end_event`, dimensions and sample counts. Boolean, fractional and out-of-range values are rejected before lifecycle evaluation. Equivalent requests retain the same decision identity.
+
 The schema-1 workload may include `discard_scope` in addition to `labels`.
 Older workload objects with only `labels` remain valid. For example:
 

@@ -3,6 +3,7 @@
 
 import argparse
 from copy import deepcopy
+from decimal import Decimal, InvalidOperation
 import gzip
 import hashlib
 import json
@@ -12,7 +13,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-from attachment_lifecycle import lifecycle
+from attachment_lifecycle import bounded_integer, lifecycle
 
 ROOT = Path(__file__).resolve().parents[1]
 LIMIT = 128 * 1024
@@ -38,15 +39,15 @@ def unique_object(items):
     return result
 
 
-def parse(data):
+def parse(data, *, exact=False):
     require(len(data) <= LIMIT, "JSON size limit")
-    return json.loads(data, object_pairs_hook=unique_object,
+    return json.loads(data, object_pairs_hook=unique_object, parse_float=Decimal if exact else float,
                       parse_constant=lambda _: require(False, "non-finite JSON number"))
 
 
-def read(path):
+def read(path, *, exact=False):
     with path.open("rb") as stream:
-        return parse(stream.read(LIMIT + 1))
+        return parse(stream.read(LIMIT + 1), exact=exact)
 
 
 def token(value):
@@ -172,7 +173,31 @@ def find_cases(cases, action, target, labels, as_of):
     return sorted(matches, key=lambda row: (row["scope"] != "EXACT_PROFILE", row["id"]))
 
 
+def normalize_request_numbers(value):
+    """Canonicalize integral schema fields before scoring, indexing or hashing."""
+    value = deepcopy(value)
+    require(isinstance(value, dict) and isinstance(value.get("workload"), dict)
+            and isinstance(value.get("objective"), dict), "invalid request structure")
+    value["schema_version"] = bounded_integer(value["schema_version"], 1, 1, "schema_version")
+    scope = value["workload"].get("discard_scope")
+    if scope is not None:
+        require(isinstance(scope, dict) and isinstance(scope.get("attachments"), list), "invalid discard scope")
+        scope["end_event"] = bounded_integer(scope["end_event"], 0, 255, "end_event")
+        for spec in scope["attachments"]:
+            require(isinstance(spec, dict), "invalid attachment")
+            for key in ("width", "height", "samples"):
+                spec[key] = bounded_integer(spec[key], 1, 65536, key)
+    # Only objective weights legitimately use fractional request numbers. Parse
+    # integral fields exactly so rounding cannot turn a fraction into an integer.
+    for key, weight in value["objective"].items():
+        if type(weight) is Decimal:
+            require(weight.is_finite() and 0 <= weight <= 1, "invalid objective weights")
+            value["objective"][key] = float(weight)
+    return value
+
+
 def decide(value, strategies=None, cases=None):
+    value = normalize_request_numbers(value)
     as_of = request(value)
     target, weights = value["target"], value["objective"]
     labels = set(value["workload"]["labels"])
@@ -265,10 +290,10 @@ def main():
     parser.add_argument("request", nargs="?", type=Path, help="JSON file; omit to read stdin")
     opts = parser.parse_args()
     try:
-        data = read(opts.request) if opts.request else parse(sys.stdin.buffer.read(LIMIT + 1))
+        data = read(opts.request, exact=True) if opts.request else parse(sys.stdin.buffer.read(LIMIT + 1), exact=True)
         print(json.dumps(decide(data), indent=2, allow_nan=False))
         return 0
-    except (KeyError, TypeError, ValueError, OSError, RecursionError):
+    except (KeyError, TypeError, ValueError, OSError, RecursionError, InvalidOperation):
         print('{"status":"INVALID_INPUT","automatic_renderer_mutation":false}', file=sys.stderr)
         return 2
 
