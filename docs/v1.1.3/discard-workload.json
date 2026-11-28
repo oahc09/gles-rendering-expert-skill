@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "experiment_id": "discard-depth-after-consumer-v1",
+  "workload": {
+    "workload_id": "discard-depth-after-consumer-v1",
+    "provenance": "synthetic",
+    "resolution": [4, 4],
+    "sampling_formats": ["RGBA8", "DEPTH16"],
+    "thermal_state": "UNKNOWN",
+    "trace_available": false
+  }
+}

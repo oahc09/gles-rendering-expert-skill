@@ -4,7 +4,9 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import os
 import re
+import tempfile
 from pathlib import Path
 import urllib.error
 import urllib.parse
@@ -23,6 +25,7 @@ SOURCES = {
     "ktx": ("KhronosGroup/KTX-Software", "releases"),
     "cocos-engine": ("cocos/cocos-engine", "releases"),
     "unity-graphics": ("Unity-Technologies/Graphics", "releases"),
+    "unity-urp-changelog": ("Unity-Technologies/Graphics", "commits"),
     "godot": ("godotengine/godot", "releases"),
 }
 MAX_PAGES = 10
@@ -142,6 +145,8 @@ def collect(source, start, end):
         query = {"per_page": 100, "page": page}
         if kind == "commits":
             query.update(since=start.isoformat()+"T00:00:00Z", until=end.isoformat()+"T23:59:59Z")
+        if source == "unity-urp-changelog":
+            query["path"] = "Packages/com.unity.render-pipelines.universal/CHANGELOG.md"
         url = f"https://api.github.com/repos/{repo}/{kind}?" + urllib.parse.urlencode(query)
         req = urllib.request.Request(url, headers={"User-Agent": "gles-skill-evidence-radar", "Accept": "application/vnd.github+json"})
         with urllib.request.urlopen(req, timeout=30) as response:
@@ -155,6 +160,19 @@ def collect(source, start, end):
             complete = True
             break
     return records, complete
+
+
+def source_health(error):
+    if isinstance(error, urllib.error.HTTPError):
+        if error.code == 429 or (
+            error.code == 403 and error.headers and (
+                error.headers.get("x-ratelimit-remaining") == "0" or error.headers.get("retry-after")
+            )
+        ):
+            return "RATE_LIMITED"
+    if isinstance(error, (urllib.error.URLError, TimeoutError)):
+        return "UNAVAILABLE"
+    return "PARSE_FAILED"
 
 # Bounded, versioned metadata state, distinct from review/promotion.
 HISTORY_DAYS = 90
@@ -217,8 +235,29 @@ def write_history(path, end, carried, selected):
                        ensure_ascii=True, separators=(",", ":")) + "\n").encode()
     if len(items) > MAX_HISTORY_ROWS or len(data) > MAX_HISTORY_BYTES:
         raise ValueError("history exceeds bound; refusing to truncate potentially active identities")
+    # Exclusive creation keeps a different run's history immutable.
     with path.open("xb") as fh:
-        fh.write(data)
+        try:
+            fh.write(data)
+            fh.flush()
+        except OSError:
+            fh.close()
+            path.unlink()
+            raise
+
+
+def replace_report(path, report):
+    data = (json.dumps(report, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
+    with tempfile.NamedTemporaryFile(dir=path.parent, prefix=".radar-", delete=False) as temp:
+        pending = Path(temp.name)
+        try:
+            temp.write(data)
+            temp.close()
+            os.replace(pending, path)
+        finally:
+            temp.close()
+            pending.unlink(missing_ok=True)
+    return hashlib.sha256(data).hexdigest()
 
 
 def archive_state(base, archive, end):
@@ -233,7 +272,7 @@ def archive_state(base, archive, end):
             continue
         if not horizon(end) <= report_day <= end:
             continue
-        report = json.loads(path.read_text())
+        report = json.loads(path.read_text(encoding="utf-8"))
         if path.parent == archive:
             reviewed = [validate_decision(row) for row in report.get("review_decisions", [])]
         eligible = report.get("history_eligible_ids")
@@ -261,7 +300,7 @@ def main():
     parser.add_argument("--history-in", type=Path, help="validated metadata identities from a prior complete run")
     parser.add_argument("--history-out", type=Path, help="new metadata history; written only on complete retrieval")
     args = parser.parse_args()
-    decisions = [validate_decision(row) for row in json.loads(args.decisions.read_text())] if args.decisions else []
+    decisions = [validate_decision(row) for row in json.loads(args.decisions.read_text(encoding="utf-8"))] if args.decisions else []
     if args.start > args.end:
         parser.error("start must not exceed end")
     archive = args.archive / args.end.isoformat()
@@ -281,16 +320,21 @@ def main():
             reviewed.append(row)
     records, statuses = [], []
     if args.input:
-        records = json.loads(args.input.read_text())
+        records = json.loads(args.input.read_text(encoding="utf-8"))
         statuses.append({"source": "fixture", "status": "OFFLINE_FIXTURE", "complete": True})
     else:
         for source in args.source or sorted(SOURCES):
             try:
                 rows, complete = collect(source, args.start, args.end)
+                items_in_window = len(select(rows, args.start, args.end, set()))
                 records.extend(rows)
-                statuses.append({"source": source, "status": "FETCHED", "complete": complete})
-            except (urllib.error.URLError, TimeoutError, ValueError, KeyError) as exc:
+                health = ("PAGE_LIMIT_REACHED" if not complete else
+                          "SUCCESS_WITH_ITEMS" if items_in_window else "SUCCESS_EMPTY")
+                statuses.append({"source": source, "status": "FETCHED", "complete": complete,
+                                 "health": health, "items_in_window": items_in_window})
+            except (urllib.error.URLError, TimeoutError, ValueError, KeyError, TypeError, IndexError) as exc:
                 statuses.append({"source": source, "status": "FETCH_FAILED", "complete": False,
+                                 "health": source_health(exc),
                                  "error": type(exc).__name__ + ": " + str(exc)})
     selected = select(records, args.start, args.end, known)
     complete = all(s["complete"] for s in statuses)
@@ -320,11 +364,19 @@ def main():
             "write_admitted": complete,
         }
     output = archive / "radar.json"
-    output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
-    print(json.dumps({"output": str(output), "items": len(selected), "archived_items": len(archived), "complete": complete,
-                      "sha256": hashlib.sha256(output.read_bytes()).hexdigest()}))
-    if complete and args.history_out:
+    if args.history_out and args.history_out.resolve() == output.resolve():
+        parser.error("--history-out must differ from the archive report")
+    wrote_history = complete and args.history_out is not None
+    if wrote_history:
         write_history(args.history_out, args.end, carried, [today[key] for key in sorted(eligible)])
+    try:
+        digest = replace_report(output, report)
+    except OSError:
+        if wrote_history:
+            args.history_out.unlink()
+        raise
+    print(json.dumps({"output": str(output), "items": len(selected), "archived_items": len(archived), "complete": complete,
+                      "sha256": digest}))
     return 0 if complete else 2
 
 if __name__ == "__main__":

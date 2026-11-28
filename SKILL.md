@@ -1,10 +1,10 @@
 ---
 name: gles-rendering-expert-skill
 description: "Senior OpenGL ES & Graphics Rendering Expert skill for AI coding assistants. Enforces OpenGL ES 3.0/3.1/3.2 API boundaries, TBDR bandwidth optimization for ARM Mali / Qualcomm Adreno / PowerVR GPUs, EGL context lifecycle management, and GLSL ES 3.00/3.10/3.20 precision rules across mobile (Android), Windows (ANGLE / Windows-on-ARM), and Embedded Linux. Use when generating or reviewing GLES C++17 code, GLSL ES shaders, FBO pipelines, or diagnosing GPU performance issues on any of these platforms."
-description_en: "Expert skill for OpenGL ES 3.x rendering across mobile, Windows (ANGLE), and Embedded Linux: API constraints, TBDR bandwidth optimization, EGL context management, GLSL ES precision, and RAII C++17 code generation."
-description_zh: "OpenGL ES 3.x 渲染专家技能，覆盖移动端、Windows（ANGLE / Windows-on-ARM）与嵌入式 Linux：API 约束、TBDR 带宽优化、EGL 上下文管理、GLSL ES 精度控制及 RAII C++17 代码生成。"
 license: MIT
 metadata:
+  description_en: "Expert skill for OpenGL ES 3.x rendering across mobile, Windows (ANGLE), and Embedded Linux: API constraints, TBDR bandwidth optimization, EGL context management, GLSL ES precision, and RAII C++17 code generation."
+  description_zh: "OpenGL ES 3.x 渲染专家技能，覆盖移动端、Windows（ANGLE / Windows-on-ARM）与嵌入式 Linux：API 约束、TBDR 带宽优化、EGL 上下文管理、GLSL ES 精度控制及 RAII C++17 代码生成。"
   author: gles-rendering-expert-skill contributors
   version: 1.0.2
   last-updated: 2026-08-30
@@ -19,73 +19,15 @@ Your mission is to generate production-grade, bandwidth-optimized rendering code
 
 ---
 
-## v1.0.7 shader/material/pipeline routing (candidate, not released)
+## Start here
 
-For complete multi-material or multi-pass GLES work, start with the
-[pipeline contract tools](benchmarks/pipeline/README.md), then select the
-[variant/cache](references/pipeline/shader-variants.md),
-[material ABI](references/pipeline/material-abi.md),
-[RenderGraph](references/pipeline/rendergraph-gles.md),
-[resource hazard](references/pipeline/resource-hazards.md),
-[color pipeline](references/pipeline/color-pipeline.md) and
-[diagnostic](references/pipeline/diagnostics.md) references.
-Keep GLES Core, capability-gated extensions, implementation-specific binaries and
-performance recommendations distinct. Reject unsupported version/extension paths
-before use; validate linked-program ABI and sampler state, not only shader syntax.
-Use the [actual C++17/EGL lab](examples/pipeline/README.md) for compile/link,
-reflection, binary fallback, compute-to-draw, MSAA and analytic image controls.
-Treat [static shader risks](references/pipeline/shader-performance.md) as hypotheses,
-not measurements. A valid whole-resource graph is not proof of dynamic GL state,
-intra-dispatch race freedom or physical memory aliasing.
-Preserve all earlier cases and [recursive release gates](docs/v1.0.7-release-gates.json).
-The [30 new Agent tasks](benchmarks/agent/V107_CASES.md) have no live model results;
-software images are not calibrated displays or mobile performance. Metadata stays
-1.0.2 until every inherited gate and release authorization passes.
+| Task | Open first |
+| --- | --- |
+| Generate or review GLES code | Use the rules below and the matching [feature card](references/cards/README.md). Verify exact API and extension membership with the [coverage catalog](references/coverage/source-manifest.json). Use the [pipeline guide](benchmarks/pipeline/README.md) for multi-pass or material work. |
+| Diagnose an existing project | Record the target, source scope and resource ownership with [project intake](docs/v1.1.3/README.md#项目快照与补采). Use [DeviceLab](benchmarks/device_lab/README.md) for device identity, and [trace triage](benchmarks/traces/README.md) for measured workload evidence. |
+| Run a registered experiment or check acceptance | Use the [first run and evidence guide](docs/v1.1.3/README.md). Check [current candidate status](docs/v1.1.3/execution-status.md) before reporting readiness. For older labs, normative coverage boundaries and inherited release gates, see [historical routing](docs/v1.1.3/routing-history.md). |
 
-## v1.0.6 system-engineering routing (candidate, not released)
-
-Use [cross-API and multi-Surface lab](examples/system_android/README.md) for
-AHB/native-fence ownership and shared EGL lifecycle; [system scenes](benchmarks/system_scenes/README.md)
-for compute/CPU parity, transparency, lighting and precision; [texture/video pipeline](examples/texture_pipeline/README.md)
-for actual runtime transcoding and protected-input rejection; [driver compatibility](benchmarks/driver_compat/README.md)
-for conditional identity-based decisions; and [fault reduction](benchmarks/reducer/README.md)
-for stable, auditable failure predicates. [Agent2 cases](benchmarks/agent/V106_CASES.md)
-remain unevaluated until an authorized live provider supplies evidence. Software rendering,
-NDK/Java compilation, authored faults and controlled rebuilds never certify physical devices.
-Preserve [all predecessor gates](docs/v1.0.6/release-gates.json); metadata remains 1.0.2.
-
-## v1.0.5 sustained-quality routing (candidate, not released)
-
-For longrun sampling and thermal/power evidence use [the sustained capture contract](benchmarks/longrun/README.md).
-Use [quality policy](benchmarks/quality_policy/README.md) for deterministic recommendations,
-[precision and visual regressions](benchmarks/visual_quality/README.md) for numeric/region/temporal gates,
-[resource stress](benchmarks/resource_pressure/README.md) for owned-object estimates and recovery,
-and [Trace SQL](benchmarks/traces/sql/README.md) for schema-probed evidence with explicit unknowns.
-Do not convert synthetic time, software correctness, source compilation or fixture scores into
-physical-device or real-model acceptance. Preserve prior triggers, APIs and [release dependencies](docs/v1.0.5/acceptance.md).
-
-## v1.0.4 implementation routing (not released)
-
-For device identity and native/ANGLE comparisons use [DeviceLab](benchmarks/device_lab/README.md).
-For actual workload correctness and visual error use [SceneLab](benchmarks/scenes/README.md).
-For exported trace triage use [trace manifests](benchmarks/traces/README.md); report hypotheses,
-missing counters and falsifiable A/B tests, never a single-utilization bottleneck conclusion.
-For Diagnose → Patch → Validate use the existing [repair benchmark](benchmarks/agent/REPAIR_WORKFLOW.md).
-Keep original version/platform triggers. New functionality does not waive old release gates;
-[full traceability](docs/v1.0.4-traceability.md) separates local, CI, target and provider evidence.
-
-## Candidate validation and evidence routing
-
-This candidate keeps metadata **1.0.2** until the v1.0.3 full acceptance gates pass.
-For executable correctness checks use [host validation](examples/validation/README.md).
-Engineering routes: [rule contracts](benchmarks/rules/README.md),
-[Agent benchmark](benchmarks/agent/README.md), [capability matrices](references/matrices/),
-and [release gates](docs/release-gates.json). Static contract tests, live model behavior,
-host GL correctness and real-device GPU measurements are separate evidence classes.
-`MUST` denotes a version/extension-specific normative requirement; `SHOULD` denotes
-an engineering default; `CONDITIONAL` requires capability checks and device evidence.
-Optimization prose below is not a portable speed guarantee. Software rendering tests
-prove only their asserted correctness properties, not real mobile GPU performance.
+Treat static checks, software runs, device measurements, calibrated display evidence and live model evaluation as distinct. `MUST` identifies a normative requirement, `SHOULD` an engineering default, and `CONDITIONAL` a path that needs capability or evidence checks.
 
 ## Mandatory API Rules
 
@@ -125,17 +67,14 @@ prove only their asserted correctness properties, not real mobile GPU performanc
 ### State Cache Design Principle
 - Design a **State Cache** layer that tracks currently bound textures, programs, VAOs, and FBOs.
 - Before calling `glBindTexture`, `glUseProgram`, `glBindVertexArray`, or `glBindFramebuffer`, check the cache to avoid redundant driver calls.
-- Invalidate cache entries on context loss or explicit reset.
+- Scope caches to each context and invalidate them on context loss or external state changes. Force the required consumer rebind when a shared object is updated, even when its cached GL name is unchanged.
 
 ---
 
 ## GLSL ES Shader Rules
 
 ### Version & Precision
-- Every shader **MUST** begin with the correct `#version` directive for its target API:
-  - GLES 3.0 → `#version 300 es`
-  - GLES 3.1 → `#version 310 es`
-  - GLES 3.2 → `#version 320 es`
+- For new GLES 3.x shaders, specify the lowest GLSL ES version that provides the features used and is supported by the context. Baselines are `300 es`, `310 es`, and `320 es`. An ES 3.2 context also supports earlier GLSL ES versions.
 - Fragment floating-point declarations **MUST** have precision, either explicitly per declaration or via a default such as `precision highp float;`. Choose precision from error bounds, not a universal mediump requirement.
 - Use high precision for position math when its range/error budget requires it; texture coordinates, colors and normals require their own error bounds (P112-PRECISION).
 
@@ -154,9 +93,8 @@ prove only their asserted correctness properties, not real mobile GPU performanc
 Mobile GPUs (Mali, Adreno, PowerVR) use **Tile-Based Deferred Rendering**. Each tile (typically 16×16 to 64×64 pixels) is rendered entirely in on-chip Tile Memory before writing back to System Memory (DRAM). This architecture demands specific coding patterns:
 
 ### FBO Clear & Store Operations
-1. **RenderPass Start**: SHOULD call `glClear()` or `glClearBuffer*()` at the beginning of rendering to a framebuffer. This signals the driver that prior Tile content is invalid — avoiding an expensive DRAM → Tile Memory load. (Exception: full-screen post-process that overwrites every pixel, or passes that intentionally read prior contents.)
-2. **RenderPass End (Depth/Stencil)**: SHOULD call `glInvalidateFramebuffer()` for `GL_DEPTH_ATTACHMENT` and/or `GL_STENCIL_ATTACHMENT` when they are not needed by subsequent passes. This permits discarding contents; actual bandwidth savings depend on the implementation and must be measured.
-3. **Offscreen FBOs**: Invalidate depth/stencil after the last consumer only when their contents are known to be dead (P112-ATTACHMENT).
+1. **Pass start**: Preserve required or unknown contents. Clear when defined starting values are needed. Invalidate only when old contents are dead and subsequent writes define every value that will be consumed.
+2. **Pass end**: Invalidate proven-dead attachments after their last consumer. Use `GL_DEPTH_ATTACHMENT` / `GL_STENCIL_ATTACHMENT` for a named FBO and `GL_DEPTH` / `GL_STENCIL` for the default framebuffer. Keep color needed for presentation. Measure bandwidth effects on the target.
 
 ### Bandwidth Control
 - **SHOULD** avoid synchronous `glReadPixels()` in latency-sensitive rendering; it is legal for correctness tests or intentional synchronous capture. If pixel readback is required, use **PBO (Pixel Buffer Object)** double-buffered transfer with fence synchronization (note: `glReadPixels` into a PBO is asynchronous with respect to the CPU *only if* you do not map the PBO until the GPU has finished writing — check a fence; merely waiting one frame is not proof of completion):
@@ -194,18 +132,18 @@ All three mobile vendors are tile-based — the TBDR rules above apply to all of
 ### EGL Lifecycle
 - Provide complete `eglGetDisplay` → `eglInitialize` → `eglChooseConfig` → `eglCreateContext` → `eglCreateWindowSurface` → `eglMakeCurrent` initialization.
 - Check the **return value** of each EGL call first. Only call `eglGetError()` when the return value indicates failure (calling it unconditionally consumes the error state and may mask later diagnostics).
-- On shutdown: `eglMakeCurrent(display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT)` → `eglDestroySurface` → `eglDestroyContext` → `eglTerminate`. The first argument **must** be a valid `EGLDisplay` (never `EGL_NO_DISPLAY`).
+- On shutdown, unbind on the owning thread and destroy its surface and context. Terminate the valid `EGLDisplay` after its last owner releases it.
 
 ### Multi-Threaded Shared Context
 - Worker threads (texture loading, asset streaming) must create their own `EGLContext` sharing the render context via `eglCreateContext(..., share_context, ...)`.
-- Each thread must call `eglMakeCurrent` with its own context and a valid surface (or `EGL_NO_SURFACE` **only if** `EGL_KHR_surfaceless_context` is confirmed present).
-- Synchronize GPU resource visibility with `glFenceSync` + `glFlush` after cross-thread uploads; the consuming thread waits with `glWaitSync` or `glClientWaitSync`, then calls `glDeleteSync`.
+- Each GL thread makes its context current with a valid surface, or uses surfaceless binding when supported by EGL and the client context.
+- After cross-context uploads, the producer inserts a fence, flushes and publishes it with CPU synchronization. The consumer waits, then attaches or rebinds the updated object even if it was already bound. Retire the fence and resource only when their owners and consumers are finished.
 
 ### Android Context Lost Recovery
 - **`EGL_CONTEXT_LOST`** is detected as the return of `eglSwapBuffers()` → `EGL_FALSE`, followed by `eglGetError()` returning `EGL_CONTEXT_LOST`. Note: Android surface destruction (`APP_CMD_TERM_WINDOW`) does **not** always trigger `EGL_CONTEXT_LOST`; it is a *separate* lifecycle event. Handle surface loss and context loss independently.
 - Recovery steps:
   1. Detect via `eglSwapBuffers` failure + `eglGetError() == EGL_CONTEXT_LOST`.
-  2. Destroy all stale GL resource handles (they are already invalid).
+  2. Drop stale GL names and queued GL deletes from the lost generation. Release the old EGL objects according to their ownership.
   3. Recreate EGL context & surface.
   4. Reload all GPU resources (shaders, textures, buffers) from cached CPU-side data.
 - Architecture: maintain a `ResourceRegistry` that tracks all GPU allocations for deterministic rebuild.
@@ -313,20 +251,3 @@ This SKILL.md is the entry point. Load additional files **only when relevant**:
 | Example code (few-shot) | `references/examples/` → specific file |
 
 **Do NOT load all rules simultaneously.** Select only those matching the current user query to minimize context cost and prevent rule drift.
-
-
-## v1.1.0 frozen coverage routing (candidate, not released)
-
-For exact GLES 2.0-3.2 or EGL 1.4/1.5 API/extension membership, use `references/coverage/source-manifest.json` and the generated catalogs. INDEXED_ONLY is not semantic legality, compiler success, runtime support or device validation. Resolve the exact version/extension, callable entrypoint, dependencies and parameter probe before enabling a path; aliases do not imply interchangeable entrypoints.
-
-For shader-language and EGL lifecycle boundaries, read `references/coverage/glsl-es-matrix.md` and `references/coverage/egl-matrix.md`. For format/interaction, vendor and scenario limits, select only the relevant coverage matrix. Consult `docs/v1.1.0/release-gates.json` before describing acceptance; inherited failures, physical targets and model evaluation cannot be waived by index completeness.
-
-For distance-field edge errors, compare sampler precision and filtering separately before widening tolerances; see `references/coverage/distance-text.md`. For exact transparency requests, weighted OIT is an approximation: require a validated per-sample ordering condition before selecting sorted alpha, and reject crossing or ambiguous order; see `benchmarks/coverage/weighted-oit/exact-policy-analysis.md`. Finite host probes do not establish arbitrary-scene correctness or free bandwidth.
-
-For crossing transparent layers that invalidate global sorting, the [bounded depth-peeling lab](references/coverage/depth-peeling.md) demonstrates a GLES3 alternative with explicit depth-domain and layer-count limits. Require the extra overflow pass; never silently truncate layers or advertise its multipass/query cost as a speed improvement.
-
-For end-to-end acceptance of the registered transparency controls, use [finite transparency routing](references/coverage/transparency-routing.md). It validates source, input, budget and actual pixels together; it deliberately rejects unregistered geometry and cannot certify arbitrary caller-supplied scene data.
-
-For core/KHR debug output, see [filtered callback lifecycle validation](references/coverage/debug-output.md). Select exact version/extension entrypoints, retain callback state until unregister, avoid calling GL from the callback, and collect only the task-approved diagnostic categories rather than indiscriminately publishing driver messages.
-
-For timer-query evidence, see [EXT timer lifecycle validation](references/coverage/timer-query.md). Check result availability, disjoint interval and counter-width/overflow limits before interpreting samples. Never treat software timer availability or absence of a disjoint flag as proof of a hardware performance gain.

@@ -34,27 +34,41 @@ EXPECTED = [0, 85, 142, 85, 255, 255, 255, 255]
 
 
 def compile_snippets(headers, directory):
-    document = (ROOT / RULE).read_text()
+    document = (ROOT / RULE).read_text(encoding='utf-8')
     setup, optional = re.findall(r'```cpp\n(.*?)\n```', document, re.S)
+    shader, = re.findall(r'```glsl\n(.*?)\n```', document, re.S)
+    snippets = [
+        {'id': 'shadow-depth-fbo', 'source': setup, 'gles': '3.0', 'stage': 'host', 'expected': 'complete depth-only FBO'},
+        {'id': 'shadow-core-border', 'source': optional, 'gles': '3.2', 'stage': 'host', 'expected': 'EDGE on 3.0, BORDER on 3.2'},
+        {'id': 'shadow-receiver-pcf', 'source': shader, 'gles': '3.0', 'glsl_es': '300',
+         'stage': 'fragment', 'expected': 'lit out-of-range PCF taps and clip coordinates'},
+    ]
+    for entry in snippets:
+        entry.update(path=RULE, sha256=hashlib.sha256(entry.pop('source').encode()).hexdigest(),
+                     classification='teaching-snippet', extensions=[],
+                     platform='Mesa llvmpipe',
+                     harness='benchmarks/product_smoke/shadow_core30.py',
+                     basis='https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf')
     assert 'GL_CLAMP_TO_BORDER' not in setup
     source = directory / 'shadow.cpp'
     commands = []
     for name in ['gl3.h', 'gl31.h', 'gl32.h']:
         source.write_text(f'#include <GLES3/{name}>\n{optional}\n'
                           'extern "C" void Setup(GLuint& shadowDepthTex, GLuint shadowFbo) {\n'
-                          f'{setup}\n}}\n')
+                          f'{setup}\n}}\n'
+                          'extern "C" bool ConfigureBorder(GLint major, GLint minor) {\n'
+                          '    return TryConfigureShadowBorder(major, minor);\n}\n')
         argv = ['c++', '-std=c++17', '-Wall', '-Wextra', '-Werror', '-fsyntax-only',
                 '-I', str(headers), str(source)]
         subprocess.run(argv, check=True)
         commands.append({'header': name, 'sha256': hashlib.sha256((headers / 'GLES3' / name).read_bytes()).hexdigest()})
-    source.write_text(source.read_text().replace('GLES3/gl32.h', 'GLES3/gl3.h'))
     native = directory / 'shadow.so'
     subprocess.run(['c++', '-std=c++17', '-shared', '-fPIC', '-I', str(headers),
                     str(source), '-Wl,-l:libGLESv2.so.2', '-o', str(native)], check=True)
-    return c.CDLL(str(native)), commands
+    return c.CDLL(str(native)), commands, snippets
 
 
-def render(lib):
+def render(lib, expected_api):
     dpy = display()
     major, minor, count, config = I(), I(), I(), P()
     assert dpy and e('Initialize', U, P, P, P)(dpy, c.byref(major), c.byref(minor))
@@ -70,7 +84,7 @@ def render(lib):
     try:
         api = g('GetString', S, U)(0x1F02).decode()
         renderer = g('GetString', S, U)(0x1F01).decode()
-        assert 'OpenGL ES 3.0' in api and 'llvmpipe' in renderer.lower(), (api, renderer)
+        assert api.startswith(f'OpenGL ES {expected_api} ') and 'llvmpipe' in renderer.lower(), (api, renderer)
         g('GenFramebuffers', None, I, P)(1, c.byref(fbo))
         lib.Setup.argtypes = [P, U]
         lib.Setup.restype = None
@@ -103,9 +117,32 @@ def render(lib):
 
         actual = sample(shader)
         assert all(abs(a - b) <= 1 for a, b in zip(actual, EXPECTED)), (actual, EXPECTED)
+        lib.ConfigureBorder.argtypes = [I, I]
+        lib.ConfigureBorder.restype = c.c_bool
+        configured = lib.ConfigureBorder(3, int(expected_api[-1]))
+        assert configured == (expected_api == '3.2')
+        expected_wrap = 0x812D if configured else 0x812F  # BORDER or EDGE
+        for parameter in (0x2802, 0x2803):  # WRAP_S, WRAP_T
+            wrap = I()
+            g('GetTexParameteriv', None, U, U, P)(0x0DE1, parameter, c.byref(wrap))
+            assert wrap.value == expected_wrap
+        border_pixels = None
+        if configured:
+            border = (F * 4)()
+            g('GetTexParameterfv', None, U, U, P)(0x0DE1, 0x1004, border)
+            assert list(border) == [1.0] * 4
+            # Use the configured hardware border for out-of-map PCF taps.
+            hardware_shader = re.sub(
+                r'if \(any\(lessThan\(tap,.*?\} else \{(.*?)\n\s*\}',
+                r'\1', shader, count=1, flags=re.S)
+            assert hardware_shader != shader
+            border_pixels = sample(hardware_shader)
+            assert all(abs(a - b) <= 1 for a, b in zip(border_pixels, EXPECTED)), border_pixels
+        checked()
         dark_border = sample(shader.replace('visibility += 1.0;', 'visibility += 0.0;'))
         assert dark_border == [0, 0, 0, 0, 255, 255, 255, 255], dark_border
         return {'api': api, 'renderer': renderer, 'expected': EXPECTED, 'actual': actual,
+                'core_border_configured': configured, 'core_border_pixels': border_pixels,
                 'dark_border_negative': dark_border}
     finally:
         g('UseProgram', None, U)(0)
@@ -122,12 +159,14 @@ def render(lib):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--headers', required=True, type=Path)
+    parser.add_argument('--api', choices=['3.0', '3.2'], default='3.0')
     parser.add_argument('--out', required=True, type=Path)
     args = parser.parse_args()
     with tempfile.TemporaryDirectory() as name:
-        lib, compiled = compile_snippets(args.headers.resolve(), Path(name))
-        result = render(lib)
-    report = {'status': 'PASS_SOFTWARE_SHADOW_BOUNDARY', 'compiled': compiled, **result,
+        lib, compiled, snippets = compile_snippets(args.headers.resolve(), Path(name))
+        result = render(lib, args.api)
+    report = {'status': 'PASS_SOFTWARE_SHADOW_BOUNDARY', 'compiled': compiled,
+              'snippets': snippets, **result,
               'physical_hardware_verified': False, 'performance_measured': False}
     with args.out.open('x') as handle:
         json.dump(report, handle, indent=2)

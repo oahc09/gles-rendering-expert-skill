@@ -1,0 +1,11 @@
+# This is a Gradle generated file for dependency locking.
+# Manual edits can break the build and are not advised.
+# This file is expected to be part of source control.
+androidx.annotation:annotation-jvm:1.9.0=debugRuntimeClasspath
+androidx.annotation:annotation:1.9.0=debugRuntimeClasspath
+com.google.android.filament:filament-android:1.66.0=debugCompileClasspath,debugRuntimeClasspath
+com.google.android.filament:gltfio-android:1.66.0=debugCompileClasspath,debugRuntimeClasspath
+org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10=debugRuntimeClasspath
+org.jetbrains.kotlin:kotlin-stdlib:1.7.10=debugRuntimeClasspath
+org.jetbrains:annotations:13.0=debugRuntimeClasspath
+empty=androidApis,debugAnnotationProcessorClasspath,debugReverseMetadataValues

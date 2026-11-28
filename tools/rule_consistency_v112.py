@@ -32,6 +32,8 @@ def run():
         expected = f"- {rule['id']}: {rule['instruction']}"
         for entry in ENTRIES:
             lines = (ROOT / entry).read_text(encoding='utf-8').splitlines()
+            if entry == 'agents/openai.yaml':
+                lines = [line.removeprefix('# ') for line in lines]
             rendered = f"- '{expected[2:].replace(chr(39), chr(39) * 2)}'" if entry.endswith('claude-code.yaml') else expected
             matching = [line.strip() for line in lines if re.match(rf"^\s*- '?{rule['id']}:", line)]
             if matching != [rendered]:

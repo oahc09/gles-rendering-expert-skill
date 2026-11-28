@@ -42,6 +42,7 @@ jobs:
           mkdir -p reports/v112-product-smoke
           python3 benchmarks/product_smoke/audit_formats_culling.py reports/v112-product-smoke/formats-culling.json
           MESA_GLES_VERSION_OVERRIDE=3.0 python3 benchmarks/product_smoke/shadow_core30.py --headers /usr/include --out reports/v112-product-smoke/shadow-core30.json
+          MESA_GLES_VERSION_OVERRIDE=3.2 python3 benchmarks/product_smoke/shadow_core30.py --api 3.2 --headers /usr/include --out reports/v112-product-smoke/shadow-core32.json
           python3 benchmarks/product_smoke/mobile_ui_resolve.py reports/v112-product-smoke/ui | tee reports/v112-product-smoke/ui-result.json
           python3 benchmarks/product_smoke/odd_video.py examples/texture_pipeline/yuv_planes.frag reports/v112-product-smoke/video | tee reports/v112-product-smoke/video-result.json
       - name: Legacy C++ example compile and link
@@ -141,6 +142,19 @@ jobs:
           echo '{"kind":"mesa","egl":"/usr/lib/x86_64-linux-gnu/libEGL.so.1","gles":"/usr/lib/x86_64-linux-gnu/libGLESv2.so.2"}' > /tmp/v109-mesa.json
           python3 benchmarks/shader_ab/run.py --config /tmp/v109-mesa.json --output reports/v109-shader-ab.json
           python3 benchmarks/texture_access/run.py --config /tmp/v109-mesa.json --output reports/v109-textures.json
+      - name: v1.1.3 installed skill first run
+        shell: bash
+        run: |
+          scratch=$(mktemp -d "$RUNNER_TEMP/gles-skill.XXXXXX")
+          python3 tools/package_skill.py build "$scratch/candidate.zip"
+          python3 tools/package_skill.py install "$scratch/candidate.zip" "$scratch/installed"
+          out="$GITHUB_WORKSPACE/reports/v113-discard"
+          (
+            cd "$scratch/installed"
+            python3 tools/package_skill.py check .
+            python3 benchmarks/workflow/run.py docs/v1.1.3/discard-workload.json --config docs/v1.1.3/mesa-linux.json --backend mesa-software --output-dir "$out" --expect HOST_PASS
+            python3 tools/experience_cases.py --store "$out/experience.sqlite3" --evidence-root "$out" import strategy-receipt.json --actor ci-first-run
+          )
       - name: v1.0.9 expanded actual dual-driver controls
         run: |
           python3 -m unittest discover -s benchmarks/attachment_controls -p 'test_*.py' -v
@@ -154,6 +168,21 @@ jobs:
             python3 benchmarks/overlap_scenes/projected.py --config /tmp/v109-$driver.json --output reports/v109-projected-$driver.json
             python3 benchmarks/texture_access/mechanisms.py --config /tmp/v109-$driver.json --output reports/v109-texture-mechanisms-$driver.json
           done
+      - name: v1.1.3 six software GLES strategies and experience intake
+        shell: bash
+        run: |
+          out=reports/v113-strategies
+          mkdir -p "$out"
+          for strategy in discard-dead-attachment fence-ring-reuse texture-mip-selection resolve-msaa-once compute-to-fragment; do
+            timeout 60 python3 benchmarks/workflow/strategies.py --config /tmp/v109-mesa.json --strategy "$strategy" --expect HOST_PASS --output "$out/$strategy.json"
+          done
+          timeout 90 python3 benchmarks/workflow/strategies.py --config /tmp/v109-angle.json --strategy coherent-framebuffer-fetch --expect HOST_PASS --output "$out/coherent-framebuffer-fetch.json"
+          timeout 60 python3 benchmarks/workflow/strategies.py --config /tmp/v109-mesa.json --strategy texture-mip-selection --case glyph --expect QUALITY_FAIL --output "$out/glyph.json"
+          timeout 60 python3 benchmarks/workflow/strategies.py --config /tmp/v109-mesa.json --composition --expect HOST_PASS --output "$out/composition.json"
+          for strategy in discard-dead-attachment fence-ring-reuse texture-mip-selection resolve-msaa-once compute-to-fragment coherent-framebuffer-fetch glyph; do
+            python3 tools/experience_cases.py --store "$out/experience.sqlite3" --evidence-root "$out" import "$strategy.json" --actor ci-executor
+          done
+          python3 tools/experience_cases.py --store "$out/experience.sqlite3" --evidence-root "$out" validate
       - name: Provision pinned official KTX tools for v1.0.9
         run: |
           curl --fail --location --max-time 150 https://github.com/KhronosGroup/KTX-Software/releases/download/v4.4.2/KTX-Software-4.4.2-Linux-x86_64.tar.bz2 -o /tmp/v109-ktx.tar.bz2

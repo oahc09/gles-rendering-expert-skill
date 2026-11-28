@@ -1,0 +1,565 @@
+{
+  "schema_version": 1,
+  "planning_base": "a27a74525a568ffb0055d3d7bd36a7f8e6b11450",
+  "plan": {
+    "path": "docs/GLES_Rendering_Expert_Skill_v1.1.3_Development_Plan_2026-11-28.md",
+    "size": 58617,
+    "sha256": "3ce5e36da442b1a28d46cdf21aefb3f52712abaf116221de86d0fe960b3371e8"
+  },
+  "historical_ledger": "docs/v1.1.2/obligations.json",
+  "obligations": [
+    {
+      "id": "R2-01",
+      "source_anchor": "R2-01",
+      "work_packages": [
+        "V113-W01"
+      ],
+      "owner": "规则与规范",
+      "required_evidence": "实际 Markdown 片段按最低声明版本编译；支持/不支持分支、阴影边缘质量与负控通过"
+    },
+    {
+      "id": "R2-02",
+      "source_anchor": "R2-02",
+      "work_packages": [
+        "V113-W01"
+      ],
+      "owner": "规则与规范",
+      "required_evidence": "旧 archive→history→fresh run 连续执行不重新产生相同候选"
+    },
+    {
+      "id": "R2-03",
+      "source_anchor": "R2-03",
+      "work_packages": [
+        "V113-W01"
+      ],
+      "owner": "规则与规范",
+      "required_evidence": "重跑不丢当日候选和审阅；新增数仍正确；失败写入不破坏上一份完整状态"
+    },
+    {
+      "id": "R2-04",
+      "source_anchor": "R2-04",
+      "work_packages": [
+        "V113-W01"
+      ],
+      "owner": "规则与规范",
+      "required_evidence": "1080.0、1.0 等合法值一致；bool、非整数、非有限值及越界值拒绝；旧请求保持兼容"
+    },
+    {
+      "id": "V113-W00",
+      "source_anchor": "V113-W00 基线与范围",
+      "work_packages": [
+        "V113-W00"
+      ],
+      "owner": "集成人",
+      "required_evidence": "旧义务均有去向；固定历史状态与本次范围"
+    },
+    {
+      "id": "V113-W01",
+      "source_anchor": "V113-W01 缺陷与片段",
+      "work_packages": [
+        "V113-W01"
+      ],
+      "owner": "规则与规范",
+      "required_evidence": "R2-01—04 关闭；最低版本、扩展与行为检查有区分能力"
+    },
+    {
+      "id": "V113-W02",
+      "source_anchor": "V113-W02 项目与证据",
+      "work_packages": [
+        "V113-W02"
+      ],
+      "owner": "工具与平台",
+      "required_evidence": "错 backend/driver/epoch/输入/哈希会被拒绝；未知可追踪"
+    },
+    {
+      "id": "V113-W03",
+      "source_anchor": "V113-W03 决策与补采",
+      "work_packages": [
+        "V113-W03"
+      ],
+      "owner": "决策",
+      "required_evidence": "约束先于排序；无证据不判采用；探测结果改变分支"
+    },
+    {
+      "id": "V113-W04",
+      "source_anchor": "V113-W04 实验与 Advisor",
+      "work_packages": [
+        "V113-W04"
+      ],
+      "owner": "图形与工具",
+      "required_evidence": "每策略有适用环境实际运行及 Advisor/经验贯通"
+    },
+    {
+      "id": "V113-W05",
+      "source_anchor": "V113-W05 经验治理",
+      "work_packages": [
+        "V113-W05"
+      ],
+      "owner": "经验与复核",
+      "required_evidence": "50/10 合法计数；证据变化或撤回后不再支持旧结论"
+    },
+    {
+      "id": "V113-W06",
+      "source_anchor": "V113-W06 Android 核心业务",
+      "work_packages": [
+        "V113-W06"
+      ],
+      "owner": "Android 与资源",
+      "required_evidence": "实际生命周期、取消、PTS/EOS、背压和回退可复现"
+    },
+    {
+      "id": "V113-W07",
+      "source_anchor": "V113-W07 引擎与渲染业务",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "引擎与渲染",
+      "required_evidence": "各引擎原生 GLES 运行；八主线入口及完整业务 oracle"
+    },
+    {
+      "id": "V113-W08",
+      "source_anchor": "V113-W08 真实 Agent",
+      "work_packages": [
+        "V113-W08"
+      ],
+      "owner": "评测与独立复核",
+      "required_evidence": "真实响应、实际构建运行、独立判断和隔离边界可审计"
+    },
+    {
+      "id": "V113-W09",
+      "source_anchor": "V113-W09 90 天演进",
+      "work_packages": [
+        "V113-W09"
+      ],
+      "owner": "研究与维护",
+      "required_evidence": "跨周期状态实际延续；上游变化有采用/拒绝/待验依据"
+    },
+    {
+      "id": "V113-W10",
+      "source_anchor": "V113-W10 安装与最终验收",
+      "work_packages": [
+        "V113-W10"
+      ],
+      "owner": "集成人",
+      "required_evidence": "全部适用旧/新条件有合格证据，readiness 计算可复核"
+    },
+    {
+      "id": "G01",
+      "source_anchor": "G01 多实例壁纸",
+      "work_packages": [
+        "V113-W06"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "一实例销毁不影响另一实例；兼容 Surface 替换保留 context；隐藏停止非必要提交；恢复首帧正确；迟到事件、资源/FD 和 10/30 分钟长时结果可检查。先交付约定子场景，不扩成完整壁纸产品"
+    },
+    {
+      "id": "G02",
+      "source_anchor": "G02 商城/UI+3D",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "拆批原因可定位；mask、透明、点击和 3D 内容一致；多次开关资源稳定。无需账号、交易或网络商城后端"
+    },
+    {
+      "id": "G03",
+      "source_anchor": "G03 战斗/角色/粒子",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "CPU/GPU/上传分开；零实例、扩容、蒙皮、bounds、LOD、负缩放和 picking 正确；关键战斗提示可读。固定可重放战斗片段即可"
+    },
+    {
+      "id": "G04",
+      "source_anchor": "G04 启动/切换/取消",
+      "work_packages": [
+        "V113-W06"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "最后有效请求决定显示；旧回调不覆盖新场景；取消与 GPU 在途退休安全；预算超限可观察；cache 拒载有源码 fallback。限定资产集合，不建设通用下载平台"
+    },
+    {
+      "id": "G05",
+      "source_anchor": "G05 相机/视频双输出",
+      "work_packages": [
+        "V113-W06"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "旋转/crop/dataspace、时钟到 PTS 映射、seek、背压、drain/EOS 和独立启停成立；录制文件实际重新解码。先完成固定可验证编解码组合"
+    },
+    {
+      "id": "G06",
+      "source_anchor": "G06 PBR 商品/模型查看",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "检查颜色、normal/metallic/roughness、alpha、蒙皮及资源释放；required 扩展不支持时拒绝或使用明确替代资产。固定模型和操作，不开发完整编辑器"
+    },
+    {
+      "id": "G07",
+      "source_anchor": "G07 玻璃/水体/后处理",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "RenderGraph 输入、附件生命周期、透明顺序、颜色/alpha、HDR→SDR 与质量档正确；Unity native plugin 不破坏宿主后续绘制。记录屏幕空间近似边界"
+    },
+    {
+      "id": "G08",
+      "source_anchor": "G08 字体/世界标签/Text3D",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "缺字、atlas 满、淘汰再入、局部上传、字号/描边、点击/遮挡及退化轮廓通过；不生成 NaN 或无效 mesh。明确复杂整形边界，不扩大成全语言排版系统"
+    },
+    {
+      "id": "B01",
+      "source_anchor": "B01 壁纸",
+      "work_packages": [
+        "V113-W06"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "多实例生命周期、预览/可见/resize、恢复、独立释放"
+    },
+    {
+      "id": "B02",
+      "source_anchor": "B02 商城/UI+3D",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "遮罩、列表、头像、点击、文字与批次原因"
+    },
+    {
+      "id": "B03",
+      "source_anchor": "B03 战斗",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "角色/粒子固定回放、更新/提交成本、玩法提示不退化"
+    },
+    {
+      "id": "B04",
+      "source_anchor": "B04 启动/加载",
+      "work_packages": [
+        "V113-W06"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "冷暖首帧、shader 首用、A/B 切换、取消与坏资产"
+    },
+    {
+      "id": "B05",
+      "source_anchor": "B05 相机/视频",
+      "work_packages": [
+        "V113-W06"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "两种输入、预览+编码、PTS/EOS、背压和输出回读"
+    },
+    {
+      "id": "B06",
+      "source_anchor": "B06 PBR 展示",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "资产→材质/纹理语义、灯光、颜色、alpha、实例释放"
+    },
+    {
+      "id": "B07",
+      "source_anchor": "B07 水体/玻璃",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "多 pass 依赖、首帧/resize、透明重叠与质量档"
+    },
+    {
+      "id": "B08",
+      "source_anchor": "B08 字体/Text3D",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "动态字形、atlas 预算、孔洞/挤出/法线和异常控制"
+    },
+    {
+      "id": "B09",
+      "source_anchor": "B09 实例绘制",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "零实例、扩容、bounds/裁剪、属性更新与合法 indirect 分支"
+    },
+    {
+      "id": "B10",
+      "source_anchor": "B10 灯光/阴影",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "局部灯限制、mesh 分配、阴影边界、烘焙/分块候选"
+    },
+    {
+      "id": "B11",
+      "source_anchor": "B11 嵌套遮罩/玻璃 UI",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "stencil/alpha/blur 输入、裁剪层级、可读性和点击"
+    },
+    {
+      "id": "B12",
+      "source_anchor": "B12 URP 后处理",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "RendererFeature/RenderGraph 输入、相机、开关、resize 和 copy 用途"
+    },
+    {
+      "id": "B13",
+      "source_anchor": "B13 透明/3DGS",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "已承诺透明/OIT/有限 Gaussian 路径的排序、读写与质量控制；不扩成通用重建系统"
+    },
+    {
+      "id": "B14",
+      "source_anchor": "B14 长时/热状态",
+      "work_packages": [
+        "V113-W06",
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "原定 10/30 分钟、帧节奏、切档频率、隐藏和恢复；功耗缺失明确"
+    },
+    {
+      "id": "B15",
+      "source_anchor": "B15 大世界/LOD",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "固定长距离镜头、坐标/精度、可见性、LOD、picking 一致"
+    },
+    {
+      "id": "B16",
+      "source_anchor": "B16 混合 UI/native texture",
+      "work_packages": [
+        "V113-W06",
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "Android 宿主与 Unity 专属回调、线程、代际、状态恢复分别验收"
+    },
+    {
+      "id": "B17",
+      "source_anchor": "B17 拾取/回读/缩略图",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "点击目标与画面一致；异步 readback、取消、尺寸/坐标和资源退休"
+    },
+    {
+      "id": "B18",
+      "source_anchor": "B18 热更新/cache",
+      "work_packages": [
+        "V113-W06",
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "最终生成来源与环境绑定、坏缓存/旧缓存、热切换及回退"
+    },
+    {
+      "id": "B19",
+      "source_anchor": "B19 HDR/temporal/DRS",
+      "work_packages": [
+        "V113-W06",
+        "V113-W07"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "色彩/dataspace、历史失效、动态分辨率、质量门槛及独立降级"
+    },
+    {
+      "id": "B20",
+      "source_anchor": "B20 跨平台",
+      "work_packages": [
+        "V113-W02",
+        "V113-W10"
+      ],
+      "owner": "业务验证",
+      "required_evidence": "Windows ANGLE/WoA、Embedded Linux、Android 的真实 backend、窗口、恢复与差异包"
+    },
+    {
+      "id": "V112-W0",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W00",
+        "V113-W10"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W1",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W01"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W2",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W02"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W3",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W03"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W4",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W04"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W5",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W05"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W6",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W02",
+        "V113-W04",
+        "V113-W10"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W7",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W08"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W8",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W00",
+        "V113-W10"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W9",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W01",
+        "V113-W09"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W10",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W02",
+        "V113-W07"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W11",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W12",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W06",
+        "V113-W07"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W13",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W14",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W07"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W15",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W06"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    },
+    {
+      "id": "V112-W16",
+      "source_anchor": "[P01]:",
+      "work_packages": [
+        "V113-W06",
+        "V113-W07"
+      ],
+      "owner": "集成人",
+      "required_evidence": "核对 v1.1.2 增强任务书原条款及其所需的运行和复核。"
+    }
+  ]
+}

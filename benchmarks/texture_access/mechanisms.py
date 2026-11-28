@@ -50,7 +50,7 @@ class TextureHost(ab.ExperimentHost):
    gl('glUseProgram',None,[U])(program);gl('glActiveTexture',None,[U])(0x84c0)
    target=0x8c1a if c['mode']=='array' else 0xde1
    gl('glGenTextures',None,[I,P])(1,C.byref(tex));gl('glBindTexture',None,[U,U])(target,tex)
-   linear=c['mode'] in ('linear','atlas'); mip=c['mode'] in ('mip','explicit-mip')
+   linear=c['mode'] in ('linear','atlas'); mip=c['mode'] in ('mip','explicit-mip','incomplete-mip')
    for pname,value in ((0x2801,0x2700 if mip else 0x2601 if linear else 0x2600),(0x2800,0x2601 if linear else 0x2600),(0x2802,0x812f),(0x2803,0x812f)):
     gl('glTexParameteri',None,[U,U,I])(target,pname,value)
    gl('glPixelStorei',None,[U,I])(0xcf5,1)
@@ -75,7 +75,7 @@ class TextureHost(ab.ExperimentHost):
     pixels=(C.c_ushort*1)(0xf800);logical=2
     gl('glTexImage2D',None,[U,I,I,I,I,I,U,U,P])(target,0,0x8d62,1,1,0,0x1907,0x8363,pixels)
    else:
-    width,height=2,2; data=RGBA
+    width,height,data=c.get('image',(2,2,RGBA))
     if c['mode']=='aniso':width,height=4,4;data=[255,0,0,255]*16
     if c['mode']=='atlas':width,height=2,1;data=[255,0,0,255,0,255,0,255]
     if c['mode']=='lowres':width,height=1,1;data=[128,128,128,255]
@@ -85,7 +85,11 @@ class TextureHost(ab.ExperimentHost):
      gl('glBufferData',None,[U,C.c_ssize_t,P,U])(0x88ec,len(data),pixels,0x88e0);pointer=None
     gl('glTexImage2D',None,[U,I,I,I,I,I,U,U,P])(target,0,0x8058,width,height,0,0x1908,0x1401,pointer)
     if pbo.value:gl('glBindBuffer',None,[U,U])(0x88ec,0)
-    if c['mode']=='mip':gl('glGenerateMipmap',None,[U])(target);logical+=4
+    if c['mode']=='mip':
+     gl('glGenerateMipmap',None,[U])(target)
+     while max(width,height)>1:
+      width,height=max(1,width//2),max(1,height//2)
+      logical+=width*height*4
     if c['mode']=='explicit-mip':
      small=(C.c_ubyte*4)(128,128,128,255);gl('glTexImage2D',None,[U,I,I,I,I,I,U,U,P])(target,1,0x8058,1,1,0,0x1908,0x1401,small);logical+=4
    if c['mode']=='aniso':

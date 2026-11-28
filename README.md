@@ -266,3 +266,7 @@ Host checks cover bounded contracts and software draw/readback, including
 [UI resolve, odd-size YUV, atlas formats and indirect culling](benchmarks/product_smoke/README.md).
 These do not certify Android lifecycle behavior, physical GPU performance,
 native engine integrations or live-model quality. Release metadata stays 1.0.2.
+
+## v1.1.3 engineering candidate
+
+Use the [first-run guide](docs/v1.1.3/README.md) to verify the installed package, run a software GLES experiment and import its receipt. See the [current acceptance status](docs/v1.1.3/execution-status.md) for the evidence collected on each platform.

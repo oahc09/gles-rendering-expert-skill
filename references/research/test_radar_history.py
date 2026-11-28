@@ -132,3 +132,17 @@ class RadarHistoryTest(unittest.TestCase):
             self.assertEqual(result['items'], [record, next_record])
             self.assertEqual(result['new_items'], [next_record])
             self.assertEqual(result['review_decisions'], [review_row])
+
+            output = base / 'radar' / '2026-11-22' / 'radar.json'
+            previous = output.read_bytes()
+            with patch('sys.argv', common + ['--history-out', str(first)]):
+                with self.assertRaises(FileExistsError):
+                    radar.main()
+            self.assertEqual(output.read_bytes(), previous)
+            failed_history = base / 'failed.json'
+            with patch('sys.argv', common + ['--history-out', str(failed_history)]):
+                with patch.object(radar.os, 'replace', side_effect=OSError('write failed')):
+                    with self.assertRaisesRegex(OSError, 'write failed'):
+                        radar.main()
+            self.assertEqual(output.read_bytes(), previous)
+            self.assertFalse(failed_history.exists())

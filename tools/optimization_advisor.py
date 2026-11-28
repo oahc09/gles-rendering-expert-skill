@@ -6,7 +6,7 @@ import json
 import statistics
 from pathlib import Path
 from workload_fingerprint import number, fingerprint
-from optimization_experiments import resolve
+from optimization_experiments import EXPERIMENT_STRATEGIES, resolve
 from gpu_decision_v111 import decide as assess_decision
 
 
@@ -32,12 +32,15 @@ def valid_fallback(value):
 def decision_alignment(candidate, decision, labels):
     """Match only a known variant. Legacy profiles are not proof of device capability."""
     compute = candidate.get('experiment') == 'shader-advanced-v1' and 'COMPUTE' in labels
+    experiment = candidate.get('experiment')
+    strategy = EXPERIMENT_STRATEGIES.get(experiment) if isinstance(experiment, str) else None
+    if compute:
+        strategy = 'compute-to-fragment'
     if decision is None:
-        return ('DECISION_CONTEXT_REQUIRED', None) if compute else ('LEGACY_HYPOTHESIS_ONLY', None)
+        return ('DECISION_CONTEXT_REQUIRED', None) if strategy else ('LEGACY_HYPOTHESIS_ONLY', None)
     evaluation = decision['objective_evaluation']
     if evaluation['status'] in ('UNSUPPORTED_GOALS', 'NO_RELEVANT_CANDIDATES'):
         return evaluation['status'], None
-    strategy = 'compute-to-fragment' if compute else None
     if strategy is None:
         # A registered runnable file and a relevant Decision are not enough:
         # no maintained strategy-to-experiment mapping exists for this candidate.

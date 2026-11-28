@@ -117,6 +117,10 @@ static void framebuffer_and_formats() {
     glInvalidateFramebuffer(GL_FRAMEBUFFER,1,&discard); gl_ok("C06 depth invalidate");
     read_pixel({255,0,0,255}); // Never inspect invalidated depth: its contents are undefined.
     glBindFramebuffer(GL_FRAMEBUFFER,0);
+    const GLenum default_depth=GL_DEPTH;
+    glInvalidateFramebuffer(GL_FRAMEBUFFER,1,&default_depth); gl_ok("C06 default depth selector legal");
+    glInvalidateFramebuffer(GL_FRAMEBUFFER,1,&discard);
+    require(glGetError()==GL_INVALID_ENUM,"C06 named depth selector invalid for default framebuffer");
     glDeleteRenderbuffers(1,&depth); glDeleteFramebuffers(1,&fbo); glDeleteTextures(1,&tex);
     pass("C01-read-buffer-positive-negative"); pass("C02-format-positive-negative"); pass("C06-preserve-color-after-depth-invalidate");
 }

@@ -1,133 +1,14 @@
-# OpenAI Agent Configuration (Codex / GPT-based coding assistants)
-# Tells OpenAI-based agents how to load and use this GLES Rendering Expert Skill.
+interface:
+  display_name: "GLES Rendering Expert"
+  short_description: "Review and diagnose OpenGL ES rendering"
+  default_prompt: "Use $gles-rendering-expert-skill to review my GLES rendering path and identify the next validation step."
+policy:
+  allow_implicit_invocation: true
 
-name: gles-rendering-expert
-description: >
-  OpenGL ES 3.x rendering expert for mobile TBDR GPUs (Mali, Adreno, PowerVR).
-  Enforces API constraints, bandwidth optimization, EGL lifecycle, and GLSL ES
-  precision rules. Use when generating or reviewing GLES C++17 code, GLSL ES
-  shaders, FBO pipelines, or diagnosing GPU performance issues.
-
-activation_keywords:
-  - "OpenGL ES"
-  - "GLES"
-  - "EGL"
-  - "GLSL ES"
-  - "TBDR"
-  - "glInvalidateFramebuffer"
-  - "Mali"
-  - "Adreno"
-  - "PowerVR"
-  - "mobile GPU"
-  - "tile memory"
-  - "GMEM"
-  - "pixel local storage"
-  - "AHardwareBuffer"
-  - "SurfaceTexture"
-  - "video texture"
-  - "Streamline"
-  - "Snapdragon Profiler"
-  - "frame pacing"
-  - "Swappy"
-  - "eglSwapInterval"
-  - "HDR display"
-  - "wide color gamut"
-  - "Vulkan interop"
-  - "16KB page"
-  - "variable rate shading"
-  - "VRS"
-  - "fragment shading rate"
-  - "transform feedback"
-  - "geometry shader"
-  - "multiple render targets"
-  - "shadow mapping"
-  - "GPU skinning"
-  - "texture streaming"
-  - "GPU culling"
-  - "MSDF text"
-  - "clustered lighting"
-  - "SSAO"
-  - "soft particles"
-  - "motion blur"
-
-file_context:
-  # Primary skill definition — always include
-  primary:
-    - SKILL.md
-
-  # Core rules
-  rules:
-    - references/rules/gles-api-standards.md
-    - references/rules/tbdr-bandwidth-rules.md
-    - references/rules/egl-and-context.md
-    - references/rules/glsl-es-optimization.md
-    - references/rules/mali-arm-best-practices.md
-    - references/rules/windows-platform.md
-    - references/rules/android-interoperability.md
-    - references/rules/profiling-tools.md
-    - references/rules/frame-pacing.md
-    - references/rules/hdr-and-display.md
-    - references/rules/shadow-mapping-mobile.md
-    - references/rules/gpu-skinning.md
-    - references/rules/post-processing-chain.md
-    - references/rules/translation-layer-gles.md
-    - references/rules/variable-rate-shading.md
-    - references/rules/transform-feedback.md
-    - references/rules/geometry-shaders.md
-    - references/rules/texture-streaming-lod.md
-    - references/rules/gpu-culling.md
-    - references/rules/text-rendering-sdf.md
-    - references/rules/clustered-lighting.md
-    - references/rules/screen-space-effects.md
-    - references/rules/adreno/gmem-load-store.md
-    - references/rules/adreno/efficient-msaa.md
-    - references/rules/adreno/variable-rate-shading.md
-    - references/rules/adreno/lrz-and-flexrender.md
-    - references/rules/adreno/frame-extrapolation-and-upscaling.md
-    - references/rules/powervr/hsr-and-rendering-order.md
-    - references/rules/powervr/pixel-local-storage-and-deferred.md
-    - references/rules/powervr/img-extensions.md
-    - references/rules/powervr/bandwidth-and-tile-management.md
-
-  # Knowledge cards
-  references:
-    - references/cards/
-
-  # Code examples
-  examples:
-    - references/examples/
-
-system_prompt_addendum: |
-  You are an OpenGL ES rendering expert. When generating or reviewing GLES code:
-
-  1. NEVER use desktop OpenGL APIs (glBegin, glEnd, GL_QUADS, glPolygonMode, etc.).
-  2. ALWAYS place #version directive on the first line of GLSL ES shaders.
-  3. Use move-only RAII C++17; follow P112-DELETE for cleanup.
-  4. Follow P112-ATTACHMENT at pass boundaries.
-  5. Check extension availability at runtime before calling vendor-specific APIs.
-  6. Use EGL_CONTEXT_CLIENT_VERSION (EGL 1.4) not EGL_CONTEXT_MAJOR_VERSION (EGL 1.5).
-  7. Follow P112-PRECISION for fragment floating-point declarations.
-  8. Never call glReadPixels synchronously in the render loop; use PBO async readback.
-  9. Compute shader barriers: use memoryBarrierBuffer()/memoryBarrierImage() after
-     writes; host barriers (glMemoryBarrier) before dependent dispatches/draws.
-  10. Follow P112-MSAA for core and extension resolves.
-  11. Follow P112-VIDEO; for supported zero-copy Android paths, prefer AHardwareBuffer and native fence sync when suitable.
-  12. OpenGL ES has no ray tracing / mesh shaders / bindless textures - redirect to
-      Vulkan or propose the GLES-legal alternative.
-  13. Performance advice must cite profiler counters (Streamline/Snapdragon Profiler/
-      AGI); never benchmark on the Android Emulator.
-  14. VRS: choose the path by runtime extension query (GL_QCOM_shading_rate vs
-      GL_EXT_fragment_shading_rate family); set combiners explicitly; VRS and
-      PLS/framebuffer-fetch are mutually exclusive per pass.
-  15. Transform feedback: glTransformFeedbackVaryings BEFORE glLinkProgram;
-      feedback primitive mode must match the last pre-rasterization stage output;
-      prefer compute shaders on GLES 3.1+.
-  16. Geometry shaders require GLES 3.2 (GLSL ES 3.20); gate behind a version
-      check, keep max_vertices tight, and prefer instancing for repeated geometry.
-
-  - P112-ATTACHMENT: MUST preserve attachment contents if a later read, load, resolve, sample or readback needs them, or liveness is unknown. Invalidate only proven-dead contents; measure performance separately.
-  - P112-DELETE: Delete only with a live compatible current context for that object and generation; queue cleanup if temporarily unavailable, and drop stale names after context loss. Do not assume context-local objects are shareable.
-  - P112-PRECISION: Fragment floating-point declarations MUST have valid default or explicit precision. Select mediump or highp from required range, error bounds and target support; no universal mediump default.
-  - P112-VIDEO: Do not upload pixels into GL_TEXTURE_EXTERNAL_OES with glTexImage2D. If CPU access to the source is permitted, copying into a normal GL_TEXTURE_2D with valid format/stride is a separate legal fallback.
-  - P112-MSAA: Use a format-, sample- and region-valid core blit resolve as the baseline when available. Compare on-target extension alternatives only when the exact extension, entry point and configuration are supported.
-  - P112-DEPTH: Depth pre-pass is a measured experiment, not a vendor mandate or ban. Keep single-pass when benefit or correctness is unproven; test depth equality, ordering, overdraw and geometry cost on the target.
+# Rule markers for the cross-entry checker. Runtime guidance is in SKILL.md.
+# - P112-ATTACHMENT: MUST preserve attachment contents if a later read, load, resolve, sample or readback needs them, or liveness is unknown. Invalidate only proven-dead contents; measure performance separately.
+# - P112-DELETE: Delete only with a live compatible current context for that object and generation; queue cleanup if temporarily unavailable, and drop stale names after context loss. Do not assume context-local objects are shareable.
+# - P112-PRECISION: Fragment floating-point declarations MUST have valid default or explicit precision. Select mediump or highp from required range, error bounds and target support; no universal mediump default.
+# - P112-VIDEO: Do not upload pixels into GL_TEXTURE_EXTERNAL_OES with glTexImage2D. If CPU access to the source is permitted, copying into a normal GL_TEXTURE_2D with valid format/stride is a separate legal fallback.
+# - P112-MSAA: Use a format-, sample- and region-valid core blit resolve as the baseline when available. Compare on-target extension alternatives only when the exact extension, entry point and configuration are supported.
+# - P112-DEPTH: Depth pre-pass is a measured experiment, not a vendor mandate or ban. Keep single-pass when benefit or correctness is unproven; test depth equality, ordering, overdraw and geometry cost on the target.

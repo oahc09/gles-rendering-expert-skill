@@ -21,46 +21,35 @@ Mobile GPUs (ARM Mali, Qualcomm Adreno, Imagination PowerVR) use **Tile-Based De
 
 ## 2. FBO Lifecycle Rules (Critical for TBDR)
 
-### 2.1 RenderPass Start — SHOULD Clear or Invalidate
+### 2.1 RenderPass Start — Preserve, Clear, or Overwrite by Attachment
 
 ```cpp
-// ✅ BEST: Clear signals driver that prior tile content is disposable (Load Op = DONT_CARE)
+// This pass starts with defined color and depth. Clear only the attachments it owns.
 glBindFramebuffer(GL_FRAMEBUFFER, fbo);
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 // ... draw calls ...
 ```
 
 ```cpp
-// ⚠️ CAUTION: Missing clear forces driver to load old DRAM content into tiles
+// This pass blends with existing color. Preserve it.
 glBindFramebuffer(GL_FRAMEBUFFER, fbo);
-// No glClear — driver must perform expensive DRAM → Tile load!
 glDrawArrays(GL_TRIANGLES, 0, vertexCount);
 ```
 
-**Why**: Without `glClear`, the GPU must load previous frame's pixel data from DRAM into Tile Memory to preserve it (Load Op = LOAD). With `glClear`, the driver knows tiles start fresh (Load Op = DONT_CARE), saving one full-screen DRAM read per attachment.
+Apply P112-ATTACHMENT per attachment. Preserve existing contents when the current or a later pass reads them, including through blending, depth/stencil tests, partial coverage, or readback. Preserve them when liveness is unknown. Clear when the pass requires defined starting values. An earlier blit can provide those values for the region it actually wrote.
 
-**Exceptions where omitting Clear is acceptable**:
-- Full-screen post-process pass that overwrites every pixel (e.g. blit, tone-map) — driver can deduce no load is needed.
-- Attachment loaded from `glBlitFramebuffer` or `glInvalidateFramebuffer` immediately prior.
-- Debug / read-back passes that intentionally read back prior contents.
-
-In ambiguous cases, calling `glInvalidateFramebuffer` before drawing provides the same Load Op = DONT_CARE hint without clearing to a fixed color.
+An invalidate makes the specified contents undefined. At pass start it is legal only when old contents are proven dead and every value subsequently consumed will be defined by a write or clear. Check masks, scissor, depth/stencil tests, discard, coverage, and samples before treating a draw as a full overwrite. Clear and invalidate can avoid physical loads or stores on some implementations. Measure the effect on the target.
 
 ### 2.2 RenderPass End — SHOULD Invalidate Unused Attachments
 
 ```cpp
-// ✅ CORRECT: After rendering, depth/stencil no longer needed
+// A nonzero framebuffer is bound. No later consumer needs its depth or stencil.
 GLenum discardAttachments[] = { GL_DEPTH_ATTACHMENT, GL_STENCIL_ATTACHMENT };
 glInvalidateFramebuffer(GL_FRAMEBUFFER, 2, discardAttachments);
-// Switch to next FBO or present
+// Switch to the next FBO.
 ```
 
-```cpp
-// ❌ WRONG: Depth buffer written back to DRAM even though never read again
-glBindFramebuffer(GL_FRAMEBUFFER, nextFbo);  // Implicit flush of depth to DRAM!
-```
-
-**Why**: `glInvalidateFramebuffer` tells the driver "Store Op = DONT_CARE" for those attachments. The GPU skips writing tile depth/stencil data back to DRAM, saving one full-screen write per attachment.
+If the default framebuffer is bound, use `GL_DEPTH`, `GL_STENCIL`, or `GL_COLOR` instead of the named attachment enums. Keep color needed for presentation. A framebuffer switch does not guarantee a physical write-back, and invalidation does not guarantee a bandwidth reduction.
 
 ### 2.3 Full FBO Lifecycle Pattern
 
@@ -84,6 +73,7 @@ void RenderShadowPass(GLuint shadowFbo, GLsizei width, GLsizei height) {
 }
 
 void RenderMainPass(GLuint mainFbo) {
+    // This pattern requires a named framebuffer with color, depth and stencil.
     glBindFramebuffer(GL_FRAMEBUFFER, mainFbo);
     
     // START: Clear all attachments

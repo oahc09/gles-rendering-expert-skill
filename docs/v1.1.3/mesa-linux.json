@@ -1,0 +1,5 @@
+{
+  "kind": "mesa",
+  "egl": "libEGL.so.1",
+  "gles": "libGLESv2.so.2"
+}

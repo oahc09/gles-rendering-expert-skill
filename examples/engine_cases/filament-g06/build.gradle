@@ -1,0 +1,23 @@
+plugins { id 'com.android.application' version '8.7.3' }
+
+android {
+    namespace 'org.example.gleslab.filament'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'org.example.gleslab.filament'
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName '0.0.1-candidate'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencyLocking { lockAllConfigurations() }
+dependencies {
+    implementation 'com.google.android.filament:filament-android:1.66.0'
+    implementation 'com.google.android.filament:gltfio-android:1.66.0'
+}

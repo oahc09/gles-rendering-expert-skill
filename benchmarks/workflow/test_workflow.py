@@ -24,6 +24,12 @@ class Workflow(unittest.TestCase):
    with self.assertRaises(ValueError):w.run(self.request,{},'mesa-software','unused')
  def test_physical_provider_blocked(self):
   with self.assertRaises(ValueError):w.run(self.request,{},'adreno-physical','unused')
+ def test_software_outcomes_use_distinct_exit_codes(self):
+  self.assertEqual(w.outcome_exit_code('HOST_PASS'),0)
+  self.assertEqual(w.outcome_exit_code('BLOCKED'),3)
+  self.assertEqual(w.outcome_exit_code('QUALITY_FAIL'),1)
+  self.assertEqual(w.outcome_exit_code('BLOCKED','BLOCKED'),0)
+  self.assertEqual(w.outcome_exit_code('BLOCKED','HOST_PASS'),1)
  def test_cost_derived_from_actual_graph(self):
   r=w.collector.scene.transform(w.collector.scene.baseline());a=w.cost(r['fallback']);b=w.cost(r['candidate'])
   self.assertGreater(a['logical_upper_bytes'],b['logical_upper_bytes']);self.assertIsNone(a['dram_bytes']);self.assertEqual(a['status'],'ESTIMATE_ONLY')

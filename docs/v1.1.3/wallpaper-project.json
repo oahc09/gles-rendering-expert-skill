@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "project_id": "android-gles-wallpaper",
+  "engine": "Android WallpaperService with a custom GLES renderer",
+  "build_entry": "gradle -p examples/android_cases :wallpaper:assembleDebug",
+  "backend": "Android EGL14 and GLES30, runtime identity unobserved",
+  "shader_generation": "GLSL ES strings compiled and linked by IslandWallpaper",
+  "render_thread_owner": "One wallpaper-egl-owner HandlerThread per Engine",
+  "resource_owner": "RenderLoop owns EGL context, drawable and GL program. SurfaceHolder owns the borrowed Surface.",
+  "source_files": [
+    "examples/android_cases/settings.gradle",
+    "examples/android_cases/build.gradle",
+    "examples/android_cases/wallpaper/build.gradle",
+    "examples/android_cases/wallpaper/src/main/AndroidManifest.xml",
+    "examples/android_cases/wallpaper/src/main/res/xml/wallpaper.xml",
+    "examples/android_cases/wallpaper/src/main/java/org/example/gleslab/HdrEglOutput.java",
+    "examples/android_cases/wallpaper/src/main/java/org/example/gleslab/HdrOutputPolicy.java",
+    "examples/android_cases/wallpaper/src/main/java/org/example/gleslab/IslandWallpaper.java",
+    "examples/android_cases/wallpaper/src/main/java/org/example/gleslab/SharedLease.java",
+    "examples/android_cases/wallpaper/src/main/java/org/example/gleslab/WallpaperEglDisplay.java",
+    "examples/android_cases/wallpaper/src/main/java/org/example/gleslab/WallpaperSurfacePolicy.java"
+  ],
+  "allowed_write_files": []
+}
