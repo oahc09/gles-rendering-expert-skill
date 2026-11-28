@@ -135,3 +135,21 @@ successful compiler run does not run the imported image or display pipeline.
 The native compiler check also validates the ELF LOAD alignment of the module
 and its packaged C++ shared runtime; APK ZIP alignment is a separate packaging
 check. Toolchains are not committed to the repository.
+
+### Wallpaper drawable vs. context replacement (AUD-05)
+
+A visibility-only reprobe with the same live drawable and compatible output
+keeps it. A SurfaceHolder update, changed window or reattach after Surface
+destruction replaces only the EGL drawable when the output is compatible;
+the same context retains its program. Output changes that require a different
+configuration, negotiated PQ-to-SDR fallback, owner shutdown, and actual
+`EGL_CONTEXT_LOST` still take the context-retirement path. EGL errors and
+output identity remain distinct from real device capabilities. Logcat now
+records independent `contextGeneration` and `surfaceGeneration` values for
+device verification.
+
+Run `python3 -m unittest discover -s examples/android_cases -p test_wallpaper_surface_policy.py`
+for the real Java host policy and source wiring tests. These do not certify a
+WallpaperService on Android. Android APK/installation, home+preview
+lifecycle, true context loss and sustained physical-device evidence remain
+separate gates.

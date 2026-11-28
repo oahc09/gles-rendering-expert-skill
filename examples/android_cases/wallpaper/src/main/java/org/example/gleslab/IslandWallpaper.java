@@ -28,7 +28,7 @@ public final class IslandWallpaper extends WallpaperService {
         @Override public void onVisibilityChanged(boolean visible) {
             if (visible && getSurfaceHolder().getSurface().isValid()) {
                 android.graphics.Rect frame = getSurfaceHolder().getSurfaceFrame();
-                loop.attach(getSurfaceHolder().getSurface(), frame.width(), frame.height(), displayCapabilities());
+                loop.attach(getSurfaceHolder().getSurface(), frame.width(), frame.height(), displayCapabilities(), false);
             }
             loop.setVisible(visible);
         }
@@ -39,7 +39,7 @@ public final class IslandWallpaper extends WallpaperService {
         @Override public void onSurfaceChanged(SurfaceHolder holder, int format, int w, int h) {
             super.onSurfaceChanged(holder, format, w, h);
             HdrEglOutput capabilities = displayCapabilities();
-            loop.attach(holder.getSurface(), w, h, capabilities);
+            loop.attach(holder.getSurface(), w, h, capabilities, true);
         }
         @Override public void onSurfaceDestroyed(SurfaceHolder holder) {
             loop.detach(); super.onSurfaceDestroyed(holder);
@@ -74,6 +74,7 @@ public final class IslandWallpaper extends WallpaperService {
         private Surface window; // Borrowed: SurfaceHolder owns and releases it.
         private boolean visible, stopped, callbackQueued;
         private int width = 1, height = 1, program;
+        private int contextGeneration, surfaceGeneration;
         private float x = .5f, y = .5f;
         private HdrEglOutput output = HdrEglOutput.unknown();
         private boolean pq, forceSdr;
@@ -85,13 +86,63 @@ public final class IslandWallpaper extends WallpaperService {
         }
         void setVisible(boolean value) { handler.post(() -> { visible = value; schedule(); }); }
         void touch(float px, float py) { handler.post(() -> { x = px / width; y = 1f - py / height; }); }
-        void attach(Surface surface, int w, int h, HdrEglOutput capabilities) {
+        void attach(Surface surface, int w, int h, HdrEglOutput capabilities, boolean holderChanged) {
             handler.post(() -> {
-                releaseAll(); output = capabilities; forceSdr = false;
+                if (stopped || surface == null || !surface.isValid()) return;
+                boolean sameOutput = output.displayId == capabilities.displayId
+                        && output.displayKnown == capabilities.displayKnown
+                        && output.hdr10 == capabilities.hdr10
+                        && output.wideColor == capabilities.wideColor;
+                WallpaperSurfacePolicy.Action action = WallpaperSurfacePolicy.attach(
+                        context != EGL14.EGL_NO_CONTEXT, eglSurface != EGL14.EGL_NO_SURFACE,
+                        window == surface, holderChanged, sameOutput);
+                if (action == WallpaperSurfacePolicy.Action.REPLACE_CONTEXT) {
+                    releaseAll();
+                    if (!sameOutput) forceSdr = false;
+                } else if (action == WallpaperSurfacePolicy.Action.REPLACE_DRAWABLE) {
+                    releaseSurface();
+                }
+                output = capabilities;
                 window = surface; width = Math.max(w, 1); height = Math.max(h, 1);
-                try { ensureContext(); createSurface(); schedule(); }
-                catch (RuntimeException error) { Log.e("GLESWallpaper", "attach failed", error); releaseAll(); }
+                if (action != WallpaperSurfacePolicy.Action.KEEP_DRAWABLE) attachDrawable();
+                schedule();
             });
+        }
+        private void attachDrawable() {
+            try {
+                ensureContext();
+                createSurface();
+            } catch (EglFailure error) {
+                Log.e("GLESWallpaper", "attach failed", error);
+                if (error.code == EGL14.EGL_CONTEXT_LOST) recoverLostContext();
+                else if (error.code == EGL14.EGL_BAD_SURFACE || error.code == EGL14.EGL_BAD_NATIVE_WINDOW)
+                    releaseSurface(); // Wait for the next holder event; retain context + owned names.
+                else releaseAll();
+            } catch (RuntimeException error) {
+                Log.e("GLESWallpaper", "attach failed", error);
+                releaseAll();
+            }
+        }
+        private void recoverLostContext() {
+            // Drop invalid object names without sending glDelete to the lost context.
+            program = 0;
+            releaseAll();
+            try { ensureContext(); createSurface(); } // One retry per reported loss.
+            catch (RuntimeException failure) {
+                Log.e("GLESWallpaper", "context recovery failed", failure);
+                releaseAll();
+            }
+        }
+        private static final class EglFailure extends IllegalStateException {
+            private static final long serialVersionUID = 1L;
+            final int code;
+            EglFailure(String stage) {
+                this(stage, EGL14.eglGetError());
+            }
+            private EglFailure(String stage, int code) {
+                super(stage + " error=" + code);
+                this.code = code;
+            }
         }
         void detach() {
             // SurfaceHolder.Callback contract: do not return until rendering no
@@ -149,12 +200,16 @@ public final class IslandWallpaper extends WallpaperService {
             context = EGL14.eglCreateContext(display, config, EGL14.EGL_NO_CONTEXT,
                     new int[]{EGL14.EGL_CONTEXT_CLIENT_VERSION, 3, EGL14.EGL_NONE}, 0);
             if (context == EGL14.EGL_NO_CONTEXT && pq) {
-                Log.w("GLESWallpaper", "PQ context rejected error=" + EGL14.eglGetError());
+                EglFailure error = new EglFailure("eglCreateContext");
+                if (error.code == EGL14.EGL_CONTEXT_LOST) throw error;
+                Log.w("GLESWallpaper", "PQ context rejected", error);
                 pq = false; forceSdr = true; config = HdrEglOutput.chooseConfig(display, false);
-                if (config != null) context = EGL14.eglCreateContext(display, config, EGL14.EGL_NO_CONTEXT,
+                if (config == null) throw new IllegalStateException("no supported SDR config", error);
+                context = EGL14.eglCreateContext(display, config, EGL14.EGL_NO_CONTEXT,
                         new int[]{EGL14.EGL_CONTEXT_CLIENT_VERSION, 3, EGL14.EGL_NONE}, 0);
             }
-            if (context == EGL14.EGL_NO_CONTEXT) throw new IllegalStateException("eglCreateContext");
+            if (context == EGL14.EGL_NO_CONTEXT) throw new EglFailure("eglCreateContext");
+            ++contextGeneration;
         }
         private void createSurface() {
             if (window == null || !window.isValid()) return;
@@ -166,9 +221,9 @@ public final class IslandWallpaper extends WallpaperService {
                         requested, EGL14.EGL_NONE} : new int[]{EGL14.EGL_NONE};
                 eglSurface = EGL14.eglCreateWindowSurface(display, config, window, attributes, 0);
                 if (eglSurface == EGL14.EGL_NO_SURFACE)
-                    throw new IllegalStateException("eglCreateWindowSurface error=" + EGL14.eglGetError());
+                    throw new EglFailure("eglCreateWindowSurface");
                 if (!EGL14.eglMakeCurrent(display, eglSurface, eglSurface, context))
-                    throw new IllegalStateException("eglMakeCurrent error=" + EGL14.eglGetError());
+                    throw new EglFailure("eglMakeCurrent");
                 int[] actual = {-1}, encoding = {-1};
                 boolean queried = colorspace && EGL14.eglQuerySurface(display, eglSurface,
                         HdrOutputPolicy.EGL_GL_COLORSPACE_KHR, actual, 0);
@@ -182,15 +237,22 @@ public final class IslandWallpaper extends WallpaperService {
                     throw new IllegalStateException("unknown framebuffer encoding");
                 outputEncoding = pq ? 2 : (encoding[0] == GLES30.GL_SRGB ? 1 : 0);
                 if (program == 0) program = makeProgram();
+                ++surfaceGeneration;
                 Log.i("GLESWallpaper", "vendor=" + GLES30.glGetString(GLES30.GL_VENDOR)
                         + " renderer=" + GLES30.glGetString(GLES30.GL_RENDERER)
                         + " version=" + GLES30.glGetString(GLES30.GL_VERSION)
+                        + " contextGeneration=" + contextGeneration + " surfaceGeneration=" + surfaceGeneration
                         + " display=" + output.displayId + " hdr10=" + output.hdr10
                         + " wideColor=" + output.wideColor + " queriedColorspace=" + actual[0]
                         + " attachmentEncoding=" + encoding[0]
                         + " output=" + (pq ? "BT2020_PQ_RGB10A2_REQUEST_ACCEPTED" : "SDR_RGBA8")
                         + " physicalHDR=NOT_VERIFIED");
             } catch (RuntimeException failure) {
+                if (failure instanceof EglFailure) {
+                    int code = ((EglFailure) failure).code;
+                    if (code == EGL14.EGL_CONTEXT_LOST || code == EGL14.EGL_BAD_SURFACE
+                            || code == EGL14.EGL_BAD_NATIVE_WINDOW) throw failure;
+                }
                 if (!pq) throw failure;
                 Log.w("GLESWallpaper", "PQ rejected; recreate independent SDR config/context", failure);
                 Surface retained = window;
@@ -210,9 +272,7 @@ public final class IslandWallpaper extends WallpaperService {
                 int error = EGL14.eglGetError();
                 Log.e("GLESWallpaper", "swap error=" + error);
                 if (error == EGL14.EGL_CONTEXT_LOST) {
-                    // Old object names are invalid: no glDelete against the lost context.
-                    program = 0; Surface retained = window; releaseAll(); window = retained;
-                    try { ensureContext(); createSurface(); } catch (RuntimeException fail) { releaseAll(); }
+                    recoverLostContext();
                 } else if (error == EGL14.EGL_BAD_SURFACE || error == EGL14.EGL_BAD_NATIVE_WINDOW) {
                     releaseSurface(); // Wait for a new SurfaceHolder callback, no busy retry.
                 } else { visible = false; }
