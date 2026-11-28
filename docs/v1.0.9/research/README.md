@@ -56,3 +56,23 @@ no secret injection, commits or rule promotion; artifacts retained30days.
 Fetch failures retain INCOMPLETE and fail the job. Cron only becomes eligible
 on the default branch; no execution from this Draft branch is claimed.
 Window arithmetic is unit tested.
+
+## Cross-run candidate metadata (AUD-07)
+
+The hosted lane restores the most recent available `gles-radar-state-v1`
+artifact from a previous successful **scheduled** run of the same workflow,
+on the repository default branch. A manual run can read this history but
+cannot publish replacement state. The job only requests `actions: read` in
+addition to `contents: read`; state does not write to repository branches.
+
+The independently versioned state contains only source/id pairs and UTC event
+days over the last 90 inclusive days. A first run, old workflow without the
+artifact, or expired artifact is reported as `NO_PRIOR_COMPLETE_HISTORY`, not
+as verified deduplication. An invalid history fails rather than being silently
+trusted. Incomplete retrieval retains its candidate report but does not
+publish a new state. Exact identities dedupe across weekly/monthly and
+same-day runs; this does not compare title wording or replace source review.
+The configured release sources include Cocos Engine, Unity Graphics and Godot;
+releases endpoints alone do not cover those projects' full commits or papers.
+Review, reproduction, promotion and withdrawal remain separate from metadata
+collection.

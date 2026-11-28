@@ -4,6 +4,7 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import re
 from pathlib import Path
 import urllib.error
 import urllib.parse
@@ -20,6 +21,9 @@ SOURCES = {
     "glslang": ("KhronosGroup/glslang", "releases"),
     "angle": ("google/angle", "commits"),
     "ktx": ("KhronosGroup/KTX-Software", "releases"),
+    "cocos-engine": ("cocos/cocos-engine", "releases"),
+    "unity-graphics": ("Unity-Technologies/Graphics", "releases"),
+    "godot": ("godotengine/godot", "releases"),
 }
 MAX_PAGES = 10
 
@@ -152,6 +156,71 @@ def collect(source, start, end):
             break
     return records, complete
 
+# Bounded, versioned metadata state, distinct from review/promotion.
+HISTORY_DAYS = 90
+MAX_HISTORY_BYTES = 4 * 1024 * 1024
+MAX_HISTORY_ROWS = 24_000
+
+
+def horizon(end):
+    return end - dt.timedelta(days=HISTORY_DAYS - 1)
+
+
+def item_key(source, item_id):
+    if not isinstance(source, str) or not re.fullmatch(r"[a-z][a-z0-9-]{0,63}", source):
+        raise ValueError("invalid history source")
+    if not isinstance(item_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,127}", item_id):
+        raise ValueError("invalid history item id")
+    return source + ":" + item_id
+
+
+def read_history(path, end):
+    with path.open("rb") as fh:
+        data = fh.read(MAX_HISTORY_BYTES + 1)
+    if len(data) > MAX_HISTORY_BYTES:
+        raise ValueError("history exceeds byte bound")
+    report = json.loads(data)
+    if not isinstance(report, dict) or set(report) != {"schema_version", "through", "items"}:
+        raise ValueError("invalid history envelope")
+    if type(report["schema_version"]) is not int or report["schema_version"] != 1:
+        raise ValueError("unsupported history schema")
+    through = day(report["through"])
+    if through > end:
+        raise ValueError("history is newer than the current run")
+    rows = report["items"]
+    if not isinstance(rows, list) or len(rows) > MAX_HISTORY_ROWS:
+        raise ValueError("invalid history size")
+    seen = set()
+    carried = {}
+    for row in rows:
+        if not isinstance(row, dict) or set(row) != {"source", "id", "event_day"}:
+            raise ValueError("invalid history item")
+        key = item_key(row["source"], row["id"])
+        event = day(row["event_day"])
+        if key in seen or not horizon(through) <= event <= through:
+            raise ValueError("duplicate or out-of-range history item")
+        seen.add(key)
+        if event >= horizon(end):
+            carried[key] = row
+    return through, carried
+
+
+def write_history(path, end, carried, selected):
+    for row in selected:
+        event = event_utc_day(row["event_at"])
+        if not horizon(end) <= event <= end:
+            continue
+        key = item_key(row["source"], row["id"])
+        carried[key] = {"source": row["source"], "id": row["id"], "event_day": str(event)}
+    items = [carried[key] for key in sorted(carried)]
+    data = (json.dumps({"schema_version": 1, "through": str(end), "items": items},
+                       ensure_ascii=True, separators=(",", ":")) + "\n").encode()
+    if len(items) > MAX_HISTORY_ROWS or len(data) > MAX_HISTORY_BYTES:
+        raise ValueError("history exceeds bound; refusing to truncate potentially active identities")
+    with path.open("xb") as fh:
+        fh.write(data)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--start", required=True, type=day)
@@ -160,13 +229,20 @@ def main():
     parser.add_argument("--archive", type=Path, default=Path(__file__).parent)
     parser.add_argument("--input", type=Path, help="offline normalized metadata fixture; no network")
     parser.add_argument("--decisions", type=Path, help="Human-reviewed lifecycle rows; validated, never applied to Skill automatically")
+    parser.add_argument("--history-in", type=Path, help="validated metadata identities from a prior complete run")
+    parser.add_argument("--history-out", type=Path, help="new metadata history; written only on complete retrieval")
     args = parser.parse_args()
     decisions = [validate_decision(row) for row in json.loads(args.decisions.read_text())] if args.decisions else []
     if args.start > args.end:
         parser.error("start must not exceed end")
     archive = args.archive / args.end.isoformat()
     archive.mkdir(parents=True, exist_ok=True)
-    known = set()
+    if args.history_in and not args.history_out:
+        parser.error("--history-in requires --history-out")
+    if args.history_out and (args.end - args.start).days >= HISTORY_DAYS:
+        parser.error("cross-run history supports at most 90 inclusive days")
+    through, carried = read_history(args.history_in, args.end) if args.history_in else (None, {})
+    known = set(carried)
     # Exclude this date so reruns refresh rather than incorrectly erase its discoveries.
     for path in args.archive.glob("*/radar.json"):
         if path.parent != archive:
@@ -195,10 +271,20 @@ def main():
               "manual_sources": [{"source": s, "status": "MANUAL_REVIEW_REQUIRED"} for s in ("X", "Khronos", "Android", "Arm", "Qualcomm", "Imagination", "Mesa")],
               "note": "Metadata candidates only; no verified material updates is a human review conclusion, not a fetch result.",
               "review_decisions": decisions, "items": selected}
+    if args.history_out:
+        report["history"] = {
+            "mode": "RESTORED" if through else "NO_PRIOR_COMPLETE_HISTORY",
+            "prior_through": str(through) if through else None,
+            "retained_identities": len(carried),
+            "retained_days": HISTORY_DAYS,
+            "write_admitted": complete,
+        }
     output = archive / "radar.json"
     output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
     print(json.dumps({"output": str(output), "items": len(selected), "complete": complete,
                       "sha256": hashlib.sha256(output.read_bytes()).hexdigest()}))
+    if complete and args.history_out:
+        write_history(args.history_out, args.end, carried, selected)
     return 0 if complete else 2
 
 if __name__ == "__main__":

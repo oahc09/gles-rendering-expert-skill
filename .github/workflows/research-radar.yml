@@ -12,6 +12,7 @@ on:
     - cron: '41 3 1 * *'
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: gles-read-only-radar
   cancel-in-progress: false
@@ -30,11 +31,49 @@ jobs:
           if [ "$REQUESTED_MODE" = monthly ] || [ "$EVENT_SCHEDULE" = '41 3 1 * *' ]; then mode=monthly; fi
           mkdir -p reports
           python3 tools/v109_radar_window.py --mode "$mode" > reports/window.json
+      - name: Restore history from a successful default-branch schedule
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/gles-radar-prior"
+          gh run list --repo "$GITHUB_REPOSITORY" --workflow research-radar.yml \
+            --branch "$DEFAULT_BRANCH" --event schedule --status success --limit 20 \
+            --json databaseId --jq '.[].databaseId' > "$RUNNER_TEMP/gles-radar-runs.txt"
+          while IFS= read -r run_id; do
+            [[ "$run_id" =~ ^[0-9]+$ ]]
+            if [[ "$run_id" == "$GITHUB_RUN_ID" ]]; then continue; fi
+            artifact=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts" \
+              --jq '.artifacts[] | select(.name == "gles-radar-state-v1" and .expired == false) | .id')
+            if [[ -n "$artifact" ]]; then
+              [[ "$artifact" =~ ^[0-9]+$ ]]
+              gh run download "$run_id" --repo "$GITHUB_REPOSITORY" --name gles-radar-state-v1 \
+                --dir "$RUNNER_TEMP/gles-radar-prior"
+              test -s "$RUNNER_TEMP/gles-radar-prior/history.json"
+              printf '%s\n' "$run_id" > reports/prior-run-id.txt
+              break
+            fi
+          done < "$RUNNER_TEMP/gles-radar-runs.txt"
       - name: Reuse existing read-only metadata collector
+        shell: bash
         run: |
           start=$(python3 -c "import json; print(json.load(open('reports/window.json'))['start'])")
           end=$(python3 -c "import json; print(json.load(open('reports/window.json'))['end'])")
-          python3 references/research/update_radar.py --start "$start" --end "$end" --archive reports/radar
+          state_args=(--history-out "$RUNNER_TEMP/gles-radar-next/history.json")
+          prior="$RUNNER_TEMP/gles-radar-prior/history.json"
+          if [[ -f "$prior" ]]; then state_args+=(--history-in "$prior"); fi
+          mkdir -p "$RUNNER_TEMP/gles-radar-next"
+          python3 references/research/update_radar.py --start "$start" --end "$end" \
+            --archive reports/radar "${state_args[@]}"
+      - name: Preserve carry-forward state from a complete scheduled collection
+        if: success() && github.event_name == 'schedule'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: gles-radar-state-v1
+          path: ${{ runner.temp }}/gles-radar-next/history.json
+          retention-days: 30
+          if-no-files-found: error
       - name: Preserve candidates and incomplete retrieval
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
