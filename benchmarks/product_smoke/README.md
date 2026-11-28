@@ -51,3 +51,19 @@ or mobile-device acceptance.
 Raw captures are bottom-left-origin tightly packed 16×16 RGBA8. JSON stdout
 records individual capture hashes and the actual sample count and driver;
 the center values can differ by one quantization step between drivers.
+
+### v1.1.2 audit: documentation shader readbacks
+
+`audit_formats_culling.py <new-report.json>` compiles the actual card/rule
+code fences and checks Mesa llvmpipe readbacks. The core GLES indirect loop
+renders a fixed four-sphere boundary case (outside, tangent, intersecting,
+inside); the old center-only predicate is the negative control. The optional
+EXT multi-draw route runs only when the current context advertises that extension
+and resolves its entrypoint. Both MSDF snippets render independent RGB channels
+from RGB8/RGBA8, and the R8/default-swizzle negative control fails for the same
+MSDF input. Single-channel SDF is verified independently.
+
+The [host validation workflow](../../.github/workflows/validation.yml) executes
+these alongside UI resolve and odd-dimension YUV, archiving raw probe reports
+and readbacks. Results are software correctness, not hardware or font-layout
+certification.

@@ -4,10 +4,10 @@
 
 ## 核心规则
 
-1. **3.1 标准管线**：包围体数组 → compute 剔除（视锥+LOD+小图元）→ 每元素写/清零自己的 `DrawArraysIndirectCommand` 槽（count=0 即跳过，近乎免费）→ `glMultiDrawArraysIndirect` 配 `GL_DRAW_INDIRECT_BUFFER`。CPU 永不回读可见性。仅当元素数远超存活数才加 atomic 压实。
-2. **链接 pass 间的 barrier 纪律**：dispatch 与 indirect draw 之间 `glMemoryBarrier(GL_COMMAND_BARRIER_BIT | GL_DRAW_INDIRECT_BARRIER_BIT | GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT)`；TBDR release 驱动无校验层，漏 barrier = 一帧竞态。
+1. **3.1 核心路径**：compute 每元素写/清零独立的 indirect 槽，绑定 `GL_DRAW_INDIRECT_BUFFER` 后按固定偏移分别调用 `glDrawArraysIndirect`（索引版 `glDrawElementsIndirect`），不回读可见性。仅在当前 context 支持 `GL_EXT_multi_draw_indirect` 且成功加载带 `EXT` 后缀的入口时合并提交；否则保留核心循环。
+2. **按消费者选择 barrier**：indirect 参数用 `GL_COMMAND_BARRIER_BIT`；compute 还写了随后读取的 vertex 属性或 SSBO 时，再加 `GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT` 或 `GL_SHADER_STORAGE_BARRIER_BIT`。
 3. **遮挡剔除是最后手段**：occlusion query 强制提前 resolve samples → TBDR tile flush。用 `GL_ANY_SAMPLES_PASSED_CONSERVATIVE`，只测粗簇不测单对象，接受 1 帧延迟；用 `GL_QUERY_RESULT_AVAILABLE` 延后读取，禁阻塞读 `GL_QUERY_RESULT`。
-4. **层级深度优于遮挡查询**：1/16 分辨率早期 Z pass（`glDrawBuffer(GL_NONE)`+深度后失效），compute 采 hi-Z 做视锥+深度测试（ReSTricted 思路移植 ES 3.1）。
+4. **层级深度优于遮挡查询**：depth-only 用户 FBO 用 `glDrawBuffers(1, &none)` 和 `glReadBuffer(GL_NONE)`，检查完整性；保留深度纹理直至 Hi-Z 消费结束。
 5. **视锥 6 平面入 UBO**（归一化 vec4）；per-instance 做球测试 `dot(plane,center) >= -radius`，不用 AABB。
 6. **稳定性优先于最优性**：LOD/剔除决策留滞回带；帧间一致的输出缓冲排序比多剔 5% 更重要。
 7. **小图元剔除**：投影尺寸 <~2px 的实例丢弃（tile GPU 上图元 setup 非免费）。
@@ -16,22 +16,34 @@
 ## 代码模式
 
 ```glsl
-// cull.comp — 310 es — 每 batch 一线程，逐槽预测（无压实、无跨线程排序）
+// cull.comp — GLSL ES 3.10 — one thread per batch, per-slot predication.
+// No compaction, no cross-thread ordering: every slot is written every frame.
 #version 310 es
 layout(local_size_x = 64) in;
-struct Batch { vec4 sphere; uvec2 range; };
-layout(std140, binding=0) uniform Frustum { vec4 planes[6]; };
-layout(std430, binding=1) readonly buffer Batches { Batch items[]; } u_Batch;
-layout(std430, binding=3) buffer DrawArgs { uvec4 cmd[]; } u_Draw; // 必须是 SSBO，计算不能写 UBO
+
+struct Batch { vec4 sphere;        // xyz = center, w = radius
+               uvec2 range; };     // first, count in the shared static VB
+
+layout(std140, binding = 0) uniform Frustum { vec4 planes[6]; };
+layout(std430, binding = 1) readonly buffer Batches { Batch items[]; } u_Batch;
+// DrawArraysIndirectCommand == uvec4 — the args block MUST be `buffer` (SSBO):
+// compute cannot write a UBO, and the same GL buffer is rebound as
+// GL_DRAW_INDIRECT_BUFFER on the host.
+layout(std430, binding = 3) buffer DrawArgs { uvec4 cmd[]; } u_Draw;
+
 uniform uint u_BatchCount;
+
 void main() {
     uint b = gl_GlobalInvocationID.x;
-    if (b >= u_BatchCount) return;              // 本核无 barrier，guard 安全
-    bool vis = true;
-    for (int p=0;p<6;++p) vis = vis && dot(planes[p].xyz,u_Batch.items[b].sphere.xyz)
-                                    + planes[p].w >= 0.0;
+    if (b >= u_BatchCount) return;  // no barrier in this kernel, guard is safe
     Batch bt = u_Batch.items[b];
-    u_Draw.cmd[b] = vis ? uvec4(bt.range.y,1u,bt.range.x,0u) : uvec4(0u);
+    bool visible = true;
+    for (int p = 0; p < 6; ++p)
+        visible = visible && dot(planes[p].xyz, bt.sphere.xyz)
+                            + planes[p].w >= -bt.sphere.w;
+    u_Draw.cmd[b] = visible
+        ? uvec4(bt.range.y, 1u, bt.range.x, 0u)   // count, instanceCount, first, reservedMustBeZero
+        : uvec4(0u);                              // zero-count draw: skipped
 }
 ```
 

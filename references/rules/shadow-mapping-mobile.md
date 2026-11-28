@@ -62,7 +62,8 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
 glBindFramebuffer(GL_FRAMEBUFFER, shadowFbo);
 glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D,
                        shadowDepthTex, 0);
-glDrawBuffer(GL_NONE);   // depth-only; no color on a depth-only FBO in GLES
+const GLenum noColor = GL_NONE;
+glDrawBuffers(1, &noColor);   // depth-only; no color on a depth-only FBO in GLES
 glReadBuffer(GL_NONE);
 ```
 
@@ -95,5 +96,5 @@ mediump float ShadowFactor() {
 | Too much bias | Peter-panning (shadow detached) | Reduce bias, tighten light frustum |
 | Depth renderbuffer instead of texture | Cannot sample in main pass | Depth **texture** attachment |
 | Sampling shadow map with `sampler2D` + manual compare | No hardware filtering, more taps | `sampler2DShadow` + compare mode |
-| Forgetting `glDrawBuffer(GL_NONE)` on depth-only FBO | INVALID_OPERATION on some drivers | Set draw/read buffer to NONE |
+| Forgetting `glDrawBuffers(1, &noColor)` (with `noColor = GL_NONE`) on depth-only FBO | INVALID_OPERATION on some drivers | Set draw/read buffer to NONE |
 | Shadow pass interleaved far from consumer | Extra FBO switch cost spread out | Order shadow pass adjacent to consumer |

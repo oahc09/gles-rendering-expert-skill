@@ -5,7 +5,7 @@
 ## 核心规则
 
 1. **默认 MSDF（3 边缘通道）**，spread 4–8；单通道 SDF 仅在图集内存逼限时用；位图 mip 只适合固定字号。
-2. **图集是距离场不是颜色**：用 `GL_R8`，**禁用 sRGB internal format**（硬件 sRGB 解码会毁掉距离数学），gamma 在 coverage 之后自己校。
+2. **图集是距离场不是颜色**：单通道 SDF 用 `GL_R8`+ `.r`，三通道 MSDF 用线性 `GL_RGB8`/`GL_RGBA8` + `.rgb`，**禁用 sRGB internal format**（硬件 sRGB 解码会毁掉距离数学），gamma 在 coverage 之后自己校。
 3. **AA 来自屏幕空间导数而非 mipmap**：`smoothstep(0.5-w, 0.5+w, dist)`，`w=fwidth(dist)`（钳到 ≥1e-5）；MSDF coverage 用 `median(r,g,b)`。距离场不做 mip，跨 mip 混距离尺度。
 4. **大图集 UV 用 highp**：mediump 尾数 ~10bit，4096 图集误差数 texel。`fwidth` 只能在非一致控制流外算，先算 alpha 再 `discard`。
 5. **一条字符串/一个图集 = 一次 draw**：动态 VBO（`glMapBufferRange`+`GL_MAP_INVALIDATE_RANGE_BIT` 环形）或 `glDrawArraysInstanced` 逐字形实例；逐字 draw 是 UI 头号杀手。
@@ -19,7 +19,7 @@
 ```glsl
 #version 300 es
 precision mediump float;
-uniform sampler2D u_Atlas;   // GL_R8 MSDF, CLAMP_TO_EDGE, LINEAR, 无 mipmap
+uniform sampler2D u_Atlas;   // linear GL_RGB8 or GL_RGBA8 MSDF, CLAMP_TO_EDGE, LINEAR, 无 mipmap
 in highp vec2 v_Uv;
 in vec4 v_Color;
 out vec4 fragColor;

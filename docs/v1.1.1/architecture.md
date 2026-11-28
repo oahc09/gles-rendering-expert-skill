@@ -34,3 +34,30 @@ The seed [experience ledger](../../references/experience/v111-cases.json) distin
 - W1 reuses frozen indexes without claiming new semantic/runtime coverage.
 - W3 and W5 are partial. The tested policy cases are authored expectations, not GPU truth; the thermal/power/resource policy, raw-evidence binding, portable profile capture, full case corpus and reviewed import workflow remain open.
 - W2, W4 and W6–W14 retain their own gates. In particular, two physical GPU classes and same-settings blind real-provider trials are not run here. No version metadata, tag, preceding gate or release status was changed.
+
+### Optional attachment lifetime in request schema 1
+
+The schema-1 workload may include `discard_scope` in addition to `labels`.
+Older workload objects with only `labels` remain valid. For example:
+
+```json
+{
+  "labels": ["attachment-store"],
+  "discard_scope": {
+    "attachment": "panel-depth",
+    "end_event": 1,
+    "complete": true,
+    "attachments": [{"id": "panel-depth", "width": 32, "height": 16, "format": "DEPTH16", "samples": 1}],
+    "lifecycle": [
+      {"op": "begin", "fbo": "panel", "loads": {"panel-depth": "clear"}},
+      {"op": "end", "stores": {"panel-depth": "store"}}
+    ]
+  }
+}
+```
+
+The published schema validates structure. The CLI additionally validates event
+order, unique attachment identities, binding and definedness, the selected
+event index, and whether it names a store of the selected attachment. A
+structurally valid declaration cannot by itself establish lifetime or device
+evidence. The `complete` flag is caller-declared, not authenticated.

@@ -21,6 +21,8 @@ jobs:
         run: python3 tools/coverage/materialize.py --fetch-public
       - name: Install host-only validation toolchain
         run: sudo apt-get update && sudo apt-get install -y g++ libegl-dev libgles-dev libegl-mesa0 glslang-tools libvulkan1
+      - name: Install JSON Schema validator
+        run: python3 -m pip install jsonschema==4.23.0
       - name: Structured rule contracts (not source compilation)
         run: python3 tools/validate_rules.py --output reports/rules.json
       - name: Actual GLSL compiler positive and negative controls
@@ -31,6 +33,16 @@ jobs:
           LIBGL_ALWAYS_SOFTWARE: '1'
           MESA_SHADER_CACHE_DISABLE: 'true'
         run: sh examples/validation/run-host.sh
+      - name: v1.1.2 software GLES audit and product smoke (not device acceptance)
+        env:
+          GALLIUM_DRIVER: llvmpipe
+          LP_NUM_THREADS: '2'
+        shell: bash
+        run: |
+          mkdir -p reports/v112-product-smoke
+          python3 benchmarks/product_smoke/audit_formats_culling.py reports/v112-product-smoke/formats-culling.json
+          python3 benchmarks/product_smoke/mobile_ui_resolve.py reports/v112-product-smoke/ui | tee reports/v112-product-smoke/ui-result.json
+          python3 benchmarks/product_smoke/odd_video.py examples/texture_pipeline/yuv_planes.frag reports/v112-product-smoke/video | tee reports/v112-product-smoke/video-result.json
       - name: Legacy C++ example compile and link
         run: python3 examples/validation/compile-legacy.py
       - name: Research and GPU capture infrastructure (not hardware measurements)
@@ -81,7 +93,6 @@ jobs:
           python3 tools/check_release_gates.py --gates v1.0.6
       - name: v1.0.7 schema and pipeline contracts (not device/model acceptance)
         run: |
-          python3 -m pip install jsonschema==4.23.0
           python3 tools/validate_pipeline.py --output reports/pipeline-contracts.json
           python3 tools/audit_v107.py --output reports/v107-hygiene.json
           python3 -m unittest discover -s benchmarks/pipeline -p 'test_*.py' -v

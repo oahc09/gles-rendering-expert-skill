@@ -5,7 +5,7 @@
 ## 核心规则
 
 1. 两遍结构：Pass 1 从光源把深度渲到**深度纹理**（不是 renderbuffer，后面要采样）；Pass 2 采样比较得阴影因子。
-2. 深度用 `GL_DEPTH_COMPONENT24`；只渲深度的 FBO 要 `glDrawBuffer(GL_NONE)` + `glReadBuffer(GL_NONE)`，且深度必须被保留（不 invalidate）。
+2. 深度用 `GL_DEPTH_COMPONENT24`；只渲深度的 FBO 要 `glDrawBuffers(1, &noColor)` (with `noColor = GL_NONE`) + `glReadBuffer(GL_NONE)`，且深度必须被保留（不 invalidate）。
 3. **阴影图分辨率是带宽预算**：移动端默认 1024²，hero 光才 2048²；级联阴影 2–3 级足够。
 4. **偏移必须调**：常数偏移 + 斜率偏移（`glPolygonOffset`）防阴影痤疮；偏移过大 → peter-panning。每个光单独调。
 5. 用 `sampler2DShadow` + `GL_COMPARE_REF_TO_TEXTURE` 走硬件过滤的 PCF，比手动多 tap 便宜。
@@ -20,7 +20,8 @@ glTexStorage2D(GL_TEXTURE_2D, 1, GL_DEPTH_COMPONENT24, 1024, 1024);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
 glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, shadowTex, 0);
-glDrawBuffer(GL_NONE); glReadBuffer(GL_NONE);   // depth-only
+const GLenum noColor = GL_NONE;
+glDrawBuffers(1, &noColor); glReadBuffer(GL_NONE);   // depth-only
 ```
 
 ```glsl
@@ -43,7 +44,7 @@ mediump float ShadowFactor() {
 | 偏移过大 | 阴影脱离物体 | 减偏移、收紧光源视锥 |
 | 深度用 renderbuffer | 主 pass 无法采样 | 深度**纹理**附件 |
 | `sampler2D` 手动比较 | 无硬件过滤、tap 多 | `sampler2DShadow` + compare mode |
-| depth-only FBO 漏设 `glDrawBuffer(GL_NONE)` | 部分驱动 INVALID_OPERATION | draw/read buffer 置 NONE |
+| depth-only FBO 漏设 `glDrawBuffers(1, &noColor)` (with `noColor = GL_NONE`) | 部分驱动 INVALID_OPERATION | draw/read buffer 置 NONE |
 
 ## 关联卡片
 
